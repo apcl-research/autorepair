@@ -1,19 +1,24 @@
-# jam_dev
+### Code for ICSE 2024 demonstration paper, A Lossless Syntax Tree Generator with Zero-shot Error Correction
 
-## Finetuning reward model
-CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='2' OMP_NUM_THREADS=4 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4333 --nnodes=1 --nproc_per_node=1 train_reward4.py config/train_reward_model.py
+Presented by:
+- [Chia-Yi Su](https://chiayisu.github.io/)
+- [Robert Wallace]()
+- [Juliana Gonzalez]()
+- [Vijayanta Jain](https://sites.google.com/maine.edu/vijayantajain/home)
+- [Sepideh Ghanavati](https://www.sepidehghanavati.com)
+- [Collin McMillan](https://sdf.org/~cmc/)
 
-## Inference
-CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='2' python3 sample_reward.py config/train_reward_model.py
+This repository contains all the code and detailed instructions for a tool to generate lossless syntax trees from source code using a language mode and repair syntax errors in our HuggingFace Automatic Program Comprehension Lab hub.
 
-## Calculate Accuracy
-python3 accuracy.py
+## To-do list
+To set up your local environment, run the following command. We recommend the use of a virtual environment for running the experiments.
+```
+pip install -r requirements.txt
+``` 
 
-## Test data for reward model
-data/cgrw/reward_test
-- {function_id}_{choice (0,1,2,3)}
+- If you want to generate the syntax trees from source code with our models, please see [Syntax Trees Generation](#syntax-tree-generation).
+- If you want to finetune a model to a the syntatic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
+- If you want to recompile our datasets, please see [Dataset](#dataset)
 
-## Generate test data
-1. python3 testidgen.py (generate function id of testset) -- already in repo (rewardtestfid.pkl)
-2. python3 testdatagen.py (generate test data) -- already in repo as well
-    - this will generate a directory called reward_test/ by default
+
+## Syntax Tree Generation
