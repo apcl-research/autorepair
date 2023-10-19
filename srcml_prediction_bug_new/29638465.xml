@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/448700.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getBlockIndex</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>blockX</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>blockY</name></decl></parameter>  <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>
-		<expr_stmt><expr><call><name><name>ParameterChecker</name><operator>.</operator><name>checkMinMax</name></name><argument_list>(<argument><expr><name>blockX</name></expr></argument>, <argument><expr><literal type="string">"blockX"</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>widthInBlocks</name>  <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-		<expr_stmt><expr><call><name><name>ParameterChecker</name><operator>.</operator><name>checkMinMax</name></name><argument_list>(<argument><expr><name>blockY</name></expr></argument>, <argument><expr><literal type="string">"blockY"</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>heightInBlocks</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-
-		<comment type="line">// grab the block index from the layer data</comment>
-		<return>return <expr><name><name>layerData</name><index>[<expr><name>blockY</name></expr>]</index><index>[<expr><name>blockX</name></expr>]</index></name></expr>;</return>				
-	</block_content>}</block></function> 	
-</unit>

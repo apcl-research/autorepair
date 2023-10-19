@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39109996.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>jMenuHelpHelp_actionPerformed</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
-<comment type="line">//    help.jMenuHelp(userTabbedPane.getTabCount(),userTabbedPane.getSelectedIndex());</comment>
-    <expr_stmt><expr><operator>new</operator> <call><name>Browser</name><argument_list>( <argument><expr><literal type="string">"http://"</literal><operator>+</operator><name>SERVER</name><operator>+</operator><literal type="string">"/index.htm"</literal></expr></argument>, <argument><expr><literal type="string">"Instructions"</literal></expr></argument> )</argument_list></call><operator>.</operator><call><name>setVisible</name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
-  </block_content>}</block></function>
-</unit>

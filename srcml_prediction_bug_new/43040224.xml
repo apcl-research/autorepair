@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10176983.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>addDeepValidation</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>property</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>message</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><specifier>final</specifier> <name>IValueAccessor</name></type> <name>read</name> <init>= <expr><call><name><name>ValueAccessorManager</name><operator>.</operator><name>getPropertyAccessor</name></name><argument_list>(<argument><expr><name>property</name></expr></argument>)</argument_list></call></expr></init></decl>, <decl><type ref="prev"/><name>property</name></decl>;</decl_stmt>
-        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>read</name><operator>.</operator><name>isReadable</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
-            <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt>
-        <expr_stmt><expr><call><name><name>depthValidationProperties</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>DepthValidator</name><argument_list>(<argument><expr><name>property</name></expr></argument>, <argument><expr><name>message</name></expr></argument>, <argument><expr><name>read</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <return>return <expr><literal type="boolean">true</literal></expr>;</return>
-    </block_content>}</block></function>
-</unit>

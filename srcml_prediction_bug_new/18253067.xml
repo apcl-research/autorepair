@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44679996.java">    <function><type><specifier>public</specifier> <name>long</name></type> <name>deleteEntities</name><parameter_list>(<parameter><decl><type><name>Table</name></type> <name>table</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
-        <return>return <expr><call><name><name>session</name><operator>.</operator><name>executeUpdate</name></name><argument_list>(
-                <argument><expr><literal type="string">"Delete From "</literal> <operator>+</operator> <call><name><name>SQLDialect</name><operator>.</operator><name>dmlTableReference</name></name><argument_list>(<argument><expr><name>ENTITY</name></expr></argument>, <argument><expr><name>session</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator>
-                <literal type="string">"Where r_entitygraph="</literal> <operator>+</operator> <name>graphID</name> <operator>+</operator> <literal type="string">" and "</literal> <operator>+</operator>
-                        <literal type="string">"type='"</literal> <operator>+</operator> <call><name><name>table</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call> <operator>+</operator><literal type="string">"'"</literal></expr></argument> ;</return>
-    </block_content>}</block></function>
-</unit>

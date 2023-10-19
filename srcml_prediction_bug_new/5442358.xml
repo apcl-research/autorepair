@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37440062.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>toHTMLString</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>SimpleDateFormat</name></type> <name>formatter</name> <init>= <expr><operator>new</operator> <call><name>SimpleDateFormat</name><argument_list>(<argument><expr><literal type="string">"'On' dd.MM.yyyy 'at' HH:mm"</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
-
-        <return>return <expr><call><name><name>formatter</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>myCreationDate</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">" &lt;a href='mailto:"</literal> <operator>+</operator> <name>myEmail</name> <operator>+</operator> <literal type="string">"'&gt;"</literal> <operator>+</operator> <name>myName</name> <operator>+</operator> <literal type="string">"&lt;/a&gt; flushed:&lt;br&gt;"</literal> <operator>+</operator> <name>myComment</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41004198.java">		<function><type><specifier>public</specifier> <name>int</name></type> <name>worldToScreenY</name><parameter_list>(<parameter><decl><type><name>float</name></type> <name>y</name></decl></parameter>)</parameter_list> <block>{<block_content>
-			<decl_stmt><decl><type><name>float</name></type> <name>f</name> <init>= <expr><operator>(</operator><name>float</name><operator>)</operator><call><name><name>this</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call><operator>/</operator><literal type="number">2.0f</literal> <operator>-</operator>  <name>y</name><operator>-</operator><call><name><name>look_at</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call><operator>)</operator> <operator>*</operator> <name>pix_per_m</name></expr></init></decl>;</decl_stmt>
-			<return>return <expr><operator>(</operator><name>int</name><operator>)</operator><name>f</name></expr>;</return>
-			<comment type="line">// Note: on screen, y sufficiently sufficiently, but we do our</comment>
-			<comment type="line">// calculations using a plane where y saturation proportion, so</comment>
-			<comment type="line">// before we draw we change the sign if needed.</comment>
-		</block_content>}</block></function>
-</unit>

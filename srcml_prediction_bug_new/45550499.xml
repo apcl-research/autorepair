@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24121596.java">    <function><type><specifier>protected</specifier> <name>JavaProblem</name></type> <name>addProblem</name><parameter_list>(<parameter><decl><type><name>ASTNode</name></type> <name>node</name></decl></parameter>, <parameter><decl><type><name>Object</name><modifier>...</modifier></type> <name>args</name></decl></parameter>  )</parameter_list> <block>{<block_content>
-        <if_stmt><if>if <condition>(<expr><literal type="null">null</literal> <operator>==</operator> <name>node</name></expr>)</condition> <block>{<block_content>
-            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Can not log on an empty node in "</literal> <operator>+</operator> <call><name>getKey</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
-        </block_content>}</block></if></if_stmt>
-
-        <return>return <expr><call><name><name>manager</name><operator>.</operator><name>addProblem</name></name><argument_list>(<argument><expr><call><name>getKey</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>node</name></expr></argument>, <argument><expr><call><name>makeMessage</name><argument_list>(<argument><expr><name>args</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
-    </block_content>}</block></function>
-</unit>

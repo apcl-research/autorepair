@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39779983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setProperty</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<comment type="line">// OPERATION_STYLE always DOCUMENT for now</comment>
-		<comment type="line">// ENCODING_STYLE_URI always "" (LITERAL) for now</comment>
-		<if_stmt><if>if  <condition>(<expr><operator>!</operator><call><name><name>Call</name><operator>.</operator><name>OPERATION_STYLE_PROPERTY</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>Call</name><operator>.</operator><name>ENCODING_STYLE_URI_PROPERTY</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
-			<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>setProperty</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-		</block_content>}</block></if></if_stmt>
-	</block_content>}</block></function>
-</unit>

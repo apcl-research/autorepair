@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18988891.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setScale</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>record</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>scale</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>VExecFailedException</name></expr></argument></throws> <block>{<block_content>
-    <if_stmt><if>if <condition>(<expr><name>scale</name> <operator>&gt;</operator> <name>maxScale</name></expr>)</condition> <block>{<block_content>
-      <throw>throw <expr><operator>new</operator> <call><name>InconsistencyException</name><argument_list>(<argument><expr><call><name><name>MessageCode</name><operator>.</operator><name>getMessage</name></name><argument_list>(<argument><expr><literal type="string">"VIS-00060"</literal></expr></argument>, <argument><expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>scale</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>maxScale</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
-    </block_content>}</block></if></if_stmt>
-
-    <expr_stmt><expr><name><name>currentScale</name><index>[<expr><name>record</name></expr>]</index></name> <operator>=</operator> <name>scale</name></expr> 
-  </block_content>}</block></function>
-</unit>

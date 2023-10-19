@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26161796.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getStringMS</name> <parameter_list>()</parameter_list> <block>{<block_content>
-        <if_stmt><if>if <condition>(<expr><call><name>getHours</name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
-            <return>return <expr><call><name>getHours</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">":"</literal> <operator>+</operator> <call><name>timeStr</name><argument_list>(<argument><expr><call><name>getMinutes</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">":"</literal> <operator>+</operator> <call><name>timeStr</name><argument_list>(<argument><expr><call><name>getSeconds</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
-        </block_content>}</block></if> <else>else <block>{<block_content>
-            <return>return <expr><call><name>timeStr</name><argument_list>(<argument><expr><call><name>getMinutes</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">":"</literal> <operator>+</operator> <call><name>timeStr</name><argument_list>(<argument><expr><call><name>getSeconds</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
-        </block_content>}</block></else></if_stmt>
-    </block_content>}</block></function>
-</unit>

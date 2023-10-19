@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11692796.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>initEndpoint</name><parameter_list>()</parameter_list> <block>{<block_content>
-    <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>StringUtil</name><operator>.</operator><name>isEmpty</name></name><argument_list>(<argument><expr><name>signatureServiceEndpoint</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
-      <decl_stmt><decl><type><name>BindingProvider</name></type> <name>bindingProvider</name> <init>= <expr><operator>(</operator><name>BindingProvider</name><operator>)</operator> <name>signatureservice</name></expr></init></decl>;</decl_stmt>
-      <decl_stmt><decl><type><name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>requestContext</name> <init>= <expr><call><name><name>bindingProvider</name><operator>.</operator><name>getRequestContext</name></name><argument_list>()</argument_list></call> 
-      <operator>.</operator><call><name>put</name><argument_list>(<argument><expr><name><name>BindingProvider</name><operator>.</operator><name>ENDPOINT_ADDRESS_PROPERTY</name></name></expr></argument>, <argument><expr><name>signatureServiceEndpoint</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-    </block_content>}</block></if></if_stmt>
-  </block_content>}</block></function>
-</unit>

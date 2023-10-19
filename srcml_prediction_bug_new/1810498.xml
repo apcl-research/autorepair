@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40579983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setWordWrap</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>column</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>wrap</name></decl></parameter>)</parameter_list> <block>{<block_content>
-      <expr_stmt><expr><call><name>prepareCell</name><argument_list>(<argument><expr><name>row</name></expr></argument>, <argument><expr><name>column</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-      <decl_stmt><decl><type><name>String</name></type> <name>wrapValue</name> <init>= <expr><ternary><condition><expr><name>wrap</name></expr> ?</condition><then> <expr><literal type="string">""</literal></expr> </then><else>: <expr><literal type="string">"nowrap"</literal></expr></else></ternary></expr></init></decl>;</decl_stmt>
-      <expr_stmt><expr><call><name><name>DOM</name><operator>.</operator><name>setStyleAttribute</name></name><argument_list>(<argument><expr><name>row</name></expr></argument>, <argument><expr><name>column</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

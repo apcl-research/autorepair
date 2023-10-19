@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32958891.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>verifyMailAddresses</name><parameter_list>(<parameter><decl><type><name>Collection</name></type> <name>col</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>MessagingException</name></expr></argument></throws> <block>{<block_content>
-        <decl_stmt><decl><type><name>MailAddress</name></type> <name><name>addresses</name><index>[]</index></name> <init>= <expr><operator>(</operator><name><name>MailAddress</name><index>[]</index></name><operator>)</operator><call><name><name>col</name><operator>.</operator><name>toArray</name></name><argument_list>(<argument><expr><operator>new</operator> <name><name>MailAddress</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-        <if_stmt><if>if <condition>(<expr><name><name>addresses</name><operator>.</operator><name>length</name></name> <operator>!=</operator> <call><name><name>col</name><operator>.</operator><name>size</name></name><argument_list>( )</argument_list></call></expr>)</condition> <block>{<block_content>
-            <throw>throw <expr><operator>new</operator> <call><name>MaildirException</name><argument_list>(<argument><expr><literal type="string">"The recipient list contains objects other than MailAddress objects"</literal></expr></argument>)</argument_list></call></expr>;</throw>
-        </block_content>}</block></if></if_stmt>
-    </block_content>}</block></function>
-</unit>

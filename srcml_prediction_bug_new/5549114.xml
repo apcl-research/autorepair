@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592796.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>convert</name><parameter_list>(<parameter><decl><type><name>Context</name></type> <name>context</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>file</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ConversionException</name></expr></argument></throws> <block>{<block_content>
-        <try>try <block>{<block_content>
-            <return>return <expr><operator>new</operator> <call><name>FileInputStream</name><argument_list>(<argument><expr><operator>(</operator><name>File</name><operator>)</operator> <name>file</name></expr></argument>)</argument_list></call></expr>;</return>
-        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>FileNotFoundException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
-            <throw>throw <expr><operator>new</operator> <call><name>ConversionException</name><argument_list>(<argument><expr><literal type="string">"Cannot find file '"</literal> <operator>+</operator>  <operator>(</operator><name>File</name><operator>)</operator> <name>file</name></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
-        </block_content>}</block></catch></try>
-    </block_content>}</block></function>
-</unit>

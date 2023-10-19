@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41382796.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>sessionExists</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>wordToComplete</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>documentOffset</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>previousDocumentOffset</name></decl></parameter>)</parameter_list><block>{<block_content>
-		<return>return <expr><operator>(</operator><operator>(</operator><call><name><name>wordToComplete</name><operator>.</operator><name>endsWith</name></name><argument_list>( <argument><expr><literal type="string">"."</literal></expr></argument>)</argument_list></call> <operator>||</operator>
-				<operator>(</operator><call><name><name>wordToComplete</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;=</operator> <name>MIN_SIZE</name><operator>)</operator><operator>)</operator> <operator>&amp;&amp;</operator>
-				 <operator>(</operator><operator>(</operator><name>documentOffset</name> <operator>+</operator> <literal type="number">1</literal> <operator>==</operator> <name>previousDocumentOffset</name><operator>)</operator> <operator>||</operator>
-				  <operator>(</operator><name>documentOffset</name> <operator>-</operator> <literal type="number">1</literal> <operator>==</operator> <name>previousDocumentOffset</name><operator>)</operator><operator>)</operator><operator>)</operator></expr>;</return>
-	</block_content>}</block></function>
-</unit>

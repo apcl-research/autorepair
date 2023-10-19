@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22084596.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>processMetaTag</name><parameter_list>( <parameter><decl><type><name>ByteTag</name></type> <name>tag</name></decl></parameter> )</parameter_list> <block>{<block_content>
-        <if_stmt><if>if <condition>(<expr><call><name>isHttpEquivMetaTag</name><argument_list>( <argument><expr><name>tag</name></expr></argument>, <argument><expr><literal type="string">"content-type"</literal></expr></argument> )</argument_list></call></expr>  )</condition> <block>{<block_content>
-            <expr_stmt><expr><call><name>inferContentType</name><argument_list>( <argument><expr><call><name><name>tag</name><operator>.</operator><name>getAttribute</name></name><argument_list>( <argument><expr><literal type="string">"content"</literal></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
-        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name>isHttpEquivMetaTag</name><argument_list>( <argument><expr><name>tag</name></expr></argument>, <argument><expr><literal type="string">"refresh"</literal></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
-            <expr_stmt><expr><call><name>inferRefreshHeader</name><argument_list>( <argument><expr><call><name><name>tag</name><operator>.</operator><name>getAttribute</name></name><argument_list>( <argument><expr><literal type="string">"content"</literal></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
-        </block_content>}</block></if></if_stmt>
-    </block_content>}</block></function>
-</unit>

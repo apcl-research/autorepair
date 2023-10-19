@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42682983.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getNumberOfCards</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>int</name></type> <name>numberOfCards</name> <init>= <expr><call><name><name>bundledBatch</name><operator>.</operator><name>getNumberOfCards</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><name>numberOfCards</name> <operator>+=</operator> <call><name><name>bundledShortTermList</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><name>numberOfCards</name> <operator>+=</operator> <call><name><name>shortTermList</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-        <for>for <control>(<init><decl><type><name>LongTermBatch</name></type> <name>longTermBatch</name> <range>: <expr><name>longTermBatches</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>  
-            <expr_stmt><expr><name>numberOfCards</name> <operator>+=</operator> <call><name><name>longTermBatch</name><operator>.</operator><name>getNumberOfCards</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></for>
-        </block_content>}</block></function>
-</unit>

@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32009996.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>getRmiRegistryLine</name><parameter_list>(<parameter><decl><type><name>InetSocketAddress</name></type> <name>_isa</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>_serviceName</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<assert>assert <expr><operator>(</operator><name>_isa</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>:</operator> <literal type="string">"getRmiRegistryLine InetSocketAddress _isa is NULL!"</literal></expr>;</assert>
-		<return>return <expr><literal type="string">"//"</literal> <operator>+</operator> <call><name><name>_isa</name><operator>.</operator><name>getAddress</name></name> <argument_list>()</argument_list></call></expr> ;</return>
-	</block_content>}</block></function>
-</unit>

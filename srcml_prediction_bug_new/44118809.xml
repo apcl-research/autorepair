@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41988858.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>remove</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
-        <comment type="line">// FIXME (magda) wlaciwie to powinna byc tez metoda mapy/jakamyos</comment>
-        <comment type="line">// nadrzednego obiektu tez przejscia, ktora usunie je z mapy. choc</comment>
-        <comment type="line">// jakamymy trzymali parenta, to nie byloby problemu, bo w tej metodzie</comment>
-        <comment type="line">// obiekt by sie odczepial od kolekcji parenta i gc() bo go usunelo</comment>
-    </block_content>}</block></function>
-</unit>

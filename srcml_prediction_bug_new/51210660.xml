@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18759996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setValues</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>line</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>errorString</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>searchStartPosition</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>errorMessage</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<decl_stmt><decl><type><name>int</name></type> <name>start</name> <init>= <expr><call><name><name>line</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>errorString</name></expr></argument>, <argument><expr><name>searchStartPosition</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-		<expr_stmt><expr><name>startPos</name> <operator>=</operator> <name>start</name></expr>;</expr_stmt>
-		<expr_stmt><expr><name>length</name> <operator>=</operator> <call><name><name>errorString</name><operator>.</operator><name>length</name></name><argument_list>( ;</argument_list></call></expr></expr_stmt>
-		<expr_stmt><expr><name>errorMsg</name> <operator>=</operator> <name>errorMessage</name></expr>;</expr_stmt>
-		<comment type="line">//System.out.println("parseError.setValues(): startpos: "+startPos+" length: "+length+" line: "+line);</comment>
-	</block_content>}</block></function>
-</unit>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45269996.java">   <function><type><specifier>private</specifier> <name>MenuItem</name></type> <name>buildTestCaseMenu</name><parameter_list>(<parameter><decl><type><name>MenuBar</name></type> <name>menuBar</name></decl></parameter>, <parameter><decl><type><name>Menu</name></type> <name>menu</name></decl></parameter>)</parameter_list> <block>{<block_content>
-  	 	<decl_stmt><decl><type><name>MenuItem</name></type> <name>mitem</name> <init>= <expr><operator>new</operator> <call><name>MenuItem</name><argument_list>(<argument><expr><name>menuBar</name></expr></argument>,<argument><expr><name>DEFAULT_MENU_STYLE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-  	    <expr_stmt><expr><call><name><name>mitem</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>Messages</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><literal type="string">"UCEd.70"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>    <comment type="line">//$NON-NLS-1$</comment>
-  		<expr_stmt><expr><call><name><name>mitem</name><operator>.</operator><name>setMenu</name></name><argument_list>(<argument><expr><name>menu</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-  	    <return>return <expr><name>mitem</name></expr>;</return>
-  	 </block_content>}</block></function>
-</unit>

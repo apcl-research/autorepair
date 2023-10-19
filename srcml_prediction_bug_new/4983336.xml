@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4982915.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>retrieveList</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <comment type="line">//Get new data from the server:</comment>
-        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setStartIndex</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getNewStartIndex</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setSize</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setJbsBaseObjects</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getDataFromServer</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getStartIndex</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>this</name><operator>.</operator><name>getRowsPerPage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> 
-        <operator>.</operator><call><name>setDeprecated</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44229996.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>initDnD</name><parameter_list>()</parameter_list> <block>{<block_content>
-    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>dragSource</name></name> <operator>=</operator> <call><name><name>DragSource</name><operator>.</operator><name>getDefaultDragSource</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>dgListener</name></name> <operator>=</operator> <operator>new</operator> <call><name>DNDListener</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-
-    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>dragSource</name><operator>.</operator><name>createDefaultDragGestureRecognizer</name></name><argument_list>(<argument><expr><operator>(</operator><name>Component</name><operator>)</operator> <name>this</name></expr></argument>,
-        <argument><expr><name><name>DnDConstants</name><operator>.</operator><name>ACTION_MOVE</name></name></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>dgListener</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-  </block_content>}</block></function>
-</unit>

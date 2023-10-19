@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/304400.java">	<comment type="block" format="javadoc">/**
-	 * jsr075 - commented out public OrganizationBean getOrganization() { try {
-	 * if (this.organizationVO == null) this.organizationVO =
-	 * this.getOrganization(this.getOrganizationID )); } catch(Exception e) {
-	 * log.error(".getOrganizationID():", e); } return this.organizationVO; }
-</comment></unit>

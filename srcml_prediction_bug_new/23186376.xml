@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26392783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>error</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>text</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>filename</name> <operator>+</operator> <literal type="string">": "</literal> <operator>+</operator> <name>text</name></expr></argument>)</argument_list></call>  <comment type="line">//+" on line "+tokenizer.getLine()+", column "+tokenizer.getColumn());</comment>
-        <expr_stmt><expr><call><name><name>JOptionPane</name><operator>.</operator><name>showMessageDialog</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><name>text</name></expr></argument>, <argument><expr><literal type="string">"Error"</literal></expr></argument>, <argument><expr><name><name>JOptionPane</name><operator>.</operator><name>ERROR_MESSAGE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><name>numErrors</name><operator>++</operator></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

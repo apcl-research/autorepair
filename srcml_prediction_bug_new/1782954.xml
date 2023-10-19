@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44315961.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>inferRefreshHeader</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>refreshHeader</name></decl></parameter> )</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>String</name></type> <name>originalHeader</name> <init>= <expr><call><name>getHeaderField</name><argument_list>( <argument><expr><literal type="string">"Refresh"</literal></expr></argument>  )</argument_list></call></expr></init></decl>;</decl_stmt>
-        <comment type="line">// System.err.println("original='"+originalHeader+"'\nrefreshHeader='"+refreshHeader+"'");</comment>
-        <if_stmt><if>if <condition>(<expr><name>originalHeader</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
-            <expr_stmt><expr><name>_refreshHeader</name> <operator>=</operator> <name>refreshHeader</name></expr>;</expr_stmt>
-        </block_content>}</block></if></if_stmt>
-    </block_content>}</block></function>
-</unit>

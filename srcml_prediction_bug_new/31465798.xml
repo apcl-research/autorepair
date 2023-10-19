@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28616091.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>selectObject</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>x</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y</name></decl></parameter>)</parameter_list> <block>{<block_content>
-	<decl_stmt><decl><type><name>MapObject</name></type> <name>oObj</name> <init>= <expr><name><name>floors</name><index>[<expr><name>curFloor</name></expr>]</index></name><operator>.</operator><call><name>getSelectedObject</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-	<expr_stmt><expr><name><name>floors</name><index>[<expr><name>curFloor</name></expr>]</index></name><operator>.</operator><call><name>selectObject</name><argument_list>(<argument><expr><name>x</name></expr></argument>, <argument><expr><name>y</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-	<decl_stmt><decl><type><name>MapObject</name></type> <name>nObj</name> <init>= <expr><name><name>floors</name><index>[<expr><name>curFloor</name></expr>]</index></name><operator>.</operator><call><name>getSelectedObject</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-	<if_stmt><if>if <condition>(<expr><name>oObj</name> <operator>!=</operator> <name>nObj</name></expr>)</condition><block type="pseudo"><block_content>
-	    <expr_stmt><expr><call><name>firePropertyChange</name><argument_list>(<argument><expr><name>OBJECT_SELECTION</name></expr></argument>, <argument><expr><name>oObj</name></expr></argument>, <argument><expr><name>nObj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
-    </block_content>}</block></function>
-</unit>

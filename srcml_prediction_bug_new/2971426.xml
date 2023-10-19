@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44222696.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>updateResolutionTF</name><parameter_list>(  <parameter><decl><type><name>boolean</name></type> <name>isResolution</name></decl></parameter> )</parameter_list> <block>{<block_content>
-    <decl_stmt><decl><type><name>DecimalFormat</name></type> <name>df</name> <init>= <expr><operator>new</operator> <call><name>DecimalFormat</name><argument_list>(<argument><expr><literal type="string">"###.#"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-    <expr_stmt><expr><name>squareSizemm</name> <operator>=</operator> <call><name><name>Double</name><operator>.</operator><name>parseDouble</name></name><argument_list>(<argument><expr><call><name><name>lengthTF</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <decl_stmt><decl><type><name>double</name></type> <name>squareSizein</name> <init>= <expr><name>squareSizemm</name><operator>/</operator><literal type="number">25.4</literal></expr></init></decl>;</decl_stmt>
-    <decl_stmt><decl><type><name>double</name></type> <name>resdpi</name> <init>= <expr><name>squareSizept</name> <operator>/</operator> <name>squareSizein</name></expr></init></decl>;</decl_stmt>
-    <expr_stmt><expr><call><name><name>resolutionTF</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>df</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>resdpi</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-  </block_content>}</block></function>
-</unit>

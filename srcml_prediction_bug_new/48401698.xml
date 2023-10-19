@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42782629.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setResolveMethod</name><parameter_list>(<parameter><decl><type><name><name>Class</name><argument_list type="generic">&lt;<argument><name>?</name></argument>&gt;</argument_list></name></type> <name>nonterminal</name></decl></parameter>)</parameter_list>  
-		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
-		<expr_stmt><expr><name>_resolve_method</name> <operator>=</operator> <call><name><name>nonterminal</name><operator>.</operator><name>getMethod</name></name><argument_list>(<argument><expr><literal type="string">"resolve"</literal></expr></argument>, <argument><expr><operator>new</operator> <name><name><name>Class</name><argument_list type="generic">&lt;<argument><name>?</name></argument>&gt;</argument_list></name><index>[]</index></name> <block>{
-				<expr><name><name>Class</name><operator>.</operator><name>class</name></name></expr>, <expr><name><name>Iterator</name><operator>.</operator><name>class</name></name></expr>, <expr><name><name>int</name><operator>.</operator><name>class</name></name></expr> }</block></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-	</block_content>}</block></function>
-</unit>

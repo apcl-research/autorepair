@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34644896.java">    <function><type><specifier>private</specifier> <name>BLSDetailPanel</name></type> <name>getBLSDetailPanel</name><parameter_list>()</parameter_list> <block>{<block_content>
-    	<if_stmt><if>if <condition>(<expr><name>m_BLSDetailPanel</name> <operator>==</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
-    		<expr_stmt><expr><name>m_BLSDetailPanel</name> <operator>=</operator> <operator>new</operator> <call><name>BLSDetailPanel</name><argument_list>(<argument><expr><name>m_FoodHandler</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>			
-    		<expr_stmt><expr><call><name><name>m_BLSDetailPanel</name><operator>.</operator><name>setBounds</name></name><argument_list>(<argument><expr><literal type="number">5</literal></expr></argument>, <argument><expr><literal type="number">2</literal></expr></argument>, <argument><expr><literal type="number">340</literal></expr></argument>, <argument><expr><literal type="number">300</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    	</block_content>}</block></if></if_stmt>
-    	<return>return <expr><name>m_BLSDetailPanel</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>

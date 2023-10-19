@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41464984.java">	<comment type="block">/*
-	 * public SipParser skipNameAddress() { int begin_url=indexOf("&lt;sip:"); if
-	 * (begin_url&lt;0) begin_url=indexOf("sip:"); if (begin_url&lt;0)
-	 * index=str.length(); else { goTo uri_separators;
-	 * skipChars(uri_separators); } return this; }
-</comment></unit>

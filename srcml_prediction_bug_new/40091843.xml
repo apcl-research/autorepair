@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25370062.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>startResultSummaryTableString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>style</name></decl></parameter>)</parameter_list> <block>{<block_content>
-    <expr_stmt><expr><call><name>tableStart</name><argument_list>(<argument><expr><name>style</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><call><name><name>m_out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"&lt;tr&gt;&lt;th&gt;Class&lt;/th&gt;"</literal>
-            <operator>+</operator> <literal type="string">"&lt;th&gt;Method&lt;/th&gt;&lt;th&gt;# of&lt;br/&gt;Scenarios&lt;/th&gt;&lt;th&gt;Time&lt;br/&gt;(Msecs)"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><name>m_row</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
-  </block_content>}</block></function>
-</unit>

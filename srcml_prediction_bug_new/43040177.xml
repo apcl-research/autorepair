@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24131596.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getFirstEntriesGroup</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><specifier>final</specifier> <name>MenuPath</name></type> <name>path</name> <init>= <expr><call><name><name>entries</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getPath</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-        <decl_stmt><decl><type><specifier>final</specifier> <name><name>MenuPathSegment</name><index>[]</index></name></type> <name>pathElements</name> <init>= <expr><call><name><name>path</name><operator>.</operator><name>getPath</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-        <if_stmt><if>if <condition>(<expr><name><name>pathElements</name><operator>.</operator><name>length</name></name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
-            <return>return <expr><name><name>pathElements</name><index>[<expr><literal type="number">0</literal> <operator>.</operator><call><name>getGroup</name><argument_list>()</argument_list></call></expr>]</index></name></expr>;</return></block_content></block></if></if_stmt>
-        <return>return <expr><call><name><name>path</name><operator>.</operator><name>getLastGroup</name></name><argument_list>()</argument_list></call></expr>;</return>
-    </block_content>}</block></function>
-</unit>

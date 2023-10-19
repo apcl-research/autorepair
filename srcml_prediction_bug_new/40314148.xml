@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18602783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addNcIsoMetadata</name><parameter_list>(<parameter><decl><type><name>Element</name></type> <name>groupElem</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <comment type="line">// Add date stamp for metadata creation</comment>
-		<decl_stmt><decl><type><name>Date</name></type> <name>dateStamp</name> <init>= <expr><call><name><name>Calendar</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTime</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-		<decl_stmt><decl><type><name>SimpleDateFormat</name></type> <name>sdf</name> <init>= <expr><operator>new</operator> <call><name>SimpleDateFormat</name><argument_list>(<argument><expr><literal type="string">"yyyy-MM-dd"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-		<decl_stmt><decl><type><name>String</name></type> <name>metadata_creation_date</name> <init>= <expr><call><name><name>sdf</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>dateStamp</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name>addElem</name><argument_list>(<argument><expr><name>groupElem</name></expr></argument>,<argument><expr><literal type="string">"metadata_creation"</literal></expr></argument>, <argument><expr><name>metadata_creation_date</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>      
-	</block_content>}</block></function>
-</unit>

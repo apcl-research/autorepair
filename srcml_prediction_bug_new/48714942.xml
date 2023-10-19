@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11098896.java">    <function><type><specifier>protected</specifier> <name>String</name></type> <name>getName</name><parameter_list>(<parameter><decl><type><name>Element</name></type> <name>definitionElement</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>Element</name></type> <name>nameElement</name> <init>= <expr><call><name><name>DomUtils</name><operator>.</operator><name>getChildElementByTagName</name></name><argument_list>(<argument><expr><name>definitionElement</name></expr></argument>, <argument><expr><name><name>ModuleElementNames</name><operator>.</operator><name>NAME_ELEMENT</name></name></expr></argument>)</argument_list></call> 
-        <operator>.</operator><call><name>StringValue</name><argument_list>(<argument><expr><name>nameElement</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>notNull</name></name><argument_list>(<argument><expr><name>nameElement</name></expr></argument>, <argument><expr><name><name>ModuleElementNames</name><operator>.</operator><name>MODULE_ELEMENT</name></name> <operator>+</operator> <literal type="string">" must contain an element: "</literal> <operator>+</operator> <name><name>ModuleElementNames</name><operator>.</operator><name>NAME_ELEMENT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <return>return <expr><name>name</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>

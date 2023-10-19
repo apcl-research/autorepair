@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25692783.java">   <function><type><specifier>private</specifier> <name>void</name></type> <name>readFromTerminal</name><parameter_list>()</parameter_list> <block>{<block_content>
-      <while>while <condition>(<expr><name><name>this</name><operator>.</operator><name>username</name></name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>this</name><operator>.</operator><name>username</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
-         <expr_stmt><expr><name><name>this</name><operator>.</operator><name>username</name></name> <operator>=</operator> <call><name>getString</name><argument_list>(<argument><expr><literal type="string">"Username: "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-      </block_content>}</block></while>
-      <while>while <condition>(<expr><name><name>this</name><operator>.</operator><name>password</name></name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>this</name><operator>.</operator><name>password</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
-         <expr_stmt><expr><name><name>this</name><operator>.</operator><name>password</name></name> <operator>=</operator> <call><name>getString</name><argument_list>(<argument><expr><literal type="string">"Password: "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></while>
-      </block_content>}</block></function>
-</unit>

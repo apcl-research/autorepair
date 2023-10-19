@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16572983.java">		<function><type><specifier>protected</specifier> <name>void</name></type> <name>loading</name><parameter_list>(<parameter><decl><type><name>DispatchTask</name></type> <name>task</name></decl></parameter>,<parameter><decl><type><name>double</name></type> <name>loadingTime</name></decl></parameter>)</parameter_list><block>{<block_content>
-		<comment type="line">//	System.out.println("t&gt; "+getTime()+" Task in loading: "+task.getId()+" for driver "+task.getDriver( );</comment>
-			<decl_stmt><decl><type><name>double</name></type> <name>t</name> <init>= <expr><name>loadingTime</name></expr></init></decl>;</decl_stmt>
-			<expr_stmt><expr><name>myUnloadingEvent</name><operator>=</operator><call><name>scheduleEvent</name><argument_list>(<argument><expr><name>myLoadingListener</name></expr></argument>, <argument><expr><name>t</name></expr></argument>, <argument><expr><literal type="string">"Loading"</literal></expr></argument>, <argument><expr><name>task</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
-		</block_content>}</block></function>
-</unit>

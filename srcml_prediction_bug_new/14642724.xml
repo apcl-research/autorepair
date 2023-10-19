@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37726891.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>startup</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>SecurityException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
-        <decl_stmt><decl><type><name>IMessageQueue</name></type> <name>messageQueue</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>fICommunication</name><operator>.</operator><name>getMessageQueue</name></name><argument_list>( ;</init>
-        <type><name>MessageProcessorRegistry</name></type> <name>processorRegistry</name> <init>= <expr><call><name><name>messageQueue</name><operator>.</operator><name>getProcessorRegistry</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name><name>processorRegistry</name><operator>.</operator><name>addMessageHandler</name></name><argument_list>(<argument><expr><name>MESSAGE_TYPE</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name>loadSecureResources</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>fCredential</name></name> <operator>=</operator> <call><name>createNewCredential</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46065529.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>convertXML</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>xml</name></decl></parameter>, <parameter><decl><type><name>ServletContext</name></type> <name>context</name></decl></parameter>)</parameter_list>  
-		<comment type="line">//return Dom4jUtils.localizeXml(xml.replaceFirst("&lt;\\?xml.+version=.+encoding=.+\\?&gt;", ""), "itemRecord");</comment>
-		<comment type="line">// return Dom4jUtils.localizeXml(xml, "annotationRecord");</comment>
-		<return>return <expr><call><name><name>Dom4jUtils</name><operator>.</operator><name>localizeXml</name></name><argument_list>(<argument><expr><name>xml</name></expr></argument>)</argument_list></call></expr>;</return>
-	</block_content>}</block></function>
-</unit>

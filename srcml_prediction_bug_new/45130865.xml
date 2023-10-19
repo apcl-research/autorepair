@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19302783.java">	<function><type><specifier>public</specifier> <name>ConstraintLogic</name></type> <name>getOptionalConstraintLogic</name><parameter_list>(<parameter><decl><type><name>OptionalConstraintData</name></type> <name>data</name></decl></parameter>, <parameter><decl><type><name>SPARQLValueFactory</name></type> <name>valueFactory</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<return>return <expr><operator>new</operator> <call><name>DefaultOptionalConstraintLogic</name><argument_list>(<argument><expr><name>data</name></expr></argument>, <argument><expr><operator>new</operator> <call><name>IndexedSetIntersectLogic</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <call><name>DefaultIntersectOrderLogic</name><argument_list>(
-				<argument><expr><operator>new</operator> <call><name>IndexedSetIntersectLogic</name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
-	</block_content>}</block></function>
-</unit>

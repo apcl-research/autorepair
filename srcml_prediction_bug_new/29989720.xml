@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44842796.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>intialize</name><parameter_list>()</parameter_list> <block>{<block_content>
-
-        <expr_stmt><expr><name>_formattedTime</name> <operator>=</operator> <call><name><name>_dateFormatter</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Date</name><argument_list>(<argument><expr><name>_time</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><name>_searchableString</name> <operator>=</operator> <operator>(</operator><name>_rawSQLString</name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <name>_sessionName</name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <name>_formattedTime</name><operator>)</operator><operator>.</operator><call><name>toLowerCase</name><argument_list>( ;</operator><operator>)</operator></expr>;</expr_stmt>
-        <expr_stmt><expr><name>_singleLineText</name> <operator>=</operator> <call><name><name>TextUtil</name><operator>.</operator><name>removeLineBreaks</name></name><argument_list>(<argument><expr><name>_rawSQLString</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19058981.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>validateLineNumber</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>lineNumber</name></decl></parameter>)</parameter_list>  <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws>  
-	   <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>NumberIndex</name><operator>.</operator><name>isWithinLimits</name></name><argument_list>(<argument><expr><name>lineNumber</name></expr></argument>,<argument><expr><literal type="number">1</literal></expr></argument>,<argument><expr><call><name>numberOfLines</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
-	      <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Cannot handle line number: "</literal> <operator>+</operator> <name>lineNumber</name> <operator>+</operator> <literal type="string">" numberOfLines: "</literal> <operator>+</operator> <call><name>numberOfLines</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>  
-	   </block_content>}</block></if></if_stmt>
-	}
-</unit>

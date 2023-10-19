@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31789769.java">    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>isScreenSecured</name><parameter_list>(<parameter><decl><type><name>SandUI</name></type> <name>sandui</name></decl></parameter>,<parameter><decl><type><name>Screen</name></type> <name>screen</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <if_stmt><if>if<condition>(<expr><call><name><name>screen</name><operator>.</operator><name>getSecurity</name></name><argument_list>()</argument_list></call><operator>==</operator><name><name>Screen</name><operator>.</operator><name>SECURITY_SECURE</name></name></expr>)</condition> <block>{<block_content>
-            <return>return <expr><literal type="boolean">true</literal></expr>;</return> </block_content>}</block></if></if_stmt>
-        <if_stmt><if>if<condition>(<expr><operator>(</operator><call><name><name>screen</name><operator>.</operator><name>getSecurity</name></name><argument_list>()</argument_list></call><operator>==</operator><name><name>Screen</name><operator>.</operator><name>SECURITY_DEFAULT</name></name><operator>)</operator><operator>&amp;&amp;</operator>
-           <operator>(</operator><call><name><name>sandui</name><operator>.</operator><name>getDefaultSecurity</name></name><argument_list>()</argument_list></call><operator>==</operator><name><name>SandUI</name><operator>.</operator><name>DEFAULTSECURITY_SECURE</name></name><operator>)</operator></expr>)</condition> <block>{<block_content>
-            <return>return <expr><literal type="boolean">true</literal></expr>;</return> </block_content>}</block></if></if_stmt>
-        <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></function>
-</unit>

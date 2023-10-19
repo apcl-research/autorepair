@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11649996.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getTextOfElement</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>String</name></type> <name>text</name> <init>= <expr><call><name><name>charBuffer</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><name>text</name> <operator>=</operator> <call><name><name>text</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"[\n\r\t]+"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><name>text</name> <operator>=</operator> <call><name><name>text</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"^\\s+"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name><name>charBuffer</name><operator>.</operator><name>delete</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><call><name><name>charBuffer</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
-        <return>return <expr><name>text</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>

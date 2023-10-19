@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51436891.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testAmmine13</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
-        <decl_stmt><decl><type><name><name>Object</name><index>[]</index><index>[]</index></name></type> <name>smiles</name> <init>= <expr><operator>new</operator> <name><name>Object</name><index>[]</index><index>[]</index></name> <block>{
-            <expr><block>{<expr><literal type="string">"c1cccc(N)c1c2c(N)cccc2"</literal></expr>,<expr><literal type="string">"MR2"</literal></expr>,<expr><operator>new</operator> <call><name>Double</name><argument_list>(<argument><expr><literal type="number">2.98</literal></expr></argument>)</argument_list></call></expr>,<expr><literal type="string">"MR3"</literal></expr>,<expr><operator>new</operator> <call><name>Double</name><argument_list>(<argument><expr><literal type="number">0.1</literal></expr></argument>)</argument_list></call></expr>,<expr><literal type="string">"MR6"</literal></expr>,<expr><operator>new</operator> <call><name>Double</name><argument_list>(<argument><expr><literal type="number">0.1</literal></expr></argument>)</argument_list></call></expr>}</block></expr>,
-            }</block></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name>amineGroupSubstituent</name><argument_list>(<argument><expr><name>smiles</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

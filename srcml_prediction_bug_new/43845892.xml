@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17590583.java">    <function><type><specifier>public</specifier> <name>ByteCodeHelper</name></type> <name>strBuilderToString</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>pos</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <expr_stmt><expr><call><name><name>mv</name><operator>.</operator><name>visitVarInsn</name></name><argument_list>(<argument><expr><name><name>Opcodes</name><operator>.</operator><name>ALOAD</name></name></expr></argument>, <argument><expr><name>pos</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name><name>mv</name><operator>.</operator><name>visitMethodInsn</name></name><argument_list>(<argument><expr><name><name>Opcodes</name><operator>.</operator><name>INVOKEVIRTUAL</name></name></expr></argument>, <argument><expr><literal type="string">"java/lang/StringBuilder"</literal></expr></argument>, <argument><expr><literal type="string">"toString"</literal></expr></argument>, <argument><expr><literal type="string">"()Ljava/lang/String;"</literal></expr></argument>)</argument_list></call> 
-        <operator>.</operator><call><name>mv</name><argument_list>(<argument><expr><name><name>Opcodes</name><operator>.</operator><name>POP</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <return>return <expr><name>this</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>

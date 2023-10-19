@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37591396.java">  <function><type><specifier>public</specifier> <name>SourceWriter</name></type> <name>createSourceWriter</name><parameter_list>(<parameter><decl><type><name>PrintWriter</name></type> <name>printWriter</name></decl></parameter>)</parameter_list>  
-    <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>  
-    <return>return <expr><operator>new</operator> <call><name>ClassSourceFileComposer</name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><name>printWriter</name></expr></argument>, <argument><expr><call><name>getCreatedPackage</name><argument_list>()</argument_list></call></expr></argument>,
-      <argument><expr><call><name>getCreatedClassShortName</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getSuperclassName</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getInterfaceNames</name><argument_list>()</argument_list></call></expr></argument>,
-      <argument><expr><call><name>getImports</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>classCategory</name></expr></argument>, <argument><expr><name>classComment</name></expr></argument>)</argument_list></call></expr>;</return>
-  </block_content>}</block></function>
-</unit>

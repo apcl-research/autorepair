@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46172783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>toDebugString</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <return>return <expr><literal type="string">"[name="</literal> <operator>+</operator> <name>name</name> <operator>+</operator> <literal type="string">", number="</literal> <operator>+</operator> <call><name><name>Contact</name><operator>.</operator><name>anonymizeNumber</name></name><argument_list>(<argument><expr><name>number</name></expr></argument>)</argument_list></call> <operator>+</operator>
-                <literal type="string">", gateway="</literal> <operator>+</operator> <name>gateway</name> <operator>+</operator> <literal type="string">", status="</literal> <operator>+</operator> <name>status</name> <operator>+</operator> <literal type="string">", gatewayMsg="</literal> <operator>+</operator>
-                <name>gatewayMsg</name> <operator>+</operator> <literal type="string">", errMsg="</literal> <operator>+</operator> <name>errMsg</name> <operator>+</operator> <literal type="string">"]"</literal></expr>;</return></block_content></block></function>
-     
-</unit>

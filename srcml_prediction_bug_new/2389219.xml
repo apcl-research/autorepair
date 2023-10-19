@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37142783.java">    <function><type><specifier>public</specifier> <name>Dimension</name></type> <name>getPreferredScrollableViewportSize</name><parameter_list>()</parameter_list> 
-        <comment type="line">//return new Dimension(500,500);</comment>
-        <comment type="line">//return new Dimension(((int) maxSE.getX()) * (BOX_WIDTH_HEIGHT +BOX_SPACING) + PADDING, ((int) maxSE.getY()) * (BOX_WIDTH_HEIGHT +BOX_SPACING) + PADDING);</comment>
-        <return>return <expr><call><name>getPreferredSize</name><argument_list>()</argument_list></call></expr>;</return>
-    </block_content>}</block></function>
-</unit>

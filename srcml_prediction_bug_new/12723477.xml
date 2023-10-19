@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19564891.java"><function><type><specifier>public</specifier> <name>double</name></type> <name>getQuick</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>column</name></decl></parameter>)</parameter_list> <block>{<block_content>
-	<comment type="line">//if (debug) if (column&lt;0 || column&gt;=columns || row&lt;0 || row&gt;=rows) throw new IndexOutOfBoundsException("row:"+row+", column:"+column);</comment>
-	<comment type="line">//return elements[index(row,column)];</comment>
-	<comment type="line">//manually inlined:</comment>
-	<return>return <expr><name><name>elements</name><index>[<expr><name>offset</name> <operator>+</operator> <name><name>rowOffsets</name><index>[<expr><name>rowZero</name> <operator>+</operator> <name>row</name><operator>*</operator><name>rowStride</name></expr>]</index></name> <operator>+</operator> <name><name>columnOffsets</name><index>[<expr><name>columnZero</name> <operator>+</operator> <name>column</name><operator>*</operator><name>columnStride</name></expr>]</index></name></expr>]</index></name> 
-}</block></expr>
-</unit>

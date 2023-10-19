@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50392783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getJobStatus</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>jobId</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PsiscoreException</name></expr></argument>, <argument><expr><name>InvalidArgumentException</name></expr></argument></throws>  
-    	<block>{<block_content>
-    		<return>return <expr><call><name>getService</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getJobStatus</name><argument_list>(<argument><expr><name>jobId</name></expr></argument>)</argument_list></call></expr>;</return>
-    	</block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31974983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>projectRefresh</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>reset</name></decl></parameter>)</parameter_list><block>{<block_content>
-    <decl_stmt><decl><type><name>boolean</name></type> <name>debug</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
-    <expr_stmt><expr><call><name><name>Debug</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">"Project Refreshed"</literal></expr></argument>,<argument><expr><name>debug</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><call><name><name>reqSQL</name><operator>.</operator><name>updateProjectTable</name></name><argument_list>(<argument><expr><name>database1</name></expr></argument>, <argument><expr><name>projListQDS</name></expr></argument>, <argument><expr><name>project1</name></expr></argument>, <argument><expr><name>person1</name></expr></argument>, <argument><expr><call><name>getStatus</name><argument_list>(<argument><expr><name>ProjStatusjComboBox</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><call><name><name>submissionTextArea</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Projects Refreshed"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    <expr_stmt><expr><call><name>setProject</name><argument_list>(<argument><expr><name>reset</name></expr></argument> ;</argument_list></call></expr>
-  </block_content>}</block></function>
-</unit>

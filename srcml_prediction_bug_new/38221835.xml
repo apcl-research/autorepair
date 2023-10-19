@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44792796.java">  <function><type><specifier>private</specifier> <name>Point</name></type> <name>convertParentToOwn</name><parameter_list>(<parameter><decl><type><name>Point</name></type> <name>point</name></decl></parameter>)</parameter_list> <block>{<block_content>
-    <if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>  
-      <expr_stmt><expr><name><name>point</name><operator>.</operator><name>x</name></name> <operator>-=</operator> <call><name><name>this</name><operator>.</operator><name>getLocationOnScreen</name></name><argument_list>()</argument_list></call><operator>.</operator><name>x</name>
-        <operator>-</operator> <call><name><name>this</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getLocationOnScreen</name><argument_list>()</argument_list></call><operator>.</operator><name>x</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
-      <expr_stmt><expr><name><name>point</name><operator>.</operator><name>y</name></name> <operator>-=</operator> <call><name><name>this</name><operator>.</operator><name>getLocationOnScreen</name></name><argument_list>()</argument_list></call><operator>.</operator><name>y</name></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

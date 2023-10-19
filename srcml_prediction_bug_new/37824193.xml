@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32882796.java">   <function><type><specifier>protected</specifier> <name>void</name></type> <name>setDatabaseState</name><parameter_list>( <parameter><decl><type><name>int</name></type> <name>dbState</name></decl></parameter> )</parameter_list> <block>{<block_content>
-      <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>log</name></name><argument_list>(<argument><expr><name><name>Level</name><operator>.</operator><name>FINEST</name></name></expr></argument>,<argument><expr><literal type="string">"DatabaseAbstr.setDatabaseState("</literal><operator>+</operator><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>dbState</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">")"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
-      <if_stmt><if>if<condition>( <expr><name>m_prDatabaseState</name> <operator>!=</operator> <name>dbState</name></expr> )</condition> <block>{<block_content>
-         <expr_stmt><expr><name>m_prDatabaseState</name> <operator>=</operator> <name>dbState</name></expr>;</expr_stmt>
-         <expr_stmt><expr><call><name>notifyListeners</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
-      </block_content>}</block></if></if_stmt>
-   </block_content>}</block></function>
-</unit>

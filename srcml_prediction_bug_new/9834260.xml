@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/9839071.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getSourceName</name><parameter_list>()</parameter_list> <block>{<block_content>
-		<if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>sourceName</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
-			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>sourceName</name></name> <operator>=</operator> <ternary><condition><expr><call><name><name>this</name><operator>.</operator><name>isPageView</name></name><argument_list>()</argument_list></call></expr> ?</condition><then> <expr><call><name><name>alias</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"[^0-9A-Za-z_]"</literal></expr></argument>, <argument><expr><literal type="string">"_"</literal></expr></argument>)</argument_list></call></expr> </then><else>: <expr><call><name><name>GraceletContext</name><operator>.</operator><name>getInstance</name></name> <argument_list>()</argument_list></call></expr></else></ternary></expr>;</expr_stmt>
-		</block_content>}</block></if></if_stmt>
-		<return>return <expr><name><name>this</name><operator>.</operator><name>sourceName</name></name></expr>;</return> 
-	</block_content>}</block></function>
-</unit>

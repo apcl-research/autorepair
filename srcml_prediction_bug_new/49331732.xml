@@ -1,5 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26544096.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>xTHIS</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>addr</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>val</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>UsbException</name></expr></argument>, <argument><expr><name>InvalidFirmwareException</name></expr></argument>, <argument><expr><name>CapabilityException</name></expr></argument></throws>  
-	<block>{<block_content>	<expr_stmt><expr><call><name>vendorCommand</name><argument_list>( <argument><expr><literal type="number">0x4d</literal></expr></argument>, <argument><expr><literal type="string">"XMANA Fuse write"</literal></expr></argument>, <argument><expr><name>val</name></expr></argument>, <argument><expr><name>addr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        </block_content>}</block></function>
-</unit>

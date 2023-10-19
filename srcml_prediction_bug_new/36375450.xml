@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24141596.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initInputFileOptions</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>fileInputOption</name></name> <operator>=</operator> 
-            <call><name><name>optBuilder</name><operator>.</operator><name>withShortName</name></name><argument_list>(<argument><expr><literal type="string">"f"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>withLongName</name><argument_list>(<argument><expr><literal type="string">"file"</literal></expr></argument>)</argument_list></call>
-            <operator>.</operator><call><name>withDescription</name><argument_list>(<argument><expr><literal type="string">"Reads the input from the given file."</literal></expr></argument>)</argument_list></call>
-            <operator>.</operator><call><name>withArgument</name><argument_list>(<argument><expr><call><name><name>argBuilder</name><operator>.</operator><name>withName</name></name><argument_list>(<argument><expr><literal type="string">"&lt;file name&gt;"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>withMinimum</name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>create</name><argument_list>()</argument_list></call> 
-            <operator>.</operator><call><name>create</name><argument_list>()</argument_list></call></expr>;</expr_stmt>          
-    </block_content>}</block></function>
-</unit>

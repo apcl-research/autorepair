@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28162783.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>addLevel</name><parameter_list>(<parameter><decl><type><name><name> Mondrian</name><operator>.</operator><name>olap</name><operator>.</operator><name>Level</name></name></type> <name>monLevel</name></decl></parameter>, <parameter><decl><type><name>MondrianHierarchy</name></type> <name>hierarchy</name></decl></parameter>)</parameter_list> <block>{<block_content>
-    <decl_stmt><decl><type><name>String</name></type> <name>uniqueName</name> <init>= <expr><call><name><name>monLevel</name><operator>.</operator><name>getUniqueName</name></name><argument_list>()</argument_list></call></expr></init></decl> 
-    if <condition>(<expr><operator>!</operator><call><name><name>hLevels</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>uniqueName</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
-      <decl_stmt><decl><type><name>MondrianLevel</name></type> <name>level</name> <init>= <expr><operator>new</operator> <call><name>MondrianLevel</name><argument_list>(<argument><expr><name>monLevel</name></expr></argument>, <argument><expr><name>hierarchy</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-      <expr_stmt><expr><call><name><name>hLevels</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>uniqueName</name></expr></argument>, <argument><expr><name>level</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></if></if_stmt>
-  </block_content>}</block></function>
-</unit>

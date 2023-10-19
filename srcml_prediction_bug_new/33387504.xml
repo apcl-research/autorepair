@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40570096.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>onResize</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>width</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>height</name></decl></parameter>)</parameter_list> <block>{<block_content>
-    <if_stmt><if>if  <condition>(<expr><name>textVisible</name></expr>)</condition> <block>{<block_content>
-      <decl_stmt><decl><type><name>int</name></type> <name>textWidth</name> <init>= <expr><call><name><name>DOM</name><operator>.</operator><name>getElementPropertyInt</name></name><argument_list>(<argument><expr><name>textElement</name></expr></argument>, <argument><expr><literal type="string">"offsetWidth"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-      <decl_stmt><decl><type><name>int</name></type> <name>left</name> <init>= <expr><operator>(</operator><name>width</name> <operator>/</operator> <literal type="number">2</literal><operator>)</operator> <operator>-</operator> <operator>(</operator><name>textWidth</name> <operator>/</operator> <literal type="number">2</literal><operator>)</operator></expr></init></decl>;</decl_stmt>
-      <expr_stmt><expr><call><name><name>DOM</name><operator>.</operator><name>setStyleAttribute</name></name><argument_list>(<argument><expr><name>textElement</name></expr></argument>, <argument><expr><literal type="string">"left"</literal></expr></argument>, <argument><expr><name>left</name> <operator>+</operator> <literal type="string">"px"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></if></if_stmt>
-  </block_content>}</block></function>
-</unit>

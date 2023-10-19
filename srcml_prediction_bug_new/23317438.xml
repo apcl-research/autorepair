@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/9625963.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isTooWeak</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>nrOfPositiveExamples</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>nrOfPosClassifiedPositives</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>noise</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<if_stmt><if>if <condition>(<expr><name>noise</name> <operator>&lt;</operator> <literal type="number">0</literal> <operator>||</operator> <name>noise</name> <operator>&gt;</operator> <literal type="number">1</literal> <operator>||</operator> <name>nrOfPosClassifiedPositives</name> <operator>&lt;=</operator> <name>nrOfPositiveExamples</name> <operator>||</operator> <name>nrOfPositiveExamples</name> <operator>&lt;</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
-			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>()</argument_list></call></expr>;</throw>
-		</block_content>}</block></if></if_stmt>
-		<return>return <expr><operator>(</operator><name>noise</name> <operator>*</operator> <name>nrOfPositiveExamples</name><operator>)</operator> <operator>&lt;</operator> <operator>(</operator><name>nrOfPositiveExamples</name> <operator>-</operator> <name>nrOfPosClassifiedPositives</name><operator>)</operator></expr>;</return>
-	</block_content>}</block></function>
-</unit>

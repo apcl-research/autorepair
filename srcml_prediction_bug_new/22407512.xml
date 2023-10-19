@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51382529.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>onDefaultExecPathClick</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <decl_stmt><decl><type><name>Url</name></type> <name>oldBuildFile</name> <init>= <expr><operator>new</operator> <call><name>Url</name><argument_list>(<argument><expr><call><name>getBuildfileObject</name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name>setExecPath</name><argument_list>(<argument><expr><call><name><name>m_node</name><operator>.</operator><name>getDefaultExecPath</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name><name>m_lblBuildfile</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>FileUtils</name><operator>.</operator><name>norarlize</name></name><argument_list>(<argument><expr><call><name>getExecPathUrl</name><argument_list>()</argument_list></call>
-                <operator>.</operator><call><name>getRelativePath</name><argument_list>(<argument><expr><name>oldBuildFile</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>mergeIn</name><parameter_list>(<parameter><decl><type><name>Scenario</name></type> <name>newScenario</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>peerIndexNumberFilter</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>timeFilter</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<for>for <control>(<init><decl><type><name>ScenarioEvent</name></type> <name>scenarioEvent</name> <range>: <expr><name><name>newScenario</name><operator>.</operator><name>scenarioEvents</name></name></expr></range></decl></init>)</control><block type="pseudo"><block_content>  
-			<if_stmt><if>if <condition>(<expr><call><name><name>scenarioEvent</name><operator>.</operator><name>getExecutionTime</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <name>timeFilter</name>
-					<operator>&amp;&amp;</operator> <call><name><name>scenarioEvent</name><operator>.</operator><name>indexNumberMatches</name></name><argument_list>(<argument><expr><name>peerIndexNumberFilter</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
-				<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>scenarioEvents</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>scenarioEvent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-			</block_content>}</block></if></if_stmt></block_content></block></for>
-	</block_content>}</block></function>
-</unit>

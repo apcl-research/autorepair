@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26192705.java">	<comment type="block">/*
-	 * public void init() throws BusinessDelegateException { try {
-	 * this.activityManagerHome = (ActivityManagerHome 
-	 * ServiceLocatorBean.getCurrentInstance().getHome( "ejb/ActivityManager",
-	 * ActivityManagerHome.class); this.activityManager =
-	 * this.activityManagerHome.create(); } catch(Exception e){ throw new
-	 * BusinessDelegateException("create:", e); } } public EJBObject
-</comment></unit>

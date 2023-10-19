@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/49111796.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>initializeKeywords</name><parameter_list>()</parameter_list> <block>{<block_content>
-		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>keywords</name></name> <operator>=</operator> <operator>new</operator> <call><name><name>HashSet</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name><argument_list>(<argument><expr><operator>new</operator> <name><name>String</name><index>[]</index></name> <block>{
-				<expr><literal type="string">"select"</literal></expr>, <expr><literal type="string">"from"</literal></expr>, <expr><literal type="string">"where"</literal></expr>, <expr><literal type="string">"order"</literal></expr>, <expr><literal type="string">"by"</literal></expr>, <expr><literal type="string">"and"</literal></expr>, <expr><literal type="string">"or"</literal></expr>, <expr><literal type="string">"group"</literal></expr>,
-				<expr><literal type="string">"left"</literal></expr>, <expr><literal type="string">"on"</literal></expr>, <expr><literal type="string">"right"</literal></expr>, <expr><literal type="string">"in"</literal></expr>,<expr><literal type="string">"outer"</literal></expr> }</block></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-	</block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22352983.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>getCube</name><parameter_list>()</parameter_list> <block>{<block_content>
-    <comment type="line">// remove enclosing brackets, if there</comment>
-    <if_stmt><if>if <condition>(<expr><call><name><name>cube</name><operator>.</operator><name>charAt</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call> <operator>==</operator> <literal type="char">'['</literal> <operator>&amp;&amp;</operator> <call><name><name>cube</name><operator>.</operator><name>charAt</name></name><argument_list>(<argument><expr><call><name><name>cube</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call> <operator>==</operator> <literal type="char">' '</literal></expr>)</condition><block type="pseudo"><block_content>
-      <return>return <expr><call><name><name>cube</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><call><name><name>cube</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if>
-    <else>else<block type="pseudo"><block_content>
-      <return>return <expr><name>cube</name></expr>;</return></block_content></block></else></if_stmt>
-  </block_content>}</block></function>
-</unit>

@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44492724.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>enhance</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>sourceDir</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>targetDir</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
-        <decl_stmt><decl><type><name>Db4oFileInstrumentor</name></type> <name>instrument</name> <init>= <expr><operator>new</operator> <call><name>Db4oFileInstrumentor</name><argument_list>(<argument><expr><operator>new</operator> <name><name>BloatClassEdit</name><index>[]</index></name><block>{
-            <expr><operator>new</operator> <call><name>TranslateNQToSODAEdit</name><argument_list>()</argument_list></call></expr>,
-            <expr><operator>new</operator> <call><name>InjectTransparentActivationEdit</name><argument_list>()</argument_list></call></expr>}</block></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-        <expr_stmt><expr><call><name><name>instrument</name><operator>.</operator><name>enhance</name></name><argument_list>(<argument><expr><name>sourceDir</name></expr></argument>, <argument><expr><name>targetDir</name></expr></argument>, <argument><expr><operator>new</operator> <name><name>String</name><index>[]</index></name><block>{}</block></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19402983.java">	<comment type="line">//  public void openEditorInFocus() {</comment>
-	<comment type="line">//    m_CellEditor = m_Model.getCellEditor(m_FocusCol, m_FocusRow);</comment>
-	<comment type="line">//    if (m_CellEditor != null) {</comment>
-	<comment type="line">//      Rectangle r = getCellRect(m_FocusCol, m_FocusRow ;</comment>
-	<comment type="line">//      m_CellEditor.open(this, m_FocusCol, m_FocusRow, r);</comment>
-	<comment type="line">//    }</comment>
-	<comment type="line">//  }</comment>
-</unit>

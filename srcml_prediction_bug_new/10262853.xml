@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48142783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>updateNearestNeighbours</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <for>for <control>(<init><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>V</name></argument>&gt;</argument_list></name></type> <name>nn</name> <range>: <expr><name>nearestNeighbours</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>  
-            <expr_stmt><expr><call><name><name>nn</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></for>
-        </block_content>}</block></function>
-</unit>

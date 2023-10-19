@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36679996.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>initKeys</name><parameter_list>()</parameter_list> <block>{<block_content>
-    <expr_stmt><expr><call><name><name>inputManager</name><operator>.</operator><name>addMapping</name></name><argument_list>(<argument><expr><literal type="string">"Shoot"</literal></expr></argument>,
-      <argument><expr><operator>new</operator> <call><name>KeyTrigger</name><argument_list>(<argument><expr><name><name>KeyInput</name><operator>.</operator><name>KEY_SPACE</name></name></expr></argument>)</argument_list></call></expr></argument>, <comment type="line">// trigger 1: spacebar</comment>
-      <argument><expr><operator>new</operator> <call><name>MouseButtonTrigger</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>         <comment type="line">// trigger 2: left-button click</comment>
-    <expr_stmt><expr><call><name><name>inputManager</name><operator>.</operator><name>addListener</name></name><argument_list>(<argument><expr><name>actionListener</name></expr></argument>, <argument><expr><literal type="string">"Shoot"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-  </block_content>}</block></function>
-</unit>

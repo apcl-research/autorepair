@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26272483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testClear</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
-        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"testClear"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-        
-        <comment type="line">// Add your test code below by replacing the default call to fail.</comment>
-        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>resourceSet</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
-        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><literal type="string">"Cleared resource set, but still has elements"</literal></expr></argument>, <argument><expr><call><name><name>this</name><operator>.</operator><name>resourceSet</name><operator>.</operator><name>getSize</name></name><argument_list>(  <argument><expr><operator>==</operator> <literal type="number">0</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

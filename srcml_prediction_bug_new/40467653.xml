@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38189996.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>backspaceChar</name><parameter_list>()</parameter_list> <block>{<block_content>
-		<if_stmt><if>if<condition>(<expr><name>startSelect</name> <operator>!=</operator> <name>endSelect</name></expr>)</condition> <block>{<block_content>						<comment type="line">// if a couple of text is selected</comment>
-			<expr_stmt><expr><call><name>deleteSubstring</name><argument_list>(<argument><expr><name>startSelect</name></expr></argument>, <argument><expr><name>endSelect</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> 	<comment type="line">// delete substring function with range of selected text</comment>
-		</block_content>}</block></if> <if type="elseif">else if<condition>(<expr><name>cursorPos</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>						<comment type="line">// no selection and can't be at the beginning of the text</comment>
-			<expr_stmt><expr><call><name>deleteSubstring</name><argument_list>(<argument><expr><name>cursorPos</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><name>cursorPos</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>	<comment type="line">// delete one character to the left of cursor</comment>
-		</block_content>}</block></if></if_stmt>
-	</block_content>}</block></function>
-</unit>

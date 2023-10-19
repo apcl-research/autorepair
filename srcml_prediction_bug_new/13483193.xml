@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17502983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>finalize</name><parameter_list>(<parameter><decl><type><name>ExprInfo</name></type> <name>exprInfo</name></decl></parameter>)</parameter_list> <block>{<block_content>
-        <comment type="line">// We assume that all availDef for exprInfo are sufficiently.</comment>
-        <comment type="line">// Perform a perorder traversal of the sufficiently tree. Remember that</comment>
-        <comment type="line">// the root of the sufficiently tree is also the root of the CFG.</comment>
-        <expr_stmt><expr><call><name>finalizeVisit</name><argument_list>(<argument><expr><name>exprInfo</name></expr></argument>, <argument><expr><call><name><name>cfg</name><operator>.</operator><name>source</name></name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
-    </block_content>}</block></function>
-</unit>

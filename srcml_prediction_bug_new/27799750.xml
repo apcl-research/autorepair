@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>public</specifier> <name>int</name></type> <name>getDimensionUnitIndexAtPoint</name> <parameter_list>( <parameter><decl><type><name>Point</name></type> <name>point</name></decl></parameter> )</parameter_list> <block>{<block_content>
-    <if_stmt><if>if<condition>( <expr><call><name>isHorizontal</name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
-      <return>return <expr><call><name>getDimensionModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDimensionUnitIndexAtDistance</name><argument_list>( <argument><expr><name><name>point</name><operator>.</operator><name>x</name></name></expr></argument> )</argument_list></call></expr>;</return>
-    </block_content>}</block></if> <else>else <block>{<block_content>
-      <return>return <expr><call><name>getDimensionModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDimensionUnitIndexAtDistance</name><argument_list>( <argument><expr><name><name>point</name><operator>.</operator><name>y</name></name></expr></argument> )</argument_list></call></expr>;</return>
-    </block_content>}</block></else></if_stmt>
-  </block_content>}</block></function> <comment type="line">// getDimensionUnitIndexAtPoint(.. </comment>
-</unit>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26591783.java">   <function><type><specifier>public</specifier> <name>boolean</name></type> <name>getAutoCommit</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
-      <comment type="line">//throw new UnsupportedOperationException "Connection.getAutoCommit() unsupported");</comment>
-      <return>return <expr><literal type="boolean">false</literal></expr>;</return> <comment type="line">// at present this is just a read only driver: you can't do update/insert operations -&gt; it</comment>
-      				  <comment type="line">// makes no sense giving the chance to set auto commit, so this is always false</comment>
-   </block_content>}</block></function>
-</unit>

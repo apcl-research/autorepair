@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42392629.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>GetCellType</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>col</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<if_stmt><if>if <condition>(<expr><operator>!</operator><operator>(</operator><name>row</name> <operator>&gt;=</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <name>row</name> <operator>&lt;=</operator> <name>GridSize</name> <operator>&amp;&amp;</operator> <name>col</name> <operator>&gt;=</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <name>col</name> <operator>&lt;=</operator> <name>GridSize</name> <operator>)</operator></expr>)</condition><block>{<block_content>
-			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Row: "</literal> <operator>+</operator> <name>row</name> <operator>+</operator> <literal type="string">" Col: "</literal> <operator>+</operator> <name>col</name>
-					<operator>+</operator> <literal type="string">"are not valid coordinates for this board"</literal></expr></argument>)</argument_list></call></expr>;</throw>
-		</block_content>}</block></if></if_stmt>
-		<return>return <expr><name><name>Board</name><index>[<expr><name>row</name></expr>]</index><index>[<expr><name>col</name></expr>]</index></name><operator>.</operator><call><name>getCellType</name><argument_list>()</argument_list></call></expr>;</return>
-	</block_content>}</block></function>
-</unit>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14179996.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>getImportIncludeReference</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>fileContent</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>fromIndex</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>startSearchString</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>endSearchString</name></decl></parameter>)</parameter_list> <block>{<block_content>
-		<decl_stmt><decl><type><name>int</name></type> <name>toIndex</name> <init>= <expr><call><name><name>fileContent</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>endSearchString</name></expr></argument>, <argument><expr><name>fromIndex</name> <operator>+</operator> <call><name><name>startSearchString</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
-		<if_stmt><if>if <condition>(<expr><name>toIndex</name> <operator>&gt;</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
-			<return>return <expr><call><name><name>fileContent</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><name>fromIndex</name></expr></argument>, <argument><expr><name>toIndex</name></expr></argument>)</argument_list></call></expr>;</return>
-		 
-		<return>return <expr><literal type="null">null</literal></expr>;</return>
-	</block_content>}</block></if></if_stmt>
-</unit>

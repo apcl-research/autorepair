@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44662783.java">    <function><type><specifier>protected</specifier> <name>DateFormat</name></type> <name>getDateFormatter</name><parameter_list>()</parameter_list> <block>{<block_content>
-        <if_stmt><if>if <condition>(<expr><name>dateFormatter</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
-            <expr_stmt><expr><name>dateFormatter</name> <operator>=</operator> <operator>new</operator> <call><name>SimpleDateFormat</name><argument_list>(<argument><expr><call><name><name>Entry</name><operator>.</operator><name>getLastModifiedDateFormatter</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toPattern</name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
-            <expr_stmt><expr><call><name><name>dateFormatter</name><operator>.</operator><name>setTimeZone</name></name><argument_list>(<argument><expr><call><name><name>TimeZone</name><operator>.</operator><name>getTimeZone</name></name><argument_list>(<argument><expr><literal type="string">"GMT+0000"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//NOI18N</comment>
-        </block_content>}</block></if></if_stmt>
-        <return>return <expr><name>dateFormatter</name></expr>;</return>
-    </block_content>}</block></function>
-</unit>
