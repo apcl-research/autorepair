@@ -22,7 +22,7 @@ pip install -r requirements.txt
 
 
 ## Syntax tree generation
-After you download the dataset in our Hugginface dataset [repository](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the model file in model [repository](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in dataset in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
+After you download the dataset in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the model file in model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in dataset in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
 
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt.pt
@@ -48,7 +48,8 @@ Please download the checkpoint files named ```ckpt_base.pt``` in our Hugginface 
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/finetune_autorepair.py --outfilename=ckpt_base.pt
 ```
-## Code generation from syntax tree generation
+
+## Code generation from syntax tree
 
 ```
 python3 decoded_srcml.py 
@@ -84,5 +85,21 @@ python3 autorepair_base_fix_rate.py
 ```
 --reference_code_file: filename of the reference code
 --prediction_file: filename of the prediction code
+```
+## Dataset 
+
+We also release all of our raw datasets for the experiments in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and the scripts for compiling the raw data to ``bin`` files in this Github repo. Before running the command, please create three dir: ``pkls``, ``bins``, and ``tmp``. Then, you can simply run the following command to generate ``train.bin`` and ``val.bin``.
+
+```
+python3 data/autorepair/prepare_fc_raw.py
+```
+
+```
+--q90trainfids-file: filename of training function id
+--q90testfids-file: filename of test function id
+--q90valfids-file: filename of val function id
+--fundats-file: filename of function
+--train-fundats-file: filename for the function with the syntax error for training
+--val-fundats-file: filename for the function with the syntax error for val
 ```
 
