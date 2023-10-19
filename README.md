@@ -14,7 +14,7 @@ This repository contains all the code and detailed instructions for a tool to ge
 - [To-do list](#to-do-list)
 - [Zero-shor syntax trees generation](#zero-shot-syntax-tree-generation)
 - [Finetuning](#finetuning)
-- [Inference](#inference)
+- [Inference on finetuning model](#inference-on-finetuning-model)
 - [Metrics](#metrics)
 - [Dataset](#dataset)
 - [Pretraining](#pretraining)
@@ -57,6 +57,8 @@ Please download the checkpoint files named ```ckpt_base.pt``` in our Hugginface 
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/finetune_autorepair.py --outfilename=ckpt_base.pt
 ```
+
+## Inference on finetuning model
 
 ## Code generation from syntax tree
 
