@@ -1,8 +1,12 @@
 import pickle
 
 
-references = pickle.load(open("data/autorepair/test_bug_code.pkl", "rb"))
-input_file = "autorepair_predictions/predict_autorepair_srcml.pkl"
+reference_code_file = "data/autorepair/test_bug_code.pkl"
+prediction_file = "autorepair_predictions/predict_autorepair_srcml.pkl"
+exec(open('configurator.py').read()) # overrides from command line or config file
+
+references = pickle.load(open(reference_code_file, "rb"))
+input_file = prediction_file
 bug_type_count_dict = {"parentheses_left":1, "parentheses_right": 1, "curly_left":1, "curly_right":1, "braket_left":1, "braket_right":1, "semicolon":1}
 fixed_bug_type_count_dict = {"parentheses_left":0, "parentheses_right": 0, "curly_left":0, "curly_right":0, "braket_left":0, "braket_right":0, "semicolon":0}
 preds = pickle.load(open(input_file, "rb"))
