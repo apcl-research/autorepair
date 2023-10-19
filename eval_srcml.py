@@ -7,6 +7,14 @@ import javalang
 import diff_match_patch as dmp_module
 import statistics
 srcml_dir = 'srcml_predictions'
+q90codefile = '/nublar/datasets/jm52m/q90fundats-j1.pkl'
+q90testsrcmlfile = '/nublar/datasets/jm52m/q90testfids_srcml.pkl'
+q90testfidsfile = '/nublar/datasets/jm52m/q90testfids.pkl'
+q90decodedcodefile = 'decoded_code_new.pkl'
+
+
+exec(open('configurator.py').read()) # overrides from command line or config file
+
 
 def detect_syntax_errors(java_code):
     try:
@@ -49,10 +57,13 @@ def highlight_differences(text1, text2):
 
     return highlighted_text
 
-q90code = pickle.load(open('/nublar/datasets/jm52m/q90fundats-j1.pkl', 'rb'))
-q90testsrcml = pickle.load(open('/nublar/datasets/jm52m/q90testfids_srcml.pkl', 'rb'))
-q90testfids = pickle.load(open('/nublar/datasets/jm52m/q90testfids.pkl', 'rb'))
-q90decodedcode = pickle.load(open(f'{srcml_dir}/decoded_code_new.pkl', "rb"))
+
+
+
+q90code = pickle.load(open(q90codefile, 'rb'))
+q90testsrcml = pickle.load(open(q90testsrcmlfile, 'rb'))
+q90testfids = pickle.load(open(q90testfidsfile, 'rb'))
+q90decodedcode = pickle.load(open(f'{srcml_dir}/{q90decodedcodefile}', "rb"))
 results = dict()
 
 se = 0 # count syntax errors
@@ -95,13 +106,7 @@ for fid in tqdm(q90testfids):
   
     if err != None:
         se += 1
-  #  print(f'{ref}\n{err.description}')
-    #try: 
-    #    decoded_pred = subprocess.run(['srcml', f'{srcml_dir}/{fid}.xml'], timeout=5, stdout=subprocess.PIPE, stderr=subprocess.PIPE).stdout.decode('utf-8')
-    #except:
-    #    results[fid]= -2
-    #    decoded_code_dict[fid] = "error"
-    #    continue
+    
     decoded_code = q90decodedcode[fid]
     if(decoded_code == "error"):
         results[fid] = -2
@@ -109,10 +114,6 @@ for fid in tqdm(q90testfids):
     elif(decoded_code =="none srcml"):
         results[fid] = -1
         continue
-    #if "Error" in decoded_pred:
-    #    results[fid] = -2
-    #print('-2')
-        #continue
   
     srcml_edit_distance = levenshteinDistance(srcml_ref, srcml_pred)
     split_decoded_code = list(decoded_code)
@@ -133,19 +134,10 @@ for fid in tqdm(q90testfids):
     elif(srcml_edit_distance == 0):
         count_perfect_srcml += 1
     
-  # uncommment the following to show the differences between the reference and decoded predicted code
-  # the highlight_differences() method shows blue for the correct bit and red for the incorrect bit, parts that are the same are in the default color
-    #if d > 0:
-    #    print(ref)
-    #    print(decoded_pred)
-    #    print(highlight_differences(ref, decoded_pred))
-    #quit()
 
     results[fid] = int(d)
     all_srcml_edit_distance += int(srcml_edit_distance) 
-  #print(f'{d}')
 
-#pickle.dump(decoded_code_dict, open(f'{srcml_dir}/decoded_code.pkl', 'wb'))
 
 n = 0
 c = 0
@@ -194,21 +186,4 @@ print(f'number of samples without srcml prediction:\t{e1}')            # errors 
 print(f'number of invalid srcml prediction:\t{e2}')            # errors parsing srcml (invalid srcml prediction)
 print(f'number of samples with syntax errors in reference code:\t{se}')            # number of fids with syntax errors in reference code
 
-#def generate_histogram(data, bins):
-#  plt.hist(data, bins=bins)
-#  plt.xlabel('values')
-#  plt.ylabel('frequency')
-#  plt.title('histogram')
-#  plt.show()
-
-#toplot = list()
-
-#for fid in results:
-#  if results[fid] > 10:
-#    results[fid] = 10
-
-#  if results[fid] >= 0:
-#    toplot.append(results[fid])
-
-#generate_histogram(toplot, 10)
 

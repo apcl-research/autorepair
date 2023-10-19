@@ -24,6 +24,8 @@ dtype = 'bfloat16' # 'float32' or 'bfloat16' or 'float16'
 use_srcml = False
 prediction_outdir = 'srcml_predictions'
 checkpoint_filename = 'ckpt.pt'
+q90codefile = '/nublar/datasets/jm52m/q90fundats-j1.pkl'
+q90codetestfidfile = '/nublar/datasets/jm52m/q90testfids.pkl'
 compile = False # use PyTorch 2.0 to compile the model to be faster
 exec(open('configurator.py').read()) # overrides from command line or config file
 # -----------------------------------------------------------------------------
@@ -85,8 +87,8 @@ else:
 
 #srcml = pickle.load(open('/nublar/datasets/jm52m/q90testfids_srcml.pkl', 'rb'))
 
-q90code = pickle.load(open('/nublar/datasets/jm52m/q90fundats-j1.pkl', 'rb'))
-q90testfids = pickle.load(open('/nublar/datasets/jm52m/q90testfids.pkl', 'rb'))
+q90code = pickle.load(open(q90codefile, 'rb'))
+q90testfids = pickle.load(open(q90codetestfidfile, 'rb'))
 
 
 for fid in tqdm.tqdm(q90testfids):
@@ -113,8 +115,6 @@ for fid in tqdm.tqdm(q90testfids):
                     ret = ret.strip()
                     ret = f'{ret}\n'
                     pf = ret
-                    #print(decode(y[0].tolist()))
-                    #print('---------------')
                 except:
                     pf = 'none'
 
@@ -124,7 +124,6 @@ for fid in tqdm.tqdm(q90testfids):
                 outf.flush()
                 outf.close()
 
-                #pickle.dump(pf, 'srcml_predictions
 
 
 #pf.close()
