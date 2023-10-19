@@ -12,7 +12,8 @@ This repository contains all the code and detailed instructions for a tool to ge
 
 ## Quick link
 - [To-do list](#to-do-list)
-- [Zero-shor syntax trees generation](#zero-shot-syntax-tree-generation)
+- [Zero-shot syntax trees generation](#zero-shot-syntax-tree-generation)
+- [Generate code from syntax tree](#Generate-code-from-syntax-tree)
 - [Finetuning](#finetuning)
 - [Metrics](#metrics)
 - [Dataset](#dataset)
