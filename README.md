@@ -16,8 +16,8 @@ To set up your local environment, run the following command. We recommend the us
 pip install -r requirements.txt
 ``` 
 
-- If you want to generate the syntax trees from source code with our models, please see [Syntax Trees Generation](#syntax-tree-generation).
-- If you want to finetune a model to a the syntatic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
+- If you want to generate the syntax trees from source code with our models, please see [Syntax trees generation](#syntax-tree-generation).
+- If you want to finetune a model to fix the syntatic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
 - If you want to recompile our datasets, please see [Dataset](#dataset)
 
 
@@ -35,7 +35,19 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time t
 --q90codefile: file name of the function
 --q90codetestfidfile: file name of the funtion id
 ```
+## Finetuning
+These steps will show you how to fine-tune the model to fix the syntatic bug.
 
+### Step 1: Download the finetuning dataset
+Please download ```bin.tar.gz``` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and put ```train.bin``` and ```val.bin``` to the same dir as ```--dataset``` in ```config/finetune_autorepair.py```, which is ```data/autorepair``` for now.
+
+### Step 2: Download the models for finetuning
+Please download the checkpoint files named ```ckpt_base.pt``` in our Hugginface [repo](https://huggingface.co/apcl/autorepair/tree/main) for finetuning and put the checkpoint to the same dir as ```--out_dir``` in ```config/finetune_autorepair.py```.
+
+### Step 3: Finetuning model
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/finetune_autorepair.py --outfilename=ckpt_base.pt
+```
 ## Code generation from syntax tree generation
 
 ```
@@ -51,6 +63,8 @@ python3 decoded_srcml.py
 
 ## Metrics
 We provide scripts for calculating the metrics to evaluate the srcml and bug fixing rate bellow. 
+
+### Merics for evaluating syntax tree
 ```
 python3 eval_srcml.py
 ```
@@ -61,3 +75,14 @@ python3 eval_srcml.py
 --q90testfidsfile: function id file
 --q90decodedcodefile: decoded code file
 ```
+
+### Merics for evaluatig finetuning bug fixing rate
+
+```
+python3 autorepair_base_fix_rate.py
+```
+```
+--reference_code_file: filename of the reference code
+--prediction_file: filename of the prediction code
+```
+
