@@ -49,3 +49,15 @@ python3 decoded_srcml.py
 --decoded_code_file: filename of decoded code
 ```
 
+## Metrics
+We provide scripts for calculating the metrics to evaluate the srcml and bug fixing rate bellow. 
+```
+python3 eval_srcml.py
+```
+```
+--srcml_dir: syntax tree prediction directory
+--q90codefile: function file
+--q90testsrcmlfile: reference syntax tree file
+--q90testfidsfile: function id file
+--q90decodedcodefile: decoded code file
+```
