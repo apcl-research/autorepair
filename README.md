@@ -10,22 +10,31 @@ Presented by:
 
 This repository contains all the code and detailed instructions for a tool to generate lossless syntax trees from source code using a language mode and repair syntax errors in our HuggingFace Automatic Program Comprehension Lab hub.
 
+## Quick link
+- [To-do list](#to-do-list)
+- [Zero-shor syntax trees generation](#zero-shot-syntax-tree-generation)
+- [Finetuning](#finetuning)
+- [Inference](#inference)
+- [Metrics](#metrics)
+- [Dataset](#dataset)
+- [Pretraining](#pretraining)
+
 ## To-do list
 To set up your local environment, run the following command. We recommend the use of a virtual environment for running the experiments.
 ```
 pip install -r requirements.txt
 ``` 
 
-- If you want to generate the syntax trees from source code with our models, please see [Syntax trees generation](#syntax-tree-generation).
+- If you want to generate the syntax trees from source code with our models, please see [Zero-shor syntax trees generation](#zero-shot-syntax-tree-generation).
 - If you want to finetune a model to fix the syntatic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
 - If you want to recompile our datasets, please see [Dataset](#dataset)
 
 
-## Syntax tree generation
-After you download the dataset in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the model file in model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in dataset in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
+## Zero-shot syntax tree generation
+After you download the dataset in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the ``ckpt_base.pt`` file in the model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in dataset in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
 
 ```
-CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt.pt
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt_base.pt
 ```
 
 ```
@@ -36,7 +45,7 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time t
 --q90codetestfidfile: file name of the funtion id
 ```
 ## Finetuning
-These steps will show you how to fine-tune the model to fix the syntatic bug.
+These steps will show you how to fine-tune the model to fix the syntax errors.
 
 ### Step 1: Download the finetuning dataset
 Please download ```bin.tar.gz``` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and put ```train.bin``` and ```val.bin``` to the same dir as ```--dataset``` in ```config/finetune_autorepair.py```, which is ```data/autorepair``` for now.
@@ -86,6 +95,18 @@ python3 autorepair_base_fix_rate.py
 --reference_code_file: filename of the reference code
 --prediction_file: filename of the prediction code
 ```
+
+### Merics for evaluatig zero-shot bug fixing rate
+```
+python3 srcml_bug_fix_rate.py
+```
+```
+srcml_dir: directory of syntax tree files
+q90testfidsfile: filename of funtion id
+bug_code_file: filename of the funtions with syntax errors
+q90codefile: filename of reference code
+```
+
 ## Dataset 
 
 We also release all of our raw datasets for the experiments in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and the scripts for compiling the raw data to ``bin`` files in this Github repo. Before running the command, please create three dir: ``pkls``, ``bins``, and ``tmp``. Then, you can simply run the following command to generate ``train.bin`` and ``val.bin``.
