@@ -21,4 +21,31 @@ pip install -r requirements.txt
 - If you want to recompile our datasets, please see [Dataset](#dataset)
 
 
-## Syntax Tree Generation
+## Syntax tree generation
+After you download the dataset in our Hugginface dataset [repository](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the model file in model [repository](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in dataset in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
+
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt.pt
+```
+
+```
+--out_dir: directory of the model for inference
+--prediction_outdir: name of the directory of the prediction file
+--checkpoint_filename: the file name of the inference model
+--q90codefile: file name of the function
+--q90codetestfidfile: file name of the funtion id
+```
+
+## Code generation from syntax tree generation
+
+```
+python3 decoded_srcml.py 
+```
+
+```
+--srcml_dir: directory of syntax tree files
+--q90codefile: function files
+--q90testfidfile: filename of the function id
+--decoded_code_file: filename of decoded code
+```
+
