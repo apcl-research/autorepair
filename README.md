@@ -45,20 +45,23 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time t
 --q90codetestfidfile: file name of the funtion id
 ```
 ## Finetuning
-These steps will show you how to fine-tune the model to fix the syntax errors.
+These steps will show you how to fine-tune the model to fix the syntax errors and make the inference by using the model that you finetune
 
 ### Step 1: Download the finetuning dataset
 Please download ```bin.tar.gz``` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and put ```train.bin``` and ```val.bin``` to the same dir as ```--dataset``` in ```config/finetune_autorepair.py```, which is ```data/autorepair``` for now.
 
 ### Step 2: Download the models for finetuning
-Please download the checkpoint files named ```ckpt_base.pt``` in our Hugginface [repo](https://huggingface.co/apcl/autorepair/tree/main) for finetuning and put the checkpoint to the same dir as ```--out_dir``` in ```config/finetune_autorepair.py```.
+Please download the checkpoint files named ```ckpt.pt``` in our Hugginface [repo](https://huggingface.co/apcl/autorepair/tree/main) for finetuning and put the checkpoint to the same dir as ```--out_dir``` in ```config/finetune_autorepair.py```.
 
 ### Step 3: Finetuning model
 ```
-CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/finetune_autorepair.py --outfilename=ckpt_base.pt
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/finetune_autorepair.py --outfilename=ckpt.pt
 ```
 
-## Inference on finetuning model
+## Step 4:Inference
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1 sample_autorepair.py config/finetune_autorepair.py --prediction_filename=predict_autorepair_srcml.pkl --outfilename=ckpt.pt
+```
 
 ## Code generation from syntax tree
 
