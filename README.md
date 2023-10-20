@@ -40,9 +40,9 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time t
 ```
 --out_dir: directory of the model for inference
 --prediction_outdir: name of the directory of the prediction file
---checkpoint_filename: the file name of the inference model
---q90codefile: file name of the function
---q90codetestfidfile: file name of the funtion id
+--checkpoint_filename: the filename of the inference model
+--q90codefile: filename of the function
+--q90codetestfidfile: filename of the funtion id
 ```
 ## Finetuning
 These steps will show you how to fine-tune the model to fix the syntax errors and make the inference by using the model that you finetune
