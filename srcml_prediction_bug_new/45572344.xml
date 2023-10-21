@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31990915.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addTab</name><parameter_list>(<parameter><decl><type><name>PlayerList</name></type> <name>list</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>PlayerTable</name></type> <name>newTable</name> <init>= <expr><operator>new</operator> <call><name>PlayerTable</name><argument_list>(<argument><expr><name>manager</name></expr></argument>)</argument_list></call></expr></init></decl> 
+		<init>= <expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>(<argument><expr><name>newTable</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>allPlayerTables</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>newTable</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tpPanel</name><operator>.</operator><name>addTab</name></name><argument_list>(<argument><expr><call><name><name>list</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>pane</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tpPanel</name><operator>.</operator><name>setTabComponentAt</name></name><argument_list>(<argument><expr><call><name><name>tpPanel</name><operator>.</operator><name>getTabCount</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><operator>new</operator> <call><name>ButtonTabComponent</name><argument_list>(<argument><expr><name>tpPanel</name></expr></argument>, <argument><expr><name>manager</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	</block_content>}</block></function>
+</unit>

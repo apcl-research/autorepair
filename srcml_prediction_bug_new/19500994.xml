@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19510961.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>verify</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name><name>Entry</name><argument_list type="generic">&lt;<argument><name>FreeIdentifier</name></argument>, <argument><name>Expression</name></argument>&gt;</argument_list></name></type> <name>entry</name> <range>: <expr><name><name>identSubst</name><operator>.</operator><name>entrySet</name></name></expr></range></decl></init> )</control> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>FreeIdentifier</name></type> <name>ident</name> <init>= <expr><call><name><name>entry</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>Type</name></type> <name>newType</name> <init>= <expr><call><name><name>ident</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>specialize</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>Expression</name></type> <name>value</name> <init>= <expr><call><name><name>entry</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>value</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>newType</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Incompatible types for "</literal>
+						<operator>+</operator> <name>ident</name></expr></argument>)</argument_list></call></expr>;</throw>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

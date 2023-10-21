@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35289996.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>render</name><parameter_list>(<parameter><decl><type><name>float</name></type> <name>interpolation</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	<comment type="line">// Render the GameTaskQueue</comment>
+    	<expr_stmt><expr><call><name><name>GameTaskQueueManager</name><operator>.</operator><name>getManager</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getQueue</name><argument_list>(<argument><expr><name><name>GameTaskQueue</name><operator>.</operator><name>RENDER</name></name></expr></argument>)</argument_list></call><operator>.</operator><call><name>execute</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    	
+        <comment type="line">// Clear the screen</comment>
+        <expr_stmt><expr><call><name><name>display</name><operator>.</operator><name>getRenderer</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>clearBuffers</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">//display.getRenderer().draw(scene) </comment>
+        <comment type="block" format="javadoc">/** Have the PassManager render. */</comment>
+        <expr_stmt><expr><call><name><name>passManager</name><operator>.</operator><name>renderPasses</name></name><argument_list>(<argument><expr><call><name><name>display</name><operator>.</operator><name>getRenderer</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

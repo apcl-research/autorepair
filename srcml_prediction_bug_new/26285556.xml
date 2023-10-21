@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19078981.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>createSampleLayout</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
+        <expr_stmt><expr><name>testDimension</name> <operator>=</operator> <operator>new</operator> <call><name>LinearDimension</name><argument_list>(<argument><expr><literal type="number">10</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>testPosition1</name><operator>.</operator><name>setStartSeparation</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>testPosition1</name><operator>.</operator><name>setStopSeparation</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>testPosition2</name><operator>.</operator><name>setStartSeparation</name></name><argument_list>(<argument><expr><literal type="number">3</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>testPosition2</name><operator>.</operator><name>setStopSeparation</name></name><argument_list>(<argument><expr><literal type="number">3</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>testPosition3</name><operator>.</operator><name>setStartSeparation</name></name><argument_list>(<argument><expr><literal type="number">5</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>testPosition3</name><operator>.</operator><name>setStopSeparation</name></name><argument_list>(<argument><expr><literal type="number">7</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>testDimension</name><operator>.</operator><name>addPosition</name></name><argument_list>(<argument><expr><name>testPosition1</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>testDimension</name><operator>.</operator><name>addPosition</name></name><argument_list>(<argument><expr><name>testPosition2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>testDimension</name><operator>.</operator><name>addPosition</name></name><argument_list>(<argument><expr><name>testPosition3</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19242983.java">        <function><type><specifier>private</specifier> <name>Identifier</name></type> <name>reconcileIdentifier</name><parameter_list>(<parameter><decl><type><name>Identifier</name></type> <name>authority</name></decl></parameter>, <parameter><decl><type><name>IConnectionDescription</name></type> <name>connection</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Identifier</name></argument>&gt;</argument_list></name></type> <name>identifiers</name> <init>= <expr><call><name><name>connection</name><operator>.</operator><name>getAllIdentifiersByType</name></name> <argument_list>(<argument><expr><literal type="string">"domain"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <for>for <control>(<init><decl><type><name>Identifier</name></type> <name>identifier</name> <range>: <expr><name>identifiers</name></expr></range></decl></init>)</control> <block>{<block_content>
+                <if_stmt><if>if <condition>( <expr><call><name><name>identifier</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>authority</name></expr></argument>)</argument_list></call></expr> )</condition> <block>{<block_content>
+                    <return>return <expr><name>identifier</name></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></for>
+            <comment type="line">//no identifier is found, just return the orinigal authority</comment>
+            <return>return <expr><name>authority</name></expr>;</return>
+        </block_content>}</block></function>
+</unit>

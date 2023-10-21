@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31826891.java"><function><type><specifier>public</specifier> <name>void</name></type> <name>setCapture</name> <parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>capture</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><call><name>checkWidget</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+	<if_stmt><if>if <condition>(<expr><name>capture</name></expr>)</condition> <block>{<block_content>
+	  <expr_stmt><expr><name><name>Utils</name><operator>.</operator><name>capturedControl</name></name> <operator>=</operator> <name>this</name></expr>;</expr_stmt>
+	</block_content>}</block></if> <else>else <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name><name>Utils</name><operator>.</operator><name>capturedControl</name></name> <operator>==</operator> <name>this</name></expr>)</condition> <block>{<block_content>
+		  <expr_stmt><expr><name><name>Utils</name><operator>.</operator><name>capturedControl</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></else></if_stmt>
+<comment type="line">//	if  capture) {</comment>
+<comment type="line">//		OS.SetCapture (handle);</comment>
+<comment type="line">//	} else {</comment>
+<comment type="line">//		if (OS.GetCapture () == handle) {</comment>
+<comment type="line">//			OS.ReleaseCapture ();</comment>
+<comment type="line">//		}</comment>
+<comment type="line">//	}</comment>
+</block_content>}</block></function>
+</unit>

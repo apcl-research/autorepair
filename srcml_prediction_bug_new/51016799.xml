@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37452915.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getPsimiTerm</name><parameter_list>(<parameter><decl><type><name>XrefType</name></type> <name>xref</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>xref</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name>isPSIMIRef</name><argument_list>(<argument><expr><call><name><name>xref</name><operator>.</operator><name>getPrimaryRef</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>xref</name><operator>.</operator><name>getPrimaryRef</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getId</name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <for>for <control>(<init><decl><type><name>DbReferenceType</name></type> <name>ref</name> <range>: <expr><call><name><name>xref</name><operator>.</operator><name>getSecondaryRefList</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><call><name>isPSIMIRef</name><argument_list>(<argument><expr><name>ref</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <return>return <expr><call><name><name>ref</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr> 
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></for>
+        </block_content>}</block></else></if_stmt>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

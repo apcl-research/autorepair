@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18440062.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>clearUserMetadata</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// Copy keys into array to avoid concurrent modification exceptions</comment>
+		<comment type="line">// if any PropertyChangeListeners should modify user metadata during</comment>
+		<comment type="line">// clear operation.</comment>
+		<decl_stmt><decl><type><specifier>final</specifier> <name><name>Object</name><index>[]</index></name></type> <name>keys</name> <init>= <expr><call><name><name>userMetadata</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toArray</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name><name>keys</name><operator>.</operator><name>length</name></name> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</init><condition><expr><name>i</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>;</condition><incr><expr><name>i</name><operator>--</operator></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>Object</name></type> <name>old</name> <init>= <expr><call><name><name>userMetadata</name><operator>.</operator><name>remove keys</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><name>old</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name>firePropertyChange</name><argument_list>(<argument><expr><operator>(</operator><name>String</name><operator>)</operator><name><name>keys</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>, <argument><expr><name>old</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

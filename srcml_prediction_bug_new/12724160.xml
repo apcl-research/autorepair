@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19564891.java"><function><type><specifier>private</specifier> <name>boolean</name></type> <name>xforEachCoordinate</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name><name>cern</name><operator>.</operator><name>colt</name><operator>.</operator><name>function</name><operator>.</operator><name>IntIntProcedure</name></name></type> <name>procedure</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<for>for <control>(<init><decl><type><name>int</name></type> <name>column</name><init>=<expr><name>columns</name></expr></init></decl>;</init> <condition><expr><operator>--</operator><name>column</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>;</condition><incr/>)</control> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>slice</name><init>=<expr><name>slices</name></expr></init></decl>;</init> <condition><expr><operator>--</operator><name>slice</name> <operator>&gt;=</operator><literal type="number">0</literal></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<for>for <control>(<init><decl><type><name>int</name></type> <name>row</name><init>=<expr><name>rows</name></expr></init></decl>;</init> <condition><expr><operator>--</operator><name>row</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>;</condition><incr/>)</control> <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>procedure</name><operator>.</operator><name>apply</name></name><argument_list>(<argument><expr><name>slice</name></expr></argument>,<argument><expr><name>row</name></expr></argument>,<argument><expr><name>column</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt>
+			</block_content>}</block></for>
+		</block_content>}</block></for>
+	</block_content>}</block></for>
+	<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+ 
+</block_content>}</block></function>
+</unit>

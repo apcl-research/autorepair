@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19242983.java">    <function><type><specifier>protected</specifier> <name>BraceType</name></type> <name>extractBraceType</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>articleLink</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>articleLink</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><call><name><name>Braces</name><operator>.</operator><name>INTRO_DEFAULT</name><operator>.</operator><name>getSequence</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name><name>BraceType</name><operator>.</operator><name>DEFAULT</name></name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>articleLink</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><call><name><name>Braces</name><operator>.</operator><name>INTRO_CURLY</name><operator>.</operator><name>getSequence</name></name> <argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name><name>BraceType</name><operator>.</operator><name>CURLY</name></name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

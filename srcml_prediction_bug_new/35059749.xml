@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22309983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>selectRow</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// When a row (other than the first one, which is used as a header) is</comment>
+		<comment type="line">// selected, display its associated MailItem.</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>elementIndex</name> <init>= <expr><name>startIndex</name> <operator>+</operator> <name>row</name></expr></init></decl>;</decl_stmt>
+	
+		<expr_stmt><expr><call><name>styleRow</name><argument_list>(<argument><expr><name>selectedRow</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>( <expr><name>row</name> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal> <operator>&amp;&amp;</operator> <name>elementIndex</name> <operator>&lt;</operator> <call><name>getListCount</name><argument_list>()</argument_list></call></expr>   )</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>styleRow</name><argument_list>(<argument><expr><name>row</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>selectedRow</name> <operator>=</operator> <name>row</name></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<else>else<block type="pseudo"><block_content>
+			<expr_stmt><expr><name>selectedRow</name> <operator>=</operator> <operator>-</operator><literal type="number">1</literal></expr>;</expr_stmt></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

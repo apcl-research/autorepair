@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579963.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addToTmpToFix</name><parameter_list>(<parameter><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>BWRel</name></argument>&gt;</argument_list></name></type> <name>rels</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>dist</name></decl></parameter>, <parameter><decl><type><name>BWNode</name></type> <name>exclude</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<while>while <condition>(<expr><call><name><name>rels</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>BWRel</name></type> <name>r</name> <init>= <expr><call><name><name>rels</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>r</name><operator>.</operator><name>defreeze</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name>BWNode</name></type> <name>other</name> <init>= <expr><call><name><name>r</name><operator>.</operator><name>getOtherNode</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>other</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>exclude</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>other</name><operator>.</operator><name>setDistance</name></name><argument_list>(<argument><expr><name>dist</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>getTmpToFixSet</name><argument_list>()</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><name>other</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			
+			<if_stmt><if>if <condition>(<expr><call><name><name>other</name><operator>.</operator><name>isReached</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+				<expr_stmt><expr><call><name><name>other</name><operator>.</operator><name>calculateBWProCapite</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

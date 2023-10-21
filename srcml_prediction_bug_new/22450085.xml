@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13392796.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>globalSearchForCycles</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>Node</name></argument>&gt;</argument_list></name></type> <name>itAllNodes</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>globNodes</name><operator>.</operator><name>getAllNodesIterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while <condition>(<expr><call><name><name>itAllNodes</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>Node</name></type> <name>currNode</name> <init>= <expr><call><name><name>itAllNodes</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>this</name><operator>.</operator><name>visited</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>currNode</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name>searchForCyclesFrom</name><argument_list>(<argument><expr><name>currNode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <if_stmt><if>if <condition>(<expr><call><name>cycleFound</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <break>break;</break>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></while>
+     
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28139996.java">	<function><type><specifier>public</specifier> <name>IReportConsole</name></type> <name>getReportConsole</name><parameter_list>()</parameter_list> <block>{<block_content>
+	    <if_stmt><if>if <condition>(<expr><name>_consoleAppender</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	      <try>try <block>{<block_content>
+	        <decl_stmt><decl><type><name><name>IConfigurationElement</name><index>[]</index></name></type> <name>consoleProvider</name> <init>= <expr><call><name><name>ExtensionPointHelper</name><operator>.</operator><name>getConfigurationElements</name></name><argument_list>(<argument><expr><name>PLUGIN_ID</name></expr></argument>, <argument><expr><name>CONSOLE_EXTENSION_ID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	        <for>for <control>(<init><decl><type><name>IConfigurationElement</name></type> <name>configurationElement</name> <range>: <expr><name>consoleProvider</name></expr></range></decl></init>)</control> <block>{<block_content>
+	          <expr_stmt><expr><name>_consoleAppender</name> <operator>=</operator> <operator>(</operator><name>IReportConsole</name><operator>)</operator> <call><name><name>ExtensionPointHelper</name><operator>.</operator><name>createInstance</name></name><argument_list>(<argument><expr><name>configurationElement</name></expr></argument>, <argument><expr><name><name>ExtensionPointHelper</name><operator>.</operator><name>ATT_CLASS</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	        </block_content>}</block></for>
+	      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	        <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+	      </block_content>}</block></catch></try>
+	    </block_content>}</block></if></if_stmt>
+	    <return>return <expr><name>_consoleAppender</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

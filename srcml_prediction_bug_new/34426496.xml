@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13642983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setFocusNode</name><parameter_list>(<parameter><decl><type><name>SWGTreeNode</name></type> <name>n</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// this.userObject is ONLY used while creating the tree, the node is</comment>
+        <comment type="line">// invisible after that and the member should not be used</comment>
+        <if_stmt><if>if <condition>(<expr><call><name>focusedNode</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal> <operator>||</operator> <name><name>this</name><operator>.</operator><name>userObject</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>userObject</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>n</name><operator>.</operator><name>getUserObject</name></name></expr></argument> )</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>focusedNode</name><argument_list>(<argument><expr><name>n</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

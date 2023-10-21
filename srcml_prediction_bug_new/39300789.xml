@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482783.java">    <function><type><specifier>public</specifier> <name>AGVRobot</name></type> <name>buildAGVRobot</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>checkBuilderState</name><argument_list>( ;</argument_list></call></expr>
+        <expr><name>BoundingBox</name> <name>box</name> <operator>=</operator> <call><name>buildBoundingBox</name><argument_list>()</argument_list></call></expr>;
+        <expr><name>AGVRobot</name> <name>theAGVRobot</name> <operator>=</operator> <operator>new</operator> <call><name>AGVRobot</name><argument_list>(<argument><expr><call><name>getId</name><argument_list>()</argument_list></call></expr></argument>,<argument><expr><call><name>getPosition</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>box</name></expr></argument>)</argument_list></call></expr>;
+        <expr><call><name><name>theAGVRobot</name><operator>.</operator><name>setSpeedPerTimeUnit</name></name><argument_list>(<argument><expr><call><name>getSpeedPerTimeUnit</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;
+        <for>for <control>(<init><decl><type><name>Module</name></type> <name>module</name> <range>: <expr><call><name>getModules</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>theAGVRobot</name><operator>.</operator><name>addModule</name></name><argument_list>(<argument><expr><name>module</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt/></block_content></block></for>}</block></expr></expr_stmt>
+        <expr_stmt><expr><call><name>reset</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>theAGVRobot</name></expr>;</return>
+    }
+</unit>

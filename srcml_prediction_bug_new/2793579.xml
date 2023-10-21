@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40352983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>renderHeader</name><parameter_list>(<parameter><decl><type><name>H</name></type> <name>headerModel</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name>isHeaderRendering</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>defferedSetHeaderModelCallback</name> <operator>=</operator> <operator>new</operator> <call><name>DefferedSetHeaderModelCallback</name><argument_list>(<argument><expr><name>headerModel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>cancelRendering</name><argument_list>(<argument><expr><name>headerRenderer</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>headerModel</name></name> <operator>=</operator> <name>headerModel</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>headerTableRenderingListeners</name><operator>.</operator><name>fireOnStart</name></name><argument_list>(<argument><expr><name>headerModel</name></expr></argument>, <argument><expr><name>headerRenderer</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>isHeaderRendering</name> <operator>=</operator> <call><name>render</name><argument_list>(<argument><expr><name>headerRenderer</name></expr></argument>, <argument><expr><name>headerModel</name></expr></argument>, <argument><expr><name>headerDeferredRendererCallback</name></expr></argument>, <argument><expr><name>isHeaderRendering</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><name>isHeaderRendering</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>headerTableRenderingListeners</name><operator>.</operator><name>fireOnStop</name></name><argument_list>(<argument><expr><name>headerModel</name></expr></argument>, <argument><expr><name>headerRenderer</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></else></if_stmt>
+	 
+</unit>

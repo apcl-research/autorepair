@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18452996.java">	<function><type><specifier>private</specifier> <name>PreferenceStore</name></type> <name>getPreferenceStore</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Shell</name></type> <name>shell</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>File</name></type> <name>preferencesFile</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><literal type="string">"preferences.properties"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line">//$NON-NLS-1$</comment>
+			<decl_stmt><decl><type><name>PreferenceStore</name></type> <name>store</name></decl>;</decl_stmt>
+
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>preferencesFile</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<comment type="line">// create new preferences file</comment>
+				<expr_stmt><expr><call><name><name>preferencesFile</name><operator>.</operator><name>createNewFile</name></name><argument_list>( )</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+
+			<expr_stmt><expr><name>store</name> <operator>=</operator> <operator>new</operator> <call><name>PreferenceStore</name><argument_list>(<argument><expr><call><name><name>preferencesFile</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>store</name><operator>.</operator><name>load</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><name>store</name></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>PhotoListerException</name><argument_list>(<argument><expr><literal type="string">"Unable to load preferences."</literal></expr></argument>)</argument_list></call></expr>;</throw> <comment type="line">//$NON-NLS-1$</comment>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

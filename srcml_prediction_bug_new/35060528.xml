@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16579996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setTime</name><parameter_list>( <parameter><decl><type><name>int</name></type> <name>markerPosX</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>( <expr><name>markerPosX</name> <operator>&lt;</operator> <literal type="number">0</literal> <operator>||</operator> <name>markerPosX</name> <operator>&gt;=</operator> <name>barWidth</name></expr> )</condition><block type="pseudo"><block_content>
+			<return>return 
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>HistoryMove</name></type> <name>move</name> <init>= <expr><call><name><name>history</name><operator>.</operator><name>setTime</name></name><argument_list>(<argument><expr><call><name>convertBarPosXtoTime</name><argument_list>(<argument><expr><name>markerPosX</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>puzzleModel</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>puzzleModel</name><operator>.</operator><name>notifyObservers</name></name><argument_list>( <argument><expr><call><name><name>move</name><operator>.</operator><name>getPuzzleMove</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>history</name><operator>.</operator><name>notifyObservers</name></name><argument_list>( <argument><expr><name>move</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try></block_content></block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

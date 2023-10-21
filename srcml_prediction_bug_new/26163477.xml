@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41982483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testIsIsbn10Valid</name><parameter_list>()</parameter_list> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>BookForm</name></type> <name>bf</name> <init>= <expr><operator>new</operator> <call><name>BookForm</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><call><name><name>bf</name><operator>.</operator><name>isIsbn10Valid</name></name><argument_list>(<argument><expr><literal type="string">"0843610727"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><call><name><name>bf</name><operator>.</operator><name>isIsbn10Valid</name></name><argument_list>(<argument><expr><literal type="string">"033398224X"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><call><name><name>bf</name><operator>.</operator><name>isIsbn10Valid</name></name><argument_list>(<argument><expr><literal type="string">"0843610700"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name>assertFalse</name><argument_list>(<argument><expr><call><name><name>bf</name><operator>.</operator><name>isIsbn10Valid</name></name><argument_list>(<argument><expr><literal type="string">"0843610728"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name>assertFalse</name><argument_list>(<argument><expr><call><name><name>bf</name><operator>.</operator><name>isIsbn10Valid</name></name><argument_list>(<argument><expr><literal type="string">"qwertyuiop"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

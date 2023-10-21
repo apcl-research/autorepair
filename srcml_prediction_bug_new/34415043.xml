@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44990062.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>newLibraryContainer</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>source</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>targetId</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>userId</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>containerName</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>containerDescription</name></decl></parameter>)</parameter_list> 
+		<comment type="line">//container type is selected</comment>
+		<throws>throws <argument><expr><name>DbException</name></expr></argument></throws> <block>{<block_content>		
+		<comment type="line">//container type is selected</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>containerType</name> <init>= <expr><name><name>DbModule</name><operator>.</operator><name>LIBRARY_CONTAINER</name></name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>newContainer</name></name><argument_list>(<argument><expr><name>source</name></expr></argument>, <argument><expr><name>targetId</name></expr></argument>, <argument><expr><name>userId</name></expr></argument>, <argument><expr><name>containerName</name></expr></argument>, <argument><expr><name>containerDescription</name></expr></argument>, <argument><expr><name>containerType</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

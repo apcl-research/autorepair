@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26544096.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>xTHIS_XGA</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>UsbException</name></expr></argument>, <argument><expr><name>InvalidFirmwareException</name></expr></argument>, <argument><expr><name>CapabilityException</name></expr></argument></throws> <block>{<block_content>
+	<expr_stmt><expr><call><name>checkCapability_XMANA</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	<try>try <block>{<block_content>
+	    <expr_stmt><expr><call><name>vendorCommand</name><argument_list>( <argument><expr><literal type="number">0x49</literal></expr></argument>, <argument><expr><literal type="string">"XMANA Reset"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>( <parameter><decl><type><name>UsbException</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+	    <throw>throw <expr><operator>new</operator> <call><name>UsbException</name><argument_list>( <argument><expr><call><name>dev</name><argument_list>()</argument_list></call><operator>.</operator><call><name>dev</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="string">"NVM Reset: "</literal> <operator>+</operator> <call><name>xTHISStrError</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</throw> 
+	</block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

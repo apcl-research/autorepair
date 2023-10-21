@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426961.java">    <function><type><specifier>private</specifier> <name>JLabel</name></type> <name>makeLabel</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>JLabel</name></type> <name>l</name> <init>= <expr><operator>new</operator> <call><name>JLabel</name><argument_list>( ;</operator>
+        <call><name><name>l</name><operator>.</operator><name>setBorder</name></name><argument_list>(<argument><expr><call><name><name>BorderFactory</name><operator>.</operator><name>createEmptyBorder</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">6</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">6</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>setFont</name></name><argument_list>(<argument><expr><call><name><name>SWGGuiUtils</name><operator>.</operator><name>fontPlain</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>setBackground</name></name><argument_list>(<argument><expr><name><name>Color</name><operator>.</operator><name>WHITE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>setOpaque</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>l</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

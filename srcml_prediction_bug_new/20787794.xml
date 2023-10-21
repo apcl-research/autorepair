@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32352629.java">   <function><type><specifier>private</specifier> <name>double</name></type> <name>parseDoubleToken</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>token</name></decl></parameter>, <parameter><decl><type><name>Statistics</name></type> <name>statistic</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <decl_stmt><decl><type><specifier>final</specifier> <name>double</name></type> <name>d</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+      <if_stmt><if>if <condition>(<expr><call><name>isDouble</name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+         <return>return <expr><call><name><name>Double</name><operator>.</operator><name>parseDouble</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr>;</return>
+      </block_content>}</block></if>
+      <else>else <block>{<block_content>
+         <decl_stmt><decl><type><specifier>final</specifier> <name>Tokens</name></type> <name>t</name> <init>= <expr><call><name><name>Tokens</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+         <if_stmt><if>if <condition>(<expr><name>t</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name>evaluateFunction</name><argument_list>(<argument><expr><name>t</name></expr></argument>, <argument><expr><name>statistic</name></expr></argument>)</argument_list></call></expr>;</return>
+         </block_content>}</block></if></if_stmt>
+
+       
+      <return>return <expr><name>d</name></expr>;</return>
+   </block_content>}</block></else></if_stmt> <comment type="line">// parseDoubleToken</comment>
+</unit>

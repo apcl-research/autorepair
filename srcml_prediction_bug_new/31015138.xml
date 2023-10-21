@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3019084.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>readXYFrom</name><parameter_list>(<parameter><decl><type><name>LSBReader</name></type> <name>source</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <comment type="line">// support Explorer</comment>
+      <decl_stmt><decl><type><name>int</name></type> <name>newX</name> <init>= <expr><call><name><name>source</name><operator>.</operator><name>readShort</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>int</name></type> <name>newY</name> <init>= <expr><call><name><name>source</name><operator>.</operator><name>readShort</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if <condition>(<expr><operator>(</operator><name>newX</name><operator>&lt;</operator><name>minDim</name><operator>)</operator> <operator>||</operator> <operator>(</operator><name>newX</name><operator>&gt;</operator><name>maxDim</name><operator>)</operator> <operator>||</operator> <operator>(</operator><name>newY</name><operator>&lt;</operator><name>minDim</name><operator>)</operator> <operator>||</operator> <operator>(</operator><name>newY</name><operator>&gt;</operator><name>maxDim</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content> <return>return 
+
+      <expr><call><name>setX</name><argument_list>(<argument><expr><name>newX</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+      <expr_stmt><expr><call><name>setY</name><argument_list>(<argument><expr><name>newY</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>realPlanets</name><operator>++</operator></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

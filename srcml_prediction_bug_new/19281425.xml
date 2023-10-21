@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14519094.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getChildPartyFormattedName</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>EncryptionException</name></expr></argument>, <argument><expr><name>KeyStoreException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>childParty</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>childParty</name> <operator>instanceof</operator> <name>PersonBean</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>(</operator><operator>(</operator><name>PersonBean</name><operator>)</operator> <name>childParty</name><operator>)</operator><operator>.</operator><call><name>getTitleForenameSurname</name> <argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>childParty</name> <operator>instanceof</operator> <name>AbstractOrganisationImpl</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>(</operator><operator>(</operator><name>AbstractOrganisationImpl</name><operator>)</operator> <name>childParty</name><operator>)</operator><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<comment type="line">// Don't know how to deal with this object - not a Party object of any kind that</comment>
+			<comment type="line">// the registration system is proportion of!</comment>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

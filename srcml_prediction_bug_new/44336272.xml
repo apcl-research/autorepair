@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44252796.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>perform</name><parameter_list>(<parameter><decl><type><name>Population</name></type> <name>generation</name></decl></parameter>, <parameter><decl><type><name>Population</name></type> <name>nextGeneration</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>ret</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>Individual</name><index>[]</index></name></type> <name>parents</name> <init>= <expr><call><name><name>generation</name><operator>.</operator><name>getRandomIndividualPair</name></name><argument_list>()</argument_list></call> 
+        <name><name>Individual</name><index>[]</index></name> <name>childs</name> <operator>=</operator> <call><name>perform</name><argument_list>(<argument><expr><name>parents</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>ret</name> <operator>=</operator> <call><name><name>nextGeneration</name><operator>.</operator><name>addIndividuals</name></name><argument_list>(<argument><expr><name>childs</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch<parameter_list>( <parameter><decl><type><name>PopulationFullException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>            
+            <expr_stmt><expr><name>ret</name> <operator>=</operator> <operator>-</operator><literal type="number">1</literal></expr>;</expr_stmt>
+        </block_content>}</block></catch></try> <comment type="line">// try</comment>
+        <return>return <expr><name>ret</name></expr>;</return>
+    </block_content>}</block></function> <comment type="line">// perform</comment>
+</unit>

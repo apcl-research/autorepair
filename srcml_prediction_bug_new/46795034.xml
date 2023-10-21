@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13991596.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>findTargetNodeName</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>targetNode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>NamedNodeMap</name></type> <name>attributes</name> <init>= <expr><call><name><name>targetNode</name><operator>.</operator><name>getAttributes</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>  <;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>attributes</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content> <comment type="line">// Loop through</comment>
+															<comment type="line">// Attributes</comment>
+			<decl_stmt><decl><type><name>Node</name></type> <name>a</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>item</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<comment type="line">// System.out.println(a.getNodeName()+ " " + a.getNodeValue());</comment>
+			<if_stmt><if>if <condition>(<expr><call><name><name>ATTRNAMENAME</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><call><name><name>a</name><operator>.</operator><name>getNodeName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><call><name><name>a</name><operator>.</operator><name>getNodeValue</name></name><argument_list>()</argument_list></call></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>EMPTYSTRING</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

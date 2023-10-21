@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/7701071.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>queue</name><parameter_list>(<parameter><decl><type><name>Packet</name></type> <name>packet</name></decl></parameter>, <parameter><decl><type><name>PacketDispatchListener</name></type> <name>listener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>WaitingPacket</name></type> <name>waitingPacketInfo</name> <init>= <expr><operator>new</operator> <call><name>WaitingPacket</name><argument_list>(<argument><expr><name>packet</name></expr></argument>, <argument><expr><name>nextPacketID</name></expr></argument>, <argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>nextPacketID</name><operator>++</operator></expr>;</expr_stmt>
+        
+        <synchronized>synchronized <init>(<expr><name>queue</name></expr>)</init> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>addLast</name></name><argument_list>(<argument><expr><name>waitingPacketInfo</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>notify</name></name><argument_list>()</argument_list></call> 
+        </block_content>}</block></synchronized>
+        
+        <return>return <expr><call><name><name>waitingPacketInfo</name><operator>.</operator><name>getPacketID</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

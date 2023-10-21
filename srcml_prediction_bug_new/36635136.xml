@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28863286.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getItem</name><parameter_list>(<parameter><decl><type><name><name>HashMap</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>String</name></argument>&gt;</argument_list></name></type> <name>fillData</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for<control>(<init><decl><type><name>String</name></type> <name>key</name><range>: <expr><call><name><name>fillData</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block type="pseudo"><block_content> 
+            <switch>switch<condition>(<expr><call><name><name>refItems</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+                <case>case <expr><operator>-</operator><literal type="number">1</literal></expr>:</case>
+                    <expr_stmt><expr><call><name>warn</name><argument_list>(<argument><expr><literal type="string">"Language path key '"</literal><operator>+</operator><name>key</name><operator>+</operator><literal type="string">"' not recognized!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                    <break>break;</break>
+                <case>case <expr><name>LANG</name></expr>:</case>
+                    <return>return <expr><call><name><name>fillData</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>;</return>
+            </block_content>}</block></switch></block_content></block></for>
+        <return>return <expr><literal type="string">""</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

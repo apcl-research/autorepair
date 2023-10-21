@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13272783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>addMissingMainPart</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Vector</name></type> <name>queue</name></decl></parameter>, <parameter><decl><type><name>Iterator</name></type> <name>mainIt</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>queue</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>boolean</name></type> <name>nextMainAdded</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+
+            <while>while <condition>(<expr><call><name><name>mainIt</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <operator>!</operator> <name>nextMainAdded</name></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>StructuralConstraintGraphPart</name></type> <name>nextMain</name> <init>= 
+                        <expr><operator>(</operator><name>StructuralConstraintGraphPart</name><operator>)</operator> <call><name><name>mainIt</name><operator>.</operator><name>next</name></name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+                <if_stmt><if>if <condition>(<expr><operator>!</operator> <call><name>allreadyCheckedPart</name><argument_list>(<argument><expr><name>nextMain</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>nextMain</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                    <expr_stmt><expr><name>nextMainAdded</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></while>
+        </block_content>}</block></if></if_stmt> <comment type="line">//if queue empty</comment>
+    </block_content>}</block></function>
+</unit>

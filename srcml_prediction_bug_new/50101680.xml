@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31086983.java">  <constructor><specifier>public</specifier> <name>ChatClient</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>host</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>_port</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name>setTitle</name><argument_list>(<argument><expr><literal type="string">"Jscripture Chat Client"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
+    <expr_stmt><expr><name>hostname</name> <operator>=</operator> <name>host</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name>port</name> <operator>=</operator> <name>_port</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name>userid</name> <operator>=</operator> <name>id</name></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>setSize</name>  <argument_list>(<argument><expr><literal type="number">540</literal></expr></argument>, <argument><expr><literal type="number">400</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="line">// used for listening of windowing events</comment>
+    <expr_stmt><expr><call><name>addWindowListener</name> <argument_list>(<argument><expr><operator>new</operator> <call><name>WindowMonitor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><call><name>buildComponents</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>chatTextUpdater</name> <operator>=</operator> <operator>new</operator> <call><name>TextUpdater</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>initialStart</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+  </block_content>}</block></constructor>
+</unit>

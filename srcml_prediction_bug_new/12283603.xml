@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18440029.java">	<function><type><specifier>public</specifier> <name>URL</name></type> <name>class2URL</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Application</name></type> <name>application</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>classname</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>URL</name></type> <name>out</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>String</name></type> <name>sOut</name> <init>= <expr><literal type="string">"file://"</literal> <operator>+</operator> <call><name><name>application</name><operator>.</operator><name>getRoot</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"/"</literal>
+					<operator>+</operator> <call><name><name>application</name><operator>.</operator><name>getSrc</name></name> <argument_list>()</argument_list></call></expr></init></decl> )</decl> <init>= <expr><literal type="string">"file://"</literal> <operator>+</operator> <call><name><name>application</name><operator>.</operator><name>getRoot</name></name><argument_list>()</argument_list></call>
+					<operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <call><name><name>application</name><operator>.</operator><name>getSrc</name></name> <argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">".java"</literal></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>out</name> <operator>=</operator> <operator>new</operator> <call><name>URL</name><argument_list>(<argument><expr><name>sOut</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>MalformedURLException</name></type> <name>exc</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>LOG</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"Exception in URLUtilSingleton.class2URL"</literal></expr></argument>, <argument><expr><name>exc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<return>return <expr><name>out</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623891.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getSims</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"getSims ..."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>List</name></type> <name>sims</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>sims</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><call><name>getPrimarySims</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>sims</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><call><name>getMirrorSims</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>sims</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>DupSim</name></type> <name>first</name> <init>= <expr><operator>(</operator><name>DupSim</name><operator>)</operator> <call><name><name>sims</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>Collections</name><operator>.</operator><name>sort</name></name><argument_list>(<argument><expr><name>sims</name></expr></argument>, <argument><expr><call><name><name>first</name><operator>.</operator><name>getComparator</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">" ... returning "</literal> <operator>+</operator> <call><name><name>sims</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" sims"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>sims</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

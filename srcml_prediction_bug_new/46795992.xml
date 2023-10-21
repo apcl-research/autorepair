@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/245318.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>getClassString</name><parameter_list>(<parameter><decl><type><name>CodeElement</name></type> <name>element</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>className</name> <init>= <expr><call><name><name>element</name><operator>.</operator><name>getElementName</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>derived</name> <init>= <expr><call><name><name>element</name><operator>.</operator><name>getDerived</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>EMPTYSTRING</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><name>className</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>String</name></type> <name>cnw</name><init>=<expr><name>className</name></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if  <condition>(<expr><name>derived</name> <operator>!=</operator> <literal type="string">""</literal></expr>)</condition><block>{<block_content>
+				<expr_stmt><expr><name>cnw</name><operator>+=</operator><literal type="string">":"</literal><operator>+</operator><name>derived</name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><call><name>processTemplate</name><argument_list>(<argument><expr><name><name>DefaultPrefsSetter</name><operator>.</operator><name>CLASSTEMPLATE</name></name></expr></argument>, <argument><expr><name>TEMPLATEVARCLASS</name></expr></argument>,<argument><expr><name>cnw</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>s</name><operator>=</operator><call><name>processTemplateString</name><argument_list>(<argument><expr><name>s</name></expr></argument>,<argument><expr><name>TEMPLATEVARMODIFIER</name></expr></argument>,<argument><expr><call><name><name>element</name><operator>.</operator><name>getModifierAsString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><name>s</name></expr>;</return>
+			
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="string">""</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

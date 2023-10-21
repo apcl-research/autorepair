@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40440844.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>changeMarkerLocation</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>posY</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>float</name></type> <name>ratio</name> <init>= <expr><operator>(</operator><name>value</name><operator>-</operator><name>minValue</name><operator>)</operator> <operator>/</operator> <operator>(</operator><name>maxValue</name><operator>-</operator><name>minValue</name><operator>)</operator></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>( <expr><name>ratio</name> <operator>&lt;</operator> <literal type="number">0</literal></expr> )</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>ratio</name> <operator>=</operator> <literal type="number">0</literal> 
+		<operator>||</operator> <operator>(</operator><name>ratio</name> <operator>&gt;</operator> <literal type="number">1</literal> <operator>)</operator></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>posX</name> <init>= <expr><name>BAR_MARGIN_X</name> <operator>-</operator> <name>MARKER_WIDTH</name><operator>/</operator><literal type="number">2</literal> <operator>+</operator> <operator>(</operator><name>int</name><operator>)</operator><operator>(</operator><name>ratio</name> <operator>*</operator> <name>barWidth</name><operator>)</operator></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><name>posY</name> <operator>=</operator> <operator>(</operator><name>BAR_CONTAINER_HEIGHT</name> <operator>-</operator> <name>MARKER_HEIGHT</name><operator>)</operator><operator>/</operator><literal type="number">2</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>barContainer</name><operator>.</operator><name>setWidgetPosition</name></name><argument_list>( <argument><expr><name>marker</name></expr></argument>, <argument><expr><name>posX</name></expr></argument>, <argument><expr><name>posY</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

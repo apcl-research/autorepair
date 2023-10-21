@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44889996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setDriverName</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>driverName</name></decl></parameter>  <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>this</name><operator>.</operator><name>driverName</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>driverName</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>driverName</name></name> <operator>=</operator> <name>driverName</name></expr>;</expr_stmt>
+			<expr_stmt><expr><name>driver</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<comment type="block">/*
+		try {
+		driver= (Driver)Class.forName (driverName).newInstance();
+		log("StandardDataSource:setDriverName a new driver instance is created");
+		} catch (Exception e) {
+		throw new SQLException ("Error trying to load driver: "+driverName+"\n"+e.getMessage());
+		} // try-catch
+		*/</comment>
+	</block_content>}</block></function>
+</unit>

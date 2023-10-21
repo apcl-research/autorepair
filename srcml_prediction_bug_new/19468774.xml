@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18239983.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>internalSaveWidgetValues</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// update directory names history</comment>
+		<decl_stmt><decl><type><name>IDialogSettings</name></type> <name>settings</name> <init>= <expr><call><name>getDialogSettings</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>settings</name> <operator>!=</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>directoryNames</name> <init>= <expr><call><name><name>settings</name>
+					<operator>.</operator><name>getArray</name></name><argument_list>(<argument><expr><name>STORE_DESTINATION_NAMES_ID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>directoryNames</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>directoryNames</name> <operator>=</operator> <operator>new</operator> <name><name>String</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+
+			<expr_stmt><expr><name>directoryNames</name> <operator>=</operator> <call><name>addToHistory</name><argument_list>(<argument><expr><name>directoryNames</name></expr></argument>, <argument><expr><call><name>getDestinationValue</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>settings</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>STORE_DESTINATION_NAMES_ID</name></expr></argument>, <argument><expr><name>directoryNames</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<comment type="line">// options</comment>
+			<expr_stmt><expr><call><name><name>settings</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>STORE_OVERWRITE_EXISTING_FILES_ID</name></expr></argument>,
+					<argument><expr><call><name><name>overwriteExistingFilesCheckbox</name><operator>.</operator><name>getSelection</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

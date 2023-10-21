@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44494896.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>checkForSynonym</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>RankType</name></type> <name>rank</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>ranks</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>ranks_str</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>max</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SearchResultException</name></expr></argument></throws> 
+       <comment type="line">//search on name field with name and empty rank and suit</comment>
+       <comment type="line">//search on the alternative names field with name and empty rank and suit</comment>
+       <comment type="line">//if we get a match that is a synonym verify match against IRMNG</comment>
+    }</block></expr></argument></throws>
+</unit>

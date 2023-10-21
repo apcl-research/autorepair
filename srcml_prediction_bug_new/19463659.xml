@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509094.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setIPSStatus</name><parameter_list>(<parameter><decl><type><name>IPSStatus</name></type> <name>status</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>internal_status</name> <operator>=</operator> <name>status</name></expr>;</expr_stmt>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>int</name></type> <name>confidence</name> <init>= <expr><call><name><name>status</name><operator>.</operator><name>getConfidence</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>dis saturation</name> <operator>=</operator> <operator>(</operator><call><name><name>status</name><operator>.</operator><name>getConfidence</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <name><name>IConfidence</name><operator>.</operator><name>REVIEWED_MAX</name></name><operator>)</operator>
+					<operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>status</name><operator>.</operator><name>isBroken</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>broken</name> <operator>=</operator> <operator>(</operator><name>confidence</name> <operator>&gt;</operator> <name><name>IConfidence</name><operator>.</operator><name>PENDING</name></name> <operator>&amp;&amp;</operator> <name>confidence</name> <operator>&lt;=</operator> <name><name>IConfidence</name><operator>.</operator><name>REVIEWED_MAX</name></name> <operator> ;</expr_stmt>
+			<expr_stmt><expr><name>manual</name> <operator>=</operator> <call><name><name>status</name><operator>.</operator><name>isBroken</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>manual</name> <operator>=</operator> <call><name><name>status</name><operator>.</operator><name>getHasManualProof</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>RodinDBException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>UIUtils</name><operator>.</operator><name>log</name></name><argument_list>(<argument><expr><name>e</name></expr></argument>, <argument><expr><literal type="string">"when acessing "</literal> <operator>+</operator><name>status</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

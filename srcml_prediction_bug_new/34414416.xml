@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18649983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeProperty</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>propName</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>path</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>userId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>doc_name</name> <init>= <expr><name>_id</name><operator>+</operator><literal type="string">".xml"</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>system</name> <init>= <expr><call><name><name>userId</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>DeletePropertyThread</name></type> <name>dpt</name> <init>= <expr><call><name><name>_containerEditor</name><operator>.</operator><name>deleteProperty</name></name><argument_list>(<argument><expr><name>propName</name></expr></argument>, <argument><expr><name>path</name></expr></argument>, <argument><expr><name>doc_name</name></expr></argument>, <argument><expr><name>userId</name></expr></argument>, <argument><expr><name>system</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try<block>{<block_content>
+			<expr_stmt><expr><call><name><name>dpt</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>dpt</name><operator>.</operator><name>join</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block>
+		<catch>catch<parameter_list>(<parameter><decl><type><name>InterruptedException</name></type> <name>ie</name></decl></parameter>)</parameter_list><block>{<block_content>
+			<expr_stmt><expr><call><name><name>ie</name><operator>.</operator><name>printStackTrace</name></name><argument_list>(<argument><expr><name><name>System</name><operator>.</operator><name>err</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<expr_stmt><expr><call><name><name>dpt</name><operator>.</operator><name>cleanThread</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

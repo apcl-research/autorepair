@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43394583.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>notifyIncomingMessage</name><parameter_list>(<parameter><decl><type><name>MessageConnection</name></type> <name>messageConnection</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"[OTAMessagesListener] notifyIncomingMessage invoked"</literal></expr></argument> )</argument_list></call></expr> ;</expr_stmt>
+        <expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"[OTAMessagesListener] smsHandling: "</literal> <operator>+</operator> <name>smsHandling</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><name>pending</name><operator>++</operator></expr>;</expr_stmt>
+        <expr_stmt><expr><name>smsHandling</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        <if_stmt><if>if<condition>(<expr><operator>!</operator><name>startViaANA</name></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>syncViaSMS</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        </block_content>}</block></if><else>else<block>{<block_content>
+            <expr_stmt><expr><name>startViaANA</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        <expr_stmt><expr><call><name><name>threadPool</name><operator>.</operator><name>startThread</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

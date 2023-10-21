@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/15765583.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>testCounter</name><parameter_list>(<parameter><decl><type><name>Counters</name></type> <name>counter</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ParseException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>compactEscapedString</name> <init>= <expr><call><name><name>counter</name><operator>.</operator><name>makeEscapedCompactString</name></name><argument_list>()</argument_list></call></expr></init></decl> 
+    
+    <comment type="line">// Check for recovery from string</comment>
+    <init>= <expr><call><name><name>Counters</name><operator>.</operator><name>fromEscapedCompactString</name></name><argument_list>(<argument><expr><name>compactEscapedString</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <comment type="line">// Check for recovery from string</comment>
+    <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><literal type="string">"Recovered counter does not match on content"</literal></expr></argument>, 
+               <argument><expr><call><name><name>counter</name><operator>.</operator><name>contentEquals</name></name><argument_list>(<argument><expr><name>recoveredCounter</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    
+  </block_content>}</block></function>
+</unit>

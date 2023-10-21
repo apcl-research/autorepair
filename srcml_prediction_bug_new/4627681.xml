@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36182783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>updateConfigurationTO</name><parameter_list>(<parameter><decl><type><name>ConfigurationTO</name></type> <name>configurationTO</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>ConfigurationTO</name></type> <name>newConfigurationTO</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>newConfigurationTO</name> <operator>=</operator> <call><name><name>restTemplate</name><operator>.</operator><name>postForObject</name></name><argument_list>(<argument><expr><name>baseURL</name>
+                    <operator>+</operator> <literal type="string">"configuration/update"</literal></expr></argument>, <argument><expr><name>configurationTO</name></expr></argument>,
+                    <argument><expr><name><name>ConfigurationTO</name><operator>.</operator><name>class</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>SyncopeClientCompositeErrorException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>LOG</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"While updating a configuration"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+        <return>return <expr><ternary><condition><expr><operator>(</operator><call><name><name>configurationTO</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>newConfigurationTO</name></expr></argument>)</argument_list></call><operator>)</operator></expr> ?</condition><then> <expr><literal type="boolean">true</literal></expr> </then><else>: <expr><literal type="boolean">false</literal></expr></else></ternary></expr>;</return>
+    </block_content>}</block></function>
+</unit>

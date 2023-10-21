@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/486905.java">	<function><type><specifier>public</specifier> <name>XdsResponse</name></type> <name>extractXdsResponse</name><parameter_list>(<parameter><decl><type><name>ResponseType</name></type> <name>responseType</name></decl></parameter>, <parameter><decl><type><name>OMElement</name></type> <name>message</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>message</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+		<comment type="line">// Pull out the response</comment>
+        <if_stmt><if>if <condition>(<expr><name>responseType</name> <operator>==</operator> <name><name>ResponseType</name><operator>.</operator><name>REGISTRY_RESPONSE</name></name></expr>)</condition><block type="pseudo"><block_content>
+        	<return>return <expr><call><name><name>registry</name><operator>.</operator><name>getRegistryResponse</name></name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if>
+        <if type="elseif">else if <condition>(<expr><name>responseType</name> <operator>==</operator> <name><name>ResponseType</name><operator>.</operator><name>RETRIEVE_DOCUMENT_SET_RESPONSE</name></name></expr>)</condition><block type="pseudo"><block_content>
+        	<return>return <expr><call><name><name>registry</name><operator>.</operator><name>getRetrieveDocumentSetResponse</name></name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+        	<return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></else></if_stmt></block_content></block></function>
+	 
+</unit>

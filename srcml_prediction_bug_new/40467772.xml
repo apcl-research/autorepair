@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18098981.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>calcAlignX</name><parameter_list>()</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>areaWidth</name> <init>= <expr><name>width</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>imgX</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name>useImages</name></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>areaWidth</name> <operator>-=</operator> <name>btnImgWidth</name></expr>;</expr_stmt>
+			<if_stmt><if>if<condition>(<expr><name>imageAlign</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>LEFT</name></name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name>imgX</name> <operator>=</operator> <name>btnImgWidth</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<switch>switch<condition>(<expr><name>textAlignHorz</name></expr>)</condition><block>{<block_content>
+		<case>case <expr><name><name>GAlign</name><operator>.</operator><name>LEFT</name></name></expr>:</case>
+			<expr_stmt><expr><name>alignX</name> <operator>=</operator> <name>imgX</name> <operator>+</operator> <name>border</name><operator>+</operator>  <name>PADH</name></expr>;</expr_stmt>
+			<break>break 
+		<case>case <expr><name><name>GAlign</name><operator>.</operator><name>RIGHT</name></name></expr>:</case>
+			<expr_stmt><expr><name>alignX</name> <operator>=</operator> <name>imgX</name> <operator>+</operator> <name>areaWidth</name> <operator>-</operator> <name>textWidth</name> <operator>-</operator> <name>border</name> <operator>-</operator> <name>PADH</name></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name><name>GAlign</name><operator>.</operator><name>CENTER</name></name></expr>:</case>
+			<expr_stmt><expr><name>alignX</name> <operator>=</operator> <name>imgX</name> <operator>+</operator> <name>border</name> <operator>+</operator> <name>PADH</name> <operator>+</operator> <operator>(</operator><name>areaWidth</name> <operator>-</operator> <name>textWidth</name><operator>)</operator><operator>/</operator><literal type="number">2</literal></expr>;</expr_stmt>
+			<break>break;</break>
+		</block_content>}</block></switch>
+	</block_content>}</block></function>
+</unit>

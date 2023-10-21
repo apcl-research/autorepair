@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30963172.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>computeTasksHeight</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>taskBarHeight</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>oldTasksHeight</name> <init>= <expr><name>tasksHeight</name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>tasksHeight</name> <operator>=</operator> <name>taskBarHeight</name> <operator>-</operator> <literal type="number">3</literal> <operator>*</operator> <name>TASK_MARGIN</name> <operator>-</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>tasksHeight</name> <operator>==</operator> <name>oldTasksHeight</name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></if></if_stmt> <comment type="line">// Nothing to do;</comment>
+
+		
+		<if_stmt><if>if <condition>( <expr><name>tasksHeight</name> <operator>&lt;</operator> <name>minTasksHeight</name></expr>)</condition><block type="pseudo"><block_content> 
+			<expr_stmt><expr><call><name><name>SC</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"Insufficient Taskbar height:&lt;br&gt;The Taskbar is going to be resized"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<expr_stmt><expr><name>tasksHeight</name> <operator>=</operator> <name>oldTasksHeight</name></expr>;</expr_stmt>
+		</block_content>}</block></function><expr><operator>*</operator><operator>/</operator></expr>
+</unit>

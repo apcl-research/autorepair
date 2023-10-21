@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43492629.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>cleanFolder</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>dir</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>File</name></type> <name>folder</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>dir</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><call><name><name>folder</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+			
+			  <decl_stmt><decl><type><name><name>File</name><index>[]</index></name></type> <name>prevFiles</name> <init>= <expr><call><name><name>folder</name><operator>.</operator><name>listFiles</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			  <for>for<control>(<init><decl><type><name>int</name></type> <name>x</name><init>=<expr><literal type="number">0</literal></expr></init></decl>;</init><condition><expr><name>x</name><operator>&lt;</operator><name><name>prevFiles</name><operator>.</operator><name>length</name></name></expr>;</condition><incr><expr><name>x</name><operator>++</operator></expr></incr>)</control><block>{<block_content>				  
+				  <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><name><name>prevFiles</name><index>[<expr><name>x</name></expr>]</index></name><operator>.</operator><call><name>getPath</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				  <if_stmt><if>if<condition>(<expr><name><name>prevFiles</name><index>[<expr><name>x</name></expr>]</index></name><operator>.</operator><call><name>isDirectory</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content><expr_stmt><expr><call><name>cleanFolder</name><argument_list>(<argument><expr><name><name>prevFiles</name><index>[<expr><name>x</name></expr>]</index></name><operator>.</operator><call><name>getPath</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+				  
+				  <expr_stmt><expr><name><name>prevFiles</name><index>[<expr><name>x</name></expr>]</index></name><operator>.</operator><call><name>delete</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			  </block_content>}</block></for>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

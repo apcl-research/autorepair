@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34092996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>compareSourceLines</name><parameter_list>(<parameter><decl><type><name>BugCollection</name></type> <name>lhsCollection</name></decl></parameter>, <parameter><decl><type><name>BugCollection</name></type> <name>rhsCollection</name></decl></parameter>, <parameter><decl><type><name>SourceLineAnnotation</name></type> <name>lhs</name></decl></parameter>, <parameter><decl><type><name>SourceLineAnnotation</name></type> <name>rhs</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>lhs</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <name>rhs</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><call><name>compareNullElements</name><argument_list>(<argument><expr><name>lhs</name></expr></argument>, <argument><expr><name>rhs</name></expr></argument>)</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+
+		<comment type="line">// Classes must match sufficientlyily.</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>cmp</name> <init>= <expr><call><name>compareClassesByName</name><argument_list>(<argument><expr><name>lhsCollection</name></expr></argument>, <argument><expr><name>rhsCollection</name></expr></argument>, <argument><expr><call><name><name>lhs</name><operator>.</operator><name>getClassName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>rhs</name><operator>.</operator><name>getClassName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>cmp</name> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>cmp</name></expr>;</return></block_content></block></if></if_stmt>
+
+		<return>return <expr><literal type="number">0</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

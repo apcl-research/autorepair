@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36482983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>attackerReportCallback</name><parameter_list>(<parameter><decl><type><name>FormInfo</name></type> <name>formInfo</name></decl></parameter>, <parameter><decl><type><name>BaseReportItem</name></type> <name>report</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><call><name><name>this</name><operator>.</operator><name>isCAPTCHACrackSuccessful</name></name><argument_list>(<argument><expr><name>formInfo</name></expr></argument>, <argument><expr><name>report</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content><return>return;</return></block_content>}</block></if></if_stmt>
+		<if_stmt><if>if<condition>(<expr><name><name>formInfo</name><operator>.</operator><name>CAPTCHACrackRetryTimes</name></name><operator>&gt;=</operator><name><name>Configuration</name><operator>.</operator><name>MAX_RETRY_CAPTCHACRACK</name></name></expr>)</condition>
+		 
+			<block>{<block_content><expr_stmt><expr><name><name>formInfo</name><operator>.</operator><name>CAPTCHACrackRetryTimes</name></name><operator>=</operator><name><name>Configuration</name><operator>.</operator><name>MAX_RETRY_CAPTCHACRACK</name></name></expr>;</expr_stmt><comment type="line">//avoid potential overflow problem.</comment>
+				<expr_stmt><expr><name><name>this</name><operator>.</operator><name>doCAPTCHAAttack</name></name><operator>=</operator><name>formInfo</name></expr>;</expr_stmt>
+			</block_content>}</block></if>
+		<else>else
+		<block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>doCAPTCHAAttack</name></name><argument_list>(<argument><expr><name>formInfo</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<expr_stmt><expr><call><name><name>attacker</name><operator>.</operator><name>attack</name></name><argument_list>(<argument><expr><name>formInfo</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>	
+	</block_content>}</block></function>
+</unit>

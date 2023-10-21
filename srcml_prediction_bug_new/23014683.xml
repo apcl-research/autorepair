@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/1559054.java">    <function><type><specifier>public</specifier> <name>double</name></type> <name>calculateHeight</name><parameter_list>(<parameter><decl><type><name>double</name></type> <name>x</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>y</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>d</name> <init>= <expr><call><name><name>origin</name><operator>.</operator><name>dotProduct</name></name><argument_list>(<argument><expr><name>normal</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">// ax + by +cz + d = 0 , normal (a,b,c)</comment>
+        <comment type="line">// z =  -d - ax - by)/c;</comment>
+        <return>return <expr><operator>(</operator><name>d</name> <operator>-</operator> <call><name><name>normal</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call><operator>*</operator><name>x</name> <operator>-</operator> <call><name><name>normal</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call><operator>*</operator><name>y</name><operator>)</operator><operator>/</operator><call><name><name>normal</name><operator>.</operator><name>getZ</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

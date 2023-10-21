@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14991596.java">	<function><type><specifier>public</specifier> <name>PortletWindowSession</name></type> <name>removePortletWindowSession</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>windowID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>String</name></type> <name>MN</name> <init>= <expr><literal type="string">"getPortletWindowSession"</literal></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>PortletWindowSession</name></type> <name>winSession</name> <init>= <expr><operator>(</operator><name>PortletWindowSession</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>windowSessions</name>
+				<operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>windowID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>logger</name><operator>.</operator><name>isLogging</name></name><argument_list>(<argument><expr><name><name>Logger</name><operator>.</operator><name>TRACE_HIGH</name></name></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <name>winSession</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>text</name></name><argument_list>(<argument><expr><name><name>Logger</name><operator>.</operator><name>TRACE_HIGH</name></name></expr></argument>, <argument><expr><name>MN</name></expr></argument>,
+					<argument><expr><literal type="string">"removed PortletWindowSession with ID: "</literal> <operator>+</operator> <name>windowID</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>winSession</name></expr>;</return></block_content></block></function>
+</unit>

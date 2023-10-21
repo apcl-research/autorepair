@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13570029.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>updateClock</name><parameter_list>(<parameter><decl><type><name>NetworkTime</name></type> <name>networkTime</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><operator>!</operator><name>used</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>timeNudge</name> <operator>=</operator> <call><name><name>networkTime</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call> <operator>-</operator> <call><name><name>System</name><operator>.</operator><name>currentTimeMillis</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>used</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<decl_stmt><decl><type><name>NetworkTime</name></type> <name>localTime</name> <init>= <expr><call><name>getApplicationTime</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>long</name></type> <name>timeDiff</name> <init>= <expr><call><name><name>networkTime</name><operator>.</operator><name>getJavaTime</name></name><argument_list>(  <argument><expr><operator>-</operator> <call><name><name>localTime</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><name>timeDiff</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<comment type="line">// network time is ahead of our local time, correct the application</comment>
+				<comment type="line">// clock</comment>
+				<expr_stmt><expr><name>timeNudge</name> <operator>+=</operator> <name>timeDiff</name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

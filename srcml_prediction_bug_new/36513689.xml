@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28352983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setColumnsError</name><parameter_list>( <parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>msg</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>columnsErrorMsgLabel</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><name>msg</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>jPanel2</name><operator>.</operator><name>remove</name></name><argument_list>( <argument><expr><name>columnsScrollPane</name></expr></argument> )</argument_list></call> 
+        <call><name><name>jPanel2</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name>columnsErrorScrollPane</name></expr></argument>, <argument><expr><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>BorderLayout</name><operator>.</operator><name>CENTER</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>jPanel2</name><operator>.</operator><name>revalidate</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>columnsErrorMsgLabel</name><operator>.</operator><name>repaint</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        
+        <comment type="line">//okButton.setEnabled(false);</comment>
+    </block_content>}</block></function>
+</unit>

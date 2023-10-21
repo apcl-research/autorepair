@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/311740.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>done</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><call><name>setGap</name><argument_list>(<argument><expr><name><name>BasePanel</name><operator>.</operator><name>GAP1</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>addFileName</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setGap</name><argument_list>(<argument><expr><name><name>BasePanel</name><operator>.</operator><name>GAP2</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>addLayoutSelection</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>addMessage</name><argument_list>(<argument><expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setHeight</name><argument_list>(<argument><expr><name><name>BasePanel</name><operator>.</operator><name>NORMAL_HEIGHT</name></name> <operator>*</operator> <literal type="number">4</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+
+		<comment type="line">//editOptCombo.addActionListener(this);</comment>
+		<comment type="line">//go.addActionListener(this);</comment>
+
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>done</name></name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>setBounds</name><argument_list>(<argument><expr><call><name>getY</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getX</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>FRAME_WIDTH</name></expr></argument>, <argument><expr><call><name>getHeight</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>frameSize</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>getBounds</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

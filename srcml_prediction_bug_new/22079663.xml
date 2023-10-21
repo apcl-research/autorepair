@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14332783.java">   <function><type><specifier>public</specifier> <name>String</name></type> <name>hashString</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>toHash</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <decl_stmt><decl><type><name>String</name></type> <name>hashedVal</name> <init>= <expr><name><name>toHash</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></init></decl>;</decl_stmt><comment type="line">//if something goes wrong</comment>
+      <synchronized>synchronized <init>(<expr><name><name>this</name><operator>.</operator><name>hashEngine</name></name></expr>)</init> <block>{<block_content>
+         <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>hashEngine</name><operator>.</operator><name>init</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+         <for>for  <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>toHash</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>hashEngine</name><operator>.</operator><name>updateASCII</name></name><argument_list>(<argument><expr><name><name>toHash</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         </block_content>}</block></for>
+         <expr_stmt><expr><name>hashedVal</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>hashEngine</name><operator>.</operator><name>digout</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></synchronized>
+      <return>return <expr><name>hashedVal</name></expr>;</return>
+   </block_content>}</block></function>
+</unit>

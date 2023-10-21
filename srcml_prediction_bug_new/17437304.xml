@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18392715.java">    <function><type><specifier>static</specifier> <specifier>private</specifier> <name>boolean</name></type> <name>addItemStats</name><parameter_list>(<parameter><decl><type><name>MuItemStats</name></type> <name>ItemStats</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>_allItemStats</name><operator>.</operator><name>containsValue</name></name><argument_list>(<argument><expr><name>ItemStats</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>_allItemStats</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>Integer</name><operator>.</operator><name>valueOf</name></name><argument_list>(
+                    <argument><expr><operator>(</operator><name>int</name><operator>)</operator> <operator>(</operator><operator>(</operator><call><name><name>ItemStats</name><operator>.</operator><name>get_groupIndex</name></name><argument_list>()</argument_list></call> <operator>&lt;&lt;</operator> <literal type="number">4</literal><operator>)</operator> <operator>+</operator> <operator>(</operator><call><name><name>ItemStats</name><operator>.</operator><name>get_index</name></name><argument_list>()</argument_list></call> <operator>&amp;</operator> <literal type="number">0x00FF</literal> <operator>)</operator><operator>)</operator></expr></argument>)</argument_list></call></expr></argument>,
+                    <argument><expr><name>ItemStats</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

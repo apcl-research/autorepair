@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17990029.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addModelListener</name><parameter_list>(<parameter><decl><type><name>ModelListener</name></type> <name>listener</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<synchronized>synchronized <init>(<expr><name>modelListeners</name></expr>)</init> <block>{<block_content>
+			<if_stmt><if>if<condition>(<expr><name>dispatchingEvents</name></expr>)</condition> <block>{<block_content>
+				<comment type="line">// in order to avoid comodification exceptions when</comment>
+				<comment type="line">// iterating over the model listeners we store the</comment>
+				<comment type="line">// new listener in a separate list and add it later</comment>
+				<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"iteration currently taking place, will add listener later"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>listenersToAdd</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"adding listener"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>modelListeners</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			 
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

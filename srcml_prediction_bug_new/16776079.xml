@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32019996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>waitUntilFreeThread</name><parameter_list>()</parameter_list><block>{<block_content>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>threadID</name><init>=<expr><operator>-</operator><literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>boolean</name></type> <name>waiting</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><name>waiting</name></expr>)</condition><block>{<block_content>
+            <synchronized>synchronized <init>(<expr><name>lock1</name></expr>)</init><block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><name>numActiveThreads</name><operator>&lt;</operator><name>maxThreads</name></expr>)</condition><block>{<block_content>
+                    <expr_stmt><expr><name>threadID</name><operator>=</operator><call><name>allocateNewID</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+					<expr_stmt><expr><name>waiting</name><operator>=</operator><literal type="boolean">false</literal></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></synchronized>
+ 			<expr_stmt><expr><call><name>cleanAdmin</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <comment type="block">/*try {
+                wait();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } */</comment>
+        </block_content>}</block></while>
+    <return>return <expr><name>threadID</name></expr>;</return>
+    
+</block_content>}</block></function>
+</unit>

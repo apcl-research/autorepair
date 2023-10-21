@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31092696.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getNumberOfPages</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>number</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>( <expr><name><name>_hits</name><operator>.</operator><name>size</name></name></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><name>number</name> <operator>=</operator> <call><name><name>_hits</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call><operator>/</operator><name>_pageRange</name></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>( <expr><operator>(</operator><call><name><name>_hits</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>-</operator> <name>number</name><operator>*</operator><name>_pageRange</name><operator>)</operator> <operator>&gt;</operator> <literal type="number">0</literal></expr> )</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>number</name><operator>++</operator></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>number</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

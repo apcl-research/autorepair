@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2939074.java">    <function><type><specifier>public</specifier> <name>Swizzler</name></type> <name>getSwizzler</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>vn</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>IndStore</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name> <argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>Swizzler</name></type> <name>swz</name> <init>= <expr><operator>(</operator><name>Swizzler</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><operator>(</operator><call><name><name>swz</name><operator>.</operator><name>target</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>valueNumber</name><argument_list>()</argument_list></call> <operator>==</operator> <name>vn</name><operator>)</operator>
+                    <operator>||</operator> <operator>(</operator><call><name><name>swz</name><operator>.</operator><name>ind_var</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>valueNumber</name><argument_list>()</argument_list></call> <operator>==</operator> <name>vn</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><name>swz</name></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

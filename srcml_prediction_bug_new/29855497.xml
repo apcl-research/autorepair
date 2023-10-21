@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31059996.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setCommandEnabled</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>VCommand</name></type> <name>command</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>boolean</name></type> <name>enable</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>SwingThreadHandler</name><operator>.</operator><name>start</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super> <argument_list>()</argument_list> <block>{
+        <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+          <expr_stmt><expr><call><name><name>command</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><name>enable</name></expr></argument>)</argument_list></call> 
+        </block_content>}</block></function>
+      }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+     <if_stmt><if>if <condition>(<expr><name>enable</name></expr>)</condition> <block>{<block_content>
+       <expr_stmt><expr><call><name><name>activeCommands</name><operator>.</operator><name>addElement</name></name><argument_list>(<argument><expr><name>command</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+     </block_content>}</block></if> <else>else <block>{<block_content>
+       <expr_stmt><expr><call><name><name>activeCommands</name><operator>.</operator><name>removeElement</name></name><argument_list>(<argument><expr><name>command</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+     </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

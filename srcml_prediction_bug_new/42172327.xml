@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42160909.java">  <function><type><specifier>protected</specifier> <name>Command</name></type> <name>getReorientReferenceRelationshipCommand</name><parameter_list>(<parameter><decl><type><name>ReorientReferenceRelationshipRequest</name></type> <name>req</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+    <switch>switch <condition>(<expr><call><name>getVisualID</name><argument_list>(<argument><expr><name>req</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+      <case>case <expr><name><name>OutputTargetEditPart</name><operator>.</operator><name>VISUAL_ID</name></name></expr>:</case>
+        <return>return <expr><call><name>getGEFWrapper</name><argument_list>(<argument><expr><operator>new</operator> <call><name>OutputTargetReorientCommand</name><argument_list>(<argument><expr><name>req</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+      <case>case <expr><name><name>CaseItemTargetToolstepEditPart</name><operator>.</operator><name>VISUAL_ID</name></name></expr>:</case>
+        <return>return <expr><call><name>getGEFWrapper</name><argument_list>(<argument><expr><operator>new</operator> <call><name>CaseItemTargetToolstepReorientCommand</name><argument_list>(<argument><expr><name>req</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></switch>
+    <return>return <expr><call><name><name>super</name><operator>.</operator><name>getReorientReferenceRelationshipCommand</name></name><argument_list>(<argument><expr><name>req</name></expr></argument>)</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

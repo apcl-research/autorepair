@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16382796.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>ret</name> <init>= <expr><literal type="string">"---"</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <literal type="string">"fieldName: "</literal> <operator>+</operator> <call><name>getFieldName</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <literal type="string">"paramName: "</literal> <operator>+</operator> <call><name>getParamName</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <literal type="string">"value: "</literal> <operator>+</operator> <call><name>getValue</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <literal type="string">"xpath: "</literal> <operator>+</operator> <call><name>getXPath</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <literal type="string">"normalizedXPath: "</literal> <operator>+</operator> <call><name>getNormalizedXPath</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>ret</name> <operator>+</operator> <literal type="string">"\n"</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

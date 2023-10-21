@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/310899.java">	<function><type><specifier>private</specifier> <name>Component</name></type> <name>createControlPanel</name><parameter_list>()</parameter_list>  
+	  <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>		
+		<expr_stmt><expr><name>cardLayout</name> <operator>=</operator> <operator>new</operator> <call><name>CardLayout</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>controlPanel</name> <operator>=</operator> <operator>new</operator> <call><name>JPanel</name><argument_list>(<argument><expr><name>cardLayout</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>button</name> <operator>=</operator> <operator>new</operator> <call><name>JButton</name><argument_list>(<argument><expr><literal type="string">"Run"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>button</name><operator>.</operator><name>addActionListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>controlPanel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>button</name></expr></argument>, <argument><expr><literal type="string">"button"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>progressBar</name> <operator>=</operator> <operator>new</operator> <call><name>JProgressBar</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>progressBar</name><operator>.</operator><name>setStringPainted</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>controlPanel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>progressBar</name></expr></argument>, <argument><expr><literal type="string">"progressBar"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>controlPanel</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

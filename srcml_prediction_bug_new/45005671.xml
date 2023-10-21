@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48592796.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>activate</name><parameter_list>(<parameter><decl><type><name>Planet</name></type> <name>p</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>center</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><name>p</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <comment type="line">// activate normally</comment>
+        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>activate</name></name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// then center on the world</comment>
+        <if_stmt><if>if <condition>(<expr><name>center</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>conf</name><operator>.</operator><name>offset</name><operator>.</operator><name>setLocation</name></name><argument_list>(<argument><expr><operator>-</operator><call><name><name>p</name><operator>.</operator><name>getPosition</name></name><argument_list>()</argument_list></call><operator>.</operator><name>x</name> <operator>*</operator> <name><name>conf</name><operator>.</operator><name>scale</name></name></expr></argument>, <argument><expr><call><name><name>p</name><operator>.</operator><name>getPosition</name></name><argument_list>()</argument_list></call><operator>.</operator><name>y</name> <operator>*</operator> <name><name>conf</name><operator>.</operator><name>scale</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+    </block_content>}</block></function><comment type="line">// end activate(p,center)</comment>
+</unit>

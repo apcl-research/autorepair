@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16672996.java">	<function><type><specifier>public</specifier> <name>Node</name></type> <name>child</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>link</name></decl></parameter>, <parameter><decl><type><name>short</name></type> <name>meta</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>value</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>link</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<while>while<condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>( )</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>Node</name></type> <name>node</name> <init>= <expr><operator>(</operator><name>Node</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<if_stmt><if>if<condition>(<expr><call><name><name>node</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>link</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>node</name><operator>.</operator><name>meta</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+				<if_stmt><if>if<condition>(<expr><call><name><name>node</name><operator>.</operator><name>meta</name></name><argument_list>(<argument><expr><name>meta</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getString</name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+					<return>return <expr><name>node</name></expr>;</return>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></while>
+
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

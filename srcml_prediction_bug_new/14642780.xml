@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26019996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>handleMessage</name><parameter_list>(<parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>message</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Message</name></type> <name>received</name> 
+        <init>= <expr><operator>(</operator><name>Message</name><operator>)</operator> <call><name><name>MessageUtil</name><operator>.</operator><name>createObjectFromByteArray</name></name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>result</name><argument_list>(<argument><expr><operator>(</operator><name>PrimeCandidate</name><operator>)</operator> <call><name><name>received</name><operator>.</operator><name>getContent</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

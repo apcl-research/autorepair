@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44452796.java">    <function><type><specifier>public</specifier> <name>Value</name></type> <name>evaluate</name><parameter_list>(<parameter><decl><type><name>RdfBindingRow</name></type> <name>bindings</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Variable</name></type> <name>variable</name> <init>= <expr><operator>(</operator><name>Variable</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>data</name><operator>.</operator><name>getArguments</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">//TODO Does bound("hi") work?</comment>
+        <comment type="line">//TODO See what to do if the variable does not exist</comment>
+        <decl_stmt><decl><type><name>boolean</name></type> <name>result</name> <init>=  <expr><call><name><name>bindings</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>variable</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <return>return <expr><call><name><name>this</name><operator>.</operator><name>converter</name><operator>.</operator><name>convertBoolean</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44189996.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>readStatement</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <comment type="line">// Null comment</comment>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>comment</name></name> <operator>=</operator> <operator>new</operator> <call><name>String</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <while>while <condition>(<expr><call><name><name>statements</name><operator>.</operator><name>empty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <comment type="line">// Read line</comment>
+            <expr_stmt><expr><call><name>readSignificantLine</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name>isEOF</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>comment</name></name> <operator>+=</operator> <call><name><name>super</name><operator>.</operator><name>getComment</name></name><argument_list>()</argument_list></call></expr> 
+            <comment type="line">// Split line into statements</comment>
+            <call><name>parseStatements</name><argument_list>(<argument><expr><call><name>getLine</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <return>return <expr><call><name><name>statements</name><operator>.</operator><name>pop</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

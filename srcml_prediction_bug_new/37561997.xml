@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37562483.java"><function><type><specifier>protected</specifier> <name>Object</name></type> <name>nativeToJava</name><parameter_list>(<parameter><decl><type><name>TransferData</name></type> <name>transferData</name></decl></parameter>)</parameter_list><block>{<block_content>
+  <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>isSupportedType</name><argument_list>(<argument><expr><name>transferData</name></expr></argument>)</argument_list></call> <operator>||</operator> <name><name>transferData</name><operator>.</operator><name>transferable</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+  <try>try <block>{<block_content>
+    <return>return <expr><call><name><name>transferData</name><operator>.</operator><name>transferable</name><operator>.</operator><name>getTransferData</name></name><argument_list>(<argument><expr><call><name>getDataFlavor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    <catch>catch<parameter_list>(<parameter><decl><type><name>UnsupportedFlavorException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+  </block_content>}</block></catch> <catch>catch<parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content/>}</block></catch></try>
+  <return>return <expr><literal type="null">null</literal></expr>;</return>
+</block_content>}</block></function>
+</unit>

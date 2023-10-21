@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18489983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>tableChanged</name><parameter_list>(<parameter><decl><type><name>TableModelEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// JW: make Selection sufficiently ... super doesn't know about row</comment>
+        <comment type="line">// mapping and sets rowSelection in model coordinates</comment>
+        <comment type="line">// causing complete convergence.</comment>
+        <expr_stmt><expr><call><name>getSelection</name><argument_list>()</argument_list></call><operator>.</operator><call><name>lock</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>tableChanged</name></name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>updateSelectionAndRowModel</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>use</name><argument_list>(<argument><expr><name>filters</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+    </block_content>}</block></function>
+</unit>

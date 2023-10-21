@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26102629.java">    <function><type><specifier>public</specifier> <name>JingleMediaSession</name></type> <name>createMediaSession</name><parameter_list>(<parameter><decl><type><name>PayloadType</name></type> <name>payloadType</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>TransportCandidate</name></type> <name>remote</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>TransportCandidate</name></type> <name>local</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>JingleSession</name></type> <name>jingleSession</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>ScreenShareSession</name></type> <name>session</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>session</name> <operator>=</operator> <operator>new</operator> <call><name>ScreenShareSession</name><argument_list>(<argument><expr><name>payloadType</name></expr></argument>, <argument><expr><name>remote</name></expr></argument>, <argument><expr><name>local</name></expr></argument>, <argument><expr><literal type="string">"Screen"</literal></expr></argument>, <argument><expr><name>jingleSession</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>encoder</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>session</name><operator>.</operator><name>setEncoder</name></name><argument_list>(<argument><expr><name>encoder</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+        <if_stmt><if>if <condition>(<expr><name>decoder</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>session</name><operator>.</operator><name>setDecoder</name></name><argument_list>(<argument><expr><name>decoder</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>session</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+</unit>

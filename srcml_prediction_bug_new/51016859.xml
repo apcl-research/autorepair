@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19352983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>traceBack</name><parameter_list>(<parameter><decl><type><name>PathNode</name></type> <name>n</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>n</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>relationDefaultBitSet</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>n</name><operator>.</operator><name>getRid</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>conceptDefaultBitSet</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><call><name><name>n</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getCid</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>conceptDefaultBitSet</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>n</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getCid</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>traceBack</name><argument_list>(<argument><expr><call><name><name>n</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+             
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></if></if_stmt>
+</unit>

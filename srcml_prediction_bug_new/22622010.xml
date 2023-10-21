@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22625963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>deleteCollection</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>collection</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// CollectionConfig config = this.getCollectionConfig(collection);</comment>
+		<decl_stmt><decl><type><name>CollectionConfig</name></type> <name>config</name> <init>= <expr><operator>(</operator><name>CollectionConfig</name><operator>)</operator> <call><name><name>collections</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>collection</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>config</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"WARNING: deleteCollection(): config not found for "</literal> <operator>+</operator> <name>collection</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><literal type="string">"Registered collection keys:"</literal></expr></init></decl>;</decl_stmt>
+			<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name>getIds</name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+				<decl_stmt><decl><type><name>String</name></type> <name>key</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><name>s</name> <operator>+=</operator> <literal type="string">"\n\t"</literal> <operator>+</operator> <name>key</name></expr>;</expr_stmt>
+			 
+			<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return;</return>
+		</block_content>}</block></for>
+		<expr_stmt><expr><call><name>deleteCollection</name><argument_list>(<argument><expr><name>config</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

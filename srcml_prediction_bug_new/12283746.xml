@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/21901091.java">	<function><type><specifier>private</specifier> <name>Configuration</name></type> <name>getConfiguration</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>Configuration</name></type> <name>configuration</name> <init>= <expr><operator>new</operator> <call><name>Configuration</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>File</name></type> <name>file</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>TEMPLATES_PATH</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name><name>Utility</name><operator>.</operator><name>PATH_SEPARATOR_STRING</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>file</name> <operator>=</operator> <operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>TEMPLATES_PATH</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>file</name> <operator>=</operator> <operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name><name>RomaApplicationContext</name><operator>.</operator><name>getApplicationPath</name></name><argument_list>(  <argument><expr><operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <name>TEMPLATES_PATH</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<expr_stmt><expr><call><name><name>configuration</name><operator>.</operator><name>setDirectoryForTemplateLoading</name></name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>configuration</name><operator>.</operator><name>setObjectWrapper</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>DefaultObjectWrapper</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>configuration</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

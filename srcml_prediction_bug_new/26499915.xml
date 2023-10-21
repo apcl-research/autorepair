@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490545.java">  <function><type><specifier>public</specifier> <name>XmlBuffer</name></type> <name>addContent</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>aContent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>_theStates</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><literal type="string">"Could not add content ["</literal> <operator>+</operator> <name>aContent</name> <operator>+</operator>
+        <literal type="string">"] there is no element started"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+
+    <decl_stmt><decl><type><name>BufferState</name></type> <name>aState</name> <init>= <expr><operator>(</operator><name>BufferState</name><operator>)</operator> <name><name>_theStates</name><operator>.</operator><name>getFirst</name></name></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name>validateStartingXmlGeneration</name><argument_list>(<argument><expr><name>aState</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>_theScribe</name><operator>.</operator><name>xmlEncode</name></name><argument_list>(<argument><expr><name>aContent</name></expr></argument>, <argument><expr><call><name><name>aState</name><operator>.</operator><name>getContent</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <return>return <expr><name>this</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

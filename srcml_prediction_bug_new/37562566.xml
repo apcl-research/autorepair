@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37563696.java"><function><type><specifier>public</specifier> <name>void</name></type> <name>setBackgroundMode</name> <parameter_list>(<parameter><decl><type><name>int</name></type> <name>mode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+  <expr_stmt><expr><call><name>checkWidget</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+  <if_stmt><if>if<condition>(<expr><name>backgroundMode</name> <operator>==</operator> <name>mode</name></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+  <expr_stmt><expr><name>backgroundMode</name> <operator>=</operator> <name>mode</name></expr>;</expr_stmt>
+  <decl_stmt><decl><type><name><name>Control</name> <index>[]</index></name></type> <name>children</name> <init>= <expr><call><name>_getChildren</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+  <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>children</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>  )</control> <block>{<block_content>
+    <expr_stmt><expr><name><name>children</name> <index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>updateBackgroundMode</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>   
+  </block_content>}</block></for>
+  <expr_stmt><expr><call><name><name>handle</name><operator>.</operator><name>repaint</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+</unit>

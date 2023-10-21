@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testDelta_01_initCtxPredSet</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>IContextRoot</name></type> <name>root</name> <init>= <expr><call><name>createContext</name><argument_list>(<argument><expr><literal type="string">"ctx"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>addAxioms</name><argument_list>(<argument><expr><name>root</name></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>(<argument><expr><literal type="string">"A"</literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>(<argument><expr><literal type="string">"ââââ"</literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>root</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>hasStamp</name><argument_list>(<argument><expr><call><name><name>root</name><operator>.</operator><name>getPORoot</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPredicateSets</name><argument_list>()</argument_list></call><index>[<expr><literal type="number">0</literal></expr>]</index></expr></argument>, <argument><expr><name><name>PseudoStampedElement</name><operator>.</operator><name>INIT_STAMP</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>hasStamp</name><argument_list>(<argument><expr><call><name><name>root</name><operator>.</operator><name>getPORoot</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPredicateSets</name><argument_list>()</argument_list></call><index>[<expr><literal type="number">1</literal></expr>]</index></expr></argument>, <argument><expr><name><name>PseudoStampedElement</name><operator>.</operator><name>INIT_STAMP</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	</block_content>}</block></function>
+</unit>

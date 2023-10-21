@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36182783.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>authenticateUser</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>userName</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>password</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>InternalException</name></expr></argument></throws>  
+		<block>{<block_content>
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering isUserValid()"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>User</name></type> <name>fedoraUser</name> <init>= <expr><call><name><name>securityMgr</name><operator>.</operator><name>authenticateUser</name></name><argument_list>(<argument><expr><name>userName</name></expr></argument>, <argument><expr><name>password</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>fedoraUser</name><operator>.</operator><name>getIsDisabled</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"exiting authenticateUser, user is disabled"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="string">"disabled"</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>fedoraUser</name><operator>.</operator><name>isAuthenticated</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"exiting authenticateUser, user is invalid"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="string">"invalid"</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"user is valid"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><literal type="string">"valid"</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

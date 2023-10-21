@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26482629.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>playSound</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>currentFile</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>volume</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>pan</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>sampleRate</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<comment type="line">//load file</comment>
+	<expr_stmt><expr><call><name>soundLoad</name><argument_list>(<argument><expr><name>currentFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<comment type="line">// Set Volume</comment>
+	<expr_stmt><expr><call><name>setVolume</name><argument_list>(<argument><expr><name>clip</name></expr></argument>, <argument><expr><name>volume</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<comment type="line">// Set pan</comment>
+	<expr_stmt><expr><call><name>setPan</name> <argument_list>(<argument><expr><name>clip</name></expr></argument>, <argument><expr><name>pan</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<comment type="line">// Set pitch</comment>
+	<expr_stmt><expr><call><name>setPitch</name><argument_list>(<argument><expr><name>clip</name></expr></argument>, <argument><expr><name>sampleRate</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>clip</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+        <comment type="line">// Start playing</comment>
+        <expr_stmt><expr><call><name><name>clip</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

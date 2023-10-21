@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19302983.java">    <function><type><specifier>public</specifier> <name>Value</name></type> <name>castString</name><parameter_list>(<parameter><decl><type><name>Literal</name></type> <name>literal</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IllegalCastException</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><operator>new</operator> <call><name>DateTime</name><argument_list>(<argument><expr><call><name><name>literal</name><operator>.</operator><name>getLabel</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><call><name><name>this</name><operator>.</operator><name>factory</name><operator>.</operator><name>createLiteral</name></name><argument_list>(<argument><expr><call><name><name>literal</name><operator>.</operator><name>getLabel</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>SPARQLConstants</name><operator>.</operator><name>DATE_TYPE</name></name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IllegalArgumentException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalCastException</name><argument_list>(<argument><expr><literal type="string">"Unable to cast string to dateTime"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

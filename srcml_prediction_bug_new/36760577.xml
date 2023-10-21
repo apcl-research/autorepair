@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38489983.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>loadStoredRelations</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument>, <argument><expr><name>ParseException</name></expr></argument>, <argument><expr><name>RimelessDBMSException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>BufferedReader</name></type> <name>inputStream</name> <init>= <expr><operator>new</operator> <call><name>BufferedReader</name><argument_list>(<argument><expr><operator>new</operator> <call><name>FileReader</name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getDataDictionaryFile</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">//inputStream.readLine();</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>currentLine</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>DataDictionaryParser</name></type> <name>dataDictionaryParser</name> <init>= <expr><call><name><name>DataDictionaryParser</name><operator>.</operator><name>newDataDictionaryParser</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<comment type="line">//currentLine = 1;</comment>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>ok</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><name>ok</name></expr>)</condition><block type="pseudo"><block_content>  
+			<expr_stmt><expr><name>ok</name> <operator>=</operator> <call><name><name>dataDictionaryParser</name><operator>.</operator><name>parseStoredRelation</name></name><argument_list>(<argument><expr><name>inputStream</name></expr></argument>, <argument><expr><name>currentLine</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></while>
+			<expr_stmt><expr><name>currentLine</name> <operator>+=</operator> <literal type="number">3</literal></expr>;</expr_stmt>
+		</block_content>}</block></function>
+</unit>

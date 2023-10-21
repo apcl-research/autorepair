@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44182796.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>hashCode</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>long</name></type> <name>h</name> <init>= <expr><literal type="number">0</literal></expr></init></decl> 
+        <init>= <expr><call><name>longC</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>long</name></type> <name>n</name> <init>= <expr><call><name>length</name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>prepareNext</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <while>while <condition>(<expr><operator>(</operator><name>c</name> <operator>=</operator> <call><name>nextChar</name><argument_list>()</argument_list></call><operator>)</operator> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>h</name> <operator>+=</operator> <name>c</name> <operator>*</operator> <call><name>pow</name><argument_list>(<argument><expr><literal type="number">31</literal></expr></argument>, <argument><expr><name>n</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>n</name><operator>--</operator></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><operator>(</operator><name>int</name><operator>)</operator> <operator>(</operator><name>h</name> <operator>&amp;</operator> <literal type="number">0xffffffff</literal><operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+</unit>

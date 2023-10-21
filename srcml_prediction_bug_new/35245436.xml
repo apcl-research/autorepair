@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46072783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>addBook</name><parameter_list>(<parameter><decl><type><name>Book</name></type> <name>book</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if  <condition>(<expr><call><name><name>this</name><operator>.</operator><name>isAdministrator</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name>isLogin</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><call><name><name>book</name><operator>.</operator><name>checkData</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>book</name><operator>.</operator><name>checkCallNumber</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <decl_stmt><decl><type><name>boolean</name></type> <name>result</name> <init>= <expr><call><name><name>dq</name><operator>.</operator><name>addBook</name></name><argument_list>(<argument><expr><name>book</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                    <expr_stmt><expr><call><name><name>Book</name><operator>.</operator><name>refreshBookTable</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                    <return>return <expr><name>result</name></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

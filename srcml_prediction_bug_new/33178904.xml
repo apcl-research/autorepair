@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3389074.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>injectNewlines</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>lineLength</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<decl_stmt><decl><type><name>StringBuffer</name></type> <name>newSource</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>(<argument><expr><name><name>source</name><operator>.</operator><name>length</name></name></expr></argument> )</argument_list></call> <operator>+</operator> <literal type="number">100</literal></expr></init></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name>int</name></type> <name>begin</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+	<while>while <condition>(<expr><name>begin</name> <operator>&lt;</operator> <call><name><name>source</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <decl_stmt><decl><type><name>int</name></type> <name>end</name> <init>= <expr><name>begin</name> <operator>+</operator> <name>lineLength</name></expr></init></decl>;</decl_stmt>
+	    <if_stmt><if>if <condition>(<expr><name>end</name> <operator>&gt;</operator> <call><name><name>source</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>end</name> <operator>=</operator> <call><name><name>source</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+	    <expr_stmt><expr><call><name><name>newSource</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><call><name><name>source</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><name>begin</name></expr></argument>, <argument><expr><name>end</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name><name>newSource</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="char">'\n'</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	    <expr_stmt><expr><name>begin</name> <operator>=</operator> <name>end</name></expr>;</expr_stmt>
+	</block_content>}</block></while>
+
+	<expr_stmt><expr><name>source</name> <operator>=</operator> <call><name><name>newSource</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

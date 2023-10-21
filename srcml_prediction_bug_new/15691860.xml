@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/15690515.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>launchAuto</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>active</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>killAuto</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>mSock</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><name>mAuto</name> <operator>=</operator> <operator>new</operator> <call><name>AutomaticClusterManagementThread</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><call><name><name>mCluster</name>
+                                                                  <operator>.</operator><name>getClusterName</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block>
+            <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><name>mAuto</name> <operator>=</operator> <operator>new</operator> <call><name>AutomaticClusterManagementThread</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>active</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></catch></try>
+            <if_stmt><if>if <condition>(<expr><name>mAuto</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>mAuto</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

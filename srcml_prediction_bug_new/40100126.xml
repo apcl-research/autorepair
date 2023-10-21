@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37002483.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getAbstract</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>RunesException</name></expr></argument></throws> <block>{<block_content>
+        <comment type="line">// XXX: Provide the first sentence/line from the content?</comment>
+        <comment type="line">// -- Not any sufficiently to do, but seeing the requirements.</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>rslt</name> <init>= <expr><call><name>getBody</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>rslt</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>rslt</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">50</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>rslt</name> <operator>=</operator> <call><name><name>rslt</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">50</literal></expr></argument> ;</argument_list></call></expr></expr_stmt></block_content></block></if></if_stmt>
+
+        <return>return <expr><name>rslt</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

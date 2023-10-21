@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36954883.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setDescription</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>description</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>IDocumentElementNode</name></type> <name>node</name> <init>= <expr><call><name>getChildNode</name><argument_list>(<argument><expr><name><name>CtxHelpDescription</name><operator>.</operator><name>class</name></name></expr></argument>)</argument_list></call></expr></init></decl> 
+		<if_stmt><if>if <condition>(<expr><name>node</name> <operator>instanceof</operator> <name>CtxHelpDescription</name></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>description</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name>removeChildNode</name><argument_list>(<argument><expr><name>node</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<expr_stmt><expr><operator>(</operator><operator>(</operator><name>CtxHelpDescription</name><operator>)</operator> <name>node</name><operator>)</operator><operator>.</operator><call><name>setDescription</name><argument_list>(<argument><expr><name>description</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>description</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>CtxHelpDescription</name></type> <name>newDescription</name> <init>= <expr><call><name>getModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createDescription</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>newDescription</name><operator>.</operator><name>setDescription</name></name><argument_list>(<argument><expr><name>description</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>addChildNode</name><argument_list>(<argument><expr><name>newDescription</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

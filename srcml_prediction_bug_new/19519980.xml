@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/475569.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>derivedFromBoolean</name><parameter_list>(<parameter><decl><type><name>Type</name></type> <name>type</name></decl></parameter>, <parameter><decl><type><name>FormulaFactory</name></type> <name>ff</name></decl></parameter>)</parameter_list>  
+		<if_stmt><if>if <condition>(<expr><call><name><name>type</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><call><name><name>ff</name><operator>.</operator><name>makeBooleanType</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>Type</name></type> <name>baseType</name> <init>= <expr><call><name><name>type</name><operator>.</operator><name>getBaseType</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>baseType</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><call><name>derivedFromBoolean</name><argument_list>(<argument><expr><name>baseType</name></expr></argument>, <argument><expr><name>ff</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>type</name> <operator>instanceof</operator> <name>ProductType</name></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>ProductType</name></type> <name>productType</name> <init>= <expr><operator>(</operator><name>ProductType</name><operator>)</operator> <name>type</name></expr></init></decl>;</decl_stmt>
+			<return>return <expr><call><name>derivedFromBoolean</name><argument_list>(<argument><expr><call><name><name>productType</name><operator>.</operator><name>getLeft</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>ff</name></expr></argument>)</argument_list></call>
+					<operator>&amp;&amp;</operator> <call><name>derivedFromBoolean</name><argument_list>(<argument><expr><call><name><name>productType</name><operator>.</operator><name>getRight</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>ff</name></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	}
+</unit>

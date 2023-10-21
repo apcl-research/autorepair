@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27792796.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>delete</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>value</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Entry</name></type> <name>last_entry</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Entry</name></type> <name>entry</name> <init>= <expr><name>first</name></expr></init></decl>;</decl_stmt>
+    <while>while<condition>( <expr><name>entry</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+      <if_stmt><if>if<condition>( <expr><name><name>entry</name><operator>.</operator><name>value</name></name> <operator>==</operator> <name>value</name></expr> )</condition> <block>{<block_content>
+        <if_stmt><if>if<condition>( <expr><name>last_entry</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+          <expr_stmt><expr><name>first</name> <operator>=</operator> <name><name>entry</name><operator>.</operator><name>next</name></name></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else<block type="pseudo"><block_content>  
+          <expr_stmt><expr><name><name>last_entry</name><operator>.</operator><name>next</name></name> <operator>=</operator> <name><name>entry</name><operator>.</operator><name>next</name></name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><name>size</name><operator>--</operator></expr>;</expr_stmt>
+        <return>return;</return>
+      </block_content>}</block></while>
+      <expr_stmt><expr><name>last_entry</name> <operator>=</operator> <name>entry</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name>entry</name> <operator>=</operator> <name><name>entry</name><operator>.</operator><name>next</name></name></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

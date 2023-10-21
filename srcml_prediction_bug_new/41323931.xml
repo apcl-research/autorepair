@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12702783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeSelection</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>SelectionHandler</name></type> <name>theHandler</name> <init>= <expr><call><name>getSelectionHandler</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>theHandler</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>theHandler</name><operator>.</operator><name>getSelection</name></name><argument_list>()</argument_list></call><operator>.</operator><name>iterator</name></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name>
+					<operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+				<decl_stmt><decl><type><name>Object</name></type> <name>element</name> <init>= <expr><operator>(</operator><name>Object</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><name>element</name> <operator>instanceof</operator> <name>SelectionableNode</name></expr>)</condition> <block>{<block_content>
+					<decl_stmt><decl><type><name>SelectionableNode</name></type> <name>theSelection</name> <init>= <expr><operator>(</operator><name>SelectionableNode</name><operator>)</operator> <name>element</name></expr></init></decl>;</decl_stmt>
+					<expr_stmt><expr><call><name><name>theSelection</name><operator>.</operator><name>detach</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></for>
+			<expr_stmt><expr><call><name><name>theHandler</name><operator>.</operator><name>unselectAll</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

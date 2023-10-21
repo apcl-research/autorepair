@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41459996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addResendRequest</name><parameter_list>(<parameter><decl><type><name>Request</name></type> <name>request</name></decl></parameter>, <parameter><decl><type><name>ResendHTTPRequest</name></type> <name>resendReq</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>request</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <name>resendReq</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></if></if_stmt>
+		
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>ResendHTTPRequest</name></argument>&gt;</argument_list></name></type> <name>list</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><name>list</name> <operator>=</operator> <call><name><name>resendMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>request</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch  <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<comment type="line">// ignore</comment>
+		</block_content>}</block></catch></try>
+		
+		<if_stmt><if>if <condition>(<expr><name>list</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>list</name> <operator>=</operator> <operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>ResendHTTPRequest</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>resendMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>request</name></expr></argument>, <argument><expr><name>list</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>resendReq</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

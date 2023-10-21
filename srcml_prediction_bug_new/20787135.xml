@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2078991.java">   <function><type><specifier>public</specifier> <name>void</name></type> <name>addAll</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name><name>Gesture</name><argument_list type="generic">&lt;<argument><name>?</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name></type> <name>samples</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <for>for <control>(<init><decl><type><name><name>Gesture</name><argument_list type="generic">&lt;<argument><name>?</name></argument>&gt;</argument_list></name></type> <name>sample</name> <range>: <expr><name>samples</name></expr></range></decl></init>  )</control> <block>{<block_content>
+         <expr_stmt><expr><call><name>add</name><argument_list>(<argument><expr><name>sample</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></for>
+
+      <for>for <control>(<init><decl><type><name><name>Gesture</name><argument_list type="generic">&lt; <argument><name>?</name></argument> &gt;</argument_list></name></type> <name>sample</name> <range>: <expr><name>samples</name></expr></range></decl></init>)</control> <block>{<block_content>
+         <expr_stmt><expr><call><name><name>propertyChangeSupport</name><operator>.</operator><name>fireIndexedPropertyChange</name></name><argument_list>(<argument><expr><name>PROPERTY_TEST_CLASSES</name></expr></argument>,
+               <argument><expr><call><name><name>samples</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>sample</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><name>sample</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></for>
+
+   </block_content>}</block></function> <comment type="line">// addAll</comment>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14602783.java">	<function><type><specifier>public</specifier> <name>ContextTypeRegistry</name></type> <name>getTemplateContextRegistry</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>contextTypeRegistry</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>ContributionContextTypeRegistry</name></type> <name>registry</name> <init>= <expr><operator>new</operator> <call><name>ContributionContextTypeRegistry</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>registry</name><operator>.</operator><name>addContextType</name></name><argument_list>(<argument><expr><name><name>PomTemplatesContextTypeIds</name><operator>.</operator><name>DEPENDENCIES</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>registry</name><operator>.</operator><name>addContextType</name></name><argument_list>(<argument><expr><name><name>PomTemplatesContextTypeIds</name><operator>.</operator><name>ARTIFACT_ID</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>registry</name><operator>.</operator><name>addContextType</name></name><argument_list>(<argument><expr><name><name>PomTemplatesContextTypeIds</name><operator>.</operator><name>GROUP_ID</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>registry</name><operator>.</operator><name>addContextType</name></name><argument_list>(<argument><expr><name><name>PomTemplatesContextTypeIds</name><operator>.</operator><name>VERSION</name></name></expr></argument>)</argument_list></call> 
+			<name>contextTypeRegistry</name> <operator>=</operator> <name>registry</name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>contextTypeRegistry</name></expr>;</return>
+	</block_content>}</block></function>	
+</unit>

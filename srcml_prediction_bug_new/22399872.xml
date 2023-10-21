@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22029091.java">  <function><type><specifier>static</specifier> <specifier>private</specifier> <name>void</name></type> <name>nv_eight</name><parameter_list>(<parameter><decl><type><name>CMDARG</name></type> <name>cap</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name><name>cap</name><operator>.</operator><name>oap</name><operator>.</operator><name>motion_type</name></name> <operator>=</operator> <name>MCHAR</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>cap</name><operator>.</operator><name>oap</name><operator>.</operator><name>inclusive</name></name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>G</name><operator>.</operator><name>curwin</name><operator>.</operator><name>w_curswant</name></name> <operator>=</operator> <name>MAXCOL</name></expr> 	<comment type="line">// so we stay at the end</comment>
+    <if_stmt><if>if <condition>(<expr><call><name><name>Edit</name><operator>.</operator><name>cursor_down</name></name><argument_list>(<argument><expr><name><name>cap</name><operator>.</operator><name>count1</name></name> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><name><name>cap</name><operator>.</operator><name>oap</name><operator>.</operator><name>op_type</name></name> <operator>==</operator> <name>OP_NOP</name></expr></argument>)</argument_list></call> <operator>==</operator> <name>FAIL</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name>clearopbeep</name><argument_list>(<argument><expr><name><name>cap</name><operator>.</operator><name>oap</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

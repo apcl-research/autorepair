@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636891.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>selectionChanged</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>SelectionChangedEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>BusyIndicator</name><operator>.</operator><name>showWhile</name></name><argument_list>(<argument><expr><call><name>getTable</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getShell</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDisplay</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+			<function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+				<decl_stmt><decl><type><name>IStructuredSelection</name></type> <name>selection</name><init>= <expr><operator>(</operator><name>IStructuredSelection</name><operator>)</operator> <call><name><name>event</name><operator>.</operator><name>getSelection</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<decl_stmt><decl><type><name>Object</name></type> <name>selectedElement</name><init>= <expr><call><name><name>selection</name><operator>.</operator><name>getFirstElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><name>selectedElement</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><name>fCurrentTreeSelection</name><operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+					<expr_stmt><expr><call><name><name>fListViewer</name><operator>.</operator><name>setInput</name></name><argument_list>(<argument><expr><name>fCurrentTreeSelection</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+					<return>return;</return>
+				 
+				<expr_stmt><expr><call><name>populateListViewer</name><argument_list>(<argument><expr><name>selectedElement</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></function>}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

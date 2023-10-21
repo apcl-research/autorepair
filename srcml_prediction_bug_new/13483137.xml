@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17592715.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>initLocals</name><parameter_list>(<parameter><decl><type><name>Collection</name></type> <name>locals</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>LocalExpr</name><index>[]</index></name></type> <name>t</name> <init>= <expr><operator>new</operator> <name><name>LocalExpr</name><index>[<expr><call><name><name>locals</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>]</index></name></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name><name>t</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>locals</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name> <argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><name><name>t</name><index>[<expr><name>i</name></expr>]</index></name> <operator>=</operator> <operator>(</operator><name>LocalExpr</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+        <expr_stmt><expr><call><name>addStmt</name><argument_list>(<argument><expr><operator>new</operator> <call><name>InitStmt</name><argument_list>(<argument><expr><name>t</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

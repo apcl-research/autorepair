@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26392783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initContextAction</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>ProjectView</name><operator>.</operator><name>registerContextActionProvider</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>ContextActionProvider</name></super><argument_list>()</argument_list> <block>{
+            <function><type><specifier>public</specifier> <name>Action</name></type> <name>getContextAction</name><parameter_list>(
+                    <parameter><decl><type><specifier>final</specifier> <name>Browser</name></type> <name>browser</name></decl></parameter>,
+                    <parameter><decl><type><specifier>final</specifier> <name><name>Node</name><index>[]</index></name></type> <name>nodes</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><name><name>nodes</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+                    <decl_stmt><decl><type><name>Node</name></type> <name>node</name> <init>= <expr><name><name>nodes</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+
+                    <if_stmt><if>if <condition>(<expr><name>node</name> <operator>instanceof</operator> <name>AntNode</name></expr>)</condition> <block>{<block_content>
+                        <return>return <expr><operator>new</operator> <call><name>AntNodeContextGroup</name><argument_list>(<argument><expr><operator>(</operator><name>AntNode</name><operator>)</operator> <name>node</name></expr></argument>)</argument_list></call></expr> 
+                    </then><else>: <expr><literal type="null">null</literal></expr></else></ternary></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></function>
+    }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

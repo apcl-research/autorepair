@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50482783.java">  <function><type><specifier>public</specifier> <name>byte</name></type> <name>readByte</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+    <while>while <condition>(<expr><call><name><name>in</name><operator>.</operator><name>available</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+      <try>try <block>{<block_content>
+        <expr_stmt><expr><call><name><name>Thread</name><operator>.</operator><name>currentThread</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>sleep</name><argument_list>(<argument><expr><literal type="number">100</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>InterruptedException</name></type> <name>iex</name></decl></parameter>  <block>{<block_content>
+        <expr_stmt><expr><call><name><name>Thread</name><operator>.</operator><name>currentThread</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>interrupt</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><literal type="char">'\0'</literal></expr>;</return>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></while>
+    <decl_stmt><decl><type><name>byte</name></type> <name>val</name> <init>= <expr><operator>(</operator><name>byte</name><operator>)</operator> <call><name><name>in</name><operator>.</operator><name>read</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>Logger</name><operator>.</operator><name>logInput</name></name><argument_list>(<argument><expr><operator>(</operator><name>char</name><operator>)</operator><name>val</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name>val</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

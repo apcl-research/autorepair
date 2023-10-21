@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25392715.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>camConfiguration</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>x</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y</name></decl></parameter>)</parameter_list>  
+		<throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>		
+		<expr_stmt><expr><name>widthCam</name> <operator>=</operator> <name>x</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name>heightCam</name> <operator>=</operator> <name>y</name></expr>;</expr_stmt>
+		<comment type="block">/*p4vj.show("* layered Configuration. layered Width: " + widthCam
+				+ " layered Height: " + heightCam);*/</comment>
+		<expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"* layered Configuration. layered Width: "</literal> <operator>+</operator> <name>widthCam</name> <operator>+</operator> <literal type="string">" layered Height: "</literal> <operator>+</operator> <name>heightCam</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><name>wFactor</name> <operator>=</operator> <operator>(</operator><name>float</name><operator>)</operator> <name><name>p4vj</name><operator>.</operator><name>widthVisual</name></name> <operator>/</operator> <operator>(</operator><name>float</name><operator>)</operator> <name>widthCam</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name>hFactor</name> <operator>=</operator> <operator>(</operator><name>float</name><operator>)</operator> <name><name>p4vj</name><operator>.</operator><name>heightVisual</name></name> <operator>/</operator> <operator>(</operator><name>float</name><operator>)</operator> <name>heightCam</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

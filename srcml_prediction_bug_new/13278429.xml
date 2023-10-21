@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13779996.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>addNode</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>typeId</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>isLeafNode</name></decl></parameter>, <parameter><decl><type><name>Element</name></type> <name>auxiliaryData</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Pair</name></type> <name>result</name> <init>= <expr><operator>new</operator> <call><name>Pair</name><argument_list>(<argument><expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>typeId</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>actualSubgraphpart</name><operator>.</operator><name>nodes</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>nodeAuxiliaryData</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>, <argument><expr><name>auxiliaryData</name></expr></argument>)</argument_list></call> 
+
+        <if_stmt><if>if <condition>(<expr><name>isLeafNode</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>symmetricTwins</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

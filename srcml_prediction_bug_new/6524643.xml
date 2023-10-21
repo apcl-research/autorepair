@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18690515.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>equals</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>obj</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><name>obj</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>obj</name> <operator>instanceof</operator> <name>MyUrl</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>MyUrl</name></type> <name>data</name> <init>= <expr><operator>(</operator><name>MyUrl</name><operator>)</operator> <name>obj</name></expr></init></decl>;</decl_stmt>
+            <return>return <expr><operator>new</operator> <call><name>EqualsBuilder</name><argument_list>()</argument_list></call>
+                <operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>_url</name></expr></argument>, <argument><expr><name><name>data</name><operator>.</operator><name>_url</name></name></expr></argument>)</argument_list></call>
+                <operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>_description</name></expr></argument>, <argument><expr><name><name>data</name><operator>.</operator><name>_description</name></name></expr></argument>)</argument_list></call>
+                <operator>.</operator><call><name>isEquals</name><argument_list>()</argument_list></call> 
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

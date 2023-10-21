@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45002996.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>getAccessLevels</name><parameter_list>(<parameter><decl><type><name>CampaignData</name></type> <name>Data</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>BinReader</name></type> <name>in</name> <init>= <expr><call><name>openConnection</name><argument_list>(<argument><expr><literal type="string">"CommandAccessLevels"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><call><name><name>Data</name><operator>.</operator><name>importAccessLevels</name></name><argument_list>(<argument><expr><name>in</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <comment type="line">// in.close();</comment>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>CampaignData</name><operator>.</operator><name>mwlog</name><operator>.</operator><name>errLog</name></name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>RuntimeException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>CampaignData</name><operator>.</operator><name>mwlog</name><operator>.</operator><name>errLog</name></name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+        <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

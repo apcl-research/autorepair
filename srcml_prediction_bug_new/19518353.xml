@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12579996.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setOverallTimeoutPreference</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>aTimeout</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name>getPreferenceStore</name><argument_list>()</argument_list></call><operator>.</operator><call><name>putInt</name><argument_list>(<argument><expr><name>OVERALL_TIMEOUT_PREFERENCE</name></expr></argument>, <argument><expr><name>aTimeout</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><call><name>getPreferenceStore</name><argument_list>()</argument_list></call><operator>.</operator><call><name>flush</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block> <catch>catch  <parameter_list>(<parameter><decl><type><name>BackingStoreException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+    <assert>assert <expr><call><name>getOverallTimeoutPreference</name><argument_list>()</argument_list></call> <operator>==</operator> <name>aTimeout</name></expr>;</assert>
+  </block_content>}</block></function>
+</unit>

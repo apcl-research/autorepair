@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3408984.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>isEmpty</name><parameter_list>(<parameter><decl><type><name>XMLStreamReader</name></type> <name>reader</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>err</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"carefull, using the isEmpty() method, "</literal> <operator>+</operator>
+            <literal type="string">"which is not really implemented yet"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><operator>(</operator><call><name><name>reader</name><operator>.</operator><name>isStartElement</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>reader</name><operator>.</operator><name>isEndElement</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>reader</name><operator>.</operator><name>hasText</name></name><argument_list>( )</argument_list></call><operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13482783.java">        <function><type><specifier>private</specifier> <name>void</name></type> <name>sortExprs</name><parameter_list>(<parameter><decl><type><name>List</name></type> <name>list</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>Collections</name><operator>.</operator><name>sort</name></name><argument_list>(<argument><expr><name>list</name></expr></argument>, <argument><expr><operator>new</operator> <class><super><name>Comparator</name></super><argument_list>()</argument_list> <block>{
+                <function><type><specifier>public</specifier> <name>int</name></type> <name>compare</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>a</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>b</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                    <if_stmt><if>if <condition>(<expr><name>a</name> <operator>==</operator> <name>b</name></expr>)</condition> <block>{<block_content>
+                        <return>return <expr><literal type="number">0</literal></expr>;</return>
+                    </block_content>}</block></if></if_stmt>
+
+                    <decl_stmt><decl><type><name>int</name></type> <name>ki</name> <init>= <expr><operator>(</operator><operator>(</operator><name>Expr</name><operator>)</operator> <name>a</name><operator>)</operator><operator>.</operator><call><name>key</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                    <decl_stmt><decl><type><name>int</name></type> <name>kb</name> <init>= <expr><operator>(</operator><operator>(</operator><name>Expr</name><operator>)</operator> <name>b</name><operator>)</operator><operator>.</operator><call><name>key</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+                    <return>return <expr><name>ki</name> <operator>-</operator> <name>kb</name></expr>;</return>
+                </block_content>}</block></function>
+            }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></function>
+</unit>

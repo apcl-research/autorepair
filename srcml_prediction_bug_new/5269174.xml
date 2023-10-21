@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18602911.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isAuthorized</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>address</name></decl></parameter> )</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>( <expr><operator>!</operator><call><name>getConfiguration</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRestricted</name><argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>user</name> <init>= <expr><call><name><name>StringUtils</name><operator>.</operator><name>parseBareAddress</name></name><argument_list>(<argument><expr><name>address</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// check the access filters</comment>
+		<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>accessFilters</name> <init>= <expr><call><name>getConfiguration</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getAccessFilters</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>( <init><decl><type><name>String</name></type> <name>filter</name> <range>: <expr><name>accessFilters</name></expr></range></decl></init> )</control> <block>{<block_content>
+			<if_stmt><if>if   <condition>( <expr><call><name><name>Pattern</name><operator>.</operator><name>matches</name></name><argument_list>(<argument><expr><name>filter</name></expr></argument>, <argument><expr><name>user</name></expr></argument>)</argument_list></call></expr> )</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

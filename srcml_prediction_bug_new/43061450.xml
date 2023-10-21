@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482596.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>sizeChange</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>x</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>w</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>h</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">//resets the bounds of the Jlabel</comment>
+        <expr_stmt><expr><call><name><name>Img</name><operator>.</operator><name>setBounds</name></name><argument_list>(<argument><expr><name>x</name></expr></argument>, <argument><expr><name>y</name></expr></argument>, <argument><expr><name>w</name></expr></argument>, <argument><expr><name>h</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">//Sets up the image with the new scale</comment>
+        <expr_stmt><expr><call><name>setUp</name><argument_list>(<argument><expr><operator>(</operator><name>ImageIcon</name><operator>)</operator><call><name><name>Img</name><operator>.</operator><name>getIcon</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></expr_stmt>
+    </block_content>}</block></function>
+</unit>

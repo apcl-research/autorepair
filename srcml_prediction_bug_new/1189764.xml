@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17292783.java">   <function><type><specifier>public</specifier> <name>int</name></type> <name>search</name><parameter_list>(<parameter><decl><type><name>Constant</name></type> <name>searchkey</name></decl></parameter>)</parameter_list>  
+      <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <decl_stmt><decl><type><name>Block</name></type> <name>childblk</name> <init>= <expr><call><name>findChildBlock</name><argument_list>(<argument><expr><name>searchkey</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <while>while <condition>(<expr><call><name><name>contents</name><operator>.</operator><name>getFlag</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+         <expr_stmt><expr><call><name><name>contents</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+         <expr_stmt><expr><name>contents</name> <operator>=</operator> <operator>new</operator> <call><name>BTreePage</name><argument_list>(<argument><expr><name>childblk</name></expr></argument>, <argument><expr><name>ti</name></expr></argument>, <argument><expr><name>tx</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         <expr_stmt><expr><name>childblk</name> <operator>=</operator> <call><name>findChildBlock</name><argument_list>(<argument><expr><name>searchkey</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></while>
+      <return>return <expr><call><name><name>childblk</name><operator>.</operator><name>number</name></name><argument_list>()</argument_list></call></expr>;</return>
+   </block_content>}</block></function>
+</unit>

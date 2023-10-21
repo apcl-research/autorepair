@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26202696.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>releaseChild</name><parameter_list>(<parameter><decl><type><name>T</name></type> <name>pc</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// XXX precond releaseChild, arg != null</comment>
+        
+        <comment type="line">// XXX if the child is not known as Used, what should we do?</comment>
+        <if_stmt><if>if <condition>( <expr><call><name><name>vPCUsed</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>pc</name></expr></argument>  )</argument_list></call></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>vPCFree</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>pc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>LOG4J</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"reusable a non used/known child : ignored."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        
+    </block_content>}</block></function><comment type="line">// end of releaseChild(ProxyChild)</comment>
+</unit>

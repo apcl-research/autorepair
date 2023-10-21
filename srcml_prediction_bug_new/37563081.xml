@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37562496.java"><function><type><specifier>public</specifier> <name>Point</name></type> <name>getCursorLocation</name> <parameter_list>()</parameter_list>  
+	<throws>throws <argument><expr><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>dnd</name><operator>.</operator><name>DropException</name></name></expr></argument></throws> <block>{<block_content>
+  <expr_stmt><expr><call><name>checkDevice</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+  <if_stmt><if>if<condition>(<expr><operator>!</operator><name><name>Compatibility</name><operator>.</operator><name>IS_JAVA_5_OR_GREATER</name></name></expr>)</condition> <block>{<block_content>
+    <decl_stmt><decl><type><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>Point</name></name></type> <name>point</name> <init>= <expr><call><name><name>Utils</name><operator>.</operator><name>getTrakedMouseLocation</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <return>return <expr><operator>new</operator> <call><name>Point</name><argument_list>(<argument><expr><name><name>point</name><operator>.</operator><name>x</name></name></expr></argument>, <argument><expr><name><name>point</name><operator>.</operator><name>y</name></name></expr></argument>)</argument_list></call></expr>;</return>
+  </block_content>}</block></if></if_stmt>
+  <decl_stmt><decl><type><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>Point</name></name></type> <name>point</name> <init>= <expr><call><name><name>MouseInfo</name><operator>.</operator><name>getPointerInfo</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getLocation</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+  <return>return <expr><operator>new</operator> <call><name>Point</name><argument_list>(<argument><expr><name><name>point</name><operator>.</operator><name>x</name></name></expr></argument>, <argument><expr><name><name>point</name><operator>.</operator><name>y</name></name></expr></argument>)</argument_list></call></expr>;</return>
+</block_content>}</block></function>
+</unit>

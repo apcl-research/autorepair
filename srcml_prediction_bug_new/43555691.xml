@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42682983.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>check</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>input</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>TurkicWordParse</name></argument>&gt;</argument_list></name></type> <name>it</name> <init>= <expr><call><name><name>parser</name><operator>.</operator><name>parseIterator</name></name><argument_list>(<argument><expr><name>input</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while  <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <comment type="line">// check if input is formatted correctly.</comment>
+            <if_stmt><if>if <condition>(<expr><call><name><name>wordFormatter</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>input</name></expr></argument>, <argument><expr><call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>input</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/262927.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionFavoriteList</name><parameter_list>(<parameter><decl><type><name>MouseEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>e</name><operator>.</operator><name>getButton</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>MouseEvent</name><operator>.</operator><name>BUTTON1</name></name>
+                <operator>&amp;&amp;</operator> <call><name><name>e</name><operator>.</operator><name>getClickCount</name></name><argument_list>(  &gt;</argument_list></name> <literal type="number">1</literal></expr>)</condition> <block>{<block_content> <comment type="line">// double-click</comment>
+
+            <decl_stmt><decl><type><name>int</name></type> <name>i</name> <init>= <expr><call><name><name>favoriteList</name><operator>.</operator><name>locationToIndex</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getPoint</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>i</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+
+            <expr_stmt><expr><call><name>remSfromA</name><argument_list>(<argument><expr><operator>(</operator><name>SWGSchematic</name><operator>)</operator> <call><name><name>favoriteList</name><operator>.</operator><name>getModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getElementAt</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31492496.java">    <function><type><specifier>public</specifier> <name>Cell</name></type> <name>getCell</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name>getCellIterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>Object</name></type> <name>o</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+	<if_stmt><if>if <condition>(<expr><name>index</name><operator>&lt;</operator><literal type="number">0</literal> <operator>||</operator> <name>index</name><operator>&gt;=</operator><call><name><name>this</name><operator>.</operator><name>getSize</name></name><argument_list>()</argument_list></call></expr> 
+	    <comment type="block">/*&amp;&amp; index&lt;=this.getSize() 
+	        throw new IndexOutOfBoundsException(
+	            "No such element in Population: index "+index+" of "+
+	            this.getSize());*/</comment>
+
+	<if_stmt><if>if<condition>(<expr><name>index</name><operator>&lt;</operator><literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+	    <expr_stmt><expr><name>o</name> <operator>=</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+	<return>return <expr><operator>(</operator><name>Cell</name><operator>)</operator> <name>o</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

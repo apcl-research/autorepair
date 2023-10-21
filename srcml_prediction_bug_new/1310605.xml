@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/131399.java">    <function><type><specifier>private</specifier> <name>int</name></type> <name>calculateColumnHeight</name><parameter_list>(<parameter><decl><type><name><name>Collection</name><argument_list type="generic">&lt;<argument><name>MindMapNode</name></argument>&gt;</argument_list></name></type> <name>childNodesOfColumn</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	
+    	<comment type="line">//TODO: Return a default value until implemented</comment>
+    	<decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><call><name><name>childNodesOfColumn</name><operator>.</operator><name>size</name></name><argument_list>( <argument><expr><operator>*</operator><name>SINGLE_COLUMN_HEIGHT</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    	
+    	<comment type="block">/*for(MindMapNode v : childNodesOfColumn) {
+    		
+    	}*/</comment>
+    
+    	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>sizeOfLayout</name><operator>.</operator><name>height</name></name> <operator>=</operator> <name><name>this</name><operator>.</operator><name>sizeOfLayout</name><operator>.</operator><name>height</name></name> <operator>+</operator> <name>height</name></expr>;</expr_stmt> 
+    	
+    	<return>return <expr><name>height</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

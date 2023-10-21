@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46802796.java">    <function><type><specifier>private</specifier> <name>Complex</name></type> <name>acos_real</name><parameter_list>( <parameter><decl><type><name>double</name></type> <name>a</name></decl></parameter> )</parameter_list><block>{<block_content>
+	<if_stmt><if>if<condition>( <expr><call><name><name>StrictMath</name><operator>.</operator><name>abs</name></name><argument_list>( <argument><expr><name>a</name>   <operator>&lt;=</operator> <literal type="number">1.0</literal></expr></argument> )</argument_list></call></expr>
+	    )</condition><block type="pseudo"><block_content>
+	    <return>return <expr><operator>new</operator> <call><name>Complex</name><argument_list>( <argument><expr><call><name><name>StrictMath</name><operator>.</operator><name>acos</name></name><argument_list>( <argument><expr><name>a</name></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument> )</argument_list></call></expr>;</return></block_content></block></if>
+	<if type="elseif">else
+	    if<condition>( <expr><name>a</name> <operator>&lt;</operator> <literal type="number">0.0</literal></expr> )</condition><block type="pseudo"><block_content>
+		<return>return <expr><operator>new</operator> <call><name>Complex</name><argument_list>( <argument><expr><name><name>StrictMath</name><operator>.</operator><name>PI</name></name></expr></argument>, <argument><expr><operator>-</operator><call><name>acosh_real</name><argument_list>( <argument><expr><operator>-</operator><name>a</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</return></block_content></block></if>
+	    <else>else<block type="pseudo"><block_content>
+		<return>return <expr><operator>new</operator> <call><name>Complex</name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><call><name>acosh_real</name><argument_list>( <argument><expr><name>a</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</return></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

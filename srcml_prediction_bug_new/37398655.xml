@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3694991.java">  <function><type><specifier>private</specifier> <name>String</name></type> <name>getActionURL</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>action</name> <init>= <expr><call><name>getAction</name><argument_list>( ;</operator>
+    <if_stmt><if>if <condition>(<expr><call><name><name>action</name><operator>.</operator><name>charAt</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call> <operator>==</operator> <literal type="char">'/'</literal></expr>)</condition> <block>{<block_content>
+      <decl_stmt><decl><type><name>HttpServletRequest</name></type> <name>request</name> <init>=
+        <expr><operator>(</operator><name>HttpServletRequest</name><operator>)</operator> <call><name><name>pageContext</name><operator>.</operator><name>getRequest</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <expr_stmt><expr><name>action</name> <operator>=</operator> <call><name><name>request</name><operator>.</operator><name>getContextPath</name></name><argument_list>()</argument_list></call> <operator>+</operator> <name>action</name></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <decl_stmt><decl><type><name>HttpServletResponse</name></type> <name>response</name> <init>=
+      <expr><operator>(</operator><name>HttpServletResponse</name><operator>)</operator> <call><name><name>pageContext</name><operator>.</operator><name>getResponse</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><name>action</name> <operator>=</operator> <call><name><name>response</name><operator>.</operator><name>encodeURL</name></name><argument_list>(<argument><expr><name>action</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name>action</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

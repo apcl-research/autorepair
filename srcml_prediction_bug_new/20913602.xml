@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392796.java">    <function><type><specifier>public</specifier> <name>long</name></type> <name>computeTotalTime</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>long</name></type> <name>a</name> <init>= <expr><ternary><condition><expr><operator>(</operator><name>startTime</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr> ?</condition><then> <expr><call><name><name>startTime</name><operator>.</operator><name>getTime</name></name><argument_list>()</argument_list></call></expr>
+                                     </then><else>: <expr><operator>(</operator><operator>(</operator><name><name>Long</name><operator>.</operator><name>MAX_VALUE</name></name> <operator>/</operator> <literal type="number">2</literal><operator>)</operator> <operator>-</operator> <literal type="number">1</literal><operator>)</operator></expr></else></ternary></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>long</name></type> <name>b</name> <init>=  <expr><ternary><condition><expr><name>stopTime</name> <operator>!=</operator> <literal type="null">null</literal></expr> ?</condition><then> <expr><call><name><name>stopTime</name><operator>.</operator><name>getTime</name></name><argument_list>()</argument_list></call></expr>
+                                    </then><else>: <expr><operator>(</operator><operator>(</operator><name><name>Long</name><operator>.</operator><name>MIN_VALUE</name></name> <operator>/</operator> <literal type="number">2</literal><operator>)</operator> <operator>+</operator> <literal type="number">1</literal><operator>)</operator></expr></else></ternary></expr></init></decl>;</decl_stmt>
+
+        <return>return <expr><operator>(</operator><name>b</name> <operator>-</operator> <name>a</name><operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24249996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getDistanceBetweenTerms</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>id1</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>id2</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>cutoff</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>GoTerm</name></type> <name>term1</name> <init>= <expr><call><name><name>id2go</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id1</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>GoTerm</name></type> <name>term2</name> <init>= <expr><call><name><name>id2go</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id2</name></expr></argument>)</argument_list></call></expr></init></decl> 
+		
+		<comment type="line">//double dist_fwd = trace(term1, term2, 0.0d, cutoff);</comment>
+		<decl_stmt><decl><type><name>double</name></type> <name>dist_bck</name> <init>= <expr><call><name>trace</name><argument_list>(<argument><expr><name>term2</name></expr></argument>, <argument><expr><name>term1</name></expr></argument>, <argument><expr><literal type="number">0.0d</literal></expr></argument>, <argument><expr><name>cutoff</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>double</name></type> <name>dist</name> <init>= <expr><call><name><name>Math</name><operator>.</operator><name>min</name></name><argument_list>(<argument><expr><name>dist_fwd</name></expr></argument>, <argument><expr><name>dist_bck</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>dist</name> <operator>==</operator> <name><name>Double</name><operator>.</operator><name>POSITIVE_INFINITY</name></name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<return>return <expr><operator>(</operator><name>int</name><operator>)</operator> <name>dist</name></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

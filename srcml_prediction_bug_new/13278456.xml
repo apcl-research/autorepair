@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18749983.java">    <function><type><specifier>private</specifier> <name>TestGraph</name></type> <name>getTestGraph</name><parameter_list>(<parameter><decl><type><name>Vector</name></type> <name>actualTestGraphData</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>type</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>TestGraph</name></type> <name>testGraph</name> <init>= <expr><operator>new</operator> <call><name>TestGraph</name><argument_list>(<argument><expr><name>actualTestGraphData</name></expr></argument>, <argument><expr><name>type</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>addTestMainParts</name><argument_list>(<argument><expr><name>testGraph</name></expr></argument>, <argument><expr><name>actualTestGraphData</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>addTestApplicationConditions</name><argument_list>(<argument><expr><name>testGraph</name></expr></argument>, <argument><expr><name>actualTestGraphData</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><name>testGraph</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

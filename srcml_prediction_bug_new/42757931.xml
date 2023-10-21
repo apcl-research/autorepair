@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13859963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addChildNode</name><parameter_list>(<parameter><decl><type><name>ASTNode</name></type> <name>childNode</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>notNull</name></name><argument_list>(<argument><expr><name>childNode</name></expr></argument>, <argument><expr><literal type="string">"Parameter childNode must be non null!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>isTrue</name></name><argument_list>(<argument><expr><operator>(</operator><name>childNode</name> <operator>!=</operator> <name>this</name><operator>)</operator></expr></argument>,
+				<argument><expr><literal type="string">"Can not add this as a child node of this."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>childNodeList</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>childNode</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>childNode</name><operator>.</operator><name>setParentNode</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>childNodeList</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>childNode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

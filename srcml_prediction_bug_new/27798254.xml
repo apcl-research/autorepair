@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44721792.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>pluginRegistryContains</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>pluginName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <synchronized>synchronized <init>(<expr><name>registry</name></expr>)</init> <block>{<block_content>
+            <decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name></decl>;</decl_stmt>
+            <for>for <control>(<init><expr><name>iter</name> <operator>=</operator> <call><name><name>registry</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>( )</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+                <decl_stmt><decl><type><name>PluginRegistryNode</name></type> <name>node</name> <init>= <expr><operator>(</operator><name>PluginRegistryNode</name><operator>)</operator><call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <if_stmt><if>if <condition>(<expr><call><name><name>node</name><operator>.</operator><name>plugin</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>pluginName</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+            </block_content>}</block></for>
+        </block_content>}</block></synchronized>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

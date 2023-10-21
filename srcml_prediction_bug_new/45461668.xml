@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16582983.java">	<function><type><specifier>private</specifier> <name>JTable</name></type> <name>getJTable</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>jTable</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>jTable</name> <operator>=</operator> <operator>new</operator> <call><name>JTable</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jTable</name><operator>.</operator><name>setToolTipText</name></name><argument_list>(<argument><expr><literal type="string">"In the table, EST id assigned by contact lab (Obligatory field); "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>columnNames</name> <init>= <expr><block>{<expr><literal type="string">"EST#"</literal></expr>}</block></expr></init></decl> 
+			<decl><type ref="prev"/><name>data</name> <init>= <expr><block>{ }</block></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>DefaultTableModel</name></type> <name>model</name> <init>= <expr><operator>new</operator> <call><name>DefaultTableModel</name><argument_list>(<argument><expr><name>data</name></expr></argument>,<argument><expr><name>columnNames</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>jTable</name><operator>.</operator><name>setModel</name></name><argument_list>(<argument><expr><name>model</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>jTable</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

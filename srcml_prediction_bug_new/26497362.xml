@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490547.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>assertState</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>anExpectedState</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>anErrorDescription</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IllegalStateException</name></expr></argument></throws>  
+    <if_stmt><if>if <condition>(<expr><name>_state</name> <operator>!=</operator> <name>anExpectedState</name></expr>)</condition> <block>{<block_content>
+      <decl_stmt><decl><type><name>String</name></type> <name>message</name> <init>=  <expr><name>anErrorDescription</name> <operator>+</operator> <literal type="string">" - expected state is "</literal> <operator>+</operator> <name><name>moderators</name><index>[<expr><name>anExpectedState</name></expr>]</index></name> <operator>+</operator> <literal type="string">" but was "</literal> <operator>+</operator> <name><name>moderators</name><index>[<expr><name>_state</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+      <expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><name>MODULE_NAME</name></expr></argument>, <argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+  }
+</unit>

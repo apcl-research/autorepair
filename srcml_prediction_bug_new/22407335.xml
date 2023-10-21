@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37789963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>propertyChange</name><parameter_list>(<parameter><decl><type><name>PropertyChangeEvent</name></type> <name>evt</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>eventName</name> <init>= <expr><call><name><name>evt</name><operator>.</operator><name>getPropertyName</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>AntNodeWizard</name><operator>.</operator><name>PROPERTY_TARGET_MAP</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>eventName</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>AntTargetMap</name></type> <name>targetmap</name> <init>= <expr><operator>(</operator><name>AntTargetMap</name><operator>)</operator> <call><name><name>evt</name><operator>.</operator><name>getNewValue</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>m_targetCombModel</name><operator>.</operator><name>setTargetMap</name></name><argument_list>(<argument><expr><name>targetmap</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <decl_stmt><decl><type><name>AntBuildfile</name></type> <name>buildfile</name> <init>= <expr><call><name><name>m_wizard</name><operator>.</operator><name>getAntBuildfile</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>m_targetCombModel</name><operator>.</operator><name>setSelectedItem</name></name><argument_list>(<argument><expr><call><name><name>buildfile</name><operator>.</operator><name>getDefaultTarget</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

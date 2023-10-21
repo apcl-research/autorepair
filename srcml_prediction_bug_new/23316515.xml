@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23382796.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>addNodeToLevel</name><parameter_list>(<parameter><decl><type><name>ELDescriptionNode</name></type> <name>node</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>level</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>nodes</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name>level</name> <operator>&lt;=</operator> <name>maxLevel</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>levelNodeMapping</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>level</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>level</name> <operator>==</operator> <name>maxLevel</name> <operator>+</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>ELDescriptionNode</name></argument>&gt;</argument_list></name></type> <name>set</name> <init>= <expr><operator>new</operator> <call><name><name>HashSet</name><argument_list type="generic">&lt;<argument><name>ELDescriptionNode</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>set</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>levelNodeMapping</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>level</name></expr></argument>, <argument><expr><name>set</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>maxLevel</name><operator>++</operator></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><literal type="string">"Inconsistent EL description tree structure."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

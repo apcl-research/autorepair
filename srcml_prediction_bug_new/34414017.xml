@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18309983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addSelectedGroup</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>ou</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<comment type="line">//to prevent the place holder item from sill a response in the interface</comment>
+		<if_stmt><if>if<condition>(<expr><operator>!</operator><call><name><name>ou</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"0"</literal></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+			<decl_stmt><decl><type><name>LdapGroup</name></type> <name>movedGroup</name> <init>= <expr><operator>(</operator><name>LdapGroup</name><operator>)</operator><call><name><name>availableGroups</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>ou</name></expr></argument>)</argument_list></call> 
+			<if_stmt><if>if<condition>(<expr><call><name><name>selectedGroups</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><literal type="string">"0"</literal></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+				<expr_stmt><expr><call><name><name>selectedGroups</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><literal type="string">"0"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>selectedGroups</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>ou</name></expr></argument>,<argument><expr><name>movedGroup</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if<condition>(<expr><call><name><name>availableGroups</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+				<expr_stmt><expr><call><name><name>availableGroups</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>controller</name><operator>.</operator><name>getEmptyAvailableGroup</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getOU</name><argument_list>()</argument_list></call></expr></argument>,<argument><expr><call><name><name>controller</name><operator>.</operator><name>getEmptyAvailableGroup</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

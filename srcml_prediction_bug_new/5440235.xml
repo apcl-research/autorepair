@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>init</name><parameter_list>(<parameter><decl><type><name>OutputStream</name></type> <name>out</name></decl></parameter>, <parameter><decl><type><name>JoServletResponse</name></type> <name>response</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>out</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>NullPointerException</name><argument_list>()</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>outputStream</name></name> <operator>=</operator> <name>out</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>bufferPos</name></name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>buffer</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>dataWasWritten</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>bytesWritten</name></name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>response</name></name> <operator>=</operator> <name>response</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>headersWritten</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>closed</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+     
+</unit>

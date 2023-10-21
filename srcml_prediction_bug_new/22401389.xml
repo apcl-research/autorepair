@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31164096.java">  <function><type><specifier>static</specifier> <specifier>private</specifier> <name>void</name></type> <name>adjust_for_sel</name><parameter_list>(<parameter><decl><type><name>CMDARG</name></type> <name>cap</name></decl></parameter>)</parameter_list>  
+      <if_stmt><if>if <condition>(<expr><name><name>G</name><operator>.</operator><name>VIsual_active</name></name>
+          <operator>&amp;&amp;</operator> <name><name>cap</name><operator>.</operator><name>oap</name><operator>.</operator><name>inclusive</name></name>
+          <operator>&amp;&amp;</operator> <call><name><name>G</name><operator>.</operator><name>p_sel</name><operator>.</operator><name>charAt</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call> <operator>==</operator> <literal type="char">'e'</literal>
+          <operator>&amp;&amp;</operator> <call><name><name>Misc</name><operator>.</operator><name>gchar_cursor</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="char">'\n'</literal></expr>)</condition>
+       <block>{<block_content>
+          <expr_stmt><expr><call><name><name>G</name><operator>.</operator><name>curwin</name><operator>.</operator><name>w_cursor</name><operator>.</operator><name>incColumn</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          <expr_stmt><expr><name><name>cap</name><operator>.</operator><name>oap</name><operator>.</operator><name>inclusive</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+       </block_content>}</block></if></if_stmt>
+  }
+</unit>

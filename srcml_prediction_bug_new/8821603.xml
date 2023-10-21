@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26271596.java">     <function><type><specifier>public</specifier> <name>void</name></type> <name>setSCInstance</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>SCInstance</name></type> <name>scInstance</name></decl></parameter>)</parameter_list>  
+         <block>{<block_content><expr_stmt><expr><name><name>this</name><operator>.</operator><name>parentSCInstance</name></name> <operator>=</operator> <name>scInstance</name></expr>;</expr_stmt>
+         <expr_stmt><expr><name>_threadFactory</name> <operator>=</operator> <operator>(</operator><name>ThreadFactory</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>parentSCInstance</name><operator>.</operator><name>getRootContext</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><literal type="string">"threadFactory"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         <expr_stmt><expr><name>_stateMachine</name> <operator>=</operator> <operator>(</operator><name>SCXMLStateMachine</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>parentSCInstance</name><operator>.</operator><name>getRootContext</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><literal type="string">"superContext"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+     </block_content>}</block></function>
+</unit>

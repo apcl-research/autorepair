@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31174096.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>connectionErrorOccurred</name><parameter_list>(<parameter><decl><type><name>ConnectionEvent</name></type> <name>event</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>listeners</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content> <comment type="line">// for each listener</comment>
+			<decl_stmt><decl><type><name>Object</name></type> <name>obj</name> <init>= <expr><call><name><name>listeners</name><operator>.</operator><name>elementAt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line">// get next listener</comment>
+			<decl_stmt><decl><type><name>ConnectionEventListener</name></type> <name>cel</name> <init>= <expr><operator>(</operator><name>ConnectionEventListener</name><operator>)</operator> <name>obj</name></expr></init></decl>;</decl_stmt>
+			<comment type="line">//cast to something more useful</comment>
+			<expr_stmt><expr><call><name><name>cel</name><operator>.</operator><name>connectionErrorOccurred</name></name><argument_list>(<argument><expr><name>event</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// notify this listener</comment>
+			<comment type="line">//cel.connectionClosed (event);				// notify this listener</comment>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

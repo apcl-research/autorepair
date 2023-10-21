@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44162783.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getNumVisibleGameObjects</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>numVisibleGameObjects</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>GameLayer</name></type> <name>gameLayer</name> <range>: <expr><call><name><name>gameEngine</name><operator>.</operator><name>gameLayers</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name><name>gameLayer</name><operator>.</operator><name>gameLayerVisibility</name></name> <operator>==</operator> <name><name>GameLayer</name><operator>.</operator><name>GameLayerVisibility</name><operator>.</operator><name>VISIBLE</name></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>numVisibleGameObjects</name> <operator>+=</operator> <call><name><name>gameLayer</name><operator>.</operator><name>gameObjectsDrawOrderSorted</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr> 
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name>numVisibleGameObjects</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

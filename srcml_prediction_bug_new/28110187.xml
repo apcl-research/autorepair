@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/276799.java">    <constructor><specifier>public</specifier> <name>View</name> <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Object</name></type> <name>startingObjectParam</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ViewInitialisationException</name></expr></argument></throws> <block>{<block_content>
+        <comment type="line">// validate parameters and initialize model</comment>
+        <if_stmt><if>if <condition>(<expr><name>startingObjectParam</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+
+            <expr_stmt><expr><call><name><name>View</name><operator>.</operator><name>displayUserMessage</name></name><argument_list>(<argument><expr><call><name><name>View</name><operator>.</operator><name>romUIContainerConfiguration</name><operator>.</operator><name>getStartingObjectNullErrorMessage</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>JOptionPane</name><operator>.</operator><name>ERROR_MESSAGE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block></if> <else>else <block>{<block_content>
+
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>objectModel</name></name> <operator>=</operator> <call><name><name>ObjectModel</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>objectModel</name><operator>.</operator><name>setRootObject</name></name><argument_list>(<argument><expr><name>startingObjectParam</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <comment type="line">// initialize the frame</comment>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>initialiseContainer</name></name></expr> )</expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></constructor>
+</unit>

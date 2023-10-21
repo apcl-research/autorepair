@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46914091.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>StringBuffer</name></type> <name>buf</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>buf</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"    AbstractParamType:"</literal></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">" {Name="</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>iName</name></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">", ParamType="</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>iParamType</name></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">", OrderIndex="</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><call><name><name>iOrderIndex</name> 
+				<operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">", Value="</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>iValue</name></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">", IsInternal="</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>isInternal</name></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="char">'}'</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><call><name><name>buf</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

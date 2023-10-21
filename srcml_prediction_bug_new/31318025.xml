@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10382796.java">    <function><type><specifier>public</specifier> <name>DatagramPacket</name></type> <name>getPacket</name> <parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <comment type="line">// forces the cipher to encrypt any remaining bytes</comment>
+            <expr_stmt><expr><call><name>close</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"unable to flush stream to create packet!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>packetBytes</name> <init>= <expr><call><name><name>packetByteStream</name><operator>.</operator><name>toByteArray</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><operator>new</operator> <call><name>DatagramPacket</name><argument_list>(<argument><expr><name>packetBytes</name></expr></argument>, <argument><expr><name><name>packetBytes</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

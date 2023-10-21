@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19058981.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>changeCurrentScreenCard</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>cardNumber</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>contentPaneCardLayout</name><operator>.</operator><name>show</name></name><argument_list>(<argument><expr><call><name>getContentPane</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>SCREENCARD_NAMES</name><index>[<expr><name>cardNumber</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>currentScreenCardNumber</name> <operator>=</operator> <name>cardNumber</name></expr>;</expr_stmt>
+
+		<comment type="line">// Set default button</comment>
+		<decl_stmt><decl><type><name>JButton</name></type> <name>defaultButton</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<switch>switch<condition>(<expr><name>cardNumber</name></expr>)</condition> <block>{<block_content>
+		<case>case <expr><name>SCREENCARD_LOGIN</name></expr>:</case>
+			<expr_stmt><expr><name>defaultButton</name> <operator>=</operator> <name>btnLogin</name></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name>SCREENCARD_LOBBY</name></expr>:</case>
+			<expr_stmt><expr><name>defaultButton</name> <operator>=</operator> <name>btnConsoleCommandExecute</name></expr>;</expr_stmt>
+			<break>break;</break>
+		</block_content>}</block></switch>
+
+		<if_stmt><if>if<condition>(<expr><name>defaultButton</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>getRootPane</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setDefaultButton</name><argument_list>(<argument><expr><name>defaultButton</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		 
+	</block_content>}</block></if></if_stmt>
+</block_content>}</block></function>
+</unit>

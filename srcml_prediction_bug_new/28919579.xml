@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13222529.java">    <function><type><specifier>public</specifier> <name>void</name></type>	<name>componentResized</name><parameter_list>(<parameter><decl><type><name>ComponentEvent</name></type> <name>ce</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><name>offScreenImageSet</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name>waitForOnScreenPresence</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+	<decl_stmt><decl><type><name>int</name></type> <name>width</name> <init>= <expr><call><name>getWidth</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><call><name>getHeight</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+	<expr_stmt><expr><call><name>clearCompletely</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><name>offScreenImage</name> <operator>=</operator> <call><name>createVolatileImage</name><argument_list>(<argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><name>offScreenImageSet</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name><name>mp</name><operator>.</operator><name>setRenderingArea</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name><name>mp</name><operator>.</operator><name>setGraphics</name></name><argument_list>(<argument><expr><operator>(</operator><name>Graphics2D</name><operator>)</operator> <call><name><name>offScreenImage</name><operator>.</operator><name>getGraphics</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	<expr_stmt><expr><call><name><name>mpp</name><operator>.</operator><name>notifyListenersOfResize</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

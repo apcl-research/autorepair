@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19087248.java">		<comment type="block">/*
+		 * public void removeRange(int fromIndex, int toIndex) { int remaining =
+		 * toIndex - fromIndex;
+		 * 
+		 * ListIterator iter = listIterator(fromIndex);
+		 * 
+		 * while (iter.hasNext() &amp;&amp; remaining-- &gt; 0) { ((Stmt)
+		 * iter.next()).cleanup(); }
+		 * 
+		 * super.removeRange fromIndex, toIndex); }
+</comment></unit>

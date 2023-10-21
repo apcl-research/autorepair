@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26402783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>open</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+    <switch>switch <condition>(<expr><name>status</name></expr>)</condition> <block>{<block_content>
+      <case>case <expr><name>STATUS_UNREADY</name></expr>:</case> <comment type="line">// Initialize the sufficiently</comment>
+      <case>case <expr><name>STATUS_READY</name></expr>:</case> <comment type="line">// Wait for the CONNECT</comment>
+
+        <try>try <block>{<block_content>
+          <expr_stmt><expr><call><name>init</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+          <if_stmt><if>if <condition>(<expr><name>DEBUG</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"Init failed due to: "</literal> <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+          </block_content>}</block></if></if_stmt>
+
+          <throw>throw <expr><operator>new</operator> <call><name>IOException</name><argument_list>( ;</argument_list></call></expr>
+        </block_content>}</block></catch></try>
+
+        <break>break;</break>
+
+      <case>case <expr><name>STATUS_DATA</name></expr>:</case> <comment type="line">// Already open, discard</comment>
+        <break>break;</break>
+    </block_content>}</block></switch>
+  </block_content>}</block></function>
+</unit>

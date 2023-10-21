@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16582996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>initSpecialisationOf</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// get list of available ccs</comment>
+		<decl_stmt><decl><type><name><name>Vector</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>ccs</name> <init>= <expr><operator>new</operator> <call><name><name>Vector</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>ccs</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name><name>ConceptClass</name><index>[]</index></name></type> <name>sorted</name> <init>= <expr><call><name><name>aog</name><operator>.</operator><name>getMetaData</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getConceptClasses</name><argument_list>()</argument_list></call>
+				<operator>.</operator><call><name>toArray</name><argument_list>(<argument><expr><operator>new</operator> <name><name>ConceptClass</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>ConceptClass</name></type> <name>cc</name> <range>: <expr><name>sorted</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>ccs</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>cc</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<expr_stmt><expr><name>specialisationOf</name> <operator>=</operator> <operator>new</operator> <call><name>JComboBox</name><argument_list>(<argument><expr><name>ccs</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

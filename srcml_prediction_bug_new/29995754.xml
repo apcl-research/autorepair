@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16672996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>compareTo</name><parameter_list>(<parameter><decl><type><name>Event</name></type> <name>event</name></decl></parameter>, <parameter><decl><type><name>Event</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>t</name> <init>= <expr><call><name><name>event</name><operator>.</operator><name>getTime</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>compareTo</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getTime</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>t</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>event</name><operator>.</operator><name>getPriority</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <call><name><name>e</name><operator>.</operator><name>getPriority</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="number">1</literal></expr>;</return>
+			</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name><name>event</name><operator>.</operator><name>getPriority</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <call><name><name>e</name><operator>.</operator><name>getPriority</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<return>return <expr><call><name><name>event</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>compareTo</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getId</name></name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<return>return <expr><name>t</name></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

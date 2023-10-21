@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10159094.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setDOMNode</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>DOMNode</name></type> <name>domnode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>current</name> <operator>=</operator> <name>domnode</name></expr>;</expr_stmt>
+
+        <comment type="line">// If the node changed the contents of the editorpane changes</comment>
+        <comment type="line">// without a change of its contens. So don't inform the ant node</comment>
+        <comment type="line">// about changes of the contents.</comment>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>Document</name></type> <name>document</name> <init>= <expr><call><name><name>editorpane</name><operator>.</operator><name>getDocument</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>removeDocumentListener</name></name><argument_list>(<argument><expr><name>documentlistener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>attributePanel</name><operator>.</operator><name>setDOMNode</name></name><argument_list>(<argument><expr><name>domnode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>updateEditorPane</name><argument_list>(<argument><expr><name>domnode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>validate</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>addDocumentListener</name></name><argument_list>(<argument><expr><name>documentlistener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

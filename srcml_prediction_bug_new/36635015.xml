@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18659996.java">    <function><type><specifier>public</specifier> <name>File</name></type> <name>getResourceFile</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>filename</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>File</name></type> <name>newFile</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>URL</name></type> <name>tempURL</name> <init>= <expr><call><name><name>Thread</name><operator>.</operator><name>currentThread</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getContextClassLoader</name><argument_list>()</argument_list></call>
+            <operator>.</operator><call><name>getResource</name><argument_list>(<argument><expr><name>filename</name></expr></argument> ;</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>tempURL</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><name>newFile</name> <operator>=</operator> <operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><call><name><name>tempURL</name><operator>.</operator><name>toURI</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>URISyntaxException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>warn</name><argument_list>(<argument><expr><literal type="string">"File Resource Error! "</literal><operator>+</operator><name>filename</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>newFile</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

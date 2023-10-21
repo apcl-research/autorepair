@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41444029.java">	<function><type><specifier>public</specifier> <name>CoordinationContext</name></type> <name>registerMatchcode</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>matchcode</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>AxisFault</name></expr></argument></throws><block>{<block_content>
+		<synchronized>synchronized <init>(<expr><name><name>this</name><operator>.</operator><name>participantMatchcodes</name></name></expr>)</init> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>matchcode</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>matchcode</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call><operator>==</operator><literal type="number">0</literal></expr> )</condition><block type="pseudo"><block_content>
+				<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"The matchcode must not be null or emtpy!"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+			
+			<if_stmt><if>if  <condition>( <expr><operator>!</operator> <call><name><name>this</name><operator>.</operator><name>isMatchCodeAvailable</name></name><argument_list>(<argument><expr><name>matchcode</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+				<throw>throw <expr><call><name>DUPLICATE_MATCHCODE_SOAP_FAULT</name><argument_list>(<argument><expr><name>matchcode</name></expr></argument>)</argument_list></call></expr>;</throw>
+			</block_content>}</block></if></if_stmt>
+			
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>participantMatchcodes</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>matchcode</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+			<return>return <expr><call><name><name>this</name><operator>.</operator><name>getCoordinationContext</name></name><argument_list>(<argument><expr><name>matchcode</name></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></synchronized> <comment type="line">// end synchronized participantMatchcodes</comment>
+	</block_content>}</block></function>
+</unit>

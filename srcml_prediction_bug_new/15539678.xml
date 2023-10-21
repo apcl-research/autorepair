@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44282783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>handleNAWS</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <decl_stmt><decl><type><name>int</name></type> <name>width</name> <init>= <expr><call><name>read16int</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if <condition>(<expr><name>width</name> <operator>==</operator> <literal type="number">255</literal></expr>)</condition><block type="pseudo"><block_content>  
+        <expr_stmt><expr><name>width</name> <operator>=</operator> <call><name>read16int</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt> <comment type="line">//handle sufficiently 255 value;</comment>
+      </block_content>}</block></function>
+      <decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><call><name>read16int</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if <condition>(<expr><name>height</name> <operator>==</operator> <literal type="number">255</literal></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><name>height</name> <operator>=</operator> <call><name>read16int</name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">//handle sufficiently 255 value;</comment>
+      </block_content>}</block></if></if_stmt>
+      <expr_stmt><expr><call><name>skipToSE</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>setTerminalGeometry</name><argument_list>(<argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function><comment type="line">//handleNAWS</comment>
+</unit>

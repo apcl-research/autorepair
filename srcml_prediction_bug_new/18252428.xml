@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25990583.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>storeFilterExpressions</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>Column</name></type> <name>c</name><range>: <expr><call><name><name>filterTextfieldsPerColumn</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block type="pseudo"><block_content>  
+			<decl_stmt><decl><type><name>String</name></type> <name>newFilter</name> <init>= <expr><call><name><name>ConditionEditor</name><operator>.</operator><name>toMultiLine</name></name><argument_list>(<argument><expr><call><name><name>filterTextfieldsPerColumn</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>c</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getText</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>trim</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></for>
+			<if_stmt><if>if <condition>(<expr><call><name><name>newFilter</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>newFilter</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>c</name><operator>.</operator><name>setFilterExpression</name></name><argument_list>(<argument><expr><name>newFilter</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></function>
+</unit>

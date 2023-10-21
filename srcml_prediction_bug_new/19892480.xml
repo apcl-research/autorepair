@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41992483.java">	    <function><type><specifier>public</specifier> <name>JSONArray</name></type> <name>getUserFriendsAppData</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>userId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>securityContext</name><operator>.</operator><name>checkIfAuthorized</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+<comment type="line">//			String url = API_APP_DATA_URL.replaceFirst("%s", userId) </comment>
+<comment type="line">//			return getUserData(url, new HashMap&lt;String, String&gt;());</comment>
+			<return>return <expr><call><name>getUserFriendsAppData</name><argument_list>(<argument><expr><name>userId</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></function>
+</unit>

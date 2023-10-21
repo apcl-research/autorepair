@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>step</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>long</name></type> <name>timeNow</name> <init>= <expr><call><name><name>System</name><operator>.</operator><name>nanoTime</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>double</name></type> <name>dt</name> <init>= <expr><operator>(</operator><name>timeNow</name> <operator>-</operator> <name>lastUpdateTime</name><operator>)</operator> <operator>/</operator> <literal type="number">1000000000.0</literal></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>lastUpdateTime</name> <operator>=</operator> <name>timeNow</name></expr>;</expr_stmt>
+
+        <comment type="line">// Ensure that the step is not less than the minimum permitted</comment>
+        <comment type="line">// step duration</comment>
+        <if_stmt><if>if <condition>(<expr><name>dt</name> <operator>&lt;</operator> <name>MINIMUM_STEP_PERIOD</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>dt</name> <operator>=</operator> <name>MINIMUM_STEP_PERIOD</name></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <comment type="line">// Step the simulator simulation</comment>
+        <expr_stmt><expr><call><name>step</name><argument_list>(<argument><expr><name>dt</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+    </block_content>}</block></function>
+</unit>

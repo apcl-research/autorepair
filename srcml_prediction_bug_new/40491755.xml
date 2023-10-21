@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42879963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>startSensors</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"Initializinguders..."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>joystick</name> <operator>=</operator> <operator>new</operator> <call><name>DemoJoystick</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>joystick</name><operator>.</operator><name>addSensorChangeListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>joystick</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"Joystick initialization success!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"Initializing Telephony Server"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>server</name> <operator>=</operator> <operator>new</operator> <call><name>TelephonyServer</name><argument_list>(<argument><expr><name>joy</name></expr></argument>, <argument><expr><name>JOYSTICK_PORT</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>server</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"Telephony server initialization success!"</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+
+    </block_content>}</block></function>
+</unit>

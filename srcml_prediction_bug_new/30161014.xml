@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46984815.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>start</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>demoDocument</name> <operator>=</operator> <call><name><name>DocumentHelper</name><operator>.</operator><name>parseText</name></name><argument_list>(<argument><expr><name>DEMO_XML</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><operator>new</operator> <call><name>XMLWriter</name><argument_list>(<argument><expr><call><name><name>OutputFormat</name><operator>.</operator><name>createPrettyPrint</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>write</name><argument_list>(<argument><expr><name>demoDocument</name></expr></argument>)</argument_list></call> 
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>DocumentException</name></type> <name>documentEx</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>documentEx</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+
+        <expr_stmt><expr><call><name>demoXPath</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>repaint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

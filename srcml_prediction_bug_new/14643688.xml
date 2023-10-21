@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37726962.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>moveToMid</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name>size</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <return>return;</return></block_content></block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>Object</name></type> <name>element</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>fElements</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>fActPos</name></name></expr></argument> ;</argument_list></call></expr></init></decl>
+        <type><name>int</name></type> <name>midPos</name> <init>= <expr><call><name>size</name><argument_list>()</argument_list></call> <operator>/</operator> <literal type="number">2</literal> <operator>+</operator> <name><name>this</name><operator>.</operator><name>fActPos</name></name></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>midPos</name> <operator>&gt;</operator> <call><name>size</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>midPos</name> <operator>-=</operator> <call><name>size</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>fElements</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>midPos</name></expr></argument>, <argument><expr><name>element</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

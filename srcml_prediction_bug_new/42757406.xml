@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17789996.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>stackTraceToString</name><parameter_list>(<parameter><decl><type><name><name>StackTraceElement</name><index>[]</index></name></type> <name>elements</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>elements</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="string">""</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<decl_stmt><decl><type><name>StringBuilder</name></type> <name>strBuilder</name> <init>= <expr><operator>new</operator> <call><name>StringBuilder</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>StackTraceElement</name></type> <name>element</name> <range>: <expr><name>elements</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>strBuilder</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><call><name><name>element</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>strBuilder</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>strBuilder</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>strBuilder</name><operator>.</operator><name>delete</name></name><argument_list>(<argument><expr><call><name><name>strBuilder</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><call><name><name>strBuilder</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><call><name><name>strBuilder</name><operator>.</operator><name>toString</name></name><argument_list>( ;</return>
+	</block_content>}</block></function>
+</unit>

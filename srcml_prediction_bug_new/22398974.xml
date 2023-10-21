@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37692783.java">        <function><type><specifier>public</specifier> <name>int</name></type> <name>getColumn</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name>checkMarkUsable</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>pos</name></name> <operator>==</operator> <name>INVALID_MARK_LINE</name></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><literal type="number">0</literal></expr>;</return></block_content></block></if></if_stmt>
+            <decl_stmt><decl><type><name>MySegment</name></type> <name>seg</name> <init>= <expr><call><name>getLineSegment</name><argument_list>(<argument><expr><call><name>getLine</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>int</name></type> <name>len</name> <init>= <expr><name><name>seg</name><operator>.</operator><name>length</name></name></expr></init></decl> )</decl>;</decl_stmt>
+            <return>return <expr><ternary><condition><expr><call><name><name>seg</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&lt;=</operator> <literal type="number">0</literal></expr> ?</condition><then> <expr><literal type="number">0</literal></expr> </then><else>: <expr><call><name><name>Math</name><operator>.</operator><name>min</name></name><argument_list>(<argument><expr><name>col</name></expr></argument>, <argument><expr><name>len</name></expr></argument>)</argument_list></call></expr></else></ternary></expr>;</return>
+        </block_content>}</block></function>
+</unit>

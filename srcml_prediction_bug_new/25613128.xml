@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25189996.java">	<function><type><specifier>public</specifier> <name>Object</name></type> <name>getRideResult</name><parameter_list>(<parameter><decl><type><name><name>Ride</name><index>[]</index></name></type> <name>ridesArray</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>ind</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name><name>ridesArray</name><index>[<expr><name>ind</name></expr>]</index></name><operator>.</operator><call><name>isNv</name><argument_list>()</argument_list></call> <operator>||</operator> <call><name><name>BigDecimal</name><operator>.</operator><name>ZERO</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>ridesArray</name><index>[<expr><name>ind</name></expr>]</index></name><operator>.</operator><call><name>getResult</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>NVResult</name><argument_list>(<argument><expr><name><name>ridesArray</name><index>[<expr><name>ind</name></expr>]</index></name><operator>.</operator><call><name>getResult</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<return>return <expr><name><name>ridesArray</name><index>[<expr><name>ind</name></expr>]</index></name><operator>.</operator><call><name>getResult</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

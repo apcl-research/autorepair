@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46312094.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>handlePacket</name><parameter_list>(<parameter><decl><type><name>Packet</name></type> <name>packet</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// update the application clock with this packet</comment>
+        <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>getAccessLock</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>clock</name><operator>.</operator><name>updateClock</name></name><argument_list>(<argument><expr><call><name><name>packet</name><operator>.</operator><name>getPacketTime</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>packet</name><operator>.</operator><name>getSenderSourceID</name></name><argument_list>()</argument_list></call> <operator>==</operator> <call><name><name>document</name><operator>.</operator><name>getLocalUser</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSourceID</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"received packet from self, ignoring"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+          <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name>getHandlerForPacket</name><argument_list>(<argument><expr><name>packet</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>handlePacket</name><argument_list>(<argument><expr><name>packet</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+
+        <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>releaseAccessLock</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+    </block_content>}</block></function>
+</unit>

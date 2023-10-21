@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4508982.java">        <function><type><specifier>public</specifier> <name>Jingle</name></type> <name>eventInitiate</name><parameter_list>(<parameter><decl><type><name>Jingle</name></type> <name>jin</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>XMPPException</name></expr></argument></throws> <block>{<block_content>
+            <comment type="line">// Parse the Jingle and get any proposed transport candidates</comment>
+            <comment type="line">//addRemoteCandidates(obtainCandidatesList(jin));</comment>
+
+            <comment type="line">// Start beacon candidates</comment>
+            <expr_stmt><expr><call><name>sendTransportCandidatesOffer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <comment type="line">// All these candidates will be checked asyncronously.</comment>
+            <expr_stmt><expr><call><name>delayedCheckBestCandidate</name><argument_list>(<argument><expr><name>session</name></expr></argument>, <argument><expr><name>jin</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <comment type="line">// Set the next state</comment>
+            <expr_stmt><expr><call><name>setState</name><argument_list>(<argument><expr><name>pending</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <return>return <expr><call><name><name>super</name><operator>.</operator><name>eventInitiate</name></name><argument_list>(<argument><expr><name>jin</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31310962.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>queryClose</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>boolean</name></type> <name>canClose</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><call><name>beginRead</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <decl_stmt><decl><type><name>Iterator</name></type> <name>items</name> <init>= <expr><operator>new</operator> <call><name>DownNodeIterator</name><argument_list>(<argument><expr><call><name><name>moduleContainer</name><operator>.</operator><name>getRootNode</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <while>while <condition>(<expr><call><name><name>items</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <name>canClose</name></expr>)</condition> <block>{<block_content>
+        <decl_stmt><decl><type><name>Module</name></type> <name>current</name> <init>= <expr><operator>(</operator><operator>(</operator><name>ModuleNode</name><operator>)</operator> <call><name><name>items</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>getModule</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>canClose</name> <operator>&amp;=</operator> <call><name><name>current</name><operator>.</operator><name>unsetContextQuery</name></name><argument_list>( )</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></while>
+    </block_content>}</block> <finally>finally <block>{<block_content>
+      <expr_stmt><expr><call><name>endRead</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></finally></try>
+    <return>return <expr><name>canClose</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

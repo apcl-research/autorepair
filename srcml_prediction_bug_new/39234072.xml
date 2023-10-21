@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11490549.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>createObject</name><parameter_list>(<parameter><decl><type><name>Attributes</name></type> <name>attributes</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>partnerLink</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>PARTNER_LINK</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>portType</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>PORT_TYPE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>operation</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>OPERATION</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>variable</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>VARIABLE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>faultName</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>FAULT_NAME</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <return>return <expr><call><name>getElementFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createReply</name><argument_list>(
+                <argument><expr><call><name>getStandardAttributes</name><argument_list>(<argument><expr><name>attributes</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>partnerLink</name></expr></argument>, <argument><expr><name>portType</name></expr></argument>,
+                <argument><expr><name>operation</name></expr></argument>, <argument><expr><name>variable</name></expr></argument>, <argument><expr><name>faultName</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

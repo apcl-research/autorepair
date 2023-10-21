@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28209996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>createPartControl</name><parameter_list>(<parameter><decl><type><name>Composite</name></type> <name>parent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><call><name><name>PlatformUI</name><operator>.</operator><name>getWorkbench</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getHelpSystem</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setHelp</name><argument_list>(<argument><expr><name>parent</name></expr></argument>, <argument><expr><name><name>SQLExplorerPlugin</name><operator>.</operator><name>PLUGIN_ID</name></name> <operator>+</operator> <literal type="string">".SQLResultsView"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>_parent</name> <operator>=</operator> <name>parent</name></expr>;</expr_stmt>
+
+        <comment type="line">// set default message</comment>
+        <if_stmt><if>if <condition>(<expr><name>_results</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <name><name>_results</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>setDefaultMessage</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+    </block_content>}</block></function>
+</unit>

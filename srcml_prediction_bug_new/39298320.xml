@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3929054.java">    <function><type><specifier>private</specifier> <name>LocationSubGroupTreeEditPart</name></type> <name>getChargeLocationGroup</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><name>chargeLocationGroup</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>setChargeLocationGroup</name><argument_list>(<argument><expr><operator>(</operator><name>LocationSubGroupTreeEditPart</name><operator>)</operator><call><name>createChild</name><argument_list>(<argument><expr><operator>new</operator> <call><name>LocationSubGroupDelegate</name><argument_list>(<argument><expr><literal type="string">"ChargeLocations"</literal></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>addChild</name><argument_list>(<argument><expr><call><name>getChargeLocationGroup</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>-</operator><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name><name>this</name><operator>.</operator><name>chargeLocationGroup</name></name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/263326.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>binIn</name><parameter_list>(<parameter><decl><type><name>BinReader</name></type> <name>in</name></decl></parameter>, <parameter><decl><type><name>CampaignData</name></type> <name>data</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><name>id</name> <operator>=</operator> <call><name><name>in</name><operator>.</operator><name>readInt</name></name><argument_list>(<argument><expr><literal type="string">"id"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>Name</name> <operator>=</operator> <call><name><name>in</name><operator>.</operator><name>readLine</name></name><argument_list>(<argument><expr><literal type="string">"name"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>environmentsize</name> <init>= <expr><call><name><name>in</name><operator>.</operator><name>readInt</name></name><argument_list>(<argument><expr><literal type="string">"environmentsize"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>pos</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>pos</name> <operator>&lt;</operator> <name>environmentsize</name></expr>;</condition> <incr><expr><name>pos</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>PlanetEnvironment</name></type> <name>PE</name> <init>= <expr><operator>new</operator> <call><name>PlanetEnvironment</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><call><name><name>PE</name><operator>.</operator><name>binIn</name></name><argument_list>(<argument><expr><name>in</name></expr></argument>, <argument><expr><name>data</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>environments</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>PE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

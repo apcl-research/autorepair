@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22954883.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>writeTimeValuePair</name><parameter_list>(<parameter><decl><type><name>PrintWriter</name></type> <name>writer</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>time</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>timeInTimeUnits</name> <init>= <expr><call><name><name>EfdcUtils</name><operator>.</operator><name>getRelativeTimeInTimeUnits</name></name><argument_list>(<argument><expr><call><name><name>Time</name><operator>.</operator><name>mjdToMillies</name></name><argument_list>(<argument><expr><name>time</name></expr></argument>)</argument_list></call></expr></argument>,
+                <argument><expr><name><name>this</name><operator>.</operator><name>referenceTime</name></name></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>secondsPerTimeUnit</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">"  "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><name>timeInTimeUnits</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">" "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>println</name></name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

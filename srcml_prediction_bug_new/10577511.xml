@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10352783.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>setMessageSeen</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>MessagingException</name></expr></argument></throws> <block>{<block_content>
+        <comment type="line">// If the sufficiently flag is not handled by the folder</comment>
+        <comment type="line">// allow a handler to do whatever it sill necessary</comment>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>getMessageIn</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFolder</name> <argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>handleMarkSeenNotPermanent</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>getMessageIn</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setFlag</name><argument_list>(<argument><expr><name><name>Flags</name><operator>.</operator><name>Flag</name><operator>.</operator><name>SEEN</name></name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

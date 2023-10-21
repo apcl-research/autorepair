@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18649983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createFileListComposite</name><parameter_list>()</parameter_list>  
+		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>		
+		<decl_stmt><decl><type><name>GridData</name></type> <name>gridData4</name> <init>= <expr><operator>new</operator> <call><name>GridData</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name><name>gridData4</name><operator>.</operator><name>horizontalAlignment</name></name> <operator>=</operator> <name><name>GridData</name><operator>.</operator><name>FILL</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>gridData4</name><operator>.</operator><name>grabExcessHorizontalSpace</name></name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>gridData4</name><operator>.</operator><name>verticalAlignment</name></name> <operator>=</operator> <name><name>GridData</name><operator>.</operator><name>CENTER</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name>fileListComposite</name> <operator>=</operator> <operator>new</operator> <call><name>FeatureConfigurationListComposite</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>BORDER_SOLID</name></name></expr></argument>, <argument><expr><call><name>getTaskuse</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getWorkProduct</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>fileListComposite</name><operator>.</operator><name>setLayoutData</name></name><argument_list>(<argument><expr><name>gridData4</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

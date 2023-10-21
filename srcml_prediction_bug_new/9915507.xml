@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26232783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setRootId</name><parameter_list>(<parameter><decl><type><name>long</name></type> <name>rootId</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>meta</name><operator>.</operator><name>setRootId</name></name><argument_list>(<argument><expr><name>rootId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>write</name> <operator>&amp;&amp;</operator> <operator>(</operator><name>resultSet</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>resultSet</name><operator>.</operator><name>updateBytes</name></name><argument_list>(<argument><expr><name><name>RTreeDml</name><operator>.</operator><name>NODE_DATA_COL</name></name></expr></argument>, <argument><expr><call><name><name>meta</name><operator>.</operator><name>getData</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>resultSet</name><operator>.</operator><name>updateRow</name></name><argument_list>( ;</argument_list></call></expr>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>SQLException</name> <argument_list>(<argument><expr><literal type="string">"Lock closed or not writable"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

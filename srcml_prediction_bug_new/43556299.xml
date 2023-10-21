@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46461849.java">    <function><type><specifier>public</specifier> <name>SuffixFormSet</name></type> <name>copy</name><parameter_list>(<parameter><decl><type><name>SuffixData</name></type> <name>allSuccessors</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>SuffixFormSet</name></type> <name>copy</name> <init>= <expr><operator>new</operator> <call><name>SuffixFormSet</name><argument_list>(
+                <argument><expr><name>id</name></expr></argument>,
+                <argument><expr><name>suffix</name></expr></argument>,
+                <argument><expr><name>generation</name></expr></argument>,
+                <argument><expr><name>terminationType</name></expr></argument>
+        )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for  <control>(<init><decl><type><name>SuffixFormSet</name></type> <name>successor</name> <range>: <expr><name>allSuccessors</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>directSuccessors</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>successor</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>copy</name><operator>.</operator><name>directSuccessors</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>successor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+            <else>else<block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>copy</name><operator>.</operator><name>successors</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>successor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name>copy</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

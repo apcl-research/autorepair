@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426981.java">    <function><type><specifier>private</specifier> <name>Component</name></type> <name>makeWestWeights</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>expensesWeights</name> <operator>=</operator> <operator>new</operator> <call><name>JLabel</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>expensesWeights</name><operator>.</operator><name>setFont</name></name><argument_list>(<argument><expr><call><name><name>SWGGuiUtils</name><operator>.</operator><name>fontPlain</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>expensesWeights</name><operator>.</operator><name>setToolTipText</name></name><argument_list>(
+                <argument><expr><literal type="string">"Experimental weights for the selectedExpenses, or n/a"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>expensesWeights</name><operator>.</operator><name>setBorder</name></name><argument_list>(<argument><expr><call><name><name>BorderFactory</name><operator>.</operator><name>createTitledBorder</name></name><argument_list>(
+                <argument><expr><call><name><name>BorderFactory</name><operator>.</operator><name>createEtchedBorder</name></name><argument_list>(<argument><expr><name><name>EtchedBorder</name><operator>.</operator><name>LOWERED</name></name></expr></argument> ,
+                <argument><expr><literal type="string">" beacon weights "</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>expensesWeights</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

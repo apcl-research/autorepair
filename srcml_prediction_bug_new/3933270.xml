@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42692629.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>add</name><parameter_list>(<parameter><decl><type><name>Marker</name></type> <name>marker</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>Marker</name></type> <name>mark</name> <range>: <expr><name>markers</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>mark</name><operator>.</operator><name>getIdentifier</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name><name>marker</name><operator>.</operator><name>getIdentifier</name></name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Marker with identifier: "</literal> <operator>+</operator> <call><name><name>mark</name><operator>.</operator><name>getIdentifier</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" already added."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<return>return;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"ServiceContextManager ADDING Marker ("</literal> <operator>+</operator> <call><name><name>marker</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">")"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>markers</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>marker</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>fireMarkersChanged</name><argument_list>(<argument><expr><name>marker</name></expr></argument>, <argument><expr><name><name>MarkersChangedEvent</name><operator>.</operator><name>Type</name><operator>.</operator><name>ADDED</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

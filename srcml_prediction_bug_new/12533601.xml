@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setLastDestinationProbability</name><parameter_list>(<parameter><decl><type><name>LaneIfc</name></type> <name>lane</name></decl></parameter>)</parameter_list><block>{<block_content>
+		
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>myNetwork</name><operator>.</operator><name>isLane</name></name><argument_list>(<argument><expr><name>lane</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>	
+			<expr_stmt><expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"The supplied lane is not a valid lane."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+		<decl_stmt><decl><type><name>TransportLocationIfc</name></type> <name>origin</name> <init>= <expr><call><name><name>lane</name><operator>.</operator><name>getOrigin</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>TransportLocationIfc</name></type> <name>destination</name> <init>= <expr><call><name><name>lane</name><operator>.</operator><name>getDestination</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>i</name> <init>= <expr><call><name><name>myNetwork</name><operator>.</operator><name>getIndexOf</name></name><argument_list>(<argument><expr><name>destination</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>		
+		<decl_stmt><decl><type><name>RandomVariable</name></type> <name>rv</name> <init>= <expr><call><name><name>myODRVs</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>origin</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>		
+		<decl_stmt><decl><type><name>DEmpirical</name></type> <name>d</name> <init>= <expr><operator>(</operator><name>DEmpirical</name><operator>)</operator> <call><name><name>rv</name><operator>.</operator><name>getRandomSource</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>d</name><operator>.</operator><name>addLastProbabilityPoint</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

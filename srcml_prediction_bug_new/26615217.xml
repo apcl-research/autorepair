@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31811891.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>constructJavaCodeString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>classname</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<decl_stmt><decl><type><name>String</name></type> <name>code</name> <init>= 
+	    <expr><literal type="string">"import java.io.*;\n"</literal> <operator>+</operator>
+	    <literal type="string">"import net.openai.ai.agent.*;"</literal> <operator>+</operator>
+	    <literal type="string">"\n"</literal> <operator>+</operator>
+	    <literal type="string">"public class "</literal> <operator>+</operator> <name>classname</name> <operator>+</operator> <literal type="string">" extends MigrateAndHaltAgent {\n"</literal> <operator>+</operator>
+	    <literal type="string">"    public "</literal> <operator>+</operator> <name>classname</name> <operator>+</operator> <literal type="string">"() {\n"</literal> <operator>+</operator>
+	    <literal type="string">"        super(\""</literal> <operator>+</operator> <name>destHost</name> <operator>+</operator> <literal type="string">"\", "</literal> <operator>+</operator> <name>destPort</name> <operator>+</operator> <literal type="string">");\n"</literal> <operator>+</operator>
+	    <literal type="string">"    }\n"</literal> <operator>+</operator>
+	    <literal type="string">"}\n"</literal></expr></init></decl>;</decl_stmt>
+	<return>return <expr><name>code</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

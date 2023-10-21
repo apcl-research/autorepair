@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34370062.java">	<function><type><specifier>private</specifier> <name>Insets</name></type> <name>determinePadding</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>attributeValue</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// If parent row is null, then the comp is floating and has no padding</comment>
+		<if_stmt><if>if  <condition>(<expr><call><name>getParentRow</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+	
+		<comment type="line">// inherit from row, if not available</comment>
+		<if_stmt><if>if <condition>(<expr><name>attributeValue</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>attributeValue</name> <operator>=</operator> <call><name>getParentRow</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getCellPadding</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>attributeValue</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+	
+		<try>try <block>{<block_content>
+			<return>return <expr><operator>(</operator><name>Insets</name><operator>)</operator> <call><name><name>Converter</name><operator>.</operator><name>convert</name></name><argument_list>(<argument><expr><name>attributeValue</name></expr></argument>, <argument><expr><name><name>Insets</name><operator>.</operator><name>class</name></name></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ObjectConverterException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

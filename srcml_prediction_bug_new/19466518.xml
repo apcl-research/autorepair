@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42559996.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>addProjectNamePropertyDescriptor</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>object</name></decl></parameter>  <comment type="block">/*-{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_Call_projectName_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_Call_projectName_feature", "_UI_Call_type"),
+				 Il1Package.Literals.CALL__PROJECT_NAME,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}-*/</comment>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25882983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>getFriendsExternal</name><parameter_list>(<parameter><decl><type><name>Profile</name></type> <name>userProfile</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>Profile</name></argument>&gt;</argument_list></name></type> <name>updatedList</name> <init>= <expr><call><name><name>wsClient</name><operator>.</operator><name>getFriendList</name></name><argument_list>(<argument><expr><name>userProfile</name></expr></argument>, <argument><expr><name>lastUpdated</name></expr></argument>)</argument_list></call></expr></init></decl> 
+		if;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name>updatedList</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>lastUpdated</name> <operator>=</operator> <call><name><name>Calendar</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTime</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>												
+		<expr_stmt><expr><call><name><name>dbAdapter</name><operator>.</operator><name>updateProfile</name></name><argument_list>(<argument><expr><name>updatedList</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// save the updated friends</comment>
+		<decl_stmt><decl><type><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>ExternalData</name></argument>&gt;</argument_list></name></type> <name>list</name> <init>= <expr><call><name>getAllExternalData</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name>saveExternalData</name><argument_list>(<argument><expr><call><name><name>cc</name><operator>.</operator><name>getAllStatus</name></name><argument_list>(<argument><expr><name>list</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<comment type="line">// Log.v(TAG)</comment>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

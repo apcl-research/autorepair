@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22362529.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setTableDetails</name><parameter_list>(<parameter><decl><type><name>JTable</name></type> <name>tbl</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>DefaultCellEditor</name></type> <name>includeEditor</name> <init>= <expr><operator>new</operator> <call><name>DefaultCellEditor</name><argument_list>(<argument><expr><operator>new</operator> <call><name>JCheckBox</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>TableColumn</name></type> <name>tc</name></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name>setTableDetailsCol0</name><argument_list>(<argument><expr><name>tbl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><name>tc</name> <operator>=</operator> <call><name><name>tbl</name><operator>.</operator><name>getColumnModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getColumn</name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	  	<expr_stmt><expr><call><name><name>tc</name><operator>.</operator><name>setCellRenderer</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>CheckBoxTableRender</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
+		<call><name><name>tc</name><operator>.</operator><name>setCellEditor</name></name><argument_list>(<argument><expr><name>includeEditor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tc</name><operator>.</operator><name>setPreferredWidth</name></name><argument_list>(<argument><expr><name>SECOND_COLUMN_WIDTH</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

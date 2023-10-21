@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38582796.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>hasHealthcareType</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>healthcareType</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>boolean</name></type> <name>result</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+
+    <if_stmt><if>if <condition>(<expr><name>healthcareType</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>this</name><operator>.</operator><name>getHealthcareTypes</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+      <for>for <control>(<init><decl><type><name>HealthcareType</name></type> <name>ht</name> <range>: <expr><call><name><name>this</name><operator>.</operator><name>getHealthcareTypes</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>healthcareType</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><call><name><name>ht</name><operator>.</operator><name>getDisplayName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+          <expr_stmt><expr><name>result</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+      </block_content>}</block></for>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><name>result</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

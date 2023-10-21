@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18419091.java">    <constructor><specifier>public</specifier> <name>FoodAmount</name> <parameter_list>(<parameter><decl><type><name>Food</name></type> <name>food</name></decl></parameter>, <parameter><decl><type><name>float</name></type> <name>amount</name></decl></parameter>, <parameter><decl><type><name>QuantityUnit</name></type> <name>unit</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>m_Food</name> <operator>=</operator> <name>food</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>m_Amount</name> <operator>=</operator> <name>amount</name></expr>;</expr_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><name>unit</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>food</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>  
+
+			<decl_stmt><decl><type><name>QuantityUnits</name></type> <name>u</name> <init>= <expr><call><name><name>QuantityUnits</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></if></if_stmt>
+
+			<if_stmt><if>if <condition>(<expr><name>food</name> <operator>instanceof</operator> <name>Recipe</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>unit</name> <operator>=</operator> <call><name><name>u</name><operator>.</operator><name>getDefaultRecipeUnit</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<expr_stmt><expr><name>unit</name> <operator>=</operator> <call><name><name>u</name><operator>.</operator><name>getDefaultUnit</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></constructor>
+</unit>

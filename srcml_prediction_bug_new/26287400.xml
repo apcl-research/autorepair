@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37142783.java">    <function><type><specifier>public</specifier> <name>Dimension</name></type> <name>getPreferredSize</name><parameter_list>(<parameter><decl><type><name>JComponent</name></type> <name>c</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Dimension</name></type> <name>d</name> <init>= <expr><operator>new</operator> <call><name>Dimension</name><argument_list>(<argument><expr><name>MINIMUM_SIZE</name></expr></argument>, <argument><expr><name>MINIMUM_SIZE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>JScrollBar</name></type> <name>sb</name> <init>= <expr><operator>(</operator><name>JScrollBar</name><operator>)</operator><name>c</name></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>sb</name><operator>.</operator><name>getOrientation</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>JScrollBar</name><operator>.</operator><name>VERTICAL</name></name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name><name>d</name><operator>.</operator><name>width</name></name> <operator>=</operator> <call><name>getPreferredScreenSize</name><argument_list>(<argument><expr><name><name>d</name><operator>.</operator><name>width</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><name><name>d</name><operator>.</operator><name>height</name></name> <operator>=</operator> <call><name>getPreferredScreenSize</name><argument_list>(<argument><expr><name><name>d</name><operator>.</operator><name>height</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        <return>return <expr><name>d</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

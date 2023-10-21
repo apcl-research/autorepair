@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>protected</specifier> <name>PooledObject</name></type> <name>create</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>PoolManException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type>       <name>obj</name>       <init>= <expr><call><name><name>factory</name><operator>.</operator><name>create</name></name><argument_list>( ;</init>
+        <type><name>PooledObject</name></type> <name>pooledObj</name></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>createWrapper</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>pooledObj</name> <operator>=</operator> <operator>new</operator> <call><name>PooledObjectWrapper</name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>pooledObj</name><operator>.</operator><name>setServerInfo</name></name><argument_list>(<argument><expr><call><name><name>factory</name><operator>.</operator><name>getServerInfo</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>pooledObj</name> <operator>=</operator> <operator>(</operator><name>PooledObject</name><operator>)</operator> <name>obj</name></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+
+        <expr_stmt><expr><call><name><name>pooledObj</name><operator>.</operator><name>setPool</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>proxyHandler</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>pooledObj</name><operator>.</operator><name>setProxyHandler</name></name><argument_list>(<argument><expr><name>proxyHandler</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>pooledObj</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16679996.java">	<function><type><specifier>private</specifier> <name>UserInfo</name></type> <name>createUserInfo</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if<condition>( <expr><operator>!</operator><call><name>checkApplyEnabled</name><argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content> <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+		
+		<decl_stmt><decl><type><name>UserInfo</name></type> <name>userInfo</name> <init>= <expr><operator>new</operator> <call><name>UserInfo</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>userInfo</name><operator>.</operator><name>setEmail</name></name><argument_list>( <argument><expr><call><name><name>currentUserInfo</name><operator>.</operator><name>getEmail</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>userInfo</name><operator>.</operator><name>setNickname</name></name><argument_list>( <argument><expr><call><name><name>nicknameField</name><operator>.</operator><name>getEntry</name></name><argument_list>(  )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>userInfo</name><operator>.</operator><name>setFirstname</name></name><argument_list>( <argument><expr><call><name><name>firstnameField</name><operator>.</operator><name>getEntry</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>userInfo</name><operator>.</operator><name>setLastname</name></name><argument_list>( <argument><expr><call><name><name>lastnameField</name><operator>.</operator><name>getEntry</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>userInfo</name><operator>.</operator><name>setAdministrator</name></name><argument_list>( <argument><expr><call><name><name>currentUserInfo</name><operator>.</operator><name>isAdministrator</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		
+		<return>return <expr><name>userInfo</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

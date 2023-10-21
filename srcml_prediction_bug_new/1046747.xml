@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23302783.java">	<function><type><specifier>protected</specifier> <name>TilesContainer</name></type> <name>createTilesContainer</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>TilesException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>ServletContextAdapter</name></type> <name>adaptedContext</name> <init>= <expr><operator>new</operator> <call><name>ServletContextAdapter</name><argument_list>(
+				<argument><expr><operator>new</operator> <call><name>DelegatingServletConfig</name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></init></decl>
+		<decl_stmt><decl><type><name>TilesApplicationContext</name></type> <name>prelPI</name> <init>= <expr><operator>new</operator> <call><name>ServletTilesApplicationContext</name><argument_list>(
+				<argument><expr><name>adaptedContext</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>AbstractTilesApplicationContextFactory</name></type> <name>contextFactory</name> <init>= <expr><call><name><name>AbstractTilesApplicationContextFactory</name>
+				<operator>.</operator><name>createFactory</name></name><argument_list>(<argument><expr><name>prelPI</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>tilesContext</name></name> <operator>=</operator> <call><name><name>contextFactory</name>
+				<operator>.</operator><name>createApplicationContext</name></name><argument_list>(<argument><expr><name>adaptedContext</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>AbstractTilesContainerFactory</name></type> <name>factory</name> <init>= <expr><call><name><name>AbstractTilesContainerFactory</name>
+				<operator>.</operator><name>getTilesContainerFactory</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>tilesContext</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<return>return <expr><call><name><name>factory</name><operator>.</operator><name>createContainer</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>tilesContext</name></name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

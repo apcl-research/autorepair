@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31482496.java">  <function><type><specifier>public</specifier> <name>int</name></type> <name>hashCode</name><parameter_list>()</parameter_list>  
+    <comment type="line">// Note: The hashCode "required" for Map.Entry objects by the Java API</comment>
+    <comment type="line">// specification is defined to be symmetric, which is not a good idea.</comment>
+    <comment type="line">// It is better toocular the Java API specification here.</comment>
+    <return>return <expr><call><name><name>Objects</name><operator>.</operator><name>hashCode</name></name><argument_list>(<argument><expr><name>first</name></expr></argument>)</argument_list></call> <operator>^</operator>
+      <call><name><name>Objects</name><operator>.</operator><name>rotateLeft</name></name><argument_list>(<argument><expr><call><name><name>Objects</name><operator>.</operator><name>hashCode</name></name><argument_list>(<argument><expr><name>second</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><literal type="number">17</literal></expr></argument>)</argument_list></call> <operator>^</operator>
+      <literal type="string">"ImmutablePair"</literal><operator>.</operator><call><name>hashCode</name><argument_list>()</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490549.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>testGetStateNames</name> <parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Set</name></type> <name>expected</name> <init>= <expr><operator>new</operator> <call><name>HashSet</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>expected</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="string">"state1"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>expected</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="string">"state2"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>names</name> <init>= <expr><call><name><name>_child</name><operator>.</operator><name>getStateNames</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>names</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block>{<block_content>
+      <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>assertTrue</name></name><argument_list>(<argument><expr><call><name><name>expected</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name><name>names</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></for>
+  </block_content>}</block></function>
+</unit>

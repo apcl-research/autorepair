@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50402783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>displayToc</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><operator>!</operator><name>tocIsDisplayed</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name>updateTreeToc</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>updateTreeToc2</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>selectTreeToc2</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>tocIsDisplayed</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><call><name><name>splitPane</name><operator>.</operator><name>setDividerLocation</name></name><argument_list>(<argument><expr><literal type="number">200</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>splitPane</name><operator>.</operator><name>setDividerSize</name></name> <argument_list>(<argument><expr><literal type="number">2</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>splitPane</name><operator>.</operator><name>setResizeWeight</name></name><argument_list>(<argument><expr><literal type="number">0.0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>textPane</name><operator>.</operator><name>setEditableInternal</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

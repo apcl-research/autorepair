@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26011683.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getXml</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+	<decl_stmt><decl><type><name>String</name></type> <name>xml</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+	<expr_stmt><expr><name>xml</name> <operator>+=</operator> <literal type="string">"&lt;OSCPACKET ADDRESS=\""</literal> <operator>+</operator> <call><name><name>address</name><operator>.</operator><name>getHostAddress</name></name><argument_list>()</argument_list></call> <operator>+</operator>
+	    <literal type="string">"\" PORT=\""</literal> <operator>+</operator> <name>port</name> <operator>+</operator>
+	    <literal type="string">"\" TIME=\""</literal><operator>+</operator> <name>time</name> <operator>+</operator> <literal type="string">"\"&gt;"</literal></expr>;</expr_stmt>
+
+	<decl_stmt><decl><type><name>Enumeration</name></type> <name>m</name> <init>= <expr><call><name><name>messages</name><operator>.</operator><name>elements</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<while>while <condition>(<expr><call><name><name>m</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <decl_stmt><decl><type><name>OscMessage</name></type> <name>mess</name> <init>= <expr><operator>(</operator><name>OscMessage</name><operator>)</operator><call><name><name>m</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <expr_stmt><expr><name>xml</name> <operator>+=</operator> <call><name><name>mess</name><operator>.</operator><name>getXml</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></while>
+
+	<expr_stmt><expr><name>xml</name> <operator>+=</operator> <literal type="string">"&lt;/OSCPACKET&gt;"</literal></expr>;</expr_stmt>
+	<return>return <expr><name>xml</name></expr>;</return>
+     
+</block_content>}</block></function>
+</unit>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/105529.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>rename</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>newName</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLIOException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name>unlockAndClose</name><argument_list>()</argument_list></call></expr> 
+
+		<comment type="line">// parent can be null, but is not clear in which case and if this can lead</comment>
+		<comment type="line">// to problems</comment>
+		<name>File</name> <name>newFile</name> <operator>=</operator> <operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><call><name><name>fileHnd</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>newName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>boolean</name></type> <name>renameOk</name> <init>= <expr><call><name><name>fileHnd</name><operator>.</operator><name>renameTo</name></name><argument_list>(<argument><expr><name>newFile</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>renameOk</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>fileHnd</name> <operator>=</operator> <name>newFile</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>lockAndInit</name><argument_list>(<argument><expr><name>fileHnd</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<expr_stmt><expr><call><name>lockAndInit</name><argument_list>(<argument><expr><name>fileHnd</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<throw>throw <expr><operator>new</operator> <call><name>SQLIOException</name><argument_list>(<argument><expr><literal type="string">"Cannot rename table file."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

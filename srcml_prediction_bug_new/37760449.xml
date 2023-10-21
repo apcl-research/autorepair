@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47389996.java">	<function><type><specifier>public</specifier> <name>Dependency</name></type> <name>extractDependency</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>referencedPom</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>Project</name></type> <name>referencedProject</name> <init>= <expr><call><name>read</name><argument_list>(<argument><expr><name>referencedPom</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Dependency</name></type> <name>dependency</name> <init>= <expr><operator>new</operator> <call><name>Dependency</name><argument_list>( ;</argument_list></call></expr></init></decl>
+		<type><name><name>dependency</name><operator>.</operator><name>setGroupId</name></name><argument_list>(<argument><expr><call><name><name>referencedProject</name><operator>.</operator><name>getGroupId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>dependency</name><operator>.</operator><name>setArtifactId</name></name><argument_list>(<argument><expr><call><name><name>referencedProject</name><operator>.</operator><name>getArtifactId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>dependency</name><operator>.</operator><name>setVersion</name></name><argument_list>(<argument><expr><call><name><name>referencedProject</name><operator>.</operator><name>getCurrentVersion</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">//dependency.setArtifact(referencedPom.getParent());</comment>
+		<comment type="line">//dependency.setJar(referencedPom.getParent());</comment>
+		<return>return <expr><name>dependency</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

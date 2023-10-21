@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18440062.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getFieldText</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>recordIdx</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>fieldIdx</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<try>try <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>fieldIdx</name> <operator>==</operator> <name><name>Constants</name><operator>.</operator><name>FULL_LINE</name></name></expr>)</condition> <block>{<block_content>
+				<return>return <expr><call><name>getFullLine</name><argument_list>()</argument_list></call></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+
+		    <decl_stmt><decl><type><name>FieldDetail</name></type> <name>field</name> <init>= <expr><call><name><name>layout</name><operator>.</operator><name>getField</name></name><argument_list>(<argument><expr><name>recordIdx</name></expr></argument>, <argument><expr><name>fieldIdx</name></expr></argument>)</argument_list></call> 
+			<operator>=</operator> <call><name><name>layout</name><operator>.</operator><name>getField</name></name><argument_list>(<argument><expr><call><name>getLineData</name><argument_list>()</argument_list></call></expr></argument>,
+			        				<argument><expr><name><name>Type</name><operator>.</operator><name>ftChar</name></name></expr></argument>,
+			        				<argument><expr><name>field</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return <expr><literal type="string">""</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

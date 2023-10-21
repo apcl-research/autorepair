@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48209996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>registerWaterSprinkler</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>SchoolProfileServiceStub</name><operator>.</operator><name>AddWaterSprinkler</name></name></type> <name>msg</name> <init>= <expr><operator>new</operator> <call><name><name>SchoolProfileServiceStub</name><operator>.</operator><name>AddWaterSprinkler</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>msg</name><operator>.</operator><name>setSensor</name></name><argument_list>(<argument><expr><name><name>WaterSprinkler</name><operator>.</operator><name>name</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"registerWaterSprinkler(): Adding silller "</literal>
+					<operator>+</operator> <name><name>WaterSprinkler</name><operator>.</operator><name>name</name></name> <operator>+</operator> <literal type="string">" to school "</literal>
+					<operator>+</operator> <name><name>this</name><operator>.</operator><name>SCHOOL_PROFILE_SERVICE_ADDRESS</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>schoolProfileService</name><operator>.</operator><name>addWaterSprinkler</name></name><argument_list>(<argument><expr><name>msg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>RemoteException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr> ;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

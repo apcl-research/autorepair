@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50332629.java">    <function><type><specifier>protected</specifier> <name>TaskPane</name></type> <name>wrapAsTaskPane</name><parameter_list>(<parameter><decl><type><name>GatewayMessage</name></type> <name>gm</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>title</name></decl></parameter>, <parameter><decl><type><name>Icon</name></type> <name>icon</name></decl></parameter>  <comment type="block">/*, boolean isExpanded*/</comment>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>TaskPane</name></type> <name>pane</name> <init>= <expr><operator>new</operator> <call><name>TaskPane</name><argument_list>(<argument><expr><name>gm</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>pane</name><operator>.</operator><name>setTitle</name></name><argument_list>(<argument><expr><name>title</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>pane</name><operator>.</operator><name>setIcon</name></name><argument_list>(<argument><expr><name>icon</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>pane</name><operator>.</operator><name>setScrollOnExpand</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>pane</name><operator>.</operator><name>setCollapsed</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>pane</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

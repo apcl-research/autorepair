@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35545891.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>cmdResponse</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>viewId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>userId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>nodeId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>cmdCode</name></decl></parameter>, <parameter><decl><type><name><name>Object</name><index>[]</index></name></type> <name>data</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>result</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>errMessage</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>fine</name></name><argument_list>(<argument><expr><literal type="string">"cmdResponse viewId: "</literal> <operator>+</operator> <name>viewId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><literal type="null">null</literal> <operator>==</operator> <name>data</name> <operator>||</operator> <literal type="number">0</literal> <operator>==</operator> <name><name>data</name><operator>.</operator><name>length</name></name></expr>)</condition>  
+
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>pnlVlanVlan</name><operator>.</operator><name>cmdResponse</name></name><argument_list>(<argument><expr><name>viewId</name></expr></argument>, <argument><expr><name>userId</name></expr></argument>, <argument><expr><name>nodeId</name></expr></argument>, <argument><expr><name>cmdCode</name></expr></argument>, <argument><expr><name>data</name></expr></argument>, <argument><expr><name>result</name></expr></argument>, <argument><expr><name>errMessage</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

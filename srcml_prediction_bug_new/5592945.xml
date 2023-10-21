@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44220945.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>fileExit</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><call><name>getDesktop</name> <argument_list>()</argument_list></call></expr> ;</expr_stmt>
+      <expr_stmt><expr><call><name><name>appProps</name><operator>.</operator><name>savetoFile</name></name><argument_list>( <argument><expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>appProps</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name><name>wpPropertyInterface</name><operator>.</operator><name>inifile</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block>
+    <catch>catch <parameter_list>(<parameter><decl><type><name>wpException</name></type> <name>we</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>statusBar</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>we</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+    <comment type="line">//Ninbage Collect and Kill Kill</comment>
+    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>gc</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>exit</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42785983.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>encodeField_typeDBT</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>text</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="block">/* here we replace all types of single newline (\n or \r) with \r\n,
+		obtained except the one already in format \r\n 
+		1 l0v3 r3g3x!!
+		*/</comment>
+		<expr_stmt><expr><name>text</name> <operator>=</operator> <call><name><name>text</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"(\\r(?!\\n))|((?&lt;!\\r)\\n)"</literal></expr></argument>, <argument><expr><literal type="string">"\r\n"</literal></expr></argument>)</argument_list></call> 
+		<operator>+</operator> <name>TERMINATOR</name> <operator>+</operator> <name>TERMINATOR</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

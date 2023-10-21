@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26332983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>removePlaceableFromTeam</name><parameter_list>(<parameter><decl><type><name>Placeable</name></type> <name>aPlaceable</name></decl></parameter>, <parameter><decl><type><name>char</name></type> <name>anId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Team</name></type> <name>tmpTeam</name> <init>= <expr><call><name>getTeam</name><argument_list>(<argument><expr><name>anId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>aPlaceable</name> <operator>instanceof</operator> <name>Figure</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>tmpTeam</name><operator>.</operator><name>removeFigureFromTeam</name></name> <argument_list>(<argument><expr><name>Figure</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>aPlaceable</name> <operator>instanceof</operator> <name>Item</name></expr>)</condition> <block>{<block_content>
+      <comment type="line">// TODO Maybe the Game ends here?!</comment>
+      <expr_stmt><expr><call><name>endGame</name><argument_list>(<argument><expr><call><name><name>tmpTeam</name><operator>.</operator><name>removeItemFromTeam</name></name><argument_list>(<argument><expr><operator>(</operator><name>Item</name><operator>)</operator> <name>aPlaceable</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37470045.java">    <function><type><specifier>public</specifier> <name>Collection</name></type> <name>getInstitutions</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Collection</name></type> <name>toReturn</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>toReturn</name> <operator>=</operator> <call><name><name>InstitutionsSingleton</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getInstitutions</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"An Exception has been thrown by the RegistrationForm.getInstitutions() method:"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>()</argument_list></call></expr> 
+        </block_content>}</block></catch></try>
+        <if_stmt><if>if <condition>(<expr><name>toReturn</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>toReturn</name> <operator>=</operator> <name><name>Collections</name><operator>.</operator><name>EMPTY_LIST</name></name></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>toReturn</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

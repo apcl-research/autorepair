@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3423961.java">    <function><type><specifier>public</specifier> <name>NodeImpl</name></type> <name>cloneNode</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>deep</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    	<decl_stmt><decl><type><name>ElementImpl</name></type> <name>newnode</name> <init>= <expr><operator>(</operator><name>ElementImpl</name><operator>)</operator> <call><name><name>super</name><operator>.</operator><name>cloneNode</name></name><argument_list>(<argument><expr><name>deep</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<comment type="line">// Replicate NamedNodeMap rather than Share it.</comment>
+        <if_stmt><if>if <condition>(<expr><name>attributes</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>newnode</name><operator>.</operator><name>attributes</name></name> <operator>=</operator> <operator>(</operator><name>AttributeMap</name><operator>)</operator> <call><name><name>attributes</name><operator>.</operator><name>cloneMap</name></name><argument_list>(<argument><expr><name>newnode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    	<return>return <expr><name>newnode</name></expr>;</return>
+
+    </block_content>}</block></function> <comment type="line">// cloneNode(boolean):Node</comment>
+</unit>

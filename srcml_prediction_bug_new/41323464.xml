@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12702783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>initActivityState</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>itsActivityState</name> <operator>=</operator> <call><name><name>Box</name><operator>.</operator><name>createHorizontalBox</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>JProgressBar</name></type> <name>theProgressBar</name> <init>= <expr><operator>new</operator> <call><name>JProgressBar</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>theProgressBar</name><operator>.</operator><name>setIndeterminate</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>itsActivityState</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>theProgressBar</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// JLabel theStateLabel = new</comment>
+		<comment type="line">// JLabel(LessonMapper2.getInstance().getLangComment("activityState"));</comment>
+		<comment type="line">// theStateLabel.setBackground(Color.WHITE) </comment>
+		<comment type="line">// itsActivityState.add(theStateLabel);</comment>
+	</block_content>}</block></function>
+</unit>

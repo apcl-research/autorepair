@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26292783.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>store</name><parameter_list>(<parameter><decl><type><name>Serializable</name></type> <name>obj</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RecordStoreException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>ByteArrayOutputStream</name></type> <name>byteStream</name> <init>= <expr><operator>new</operator> <call><name>ByteArrayOutputStream</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>DataOutputStream</name></type> <name>out</name> <init>= <expr><operator>new</operator> <call><name>DataOutputStream</name><argument_list>(<argument><expr><name>byteStream</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>obj</name><operator>.</operator><name>serialize</name></name><argument_list>(<argument><expr><name>out</name></expr></argument> )</argument_list></call></expr> ;</expr_stmt>
+
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>data</name> <init>= <expr><call><name><name>byteStream</name><operator>.</operator><name>toByteArray</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>ret</name> <init>= <expr><call><name><name>rs</name><operator>.</operator><name>addRecord</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name><name>data</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>obj</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>data</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>byteStream</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>out</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <return>return <expr><name>ret</name></expr>;</return> 
+    </block_content>}</block></function>
+</unit>

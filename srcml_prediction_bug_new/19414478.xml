@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19272483.java">  <function><type><specifier>private</specifier> <name>boolean</name></type> <name>removeLocal</name><parameter_list>(<parameter><decl><type><name>Module</name></type> <name>module</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    <comment type="line">// todo this method is not abstract ! handles CVS only.</comment>
+
+    <decl_stmt><decl><type><name>AdminHandler</name></type> <name>handler</name> <init>= <expr><operator>new</operator> <call><name>AdminHandler</name><argument_list>(<argument><expr><name>module</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>handler</name><operator>.</operator><name>isEqualLocation</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <try>try <block>{<block_content>
+        <expr_stmt><expr><call><name><name>FileUtils</name><operator>.</operator><name>deleteDirectory</name></name><argument_list>(<argument><expr><call><name><name>module</name><operator>.</operator><name>getBaseDir</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr> 
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></if></if_stmt>
+
+    <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+  </block_content>}</block></function>
+</unit>

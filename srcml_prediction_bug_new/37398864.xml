@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40382796.java">  <function><type><specifier>public</specifier> <name>double</name></type> <name>getDouble</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ConfigurationException</name></expr></argument></throws> <block>{<block_content>
+    <try>try <block>{<block_content>
+      <return>return <expr><call><name><name>NumberFormat</name><operator>.</operator><name>getNumberInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>parse</name><argument_list>(<argument><expr><call><name>get</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>doubleValue</name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ParseException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>ConfigurationException</name><argument_list>(
+        <argument><expr><name><name>ConfigurationException</name><operator>.</operator><name>MESSAGE_PROPERTY_NOT_NUMBER</name></name></expr></argument>,
+        <argument><expr><operator>new</operator> <name><name>Object</name><index>[  <expr><block>{ <expr><name><name>this</name><operator>.</operator><name>localizedResource</name></name></expr>, <expr><name>key</name></expr> }</block></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

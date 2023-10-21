@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27870062.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>load</name><parameter_list>(<parameter><decl><type><name>Document</name></type> <name>doc</name></decl></parameter>)</parameter_list>  
+
+    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>parseHeader</name></name><argument_list>(<argument><expr><name>doc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// EXPERIMENTAL.</comment>
+
+    <expr_stmt><expr><call><name>setModel</name><argument_list>(<argument><expr><name>treeModel</name> <operator>=</operator> <operator>new</operator> <call><name>wpTreeModel</name><argument_list>(<argument><expr><name>gui</name></expr></argument>,<argument><expr><name>doc</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>divLoc</name> <init>= <expr><call><name><name>window</name><operator>.</operator><name>leftSplitPane</name><operator>.</operator><name>getDividerLocation</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>treeView</name><operator>.</operator><name>setPreferredSize</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Dimension</name><argument_list>(<argument><expr><name>TREE_DEF_WIDTH</name></expr></argument>, <argument><expr><name>divLoc</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>treeView</name><operator>.</operator><name>setViewportView</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>addDOModelListener</name><argument_list>(<argument><expr><operator>new</operator> <call><name>wpDOModelListener</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+  </block_content>}</block></function>
+</unit>

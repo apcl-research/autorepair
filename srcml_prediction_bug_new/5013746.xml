@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18839996.java">    <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>ixout</name></decl>, <decl><type ref="prev"/><name>jdoi</name></decl>, <decl><type ref="prev"/><name>jic</name></decl>;</decl_stmt>
+
+        <for>for <control>(<init><expr><name>ixout</name> <operator>=</operator> <literal type="number">0</literal></expr>;</init> <condition><expr><name>ixout</name>
+                <operator>&lt;</operator> <name>nxout</name></expr>;</condition>  <incr><expr><name>ixout</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><name>jdoi</name> <operator>=</operator> <name><name>kdoi</name><index>[<expr><name>ixout</name></expr>]</index></name></expr>;</expr_stmt>
+            <expr_stmt><expr><name>jic</name> <operator>=</operator>
+                    <name><name>kic</name><index>[<expr><name>ixout</name></expr>]</index></name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>zout</name><index>[<expr><name>ixout</name> <operator>+</operator> <name>offset_zout</name></expr>]</index></name> <operator>=</operator> <name><name>table</name><index>[<expr><name>icmax</name> <operator>*</operator> <literal type="number">256</literal> <operator>+</operator> <operator>(</operator><name>int</name><operator>)</operator> <name><name>zin</name><index>[<expr><name>jdoi</name> <operator>+</operator> <name>offset_doi</name>  <operator>-</operator> <name>jic</name></expr>]</index></name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>zout</name><index>[<expr><name>ixout</name> <operator>+</operator> <name>offset_zout</name></expr>]</index></name> <operator>+=</operator> <name><name>table</name><index>[<expr><operator>(</operator><name>int</name><operator>)</operator> <name><name>zin</name><index>[<expr><name>jdoi</name> <operator>+</operator> <literal type="number">1</literal> <operator>+</operator> <name>offset_doi</name></expr>]</index></name> <operator>+</operator> <name>jic</name></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+    </block_content>}</block>
+</unit>

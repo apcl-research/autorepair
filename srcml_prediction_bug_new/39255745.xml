@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44242796.java">	<function><type><specifier>public</specifier> <name>Rectangle</name></type> <name>getDataAreaBounds</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Dimension</name></type> <name>size</name> <init>= <expr><call><name>getSize</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Insets</name></type> <name>insets</name> <init>= <expr><call><name>getInsets</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>int</name></type> <name>xStart</name> <init>= <expr><name>V_AXIS_PADDING</name> <operator>+</operator> <name>V_TITLE_PADDING</name> <operator>+</operator> <name><name>insets</name><operator>.</operator><name>left</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>yStart</name> <init>= <expr><name>TOP_PADDING</name> <operator>+</operator> <name><name>insets</name><operator>.</operator><name>top</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>width</name> <init>= <expr><name><name>size</name><operator>.</operator><name>width</name></name> <operator>-</operator> <name>xStart</name> <operator>-</operator> <name>RIGHT_PADDING</name> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>right</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><name><name>size</name><operator>.</operator><name>height</name></name> <operator>-</operator> <name>yStart</name> <operator>-</operator> <name>H_AXIS_PADDING</name> <operator>-</operator> <name>H_TITLE_PADDING</name> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>bottom</name></name></expr></init></decl>;</decl_stmt>
+		
+		<return>return <expr><operator>new</operator> <call><name>Rectangle</name><argument_list>(<argument><expr><name>xStart</name></expr></argument>, <argument><expr><name>yStart</name></expr></argument>, <argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

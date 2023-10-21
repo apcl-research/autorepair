@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51012796.java">	<function><type><specifier>private</specifier> <name>Response</name></type> <name>responseIncludingConcepts</name><parameter_list>(<parameter><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>ONDEXRelation</name></argument>&gt;</argument_list></name></type> <name>relations</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<comment type="line">// add related concepts</comment>
+		<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>ONDEXConcept</name></argument>&gt;</argument_list></name></type> <name>concepts</name> <init>= <expr><operator>new</operator> <call><name><name>HashSet</name><argument_list type="generic">&lt;<argument><name>ONDEXConcept</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>ONDEXRelation</name></type> <name>r</name> <range>: <expr><name>relations</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>concepts</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>r</name><operator>.</operator><name>getFromConcept</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>concepts</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>r</name><operator>.</operator><name>getToConcept</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+
+		<comment type="line">// create response</comment>
+		<return>return <expr><call><name><name>OXLResponseBuilder</name><operator>.</operator><name>build</name></name><argument_list>(<argument><expr><call><name><name>graph</name><operator>.</operator><name>getSID</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">""</literal></expr></argument>, <argument><expr><name>concepts</name></expr></argument>,
+				<argument><expr><name>relations</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

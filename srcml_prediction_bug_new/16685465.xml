@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40990596.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>buildViewForMelee</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// clear all items</comment>
+		<if_stmt><if>if <condition>(<expr><name>itemsLayout</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>recycle</name><operator>.</operator><name>recycleItems</name></name><argument_list>(<argument><expr><name>itemsLayout</name></expr></argument>, <argument><expr><name>firstItem</name></expr></argument>, <argument><expr><operator>new</operator> <call><name>ItemsRange</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>			
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name>createItemsLayout</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		
+		<comment type="line">// add views</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>addItems</name> <init>= <expr><name>visibleItems</name> <operator>/</operator> <literal type="number">2</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name>currentItem</name> <operator>+</operator> <name>addItems</name></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&gt;=</operator> <name>currentItem</name> <operator>-</operator> <name>addItems</name></expr>;</condition> <incr><expr><name>i</name><operator>--</operator></expr></incr>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name>addViewItem</name><argument_list>(<argument><expr><name>i</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			    <expr_stmt><expr><name>firstItem</name> <operator>=</operator> <name>i</name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

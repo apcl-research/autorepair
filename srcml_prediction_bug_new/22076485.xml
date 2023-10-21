@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18614082.java">	<function><type><specifier>public</specifier> <name>MetsMdSecType</name></type> <name>getPrimaryDmdSec</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>HaSMETSProfileException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>xql</name> <init>= <expr><literal type="string">"declare namespace m='"</literal> <operator>+</operator> <name>METS_NS</name>
+				<operator>+</operator> <literal type="string">"'; .//m:dmdSec[@STATUS='PRIMARY_DMDSEC']"</literal></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>XmlObject</name></type> <name><name>o</name><index>[]</index></name> <init>= <expr><call><name><name>metsDoc</name><operator>.</operator><name>selectPath</name></name><argument_list>(<argument><expr><name>xql</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name><name>o</name><operator>.</operator><name>length</name></name> <operator>!=</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>HaSMETSProfileException</name><argument_list>(
+					<argument><expr><literal type="string">"There must be exactly one Primary dmdSec; this document contains "</literal>
+							<operator>+</operator> <name><name>o</name><operator>.</operator><name>length</name></name></expr></argument> ;</argument_list></call></expr></throw>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><operator>(</operator><name>MetsMdSecType</name><operator>)</operator> <name><name>o</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19289996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>clrList</name><parameter_list>()</parameter_list>  
+
+		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>Integer</name></type> <name>newState</name> <init>= <expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>CMD_VIEW</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>rowCount</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>rowCount</name> <operator>&lt;</operator> <call><name><name>modelNE</name><operator>.</operator><name>getRowCount</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>rowCount</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>modelNE</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><operator>(</operator><name>Object</name><operator>)</operator> <literal type="string">""</literal></expr></argument>, <argument><expr><name>rowCount</name></expr></argument>, <argument><expr><name>RESULT_COLUMN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>modelNE</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><operator>(</operator><name>Object</name><operator>)</operator> <name>newState</name></expr></argument>, <argument><expr><name>rowCount</name></expr></argument>, <argument><expr><name>CMD_STATE_COLUMN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<expr_stmt><expr><call><name><name>modelNE</name><operator>.</operator><name>fireTableDataChanged</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24104483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setFontAntialiased</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>fontAntialiased</name></decl></parameter>)</parameter_list>  
+        
+        <comment type="line">// store the old value</comment>
+        <throws>throws <argument><expr><name>IllegalStateException</name></expr></argument></throws> <block>{<block_content>
+        
+        <comment type="line">// if the font has been set, then we need to recalculate things</comment>
+        <if_stmt><if>if <condition>(<expr><name>m_font</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>calculateDrawingParams</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>repaint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>firePropertyChange</name><argument_list>(
+                <argument><expr><name>PROPERTY_FONTANTIALIASED</name></expr></argument>, <argument><expr><name>m_font</name></expr></argument>, <argument><expr><name>m_font</name></expr></argument>
+            )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        
+        <comment type="line">// if the font has been set, then we need to recalculate things</comment>
+        <if_stmt><if>if <condition>(<expr><name>m_fontAntialiasedFont</name> <operator>!=</operator> <name>fontAntialiased</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>calculateDrawingParams</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>repaint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>firePropertyChange</name><argument_list>(
+                <argument><expr><name>PROPERTY_FONTANTIALIASED</name></expr></argument>, <argument><expr><name>oldFontAntialiased</name></expr></argument>, <argument><expr><name>m_fontAntialiasedFont</name></expr></argument>
+            )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        
+    </block_content>}</block></function>
+</unit>

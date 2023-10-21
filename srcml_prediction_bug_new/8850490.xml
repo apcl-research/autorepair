@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32647545.java">    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>isValidImageWidthHeight</name><parameter_list>(<parameter><decl><type><name>InputStream</name></type> <name>in</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>width</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>height</name></decl></parameter>)</parameter_list><block>{<block_content>
+    	<decl_stmt><decl><type><name>ImageInfo</name></type> <name>ii</name> <init>= <expr><operator>new</operator> <call><name>ImageInfo</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<expr_stmt><expr><call><name><name>ii</name><operator>.</operator><name>setInput</name></name><argument_list>(<argument><expr><name>in</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// in can be InputStream or RandomAccessFile</comment>
+		<if_stmt><if>if <condition>(<expr><call><name><name>ii</name><operator>.</operator><name>check</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="boolean">true</literal> <operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>ii</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call> <operator>&lt;=</operator> <name>width</name> <operator>&amp;&amp;</operator> <call><name><name>ii</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call> <operator>&lt;=</operator> <name>height</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31144096.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>selfTest</name><parameter_list>(  )</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>selfTest</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>KThread</name></type> <name>serverThread</name> <init>= <expr><operator>new</operator> <call><name>KThread</name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+			<function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><call><name>pingServer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></function>
+		}</block></class></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>serverThread</name><operator>.</operator><name>fork</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Press any key to start the network test..."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>console</name><operator>.</operator><name>readByte</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>local</name> <init>= <expr><call><name><name>Machine</name><operator>.</operator><name>networkLink</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getLinkAddress</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// ping this machine first</comment>
+		<expr_stmt><expr><call><name>ping</name><argument_list>(<argument><expr><name>local</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// if we're 0 or 1, ping the opposite</comment>
+		<if_stmt><if>if <condition>(<expr><name>local</name> <operator>&lt;=</operator> <literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name>ping</name><argument_list>(<argument><expr><literal type="number">1</literal> <operator>-</operator> <name>local</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

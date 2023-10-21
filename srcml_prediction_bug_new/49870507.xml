@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46659963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>getList</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+		<do>do <block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>(<argument><expr><literal type="string">"Please enter the action(\"quit\" to exit):"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>s</name> <operator>=</operator> <call><name><name>in</name><operator>.</operator><name>nextLine</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>s</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><literal type="string">"add"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<decl_stmt><decl><type><name>String</name></type> <name>addString</name> <init>= <expr><call><name><name>s</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><call><name><name>s</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><literal type="string">" "</literal></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name><name>ea</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>addString</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>ebx</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>addString</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block> while <condition>(<expr><operator>!</operator><call><name><name>s</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><literal type="string">"quit"</literal></expr></argument>)</argument_list></call></expr> ;</condition>
+	</block_content>}</block></function>
+</unit>

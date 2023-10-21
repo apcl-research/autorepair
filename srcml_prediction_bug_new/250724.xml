@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38482983.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getAllCollaborativeCollections</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>AccessException</name></expr></argument></throws>  
+		<block>{<block_content> <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering getAllCollaborativeCollections"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>query</name> <init>= <expr><literal type="string">"SELECT collection.PID, collection.TITLE, collectionrole.ROLE, user.USERNAME"</literal>
+				<operator>+</operator> <literal type="string">" FROM collectionrole, collection, user "</literal>
+				<operator>+</operator> <literal type="string">" WHERE collectionrole.USERID = user.USERID "</literal>
+				<operator>+</operator> <literal type="string">" AND collectionrole.COLLECTIONPID = collection.PID "</literal>
+				<operator>+</operator> <literal type="string">" ORDER BY collection.TITLE, collectionrole.ROLE"</literal></expr></init></decl>;</decl_stmt>
+		<return>return <expr><call><name><name>this</name><operator>.</operator><name>buildResult</name></name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

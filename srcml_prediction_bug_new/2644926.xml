@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32752983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>sendNextProgramStartTimeChangedEvent</name><parameter_list>(<parameter><decl><type><name>Status</name></type> <name>status</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<synchronized>synchronized <init>(<expr><name>adultboxListeners</name></expr>)</init> <block>{<block_content>	
+			<if_stmt><if>if <condition>(<expr><name>adultboxListeners</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<for>for <control>(<init><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>MSNboxListener</name></argument>&gt;</argument_list></name></type> <name>i</name> <init>= <expr><call><name><name>MSNboxListeners</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init><condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+					<try>try <block>{<block_content>
+						<expr_stmt><expr><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>handleNextProgramStartTimeChangedEvent</name><argument_list>(<argument><expr><name>status</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+					</block_content>}</block> 
+					<catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content><expr_stmt><expr><call><name><name>t</name><operator>.</operator><name>printStackTrace</name></name><argument_list>( ;</operator></expr_stmt></block_content>}</block></catch></try><empty_stmt>;</empty_stmt>
+				</block_content>}</block></for>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></synchronized>
+	</block_content>}</block></function>
+</unit>

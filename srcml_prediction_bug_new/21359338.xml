@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50342629.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>updateCredentialsInfoLabel</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Gateway</name></type> <name>gateway</name> <init>= <expr><call><name><name>gatewayComboBox</name><operator>.</operator><name>getSelectedGateway</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>gateway</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>gateway</name><operator>.</operator><name>isLoginRequired</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator>
+                <call><name><name>keyring</name><operator>.</operator><name>getKey</name></name><argument_list>(<argument><expr><call><name><name>gateway</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>  
+            <expr_stmt><expr><call><name><name>credentialsInfoLabel</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></function> <expr><operator>*</operator><operator>/</operator></expr>
+</unit>

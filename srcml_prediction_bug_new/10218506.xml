@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50262696.java">	<function><type><specifier>private</specifier> <name>EditPart</name></type> <name>getPartForElement</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>modelElement</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>modelElement</name> <operator>instanceof</operator> <name>Docflow</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>DocflowPart</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if  <condition>(<expr><name>modelElement</name> <operator>instanceof</operator> <name>State</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>StatePart</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>modelElement</name> <operator>instanceof</operator> <name>Transition</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>TransitionPart</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>modelElement</name> <operator>instanceof</operator> <name>Connection</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>ConnectionPart</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><literal type="string">"Can't create part for model element: "</literal>
+				<operator>+</operator> <operator>(</operator><ternary><condition><expr><operator>(</operator><name>modelElement</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr> ?</condition><then> <expr><call><name><name>modelElement</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call></expr>
+						</then><else>: <expr><literal type="string">"null"</literal></expr></else></ternary><operator>)</operator></expr></argument>)</argument_list></call></expr>;</throw>
+	</block_content>}</block></function>
+</unit>

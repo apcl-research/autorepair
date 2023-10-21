@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34379996.java">	<function><type><specifier>private</specifier> <name>Number</name></type> <name>getNumberValue</name><parameter_list>(<parameter><decl><type><name>Cell</name></type> <name>cell</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <comment type="line">//**** HACK AR 2004.01.10</comment>
+		<comment type="line">//String value = cell.getFormattedValue();</comment>
+                <decl_stmt><decl><type><name>Object</name></type> <name>value</name> <init>= <expr><call><name><name>cell</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>DecimalFormatSymbols</name></type> <name>dfs</name> <init>= <expr><operator>new</operator> <call><name>DecimalFormatSymbols</name><argument_list>(<argument><expr><name>locale</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>DecimalFormat</name></type> <name>formatter</name> <init>= <expr><operator>new</operator> <call><name>DecimalFormat</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>formatter</name><operator>.</operator><name>setDecimalFormatSymbols</name></name><argument_list>(<argument><expr><name>dfs</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>Number</name></type> <name>number</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><name>number</name> <operator>=</operator> <operator>(</operator><name>Number</name><operator>)</operator><name>value</name></expr> 
+                        <comment type="line">//number = formatter.parse(value, new ParsePosition(0));</comment>
+		</block_content>}</block>
+		<catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><name>number</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<return>return <expr><name>number</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

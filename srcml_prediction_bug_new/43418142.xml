@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38292783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>put2AgentsAtContainer</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>containerName</name></decl></parameter>, <parameter><decl><type><name>AID_Container</name></type> <name>cAID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>AID_Container_List</name></type> <name>agentList</name> <init>= <expr><call><name><name>agentsAtContainer</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>containerName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>agentList</name><operator>==</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>agentList</name> <operator>=</operator> <operator>new</operator> <call><name>AID_Container_List</name><argument_list>()</argument_list></call></expr>;</expr_stmt> 
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>cAID</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>agentList</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>cAID</name><operator>.</operator><name>getAID</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getLocalName</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>cAID</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>	
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>agentsAtContainer</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>containerName</name></expr></argument>, <argument><expr><name>agentList</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+	</block_content>}</block></function>
+</unit>

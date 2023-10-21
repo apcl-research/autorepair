@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23669963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setLayoutData</name><parameter_list>(<parameter><decl><type><name>Control</name></type> <name>control</name></decl></parameter>, <parameter><decl><type><name>TableData</name></type> <name>layoutData</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>control</name><operator>.</operator><name>getContainer</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <name>this</name></expr>)</condition> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"The specified control is not member of this container."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></if></if_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><name>control</name> <operator>instanceof</operator> <name>TableLayoutContainer</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>allLayoutInfos</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>control</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>allLayoutInfos</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>control</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><ternary><condition><expr><name>layoutData</name> <operator>!=</operator> <literal type="null">null</literal></expr> ?</condition><then> <expr><name>layoutData</name></expr> </then><else>: <expr><operator>new</operator> <call><name>TableData</name><argument_list>()</argument_list></call></expr></else></ternary></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<expr_stmt><expr><call><name>requireRedraw</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>cells</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

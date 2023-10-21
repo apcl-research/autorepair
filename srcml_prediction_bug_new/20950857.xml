@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/167899.java">	<function><type><specifier>private</specifier> <name>LockedFile</name></type> <name>initFile</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>dataDir</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>tableName</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLIOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>File</name></type> <name>dbtFileHnd</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>dataDir</name></expr></argument>, <argument><expr><name>tableName</name> <operator>+</operator> <name>MEMO_EXTENSION</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><operator>!</operator> <call><name><name>dbtFileHnd</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>LockedFile</name></type> <name>file</name> <init>= <expr><operator>new</operator> <call><name>LockedFile</name><argument_list>(<argument><expr><name>dbtFileHnd</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>createHeader</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call> 
+			<return>return <expr><name>file</name></expr>;</return>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<return>return <expr><operator>new</operator> <call><name>LockedFile</name><argument_list>(<argument><expr><name>dbtFileHnd</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

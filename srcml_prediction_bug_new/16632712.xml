@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16389996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initSelectedClassList</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>IClassRelationShip</name></type> <name>classRelationShip</name> <range>: <expr><name>classRelationShipList</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>className</name> <init>= <expr><call><name><name>classRelationShip</name><operator>.</operator><name>getClassName</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>selectedClassList</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>className</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <expr_stmt><expr><name>selectedClassesListModel</name> <operator>=</operator> <operator>new</operator> <call><name>CustomizedListModel</name><argument_list>(<argument><expr><name>selectedClassList</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>classNamesList</name><operator>.</operator><name>setModel</name></name><argument_list>(<argument><expr><name>selectedClassesListModel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

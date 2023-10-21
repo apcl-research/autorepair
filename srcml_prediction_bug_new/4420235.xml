@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39171596.java">  <function><type><specifier>private</specifier> <name>String</name></type> <name>getAnchorSection</name><parameter_list>(<parameter><decl><type><name>HttpServletRequest</name></type> <name>request</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>StringBuilder</name></type> <name>sb</name> <init>= <expr><operator>new</operator> <call><name>StringBuilder</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;section&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;anchors&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>printAnchorPoints</name></name><argument_list>(<argument><expr><name>request</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;/anchors&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;/section&gt;"</literal></expr></argument>)</argument_list></call> 
+    <return>return <expr><call><name><name>sb</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24142796.java">    <function><type><specifier>public</specifier> <name>Segment</name></type> <name>getSegment</name><parameter_list>(<parameter><decl><type><name>ID</name></type> <name>segmentID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">//return getSegments().get(segmentID);</comment>
+        <if_stmt><if>if<condition>(<expr><operator>!</operator> <call><name>getSegments</name><argument_list>()</argument_list></call><operator>.</operator><call><name>containsKey</name><argument_list>(<argument><expr><name>segmentID</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"The given segment ID("</literal><operator>+</operator><name>segmentID</name><operator>+</operator><literal type="string">") is not valid"</literal></expr></argument> )</argument_list></call></expr> ;</throw></block_content></block></if></if_stmt>
+        <return>return <expr><call><name>getSegments</name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><name>segmentID</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

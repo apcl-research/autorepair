@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/181117.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>insertOutCommand</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>cmdTag</name></decl></parameter>, <parameter><decl><type><name>CommandEntity</name></type> <name>command</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<comment type="line">// Bug Fix for tiny file upload .. when command is execute such as download, upgrade mgr, opr backup, lpbk</comment>
+		<if_stmt><if>if <condition>(<expr><name>cmdTag</name> <operator>&gt;</operator> <literal type="number">200</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>removeOutCommand</name><argument_list>(<argument><expr><name>cmdTag</name> <operator>-</operator> <literal type="number">200</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name>removeOutCommand</name><argument_list>(<argument><expr><operator>(</operator><literal type="number">10000</literal> <operator>-</operator> <literal type="number">200</literal><operator>)</operator> <operator>+</operator> <name>cmdTag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<decl_stmt><decl><type><name>Integer</name></type> <name>iCmdTag</name> <init>= <expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>cmdTag</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>outcommandTable</name><operator>.</operator><name>put</name></name> <argument_list>(<argument><expr><name>iCmdTag</name></expr></argument>, <argument><expr><name>command</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

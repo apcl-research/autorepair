@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41449074.java">	<function><type><specifier>public</specifier> <name>OutgoingInterface</name></type> <name>createOutInterface</name><parameter_list>(<parameter><decl><type><name>ConnectionId</name></type> <name>cId</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>oneWay</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><call><name>getConnectionMethod</name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name><name>ConnectionMethod</name><operator>.</operator><name>UDPDirect</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><operator>new</operator> <call><name>UDPOutgoingInterface</name><argument_list>(<argument><expr><name>ip</name></expr></argument>, <argument><expr><name><name>Consts</name><operator>.</operator><name>SERVER_PORT</name></name></expr></argument>, <argument><expr><name>port1</name></expr></argument>, <argument><expr><name>cId</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name>getConnectionMethod</name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name><name>ConnectionMethod</name><operator>.</operator><name>TCPDirect</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><operator>new</operator> <call><name>UDPOutgoingInterface</name><argument_list>(<argument><expr><name>ip</name></expr></argument>, <argument><expr><name>port2</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>oneWay</name> <operator>&amp;&amp;</operator> <name>tcp80</name> <operator>!=</operator> <literal type="null">null</literal></expr> 
+			<operator>=</operator> <operator>new</operator> <call><name>UDPOutgoingInterface</name><argument_list>(<argument><expr><name>tcp80</name></expr></argument>)</argument_list></call></expr>;</condition>
+
+		<return>return <expr><call><name>getTCP80interface</name><argument_list>(<argument><expr><name>cId</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18649996.java">    <function><type><specifier>public</specifier> <name>Auth</name></type> <name>authenticate</name><parameter_list>(<parameter><decl><type><name>MWChatClient</name></type> <name>client</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>password</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+    	<comment type="line">// allow/store sill ignored</comment>
+    	<decl_stmt><decl><type><name>String</name></type> <name>newUserId</name> <init>= <expr><call><name><name>client</name><operator>.</operator><name>getUserId</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<comment type="block">/*int i = 1 
+    	while (getUserId(newUserId) != null) {
+    		newUserId = newUserId + i;
+    		i++;
+    	}*/</comment>
+        <return>return <expr><operator>new</operator> <call><name>Auth</name><argument_list>(<argument><expr><name>newUserId</name></expr></argument>, <argument><expr><name>GUEST</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

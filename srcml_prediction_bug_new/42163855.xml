@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38582996.java">    <function><type><specifier>public</specifier> <name>ImageData</name></type> <name>getImageData</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>imageKey</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><call><name><name>imageKey</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"NotPersisted"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+        <return>return <expr><call><name>getNotPersistedImageData</name><argument_list>()</argument_list></call></expr>;</return>
+      </block_content>}</block></if></if_stmt>
+      <if_stmt><if>if <condition>(<expr><call><name><name>imageKey</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"Dirty"</literal></expr></argument>)</argument_list></call>  <block>{<block_content>
+        <return>return <expr><call><name>getDirtyImageData</name><argument_list>()</argument_list></call></expr>;</return>
+      </block_content>}</block></if></if_stmt>
+      <if_stmt><if>if <condition>(<expr><call><name><name>imageKey</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"Synched"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+        <return>return <expr><call><name>getSynchedImageData</name><argument_list>()</argument_list></call></expr>;</return>
+      </block_content>}</block></if></if_stmt>
+
+      <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

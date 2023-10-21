@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11382796.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>close</name><parameter_list>()</parameter_list>  
+    <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+    <expr_stmt><expr><call><name>beginWrite</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>Collection</name></type> <name>modules</name> <init>= <expr><call><name><name>moduleContainer</name><operator>.</operator><name>getRootNode</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getChildren</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <while>while <condition>(<expr><call><name><name>modules</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>moduleContainer</name><operator>.</operator><name>removeModule</name></name><argument_list>(<argument><expr><operator>(</operator><name>ModuleNode</name><operator>)</operator> <call><name><name>modules</name><operator>.</operator><name>toArray</name></name><argument_list>()</argument_list></call><index>[<expr><literal type="number">0</literal></expr>]</index></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></while>
+    <expr_stmt><expr><call><name>getClassLogger</name><argument_list>()</argument_list></call><operator>.</operator><call><name>info</name><argument_list>(<argument><expr><literal type="string">"Application is closed."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

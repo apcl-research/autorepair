@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18302783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>treeLogWidgetSelected</name><parameter_list>(<parameter><decl><type><name>SelectionEvent</name></type> <name>evt</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">//System.out.println("treeLog.widgetSelected, event="+evt);</comment>
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><operator>(</operator><name>TreeItem</name><operator>)</operator><name><name>evt</name><operator>.</operator><name>item</name></name><operator>)</operator><operator>.</operator><call><name>getData</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>currentSelectionURL</name> <operator>=</operator> <literal type="string">""</literal> <operator>+</operator> <operator>(</operator><operator>(</operator><name>TreeItem</name><operator>)</operator><name><name>evt</name><operator>.</operator><name>item</name></name><operator>)</operator><operator>.</operator><call><name>getData</name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+		  <else>else <block>{<block_content>
+			<expr_stmt><expr><name>currentSelectionURL</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40030962.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>NT</name> <init>= <expr><literal type="string">"\n\t"</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getTitle</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>s</name> <operator>+=</operator> <name>NT</name> <operator>+</operator> <literal type="string">"localAdoptionDate: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getLocalAdoptionDate</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>s</name> <operator>+=</operator> <name>NT</name> <operator>+</operator> <literal type="string">"subject: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getSubject</name></name><argument_list>( ;</argument_list></call></expr></expr_stmt>
+		<expr_stmt><expr><name>s</name> <operator>+=</operator> <name>NT</name> <operator>+</operator> <literal type="string">"jurisdiction: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getJurisdiction</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>s</name> <operator>+=</operator> <name>NT</name> <operator>+</operator> <literal type="string">"fileName: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getFileName</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>s</name> <operator>+=</operator> <name>NT</name> <operator>+</operator> <literal type="string">"acsrId: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getAcsrId</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>s</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32282596.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>ensureCapacityHelper</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>minCapacity</name></decl></parameter>)</parameter_list>  
+    <throws>throws <argument><expr><name>ArrayIndexOutOfBoundsException</name></expr></argument></throws> <block>{<block_content>  
+    <decl_stmt><decl><type><name>int</name></type>      <name>oldCapacity</name> <init>= <expr><name><name>elementData</name><operator>.</operator><name>length</name></name></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name><name>Object</name><index>[]</index></name></type> <name>oldData</name>     <init>= <expr><name>elementData</name></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type>      <name>newCapacity</name> <init>= <expr><name>oldCapacity</name> <operator>&lt;&lt;</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+
+    <if_stmt><if>if <condition>(<expr><name>newCapacity</name> <operator>&lt;</operator> <name>minCapacity</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>newCapacity</name> <operator>=</operator> <name>minCapacity</name></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+
+    <expr_stmt><expr><name>elementData</name> <operator>=</operator> <operator>new</operator> <name><name>Object</name><index>[<expr><name>newCapacity</name></expr>]</index></name></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>arraycopy</name></name><argument_list>(<argument><expr><name>oldData</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>elementData</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>elementCount</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

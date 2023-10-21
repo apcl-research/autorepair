@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18649983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testNoInterfaces</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>DescriptionElement</name></type> <name>descEl</name> <init>= <expr><call><name><name>factory</name><operator>.</operator><name>newDescription</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Description</name></type> <name>descComp</name> <init>= <expr><call><name><name>descEl</name><operator>.</operator><name>toComponent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+          
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>descEl</name><operator>.</operator><name>setTargetNamespace</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>URI</name><argument_list>(<argument><expr><literal type="string">"http://testnamespace"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch<parameter_list>(<parameter><decl><type><name>URISyntaxException</name></type> <name>e</name></decl></parameter>)</parameter_list>  
+			<comment type="line">// Do nothing.</comment>
+		</block_content>}</block></catch></try>
+	      
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>assertion</name><operator>.</operator><name>validate</name></name><argument_list>(<argument><expr><name>descComp</name></expr></argument>, <argument><expr><name>wodenContext</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch<parameter_list>(<parameter><decl><type><name>WSDLException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name>fail</name><argument_list>(<argument><expr><literal type="string">"Assertion Interface1010 threw WSDLException."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<if_stmt><if>if<condition>(<expr><call><name><name>handler</name><operator>.</operator><name>errorMessageHasBeenReported</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>fail</name><argument_list>(<argument><expr><literal type="string">"Assertion Interface1010 failed incorrectly with no interfaces specified."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

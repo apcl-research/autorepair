@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41441596.java">	  <function><type><specifier>public</specifier> <name>Object</name></type> <name>createSession</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+<comment type="line">//	    Session session = (Session)currentSession.get();  </comment>
+	    <decl_stmt><decl><type><name>Session</name></type> <name>session</name> <init>= <expr><name>currentSession</name></expr></init></decl>;</decl_stmt>
+		  <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>session</name></expr></argument>)</argument_list></call> 
+	    <if_stmt><if>if<condition>(<expr><name>session</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+	      <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"No Session Found - Create and give the identity"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	      
+	      <expr_stmt><expr><name>session</name> <operator>=</operator> <call><name>getSessionFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>openSession</name><argument_list>()</argument_list></call></expr>;</expr_stmt> 
+<comment type="line">//	      currentSession.set(session);</comment>
+	      <expr_stmt><expr><name>currentSession</name> <operator>=</operator> <name>session</name></expr>;</expr_stmt>
+	      <return>return <expr><name>trueOwner</name></expr>;</return>
+	    </block_content>}</block></if></if_stmt>
+	    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Session Found - Give a Fake identity"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <return>return <expr><name>fakeOwner</name></expr>;</return>
+	  </block_content>}</block></function>
+</unit>

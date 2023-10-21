@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22044891.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>loadEstimation</name><parameter_list>(<parameter><decl><type><name>DataInputStream</name></type> <name>dis</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <expr_stmt><expr><name>estimatedX</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>estimatedY</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>estimatedAngle</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>minX</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>( ;</operator>
+      <expr><name>maxX</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>minY</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>maxY</name> <operator>=</operator> <call><name><name>dis</name><operator>.</operator><name>readFloat</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

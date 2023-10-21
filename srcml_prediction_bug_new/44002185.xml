@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/33289996.java">    <function><type><specifier>public</specifier> <name>XmlBuilder</name></type> <name>withAttribute</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>tagIsPendingTermination</name></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>XmlocularException</name><argument_list>(<argument><expr><literal type="string">"Can't add attribute now, "</literal> <operator>+</operator>
+                    <literal type="string">"call openTag() first!"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="char">' '</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">"=\""</literal></expr></argument>)</argument_list></call>
+            <operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="char">'"'</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>this</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

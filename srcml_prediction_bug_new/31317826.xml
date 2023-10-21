@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44492715.java">    <function><type><specifier>public</specifier> <name>User</name></type> <name>displayName</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>displayName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>User</name></type> <name>user</name> <init>= <expr><operator>(</operator><name>User</name><operator>)</operator><call><name><name>activeUserNameToUserMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>displayName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>user</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <comment type="line">// check if they are in the inactive user list</comment>
+            <expr_stmt><expr><name>user</name> <operator>=</operator> <operator>(</operator><name>User</name><operator>)</operator><call><name><name>inactiveUserNameToUserMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>displayName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        
+        <comment type="line">// if user is still null here we don't know about the user</comment>
+        <return>return <expr><name>user</name></expr>;</return> 
+    </block_content>}</block></function>
+</unit>

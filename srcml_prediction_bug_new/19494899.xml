@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18302783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>contributeToActionBars</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IPageSite</name></type> <name>site</name> <init>= <expr><call><name>getSite</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IActionBars</name></type> <name>bars</name> <init>= <expr><call><name><name>site</name><operator>.</operator><name>getActionBars</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// Setup global actions</comment>
+		<expr_stmt><expr><call><name><name>UIUtils</name><operator>.</operator><name>addGlobalActionHandler</name></name><argument_list>(<argument><expr><name>site</name></expr></argument>, <argument><expr><name>bars</name></expr></argument>, <argument><expr><name><name>ActionFactory</name><operator>.</operator><name>NEXT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>UIUtils</name><operator>.</operator><name>addGlobalActionHandler</name></name><argument_list>(<argument><expr><name>site</name></expr></argument>, <argument><expr><name>bars</name></expr></argument>, <argument><expr><name><name>ActionFactory</name><operator>.</operator><name>PREVIOUS</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>fillLocalPullDown</name><argument_list>(<argument><expr><call><name><name>bars</name><operator>.</operator><name>getMenuManager</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>fillLocalToolBar</name><argument_list>(<argument><expr><call><name><name>bars</name><operator>.</operator><name>getToolBarManager</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// Commit changes</comment>
+		<expr_stmt><expr><call><name><name>bars</name><operator>.</operator><name>updateActionBars</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

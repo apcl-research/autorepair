@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/6314073.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>selectItem</name><parameter_list>(<parameter><decl><type><name>NameAndPackage</name></type> <name>namePackage</name></decl></parameter>)</parameter_list>
+	<block>{<block_content>		
+		<try>try
+		<block>{<block_content>
+			<decl_stmt><decl><type><name>TreeItem</name></type> <name>item</name> <init>= <expr><call><name>findTreeItem</name><argument_list>(<argument><expr><name>namePackage</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><name>item</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition>
+			<block>{<block_content>
+				<expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>setSelection</name></name> <argument_list>(<argument><expr><operator>new</operator> <name><name>TreeItem</name><index>[]</index></name> <block>{ <expr><name>item</name></expr> }</block></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>tree</name><operator>.</operator><name>showSelection</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>notifySelected</name><argument_list>(<argument><expr><operator>(</operator><name>IRItem</name><operator>)</operator> <call><name><name>item</name><operator>.</operator><name>getData</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block>
+		<catch>catch <parameter_list>(<parameter><decl><type><name>TreeException</name></type> <name>e</name></decl></parameter>)</parameter_list>
+		<block>{<block_content>
+			<expr_stmt><expr><call><name><name>MessageBoxAndLog</name><operator>.</operator><name>show</name></name><argument_list>(<argument><expr><call><name><name>tree</name><operator>.</operator><name>getShell</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="string">"Project"</literal></expr></argument>, <argument><expr><literal type="string">"Selecting the item "</literal><operator>+</operator><name>namePackage</name><operator>+</operator><literal type="string">" in the tree got"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>        
+	</block_content>}</block></function>
+</unit>

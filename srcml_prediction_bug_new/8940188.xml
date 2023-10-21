@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37752515.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>indexOf</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>ch</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>start</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>prepareNext</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <while>while <condition>(<expr><name>start</name><operator>--</operator> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>nextChar</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>i</name><operator>++</operator></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <decl_stmt><decl><type><name>int</name></type> <name>c</name></decl>;</decl_stmt>
+        <while>while <condition>(<expr><operator>(</operator><name>c</name> <operator>=</operator> <call><name>nextChar</name><argument_list>( )</argument_list></call> <operator>!=</operator> <literal type="number">0</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>c</name> <operator>!=</operator> <literal type="number">0</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <name>ch</name></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><name>i</name></expr>;</return></block_content></block></if></if_stmt>
+            <expr_stmt><expr><name>i</name><operator>++</operator></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <if_stmt><if>if <condition>(<expr><name>ch</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><name>i</name></expr>;</return></block_content></block></if></if_stmt>
+        <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

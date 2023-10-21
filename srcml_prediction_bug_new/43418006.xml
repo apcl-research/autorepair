@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579996.java">	<function><type><specifier>public</specifier> <name>double</name></type> <name>getAvgCycleTime</name><parameter_list>()</parameter_list> <block>{<block_content>
+		
+		<if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>cycleTimeVector</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call><operator>==</operator><literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="number">0</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<decl_stmt><decl><type><name>long</name></type> <name>cycleTimeSum</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name><name>Long</name><index>[]</index></name></type> <name>currentCycleTimeArray</name> <init>= <expr><operator>new</operator> <name><name>Long</name><index>[<expr><call><name><name>cycleTimeVector</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>]</index></name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>currentCycleTimeArray</name> <operator>=</operator> <call><name><name>cycleTimeVector</name><operator>.</operator><name>toArray</name></name><argument_list>(<argument><expr><name>currentCycleTimeArray</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>currentCycleTimeArray</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><name>cycleTimeSum</name> <operator>+=</operator> <name><name>currentCycleTimeArray</name><index>[<expr><name>i</name></expr> ;</expr_stmt>
+		</block_content>}</block></for>		
+		<return>return <expr><operator>(</operator><name>double</name><operator>)</operator><name>cycleTimeSum</name><operator>/</operator><operator>(</operator><name>double</name><operator>)</operator><name><name>currentCycleTimeArray</name><operator>.</operator><name>length</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

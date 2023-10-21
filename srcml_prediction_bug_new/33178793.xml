@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37759963.java">    <function><type><specifier>public</specifier> <name>List</name></type> <name>cornerList</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>leftLine</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>initialiseLeftLine</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><name>rightLine</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>initialiseRightLine</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>List</name></type> <name>corners</name> <init>= <expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>util</name><operator>.</operator><name>Vector</name></name><argument_list>( ;</argument_list></call></expr></init></decl>
+        <type><name><name>corners</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>leftLine</name><operator>.</operator><name>begin</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></block></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>corners</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>leftLine</name><operator>.</operator><name>end</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>corners</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>rightLine</name><operator>.</operator><name>begin</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>corners</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>rightLine</name><operator>.</operator><name>end</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>corners</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

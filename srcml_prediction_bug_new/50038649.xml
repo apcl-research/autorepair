@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10370062.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setStatsImplementation StatisticsImplementor</name><parameter_list>(<parameter><decl><type><name>Field</name></type> <name>sessionImplementor</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Field</name></type> <name>sessionImplementor</name></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>sessionImplementor</name> <operator>=</operator> <call><name><name>SessionFactoryImpl</name><operator>.</operator><name><name>class</name><operator>.</operator><name>getDeclaredField</name></name></name><argument_list>(<argument><expr><literal type="string">"statistics"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>sessionImplementor</name><operator>.</operator><name>setAccessible</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>sessionImplementor</name><operator>.</operator><name>set</name></name><argument_list>(<argument><expr><name>sessionFactory</name></expr></argument>, <argument><expr><name>statsImpl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"Could not set the stats implementor"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

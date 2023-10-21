@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31990915.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>removeFromEnd</name><parameter_list>(<parameter><decl><type><name>Document</name></type> <name>document</name></decl></parameter>, <parameter><decl><type><name>Element</name></type> <name>root</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">//  We use start minus 1 to make sure we remove the newline</comment>
+		<comment type="line">//  character of the previous line</comment>
+
+		<decl_stmt><decl><type><name>Element</name></type> <name>line</name> <init>= <expr><call><name><name>root</name><operator>.</operator><name>getElement</name></name><argument_list>(<argument><expr><call><name><name>root</name><operator>.</operator><name>getElementCount</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>start</name> <init>= <expr><call><name><name>line</name><operator>.</operator><name>getStartOffset</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>end</name> <init>= <expr><call><name><name>line</name><operator>.</operator><name>getEndOffset</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>start</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><name>end</name> <operator>-</operator> <name>start</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+		</block_content>}</block> <catch>catch<parameter_list>(<parameter><decl><type><name>BadLocationException</name></type> <name>ble</name></decl></parameter>  <comment type="block">/* not a good idea */</comment>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>ble</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

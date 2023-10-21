@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25139996.java">   <function><type><specifier>private</specifier> <name>FileChannel</name></type> <name>getFile</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>filename</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <decl_stmt><decl><type><name>FileChannel</name></type> <name>fc</name> <init>= <expr><call><name><name>openFiles</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>filename</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if <condition>(<expr><name>fc</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+         <decl_stmt><decl><type><name>File</name></type> <name>dbTable</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>dbDirectory</name></expr></argument>, <argument><expr><name>filename</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+         <decl_stmt><decl><type><name>RandomAccessFile</name></type> <name>f</name> <init>= <expr><operator>new</operator> <call><name>RandomAccessFile</name><argument_list>(<argument><expr><name>dbTable</name></expr></argument>, <argument><expr><literal type="string">"rws"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+         <expr_stmt><expr><name>fc</name> <operator>=</operator> <call><name><name>f</name><operator>.</operator><name>getChannel</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+         <expr_stmt><expr><call><name><name>openFiles</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>filename</name></expr></argument>, <argument><expr><name>fc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+      <return>return <expr><name>fc</name></expr>;</return>
+   </block_content>}</block></function>
+</unit>

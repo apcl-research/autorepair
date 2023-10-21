@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50502983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <switch>switch <condition>(<expr><name>mode</name></expr>)</condition> <block>{<block_content>
+      <case>case <expr><name>START_UP</name></expr>:</case>
+        <expr_stmt><expr><call><name>startUpActionPerformed</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+      <case>case <expr><name>ADD_MODEL</name></expr>:</case>
+        <expr_stmt><expr><call><name>addModelActionPerformed</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+      <case>case <expr><name>PROJECT_PROPERTIES</name></expr>:</case>
+        <expr_stmt><expr><call><name>projectPropertiesActionPerformed</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+      <case>case <expr><name>MODEL_PROPERTIES</name></expr>:</case>
+        <expr_stmt><expr><call><name>modelPropertiesActionPerformed</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+      <case>case <expr><name>NEW_PROJECT</name></expr>:</case>
+        <expr_stmt><expr><call><name>newProjectActionPerformed</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+    </block_content>}</block></switch>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44418094.java">    <comment type="line">//    protected void triggerSessionRedirect(String arg) {</comment>
+    <comment type="line">//        List&lt;JingleListener&gt; listeners = getListenersList();</comment>
+    <comment type="line">//        for (JingleListener li : listeners) {</comment>
+    <comment type="line">//            if (li instanceof JingleSessionListener) {</comment>
+    <comment type="line">//                JingleSessionListener sli = (JingleSessionListener) li;</comment>
+    <comment type="line">//                sli.sessionRedirected arg, this);</comment>
+    <comment type="line">//            }</comment>
+    <comment type="line">//        }</comment>
+    <comment type="line">//    }</comment>
+</unit>

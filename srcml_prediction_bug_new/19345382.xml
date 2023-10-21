@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50176983.java">	<function><type><specifier>public</specifier> <name>Object</name></type> <name>getTextValueAt</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>layoutIdx</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>col</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <expr_stmt><expr><name>col</name> <operator>=</operator> <call><name>getRealColumn</name><argument_list>(<argument><expr><name>layoutIdx</name></expr></argument>, <argument><expr><name>col</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><name>row</name> <operator>&gt;=</operator> <call><name>getRowCount</name><argument_list>()</argument_list></call><operator>)</operator>
+		<operator>||</operator> <operator>(</operator><name>col</name> <operator>&lt;</operator> <literal type="number">0</literal><operator>)</operator>
+		<operator>||</operator> <operator>(</operator><name>col</name> <operator>&gt;=</operator> <call><name><name>layout</name><operator>.</operator><name>getRecord</name></name><argument_list>(<argument><expr><name>layoutIdx</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getFieldCount</name><argument_list>()</argument_list></call><operator>)</operator></expr>  )</condition> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><call><name><name>lines</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>row</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getFieldText</name><argument_list>(<argument><expr><name>layoutIdx</name></expr></argument>, <argument><expr><name>col</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

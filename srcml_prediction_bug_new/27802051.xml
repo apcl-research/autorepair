@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12139996.java">	<function><type><specifier>private</specifier> <name>PNamedHandle</name></type> <name>createHandle</name><parameter_list>( <parameter><decl><type><name>Point2D</name></type> <name>pt</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    	<return>return <expr><operator>new</operator> <class><super><name>PNamedHandle</name></super><argument_list>( <argument><expr><call><name><name>pt</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <call><name>PPointLocator</name><argument_list>( <argument><expr><name>this</name></expr></argument>, <argument><expr><name>pt</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list> <block>{ 
+        	<function><type><specifier>public</specifier> <name>void</name></type> <name>dragHandle</name><parameter_list>(<parameter><decl><type><name>PDimension</name></type> <name>dim</name></decl></parameter>, <parameter><decl><type><name>PInputEvent</name></type> <name>aEvent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+          		<expr_stmt><expr><call><name>localToParent</name><argument_list>(<argument><expr><name>dim</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+          		<expr_stmt><expr><operator>(</operator><operator>(</operator><name>PPointLocator</name><operator>)</operator><call><name>getLocator</name><argument_list>( )</argument_list></call><operator>.</operator><call><name>update</name><argument_list>( <argument><expr><call><name><name>dim</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>dim</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>updateEdgeView</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        	</block_content>}</block></function>
+		}</block></class></expr>;</return>
+	</block_content>}</block></function>
+</unit>

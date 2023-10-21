@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43482662.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getColorizedWord</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>queryWord</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>word</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>index</name> <init>= <expr><call><name><name>words</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>queryWord</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<return>return <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">"&lt;b&gt;"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name>word</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">"&lt;/b&gt;"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr>;</return>
+<comment type="line">//		return new StringBuffer().append("&lt;b&gt;&lt;font style=\"color:" .append(</comment>
+<comment type="line">//		            availableColors[index % availableColors.length]).append("\"&gt;").append(word).append(</comment>
+<comment type="line">//		            "&lt;/font&gt;&lt;/b&gt;").toString();</comment>
+	</block_content>}</block></function>
+</unit>

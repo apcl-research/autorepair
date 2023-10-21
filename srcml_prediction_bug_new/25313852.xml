@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29095231.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>encode</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>StringWriter</name></type> <name>writer</name> <init>= <expr><operator>new</operator> <call><name>StringWriter</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>encoder</name><operator>.</operator><name>encode</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>, <argument><expr><name>writer</name></expr></argument>)</argument_list></call> 
+            <call><name><name>writer</name><operator>.</operator><name>flush</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><call><name><name>writer</name><operator>.</operator><name>getBuffer</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><literal type="string">"StringWriter should not throw IOException!"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

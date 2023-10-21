@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/15936963.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>sendReply</name><parameter_list>(<parameter><decl><type><name>ACLMessage</name></type> <name>msg</name></decl></parameter>, <parameter><decl><type><name>Concept</name></type> <name>agentAction</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<comment type="line">// --- Define a new action ------------------------</comment>
+		<decl_stmt><decl><type><name>Action</name></type> <name>act</name> <init>= <expr><operator>new</operator> <call><name>Action</name><argument_list>()</argument_list></call></expr></init></decl> 
+		<init>= <expr><call><name><name>act</name><operator>.</operator><name>setActor</name></name><argument_list>(<argument><expr><call><name>getAID</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>act</name><operator>.</operator><name>setAction</name></name><argument_list>(<argument><expr><name>agentAction</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<try>try <block>{<block_content>
+			<comment type="line">// --- ... send -------------------------------</comment>
+			<expr_stmt><expr><call><name>getContentManager</name><argument_list>()</argument_list></call><operator>.</operator><call><name>fillContent</name><argument_list>(<argument><expr><name>msg</name></expr></argument>, <argument><expr><name>act</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>send</name><argument_list>(<argument><expr><name>msg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>			
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>CodecException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>OntologyException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+		
+	</block_content>}</block></function>
+</unit>

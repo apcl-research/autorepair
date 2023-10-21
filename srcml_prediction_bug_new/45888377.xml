@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25979996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>onContactSelected</name><parameter_list>(<parameter><decl><type><name>Contact</name></type> <name>selected</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<decl_stmt><decl><type><name>InputMethodManager</name></type> <name>imm</name> <init>= <expr><operator>(</operator><name>InputMethodManager</name><operator>)</operator> <call><name>getActivity</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSystemService</name><argument_list>(<argument><expr><name><name>Context</name><operator>.</operator><name>INPUT_METHOD_SERVICE</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>imm</name><operator>.</operator><name>hideSoftInputFromWindow</name></name><argument_list>(<argument><expr><call><name><name>mEditSearch</name><operator>.</operator><name>getWindowToken</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>contactLookupKey</name> <init>= <expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><call><name><name>selected</name><operator>.</operator><name>getLookupKey</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>Intent</name></type> <name>intent</name> <init>= <expr><operator>new</operator> <call><name>Intent</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>intent</name><operator>.</operator><name>setAction</name></name><argument_list>(<argument><expr><name><name>Actions</name><operator>.</operator><name>ACTION_SHOW_TIMELINE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>intent</name><operator>.</operator><name>putExtra</name></name><argument_list>(<argument><expr><name><name>Actions</name><operator>.</operator><name>EXTRA_CONTACT_LOOKUP_KEY</name></name></expr></argument>, <argument><expr><name>contactLookupKey</name></expr></argument>)</argument_list></call> 
+		
+		<call><name>startActivity</name><argument_list>(<argument><expr><name>intent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34262696.java">	<function><type><specifier>private</specifier> <name>StaffAdvance</name></type> <name>setStaffAdvanceForm</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Integer</name></type> <name>staffYearlyId</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>ActionForm</name></type> <name>form</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+				
+    	<decl_stmt><decl><type><name>StaffAdvance</name></type> <name>advance</name> <init>= <expr><call><name><name>StaffAdvanceHelper</name><operator>.</operator><name>getStaffAdvance</name></name><argument_list>(<argument><expr><name>staffYearlyId</name></expr></argument>, <argument><expr><name>principal</name></expr></argument>, <argument><expr><name>dbSession</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<comment type="line">//add staff advance andberman info to form</comment>
+		<expr_stmt><expr><operator>(</operator><operator>(</operator><name>StaffAdvanceForm</name><operator>)</operator> <name>form</name><operator>)</operator><operator>.</operator><call><name>setStaffAdvance</name><argument_list>(<argument><expr><name>advance</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><operator>(</operator><operator>(</operator><name>StaffAdvanceForm</name>  <name>form</name><operator>)</operator><operator>.</operator><call><name>setStaffYearly</name><argument_list>(<argument><expr><call><name><name>advance</name><operator>.</operator><name>getStaffYearly</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<return>return <expr><name>advance</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

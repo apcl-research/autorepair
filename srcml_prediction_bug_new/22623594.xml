@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18602715.java">	<function><type><specifier>private</specifier> <name>Element</name></type> <name>getRootElement</name><parameter_list>()</parameter_list>  
+		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>		
+		<comment type="block">/* 		root.add(DocumentHelper.createNamespace("dct", "http://purl.org/dc/terms/"));
+		root.add(DocumentHelper.createNamespace("ieee", "http://purl.org/ieee/phony_namespace")); */</comment>
+		<expr_stmt><expr><call><name><name>root</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>DocumentHelper</name><operator>.</operator><name>createNamespace</name></name><argument_list>(<argument><expr><literal type="string">"dc"</literal></expr></argument>, <argument><expr><literal type="string">"http://purl.org/dc/elements/1.1/"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<return>return <expr><name>root</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

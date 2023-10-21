@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592629.java">    <function><type><specifier>private</specifier> <name>MetaRule</name></type> <name>getSuggestedItemsMethodRule</name><parameter_list>(<parameter><decl><type><name>TagAttribute</name></type> <name>maxItems</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><specifier>final</specifier> <name><name>Class</name><index>[]</index></name></type> <name>paramList</name> <init>= <expr><ternary><condition><expr><name>maxItems</name> <operator>==</operator> <literal type="null">null</literal></expr> ?</condition><then> <expr><operator>new</operator> <name><name>Class</name><index>[]</index></name> <block>{ <expr><name><name>String</name><operator>.</operator><name>class</name></name></expr> }</block></expr>
+                </then><else>: <expr><operator>new</operator> <name><name>Class</name><index>[]</index></name>   <block>{ <expr><name><name>Integer</name><operator>.</operator><name>class</name></name></expr> }</block></expr></else></ternary></expr></init></decl>, <decl><type ref="prev"/><name><name>Integer</name><operator>.</operator><name>class</name></name></decl> }</block></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"getSuggestedItemsMethodRule: "</literal> <operator>+</operator> <name>maxItems</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><operator>new</operator> <call><name>MethodRule</name><argument_list>(<argument><expr><name>SUGGESTED_ITEMS_METHOD_ATTRIBUTE_NAME</name></expr></argument>,
+                <argument><expr><name><name>List</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><name>paramList</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44462696.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setRelativeMouseMode</name> <parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>mode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>mode</name> <operator>==</operator> <call><name>isRelativeMouseMode</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><name>mode</name></expr>)</condition> <block>{<block_content>
+			<try>try <block>{<block_content>
+				<expr_stmt><expr><name>robot</name> <operator>=</operator> <operator>new</operator> <call><name>Robot</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>recenterMouse</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>AWTException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><name><name>Development</name><operator>.</operator><name>DEBUG_ENABLED</name></name></expr>)</condition><block type="pseudo"><block_content> 
+					<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name><name>Development</name><operator>.</operator><name>DEBUG_LABEL</name></name> <operator>+</operator> <literal type="string">"InputManager.setRelativeMouseMode() "</literal> <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+				<expr_stmt><expr><name>robot</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>robot</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

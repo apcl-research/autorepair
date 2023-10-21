@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26272483.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>writePolicy</name> <parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>socketOut</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name><name>PolicyServer</name><operator>.</operator><name>POLICY_XML</name></name> <operator>+</operator> <literal type="string">"\u0000"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>socketOut</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>debug</name><argument_list>(<argument><expr><literal type="string">"policy sent to client"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name>debug</name><argument_list>(<argument><expr><literal type="string">"Exception (writePolicy): "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

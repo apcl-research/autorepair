@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44889996.java">    <function><type><specifier>protected</specifier> <name>Map</name></type> <name>toMap</name><parameter_list>()</parameter_list> <block>{<block_content>
+       <decl_stmt><decl><type><specifier>final</specifier> <name>Map</name></type> <name>map</name> <init>= <expr><operator>new</operator> <call><name>HashMap</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"entityName"</literal></expr></argument>, <argument><expr><name>entityName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"entityType"</literal></expr></argument>, <argument><expr><call><name>getEntityType</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"isObjectContext"</literal></expr></argument>, <argument><expr><call><name><name>Boolean</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><call><name>isObjectContext</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>map</name></expr>;</return></block_content></block></function>
+     
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30176983.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>GetAutismGroupId</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>gname</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>groupList</name></name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block>{<block_content>
+            <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+        </block_content>}</block></if><else>else<block>{<block_content>
+            <decl_stmt><decl><type><name>Iterator</name></type> <name>itr</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>groupList</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <while>while<condition>(<expr><call><name><name>itr</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+                <decl_stmt><decl><type><name>AutismGroup</name></type> <name>ag</name> <init>= <expr><operator>(</operator><name>AutismGroup</name><operator>)</operator><call><name><name>itr</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <if_stmt><if>if <condition>(<expr><call><name><name>ag</name><operator>.</operator><name>GetGroupName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>gname</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+                    <return>return <expr><call><name><name>ag</name><operator>.</operator><name>GetGroupId</name></name><argument_list>()</argument_list></call></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></while>   
+        </block_content>}</block></else></if_stmt>           
+        <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

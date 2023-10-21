@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42782629.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>configuration</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>ConfigurationException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Start configuration by looking for '"</literal> <operator>+</operator> <name>CONFIGURATION_PROPERTIES</name>
+				<operator>+</operator> <literal type="string">"' property file"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>Configuration</name><operator>.</operator><name>addConfiguration</name></name><argument_list>(<argument><expr><name>CONFIGURATION_PROPERTIES</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>path2enviroment</name> <operator>=</operator> <call><name><name>Configuration</name><operator>.</operator><name>lookup</name></name><argument_list>(<argument><expr><name>CONFIGURATION_LOCATION</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Resolving enviroment location '"</literal> <operator>+</operator> <name>CONFIGURATION_LOCATION</name>
+				<operator>+</operator> <literal type="string">"' as '"</literal> <operator>+</operator> <name>path2enviroment</name> <operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><name>storeName</name> <operator>=</operator> <call><name><name>Configuration</name><operator>.</operator><name>lookup</name></name><argument_list>(<argument><expr><name>STORE_NAME</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Resolving store name '"</literal> <operator>+</operator> <name>STORE_NAME</name> <operator>+</operator> <literal type="string">"' as '"</literal> <operator>+</operator> <name>storeName</name>
+				<operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

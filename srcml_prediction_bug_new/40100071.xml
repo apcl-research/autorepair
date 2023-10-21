@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22392783.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getUnreadCount</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>JasenException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>rslt</name> <init>= <expr><operator>-</operator><literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// ED: for POP3, getUnreadMessageCount() isAPI() is usually the same as</comment>
+        <comment type="line">// getMessages().length</comment>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ensureOpen Folder</name><operator>.</operator><name>READ_ONLY</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>rslt</name> <operator>=</operator> <call><name><name>folder</name><operator>.</operator><name>getUnreadMessageCount</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>MessagingException</name></type> <name>me</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>JavaMailException</name><argument_list>(<argument><expr><literal type="string">"getUnreadMessageCount() failed"</literal></expr></argument>, <argument><expr><name>me</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+
+        <return>return <expr><name>rslt</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

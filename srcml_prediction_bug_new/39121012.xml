@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/8692783.java">    <function><type><specifier>private</specifier> <name>Node</name></type> <name>expr</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>end</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Node</name></type> <name>prev</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init>;</init><condition>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>Node</name></type> <name>node</name> <init>= <expr><call><name>sequence</name><argument_list>(<argument><expr><name>end</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>prev</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>prev</name> <operator>=</operator> <name>node</name></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><name>prev</name> <operator>=</operator> <operator>new</operator> <call><name>Branch</name><argument_list>(<argument><expr><name>prev</name></expr></argument>, <argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name>peek</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="char">'|'</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>prev</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt><expr><call><name>next</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+     
+</unit>

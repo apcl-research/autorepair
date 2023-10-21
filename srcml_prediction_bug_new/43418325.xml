@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>putMigration</name><parameter_list>()</parameter_list>  
+		
+		<comment type="line">// --- Fill InMovement-list with suit from the 'migrationStore' ----</comment>
+		<while>while <condition>(<expr><call><name><name>this</name><operator>.</operator><name>migrationListInMovement</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name><name>this</name><operator>.</operator><name>migrationsParallelMax</name></name></expr>)</condition> <block>{<block_content>
+			
+			<if_stmt><if>if <condition>(<expr><call><name><name>migrationList</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call><operator>==</operator><literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<break>break;</break>
+			</block_content>}</block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>migrationListInMovement</name><operator>.</operator><name>addElement</name></name><argument_list>(<argument><expr><call><name><name>migrationList</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>migrationList</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name><name>sensor</name><operator>.</operator><name>putMigrationLocation</name></name><argument_list>(<argument><expr><call><name><name>migrationList</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getSensorAgentsNewLocation</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>migrationList</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

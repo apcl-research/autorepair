@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41004198.java">	<function><type><specifier>public</specifier> <name>Point</name></type> <name>translateStart</name><parameter_list>(<parameter><decl><type><name>Point</name></type> <name>start</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<comment type="line">// because getRowColFromPoint returns position offset as 1,1 we need</comment>
+		<comment type="line">// to translate as offset 0,0</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>pos</name> <init>= <expr><call><name>getPosFromView</name><argument_list>(<argument><expr><name><name>start</name><operator>.</operator><name>x</name></name></expr></argument>, <argument><expr><name><name>start</name><operator>.</operator><name>y</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>x</name> <init>= <expr><name>columnWidth</name> <operator>*</operator> <call><name><name>screen</name><operator>.</operator><name>getCol</name></name><argument_list>(<argument><expr><name>pos</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>y</name> <init>= <expr><name>rowHeight</name> <operator>*</operator> <call><name><name>screen</name><operator>.</operator><name>getRow</name></name><argument_list>(<argument><expr><name>pos</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>start</name><operator>.</operator><name>setLocation</name></name><argument_list>(<argument><expr><name>x</name></expr></argument>, <argument><expr><name>y</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>start</name></expr>;</return>
+
+	</block_content>}</block></function>
+</unit>

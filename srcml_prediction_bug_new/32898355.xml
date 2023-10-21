@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35302783.java">        <function><type><specifier>private</specifier> <name>void</name></type> <name>storeAlpha</name><parameter_list>(<parameter><decl><type><name>Window</name></type> <name>w</name></decl></parameter>, <parameter><decl><type><name>byte</name></type> <name>alpha</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>w</name> <operator>instanceof</operator> <name>RootPaneContainer</name></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>JRootPane</name></type> <name>root</name> <init>= <expr><operator>(</operator> <name>RootPaneContainer</name><operator>)</operator><name>w</name></expr></init></decl>;</decl_stmt>
+                <decl_stmt><decl><type><name>Byte</name></type> <name>b</name> <init>= <expr><ternary><condition><expr><name>alpha</name> <operator>==</operator> <operator>(</operator><name>byte</name><operator>)</operator><literal type="number">0xFF</literal></expr> ?</condition><then> <expr><literal type="null">null</literal></expr> </then><else>: <expr><operator>new</operator> <call><name>Byte</name><argument_list>(<argument><expr><name>alpha</name></expr></argument>)</argument_list></call></expr></else></ternary></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><call><name><name>root</name><operator>.</operator><name>putClientProperty</name></name><argument_list>(<argument><expr><name>TRANSPARENT_ALPHA</name></expr></argument>, <argument><expr><name>b</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></function>
+</unit>

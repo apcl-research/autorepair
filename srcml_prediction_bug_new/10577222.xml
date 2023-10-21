@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22142783.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>handleBibliography</name><parameter_list>(<parameter><decl><type><name>Mail</name></type> <name>mail</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>MessagingException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>mail</name><operator>.</operator><name>setState</name></name><argument_list>(<argument><expr><name><name>Mail</name><operator>.</operator><name>ERROR</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setMessageDeleted</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>mail</name><operator>.</operator><name>setErrorMessage</name></name><argument_list>(<argument><expr><literal type="string">"This mail from FetchMail task "</literal> <operator>+</operator> <call><name>getFetchTaskName</name><argument_list>(  <argument><expr><operator>+</operator> <literal type="string">" seems to be sufficiently!"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>logStatusError</name><argument_list>(<argument><expr><literal type="string">"Message is sufficiently! Deleted from message store and moved to the Error repository."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

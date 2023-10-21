@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24162796.java">	<function><type><specifier>public</specifier> <name>BigDecimal</name></type> <name>getAdjustedTargetHole</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>BigDecimal</name></type> <name>targetPipeDiameter</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>comp</name> <init>= <expr><call><name><name>targetPipeDiameter</name><operator>.</operator><name>compareTo</name></name><argument_list>(<argument><expr><name>targetHole</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>BigDecimal</name></type> <name>ret</name> <init>= <expr><name>targetHole</name></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name>comp</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>ret</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt> <comment type="line">// target too small</comment>
+		</block_content>}</block></if><if type="elseif">else if<condition>(<expr><name>comp</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block>{<block_content>
+			<comment type="line">// source is 1.5 and target 2: take average</comment>
+			<expr_stmt><expr><name>ret</name> <operator>=</operator> <call><name><name>ret</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>targetPipeDiameter</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>multiply</name><argument_list>(<argument><expr><name><name>Diameter</name><operator>.</operator><name>D05</name><operator>.</operator><name>getMeasure</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>ret</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

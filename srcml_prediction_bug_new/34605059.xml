@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4799074.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>saveNewPonuka</name><parameter_list>(<parameter><decl><type><name>Ponuka</name></type> <name>ponuka</name></decl></parameter>, <parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>binaryData</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Ponuka</name></argument>&gt;</argument_list></name></type> <name>withSameAlias</name> <init>= <expr><call><name>getDao</name><argument_list>()</argument_list></call><operator>.</operator><call><name>findPonukaByAlias</name><argument_list>(<argument><expr><call><name><name>ponuka</name><operator>.</operator><name>getAlias</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>withSameAlias</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">false</literal></expr> 
+		
+		<name>BinaryObject</name> <name>bObject</name> <operator>=</operator> <operator>new</operator> <call><name>BinaryObject</name><argument_list>()</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>bObject</name><operator>.</operator><name>setData</name></name><argument_list>(<argument><expr><name>binaryData</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>getBinaryObjectDao</name><argument_list>()</argument_list></call><operator>.</operator><call><name>save</name><argument_list>(<argument><expr><name>bObject</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>ponuka</name><operator>.</operator><name>setForm</name></name><argument_list>(<argument><expr><name>bObject</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>getDao</name><argument_list>()</argument_list></call><operator>.</operator><call><name>save</name><argument_list>(<argument><expr><name>ponuka</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

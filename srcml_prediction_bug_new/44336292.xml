@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29848891.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>paintBackground</name><parameter_list>(<parameter><decl><type><name>Graphics</name></type> <name>g</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Rectangle</name></type> <name>pageBounds</name> <init>= <expr><call><name><name>graph</name><operator>.</operator><name>getBounds</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                
+		<if_stmt><if>if <condition>(<expr><call><name>getTspGraph</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getBackgroundImage</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<comment type="line">// Use clip and pageBounds</comment>
+			<decl_stmt><decl><type><name>double</name></type> <name>s</name> <init>= <expr><call><name><name>graph</name><operator>.</operator><name>getScale</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>Graphics2D</name></type> <name>g2</name> <init>= <expr><operator>(</operator><name>Graphics2D</name><operator>)</operator> <name>g</name></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>AffineTransform</name></type> <name>tmp</name> <init>= <expr><call><name><name>g2</name><operator>.</operator><name>getTransform</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>g2</name><operator>.</operator><name>scale</name></name><argument_list>(<argument><expr><name>s</name></expr></argument>, <argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>g</name><operator>.</operator><name>drawImage</name></name><argument_list>(<argument><expr><call><name>getTspGraph</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getBackgroundImage</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>graph</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>g2</name><operator>.</operator><name>setTransform</name></name><argument_list>(<argument><expr><name>tmp</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

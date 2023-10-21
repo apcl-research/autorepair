@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44462715.java">	<function><type><specifier>public</specifier> <name>SquirrelInputHandler</name></type> <name>getInputHandler</name><parameter_list>(<parameter><decl><type><name>ParsedURL</name></type> <name>purl</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>SquirrelInputHandler</name></argument>&gt;</argument_list></name></type> <name>iter</name> <init>= <expr><call><name>getHandlers</name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>SquirrelInputHandler</name></type> <name>handler</name> <init>= <expr><literal type="null">null</literal></expr></init></decl> 
+
+		while <condition>(<expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>SquirrelInputHandler</name></type> <name>curHandler</name> <init>= <expr><operator>(</operator><name>SquirrelInputHandler</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>curHandler</name><operator>.</operator><name>accept</name></name><argument_list>(<argument><expr><name>purl</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>handler</name> <operator>=</operator> <name>curHandler</name></expr>;</expr_stmt>
+				<break>break;</break>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></while>
+
+		<comment type="line">// No handler found, use the default one.</comment>
+		<if_stmt><if>if <condition>(<expr><name>handler</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>handler</name> <operator>=</operator> <name>defaultHandler</name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>handler</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

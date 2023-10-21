@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16659996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setProgress</name><parameter_list>( <parameter><decl><type><name>double</name></type> <name>value</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>progressBar</name><operator>.</operator><name>setSelection</name></name><argument_list>( <argument><expr><operator>(</operator><name>int</name><operator>)</operator> <name>value</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>short</name></type> <name>progress</name> <init>=  <expr><name>short</name><operator>*</operator><operator>(</operator><name>double</name><operator>)</operator><name>maximum</name> <operator>*</operator> <operator>(</operator><name>double</name><operator>)</operator><literal type="number">100</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>( <expr><name>progress</name> <operator>-</operator> <name>previousProgress</name> <operator>&gt;=</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>progressLabel</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Simulation Progress: "</literal> <operator>+</operator>  <name>progress</name> <operator>+</operator> <literal type="string">"%"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>progressLabel</name><operator>.</operator><name>update</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>previousProgress</name> <operator>=</operator> <name>progress</name></expr>;</expr_stmt>
+			<if_stmt><if>if<condition>( <expr><name>progress</name> <operator>==</operator> <literal type="number">100</literal></expr> )</condition><block type="pseudo"><block_content> 
+				<expr_stmt><expr><call><name><name>finishButton</name><operator>.</operator><name>setEnabled</name></name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>shell</name><operator>.</operator><name>update</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

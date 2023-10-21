@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41779996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>updatePosition</name><parameter_list>()</parameter_list><block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><name>posx</name> <operator>!=</operator> <name>fposx</name> <operator>||</operator> <name>posy</name> <operator>!=</operator> <name>fposy</name></expr>)</condition><block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><name>speed</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> 
+                <expr_stmt><expr><name>posx</name> <operator>=</operator> <name>fposx</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
+                <expr_stmt><expr><name>posy</name> <operator>=</operator> <name>fposy</name></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <if_stmt><if>if<condition>(<expr><name>posx</name> <operator>!=</operator> <name>fposx</name></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>posx</name> <operator>+=</operator> <ternary><condition><expr><operator>(</operator><name>posx</name> <operator>&lt;</operator> <name>fposx</name><operator>)</operator></expr> ?</condition><then> <expr><name>speed</name></expr> </then><else>: <expr><operator>-</operator><name>speed</name></expr></else></ternary></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            <if_stmt><if>if<condition>(<expr><name>posy</name> <operator>!=</operator> <name>fposy</name></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>posy</name> <operator>+=</operator> <ternary><condition><expr><operator>(</operator><name>posy</name> <operator>&lt;</operator> <name>fposy</name><operator>)</operator></expr> ?</condition><then> <expr><name>speed</name></expr> </then><else>: <expr><operator>-</operator><name>speed</name></expr></else></ternary></expr>;</expr_stmt>
+        </block_content>}</block></function>
+</unit>

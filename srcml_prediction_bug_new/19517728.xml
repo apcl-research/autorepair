@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18239983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>configureDebugOptions</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name>isDebugging</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			
+			<comment type="line">// Global plugin debug</comment>
+			<decl_stmt><decl><type><name>String</name></type> <name>option</name> <init>= <expr><call><name><name>Platform</name><operator>.</operator><name>getDebugOption</name></name><argument_list>(<argument><expr><name>GLOBAL_TRACE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>option</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name><name>PatternUtils</name><operator>.</operator><name>DEBUG</name></name> <operator>=</operator> <call><name><name>option</name><operator>.</operator><name>equalsIgnoreCase</name></name><argument_list>(<argument><expr><literal type="string">"true"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt> <comment type="line">//$NON-NLS-1$</comment>
+
+			<comment type="line">// Wizard debug</comment>
+			<expr_stmt><expr><name>option</name> <operator>=</operator> <call><name><name>Platform</name><operator>.</operator><name>getDebugOption</name></name><argument_list>(<argument><expr><name>WIZARD_TRACE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if <condition>(<expr><name>option</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name><name>WizardUtils</name><operator>.</operator><name>DEBUG</name></name> <operator>=</operator> <call><name><name>option</name><operator>.</operator><name>equalsIgnoreCase</name></name><argument_list>(<argument><expr><literal type="string">"true"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt> <comment type="line">//$NON-NLS-1$</comment>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

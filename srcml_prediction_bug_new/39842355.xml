@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10992783.java">    <function><type><specifier>protected</specifier> <name>Locale</name></type> <name>getCurrentLocale</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>Locale</name></type> <name>userLocale</name> <init>= <expr><call><name><name>RequestUtils</name><operator>.</operator><name>retrieveUserLocale</name></name><argument_list>(<argument><expr><name>pageContext</name></expr></argument>, <argument><expr><name><name>Globals</name><operator>.</operator><name>LOCALE_KEY</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// Store a new current Locale, if requested</comment>
+        <if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>locale</name></name></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>HttpSession</name></type> <name>session</name> <init>= <expr><operator>(</operator><operator>(</operator><name>HttpServletRequest</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>pageContext</name><operator>.</operator><name>getRequest</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>getSession</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>session</name><operator>.</operator><name>setAttribute</name></name><argument_list>(<argument><expr><name><name>Globals</name><operator>.</operator><name>LOCALE_KEY</name></name></expr></argument>, <argument><expr><name>userLocale</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>userLocale</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

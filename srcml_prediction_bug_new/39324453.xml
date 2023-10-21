@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44679996.java">    <function><type><specifier>public</specifier> <name>DynamicArea</name></type> <name>findDynamicArea</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>areaNumber</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iterator</name> <init>= <expr><call><name><name>dynamicAreas</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iterator</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>DynamicArea</name></type> <name>dynamicArea</name> <init>= <expr><operator>(</operator><name>DynamicArea</name>  <operator>)</operator> <call><name><name>iterator</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>dynamicArea</name><operator>.</operator><name>getAreaNumber</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>areaNumber</name></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>dynamicArea</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

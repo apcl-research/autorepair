@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25232983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>close</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>finalizing</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument>, <argument><expr><name>BadDescriptorException</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name>flushWrite</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><name><name>descriptor</name><operator>.</operator><name>close</name></name></expr> ;</expr_stmt>
+            <expr_stmt><expr><name>buffer</name> <operator>=</operator> <name>EMPTY_BUFFER</name></expr>;</expr_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>DEBUG</name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>getLogger</name><argument_list>(<argument><expr><literal type="string">"ChannelStream"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>info</name><argument_list>(<argument><expr><literal type="string">"Descriptor for fileno "</literal>
+                    <operator>+</operator> <call><name><name>descriptor</name><operator>.</operator><name>getFileno</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" closed by stream"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block> <finally>finally <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><name>finalizing</name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>getRuntime</name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeInternalFinalizer</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

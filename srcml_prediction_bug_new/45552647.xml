@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19242783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testReturnsNoDiffsForSameValues</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>text</name> <init>= <expr><block>{ <expr><literal type="string">"One"</literal></expr>, <expr><literal type="string">"Two"</literal></expr>, <expr><literal type="string">"Three"</literal></expr> }</block></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name><name>Difference</name><index>[  <expr><name>diffs</name> <operator>=</operator> <call><name><name>Diff</name><operator>.</operator><name>diff</name></name><argument_list>(<argument><expr><name>text</name></expr></argument>, <argument><expr><name>text</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><literal type="string">"Should not have diffs"</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name><name>diffs</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

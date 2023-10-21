@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12539996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>goUpperLayer</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>itsPreviousActiveLayers</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>ContainerNode</name></type> <name>theContainerNode</name> <init>= <expr><name>itsActiveLayer</name></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>itsActiveLayer</name><operator>.</operator><name>setActive</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>itsActiveLayer</name> <operator>=</operator> <call><name><name>itsPreviousActiveLayers</name><operator>.</operator><name>pop</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>updateActiveLayer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>LessonMapper2</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSelectionHandler</name><argument_list>()</argument_list></call><operator>.</operator><call><name>unselectAll</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>LessonMapper2</name><operator>.</operator><name>getInstance</name></name> <argument_list>()</argument_list></call><operator>.</operator><call><name>getSelectionHandler</name><argument_list>()</argument_list></call><operator>.</operator><call><name>select</name><argument_list>(<argument><expr><name>theContainerNode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+		</block_content>}</block></if>
+		<comment type="line">// if theActiveLayer is not a container node it means that it reached</comment>
+		<comment type="line">// the upperlevel is activeLayer</comment>
+		<else>else<block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

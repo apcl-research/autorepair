@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41980906.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>configureFilter</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>done</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+		
+		<while>while<condition>(<expr><operator>!</operator><name>done</name></expr>)</condition><block>{<block_content>
+			<try>try<block>{<block_content>
+				<decl_stmt><decl><type><name>String</name></type> <name>i</name> <init>= <expr><call><name><name>javax</name><operator>.</operator><name>swing</name><operator>.</operator><name>JOptionPane</name><operator>.</operator><name>showInputDialog</name></name><argument_list>(<argument><expr><literal type="string">"Enter Link Limit Amount"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if<condition>(<expr><name>i</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+					<return>return;</return></block_content></block></if></if_stmt>
+				
+				<expr_stmt><expr><name>limit</name> <operator>=</operator> <call><name><name>Integer</name><operator>.</operator><name>parseInt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				
+				<if_stmt><if>if<condition>(<expr><name>limit</name> <operator>&lt;=</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name>NumberFormatException</name><argument_list>()</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+				<expr_stmt><expr><name>done</name><operator>=</operator><literal type="boolean">true</literal></expr>;</expr_stmt>				
+			</block_content>}</block>
+			
+			<catch>catch <parameter_list>(<parameter><decl><type><name>NumberFormatException</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+				<expr_stmt><expr><call><name><name>javax</name><operator>.</operator><name>swing</name><operator>.</operator><name>JOptionPane</name><operator>.</operator><name>showMessageDialog</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="string">"Please enter a positive number"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

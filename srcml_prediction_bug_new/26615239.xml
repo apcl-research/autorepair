@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45091396.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setNetworkAlgorithms</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+	<comment type="line">// set the architecture type for the network</comment>
+	<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>setArchitecture</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>FeedForwardArchitecture</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	<comment type="line">// set the error type</comment>
+	<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>setErrorType</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>MeanSquareErrorType</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	<comment type="line">// set the learning flag</comment>
+	<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>setLearning</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	<comment type="line">// set the training data</comment>
+	<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>loadTrainingData</name></name><argument_list>(<argument><expr><literal type="string">"./xor.in"</literal></expr></argument>, <argument><expr><literal type="string">"./xor.out"</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+
+	<comment type="line">// connect the network</comment>
+	<try>try <block>{<block_content>
+	    <expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>connect</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <expr_stmt><expr><call><name>db</name><argument_list>(<argument><expr><literal type="string">"Could not connect network."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></catch></try> 
+    </block_content>}</block></function> 
+</unit>

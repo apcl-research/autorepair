@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46442483.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>listToString</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>list</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>string</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+    <comment type="line">// use comma to reciproc every element</comment>
+    <for>for <control>(<init><decl><type><name>String</name></type> <name>curString</name> <range>: <expr><name>list</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>  
+      <expr_stmt><expr><name>string</name> <operator>=</operator> <name>string</name> <operator>+</operator> <name>curString</name> <operator>+</operator> <literal type="string">", "</literal></expr>;</expr_stmt></block_content></block></for>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16582983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>moveNodes</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><name>movingNodes</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>movingNodes</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+			<comment type="line">// mover will add itself to layout as a mouse motion listener</comment>
+			<expr_stmt><expr><name>mover</name> <operator>=</operator> <operator>new</operator> <call><name>NodeMover</name><argument_list>(<argument><expr><name>Control</name></expr></argument>, <argument><expr><name>engine</name></expr></argument>, <argument><expr><name>LayoutArea</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>MoveNodes</name><operator>.</operator><name>setText</name></name> <argument_list>(<argument><expr><literal type="string">"StopMoving"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>movingNodes</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>mover</name><operator>.</operator><name>endMoveNodes</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>mover</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>MoveNodes</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Move Nodes"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>controlePane</name><operator>.</operator><name>requestFocusInWindow</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23744029.java">    <function><type><specifier>protected</specifier> <name>BPELProcess</name></type> <name>getBPELProcess</name><parameter_list>(<parameter><decl><type><name>BexeeMessage</name></type> <name>message</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>BPELProcess</name></type> <name>process</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>name</name> <init>= <expr><call><name><name>message</name><operator>.</operator><name>getService</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>DAOFactory</name></type> <name>factory</name> <init>= <expr><call><name><name>DAOFactory</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>BPELProcessDAO</name></type> <name>bpelDAO</name> <init>= <expr><call><name><name>factory</name><operator>.</operator><name>createBPELProcessDAO</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>process</name> <operator>=</operator> <call><name><name>bpelDAO</name><operator>.</operator><name>find</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>DAOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Error trying to find process"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+
+        <return>return <expr><name>process</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

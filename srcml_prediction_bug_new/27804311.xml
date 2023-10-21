@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13262696.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>reallyAddHandle</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>insertIndex</name></decl></parameter> , <parameter><decl><type><name>Point2D</name></type> <name>pt</name></decl></parameter> )</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>( <expr><call><name><name>edgeView</name><operator>.</operator><name>isSelected</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>PNamedHandle</name></type> <name>h</name> <init>= <expr><call><name>createHandle</name><argument_list>(<argument><expr><name>pt</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>h</name><operator>.</operator><name>addInputEventListener</name></name><argument_list>( <argument><expr><call><name><name>edgeView</name><operator>.</operator><name>getEdgeHandler</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt> 
+			<expr_stmt><expr><call><name><name>edgeView</name><operator>.</operator><name>addChild</name></name><argument_list>(<argument><expr><name>h</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>handleList</name><operator>.</operator><name>insertElementAt</name></name><argument_list>(<argument><expr><name>h</name></expr></argument>, <argument><expr><name>insertIndex</name></expr></argument> ;</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>handlePointList</name><operator>.</operator><name>insertElementAt</name></name><argument_list>(<argument><expr><name>pt</name></expr></argument>, <argument><expr><name>insertIndex</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>edgeView</name><operator>.</operator><name>updateEdgeView</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18492983.java">		<function><type><specifier>public</specifier> <name>boolean</name></type> <name>equals</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<try>try <block>{<block_content>
+				<decl_stmt><decl><type><name>RelatedResource</name></type> <name>rr</name> <init>= <expr><operator>(</operator><name>RelatedResource</name><operator>)</operator> <name>o</name></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><call><name><name>rr</name><operator>.</operator><name>getUrl</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>_url</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>rr</name><operator>.</operator><name>getKind</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>_kind</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+					<return>return <expr><operator>(</operator><call><name><name>rr</name><operator>.</operator><name>getUrl</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>_url</name></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>rr</name><operator>.</operator><name>getKind</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>_kind</name></expr></argument>)</argument_list></call> <operator>)</operator></expr> ;</return></block_content></block></if></if_stmt>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+			</block_content>}</block></catch></try>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44482705.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>load</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>dbase</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>DbrcLoadException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>homePath</name> <init>= <expr><literal type="string">""</literal></expr></init></decl> 
+		<init>= <expr><call><name><name>System</name><operator>.</operator><name>getProperty</name></name><argument_list>(<argument><expr><literal type="string">"user.home"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><name>dbrcFilePath</name> <operator>=</operator> <name>homePath</name> <operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <name>DBRC_FILE_NAME</name></expr>;</expr_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name>loadHelper</name><argument_list>(<argument><expr><name>dbase</name></expr></argument>, <argument><expr><name>dbrcFilePath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>DbrcLoadException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>DbrcLoadException</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>e</name><operator>.</operator><name>dbase</name></name></expr></argument>, <argument><expr><name><name>e</name><operator>.</operator><name>dbrcFilePath</name></name></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

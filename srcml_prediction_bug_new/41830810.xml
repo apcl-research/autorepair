@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41587729.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>insertLogin</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>host</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>username</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>password</name></decl></parameter>)</parameter_list>  
+
+		<throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+		
+		<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>d</name></name><argument_list>(<argument><expr><name>DT</name></expr></argument>, <argument><expr><literal type="string">"Saving Login: "</literal><operator>+</operator><name>password</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>execSQL</name></name><argument_list>(<argument><expr><literal type="string">"INSERT OR REPLACE INTO "</literal> <operator>+</operator> <name>LOGIN_TABLE</name> <operator>+</operator> <literal type="string">" ("</literal> <operator>+</operator> <name>HOST</name> <operator>+</operator> <literal type="string">", "</literal>
+				<operator>+</operator> <name>USERNAME</name> <operator>+</operator> <literal type="string">", "</literal> <operator>+</operator> <name>PASSWORD</name> <operator>+</operator> <literal type="string">") VALUES ('"</literal> <operator>+</operator> <name>host</name> <operator>+</operator> <literal type="string">"','"</literal>
+				<operator>+</operator> <name>username</name> <operator>+</operator> <literal type="string">"','"</literal> <operator>+</operator> <name>password</name> <operator>+</operator> <literal type="string">"')"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

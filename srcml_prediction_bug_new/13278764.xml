@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43092629.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>embeddingContainsEdge</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>edge</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>edge</name> <operator>instanceof</operator> <name>ConnectedNode</name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>changedNode</name> <operator>==</operator>  <operator>(</operator><name>ConnectedNode</name><operator>)</operator> <name>edge</name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>edge</name> <operator>=</operator> <operator>(</operator><operator>(</operator><name>ConnectedNode</name><operator>)</operator> <name>edge</name><operator>)</operator><operator>.</operator><name>node</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>repairEmbedding</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>edge</name> <operator>==</operator> <name><name>repairEmbedding</name><index>[<expr><name>i</name></expr>]</index></name></expr>)</condition> <block>{<block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

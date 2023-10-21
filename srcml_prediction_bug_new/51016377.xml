@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26072496.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>sampleIntermediateGraph</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">//for each edge that has at least one overridingevidence (others have p=0 anyway)</comment>
+        <for>for <control>(<init><decl><type><name><name>SetOfTwo</name><argument_list type="generic">&lt;<argument><name>Integer</name></argument>&gt;</argument_list></name></type> <name>edge</name> <range>: <expr><name>allEdges</name></expr></range></decl></init>)</control> <block>{<block_content>
+
+            <comment type="line">//if universe random &gt; p(edge) create it otherwise remove it</comment>
+            <decl_stmt><decl><type><name>double</name></type> <name>p</name> <init>= <expr><call><name><name>probabilities</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>edge</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>uniform</name><operator>.</operator><name>nextDouble</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name>p</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>intermediateGraph</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>edge</name></expr></argument> ;</argument_list></call></expr>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><call><name><name>intermediateGraph</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>edge</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592796.java">        <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>isCookieAttribute</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>stringLowercase</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <return>return <expr><call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"path"</literal></expr></argument>)</argument_list></call> <operator>||</operator>
+                   <call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"domain"</literal></expr></argument>)</argument_list></call> <operator>||</operator>
+                   <call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"expires"</literal></expr></argument>)</argument_list></call> <operator>||</operator>
+                   <call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"comment"</literal></expr></argument>)</argument_list></call> <operator>||</operator>
+                   <call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"max-age"</literal></expr></argument>)</argument_list></call> <operator>||</operator>
+                   <call><name><name>stringLowercase</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"version"</literal></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></function>
+</unit>

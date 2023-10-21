@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592796.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>extractFilename</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>uri</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if  <condition>(<expr><operator>!</operator><call><name><name>uri</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name>FILE_PREFIX</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name>uri</name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>uri</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name>ROOT_FILE_PREFIX</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>uri</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><call><name><name>ROOT_FILE_PREFIX</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <comment type="line">// URI starts with 'file:' Just remove that prefix.</comment>
+        <return>return <expr><call><name><name>uri</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><call><name><name>FILE_PREFIX</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

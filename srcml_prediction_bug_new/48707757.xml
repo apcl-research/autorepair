@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39442483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>disconnectFromDatabase</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>connectedToDatabase</name></expr>)</condition><block type="pseudo"><block_content>
+            <return>return 
+        <comment type="line">// close Statement and Connection</comment>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>statement</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>connection</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <comment type="line">// end try</comment>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>SQLException</name></type> <name>sqlException</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>sqlException</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch> <comment type="line">// end catch</comment>
+        <finally>finally <comment type="line">// update database connection status</comment>
+        <block>{<block_content>
+            <expr_stmt><expr><name>connectedToDatabase</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        </block_content>}</block></finally></try> <comment type="line">// end finally</comment>
+    </block_content>}</block></function> <comment type="line">// end method disconnectFromDatabase</comment>
+</unit>

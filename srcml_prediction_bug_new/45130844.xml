@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/443907.java">	<function><type><specifier>public</specifier> <name>Value</name></type> <name>evaluate</name><parameter_list>(<parameter><decl><type><name>RdfBindingRow</name></type> <name>bindings</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>Value</name></type> <name>value</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>function</name><operator>.</operator><name>evaluate</name></name><argument_list>(<argument><expr><operator>(</operator><name><name>ExpressionLogic</name><index>[]</index></name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>data</name><operator>.</operator><name>getArguments</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toArray</name><argument_list>(
+					<argument><expr><operator>new</operator> <name><name>ExpressionLogic</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>bindings</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<comment type="line">// Convert the return value to an evaluable Value</comment>
+			<return>return <expr><call><name><name>this</name><operator>.</operator><name>factory</name><operator>.</operator><name>createValue</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ExternalFunctionException</name></type> <name>e</name></decl></parameter>)</parameter_list>  
+			<comment type="line">// TODO Should be some exception?</comment>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+
+	</block_content>}</block></function>
+</unit>

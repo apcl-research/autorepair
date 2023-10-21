@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39162496.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>handleLINEMODE</name> <parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+      <decl_stmt><decl><type><name>int</name></type> <name>c</name> <init>= <expr><call><name>rawread</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <switch>switch <condition>(<expr><name>c</name></expr>)</condition> <block>{<block_content>
+        <case>case <expr><name>LM_MODE</name></expr>:</case>
+          <expr_stmt><expr><call><name>handleLMMode</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          <break>break;</break>
+        <case>case <expr><name>LM_SLC</name></expr>:</case>
+          <expr_stmt><expr><call><name>handleLMSLC</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          <break>break;</break>
+        <case>case <expr><name>WONT</name></expr>:</case>
+        <case>case <expr><name>MAY</name></expr>:</case>
+          <expr_stmt><expr><call><name>handleLMForwardMask</name><argument_list>(<argument><expr><name>c</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+          <break>break;</break>
+        <default>default:</default>
+          <comment type="line">//skip to (including) SE</comment>
+          <expr_stmt><expr><call><name>skipToSE</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></switch>
+    </block_content>}</block></function><comment type="line">//handleLINEMODE</comment>
+</unit>

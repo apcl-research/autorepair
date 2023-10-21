@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27792796.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>getColumnName</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>col_i</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>name</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+
+    <while>while<condition>( <expr><name>col_i</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr> )</condition> <block>{<block_content>
+      <comment type="line">// TODO: Test this.</comment>
+      <expr_stmt><expr><name>name</name> <operator>=</operator> <operator>(</operator> <operator>(</operator> <name>char</name> <operator>)</operator><operator>(</operator> <operator>(</operator> <name>char</name> <operator>)</operator><operator>(</operator> <name>col_i</name> <operator>%</operator> <literal type="number">26</literal> <operator>)</operator> <operator>+</operator> <literal type="char">'A'</literal> <operator>)</operator>   <operator>+</operator> <name>name</name><operator>)</operator></expr>;</expr_stmt>
+      <expr_stmt><expr><name>col_i</name> <operator>=</operator> <operator>(</operator> <operator>(</operator> <name>col_i</name> <operator>/</operator> <literal type="number">26</literal> <operator>)</operator> <operator>-</operator> <literal type="number">1</literal> <operator>)</operator></expr>;</expr_stmt>
+    </block_content>}</block></while>
+    <return>return <expr><name>name</name></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// getColumnName(..)</comment>
+</unit>

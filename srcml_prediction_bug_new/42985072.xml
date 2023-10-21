@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31759996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>createPartControl</name><parameter_list>(<parameter><decl><type><name>Composite</name></type> <name>parent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>tradeviewer</name> <operator>=</operator> <operator>new</operator> <call><name>TableViewer</name><argument_list>(<argument><expr><name>parent</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>MULTI</name></name> <operator>|</operator> <name><name>SWT</name><operator>.</operator><name>H_SCROLL</name></name> <operator>|</operator> <name><name>SWT</name><operator>.</operator><name>V_SCROLL</name></name></expr></argument>)</argument_list></call> 
+		<operator>.</operator><call><name>setContentProvider</name><argument_list>(<argument><expr><operator>new</operator> <call><name>TradeListContentProvider</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tradeviewer</name><operator>.</operator><name>setLabelProvider</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>TradeListLabelProvider</name><argument_list>(<argument><expr><literal type="string">"*"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tradeviewer</name><operator>.</operator><name>setSorter</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>NameSorter</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>tradeviewer</name><operator>.</operator><name>setInput</name></name><argument_list>(<argument><expr><call><name>getViewSite</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	
+		<expr_stmt><expr><call><name>hookDoubleClickAction</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>contributeActions</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>getSite</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setSelectionProvider</name><argument_list>(<argument><expr><name>tradeviewer</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2633991.java">    <function><type><specifier>private</specifier> <name>ImageDescriptor</name></type> <name>loadAndRegisterIconImage</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>symbolicName</name></decl></parameter>   )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Bundle</name></type> <name>bundle</name> <init>= <expr><call><name><name>Platform</name><operator>.</operator><name>getBundle</name></name><argument_list>( <argument><expr><name>ID</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>URL</name></type> <name>url</name> <init>= <expr><call><name><name>bundle</name><operator>.</operator><name>getResource</name></name><argument_list>( <argument><expr><name>ICON_PATH</name> <operator>+</operator> <name>symbolicName</name> <operator>+</operator> <name>ICON_FILES_EXT</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>ImageDescriptor</name></type> <name>descr</name> <init>= <expr><call><name><name>ImageDescriptor</name><operator>.</operator><name>createFromURL</name></name><argument_list>( <argument><expr><name>url</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>getImageRegistry</name><argument_list>()</argument_list></call><operator>.</operator><call><name>put</name><argument_list>( <argument><expr><name>symbolicName</name></expr></argument>, <argument><expr><name>descr</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><name>descr</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

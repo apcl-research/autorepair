@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/342627.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>setDirectionButtonStatus</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<decl_stmt><decl><type><name>boolean</name></type> <name>allowBack</name> <init>= <expr><name>currRow</name> <operator>&gt;</operator> <literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>allowForward</name> <init>= <expr><name>fileView</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>currRow</name> <operator>&lt;</operator> <call><name><name>fileView</name><operator>.</operator><name>getRowCount</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+
+	    <expr_stmt><expr><name><name>btn</name><index>[<expr><literal type="number">0</literal></expr>]</index></name><operator>.</operator><call><name>setEnabled</name><argument_list>(<argument><expr><name>allowBack</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><name><name>btn</name><index>[<expr><literal type="number">1</literal></expr>]</index></name><operator>.</operator><call><name>setEnabled</name><argument_list>(<argument><expr><name>allowBack</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><name><name>btn</name><index>[<expr><literal type="number">2</literal></expr>]</index></name><operator>.</operator><call><name>setEnabled</name><argument_list>(<argument><expr><name>allowForward</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><name><name>btn</name><index>[<expr><literal type="number">3</literal></expr>]</index></name><operator>.</operator><call><name>setEnabled</name><argument_list>( <argument><expr><name>allowForward</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

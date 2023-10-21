@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19272483.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>showDocumentView</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>shortName</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>key</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    <expr_stmt><expr><name>hideDocumentView</name></expr> )</condition>;</expr_stmt>
+
+    <expr_stmt><expr><name>documentTabView</name> <operator>=</operator> <operator>new</operator> <call><name>ClientDocumentTabView</name><argument_list>(
+        <argument><expr><call><name><name>WebGnashConstants</name><operator>.</operator><name>getDocDetailViewConstants</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>documentDetails</name><argument_list>()</argument_list></call>
+        <operator>+</operator> <literal type="string">" - "</literal> <operator>+</operator> <name>shortName</name></expr></argument>, <argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>mainPanel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>documentTabView</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>mainPanel</name><operator>.</operator><name>setCellHorizontalAlignment</name></name><argument_list>(<argument><expr><name>documentTabView</name></expr></argument>, 
+        <argument><expr><name><name>HasHorizontalAlignment</name><operator>.</operator><name>ALIGN_LEFT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

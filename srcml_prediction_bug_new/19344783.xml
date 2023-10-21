@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/262927.java">   <function><type><specifier>private</specifier> <name>void</name></type> <name>g100_SetTblFields</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+       <expr_stmt><expr><call><name><name>typeTblModel</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><call><name><name>name</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>currentRow</name></expr></argument>, <argument><expr><name>TYPE_NAME_COLUMN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+       <expr_stmt><expr><call><name><name>typeTblModel</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><call><name><name>typeName</name><operator>.</operator><name>getSelectedItem</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>currentRow</name></expr></argument>, <argument><expr><name>BASE_TYPE_COLUMN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+       <expr_stmt><expr><call><name><name>typeTblModel</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><call><name><name>dateFormat</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>currentRow</name></expr></argument>, <argument><expr><name>FORMAT_COLUMN</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+       <expr_stmt><expr><call><name><name>typeTblModel</name><operator>.</operator><name>fireTableDataChanged</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+   </block_content>}</block></function>
+</unit>

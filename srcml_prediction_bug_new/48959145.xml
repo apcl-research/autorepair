@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46152483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>deoccupy</name><parameter_list>()</parameter_list>  
+        <throws>throws <argument><expr><name>IllegalStateException</name></expr></argument>, <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>  
+        <assert>assert <expr><call><name>guestInvariant</name><argument_list>()</argument_list></call></expr>;</assert>
+        <comment type="line">// Save the old location so we can free it after resetting ourselves</comment>
+        <decl_stmt><decl><type><name>Cell</name></type> <name>oldLocation</name> <init>= <expr><name>location</name></expr></init></decl>;</decl_stmt>
+        <comment type="line">// Reset the guest's pointer</comment>
+        <expr_stmt><expr><name>location</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <comment type="line">// Reset the cell's sufficientlyant pointer.</comment>
+        <expr_stmt><expr><call><name><name>oldLocation</name><operator>.</operator><name>free</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <assert>assert <expr><operator>!</operator><call><name><name>oldLocation</name><operator>.</operator><name>isOccupied</name></name><argument_list>()</argument_list></call></expr>;</assert>
+        <assert>assert <expr><name>guestInvariant</name></expr>;</assert>
+    </block_content>}</block></function>
+</unit>

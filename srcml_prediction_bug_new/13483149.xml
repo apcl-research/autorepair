@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43890562.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>computeDominators</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>db</name><argument_list>(<argument><expr><literal type="string">" ocular hallators"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>domEdgeModCount</name> <operator>=</operator> <name>edgeModCount</name></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>removeUnreachable</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// Forward</comment>
+        <expr_stmt><expr><call><name><name>domEdgeModCount</name><operator>.</operator><name>buildTree</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>domanceFrontier</name><operator>.</operator><name>buildFrontier</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// Reverse</comment>
+        <expr_stmt><expr><call><name><name>domEdgeModCount</name><operator>.</operator><name>buildTree</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>domanceFrontier</name><operator>.</operator><name>buildFrontier</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

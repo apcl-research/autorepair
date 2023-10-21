@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19508981.java">	<function><type><specifier>public</specifier> <name>RodinProject</name></type> <name>getRodinProject</name><parameter_list>(<parameter><decl><type><name>IResource</name></type> <name>resource</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<switch>switch <condition>(<expr><call><name><name>resource</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+		<case>case <expr><name><name>IResource</name><operator>.</operator><name>FOLDER</name></name></expr>:</case>
+			<return>return <expr><operator>new</operator> <call><name>RodinProject</name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>IFolder</name><operator>)</operator> <name>resource</name><operator>)</operator><operator>.</operator><call><name>getProject</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</return>
+		<case>case <expr><name><name>IResource</name><operator>.</operator><name>FILE</name></name></expr>:</case>
+			<return>return <expr><operator>new</operator> <call><name>RodinProject</name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>IFile</name><operator>)</operator> <name>resource</name><operator>)</operator><operator>.</operator><call><name>getProject</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr>;</return>
+		<case>case <expr><name><name>IResource</name><operator>.</operator><name>PROJECT</name></name></expr>:</case>
+			<return>return <expr><operator>new</operator> <call><name>RodinProject</name><argument_list>(<argument><expr><operator>(</operator><name>IProject</name><operator>)</operator> <name>resource</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</return>
+		<default>default:</default>
+			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(
+					<argument><expr><name><name>Messages</name><operator>.</operator><name>element_invalidResourceForProject</name></name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></switch>
+	</block_content>}</block></function>
+</unit>

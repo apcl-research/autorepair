@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42559962.java">	<function><type><specifier>public</specifier> <name>Record</name></type> <name>getExtendedRecord</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>extendedRecord</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>extendedRecord</name><operator>.</operator><name>eIsProxy</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>InternalEObject</name></type> <name>oldExtendedRecord</name> <init>= <expr><operator>(</operator><name>InternalEObject</name><operator>)</operator> <name>extendedRecord</name></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>extendedRecord</name> <operator>=</operator> <operator>(</operator><name>Record</name><operator>)</operator> <call><name>eResolveProxy</name><argument_list>(<argument><expr><name>oldExtendedRecord</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if <condition>(<expr><name>extendedRecord</name> <operator>!=</operator> <name>oldExtendedRecord</name></expr>)</condition> <block>{<block_content>
+				<if_stmt><if>if  <condition>(<expr><call><name>eNotificationRequired</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><call><name>eNotify</name><argument_list>(<argument><expr><operator>new</operator> <call><name>ENotificationImpl</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name><name>Notification</name><operator>.</operator><name>RESOLVE</name></name></expr></argument>, <argument><expr><name><name>RecordsPackage</name><operator>.</operator><name>RECORD_EXTENSION__EXTENDED_RECORD</name></name></expr></argument>, <argument><expr><name>oldExtendedRecord</name></expr></argument>,
+							<argument><expr><name>extendedRecord</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>extendedRecord</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

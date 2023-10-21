@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51011796.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>getLocalName</name><parameter_list>(<parameter><decl><type><name>ONDEXConcept</name></type> <name>c</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>local</name> <init>= <expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><call><name><name>c</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>concat</name></expr>)</condition> <block>{<block_content>
+			<comment type="line">// check if preferred name is present</comment>
+			<decl_stmt><decl><type><name>ConceptName</name></type> <name>preferredName</name> <init>= <expr><call><name><name>c</name><operator>.</operator><name>getConceptName</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if  <condition>(<expr><name>preferredName</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>local</name> <operator>=</operator> <name>local</name> <operator>+</operator> <literal type="string">": "</literal> <operator>+</operator> <call><name>quote</name><argument_list>(<argument><expr><call><name><name>preferredName</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<comment type="line">// use MID as fall-back</comment>
+				<expr_stmt><expr><name>local</name> <operator>=</operator> <name>local</name> <operator>+</operator> <literal type="string">": "</literal> <operator>+</operator> <call><name>quote</name><argument_list>(<argument><expr><call><name><name>c</name><operator>.</operator><name>getPID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>local</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

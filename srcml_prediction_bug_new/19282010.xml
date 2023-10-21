@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37440029.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getUniquePeptideCount</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>RunesPersistenceException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name>checkPersistenceBrokerStatus</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>uniquePeptideCount</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>controller</name><operator>.</operator><name>reportQueryPeptideBean</name><operator>.</operator><name>class</name></name><argument_list>()</argument_list></call></expr></init></decl>, <decl><type ref="prev"/><name>null</name></decl>, <decl><type ref="prev"/><name>newString</name><init>=<expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <while>while <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>uniquePeptideCount</name><operator>++</operator></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><name>uniquePeptideCount</name></expr>;</return>
+
+    </block_content>}</block></function>
+</unit>

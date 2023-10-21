@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426981.java">    <function><type><specifier>private</specifier> <name>SWGSoapStatusResponse</name></type> <name>sendNew</name><parameter_list>(<parameter><decl><type><name>Wrapper</name></type> <name>wrapper</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>SWGMutableResource</name></type> <name>mr</name> <init>= <expr><name><name>wrapper</name><operator>.</operator><name>mutable</name></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>SWGSoapStatusResponse</name></type> <name>resp</name> <init>= <expr><call><name><name>SWGResourceManager</name><operator>.</operator><name>sendNew</name></name><argument_list>(<argument><expr><name>mr</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>resp</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>resp</name><operator>.</operator><name>isFaultless</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>mr</name><operator>.</operator><name>whatever</name></name> <operator>=</operator> <literal type="string">"OK new"</literal></expr> 
+            <call><name>updateNewList</name><argument_list>(<argument><expr><name>mr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>resp</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

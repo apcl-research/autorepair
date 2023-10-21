@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31012996.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>generateAll</name><parameter_list>(<parameter><decl><type><name>Game</name></type> <name>game</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name><init>=<expr><literal type="number">1</literal></expr></init></decl>;</init><condition><expr><name>i</name><operator>&lt;=</operator><name>engines</name></expr>;</condition><incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+      <decl_stmt><decl><type><name>Engine</name></type> <name>engine</name><init>=<expr><operator>new</operator> <call><name>Engine</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <try>try <block>{<block_content>
+	<expr_stmt><expr><call><name><name>engine</name><operator>.</operator><name>readFrom</name></name><argument_list>(<argument><expr><name>source</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<expr_stmt><expr><name><name>game</name><operator>.</operator><name>engine</name><index>[<expr><name>i</name></expr>]</index></name><operator>=</operator><name>engine</name></expr>;</expr_stmt> <comment type="line">// hack...</comment>
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><call><name>crash</name><argument_list>(<argument><expr><literal type="number">11</literal></expr></argument>, <argument><expr><literal type="string">"Error while reading engspec.dat: "</literal><operator>+</operator><name>ioe</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></for>
+   
+</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14501071.java">	<function><type><specifier>public</specifier> <name>CertificateSigningRequestType</name></type> <name>toRequestType</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>CertificateSigningRequestType</name></type> <name>requestType</name> <init>= <expr><call><name>getObjectFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createCertificateSigningRequestType</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>fillInRequestType</name></name><argument_list>(<argument><expr><name>requestType</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>requestType</name><operator>.</operator><name>setCertificateType</name></name><argument_list>(<argument><expr><name>certificateType</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>requestType</name><operator>.</operator><name>setCSR</name></name><argument_list>(<argument><expr><name>csr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>requestType</name><operator>.</operator><name>setDistinguishedName</name></name><argument_list>(<argument><expr><name>distinguishedName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>requestType</name><operator>.</operator><name>setValidityPeriodMonths</name></name><argument_list>(<argument><expr><call><name><name>BigInteger</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>validityPeriodMonths</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<return>return <expr><name>requestType</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

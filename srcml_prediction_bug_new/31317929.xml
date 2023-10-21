@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50534096.java">	<function><type><specifier>public</specifier> <name>Line</name></type> <name>findLine</name><parameter_list>(<parameter><decl><type><name>NetworkID</name></type> <name>lineID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<assert>assert<expr><operator>(</operator><name>locked</name><operator>)</operator> <operator>:</operator> <literal type="string">"attempt made to modify model when not locked"</literal></expr>;</assert>
+
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"request to find line with id "</literal> <operator>+</operator> <name>lineID</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>lineMap</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>lineID</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"line found"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><operator>(</operator><name>Line</name><operator>)</operator> <call><name><name>lineMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>lineID</name></expr></argument>)</argument_list></call></expr>;</return>
+		  <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"line does not exist"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16679996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeEdge</name><parameter_list>(<parameter><decl><type><name>Edge</name></type> <name>edge</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>edges</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>edge</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>edge</name><operator>.</operator><name>isDelegation</name></name><argument_list>( )</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>edge</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeDelegatee</name><argument_list>(<argument><expr><call><name><name>edge</name><operator>.</operator><name>getTarget</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>edge</name><operator>.</operator><name>getTarget</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeOrigin</name><argument_list>(<argument><expr><call><name><name>edge</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>edge</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeChild</name><argument_list>(<argument><expr><call><name><name>edge</name><operator>.</operator><name>getTarget</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>edge</name><operator>.</operator><name>getTarget</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeParent</name><argument_list>(<argument><expr><call><name><name>edge</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

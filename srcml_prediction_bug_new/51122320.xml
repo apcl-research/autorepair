@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/262699.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>getFieldValue</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>ResultSetVector</name></type> <name>rsv</name> <init>= <expr><call><name>getParentForm</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getResultSetVector</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>res</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><call><name>getField</name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>rsv</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>s</name> <init>= <expr><call><name><name>rsv</name><operator>.</operator><name>getCurrentRow</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<if_stmt><if>if <condition>(<expr><name>s</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>res</name> <operator>=</operator> <call><name><name>rsv</name><operator>.</operator><name>getCurrentRow</name></name><argument_list>()</argument_list></call><index>[<expr><call><name>getField</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getId</name><argument_list>()</argument_list></call></expr>]</index> 
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>res</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

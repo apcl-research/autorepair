@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12649983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setSeparationCount</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>i</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>validateSeparationCount</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>currentSeparationCount</name> <init>= <expr><call><name>getSeparationCount</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>i</name> <operator>&gt;</operator> <name>currentSeparationCount</name></expr>)</condition> <block>{<block_content>
+            <comment type="line">// proportion count too small, enlarge it to fit</comment>
+            <expr_stmt><expr><call><name>shrinkSeparationCount</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>i</name> <operator>&lt;</operator> <name>currentSeparationCount</name></expr>)</condition> <block>{<block_content>
+            <comment type="line">// proportion count too large, shrink it to fit</comment>
+            <expr_stmt><expr><call><name>shrinkSeparationCount</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31994983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setTerminal</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>terminalName</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws>  
+
+    <block>{<block_content><comment type="line">//set terminal to the terminal manager</comment>
+    <expr_stmt><expr><name>m_Terminal</name> <operator>=</operator> <call><name><name>TerminalManager</name><operator>.</operator><name>getReference</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTerminal</name><argument_list>(<argument><expr><name>terminalName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="line">//Terminal is set we init it....</comment>
+    <expr_stmt><expr><call><name>initTerminal</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <comment type="line">//debug message</comment>
+    <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Set terminal to "</literal> <operator>+</operator> <call><name><name>m_Terminal</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function><comment type="line">//setTerminal</comment>
+</unit>

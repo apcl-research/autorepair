@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19494815.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeComposedMachineDependencies</name><parameter_list>(<parameter><decl><type><name>ModelComposedMachine</name></type> <name>composedMachine</name></decl></parameter>)</parameter_list><block>{<block_content>
+<comment type="line">//		for(ModelContext ctx : composMachine.getSeesContexts()) {</comment>
+<comment type="line">//			ctx.removeSeenByMachine(machine);</comment>
+<comment type="line">//		}</comment>
+<comment type="line">//		for(ModelMachine mg : composMachine.getRefinesMachines()  {</comment>
+<comment type="line">//			mg.removeRefinedByMachine(machine);</comment>
+<comment type="line">//		}</comment>
+<comment type="line">//		for(ModelMachine mg : composMachine.getIncludeMachines()) {</comment>
+<comment type="line">//			mg.removeRefinedByMachine(machine);</comment>
+<comment type="line">//		}</comment>
+	</block_content>}</block></function>
+</unit>

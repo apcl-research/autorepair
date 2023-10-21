@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27768963.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>write</name><parameter_list>(<parameter><decl><type><name>ByteBuffer</name></type> <name>buf</name></decl></parameter>)</parameter_list> 
+    <throws>throws <argument><expr><name>IOException</name></expr></argument></throws><block>{<block_content>  
+    <while>while<condition>(<expr><call><name><name>buf</name><operator>.</operator><name>hasRemaining</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+      <if_stmt><if>if<condition>(<expr><name>_arrayPos</name> <operator>&gt;=</operator> <name>_arrayCount</name></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><call><name>increase</name><argument_list>()</argument_list></call></expr>;</expr_stmt> 
+      </block_content>}</block></if></if_stmt>      
+      <decl_stmt><decl><type><name>int</name></type> <name>len</name> <init>= <expr><call><name><name>buf</name><operator>.</operator><name>remaining</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>int</name></type> <name>put</name> <init>= <expr><name><name>_arrays</name><index>[<expr><name>_arrayPos</name></expr>]</index></name><operator>.</operator><call><name>put</name><argument_list>(<argument><expr><name>buf</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if<condition>(<expr><name>put</name> <operator>&lt;</operator> <name>len</name></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><name>_arrayPos</name><operator>++</operator></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+      <expr_stmt><expr><name>put</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>      
+    </block_content>}</block></while>    
+  </block_content>}</block></function>  
+</unit>

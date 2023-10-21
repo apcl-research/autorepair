@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25010583.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>attrFieldToString</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>strResult</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+
+		<for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><call><name>getHeight</name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&gt;=</operator> <call><name><name>Math</name><operator>.</operator><name>max</name></name><argument_list>(<argument><expr><operator>-</operator><literal type="number">1</literal></expr></argument>, <argument><expr><call><name>getHighestBlockY</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>--</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><name>strResult</name> <operator>+=</operator> <call><name>attrRowToString</name><argument_list>(<argument><expr><call><name>getRow</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<while>while <condition>(<expr><call><name><name>strResult</name><operator>.</operator><name>endsWith</name></name><argument_list>(<argument><expr><literal type="string">"0/0;"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>strResult</name> <operator>=</operator> <call><name><name>strResult</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><call><name><name>strResult</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">4</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+
+		<return>return <expr><name>strResult</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

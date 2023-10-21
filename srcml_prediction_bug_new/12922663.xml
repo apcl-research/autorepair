@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26299983.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>undoLastTurn</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>turn</name> <init>= <expr><call><name>getCurrentTurn</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>scoresVector</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>DartScore</name></type> <name>dartScore</name> <init>= <expr><operator>(</operator><name>DartScore</name><operator>)</operator> <call><name><name>scoresVector</name><operator>.</operator><name>elementAt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>dartScore</name><operator>.</operator><name>getTurn</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>turn</name></expr>  )</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>scoresVector</name><operator>.</operator><name>removeElement</name></name><argument_list>(<argument><expr><name>dartScore</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name>i</name><operator>--</operator></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+
+        <expr_stmt><expr><call><name>previousPlayer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><name>turn</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/585896.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getOpmlFromNode</name><parameter_list>( <parameter><decl><type><name>DefaultMutableTreeNode</name></type> <name>selection</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>StringBuffer</name></type> <name>ret</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>( <expr><call><name><name>selection</name><operator>.</operator><name>getUserObject</name></name><argument_list>()</argument_list></call> <operator>instanceof</operator> <name>OTag</name></expr> )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>OTag</name></type> <name>tag</name> <init>= <expr><operator>(</operator><name>OTag</name><operator>)</operator> <call><name><name>selection</name><operator>.</operator><name>getUserObject</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>title</name> <init>= <expr><call><name><name>tag</name><operator>.</operator><name>getAttribute</name></name><argument_list>( <argument><expr><literal type="string">"text"</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><call><name>getOpmlDeclaration</name><argument_list>( <argument><expr><name>title</name></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><call><name>writeTraverse</name><argument_list>( <argument><expr><name>selection</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call> 
+			<operator>.</operator><call><name>append</name><argument_list>( <argument><expr><literal type="string">"\t&lt;/body&gt;\n&lt;/opml&gt;"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><call><name><name>ret</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

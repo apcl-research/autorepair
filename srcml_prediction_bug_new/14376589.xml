@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18309983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>createFieldEditors</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>FileSearchConfigFiledEditor</name></type> <name>fileSearchConfigFiledEditor</name> <init>= <expr><operator>new</operator> <call><name>FileSearchConfigFiledEditor</name><argument_list>(<argument><expr><name><name>PreferenceConstants</name><operator>.</operator><name>FILE_SEARCH_CONFIG</name></name></expr></argument>, <argument><expr><literal type="string">"&amp;File search configuration:"</literal></expr></argument>, <argument><expr><call><name>getFieldEditorParent</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>fileSearchConfigFiledEditor</name><operator>.</operator><name>setValidateStrategy</name></name><argument_list>(<argument><expr><name><name>FileSearchConfigFiledEditor</name><operator>.</operator><name>VALIDATE_ON_KEY_STROKE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>addField</name><argument_list>(
+			<argument><expr><name>fileSearchConfigFiledEditor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>addField</name> 
+				<argument_list>(<argument><expr><operator>new</operator> <call><name>BooleanFieldEditor</name><argument_list>(
+					<argument><expr><name><name>PreferenceConstants</name><operator>.</operator><name>AUTOMATIC_UPDATE</name></name></expr></argument>,
+					<argument><expr><literal type="string">"&amp;Automatic updates"</literal></expr></argument>,
+					<argument><expr><call><name>getFieldEditorParent</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	</block_content>}</block></function>
+</unit>

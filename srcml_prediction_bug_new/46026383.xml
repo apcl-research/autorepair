@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16649983.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isPartialLockOut</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>x</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>rt</name></decl></parameter>, <parameter><decl><type><name>Field</name></type> <name>fld</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// Big ä¸­å°ç¨å¦ç</comment>
+		<if_stmt><if>if<condition>(<expr><name>big</name> <operator>==</operator> <literal type="boolean">true</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><call><name>isPartialLockOutBig</name><argument_list>(<argument><expr><name>x</name></expr></argument>, <argument><expr><name>y</name></expr></argument>, <argument><expr><name>rt</name></expr></argument>, <argument><expr><name>fld</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+
+		<decl_stmt><decl><type><name>boolean</name></type> <name>placed</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+
+		<for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name>getMaxBlock</name><argument_list>()</argument_list></call></expr>;</condition>  <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>int</name></type> <name>y2</name> <init>= <expr><name>y</name> <operator>+</operator> <name><name>dataY</name><index>[<expr><name>rt</name></expr>]</index><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><name>y2</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>placed</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></for>
+
+		<return>return <expr><name>placed</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

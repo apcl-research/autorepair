@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16679996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>getTransactionTypesFromDB</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><call><name><name>allTypes</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>List</name></type> <name>releevals</name> <init>= <expr><call><name><name>DB</name><operator>.</operator><name>getEntityManager</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>createQuery</name><argument_list>(<argument><expr><literal type="string">"SELECT t FROM transactionType t"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getResultList</name><argument_list>( ;</operator> <comment type="line">//$NON-NLS-1$</comment>
+		<name>int</name> <name>currentTransaction</name> <operator>=</operator> <literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>releevals</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>transactionType</name></type> <name>currentlyRetrieved</name> <init>=  <expr><operator>(</operator><name>transactionType</name><operator>)</operator><call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>getInstanceByTypeIndex</name><argument_list>(<argument><expr><name>currentTransaction</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>setType</name><argument_list>(<argument><expr><name>currentlyRetrieved</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>allTypes</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>currentlyRetrieved</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>currentTransaction</name><operator>++</operator></expr>;</expr_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

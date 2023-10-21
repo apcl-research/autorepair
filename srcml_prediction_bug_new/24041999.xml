@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14289996.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>visible</name><parameter_list>(<parameter><decl><type><name>Rectangle</name></type> <name>area</name></decl></parameter>, <parameter><decl><type><name>Bounds</name></type> <name>bounds</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>bounds</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call> <operator>+</operator> <call><name><name>bounds</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call> <operator>&lt;=</operator> <name><name>area</name><operator>.</operator><name>x</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>bounds</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call> <operator>+</operator> <call><name><name>bounds</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content> <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>bounds</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call> <operator>&gt;=</operator> <name><name>area</name><operator>.</operator><name>x</name></name> <operator>+</operator> <name><name>area</name><operator>.</operator><name>width</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>bounds</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call> <operator>&gt;=</operator> <name><name>area</name><operator>.</operator><name>y</name></name> <operator>+</operator> <name><name>area</name><operator>.</operator><name>height</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25292783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setViewpoint</name> <parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>getViewingPlatform</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setNominalViewingTransform</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>TransformGroup</name></type> <name>tg_view</name> <init>= <expr><call><name>getViewingPlatform</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getViewPlatformTransform</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Transform3D</name></type> <name>viewpoint</name> <init>= <expr><operator>new</operator> <call><name>Transform3D</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>translation</name><operator>.</operator><name>setTranslation</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Vector3d</name><argument_list>(<argument><expr><literal type="number">0d</literal></expr></argument>,<argument><expr><literal type="number">0d</literal></expr></argument>,<argument><expr><operator>+</operator><literal type="number">2d</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    	<expr_stmt><expr><call><name><name>tg_view</name><operator>.</operator><name>getTransformDeliveryDate</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    	<expr_stmt><expr><call><name><name>viewpoint</name><operator>.</operator><name>mul</name></name><argument_list>(<argument><expr><name>translation</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    	<expr_stmt><expr><call><name><name>tg_view</name><operator>.</operator><name>setTransform</name></name><argument_list>(<argument><expr><name>viewpoint</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

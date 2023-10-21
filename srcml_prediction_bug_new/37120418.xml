@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14262783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>apply</name><parameter_list>(<parameter><decl><type><name>Vector</name></type> <name>args</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>CommandLineFormatException</name></expr></argument></throws> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>String</name></type> <name>value</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><call><name><name>args</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            
+            <decl_stmt><decl><type><name>int</name></type> <name>n</name>  <init>= <expr><call><name><name>this</name><operator>.</operator><name>rules</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>n</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+                <decl_stmt><decl><type><name>ParserRule</name></type> <name>rule</name> <init>= <expr><operator>(</operator><name>ParserRule</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>rules</name><operator>.</operator><name>elementAt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name><name>rule</name><operator>.</operator><name>apply</name></name><argument_list>(<argument><expr><name>args</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+             
+
+        </block_content>}</block></for>
+        
+        <return>return <expr><name>value</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

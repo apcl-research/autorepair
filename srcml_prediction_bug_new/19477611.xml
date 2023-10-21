@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19508981.java">	<function><type><specifier>public</specifier> <name>IMachineRoot</name></type> <name>getIncludedMachine</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>RodinDBException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>String</name></type> <name>bareName</name> <init>= <expr><call><name>getIncludedMachineName</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>IRodinProject</name></type> <name>includedProject</name> <init>= <expr><call><name>getIncludedProject</name><argument_list>()</argument_list></call></expr></init></decl> 
+		<if_stmt><if>if<condition>(<expr><literal type="null">null</literal><operator>==</operator><name>includedProject</name></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>includedProject</name> <operator>=</operator> <call><name>getRodinProject</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>String</name></type> <name>scName</name> <init>= <expr><call><name><name>EventBPlugin</name><operator>.</operator><name>getMachineFileName</name></name><argument_list>(<argument><expr><name>bareName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<return>return <expr><operator>(</operator><name>IMachineRoot</name><operator>)</operator><call><name><name>includedProject</name><operator>.</operator><name>getRodinFile</name></name><argument_list>(<argument><expr><name>scName</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getRoot</name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

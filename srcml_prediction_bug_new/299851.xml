@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23772983.java">	<function><type><specifier>public</specifier> <name>RelationshipModel</name></type> <name>getRelationshipModel</name><parameter_list>(<parameter><decl><type><name>IType</name></type> <name>source</name></decl></parameter>, <parameter><decl><type><name>IType</name></type> <name>target</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Map</name><argument_list type="generic">&lt;<argument><name>IType</name></argument>, <argument><name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>RelationshipModel</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name></type> <name>targetMap</name> <init>=
+			<expr><call><name><name>_models</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>source</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>targetMap</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr> 
+		</block_content>}</block></if></if_stmt>
+		
+		<comment type="line">// find the class map</comment>
+		<decl_stmt><decl><type><name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>RelationshipModel</name></argument>&gt;</argument_list></name></type> <name>classMap</name> <init>= <expr><call><name><name>targetMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>target</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>classMap</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<comment type="line">// find the model</comment>
+		<return>return <expr><call><name><name>classMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

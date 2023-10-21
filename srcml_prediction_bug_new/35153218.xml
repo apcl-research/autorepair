@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41004248.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>readLSD</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<comment type="line">// logical screen size</comment>
+		<expr_stmt><expr><name>width</name> <operator>=</operator> <call><name>readShort</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>height</name> <operator>=</operator> <call><name>readShort</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// packed fields</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>packed</name> <init>= <expr><call><name>read</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>gctFlag</name> <operator>=</operator> <operator>(</operator><name>packed</name> <operator>&amp;</operator> <literal type="number">0x80</literal><operator>)</operator> <operator>!=</operator> <literal type="number">0</literal></expr>;</expr_stmt> <comment type="line">// 1   : global color table flag</comment>
+		<comment type="line">// 2-4 : color resolution</comment>
+		<comment type="line">// 5   : gct sort flag</comment>
+		<expr_stmt><expr><name>gctSize</name> <operator>=</operator> <literal type="number">2</literal> <operator>&lt;&lt;</operator> <operator>(</operator><name>packed</name> <operator>&amp;</operator> <literal type="number">0x07</literal><operator>)</operator></expr>;</expr_stmt> <comment type="line">// 6-8 : gct size</comment>
+
+		<expr_stmt><expr><name>bgIndex</name> <operator>=</operator> <call><name>read</name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// background color index</comment>
+		<expr_stmt><expr><name>pixelAspect</name> <operator>=</operator> <call><name>read</name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// pixel aspect ratio</comment>
+ 
+</block_content>}</block></function>
+</unit>

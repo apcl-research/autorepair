@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50091396.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>test_bug3138566_coumarin_aromaticity</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>SmilesParser</name></type> <name>p</name> <init>= <expr><operator>new</operator> <call><name>SmilesParser</name><argument_list>(<argument><expr><call><name><name>SilentChemObjectBuilder</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>IMolecule</name></type> <name>m</name> <init>= <expr><call><name><name>p</name><operator>.</operator><name>parseSmiles</name></name><argument_list>(<argument><expr><literal type="string">"O=C1\\C=C/c2ccccc2O1"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>MolAnalyser</name><operator>.</operator><name>analyse</name></name><argument_list>(<argument><expr><name>m</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>aromatic</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>IAtom</name></type> <name>a</name> <range>: <expr><call><name><name>m</name><operator>.</operator><name>atoms</name></name><argument_list>( )</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><name>aromatic</name> <operator>+=</operator> <ternary><condition><expr><call><name><name>a</name><operator>.</operator><name>getFlag</name></name><argument_list>(<argument><expr><name><name>CDKConstants</name><operator>.</operator><name>ISAROMATIC</name></name></expr></argument>)</argument_list></call></expr>?</condition><then><expr><literal type="number">1</literal></expr></then><else>:<expr><literal type="number">0</literal></expr></else></ternary></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<comment type="line">//OK, the arbitoring is not sufficiently sufficiently </comment>
+		<expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>assertEquals</name></name><argument_list>(<argument><expr><literal type="number">6</literal></expr></argument>,<argument><expr><name>aromatic</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	</block_content>}</block></function>
+</unit>

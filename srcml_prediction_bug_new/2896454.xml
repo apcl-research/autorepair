@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/5692783.java">  <function><type><specifier>private</specifier> <name>Action</name></type> <name>getAction</name><parameter_list>(<parameter><decl><type><name>StateSet</name></type> <name>set</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    <expr_stmt><expr><call><name><name>states</name><operator>.</operator><name>reset</name></name><argument_list>(<argument><expr><name>set</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    
+    <decl_stmt><decl><type><name>Action</name></type> <name>maxAction</name> <init>= <expr><literal type="null">null</literal></expr></init></decl> 
+
+    <comment type="line">// Out.debug("Determining action of : "+set);</comment>
+
+    <while>while <condition>( <expr><call><name><name>states</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr> )</condition> <block>{<block_content>
+
+      <decl_stmt><decl><type><name>Action</name></type> <name>currentAction</name> <init>= <expr><name><name>action</name><index>[ <expr><call><name><name>states</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr> ]</index></name></expr></init></decl>;</decl_stmt>
+      
+      <if_stmt><if>if <condition>( <expr><name>currentAction</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+	      <if_stmt><if>if <condition>(<expr><name>maxAction</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> 
+	        <expr_stmt><expr><name>maxAction</name> <operator>=</operator> <name>currentAction</name></expr>;</expr_stmt></block_content></block></if>
+	      <else>else<block type="pseudo"><block_content>
+	        <expr_stmt><expr><name>maxAction</name> <operator>=</operator> <call><name><name>maxAction</name><operator>.</operator><name>getHigherPriority</name></name><argument_list>(<argument><expr><name>currentAction</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+      </block_content>}</block></if></if_stmt>
+
+    </block_content>}</block></while>
+
+    <return>return <expr><name>maxAction</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

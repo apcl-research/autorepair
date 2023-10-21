@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18579996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testSetValueAtObjectint</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>newVal</name> <init>= <expr><literal type="string">"12"</literal></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>poFileRep</name><operator>.</operator><name>setValueAt</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>newVal</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><call><name><name>poFileRep</name><operator>.</operator><name>getValueAt</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">2</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>toString</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">//dtar020FileRep.setValueAt(tmp, 0, 2);</comment>
+
+        <expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><literal type="string">"setValue "</literal> <operator>+</operator> <name>newVal</name> <operator>+</operator> <literal type="string">" &lt;&gt; "</literal> <operator>+</operator> <name>s</name></expr></argument>, <argument><expr><name>newVal</name></expr></argument>, <argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

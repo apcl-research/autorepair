@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31494529.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>layoutOrderFrame</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>layout</name> <operator>=</operator> <operator>new</operator> <call><name>BorderLayout</name><argument_list>()</argument_list></call></expr> 
+        <operator>=</operator> <call><name><name>CardLayout</name><operator>.</operator><name>cardLayout</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setLayout</name><argument_list>(<argument><expr><name>layout</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>cardPanel</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name>orderFramePanel</name></expr></argument>,  <argument><expr><name>MAIN_PANEL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>cardPanel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>exceptionPanel</name></expr></argument>, <argument><expr><name>EXCEPTION_PANEL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setCenterPanel</name><argument_list>(<argument><expr><name>cardPanel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

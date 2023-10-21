@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19058981.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>doBlockUpdateForLine</name><parameter_list>(<parameter><decl><type><name>Line</name></type> <name>line</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <decl_stmt><decl><type><name>Document</name></type> <name>document</name> <init>= <expr><call><name><name>session</name><operator>.</operator><name>getDocumentModel</name></name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>getAccessLock</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    
+	    <decl_stmt><decl><type><name>Block</name></type> <name>block</name> <init>= <expr><call><name><name>document</name><operator>.</operator><name>findBlock</name></name><argument_list>(<argument><expr><call><name><name>line</name><operator>.</operator><name>getParentBlockID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>JTextArea</name></type> <name>blockView</name> <init>= <expr><operator>(</operator><name>JTextArea</name><operator>)</operator><call><name><name>blockIDToViewMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>line</name><operator>.</operator><name>getParentBlockID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	    
+	    <if_stmt><if>if<condition>(<expr><name>blockView</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	        <expr_stmt><expr><call><name><name>SwingUtilities</name><operator>.</operator><name>invokeLater</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>VisualAttributeUpdater</name><argument_list>(<argument><expr><name>block</name></expr></argument>, <argument><expr><name>blockView</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></if></if_stmt>
+	    
+	    <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>releaseAccessLock</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

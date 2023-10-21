@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/20772983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>enqueue</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>item</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>priority</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><operator>!</operator><call><name><name>inQueue</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>item</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>q</name><operator>.</operator><name>enqueue</name></name><argument_list>(<argument><expr><name>item</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>inQueue</name><operator>.</operator><name>set</name></name><argument_list>(<argument><expr><name>item</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>priorities</name><index>[<expr><name>item</name></expr>]</index></name> <operator>=</operator> <name>priority</name></expr>;</expr_stmt>
+        </block_content>}</block></if><else>else<block>{<block_content>
+            <expr_stmt><expr><name><name>priorities</name><index>[<expr><name>item</name></expr>]</index></name> <operator>=</operator> <ternary><condition><expr><operator>(</operator><name>priority</name> <operator>&gt;</operator> <name><name>priorities</name><index>[<expr><name>item</name></expr>]</index></name><operator>)</operator></expr> ?</condition><then> <expr><name>priority</name></expr> </then><else>: <expr><name><name>priorities</name><index>[<expr><name>item</name></expr>]</index></name></expr></else></ternary></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

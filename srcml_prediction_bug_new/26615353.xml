@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26292783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>defineButton</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>Name</name></decl></parameter>,<parameter><decl><type><name>String</name></type> <name>Tooltip</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>AIToolbarButton</name></type> <name>Button</name></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>Buttons</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>Name</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>Button</name> <operator>=</operator> <operator>(</operator><name>AIToolbarButton</name><operator>)</operator> <call><name><name>Buttons</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>Name</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>Button</name> <operator>=</operator> <operator>new</operator> <call><name>AIToolbarButton</name><argument_list>(<argument><expr><name>Name</name></expr></argument>,<argument><expr><name>Tooltip</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name>add</name><argument_list>(<argument><expr><name>Button</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+
+        <expr_stmt><expr><call><name><name>Button</name><operator>.</operator><name>setToolTipText</name></name><argument_list>(<argument><expr><name>Tooltip</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>Buttons</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>Name</name></expr></argument>,<argument><expr><name>Button</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+</block_content>}</block></function>
+</unit>

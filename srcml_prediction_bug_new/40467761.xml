@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18095269.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setFont</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>fontname</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>fontsize</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>resize</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>tw</name> <init>= <expr><name>textWidth</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>fs</name> <init>= <expr><operator>(</operator><name>int</name><operator>)</operator> <call><name><name>localFont</name><operator>.</operator><name>getFont</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSize</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>localFont</name> <operator>=</operator> <call><name><name>GFont</name><operator>.</operator><name>getFont</name></name><argument_list>(<argument><expr><name>winApp</name></expr></argument>, <argument><expr><name>fontname</name></expr></argument>, <argument><expr><name>fontsize</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>(<expr><name>resize</name></expr>)</condition><block>{<block_content>
+			<if_stmt><if>if<condition>(<expr><name>fontsize</name> <operator>&gt;</operator> <name>fs</name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name>height</name> <operator>+=</operator> <operator>(</operator><name>fontsize</name> <operator>-</operator> <name>fs</name><operator>)</operator></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<expr_stmt><expr><call><name>setText</name><argument_list>(<argument><expr><name>text</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if<condition>(<expr><name>textWidth</name> <operator>&gt;</operator> <name>tw</name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name>width</name> <operator>+=</operator> <operator>(</operator><name>textWidth</name> <operator>-</operator> <name>tw</name><operator>)</operator></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name>calcAlignX</name><argument_list>( ;</argument_list></call></expr>
+		<expr><call><name>calcAlignY</name><argument_list>()</argument_list></call></expr>;
+	}</block></expr></expr_stmt>
+</unit>

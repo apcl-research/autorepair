@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34640029.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>generateRecipeMetadata</name> <parameter_list>(<parameter><decl><type><name>Recipe</name></type> <name>re</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<expr_stmt><expr><call><name><name>re</name><operator>.</operator><name>setCreateDate</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Date</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>re</name><operator>.</operator><name>setCreateBy</name></name><argument_list>(<argument><expr><operator>(</operator><name>Dietician</name><operator>)</operator> <call><name><name>m_UserHandler</name><operator>.</operator><name>getUser</name></name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>re</name><operator>.</operator><name>setNutrition</name></name><argument_list>(<argument><expr><call><name><name>re</name><operator>.</operator><name>getNutrition</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<for>for <control>(<init><decl><type><name>IngredientAmount</name></type> <name>f</name> <range>: <expr><call><name><name>re</name><operator>.</operator><name>getIngredientes</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>f</name><operator>.</operator><name>getFood</name></name><argument_list>()</argument_list></call> <operator>instanceof</operator> <name>Recipe</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name>generateRecipeMetadata</name><argument_list>(<argument><expr><operator>(</operator><name>Recipe</name><operator>)</operator> <call><name><name>f</name><operator>.</operator><name>getFood</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18802783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>addDiagram</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Diagram2D</name></type> <name>diagram</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>diagrams</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>diagram</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>diagram</name> <operator>instanceof</operator> <name>WriteableDiagram2D</name></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>WriteableDiagram2D</name></type> <name>wd2d</name> <init>= <expr><operator>(</operator><name>WriteableDiagram2D</name><operator>)</operator> <name>diagram</name></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>wd2d</name><operator>.</operator><name>setEventBroker</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>eventBroker</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><call><name>markDataDirty</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>eventBroker</name><operator>.</operator><name>processEvent</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>DiagramListChangeEvent</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

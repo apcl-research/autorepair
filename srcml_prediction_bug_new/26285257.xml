@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12649996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>copy</name><parameter_list>(<parameter><decl><type><name>LinearPosition</name></type> <name>otherPosition</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>alignment</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>alignment</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>maximumSize</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>maximumSize</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>minimumSize</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>minimumSize</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>preferredSize</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>preferredSize</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>resultingSize</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>resultingSize</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>resultingStartPixel</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>resultingStartPixel</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>sizePolicy</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>sizePolicy</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>startSeparation</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>startSeparation</name></name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>stopSeparation</name> <operator>=</operator> <name><name>otherPosition</name><operator>.</operator><name>stopSeparation</name></name></expr>;</expr_stmt></block_content></block></function>
+</unit>

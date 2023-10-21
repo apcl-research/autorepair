@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44821705.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>checkSizeError</name><parameter_list>( <parameter><decl><type><name>FieldDetail</name></type> <name>fld</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>value</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>msg</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name>setFldValue</name><argument_list>(<argument><expr><name>fld</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"::&gt; "</literal> <operator>+</operator> <name>msg</name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <name>value</name> <operator>+</operator> <literal type="string">" :: "</literal> <operator>+</operator> <call><name>getFldValue</name><argument_list>(<argument><expr><name>fld</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <throw>throw <expr><operator>new</operator> <call><name>AssertionError</name><argument_list>(<argument><expr><literal type="string">"Size Error: "</literal> <operator>+</operator> <name>msg</name> <operator>+</operator> <literal type="string">" "</literal> <operator>+</operator> <name>value</name> <operator>+</operator> <literal type="string">" :: "</literal> <operator>+</operator> <call><name>getFldValue</name><argument_list>(<argument><expr><name>fld</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>RecordException</name></type> <name>e</name></decl></parameter>)</parameter_list>  
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14991596.java">	<function><type><specifier>public</specifier> <name>ReturnAny</name></type> <name>deregister</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>WSRPException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>ReturnAny</name></type> <name>any</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<try>try <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>registrationContext</name> <operator>!=</operator> <literal type="null">null</literal>
+					<operator>&amp;&amp;</operator> <name><name>this</name><operator>.</operator><name>registrationInterface</name></name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+
+				<expr_stmt><expr><name>any</name> <operator>=</operator> <call><name><name>registrationInterface</name>
+						<operator>.</operator><name>deregister</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>registrationContext</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name>registrationContext</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+				<expr_stmt><expr><name>registrationRequired</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+
+				<expr_stmt><expr><call><name>stateChanged</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+			</block_content>}</block></if>
+			<else>else <block>{<block_content>
+				<comment type="line">// TODO: Either we aren't registered at the producer or </comment>
+				<comment type="line">//      the producer does not support in-band registration</comment>
+			</block_content>}</block></else></if_stmt>
+
+		</block_content>}</block>
+		<catch>catch <parameter_list>(<parameter><decl><type><name><name>java</name><operator>.</operator><name>rmi</name><operator>.</operator><name>RemoteException</name></name></type> <name>wsrpFault</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+			<expr_stmt><expr><call><name><name>WSRPXHelper</name><operator>.</operator><name>handleWSRPFault</name></name><argument_list>(<argument><expr><name>logger</name></expr></argument>, <argument><expr><name>wsrpFault</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		 
+
+			<return>return <expr><name>any</name></expr>;</return>
+	</block_content>}</block></catch></try>
+</unit>

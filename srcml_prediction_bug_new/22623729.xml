@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623963.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>getNCSCollectionNativeFormat</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<try>try  
+			<init><decl><type><name>Element</name></type> <name>mdpColconfig</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getNCSCollectionConfig</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>mdpColconfig</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+				<throw>throw <expr><operator>new</operator> <call><name>Exception</name><argument_list>(<argument><expr><literal type="string">"WARNING - mdpColconfig not found for "</literal> <operator>+</operator> <name>collectionMetadataProvider</name></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+			<return>return <expr><call><name><name>mdpColconfig</name><operator>.</operator><name>selectSingleNode</name></name><argument_list>(<argument><expr><literal type="string">"xmlFormat"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getText</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>prtlnErr</name></name><argument_list>(<argument><expr><literal type="string">"getNCSCollectionNativeFormat: "</literal> <operator>+</operator> <call><name><name>t</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

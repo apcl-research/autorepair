@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45002915.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setHangarData</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>data</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>CUnit</name></type> <name>unit</name> <init>= <expr><operator>new</operator> <call><name>CUnit</name><argument_list>(<argument><expr><name>mwclient</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>unit</name><operator>.</operator><name>setData</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>hangar</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>unit</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>sortHangar</name><argument_list>()</argument_list></call></expr>;</expr_stmt><comment type="line">// sort it!</comment>
+             
+        </block_content>}</block></if> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>CampaignData</name><operator>.</operator><name>mwlog</name><operator>.</operator><name>errLog</name></name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return;</return>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

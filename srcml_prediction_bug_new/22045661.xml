@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26250895.java">    <function><type><specifier>public</specifier> <name>OObject</name></type> <name>add</name>  <parameter_list>( <parameter><decl><type><name>Sum</name></type> <name>x</name></decl></parameter> )</parameter_list><block>{<block_content>
+	<decl_stmt><decl><type><name>Sum</name></type> <name>s</name> <init>= <expr><call><name>clone</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<comment type="line">// Add complex</comment>
+	<expr_stmt><expr><name><name>s</name><operator>.</operator><name>complex</name></name> <operator>=</operator> <call><name><name>s</name><operator>.</operator><name>complex</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><name><name>x</name><operator>.</operator><name>complex</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	<decl_stmt><decl><type><name>OObject</name></type> <name>sum</name> <init>= <expr><operator>(</operator><name>OObject</name><operator>)</operator><name>s</name></expr></init></decl>;</decl_stmt>
+	<for>for<control>( <init><decl><type><name><name>java</name><operator>.</operator><name>util</name><operator>.</operator><name><name>ListIterator</name><argument_list type="generic">&lt;<argument><name>Expression</name></argument>&gt;</argument_list></name></name></type> <name>i</name> <init>= <expr><call><name><name>x</name><operator>.</operator><name>expressionList</name><operator>.</operator><name>listIterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init>
+	     <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control><block>{<block_content>
+	    <expr_stmt><expr><name>sum</name> <operator>=</operator> <call><name><name>sum</name><operator>.</operator><name>add</name></name><argument_list>( <argument><expr><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></for>
+	<return>return <expr><name>sum</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44432983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>sendMapSharingStopRequest</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>CollaborationAction</name></type> <name>action</name> <init>= <expr><call><name>createCollaborationAction</name><argument_list>(<argument><expr><name>sendToUser</name></expr></argument>,
+                    <argument><expr><name>STOP_MAP_SHARING</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>String</name></type> <name>message</name> <init>= <expr><call><name>marshal</name><argument_list>(<argument><expr><name>action</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>sendMessage</name><argument_list>(<argument><expr><name>sendToUser</name></expr></argument>, <argument><expr><name>action</name></expr></argument>)</argument_list></call> 
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>freemind</name><operator>.</operator><name>main</name><operator>.</operator><name>Resources</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>logException</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

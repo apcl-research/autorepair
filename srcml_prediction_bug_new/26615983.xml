@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26292783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setPartName</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>partname</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>partname</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>partname</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+            <return>return;</return></block_content></block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>partname</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>partname</name></name> <operator>=</operator> <name>partname</name></expr>;</expr_stmt>
+
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>oldname</name> <init>= <expr><name><name>this</name><operator>.</operator><name>partname</name></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>ProjectEvent</name></type> <name>e</name> <init>= <expr><operator>new</operator> <call><name>ProjectEvent</name><argument_list>(<argument><expr><name>this</name></expr></argument>,<argument><expr><name>partname</name></expr></argument>,<argument><expr><name><name>this</name><operator>.</operator><name>partname</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>partname</name></name> <operator>=</operator> <name>partname</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>fireProjectEvent</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+     
+</block_content>}</block></function>
+</unit>

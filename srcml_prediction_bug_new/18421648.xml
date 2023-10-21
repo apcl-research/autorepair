@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44129996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><literal type="string">"clear"</literal><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getActionCommand</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>addressSet</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>streetField</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call> 
+            <operator>.</operator><call><name>setCity</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <comment type="line">//We can't just setText on the formatted text</comment>
+            <comment type="line">//field, since its value will remain set.</comment>
+            <expr_stmt><expr><call><name><name>zipField</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>addressSet</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        <expr_stmt><expr><call><name>updateDisplays</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

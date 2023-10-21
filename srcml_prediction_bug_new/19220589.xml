@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37639996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>insert</name><parameter_list>(<parameter><decl><type><name>MutableTreeNode</name></type> <name>child</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>allowsChildren</name></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><literal type="string">"node does not allow children"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if>
+        <if type="elseif">else if <condition>(<expr><name>child</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"new child is null"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt></block_content></block></function>
+</unit>

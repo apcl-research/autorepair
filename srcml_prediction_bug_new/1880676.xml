@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26392715.java">    <function><type><specifier>protected</specifier> <name>int</name></type> <name>intValue</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>option</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type> <name>value</name> <init>= <expr><call><name><name>optionValues</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>option</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>value</name> <operator>instanceof</operator> <name>Integer</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>(</operator><name>Integer</name>  <operator>)</operator> <name>value</name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><name>value</name> <operator>instanceof</operator> <name>String</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>Integer</name><operator>.</operator><name>parseInt</name></name><argument_list>(<argument><expr><call><name><name>value</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><operator>(</operator><operator>(</operator><name>Integer</name><operator>)</operator> <call><name><name>optionValues</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>option</name></expr></argument>)</argument_list></call><operator>)</operator><operator>.</operator><call><name>intValue</name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

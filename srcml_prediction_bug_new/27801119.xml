@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>isFilterCyclic</name> <parameter_list>( <parameter><decl><type><name>Filter</name></type> <name>filter</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <if_stmt><if>if<condition>( <expr><name>customizer</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <decl_stmt><decl><type><name>FilterCustomizer</name></type> <name>ancestor</name> <init>=
+      <expr><call><name><name>customizer</name><operator>.</operator><name>getFilterCustomizerParent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <while>while<condition>( <expr><name>ancestor</name> <operator>!=</operator> <literal type="null">null</literal>   <block>{
+      <if_stmt><if>if<condition>( <expr><call><name><name>ancestor</name><operator>.</operator><name>getFilter</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>filter</name></expr> )</condition> <block>{<block_content>
+        <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+      </block_content>}</block></if></if_stmt>
+      <expr_stmt><expr><name>ancestor</name> <operator>=</operator> <call><name><name>ancestor</name><operator>.</operator><name>getFilterCustomizerParent</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></while>
+    <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// isFilterCyclic(..)</comment>
+</unit>

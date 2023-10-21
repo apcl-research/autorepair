@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41226961.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testParameterGreaterEqual</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>ServletException</name></expr></argument>,  <argument><expr><name>JspException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>GreaterEqualTag</name></type> <name>ge</name> <init>= <expr><operator>new</operator> <call><name>GreaterEqualTag</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>ge</name><operator>.</operator><name>setPageContext</name></name><argument_list>(<argument><expr><name>pageContext</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ge</name><operator>.</operator><name>setParameter</name></name><argument_list>(<argument><expr><name>PARAMETER_KEY</name></expr></argument> ;</argument_list></call></expr>
+        <expr><call><name><name>ge</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><name>LESSER_VAL</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(
+        	<argument><expr><literal type="string">"Parameter Value ("</literal> <operator>+</operator> <name>GREATER_VAL</name> <operator>+</operator> <literal type="string">") is greater than or equal to value ("</literal> <operator>+</operator> <name>LESSER_VAL</name> <operator>+</operator> <literal type="string">")"</literal></expr></argument>, 
+        	<argument><expr><call><name><name>ge</name><operator>.</operator><name>condition</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

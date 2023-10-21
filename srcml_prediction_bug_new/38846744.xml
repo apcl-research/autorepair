@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42809996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>addCommands</name><parameter_list>(<parameter><decl><type><name>PDFPage</name></type> <name>page</name></decl></parameter>, <parameter><decl><type><name>AffineTransform</name></type> <name>extra</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<synchronized>synchronized <init>(<expr><name>commands</name></expr>)</init> <block>{<block_content>
+            <expr_stmt><expr><call><name>addPush</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name>extra</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name>addXform</name><argument_list>(<argument><expr><name>extra</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <comment type="line">//addXform(page.getInitialTransform());</comment>
+            <expr_stmt><expr><call><name><name>commands</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><call><name><name>page</name><operator>.</operator><name>getCommands</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>addPop</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></synchronized>
+    
+        <comment type="line">// notify any collected images</comment>
+        <expr_stmt><expr><call><name>updateImages</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

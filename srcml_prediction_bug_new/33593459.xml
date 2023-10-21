@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17272496.java">    <function><type><specifier>public</specifier> <name>Event</name></type> <name>execute</name><parameter_list>(<parameter><decl><type><name>RequestContext</name></type> <name>requestContext</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        
+        <comment type="block">/*
+         *faces-config.xml
+         */</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>phoneNumber</name> <init>= <expr><call><name><name>requestContext</name><operator>.</operator><name>getRequestParameters</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><literal type="string">"phoneInputForm:inputPhoneId"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <comment type="block">/*
+         * Service call with the previously fetched phone number
+         */</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>exists</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>customerService</name><operator>.</operator><name>existsCustomer</name></name><argument_list>(<argument><expr><name>phoneNumber</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><operator>new</operator> <call><name>Event</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>exists</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

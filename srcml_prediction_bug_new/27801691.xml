@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/546989.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>globalBoundsChanged</name><parameter_list>(<parameter><decl><type><name>ZNodeEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>e</name><operator>.</operator><name>getNode</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>srcNode</name></expr>)</condition> <block>{<block_content>
+
+      <comment type="line">//System.err.println("Global Bounds Changed Event sufficiently...");</comment>
+	    <expr_stmt><expr><name>srcBounds</name> <operator>=</operator> <call><name><name>srcNode</name><operator>.</operator><name>getGlobalBounds</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+      <expr_stmt><expr><call><name>updateSourcePoint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <comment type="line">//srcPt.setLocation(srcBounds.getX(),srcBounds.getY());</comment>
+      <comment type="line">//setTranslation(srcPt);</comment>
+      <expr_stmt><expr><call><name>repaint</name><argument_list>()</argument_list></call></expr>;</expr_stmt>	    
+     
+  </block_content>}</block></if></if_stmt>
+
+</unit>

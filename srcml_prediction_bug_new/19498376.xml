@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testDeltaContext</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IContextRoot</name></type> <name>root</name> <init>= <expr><call><name>createContext</name><argument_list>(<argument><expr><literal type="string">"ctx"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>ISCContextRoot</name></type> <name>sc</name> <init>= <expr><call><name><name>root</name><operator>.</operator><name>getSCContextRoot</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IPORoot</name></type> <name>po</name> <init>= <expr><call><name><name>root</name><operator>.</operator><name>getPORoot</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><call><name>addCarrierSets</name><argument_list>(<argument><expr><name>root</name></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>(<argument><expr><literal type="string">"S1"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>root</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>root</name><operator>.</operator><name>getCarrierSets</name></name><argument_list>()</argument_list></call><index>[<expr><literal type="number">0</literal></expr>]</index><operator>.</operator><call><name>setComment</name><argument_list>(<argument><expr><literal type="string">"foo"</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>root</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>runBuilderNotChanged</name><argument_list>(<argument><expr><name>sc</name></expr></argument>, <argument><expr><name>po</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

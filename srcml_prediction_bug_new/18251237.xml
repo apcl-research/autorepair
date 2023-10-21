@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42282629.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>generateComponentsTable</name><parameter_list>(<parameter><decl><type><name>Composite</name></type> <name>composite</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument>, <argument><expr><name>FileNotFoundException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>componentNames</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <for>for <control>(<init><decl><type><name>Table</name></type> <name>component</name><range>: <expr><name><name>composite</name><operator>.</operator><name>componentTables</name></name></expr></range></decl></init>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>componentNames</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name>linkTo</name><argument_list>(<argument><expr><name>component</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+        <return>return <expr><call><name>generateHTMLTable</name><argument_list>(<argument><expr><literal type="string">"Components"</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><name>componentNames</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></for>
+</block_content>}</block></function>
+</unit>

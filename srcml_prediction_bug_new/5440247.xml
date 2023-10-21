@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>write</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>c</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><name>dataWasWritten</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>buffer</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><name>headersWritten</name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>writeHeaders</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            <expr_stmt><expr><call><name><name>outputStream</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>c</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>bytesWritten</name><operator>++</operator></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>bufferPos</name> <operator>&gt;=</operator> <name><name>buffer</name><operator>.</operator><name>length</name></name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>flushBuffer</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            <expr_stmt><expr><name><name>buffer</name><index>[<expr><name>bufferPos</name></expr>]</index></name> <operator>=</operator> <operator>(</operator><name>byte</name><operator>)</operator><name>c</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name>bufferPos</name><operator>++</operator></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+     
+</unit>

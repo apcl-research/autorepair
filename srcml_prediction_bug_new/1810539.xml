@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18682983.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>prepareRow</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>row</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>IndexOutOfBoundsException</name><argument_list>(
+        <argument><expr><literal type="string">"Cannot create a row with a negative index: "</literal> <operator>+</operator> <name>row</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+
+    <comment type="line">// Ensure that the requested row exists.</comment>
+    <decl_stmt><decl><type><name>int</name></type> <name>rowCount</name> <init>= <expr><name>getRowCount</name></expr></init></decl> ;</decl_stmt>
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name>rowCount</name></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;=</operator> <name>row</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>
+      <expr_stmt><expr><call><name>insertRow</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10502983.java">    <function><type><specifier>protected</specifier> <name>String</name></type> <name>getManifestAttributeValue</name><parameter_list>(<parameter><decl><type><name><name>Attributes</name><operator>.</operator><name>Name</name></name></type> <name>attributeName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>value</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>attributeName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <return>return <expr><ternary><condition><expr><name>value</name> <operator>!=</operator> <literal type="null">null</literal></expr> ?</condition><then> <expr><name>value</name></expr> </then><else>: <expr><literal type="string">"undefined"</literal></expr></else></ternary></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>NullPointerException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <return>return <expr><literal type="string">"undefined"</literal></expr> 
+        </block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>IllegalArgumentException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"Invalid attribute name when reading jar manifest for reading version information: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="string">"undefined"</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

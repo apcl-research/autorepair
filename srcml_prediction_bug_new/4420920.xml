@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>sendMessage</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>msg</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>bytes</name> <init>= <expr><operator>new</operator> <call><name>String</name><argument_list>(<argument><expr><name>msg</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getBytes</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>len</name> <init>= <expr><name><name>bytes</name><operator>.</operator><name>length</name></name></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>OutputStream</name></type> <name>out</name> <init>= <expr><name><name>this</name><operator>.</operator><name>getOutputStream</name></name></expr></init></decl>;</decl_stmt> <comment type="line">// make sure there is a stream</comment>
+        <expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>len</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// length first</comment>
+        <expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>bytes</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// then the message itself</comment>
+    </block_content>}</block></function>
+</unit>

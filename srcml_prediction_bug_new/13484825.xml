@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17592705.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>visitNEW</name><parameter_list>(<parameter><decl><type><name>NEW</name></type> <name>nI</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>ConstantPoolGen</name></type> <name>cp</name> <init>= <expr><call><name><name>block</name><operator>.</operator><name>graph</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>method</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getConstantPool</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Type</name></type> <name>type</name> <init>= <expr><call><name><name>nI</name><operator>.</operator><name>getLoadClassType</name></name><argument_list>(<argument><expr><name>cp</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Expr</name></type> <name>top</name> <init>= <expr><operator>new</operator> <call><name>NewExpr</name><argument_list>(<argument><expr><name>type</name></expr></argument>, <argument><expr><name><name>Type</name><operator>.</operator><name>OBJECT</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> 
+        
+        <expr_stmt><expr><call><name>db</name><argument_list>(<argument><expr><literal type="string">"      new: "</literal> <operator>+</operator> <name>top</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44152796.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isCellSelected</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>col</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><name>m_MultiSelectMode</name></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>m_RowSelectionMode</name></expr>)</condition><block type="pseudo"><block_content>
+				<return>return <expr><operator>(</operator><name>row</name> <operator>==</operator> <name>m_FocusRow</name><operator>)</operator></expr>;</return></block_content></block></if></if_stmt>
+			<return>return <expr><operator>(</operator><name>col</name> <operator>==</operator> <name>m_FocusCol</name> <operator>&amp;&amp;</operator> <name>row</name> <operator>==</operator> <name>m_FocusRow</name><operator>)</operator></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>m_RowSelectionMode</name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><operator>(</operator><call><name><name>m_Selection</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>row</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>;</return></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<return>return <expr><operator>(</operator><call><name><name>m_Selection</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Point</name><argument_list>(<argument><expr><name>col</name></expr></argument>, <argument><expr><name>row</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28349996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>createNew</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>DataSet</name></type> <name>ts</name> <init>= <expr><operator>new</operator> <call><name>DataSet</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>DataSet</name></type> <name>current</name> <init>= <expr><call><name><name>ttmodel</name><operator>.</operator><name>getDataSet</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Project</name></type> <name>p</name> <init>= <expr><call><name><name>current</name><operator>.</operator><name>getParentProject</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>current</name><operator>.</operator><name>removeProjectEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ts</name><operator>.</operator><name>setPartName</name></name><argument_list>(<argument><expr><call><name><name>current</name><operator>.</operator><name>getPartName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ts</name><operator>.</operator><name>addProjectEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>putPart</name></name><argument_list>(<argument><expr><name>ts</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>adoptNetworkStructure</name> <operator>)</operator></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ts</name><operator>.</operator><name>addElement</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37740045.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>configure</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>goFile</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>defFile</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Vector</name></type> <name>filePath</name> <init>= <expr><operator>new</operator> <call><name>Vector</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>filePath</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>goFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>config</name> <operator>=</operator> <operator>new</operator> <call><name><name>GOFlatFileAdapter</name><operator>.</operator><name>GOFlatFileConfiguration</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>config</name><operator>.</operator><name>setReadPaths</name></name><argument_list>(<argument><expr><name>filePath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>defFile</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><operator>(</operator><operator>(</operator><name><name>GOFlatFileAdapter</name><operator>.</operator><name>GOFlatFileConfiguration</name></name><operator>)</operator> <call><name><name>config</name> <operator>.</operator><name>setDefFilename</name></name><argument_list>(<argument><expr><name>defFile</name></expr></argument>)</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

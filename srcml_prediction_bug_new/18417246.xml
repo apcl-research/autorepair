@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26659963.java">    <function><type><specifier>public</specifier> <name>List</name></type> <name>findAll</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>firstName</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>lastName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>Query</name></type> <name>query</name> <init>= <expr><call><name>getQuery</name><argument_list>(<argument><expr><literal type="string">"select p from Patient as p where p.foreName = :fn and p.surName = :ln order by p.surName"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>query</name><operator>.</operator><name>setParameter</name></name><argument_list>(<argument><expr><literal type="string">"fn"</literal></expr></argument>, <argument><expr><name>firstName</name></expr></argument>, <argument><expr><name><name>Hibernate</name><operator>.</operator><name>STRING</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>query</name><operator>.</operator><name>setParameter</name></name><argument_list>(<argument><expr><literal type="string">"ln"</literal></expr></argument>, <argument><expr><name>lastName</name></expr></argument>, <argument><expr><name><name>Hibernate</name><operator>.</operator><name>STRING</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>query</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

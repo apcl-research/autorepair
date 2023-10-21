@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18489963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>load</name><parameter_list>(<parameter><decl><type><name><name>jEDF</name><operator>.</operator><name>EDF</name><operator>.</operator><name>EDFFile</name></name></type> <name>edfFile</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>totalDuration</name> <operator>=</operator> <call><name><name>edfFile</name><operator>.</operator><name>getNbRecords</name></name><argument_list>()</argument_list></call> <operator>*</operator> <call><name><name>edfFile</name><operator>.</operator><name>getRecordDuration</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>montage</name><operator>.</operator><name>loadEDFFile</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>edfFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>setEpochDuration</name><argument_list>(<argument><expr><call><name><name>edfFile</name><operator>.</operator><name>getRecordDuration</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name>getNavigationSlider</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setMinimum</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>getNavigationSlider</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValue</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+
+        <expr_stmt><expr><call><name>getNavigationSlider</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setMaximum</name><argument_list>(<argument><expr><name>totalDuration</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    </block_content>}</block></function>
+</unit>

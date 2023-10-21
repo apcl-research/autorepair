@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41469996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>onTransAckTimeout</name><parameter_list>(<parameter><decl><type><name>AckTransactionServer</name></type> <name>ts</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>printLog</name><argument_list>(<argument><expr><literal type="string">"inside onAckSrvTimeout(ts)"</literal></expr></argument>, <argument><expr><name><name>LogLevel</name><operator>.</operator><name>LOW</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>verifyStatus</name><argument_list>(<argument><expr><call><name>statusIs</name><argument_list>(<argument><expr><name>D_ACCEPTED</name></expr></argument>)</argument_list></call> <operator>||</operator> <call><name>statusIs</name><argument_list>(<argument><expr><name>D_ReACCEPTED</name></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name>statusIs</name><argument_list>(<argument><expr><name>D_REFUSED</name></expr></argument>)</argument_list></call> <operator>||</operator> <call><name>statusIs</name><argument_list>(<argument><expr><name>D_ReREFUSED</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></if></if_stmt>
+		<expr_stmt><expr><call><name>printLog</name><argument_list>(<argument><expr><literal type="string">"No ACK received.."</literal></expr></argument>, <argument><expr><name><name>LogLevel</name><operator>.</operator><name>HIGH</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>changeStatus</name><argument_list>(<argument><expr><name>D_CLOSE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>listener</name><operator>.</operator><name>onDlgClose</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

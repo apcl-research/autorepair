@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/327518.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>g100_SetFields</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    	<expr_stmt><expr><call><name><name>optionCombo</name><operator>.</operator><name>removeActionListener</name></name><argument_list>(<argument><expr><name>action</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    	<expr_stmt><expr><call><name>saveProperty</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    	
+        <expr_stmt><expr><name>currentRow</name> <operator>=</operator> <name>row</name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>descriptionFld</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name><name>data</name><index>[<expr><name>row</name></expr>]</index><index>[<expr><literal type="number">1</literal></expr>]</index></name></expr></argument>)</argument_list></call> 
+        <call><name><name>optionCombo</name><operator>.</operator><name>setModel</name></name><argument_list>(<argument><expr><name><name>comboModels</name><index>[<expr><name>row</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>optionCombo</name><operator>.</operator><name>setSelectedItem</name></name><argument_list>(<argument><expr><call><name><name>editParams</name><operator>.</operator><name>properties</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name><name>data</name><index>[<expr><name>row</name></expr>]</index><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>optionCombo</name><operator>.</operator><name>addActionListener</name></name><argument_list>(<argument><expr><name>action</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

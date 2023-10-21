@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28792783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>printDate</name><parameter_list>()</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>date</name></decl>;</decl_stmt>
+        <expr_stmt><expr><name>date</name> <operator>=</operator> <call><name><name>Integer</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><name>month</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>date</name> <operator>=</operator> <call><name><name>date</name><operator>.</operator><name>concat</name></name><argument_list>(<argument><expr><literal type="string">"/"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>date</name> <operator>=</operator> <call><name><name>date</name><operator>.</operator><name>concat</name></name><argument_list>(<argument><expr><call><name><name>Integer</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><name>day</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> 
+        <name>date</name> <operator>=</operator> <call><name><name>date</name><operator>.</operator><name>concat</name></name><argument_list>(<argument><expr><literal type="string">"/"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>date</name> <operator>=</operator> <call><name><name>date</name><operator>.</operator><name>concat</name></name><argument_list>(<argument><expr><call><name><name>Integer</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><name>year</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>date</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44418082.java">    <function><type><specifier>public</specifier> <name>JingleSession</name></type> <name>getSession</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>jid</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for  <control>(<init><decl><type><name>JingleSession</name></type> <name>jingleSession</name> <range>: <expr><name>jingleSessions</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>jingleSession</name> <operator>instanceof</operator> <name>OutgoingJingleSession</name></expr>)</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><call><name><name>jingleSession</name><operator>.</operator><name>getResponder</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>jid</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <return>return <expr><name>jingleSession</name></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if>
+            <if type="elseif">else if <condition>(<expr><name>jingleSession</name> <operator>instanceof</operator> <name>IncomingJingleSession</name></expr>)</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><call><name><name>jingleSession</name><operator>.</operator><name>getInitiator</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>jid</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <return>return <expr><name>jingleSession</name></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

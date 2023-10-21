@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38532596.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>canHaveDiscreteValues</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getChildren</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<while>while<condition>(<expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      		<decl_stmt><decl><type><name>Block</name></type> <name>child</name> <init>= <expr><operator>(</operator><name>Block</name><operator>)</operator><call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      		<if_stmt><if>if <condition>(<expr><name>child</name> <operator>instanceof</operator> <name>PossibleValueSet</name></expr>)</condition> <block>{<block_content>
+        		<decl_stmt><decl><type><name>PossibleValueSet</name></type> <name>pvs</name> <init>=  <expr><name>PossibleValueSet</name></expr></init></decl>;</decl_stmt>
+        		<return>return <expr><operator>!</operator><call><name><name>pvs</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>;</return> 
+      		</block_content>}</block></if></if_stmt>  
+   		 </block_content>}</block></while>		
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

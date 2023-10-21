@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13790515.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>newRecord</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>newSize</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>sep</name> <init>= <expr><call><name><name>layout</name><operator>.</operator><name>getRecordSep</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>rec</name> <init>= <expr><operator>new</operator> <name><name>byte</name><index>[<expr><name>newSize</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+		<comment type="line">//byte[] d = getLineData();</comment>
+
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>arraycopy</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>rec</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name><name>data</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><call><name><name>layout</name><operator>.</operator><name>getLayoutType</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>Constants</name><operator>.</operator><name>rtGroupOfBinaryRecords</name></name> 
+				<operator>&amp;&amp;</operator> <name>sep</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name><name>sep</name><operator>.</operator><name>length</name></name> <operator>&gt;</operator> <literal type="number">0</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>arraycopy</name></name><argument_list>(<argument><expr><name>sep</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>rec</name></expr></argument>, <argument><expr><name>newSize</name> <operator>-</operator> <name><name>sep</name><operator>.</operator><name>length</name></name></expr></argument>, <argument><expr><name><name>sep</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<expr_stmt><expr><name>data</name> <operator>=</operator> <name>rec</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

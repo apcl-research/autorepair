@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35289996.java">    <function><type><specifier>public</specifier> <name>Vector3f</name></type> <name>scale</name><parameter_list>(<parameter><decl><type><name>float</name></type> <name>scale</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>float</name></type> <name>sx</name> <init>= <expr><call><name>getX</name><argument_list>()</argument_list></call> <operator>*</operator> <name>scale</name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>float</name></type> <name>sy</name> <init>= <expr><call><name>getY</name><argument_list>()</argument_list></call> <operator>*</operator> <name>scale</name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>float</name></type> <name>sz</name> <init>= <expr><call><name>getZ</name><argument_list>()</argument_list></call> <operator>*</operator> <name>scale</name></expr></init></decl> 
+        <comment type="line">//Vector3f v = VectorPool.getInstance().getVector();</comment>
+        <init>= <expr><call><name><name>VectorPool</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getVector</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>v</name><operator>.</operator><name>setXYZ</name></name><argument_list>(<argument><expr><name>sx</name></expr></argument>, <argument><expr><name>sy</name></expr></argument>, <argument><expr><name>sz</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>v</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50682983.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>makeUniqueStringForGlobalWithLength</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>global</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>length</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>toReturn</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+    <do>do <block>{<block_content>
+      <expr_stmt><expr><name>toReturn</name> <operator>+=</operator> <call><name><name>super</name><operator>.</operator><name>utils</name><operator>.</operator><name>generateUnique</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block> while <condition>(<expr><call><name><name>toReturn</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name>length</name></expr>)</condition>;</do>
+    <expr_stmt><expr><name>toReturn</name> <operator>=</operator> <call><name><name>toReturn</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><call><name><name>toReturn</name><operator>.</operator><name>length</name></name><argument_list>(  <argument><expr><operator>-</operator> <name>length</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>utils</name><operator>.</operator><name>setGlobal</name></name><argument_list>(<argument><expr><name>global</name></expr></argument>, <argument><expr><name>toReturn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name>toReturn</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

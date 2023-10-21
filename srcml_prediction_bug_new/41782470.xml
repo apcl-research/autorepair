@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12592796.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>enter</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Display</name></type> <name>display</name> <init>= <expr><call><name><name>context</name><operator>.</operator><name>getDisplay</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Displayable</name></type> <name>displayable</name> <init>= <expr><call><name>getDisplayable</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>Command</name><index>[]</index></name></type> <name>commands</name> <init>= <expr><call><name>getCommands</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for<control>(<init><decl><type><name>int</name></type> <name>ii</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>ii</name> <operator>&lt;</operator> <name><name>commands</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>ii</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>displayable</name><operator>.</operator><name>addCommand</name></name><argument_list>(<argument><expr><name><name>commands</name><index>[<expr><name>ii</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+        <expr_stmt><expr><call><name><name>displayable</name><operator>.</operator><name>setCommandListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>displayable</name><operator>.</operator><name>setTitle</name></name><argument_list>(<argument><expr><call><name>getTitle</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>display</name><operator>.</operator><name>setCurrent</name></name><argument_list>(<argument><expr><name>displayable</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+     
+</block_content>}</block></function>
+</unit>

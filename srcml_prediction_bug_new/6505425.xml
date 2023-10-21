@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44954815.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>hookContextMenu</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>MenuManager</name></type> <name>menuMgr</name> <init>= <expr><operator>new</operator> <call><name>MenuManager</name><argument_list>(<argument><expr><literal type="string">"#PopupMenu"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>menuMgr</name><operator>.</operator><name>setRemoveAllWhenShown</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>menuMgr</name><operator>.</operator><name>addMenuListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>IMenuListener</name></super><argument_list>()</argument_list> <block>{
+			<function><type><specifier>public</specifier> <name>void</name></type> <name>menuAboutToShow</name><parameter_list>(<parameter><decl><type><name>IMenuManager</name></type> <name>manager</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>JmxView</name><operator>.</operator><name>this</name><operator>.</operator><name>fillContextMenu</name></name><argument_list>(<argument><expr><name>manager</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></function>
+		}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>Menu</name></type> <name>menu</name> <init>= <expr><call><name><name>menuMgr</name><operator>.</operator><name>createContextMenu</name></name><argument_list>(<argument><expr><call><name><name>viewer</name><operator>.</operator><name>getControl</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>viewer</name><operator>.</operator><name>getControl</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setMenu</name><argument_list>(<argument><expr><name>menu</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>getSite</name><argument_list>()</argument_list></call><operator>.</operator><call><name>registerContextMenu</name><argument_list>(<argument><expr><name>menuMgr</name></expr></argument>, <argument><expr><name>viewer</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

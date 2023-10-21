@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41772483.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getPlayerBidOnAuction</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>playerName</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>auctionID</name></decl></parameter>  <comment type="block">/*-1*/</comment>)</parameter_list> <block>{<block_content>
+		
+		<comment type="line">// return 0 if the requested auction doesn't exist</comment>
+		<decl_stmt><decl><type><name>MarketListing</name></type> <name>currList</name> <init>= <expr><call><name><name>currentAuctions</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>auctionID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>currList</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="number">0</literal></expr>;</return></block_content></block></if></if_stmt>
+		
+		<comment type="line">// return 0 if the player hasn't bid</comment>
+		<decl_stmt><decl><type><name>MarketBid</name></type> <name>playersBid</name> <init>= <expr><call><name><name>currList</name><operator>.</operator><name>getAllBids</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><call><name><name>playerName</name><operator>.</operator><name>toLowerCase</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>playersBid</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="number">0</literal></expr>;</return></block_content></block></if></if_stmt>
+		
+		<comment type="line">// a real bid exists. return its amount.</comment>
+		<return>return <expr><call><name><name>playersBid</name><operator>.</operator><name>getAmount</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

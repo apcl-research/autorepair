@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22282996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getPointerTypeCode</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>pointerType</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <switch>switch <condition>(<expr><name>pointerType</name></expr>)</condition> <block>{<block_content>
+            <case>case <expr><name><name>ScreenPointer</name><operator>.</operator><name>ARROW</name></name></expr> :</case>
+                <return>return <expr><name>ARROW_CODE</name></expr>;</return>
+            <case>case <expr><name><name>ScreenPointer</name><operator>.</operator><name>DELETE_BLOCK</name></name></expr> :</case>
+                <return>return <expr><name>DELETE_CODE</name></expr>;</return>
+            <case>case <expr><name><name>ScreenPointer</name><operator>.</operator><name>MOVE_BLOCK</name></name></expr> :</case>
+                <return>return <expr><name>MOVE_CODE</name></expr>;</return>
+            <case>case <expr><name><name>ScreenPointer</name><operator>.</operator><name>EDIT_BLOCK</name></name></expr> :</case>
+                <return>return <expr><name>EDIT_CODE</name></expr>;</return>
+        </block_content>}</block></switch>
+     
+        <assert>assert<expr><operator>(</operator><literal type="boolean">false</literal><operator>)</operator> <operator>:</operator> <literal type="string">"unknown screen pointer type found"</literal></expr>;</assert>
+        <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

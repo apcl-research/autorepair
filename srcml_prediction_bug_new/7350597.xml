@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18749996.java">        <function><type><specifier>public</specifier> <name>int</name></type> <name>getChiSquareLevel</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>actualSize</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>double</name></type> <name>chiSquare</name> <init>= <expr><call><name>getChiSquare</name><argument_list>(<argument><expr><name>actualSize</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+            <while>while <condition>(<expr><name>i</name> <operator>&lt;</operator> <name><name>CHI_SQUARE_CRITICAL_VALUES</name><operator>.</operator><name>length</name></name>
+                    <operator>&amp;&amp;</operator> <name>chiSquare</name> <operator>&gt;</operator> <name><name>CHI_SQUARE_CRITICAL_VALUES</name><index>[<expr><name>i</name></expr>]</index></name>  <block>{
+                <expr><name>i</name><operator>++</operator></expr>;
+            }</block></while>
+            <return>return <expr><name>i</name> <operator>-</operator> <literal type="number">1</literal></expr>;</return>
+        </block_content>}</block></function>
+</unit>

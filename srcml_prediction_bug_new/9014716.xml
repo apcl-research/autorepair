@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/8269996.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isEmpty</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<return>return <expr><operator>(</operator><operator>!</operator><call><name>isWhitespace</name><argument_list>()</argument_list></call> <comment type="line">// not whitespace</comment>
+				<operator>&amp;&amp;</operator> <operator>!</operator><call><name>isStandAlone</name><argument_list>()</argument_list></call> <comment type="line">// and not standalone</comment>
+				<operator>&amp;&amp;</operator> <operator>(</operator><literal type="null">null</literal> <operator>==</operator> <call><name><name>super</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call><operator>)</operator> <comment type="line">// and no explicit value provided</comment>
+		<operator>&amp;&amp;</operator> <operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>==</operator> <name>mPage</name><operator>)</operator> <comment type="line">// and either its not coming from a page</comment>
+		<comment type="line">// or it is coming from a page and has no value</comment>
+		<operator>||</operator> <operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>!=</operator> <name>mPage</name>  <operator>&amp;&amp;</operator> <operator>(</operator><literal type="number">0</literal> <operator>&gt;</operator> <name>mValueEnd</name><operator>)</operator><operator>)</operator><operator>)</operator><operator>)</operator></expr>;</return>
+	</block_content>}</block></function>
+</unit>

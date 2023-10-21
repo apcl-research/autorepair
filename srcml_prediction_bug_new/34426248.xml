@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426961.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>inventoryAdd</name><parameter_list>(<parameter><decl><type><name>SWGKnownResource</name></type> <name>resource</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>SWGCharacter</name></type> <name>toon</name> <init>= <expr><call><name><name>SWGFrame</name><operator>.</operator><name>getSelectedCharacter</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>SWGInventoryWrapper</name></type> <name>wr</name> <init>=
+                <expr><operator>new</operator> <call><name>SWGInventoryWrapper</name><argument_list>(<argument><expr><name>resource</name></expr></argument>, <argument><expr><call><name><name>toon</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>selectedGuard</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>wr</name><operator>.</operator><name>setNotes</name></name><argument_list>(<argument><expr><call><name><name>selectedGuard</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+        <expr_stmt><expr><call><name><name>SWGResourceTab</name><operator>.</operator><name>inventoryTab</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>dialog</name><argument_list>( <argument><expr><call><name><name></name><operator>.</operator><name>showAndBegin</name></name><argument_list>(<argument><expr><name>wr</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

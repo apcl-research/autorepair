@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28779963.java">    <function><type><specifier>public</specifier> <name>InstrQualifiedJavaType</name></type> <name>calculateAllFieldsClass</name> <parameter_list>()</parameter_list> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>InstrQualifiedJavaType</name></type> <name>answer</name></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><call><name>generateRecordWithBLOBsClass</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>answer</name> <operator>=</operator> <call><name><name>introspectedTable</name><operator>.</operator><name>getRecordWithBLOBsType</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name>generateBaseRecordClass</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>answer</name> <operator>=</operator> <call><name><name>introspectedTable</name><operator>.</operator><name>getBaseRecordType</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>answer</name> <operator>=</operator> <call><name><name>introspectedTable</name><operator>.</operator><name>getPrimaryKeyType</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        
+        <return>return <expr><name>answer</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

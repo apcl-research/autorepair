@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36484596.java">	<function><type><specifier>public</specifier> <name>Object</name></type> <name>executeAndQuery</name><parameter_list>(<parameter><decl><type><name>DataManager</name></type> <name>aRoot</name></decl></parameter>, <parameter><decl><type><name>Date</name></type> <name>timestamp</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		
+		<if_stmt><if>if<condition>(<expr><name>t</name><operator>==</operator><literal type="null">null</literal><operator>||</operator><name>key</name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content><comment type="line">//NOTHING.</comment>
+		<decl_stmt><decl><type><name>DataObject</name></type> <name>d</name> <init>= <expr><call><name><name>aRoot</name><operator>.</operator><name>findByTypeKey</name></name><argument_list>(<argument><expr><name>t</name></expr></argument>,<argument><expr><name>key</name></expr></argument> ;</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>aRoot</name><operator>.</operator><name>deleteDataObject</name></name><argument_list>(<argument><expr><name>d</name></expr></argument>,<argument><expr><literal type="boolean">true</literal></expr></argument>,<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt><comment type="line">//when something is deleted, it's key is still used. if purged, the key won't be used anymore.</comment>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44442983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>getErrors</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>errors</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>errorReport</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>errors</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><call><name><name>errors</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// show possible errors</comment>
+		<if_stmt><if>if <condition>(<expr><call><name><name>errorReport</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>length</name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>JOptionPane</name><operator>.</operator><name>showMessageDialog</name></name><argument_list>(<argument><expr><call><name><name>OVTK2Desktop</name><operator>.</operator><name>getInstance</name></name><argument_list>( 
+					<argument><expr><call><name><name></name><operator>.</operator><name>getMainFrame</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>(<argument><expr><name>errorReport</name></expr></argument>)</argument_list></call></expr></argument>,
+					<argument><expr><literal type="string">"The following warnings were created during import..."</literal></expr></argument>,
+					<argument><expr><name><name>JOptionPane</name><operator>.</operator><name>WARNING_MESSAGE</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

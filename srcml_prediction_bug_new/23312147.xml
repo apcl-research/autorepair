@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28242696.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>shortForm</name><parameter_list>(<parameter><decl><type><name>IRI</name></type> <name>theIRI</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>fragment</name> <init>= <expr><call><name><name>theIRI</name><operator>.</operator><name>getFragment</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>( <expr><name>fragment</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+			<return>return <expr><name>fragment</name></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>str</name> <init>= <expr><call><name><name>theIRI</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>lastSlashIndex</name> <init>= <expr><call><name><name>str</name><operator>.</operator><name>lastIndexOf</name></name><argument_list>( <argument><expr><literal type="char">'/'</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>( <expr><name>lastSlashIndex</name> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr> )</condition> <block>{<block_content>
+			<return>return <expr><call><name><name>str</name><operator>.</operator><name>substring</name></name><argument_list>( <argument><expr><name>lastSlashIndex</name> <operator>+</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><call><name><name>str</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>str</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

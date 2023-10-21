@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25010583.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>init</name><parameter_list>(<parameter><decl><type><name>BmKeyedComboModel</name></type> <name>comboModel</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>editable</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>model</name></name> <operator>=</operator> <name>comboModel</name></expr>;</expr_stmt>
+		<comment type="line">//this.editable = isEditable;</comment>
+
+		<comment type="line">//model.setTableCombo(true);</comment>
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>setRenderer</name></name><argument_list>(<argument><expr><name>comboModel</name></expr></argument>)</argument_list></call> 
+
+		<if_stmt><if>if <condition>(<expr><name>editable</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setEditable</name></name><argument_list>(<argument><expr><name>editable</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>agent</name> <operator>=</operator> <operator>new</operator> <call><name>BmKeyedComboAgent</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><call><name><name>comboModel</name><operator>.</operator><name>getList</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>comboModel</name><operator>.</operator><name>isSorted</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

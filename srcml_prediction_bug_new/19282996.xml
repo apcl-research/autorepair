@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44492783.java">    <function><type><specifier>protected</specifier> <name>String</name></type> <name>safeTrim</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>inStr</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>escapeXML</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>inStr</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>tmp</name> <init>= <expr><call><name><name>inStr</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>tmp</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><name>escapeXML</name></expr>)</condition> <block>{<block_content>
+                    <return>return <expr><call><name><name>StringEscapeUtils</name><operator>.</operator><name>escapeXml</name></name><argument_list>(<argument><expr><name>tmp</name></expr></argument>)</argument_list></call></expr>;</return>
+                </block_content>}</block></if> <else>else <block>{<block_content>
+                    <return>return <expr><name>tmp</name></expr>;</return>
+                </block_content>}</block></else></if_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <return>return <expr><literal type="null">null</literal></expr>;</return>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+         
+    </block_content>}</block></else></if_stmt>
+</unit>

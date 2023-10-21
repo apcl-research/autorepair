@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41846862.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>interpolateColorStops</name><parameter_list>(<parameter><decl><type><name>float</name></type> <name>fraction</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<decl_stmt><decl><type><name>int</name></type> <name>max_color_index</name> <init>= <expr><name><name>this</name><operator>.</operator><name>color_stops</name><operator>.</operator><name>length</name></name> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>float</name></type> <name>high_fractional_value</name> <init>= <expr><name>fraction</name> <operator>*</operator> <name>max_color_index</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>low_index</name> <init>=  <expr><name>int</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>high_index</name> <init>= <expr><operator>(</operator><name>int</name><operator>)</operator> <call><name><name>Math</name><operator>.</operator><name>ceil</name></name><argument_list>(<argument><expr><name>fraction</name> <operator>*</operator> <name>max_color_index</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>float</name></type> <name>partial_fraction</name> <init>= <expr><name>high_fractional_value</name> <operator>-</operator> <name>low_index</name></expr></init></decl>;</decl_stmt>
+		
+		<return>return <expr><call><name><name>FlingableMonthView</name><operator>.</operator><name>interpolateColor</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>color_stops</name><index>[<expr><name>low_index</name></expr>]</index></name></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>color_stops</name><index>[<expr><name>high_index</name></expr>]</index></name></expr></argument>, <argument><expr><name>partial_fraction</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

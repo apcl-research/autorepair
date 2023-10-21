@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18849996.java">	<function><type><specifier>public</specifier> <name>Element</name></type> <name>bestPracticesLink</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>xpath</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Element</name></type> <name>bpLink</name> <init>= <expr><call><name><name>DocumentHelper</name><operator>.</operator><name>createElement</name></name><argument_list>(<argument><expr><literal type="string">"span"</literal></expr></argument>)</argument_list></call>
+			<operator>.</operator><call><name>addAttribute</name><argument_list>(<argument><expr><literal type="string">"class"</literal></expr></argument>, <argument><expr><literal type="string">"action-button"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// String format = rhelper.getFramework().getXmlFormat();</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>pathArg</name> <init>= <expr><call><name><name>RendererHelper</name><operator>.</operator><name>normalizeXPath</name></name><argument_list>(<argument><expr><name>xpath</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>fieldName</name> <init>= <expr><call><name><name>XPathUtils</name><operator>.</operator><name>getNodeName</name></name><argument_list>(<argument><expr><name>pathArg</name></expr></argument> ;</argument_list></call></expr></init></decl> ;</decl_stmt>
+
+		<decl_stmt><decl><type><name>Element</name></type> <name>tag</name> <init>= <expr><call><name><name>DocumentHelper</name><operator>.</operator><name>createElement</name></name><argument_list>(<argument><expr><literal type="string">"st__bestPracticesLink"</literal></expr></argument>)</argument_list></call>
+			<operator>.</operator><call><name>addAttribute</name><argument_list>(<argument><expr><literal type="string">"pathArg"</literal></expr></argument>, <argument><expr><name>pathArg</name></expr></argument>)</argument_list></call>
+			<operator>.</operator><call><name>addAttribute</name><argument_list>(<argument><expr><literal type="string">"fieldName"</literal></expr></argument>, <argument><expr><name>fieldName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>bpLink</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>tag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>bpLink</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

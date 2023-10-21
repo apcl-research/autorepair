@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31974096.java">    <function><type><specifier>private</specifier> <name>int</name></type> <name>findFirstDay</name><parameter_list>()</parameter_list>  
+      <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>
+      <decl_stmt><decl><type><name>int</name></type> <name>w</name> <init>= <expr><call><name><name>calendar</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name><name>Calendar</name><operator>.</operator><name>DAY_OF_WEEK</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>int</name></type> <name>d</name> <init>= <expr><call><name><name>calendar</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name><name>Calendar</name><operator>.</operator><name>DAY_OF_MONTH</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <while>while <condition>(<expr><literal type="boolean">true</literal></expr>)</condition> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>d</name> <operator>&lt;=</operator> <literal type="number">1</literal> <operator>&amp;&amp;</operator> <name>w</name> <operator>==</operator> <call><name><name>calendar</name><operator>.</operator><name>getFirstDayOfWeek</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <break>break;</break></block_content></block></if></if_stmt>
+        <expr_stmt><expr><name>d</name><operator>--</operator></expr>;</expr_stmt> <expr_stmt><expr><name>w</name><operator>--</operator></expr>;</expr_stmt>
+        <expr_stmt><expr><name>w</name> <operator>=</operator> <ternary><condition><expr><operator>(</operator><name>w</name> <operator>&lt;</operator> <literal type="number">1</literal><operator>)</operator></expr> ?</condition><then> <expr><literal type="number">7</literal></expr> </then><else>: <expr><name>w</name></expr></else></ternary></expr>;</expr_stmt>
+      </block_content>}</block></while>
+      <return>return <expr><name>d</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

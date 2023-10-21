@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19095170.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>deleteRow</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        
+        <comment type="line">// check if we are in bounds</comment>
+        <if_stmt><if>if <condition>(<expr><name>row</name> <operator>&lt;</operator> <call><name><name>m_MealItems</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>MealItem</name></type> <name>mealItem</name> <init>= <expr><operator>(</operator><name>MealItem</name><operator>)</operator> <call><name><name>m_MealItems</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>row</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            
+            <comment type="line">// remove the line from the model</comment>
+            <expr_stmt><expr><call><name><name>m_MealItems</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>row</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>    
+            
+            <comment type="line">// inform all listeners that a table row was deleted</comment>
+            <expr_stmt><expr><call><name>fireTableRowsDeleted</name><argument_list>(<argument><expr><name>row</name></expr></argument>, <argument><expr><name>row</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+    </block_content>}</block></if></if_stmt>
+</unit>

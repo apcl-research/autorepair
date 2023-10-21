@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42797529.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>buildGoStr</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>go</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>goBase</name> <init>= <expr><name>go</name> <operator>+</operator> <literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>zeros</name> <init>= <expr><literal type="number">7</literal> <operator>-</operator> <call><name><name>goBase</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name><name>char</name><index>[]</index></name></type> <name>zeroBuffer</name> <init>= <expr><operator>new</operator> <name><name>char</name><index>[<expr><name>zeros</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>zeros</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>
+            <expr_stmt><expr><name><name>zeroBuffer</name><index>[<expr><name>i</name></expr>]</index></name> <operator>=</operator> <literal type="char">'0'</literal></expr>;</expr_stmt></block_content></block></for>
+        <decl_stmt><decl><type><name>String</name></type> <name>goStr</name> <init>= <expr><literal type="string">"GO:"</literal> <operator>+</operator> <operator>new</operator> <call><name>String</name><argument_list>(<argument><expr><name>zeroBuffer</name></expr></argument>)</argument_list></call> <operator>+</operator> <name>goBase</name></expr></init></decl>;</decl_stmt>
+        <return>return <expr><name>goStr</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

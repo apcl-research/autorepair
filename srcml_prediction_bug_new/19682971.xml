@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16442483.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>sleep</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>Lib</name><operator>.</operator><name>assertTrue</name></name><argument_list>(<argument><expr><call><name><name>conditionLock</name><operator>.</operator><name>isHeldByCurrentThread</name></name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>prevStatus</name> <init>= <expr><call><name><name>Machine</name><operator>.</operator><name>interrupt</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>disable</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>waitQueue</name><operator>.</operator><name>waitForAccess</name></name><argument_list>(<argument><expr><call><name><name>KThread</name><operator>.</operator><name>currentThread</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// make the current</comment>
+		<comment type="line">// thread accessible</comment>
+		<comment type="line">// to a call to</comment>
+		<comment type="line">// wake()</comment>
+
+		<expr_stmt><expr><call><name><name>conditionLock</name><operator>.</operator><name>release</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// allow wake to be called</comment>
+		<expr_stmt><expr><call><name><name>KThread</name><operator>.</operator><name>sleep</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>conditionLock</name><operator>.</operator><name>acquire</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// continue from where we were</comment>
+
+		<expr_stmt><expr><call><name><name>Machine</name><operator>.</operator><name>interrupt</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>restore</name><argument_list>(<argument><expr><name>prevStatus</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

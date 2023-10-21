@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testVersion_04_machineSC</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>IMachineRoot</name></type> <name>root</name> <init>= <expr><call><name>createMachine</name><argument_list>(<argument><expr><literal type="string">"mch"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>root</name><operator>.</operator><name>setConfiguration</name></name><argument_list>(<argument><expr><name>ORG_EVENTB_CORE_FWD</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>root</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<decl_stmt><decl><type><name>ISCMachineRoot</name></type> <name>scRoot</name> <init>= <expr><call><name><name>root</name><operator>.</operator><name>getSCMachineRoot</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><literal type="string">"attribute missing in SC machine"</literal></expr></argument>, <argument><expr><name>ORG_EVENTB_CORE_FWD</name></expr></argument>, <argument><expr><call><name><name>scRoot</name><operator>.</operator><name>getConfiguration</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></function>
+</unit>

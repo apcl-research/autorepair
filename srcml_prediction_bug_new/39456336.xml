@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41718091.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>conforms</name><parameter_list>(<parameter><decl><type><name>PeakListRow</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<switch>switch <condition>(<expr><name>type</name></expr>)</condition> <block>{<block_content>
+	<case>case <expr><name>NAME</name></expr>:</case>
+	    <decl_stmt><decl><type><name>PeakIdentity</name></type> <name>identity</name> <init>= <expr><call><name><name>row</name><operator>.</operator><name>getPreferredPeakIdentity</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <if_stmt><if>if <condition>(<expr><name>identity</name> <operator>==</operator> <literal type="null">null</literal></expr> 
+		<comment type="block">/*&amp;&amp; isEmpty(nameRegex.toString()) || isEmpty(name)) {
+		return false;
+	    }
+	    String name = identity.getName();
+
+	    if (isEmpty(nameRegex.toString()) || isEmpty(name)) {
+		return false;
+	    }
+
+	    Matcher matcher = nameRegex.matcher(name);
+	    return matcher.find();
+
+	case MASS:
+	    return range.contains(row.getAverageMZ());
+
+	case RT:
+	    return range.contains(row.getAverageRT());
+
+	}
+	return false;
+    }
+</comment></unit>

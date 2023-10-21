@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44802783.java">    <function><type><specifier>public</specifier> <name>Map</name></type> <name>getEditorMap</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>editorMap</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><name>editorMap</name></expr>;</return></block_content></block></if></if_stmt>
+        <expr_stmt><expr><name>editorMap</name> <operator>=</operator> <operator>new</operator> <call><name>LinkedHashMap</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        
+        <expr_stmt><expr><call><name><name>editorMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"id"</literal></expr></argument>, <argument><expr><call><name>getIdEditor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
+        <call><name><name>editorMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"name"</literal></expr></argument>, <argument><expr><call><name>getNameEditor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>editorMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"value"</literal></expr></argument>, <argument><expr><call><name>getValueEditor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>editorMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"boat"</literal></expr></argument>, <argument><expr><call><name>getBoatEditor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <return>return <expr><name>editorMap</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

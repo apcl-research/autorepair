@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13889996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>removeConstraint</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>node</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>edgeID</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>direction</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+	<decl_stmt><decl><type><name>ConnectedNode</name></type> <name>connectedNode</name></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>connectedNodes</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>boolean</name></type> <name>notFound</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+
+	<while>while <condition>(<expr><name>notFound</name> <operator>&amp;&amp;</operator> <call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><name>connectedNode</name> <operator>=</operator> <operator>(</operator><name>ConnectedNode</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><name>notFound</name> <operator>=</operator> <operator>(</operator><operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>node</name></name> <operator>!=</operator> <name>node</name><operator>)</operator> 
+			<operator>||</operator> <operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>edgeID</name></name> <operator>!=</operator> <name>edgeID</name>  
+			<operator>||</operator> <operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>direction</name></name> <operator>!=</operator> <name>direction</name><operator>)</operator><operator>)</operator></expr>;</expr_stmt> 
+	</block_content>}</block></while>
+	<expr_stmt><expr><call><name><name>it</name><operator>.</operator><name>remove</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+    </block_content>}</block></function>
+</unit>

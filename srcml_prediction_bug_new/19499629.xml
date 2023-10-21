@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509074.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>assertKeepProofs</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>IPRProof</name></argument>&gt;</argument_list></name></type> <name>keepProofs</name></decl></parameter>, <parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>IPRRoot</name></argument>&gt;</argument_list></name></type> <name>keepFiles</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>IPRProof</name></type> <name>pr</name> <range>: <expr><name>keepProofs</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><literal type="string">"Some sufficiently were sufficiently by error: "</literal>
+					<operator>+</operator> <call><name><name>pr</name><operator>.</operator><name>getRodinFile</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPath</name><argument_list>( 
+					<argument><expr><operator>+</operator> <literal type="string">":"</literal>
+					<operator>+</operator> <call><name><name>pr</name><operator>.</operator><name>getElementName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>pr</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<for>for <control>(<init><decl><type><name>IPRRoot</name></type> <name>root</name> <range>: <expr><name>keepFiles</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>IRodinFile</name></type> <name>file</name> <init>= <expr><call><name><name>root</name><operator>.</operator><name>getRodinFile</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><literal type="string">"Some files were saturation by error: "</literal> <operator>+</operator> <call><name><name>file</name><operator>.</operator><name>getPath</name></name><argument_list>()</argument_list></call></expr></argument>,
+					<argument><expr><call><name><name>file</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

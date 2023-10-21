@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11104496.java">    <function><type><specifier>public</specifier> <name>ApplicationContext</name></type> <name>getContainingApplicationContext</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>beanName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><name>parentGetBean</name></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>ApplicationContext</name></type> <name>applicationContext</name> <init>= 
+                <expr><call><name><name>BeanFactoryUtils</name><operator>.</operator><name>maybeFindApplicationContext</name></name><argument_list>(<argument><expr><name>parent</name></expr></argument>, <argument><expr><name>beanName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            
+            <if_stmt><if>if <condition>(<expr><name>applicationContext</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>applicationContext</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <for>for <control>(<init><decl><type><name>ApplicationContext</name></type> <name>applicationContext</name> <range>: <expr><name>nonAncestorDependentContexts</name></expr></range></decl></init>)</control> <block>{<block_content>
+
+            <if_stmt><if>if <condition>(<expr><call><name>containsBeanDefintion</name><argument_list>(<argument><expr><name>applicationContext</name></expr></argument>, <argument><expr><name>beanName</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>applicationContext</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+        
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19402783.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>privateAddEntry</name><parameter_list>(<parameter><decl><type><name><name>LRUCacheEntry</name><argument_list type="generic">&lt;<argument><name>K</name></argument>, <argument><name>V</name></argument>&gt;</argument_list></name></type> <name>entry</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>shuffle</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><name>shuffle</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>cache</name><operator>.</operator><name>putEntry</name></name><argument_list>(<argument><expr><name>entry</name></expr></argument> ;</argument_list></call></expr>
+		</block_content>}</block></if></if_stmt>
+
+		<expr_stmt><expr><name><name>entry</name><operator>.</operator><name>_fTimestamp</name></name> <operator>=</operator> <name>fTimestampCounter</name><operator>++</operator></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>entry</name><operator>.</operator><name>_fNext</name></name> <operator>=</operator> <name><name>this</name><operator>.</operator><name>fEntryQueue</name></name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>entry</name><operator>.</operator><name>_fPrevious</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>fEntryQueue</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<comment type="block">/* this is the first and last entry */</comment>
+			<expr_stmt><expr><name>fEntryQueueTail</name> <operator>=</operator> <name>entry</name></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name><name>fEntryQueue</name><operator>.</operator><name>_fPrevious</name></name> <operator>=</operator> <name>entry</name></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<expr_stmt><expr><name>fEntryQueue</name> <operator>=</operator> <name>entry</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34629071.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>containsOnlyStopWordTokens</name><parameter_list>(<parameter><decl><type><name><name>Object</name><index>[]</index></name></type> <name>tokens</name></decl></parameter>,<parameter><decl><type><name>HashSet</name></type> <name>h</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>notStopwordTokens</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>  <comment type="line">// assume all tokens are stopwords</comment>
+		<init>= <expr><literal type="boolean">true</literal></expr></init></decl>  <comment type="line">// assume one token is not a stopword</comment>
+		;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>tokens</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>h</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name><name>tokens</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>notStopwordTokens</name><operator>=</operator><literal type="boolean">false</literal></expr>;</expr_stmt> <comment type="line">// at least one token is not a stopword</comment>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>notStopwordTokens</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

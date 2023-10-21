@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31958891.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>editModeToggle</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>wpException</name></expr></argument></throws> <block>{<block_content>
+
+    <decl_stmt><decl><type><name>boolean</name></type> <name>toggleOK</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+    <comment type="line">// Toggle the edit mode, and check if succesfull.</comment>
+    <if_stmt><if>if <condition>(<expr><name>editMode</name> <operator>==</operator> <name>EDIT_MODE_DOM</name></expr>)</condition> <block>{<block_content>
+      <if_stmt><if>if<condition>( <expr><name>toggleOK</name> <operator>=</operator> <call><name>setEditMode</name><argument_list>(<argument><expr><name>EDIT_MODE_RAW</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><call><name>updateActions</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></if>
+    <if type="elseif">else  
+      if<condition>( <expr><name>toggleOK</name> <operator>=</operator> <call><name>setEditMode</name><argument_list>(<argument><expr><name>EDIT_MODE_DOM</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><call><name>updateActions</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

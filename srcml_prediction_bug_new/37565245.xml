@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31826963.java"><function><type><specifier>public</specifier> <name>Color</name></type> <name>getBackground</name><parameter_list>()</parameter_list>  
+	<if_stmt><if>if <condition>(<expr><name>handle</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name><name>SWT</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><name><name>SWT</name><operator>.</operator><name>ERROR_GRAPHIC_DISPOSED</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+  <return>return <expr><call><name><name>Color</name><operator>.</operator><name>swing_new</name></name><argument_list>(<argument><expr><name><name>data</name><operator>.</operator><name>device</name></name></expr></argument>, <argument><expr><call><name><name>handle</name><operator>.</operator><name>getBackground</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+<comment type="line">//	int color = OS.GetBkColor(handle);</comment>
+<comment type="line">//	if (color == OS.CLR_INVALID) {</comment>
+<comment type="line">//		color = OS.GetSysColor(OS.COLOR_WINDOW);</comment>
+<comment type="line">//	}</comment>
+<comment type="line">//	return Color.win32_new(data.device, color);</comment>
+</block_content>}</block></function>
+</unit>

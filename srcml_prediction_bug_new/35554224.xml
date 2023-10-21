@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45239983.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>isValidFileName</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>tfFileNameMcu</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>tfFileNameSwu</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>tfFileNamePiu</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>tfFileNameCes</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>tfFileNameOnt</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>tfFileNamePackage</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<return>return <expr><literal type="boolean">false</literal></expr> 
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

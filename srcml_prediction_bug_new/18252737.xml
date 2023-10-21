@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/132529.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>showTable</name><parameter_list>(<parameter><decl><type><name>Graph</name></type> <name>graph</name></decl></parameter>, <parameter><decl><type><name>Table</name></type> <name>table</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>table</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>tableNodes</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>Node</name></type> <name>n</name> <init>= <expr><call><name><name>graph</name><operator>.</operator><name>addNode</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>n</name><operator>.</operator><name>setString</name></name><argument_list>(<argument><expr><literal type="string">"label"</literal></expr></argument>, <argument><expr><call><name><name>table</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>tooltip</name> <init>= <expr><name><name>tableRenderer</name><operator>.</operator><name>getToolTip</name></name> <argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>n</name><operator>.</operator><name>setString</name></name><argument_list>(<argument><expr><literal type="string">"tooltip"</literal></expr></argument>, <argument><expr><name>tooltip</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>tableNodes</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>, <argument><expr><name>n</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

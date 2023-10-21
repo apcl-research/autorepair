@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26481596.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>left</name><parameter_list>()</parameter_list><block>{<block_content> 
+	<comment type="line">//System.out.println( "###left" );</comment>
+	<decl_stmt><decl><type><name>int</name></type> <name>pos</name> <init>= <expr><call><name><name>textPane</name><operator>.</operator><name>getCaret</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDot</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name><name>java</name><operator>.</operator><name>util</name><operator>.</operator><name><name>ListIterator</name><argument_list type="generic">&lt;<argument><name>Integer</name></argument>&gt;</argument_list></name></name></type> <name>i</name></decl>;</decl_stmt>
+	<for>for<control>( <init><expr><name>i</name> <operator>=</operator> <call><name><name>navigator</name><operator>.</operator><name>dots</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>listIterator</name><argument_list>()</argument_list></call></expr>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control><block>{<block_content>
+	    <decl_stmt><decl><type><name>int</name></type> <name>p</name> <init>= <expr><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl> 
+	    <if_stmt><if>if<condition>( <expr><name>p</name> <operator>&gt;=</operator> <name>pos</name></expr> )</condition><block>{<block_content>
+		<expr_stmt><expr><call><name><name>i</name><operator>.</operator><name>previous</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<break>break;</break>
+	    </block_content>}</block></if></if_stmt>
+	</block_content>}</block></for>
+	<expr_stmt><expr><name>dotPosition</name> <operator>=</operator> <ternary><condition><expr><call><name><name>i</name><operator>.</operator><name>hasPrevious</name></name><argument_list>()</argument_list></call></expr> ?</condition><then> <expr><call><name><name>i</name><operator>.</operator><name>previous</name></name><argument_list>()</argument_list></call></expr> </then><else>: <expr><literal type="number">0</literal></expr></else></ternary></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

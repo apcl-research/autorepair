@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18939096.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setWorkers</name><parameter_list>(<parameter><decl><type><name>PeerComponent</name></type> <name>component</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>sdfFilePath</name></decl></parameter>, <parameter><decl><type><name>ModuleContext</name></type> <name>context</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws>  
+		
+		<comment type="block">/*PeerSyncApplicationClient componentClient = new PeerSyncApplicationClient(context);
+		componentClient.putOnQueue(new ControlOperationResult());
+
+		componentClient.setWorkers(DescriptionFileCompile.compileSDF(TEST_FILES_PATH + sdfFilePath));*/</comment>
+		
+		<expr_stmt><expr><call><name>setWorkers</name><argument_list>(<argument><expr><name>component</name></expr></argument>, <argument><expr><call><name><name>DescriptionFileCompile</name><operator>.</operator><name>compileSDF</name></name><argument_list>(<argument><expr><name>TEST_FILES_PATH</name> <operator>+</operator> <name>sdfFilePath</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	}
+</unit>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636963.java">		<function><type><specifier>private</specifier> <name>boolean</name></type> <name>isEnabled</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>, <parameter><decl><type><name>IPackageFragmentRoot</name></type> <name>folder</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<decl_stmt><decl><type><name>boolean</name></type> <name>mEnabled</name> <init>= <expr><call><name>isEnabled</name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><name>mEnabled</name></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">false</literal></expr> 
+			</block_content>}</block></if></if_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>handle</name> <init>= <expr><call><name><name>folder</name><operator>.</operator><name>getHandleIdentifier</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<try>try <block>{<block_content>
+				<decl_stmt><decl><type><name>String</name></type> <name>val</name> <init>= <expr><call><name><name>project</name><operator>.</operator><name>getPersistentProperty</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>QualifiedName</name><argument_list>(<argument><expr><name><name>Constants</name><operator>.</operator><name>PLUGIN_ID</name></name></expr></argument>, <argument><expr><name>id</name> <operator>+</operator> <literal type="string">"_"</literal> <operator>+</operator> <name>handle</name> <operator>+</operator> <literal type="string">".enabled"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><name>val</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+					<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+				</block_content>}</block></if></if_stmt>
+				<return>return <expr><call><name><name>val</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"true"</literal></expr></argument>)</argument_list></call></expr>;</return>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>CoreException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></catch></try>
+
+		</block_content>}</block></function>
+</unit>

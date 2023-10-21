@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38897292.java">  <constructor><specifier>public</specifier> <name>ExternalRecord</name> <parameter_list>()</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name>super</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+      <expr_stmt><expr><name>recordId</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>recordName</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>description</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>recordType</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>system</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>listChar</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>copyBook</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>delimiter</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>quote</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>posRecInd</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>recSepList</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>recordSep</name> <operator>=</operator> <name>NULL_BYTES</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name>fontName</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+      <expr_stmt><expr><name>recordStyle</name> <operator>=</operator> <literal type="number">0</literal></expr> 
+      <name>fileStructure</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+
+      <expr_stmt><expr><call><name>setKeys</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></constructor>
+</unit>

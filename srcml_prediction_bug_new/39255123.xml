@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37897347.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setPreClustered</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>preClustered</name> <operator>=</operator> <literal type="boolean">true</literal> 
+		<comment type="line">// this is a bit of a hack...</comment>
+		<comment type="line">// if we're preclustered, we don't want to make another collection</comment>
+		<comment type="line">// to hold the results in--jtbigwoo</comment>
+		<if_stmt><if>if <condition>(<expr><name>preClustered</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>removeEmptyCollection</name></name><argument_list>(<argument><expr><call><name><name>db</name><operator>.</operator><name>getCollection</name></name><argument_list>(<argument><expr><name>newHostID</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>newHostID</name> <operator>=</operator> <name>collectionID</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>renameCollection</name></name><argument_list>(<argument><expr><call><name><name>db</name><operator>.</operator><name>getCollection</name></name><argument_list>(<argument><expr><name>newHostID</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><literal type="string">"Hierarchical, ClustersCust\'s"</literal> <operator>+</operator> <name>folderName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

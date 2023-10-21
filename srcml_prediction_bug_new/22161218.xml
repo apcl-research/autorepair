@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16582983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>updatePreviewPanel</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>programmeFile</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>content</name><init>=<expr><literal type="string">"&lt;h1&gt;"</literal><operator>+</operator><call><name><name>programmeFile</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">"&lt;/h1&gt;"</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>jGraph</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>Controller</name></type> <name>c</name><init>=<expr><call><name><name>ControllerFactory</name><operator>.</operator><name>loadController</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>,<argument><expr><name>programmeFile</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>content</name><operator>+=</operator><call><name><name>c</name><operator>.</operator><name>getDescription</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jGraph</name><operator>.</operator><name>addPreview</name></name><argument_list>(<argument><expr><call><name><name>c</name><operator>.</operator><name>getPreview</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>				
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><name>content</name><operator>+=</operator><literal type="string">"&lt;p&gt;couldn't load: &lt;/p&gt;&lt;pre&gt;"</literal><operator>+</operator><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>( <argument><expr><operator>+</operator><literal type="string">"&lt;/pre&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		
+		<expr_stmt><expr><call><name><name>htmlPanel</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name>content</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

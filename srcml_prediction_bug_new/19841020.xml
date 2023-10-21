@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47362983.java">    <function><type><specifier>public</specifier> <name>JSONArray</name></type> <name>findUsuarioByNome</name><parameter_list>(<parameter><decl><type><name>JSONObject</name></type> <name>js</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>JSONArray</name></type> <name>ja</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><name>dao</name> <operator>=</operator> <call><name>getDaoInstance</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>dao</name><operator>.</operator><name>begin</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><name>ja</name> <operator>=</operator> <call><name><name>ControleDePessoa</name><operator>.</operator><name>findUsuarioByNome</name></name><argument_list>(<argument><expr><name>dao</name></expr></argument>, <argument><expr><name>js</name></expr></argument>)</argument_list></call></expr> 
+
+
+            <return>return <expr><name>ja</name></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <throw>throw <expr><name>e</name></expr>;</throw>
+        </block_content>}</block></catch> <finally>finally <block>{<block_content>
+            <expr_stmt><expr><call><name><name>dao</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

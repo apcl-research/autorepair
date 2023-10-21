@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17032629.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>readMessages</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>WebContext</name></type> <name>wctx</name> <init>= <expr><call><name><name>WebContextFactory</name><operator>.</operator><name>get</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Util</name></type> <name>utilThis</name> <init>= <expr><operator>new</operator> <call><name>Util</name><argument_list>(<argument><expr><call><name><name>wctx</name><operator>.</operator><name>getScriptSession</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// Clear the list and add in the new set of messages</comment>
+        <expr_stmt><expr><call><name><name>utilThis</name><operator>.</operator><name>removeAllOptions</name></name><argument_list>(<argument><expr><literal type="string">"chatlog"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>utilThis</name><operator>.</operator><name>addOptions</name></name><argument_list>(<argument><expr><literal type="string">"chatlog"</literal></expr></argument>, <argument><expr><name>messageCache</name></expr></argument>, <argument><expr><literal type="string">"message"</literal></expr></argument>)</argument_list></call> 
+
+        <comment type="line">// FIXKE:  hope to solve this with client code only</comment>
+        <call><name><name>utilThis</name><operator>.</operator><name>addFunctionCall</name></name><argument_list>(<argument><expr><literal type="string">"scrollToBottomOfChatDiv"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

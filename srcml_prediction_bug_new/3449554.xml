@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/49539983.java">	<function><type><specifier>private</specifier> <name>ReportGroup</name></type> <name>setReportGroupForm</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Integer</name></type> <name>reportGroupId</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>ActionForm</name></type> <name>form</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		
+		<comment type="line">//get the group</comment>
+		<decl_stmt><decl><type><name>ReportGroup</name></type> <name>reportGroup</name> <init>= <expr><call><name><name>ReportHelper</name><operator>.</operator><name>getReportGroup</name></name><argument_list>(<argument><expr><name>reportGroupId</name></expr></argument>, <argument><expr><name>principal</name></expr></argument>, <argument><expr><name>dbSession</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    	
+    	<comment type="line">//add it to the form</comment>
+		<expr_stmt><expr><operator>(</operator><operator>(</operator><name>ReportGroupsForm</name><operator>)</operator> <call><name><name>form</name> <operator>.</operator><name>setReportGroup</name></name><argument_list>(<argument><expr><name>reportGroup</name></expr></argument>)</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+		<return>return <expr><name>reportGroup</name></expr>;</return>
+	</block_content>}</block></function>	
+</unit>

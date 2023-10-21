@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42392696.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>MessageChains</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// Chained methods containing the same object</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>mm</name> <init>= <expr><literal type="string">"FOO"</literal><operator>.</operator><call><name>toLowerCase</name> <argument_list>()</argument_list></call><operator>.</operator><call><name>substring</name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>replace</name><argument_list>(<argument><expr><literal type="char">'o'</literal></expr></argument>, <argument><expr><literal type="char">'m'</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<comment type="line">// Chained methods containing different objects</comment>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>no</name> <init>= <expr><operator>new</operator> <call><name>BigInteger</name><argument_list>(<argument><expr><literal type="string">"1234567890"</literal></expr></argument>)</argument_list></call><operator>.</operator>
+			<call><name>divideAndRemainder</name><argument_list>(<argument><expr><operator>new</operator> <call><name>BigInteger</name><argument_list>(<argument><expr><literal type="string">"123"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><index>[<expr><literal type="number">1</literal></expr>]</index><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>mm</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<comment type="line">// Chained instance variables</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>foo</name> <init>= <expr><operator>new</operator> <call><name>BadClass</name><argument_list>()</argument_list></call><operator>.</operator><name><name>brc</name><operator>.</operator><name>bc</name><operator>.</operator><name>bc</name><operator>.</operator><name>s</name></name></expr></init></decl>;</decl_stmt>
+	</block_content>}</block></function>
+</unit>

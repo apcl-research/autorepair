@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490549.java">  <function><type><specifier>private</specifier> <name>Module</name></type> <name>getModuleFromManifest</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>moduleName</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>DependencyException</name></expr></argument></throws>  
+    <block>{<block_content>
+    <decl_stmt><decl><type><name>Module</name></type> <name>module</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+    
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><name>module</name> <operator>=</operator> <call><name><name>manifest</name><operator>.</operator><name>getModule</name></name><argument_list>(<argument><expr><name>moduleName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block>
+    <catch>catch <parameter_list>(<parameter><decl><type><name>ManifestException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>DependencyException</name><argument_list>(<argument><expr><name><name>DependencyException</name><operator>.</operator><name>MODULE_NOT_IN_MANIFEST</name></name></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getMessageArguments</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+    
+    <return>return <expr><name>module</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

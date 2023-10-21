@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13702783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createFootComposite</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>GridLayout</name></type> <name>gridLayout4</name> <init>= <expr><operator>new</operator> <call><name>GridLayout</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name><name>gridLayout4</name><operator>.</operator><name>numColumns</name></name> <operator>=</operator> <literal type="number">2</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name>footComposite</name> <operator>=</operator> <operator>new</operator> <call><name>Composite</name><argument_list>(<argument><expr><name>detailFKGroup</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>NONE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>footComposite</name><operator>.</operator><name>setLayout</name></name><argument_list>(<argument><expr><name>gridLayout4</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>addDetailButton</name> <operator>=</operator> <operator>new</operator> <call><name>Button</name><argument_list>(<argument><expr><name>footComposite</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>NONE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>addDetailButton</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Add"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>deleteDetailButton</name> <operator>=</operator> <operator>new</operator> <call><name>Button</name><argument_list>(<argument><expr><name>footComposite</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>NONE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>deleteDetailButton</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Delete"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

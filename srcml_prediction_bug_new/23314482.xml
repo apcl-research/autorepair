@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41759929.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>query</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>sparqlQueryString</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>jsonString</name></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>cache</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			
+			<decl_stmt><decl><type><name>SparqlQuery</name></type> <name>sq</name> <init>= <expr><operator>new</operator> <call><name>SparqlQuery</name><argument_list>(<argument><expr><name>sparqlQueryString</name></expr></argument>, <argument><expr><name>sparqlEndpoint</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<comment type="line">//SimpleClock sc = new SimpleClock( ;</comment>
+			<expr_stmt><expr><call><name><name>sq</name><operator>.</operator><name>send</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">//sc.printAndSet("querysend");</comment>
+			<expr_stmt><expr><name>jsonString</name> <operator>=</operator> <call><name><name>sq</name><operator>.</operator><name>getJson</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>jsonString</name> <operator>=</operator> <call><name><name>cache</name><operator>.</operator><name>executeSparqlQuery</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>SparqlQuery</name><argument_list>(
+					<argument><expr><name>sparqlQueryString</name></expr></argument>, <argument><expr><name>sparqlEndpoint</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<return>return <expr><name>jsonString</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

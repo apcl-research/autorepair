@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31964096.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>resetElementData</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>elementType</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>elementName</name> <operator>=</operator> <name>elementNameSpace</name> <operator>=</operator> <name>comments</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>frequency</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>dataType</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>dataRegExp</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>attrManager</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><name>singleton</name> <operator>=</operator> <name>contentOptional</name> <operator>=</operator> <name>checkingLoose</name> <operator>=</operator> <name>checkingStrict</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        <if_stmt><if>if<condition>(<expr><name>charEntNames</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>charEntNames</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if<condition>(<expr><name>charEntRGXs</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>  
+            <expr_stmt><expr><call><name><name>charEntRGXs</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></function>
+</unit>

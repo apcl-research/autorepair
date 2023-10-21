@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37502783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>caretUpdate</name><parameter_list>(<parameter><decl><type><name><name>javax</name><operator>.</operator><name>swing</name><operator>.</operator><name>event</name><operator>.</operator><name>CaretEvent</name></name></type> <name>caretEvent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>currentFile</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>AIDesktop</name><operator>.</operator><name>getStatusBar</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>info</name><argument_list>(<argument><expr><literal type="string">"#NEW FILE#"</literal></expr></argument>,<argument><expr><literal type="string">"Line "</literal> <operator>+</operator> <call><name><name>editpane</name><operator>.</operator><name>getCaretLine</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>AIDesktop</name><operator>.</operator><name>getStatusBar</name></name><argument_list>()</argument_list></call>
+                     <operator>.</operator><call><name>info</name><argument_list>(<argument><expr><call><name><name>currentFile</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

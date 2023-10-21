@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34129996.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getStringOption</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>TemplateOption</name></type> <name>option</name> <init>= <expr><operator>(</operator><name>TemplateOption</name><operator>)</operator> <call><name><name>options</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>option</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>option</name> <operator>instanceof</operator> <name>StringOption</name></expr>)</condition> <block>{<block_content>
+				<return>return <expr><operator>(</operator><operator>(</operator><name>StringOption</name><operator>)</operator> <name>option</name><operator>)</operator><operator>.</operator><call><name>getText</name><argument_list>()</argument_list></call></expr>;</return>
+
+			</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>option</name> <operator>instanceof</operator> <name>AbstractChoiceOption</name></expr>)</condition> <block>{<block_content>
+				<comment type="line">// This situation performs both Combos and Radio buttons</comment>
+				<decl_stmt><decl><type><name>Object</name></type> <name>value</name> <init>= <expr><call><name><name>option</name><operator>.</operator><name>getValue</name></name><argument_list>( ;</init>
+				<if_stmt><if>if <condition>(<expr><name>value</name> <operator>instanceof</operator> <name>String</name></expr>)</condition> <block>{<block_content>
+					<return>return <expr><operator>(</operator><name>String</name><operator>)</operator> <name>value</name></expr>;</return>
+				</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>value</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+					<return>return <expr><call><name><name>value</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

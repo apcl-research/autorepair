@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25889963.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>displayProgramNameAndVersion</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>packagename</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>Intent</name></type> <name>intent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>applicationlabel</name> <init>= <expr><call><name>getApplicationLabel</name><argument_list>(<argument><expr><name>packagename</name></expr></argument>, <argument><expr><name>intent</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>versionname</name> <init>= <expr><call><name>getVersionName</name><argument_list>(<argument><expr><name>packagename</name></expr></argument>, <argument><expr><name>intent</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>String</name></type> <name>combined</name> <init>= <expr><name>applicationlabel</name></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>TextUtils</name><operator>.</operator><name>isEmpty</name></name><argument_list>(<argument><expr><name>versionname</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>combined</name> <operator>+=</operator> <literal type="string">" "</literal> <operator>+</operator> <name>versionname</name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		
+        <expr_stmt><expr><call><name><name>mProgramNameAndVersionText</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name>combined</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <decl_stmt><decl><type><name>String</name></type> <name>title</name> <init>= <expr><call><name>getString</name><argument_list>(<argument><expr><name><name>R</name><operator>.</operator><name>string</name><operator>.</operator><name>about_activity_name_extended</name></name></expr></argument>, <argument><expr><name>applicationlabel</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>setTitle</name><argument_list>(<argument><expr><name>title</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

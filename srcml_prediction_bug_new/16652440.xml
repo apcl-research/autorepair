@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/21277891.java">  <function><type><specifier>public</specifier> <name>long</name></type> <name>getCurrentMeasuresTime</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <comment type="line">// NOTE: We put the start time in a local variable to avoid it is changed</comment>
+    <comment type="line">//       while this method is executed.</comment>
+    <decl_stmt><decl><type><name>long</name></type> <name>startTime</name> <init>= <expr><name>mMeasureStart</name></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>startTime</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+      <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+      <else>else <block>{<block_content>
+      <return>return <expr><call><name><name>System</name><operator>.</operator><name>currentTimeMillis</name></name><argument_list>()</argument_list></call> <operator>-</operator> <name>startTime</name></expr>;</return>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

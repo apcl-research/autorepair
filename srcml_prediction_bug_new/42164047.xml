@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31046983.java">  <function><type><specifier>protected</specifier> <name>IStatus</name></type> <name>computeDeleteStatus</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>resources</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <name><name>resources</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name>markInvalid</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <return>return <expr><call><name>getErrorStatus</name><argument_list>(<argument><expr><name><name>UndoMessages</name><operator>.</operator><name>AbstractResourcesOperation_NotEnoughInfo</name></name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>resourcesExist</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name>markInvalid</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <return>return <expr><call><name>getErrorStatus</name><argument_list>(<argument><expr><name><name>UndoMessages</name><operator>.</operator><name>AbstractResourcesOperation_ResourcesDoNotExist</name></name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><call><name>checkReadOnlyResources</name><argument_list>(<argument><expr><name>resources</name></expr></argument>)</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

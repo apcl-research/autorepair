@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31902796.java">	<function><type><specifier>protected</specifier> <name>Node</name></type> <name>makeTag</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>start</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>end</name></decl></parameter>, <parameter><decl><type><name>Vector</name></type> <name>attributes</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ParserException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>length</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Node</name></type> <name>ret</name></decl>;</decl_stmt>
+
+		<expr_stmt><expr><name>length</name> <operator>=</operator> <name>end</name> <operator>-</operator> <name>start</name></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><literal type="number">0</literal> <operator>!=</operator> <name>length</name></expr>)</condition><block type="pseudo"><block_content>   <comment type="line">// return tag based on second character, '/', '%',</comment>
+							<comment type="line">// Tail (ch), '!'</comment>
+			<if_stmt><if>if <condition>(<expr><literal type="number">2</literal> <operator>&gt;</operator> <name>length</name></expr>)</condition><block type="pseudo"><block_content>
+				<comment type="line">// this is an error</comment>
+				<return>return <expr><operator>(</operator><call><name>makeString</name><argument_list>(<argument><expr><name>start</name></expr></argument>, <argument><expr><name>end</name></expr></argument>)</argument_list></call><operator>)</operator></expr>;</return></block_content></block></if></if_stmt></block_content></block></if></if_stmt>
+		<expr_stmt><expr><name>ret</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+
+		<return>return <expr><operator>(</operator><name>ret</name><operator>)</operator></expr>;</return>
+	</block_content>}</block></function>
+</unit>

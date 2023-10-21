@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26012683.java">	<function><type><specifier>public</specifier> <name>FirmwareInfo</name></type> <name>getFirmwareVersion</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>byte</name> <index>[]</index></name></type> <name>request</name> <init>= <expr><block>{<expr><name>SYSTEM_COMMAND_REPLY</name></expr>, <expr><name>GET_FIRMWARE_VERSION</name></expr>}</block></expr></init></decl> 
+		<decl><type ref="prev"/><name><name>byte</name> <index>[]</index></name> <name>reply</name> <init>= <expr><call><name><name>nxtComm</name><operator>.</operator><name>sendRequest</name></name><argument_list>(<argument><expr><name>request</name></expr></argument>, <argument><expr><literal type="number">7</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>FirmwareInfo</name></type> <name>info</name> <init>= <expr><operator>new</operator> <call><name>FirmwareInfo</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name><name>info</name><operator>.</operator><name>status</name></name> <operator>=</operator> <name><name>reply</name><index>[<expr><literal type="number">2</literal></expr>]</index></name></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>(<expr><name><name>info</name><operator>.</operator><name>status</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name><name>info</name><operator>.</operator><name>protocolVersion</name></name> <operator>=</operator> <name><name>reply</name><index>[<expr><literal type="number">4</literal></expr>]</index></name> <operator>+</operator> <literal type="string">"."</literal> <operator>+</operator> <name><name>reply</name><index>[<expr><literal type="number">3</literal></expr>]</index></name></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>info</name><operator>.</operator><name>firmwareVersion</name></name> <operator>=</operator> <name><name>reply</name><index>[<expr><literal type="number">6</literal></expr>]</index></name> <operator>+</operator> <literal type="string">"."</literal> <operator>+</operator> <name><name>reply</name><index>[<expr><literal type="number">5</literal></expr>]</index></name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>info</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

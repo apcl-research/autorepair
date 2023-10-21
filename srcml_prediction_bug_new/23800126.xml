@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46692983.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getNewCatalogNumber</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>catalogNumber</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>prefix</name> <init>= <expr><call><name><name>catalogNumber</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">7</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>number</name> <init>= <expr><call><name><name>Integer</name><operator>.</operator><name>parseInt</name></name><argument_list>(<argument><expr><call><name><name>catalogNumber</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">7</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>int</name></type> <name>newNumber</name> <init>= <expr><literal type="number">10000000</literal> <operator>+</operator> <name>number</name> <operator>+</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>strNumber</name> <init>= <expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>newNumber</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>substring</name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><call><name><name>prefix</name><operator>.</operator><name>concat</name></name><argument_list>(<argument><expr><name>strNumber</name></expr></argument> ;</argument_list></call></expr></return>
+    </block_content>}</block></function>
+</unit>

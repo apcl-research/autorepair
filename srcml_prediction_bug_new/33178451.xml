@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26312073.java">    <function><type><specifier>public</specifier> <name>double</name></type> <name>speed</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>speed</name> <init>= <expr><name><name>Double</name><operator>.</operator><name>MAX_VALUE</name></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name>ships</name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while <condition>(<expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>  )</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>Ship</name></type> <name>ship</name> <init>= <expr><operator>(</operator><name>Ship</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>ship</name><operator>.</operator><name>maxSpeed</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name>speed</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>speed</name> <operator>=</operator> <call><name><name>ship</name><operator>.</operator><name>maxSpeed</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></while>
+        <if_stmt><if>if <condition>(<expr><name>speed</name> <operator>==</operator> <name><name>Double</name><operator>.</operator><name>MAX_VALUE</name></name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>speed</name> <operator>=</operator> <literal type="number">0.0</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+        <return>return <expr><name>speed</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

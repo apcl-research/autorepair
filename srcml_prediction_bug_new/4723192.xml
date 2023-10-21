@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16562783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createImage</name><parameter_list>(  <parameter><decl><type><name></name></type> <name>block</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<comment type="line">// meet the preconditions first.</comment>
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><name>image</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>||</operator> <operator>(</operator><name>width</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal><operator>)</operator> <operator>||</operator> <operator>(</operator><name>colorModel</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></if></if_stmt>
+
+		<comment type="line">// raster = colorModel.createCompatibleWritableRaster(width, height);</comment>
+
+		<comment type="line">// booleanPremult = colorModel.isAlphaPremultiplied();</comment>
+
+		<comment type="line">// image = new BufferedImage(colorModel, raster,Premult, properties);</comment>
+		<expr_stmt><expr><name>image</name> <operator>=</operator> <operator>new</operator> <call><name>BufferedImage</name><argument_list>(<argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>, <argument><expr><name><name>BufferedImage</name><operator>.</operator><name>TYPE_INT_RGB</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

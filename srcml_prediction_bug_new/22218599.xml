@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41464891.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>notifyObservers</name><parameter_list>(<parameter><decl><type><name>Session</name></type> <name>conn</name></decl></parameter>, <parameter><decl><type><name>SMPPPacket</name></type> <name>packet</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>SessionObserver</name><index>[  <expr><name>observerList</name> <operator>=</operator> <call><name>getObserverList</name><argument_list>()</argument_list></call></expr>]</index></name></expr>;</expr_stmt>
+        <for>for <control>(<init><decl><type><name>SessionObserver</name></type> <name>observer</name> <range>: <expr><name>observerList</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><call><name><name>observer</name><operator>.</operator><name>packetReceived</name></name><argument_list>(<argument><expr><name>conn</name></expr></argument>, <argument><expr><name>packet</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>x</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>LOG</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"An observer threw an exception during packet processing"</literal></expr></argument>, <argument><expr><name>x</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

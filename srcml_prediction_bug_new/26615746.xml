@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18659996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initConsole</name><parameter_list>()</parameter_list> <block>{<block_content>
+        
+		<expr_stmt><expr><name>consoleHub</name> <operator>=</operator> <operator>new</operator> <call><name>DefaultHub</name><argument_list>( ;</argument_list></call></expr></expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>consoleHub</name><operator>.</operator><name>addControllable</name></name><argument_list>(<argument><expr><name>projectController</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>TelnetServer</name></type> <name>telnet</name> <init>= <expr><operator>new</operator> <call><name>TelnetServer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>telnet</name><operator>.</operator><name>isInitialized</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>fatal</name></name><argument_list>(<argument><expr><literal type="string">"Can't run telnet server"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name><name>consoleHub</name><operator>.</operator><name>addIOHandler</name></name><argument_list>(<argument><expr><call><name><name>telnet</name><operator>.</operator><name>getIOHandler</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Telnet server is starting up"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>telnet</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

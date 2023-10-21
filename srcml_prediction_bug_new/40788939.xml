@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44418054.java"><comment type="line">//    private Jingle createAcceptMessage() {</comment>
+<comment type="line">//        Jingle jout = null;</comment>
+<comment type="line">//</comment>
+<comment type="line">//        // If we have a common best codec, send an accept right now...</comment>
+<comment type="line">//        jout = new Jingle(JingleActionEnum.CONTENT_ACCEPT);</comment>
+<comment type="line">//        JingleContent content = new JingleContent(parentNegotiator.getCreator(), parentNegotiator.getName());</comment>
+<comment type="line">//        content.setDescription(new JingleDescription.Audio(bestCommonAudioPt) ;</comment>
+<comment type="line">//        jout.addContent(content);</comment>
+<comment type="line">//</comment>
+<comment type="line">//        return jout;</comment>
+<comment type="line">//    }</comment>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34131596.java"> 	<function><type><specifier>protected</specifier> <name>Point2D</name></type> <name>getSourceHandlePoint</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// If there are no points in the list, use the point opposite</comment>
+		<comment type="line">// to the sourcePoint... the targetPoint.</comment>
+		<if_stmt><if>if <condition>( <expr><call><name><name>handlePointList</name><operator>.</operator><name>size</name></name><argument_list>(  <argument><expr><ternary><condition><expr><operator>(</operator><name>handlePointList</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator></expr>
+				?</condition><then> <expr><literal type="number">0</literal></expr> </then><else>: <expr><call><name><name>handlePointList</name><operator>.</operator><name>size</name></name><argument_list>(  )</argument_list></call></expr></else></ternary></expr></argument>)</argument_list></call>
+			<operator>==</operator> <name>targetPoint</name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>targetPoint</name></expr>;</return></block_content></block></if>
+
+		<comment type="line">// If there are points, then use the one closest to the sourcePoint.</comment>
+		<else>else<block type="pseudo"><block_content>
+			<return>return <expr><operator>(</operator><name>Point2D</name><operator>)</operator><call><name><name>handlePointList</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

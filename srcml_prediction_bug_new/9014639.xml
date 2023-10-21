@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18452783.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>setCurrentURL</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>url</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>oldValue</name></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>!=</operator> <name>url</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>url</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>mCurrentURL</name></expr></argument>)</argument_list></call><operator>)</operator> <operator>||</operator> <operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>==</operator> <name>url</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><literal type="null">null</literal> <operator>!=</operator> <name>mCurrentURL</name><operator>)</operator><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>oldValue</name> <operator>=</operator> <name>mCurrentURL</name></expr>;</expr_stmt>
+			<expr_stmt><expr><name>mCurrentURL</name> <operator>=</operator> <name>url</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>mPropertySupport</name><operator>.</operator><name>firePropertyChange</name></name><argument_list>(<argument><expr><name>PROP_CURRENT_URL_PROPERTY</name></expr></argument>, <argument><expr><name>oldValue</name></expr></argument>, <argument><expr><name>url</name></expr></argument> ;</argument_list></call></expr>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

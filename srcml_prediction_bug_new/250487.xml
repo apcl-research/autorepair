@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14182483.java">	<function><type><specifier>public</specifier> <name>Vector</name></type> <name>getMechanisms</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>bDefPID</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>InternalException</name></expr></argument></throws><block>{<block_content>
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering getMechanisms("</literal> <operator>+</operator> <name>bDefPID</name> <operator>+</operator> <literal type="string">")"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<try>try 
+			<init>(<decl><type><name>Map</name></type> <name>map</name> <init>= <expr><call><name><name>fedI</name><operator>.</operator><name>getBMechs</name></name><argument_list>(<argument><expr><name>bDefPID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>Vector</name></type> <name>vector</name> <init>= <expr><call><name>makeVector</name><argument_list>(<argument><expr><name>map</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"exiting getMechanisms"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><name>vector</name></expr>;</return>
+		</block_content>}</block><catch>catch<parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"error while getting mech"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<throw>throw <expr><operator>new</operator> <call><name>InternalException</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

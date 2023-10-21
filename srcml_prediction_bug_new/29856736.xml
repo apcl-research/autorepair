@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28044891.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>disposeAfterLostFocus</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Window</name></type> <name>window</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>SwingUtilities</name><operator>.</operator><name>invokeLater</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+        <comment type="line">// in the event-queue there may be some event</comment>
+        <comment type="line">// which has do be done before this window can close.</comment>
+        <comment type="line">// Therefore enqueue it at the end.</comment>
+
+        <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+          <expr_stmt><expr><call><name><name>window</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call> 
+          <call><name><name>window</name><operator>.</operator><name>dispose</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></function>
+      }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

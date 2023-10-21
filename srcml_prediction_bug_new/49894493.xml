@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26269996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testRpc</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<comment type="line">// Test the web server (which also tests the rpc server)</comment>
+			<comment type="line">// by connecting via the clients</comment>
+			<decl_stmt><decl><type><name>Vector</name></type> <name>params</name> <init>= <expr><operator>new</operator> <call><name>Vector</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>params</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>REQUEST_PARAM_VALUE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name>Object</name></type> <name>response</name> <init>= <expr><call><name><name>client</name><operator>.</operator><name>execute</name></name><argument_list>(<argument><expr><name>HANDLER_NAME</name> <operator>+</operator> <literal type="string">".echo"</literal></expr></argument>, <argument><expr><name>params</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><name>REQUEST_PARAM_VALUE</name></expr></argument>, <argument><expr><name>response</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">// params.removeAllElements();</comment>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>fail</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

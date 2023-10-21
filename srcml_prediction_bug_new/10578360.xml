@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>closeOutputStreams</name><parameter_list>(<parameter><decl><type><name>OutputStream</name></type> <name>headerStream</name></decl></parameter>, <parameter><decl><type><name>OutputStream</name></type> <name>bodyStream</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <comment type="line">// If the header stream is not the same as the body stream,</comment>
+            <comment type="line">// close the header stream here.</comment>
+            <if_stmt><if>if <condition>(<expr><operator>(</operator><name>headerStream</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>headerStream</name> <operator>!=</operator> <name>bodyStream</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>  
+                <expr_stmt><expr><call><name><name>headerStream</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            </block_content>}</block> <finally>finally <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>bodyStream</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>bodyStream</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

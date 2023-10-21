@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51011715.java">	<function><type><specifier>public</specifier> <name>float</name></type> <name>getScoreOnEntity</name><parameter_list>(<parameter><decl><type><name>E</name></type> <name>entity</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>id</name></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>entity</name> <operator>instanceof</operator> <name>ONDEXConcept</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>id</name> <operator>=</operator> <call><name><name>entity</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>entity</name> <operator>instanceof</operator> <name>ONDEXRelation</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>id</name> <operator>=</operator> <call><name><name>entity</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		  <else>else <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><call><name><name>entity</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call>
+					<operator>+</operator> <literal type="string">" is incompatible with these Hit."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></else></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>scoresForHits</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><call><name><name>scoresForHits</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return> <comment type="line">// problem if not in scores?</comment>
+	</block_content>}</block></function>
+</unit>

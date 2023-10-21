@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28172783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initializeChoiceTeenItem</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Choice</name></type> <name>choiceTeen</name> <init>= <expr><call><name><name>orderFramePanel</name><operator>.</operator><name>getChoiceTeen</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>Vector</name></type> <name>teen</name> <init>= <expr><call><name><name>model</name><operator>.</operator><name>getGetkar</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTeen</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Enumeration</name></type> <name>enumeration</name> <init>= <expr><call><name><name>teen</name><operator>.</operator><name>elements</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>enumeration</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>choiceTeen</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>enumeration</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr> 
+        </block_content>}</block></while>
+
+        <comment type="line">//choiceTeen.select(0);</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>selectedItem</name> <init>= <expr><call><name><name>choiceTeen</name><operator>.</operator><name>getSelectedItem</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>model</name><operator>.</operator><name>setLastChoosenTable</name></name><argument_list>( <argument><expr><name>selectedItem</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+    </block_content>}</block></function>
+</unit>

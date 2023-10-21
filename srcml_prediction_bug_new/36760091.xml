@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17489963.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>equals</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	<if_stmt><if>if  <condition>(<expr><name>o</name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block>{<block_content>
+    		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    	</block_content>}</block></if></if_stmt>
+    	<decl_stmt><decl><type><name>HeapPageId</name></type> <name>heapPageId</name></decl>;</decl_stmt>
+    	<try>try<block>{<block_content>
+    		<expr_stmt><expr><name>heapPageId</name> <operator>=</operator> <operator>(</operator><name>HeapPageId</name><operator>)</operator> <name>o</name></expr>;</expr_stmt>
+    	</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ClassCastException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    	</block_content>}</block></catch></try>    	
+        <return>return <expr><operator>(</operator><call><name><name>this</name><operator>.</operator><name>pageno</name></name><argument_list>()</argument_list></call> <operator>==</operator> <call><name><name>heapPageId</name><operator>.</operator><name>pageno</name></name><argument_list>()</argument_list></call><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator> <call><name><name>this</name><operator>.</operator><name>tableid</name></name><argument_list>()</argument_list></call> <operator>==</operator> <call><name><name>heapPageId</name><operator>.</operator><name>tableid</name></name><argument_list>()</argument_list></call> <operator>)</operator></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19349983.java">    <function><type><specifier>private</specifier> <name>AbstractLine</name></type> <name>defMainframeRec</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>LayoutDetail</name></type> <name>dtar0020</name> <init>= <expr><call><name><name>ToLayoutDetail</name><operator>.</operator><name>getInstance</name></name> <argument_list>()</argument_list></call><operator>.</operator><call><name>getLayout</name><argument_list>(
+                <argument><expr><name><name>copybookInt</name><operator>.</operator><name>loadCopyBook</name></name><argument_list>(
+                        <argument><expr><name><name>TstConstants</name><operator>.</operator><name>COBOL_DIRECTORY</name></name> <operator>+</operator> <name>copyBookDTAR020</name> <operator>+</operator> <literal type="string">".cbl"</literal></expr></argument>,
+                        <argument><expr><name><name>CopybookLoader</name><operator>.</operator><name>SPLIT_NONE</name></name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="string">"cp037"</literal></expr></argument>,
+                        <argument><expr><name><name>Convert</name><operator>.</operator><name>FMT_MAINFRAME</name></name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>
+                )</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><operator>new</operator> <call><name>Line</name><argument_list>(<argument><expr><name>dtar0020</name></expr></argument>,
+                		<argument><expr><name>recDtar020</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18909811.java">  <function><type><specifier>public</specifier> <name>Callable</name></type> <name>remove</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+    <comment type="line">// Wait if there is nothing in the queue</comment>
+    <synchronized>synchronized <init>(<expr><name>queue</name></expr>)</init> <block>{<block_content>
+      <while>while <condition>(<expr><call><name><name>queue</name><operator>.</operator><name>isEmpty</name></name> <argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+        <try>try <block>{<block_content>
+
+          <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>wait</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>InterruptedException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+          <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><literal type="string">"unable to remove item from queue"</literal>
+              <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+      </block_content>}</block></while>
+
+      <comment type="line">// Remove the next item from the queue</comment>
+      <return>return <expr><call><name><name>queue</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></synchronized>
+  </block_content>}</block></function>
+</unit>

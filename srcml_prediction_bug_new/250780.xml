@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42017562.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>parse</name><parameter_list>(<parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>file</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<decl_stmt><decl><type><name>InputStream</name></type> <name>is</name> <init>= <expr><operator>new</operator> <call><name>ByteArrayInputStream</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Reader</name></type> <name>r</name> <init>= <expr><operator>new</operator> <call><name>BufferedReader</name><argument_list>(<argument><expr><operator>new</operator> <call><name>InputStreamReader</name><argument_list>(<argument><expr><name>is</name></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr></init></decl> ;</decl_stmt>
+
+		<decl_stmt><decl><type><name>MyCallback</name></type> <name>callback</name> <init>= <expr><operator>new</operator> <call><name>MyCallback</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<try>try <block>{<block_content>
+			<comment type="block" format="javadoc">/**
+			 * parses the html/xml file, as opposed by the Reader, and handles
+			 * it as specified by the callback. The ignoreCharSet equals false.
+			 */</comment>
+			<expr_stmt><expr><operator>new</operator> <call><name>ParserDelegator</name><argument_list>()</argument_list></call><operator>.</operator><call><name>parse</name><argument_list>(<argument><expr><name>r</name></expr></argument>, <argument><expr><name>callback</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"error parsing file"</literal></expr></argument>, <argument><expr><name>ex</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="string">""</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+
+		<return>return <expr><name><name>callback</name><operator>.</operator><name>htmlString</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

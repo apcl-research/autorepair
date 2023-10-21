@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45442996.java">	<function><type><specifier>private</specifier> <name>DashBoardDefinition</name></type> <name>buildFilterDependants</name><parameter_list>(<parameter><decl><type><name>DashBoardDefinition</name></type> <name>dashBoardDefinition</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>FilterDefinition</name></type> <name>filter</name> <range>: <expr><call><name><name>dashBoardDefinition</name><operator>.</operator><name>getFilters</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>DataSourceDefinition</name></type> <name>dataSourceDefinition</name> <init>= <expr><call><name><name>filter</name><operator>.</operator><name>getDataSourceDefinition</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>dataSourceDefinition</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<for>for <control>(<init><decl><type><name>String</name></type> <name>filterName</name> <range>: <expr><call><name><name>filter</name><operator>.</operator><name>getDataSourceDefinition</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDependencies</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>dashBoardDefinition</name><operator>.</operator><name>getFilter</name></name><argument_list>(<argument><expr><name>filterName</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getDependants</name><argument_list>()</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><call><name><name>filter</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></for>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>dashBoardDefinition</name></expr>;</return>
+	 
+</unit>

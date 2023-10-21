@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27894648.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>addRequestListener</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>value</name></decl></parameter>, <parameter><decl><type><name>RequestListener</name></type> <name>listener</name></decl></parameter>)</parameter_list>  
+    <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>  
+    <expr_stmt><expr><call><name>removeRequestListener</name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>String</name></type> <name>key</name> <init>= <expr><call><name>getKey</name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>, <argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>List</name></type> <name>list</name> <init>= <expr><operator>(</operator><name>List</name><operator>)</operator> <call><name><name>inverseMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>list</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>list</name> <operator>=</operator> <operator>new</operator> <call><name>LinkedList</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>inverseMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>, <argument><expr><name>list</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

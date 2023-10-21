@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17990029.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>handleException</name><parameter_list>(<parameter><decl><type><name>HibernateTransaction</name></type> <name>transaction</name></decl></parameter>, <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>StorageException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>LOGGER</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"rolling back: "</literal> <operator>+</operator> <call><name><name>transaction</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>rollbackSilently</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>StorageException</name></type> <name>result</name></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>e</name> <operator>instanceof</operator> <name>StorageException</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>result</name> <operator>=</operator> <operator>(</operator><name>StorageException</name><operator>)</operator> <name>e</name></expr>;</expr_stmt>
+		  <else>else <block>{<block_content>
+			<expr_stmt><expr><name>result</name> <operator>=</operator> <operator>new</operator> <call><name>GenericStorageException</name><argument_list>(<argument><expr><call><name><name>transaction</name><operator>.</operator><name>isReadOnly</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>transaction</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<throw>throw <expr><name>result</name></expr>;</throw>
+	</block_content>}</block></function>
+</unit>

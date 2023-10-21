@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25770062.java">	<function><type><specifier>protected</specifier> <name>int</name></type> <name>getAngleFromUser</name><parameter_list>(<parameter><decl><type><name>Point</name></type> <name>p</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>degs</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<switch>switch<condition>(<expr><name>mode</name></expr>)</condition><block>{<block_content>
+		<case>case <expr><name>CTRL_ANGULAR</name></expr>:</case>
+			<expr_stmt><expr><name>degs</name> <operator>=</operator>  <call><name><name>Math</name><operator>.</operator><name>round</name></name><argument_list>(<argument><expr><call><name><name>PApplet</name><operator>.</operator><name>degrees</name></name><argument_list>(<argument><expr><call><name>calcRealAngleFromXY</name><argument_list>(<argument><expr><name>p</name></expr></argument>,  <argument><expr><name><name>winApp</name><operator>.</operator><name>mouseX</name></name></expr></argument>, <argument><expr><name><name>winApp</name><operator>.</operator><name>mouseY</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name>CTRL_HORIZONTAL</name></expr>:</case>
+			<expr_stmt><expr><name>degs</name> <operator>=</operator> <operator>(</operator><name>int</name><operator>)</operator>  <name>sensitivity</name> <operator>*</operator> <operator>(</operator><name><name>winApp</name><operator>.</operator><name>mouseX</name></name> <operator>-</operator> <name><name>p</name><operator>.</operator><name>x</name></name> <operator>-</operator> <name>startMouseX</name><operator>)</operator></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name>CTRL_VERTICAL</name></expr>:</case>
+			<expr_stmt><expr><name>degs</name> <operator>=</operator> <operator>(</operator><name>int</name><operator>)</operator> <operator>(</operator><name>sensitivity</name> <operator>*</operator> <operator>(</operator><name><name>winApp</name><operator>.</operator><name>mouseY</name></name> <operator>-</operator> <name><name>p</name><operator>.</operator><name>y</name></name> <operator>-</operator> <name>startMouseY</name><operator>)</operator><operator>)</operator></expr>;</expr_stmt>
+			<break>break;</break>
+		</block_content>}</block></switch>
+		<return>return <expr><name>degs</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

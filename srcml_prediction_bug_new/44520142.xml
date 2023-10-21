@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37102629.java">    <function><type><specifier>public</specifier> <name>List</name></type> <name>getVertices</name><parameter_list>()</parameter_list><block>{<block_content>
+	<decl_stmt><decl><type><name>List</name></type> <name>vertices</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	
+	<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>e</name> <init>= <expr><call><name><name>faces</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>e</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control><block>{<block_content>
+	    <decl_stmt><decl><type><name>List</name></type> <name>face_verts</name> <init>= <expr><operator>(</operator><operator>(</operator><name>Polygon</name><operator>)</operator><call><name><name>e</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>getVertices</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>f</name> <init>= <expr><call><name><name>face_verts</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init><condition><expr><call><name><name>f</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control><block>{<block_content>
+		<decl_stmt><decl><type><name>Vertex</name></type> <name>vertex</name> <init>= <expr><operator>(</operator><name>Vertex</name><operator>)</operator><call><name><name>f</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>vertices</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>vertex</name></expr></argument>)</argument_list></call> <operator>==</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content>
+		    <expr_stmt><expr><call><name><name>vertices</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>vertex</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+	    </block_content>}</block></for>
+	</block_content>}</block></for>
+	<return>return <expr><name>vertices</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

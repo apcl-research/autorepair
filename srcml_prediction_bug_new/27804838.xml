@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>protected</specifier> <name>Edge</name></type> <name>createEdge</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>edge_index</name></decl></parameter> )</parameter_list> <block>{<block_content>
+
+    <if_stmt><if>if <condition>( <expr><call><name><name>edgeIndexObjectMap</name><operator>.</operator><name>containsKey</name></name><argument_list>( <argument><expr><name>edge_index</name></expr></argument> )</argument_list></call></expr> )</condition> <block>{<block_content>
+      <return>return <expr><operator>(</operator> <name>Edge</name> <operator>)</operator><call><name><name>edgeIndexObjectMap</name><operator>.</operator><name>get</name></name><argument_list>( <argument><expr><name>edge_index</name></expr></argument> )</argument_list></call></expr>;</return>
+    </block_content>}</block></if> <else>else<block type="pseudo"><block_content>  
+      <decl_stmt><decl><type><name>RigidEdge</name></type> <name>edge</name> <init>= <expr><operator>new</operator> <call><name>RigidEdge</name><argument_list>( <argument><expr><name>edge_index</name></expr></argument>, <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></else></if_stmt>
+      <expr_stmt><expr><call><name><name>edgeIndexObjectMap</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><name>edge_index</name></expr></argument>, <argument><expr><name>edge</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+      <return>return <expr><name>edge</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

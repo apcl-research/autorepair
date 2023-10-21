@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17489983.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>selectCustomer</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
+		<expr_stmt><expr><call><name><name>myLogger</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"customer selected with id "</literal> <operator>+</operator> <name>selectedCustomerId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><name>currentCustomer</name> <operator>=</operator> <operator>(</operator><name>Customer</name><operator>)</operator> <call><name><name>em</name><operator>.</operator><name>createQuery</name></name><argument_list>(
+				<argument><expr><literal type="string">"select o from Customer o where o.id =:customerId"</literal></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>setParameter</name><argument_list>(<argument><expr><literal type="string">"customerId"</literal></expr></argument>, <argument><expr><name>selectedCustomerId</name></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>getSingleResult</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// no configuration in faces-config.xml required as the String defaults</comment>
+		<comment type="line">// (and redirects) to customerDetail.xhtml</comment>
+		<return>return <expr><name><name>NavigationConstants</name><operator>.</operator><name>CUSTOMER_DETAIL</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

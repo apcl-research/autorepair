@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42009983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>readSGIPResponse</name><parameter_list>(<parameter><decl><type><name>InputStream</name></type> <name>is</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>DataInputStream</name></type> <name>in</name> <init>= <expr><operator>new</operator> <call><name>DataInputStream</name><argument_list>(<argument><expr><name>is</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>total_Length</name> <init>= <expr><call><name><name>in</name><operator>.</operator><name>readInt</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>command_Id</name> <init>= <expr><call><name><name>in</name><operator>.</operator><name>readInt</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>byte</name></type> <name><name>buf</name><index>[]</index></name> <init>= <expr><operator>new</operator> <name><name>byte</name><index>[<expr><name>total_Length</name> <operator>-</operator> <literal type="number">8</literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>in</name><operator>.</operator><name>readFully</name></name><argument_list>(<argument><expr><name>buf</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"command id = "</literal> <operator>+</operator> <name>command_Id</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name>command_Id</name> <operator>==</operator> <literal type="number">0x80000001</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name>SGIPBindResponseListener</name><argument_list>(<argument><expr><operator>new</operator> <call><name>SGIPBindRepMessage</name><argument_list>(<argument><expr><name>buf</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14352715.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>handleAuthentication</name><parameter_list>(<parameter><decl><type><name>SessionContext</name></type> <name>sc</name></decl></parameter>, <parameter><decl><type><name>HttpServletRequest</name></type> <name>req</name></decl></parameter>, <parameter><decl><type><name>HttpServletResponse</name></type> <name>res</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>NotAuthenticatedException</name></expr></argument></throws> <block>{<block_content>
+		
+		<if_stmt><if>if <condition>(<expr><call><name><name>sc</name><operator>.</operator><name>getProperty</name></name><argument_list>(<argument><expr><name><name>SessionContext</name><operator>.</operator><name>PROP_AUTHENTICATION</name></name></expr></argument>, <argument><expr><literal type="string">"false"</literal> <operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">"true"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>authenticator</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <operator>!</operator><call><name><name>authenticator</name><operator>.</operator><name>isAuthenticated</name></name><argument_list>(<argument><expr><name>req</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<comment type="line">// redirect to login page</comment>
+				<throw>throw <expr><operator>new</operator> <call><name>NotAuthenticatedException</name><argument_list>()</argument_list></call></expr>;</throw>
+			</block_content>}</block></if></if_stmt> 
+		</block_content>}</block></if></if_stmt>
+		
+	</block_content>}</block></function>
+</unit>

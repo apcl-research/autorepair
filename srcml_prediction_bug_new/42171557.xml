@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42171596.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>addIdPropertyDescriptor</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>object</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>itemPropertyDescriptors</name><operator>.</operator><name>add</name></name>
+			<argument_list>(<argument><expr><call><name>createItemPropertyDescriptor</name>
+				<argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>ComposeableAdapterFactory</name><operator>)</operator><name>adapterFactory</name><operator>)</operator><operator>.</operator><call><name>getRootAdapterFactory</name><argument_list>()</argument_list></call></expr></argument>,
+				 <argument><expr><call><name>getResourceLocator</name><argument_list>()</argument_list></call></expr></argument>,
+				 <argument><expr><call><name>getString</name><argument_list>(<argument><expr><literal type="string">"_UI_DBQueryParamId_id_feature"</literal></expr></argument>)</argument_list></call></expr></argument>,
+				 <argument><expr><call><name>getString</name><argument_list>(<argument><expr><literal type="string">"_UI_PropertyDescriptor_description"</literal></expr></argument>, <argument><expr><literal type="string">"_UI_DBQueryParamId_id_feature"</literal></expr></argument>, <argument><expr><literal type="string">"_UI_DBQueryParamId_type"</literal></expr></argument>)</argument_list></call></expr></argument>,
+				 <argument><expr><call><name><name>ActionStepPackage</name><operator>.</operator><name>eINSTANCE</name><operator>.</operator><name>getDBQueryParamId_Id</name></name><argument_list>()</argument_list></call></expr></argument>,
+				 <argument><expr><literal type="boolean">true</literal></expr></argument>,
+				 <argument><expr><literal type="boolean">false</literal></expr></argument>,
+				 <argument><expr><literal type="boolean">false</literal></expr></argument>,
+				 <argument><expr><name><name>ItemPropertyDescriptor</name><operator>.</operator><name>GENERIC_VALUE_IMAGE</name></name></expr></argument>,
+				 <argument><expr><literal type="null">null</literal></expr></argument>,
+				 <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

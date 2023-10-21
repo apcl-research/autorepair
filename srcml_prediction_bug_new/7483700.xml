@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44182783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getBody</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>language</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>language</name> <operator>=</operator> <call><name>parseXMLLang</name><argument_list>(<argument><expr><name>language</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <for>for <control>(<init><decl><type><name>Body</name></type> <name>body</name> <range>: <expr><name>bodies</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><operator>(</operator><name><name>body</name><operator>.</operator><name>langauge</name></name> <operator>==</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>language</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator>
+                    <operator>||</operator> <operator>(</operator><name>body</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>body</name><operator>.</operator><name>langauge</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>language</name></expr></argument>)</argument_list></call><operator>)</operator></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name><name>body</name><operator>.</operator><name>message</name></name></expr>;</return>
+             
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

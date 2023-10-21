@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44162783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionFilterSchematics</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>filteredSchematics</name> <operator>=</operator> <call><name><name>SWGSchematicsManager</name><operator>.</operator><name>getSchematics</name></name><argument_list>(
+                <argument><expr><name>selectedProfession</name></expr></argument>, <argument><expr><operator>-</operator><literal type="number">1</literal></expr></argument>, <argument><expr><call><name><name>selectedLevel</name><operator>.</operator><name>intValue</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr> 
+
+        <name>isUpdatingGUI</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>schemTreeModel</name><operator>.</operator><name>setSchematics</name></name><argument_list>(<argument><expr><name>filteredSchematics</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>schemSelector</name><operator>.</operator><name>setSelectedIndex</name></name><argument_list>(<argument><expr><operator>-</operator><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>schemSelectModel</name><operator>.</operator><name>fireContentChanged</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>isUpdatingGUI</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>actionSchematicSelected</name><argument_list>(<argument><expr><name>selectedSchematic</name></expr></argument>, <argument><expr><name>traceForward</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

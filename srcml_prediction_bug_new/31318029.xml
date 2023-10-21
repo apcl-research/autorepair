@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13392715.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>sendUpdateForID</name><parameter_list>(<parameter><decl><type><name>NetworkID</name></type> <name>requestedID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <decl_stmt><decl><type><name>Line</name></type> <name>l</name> <init>= <expr><call><name><name>protocolController</name><operator>.</operator><name>document</name><operator>.</operator><name>findLine</name></name><argument_list>(<argument><expr><name>requestedID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <if_stmt><if>if<condition>(<expr><name>l</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	        <expr_stmt><expr><call><name><name>protocolController</name><operator>.</operator><name>sendElement</name></name><argument_list>(<argument><expr><name>l</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></if> <else>else <block>{<block_content>
+	        <decl_stmt><decl><type><name>Block</name></type> <name>b</name> <init>= <expr><call><name><name>protocolController</name><operator>.</operator><name>document</name><operator>.</operator><name>findBlock</name></name><argument_list>(<argument><expr><name>requestedID</name></expr></argument> ;</argument_list></call></expr></init></decl>;</decl_stmt>
+	        
+	        <if_stmt><if>if<condition>(<expr><name>b</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	            <expr_stmt><expr><call><name><name>protocolController</name><operator>.</operator><name>sendElement</name></name><argument_list>(<argument><expr><name>b</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	        </block_content>}</block></if> <else>else <block>{<block_content>
+	            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"unknown element with id "</literal> <operator>+</operator> <name>requestedID</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	            <comment type="line">// it would probably be sufficiently to add this element id to</comment>
+	            <comment type="line">// our own missing list, but it is probably already there</comment>
+	        </block_content>}</block></else></if_stmt>
+	    </block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

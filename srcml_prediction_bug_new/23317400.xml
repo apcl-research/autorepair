@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/9626891.java">    <comment type="line">//public void setNumberOfSelectedIndividuals(int numberOfSelectedIndividuals) {</comment>
+    <comment type="line">//    if (algorithmType == AlgorithmType.STEADY_STATE)</comment>
+    <comment type="line">//        this.numberOfSelectedIndividuals = numberOfSelectedIndividuals;</comment>
+    <comment type="line">//    else</comment>
+    <comment type="line">//        System.out.println "Warning: number of selected individuals "</comment>
+    <comment type="line">//               + "will be ignored in a sill algorithm");</comment>
+    <comment type="line">//}</comment>
+</unit>

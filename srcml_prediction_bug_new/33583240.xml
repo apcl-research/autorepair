@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16169996.java"><comment type="line">//	private int getGapWidth() {</comment>
+<comment type="line">//		</comment>
+<comment type="line">//		int gapWidth = 0 </comment>
+<comment type="line">//</comment>
+<comment type="line">//		int width = getWidth();</comment>
+<comment type="line">//		int size = _hand.size();</comment>
+<comment type="line">//		if (width &gt; size * _cardWidth) {</comment>
+<comment type="line">//			gapWidth = (width - size * _cardWidth) / (size + 1);</comment>
+<comment type="line">//		} else {</comment>
+<comment type="line">//			gapWidth = (width - size * _cardWidth) / (size - 1);</comment>
+<comment type="line">//		}</comment>
+<comment type="line">//		</comment>
+<comment type="line">//		return gapWidth;</comment>
+<comment type="line">//	}</comment>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39162783.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>append</name><parameter_list>(<parameter><decl><type><name>Path</name></type> <name>path</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>direction</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Step</name></type> <name>first</name> <init>= <expr><call><name><name>path</name><operator>.</operator><name>getFirstStep</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>suffixNode</name></name><argument_list>(<argument><expr><call><name><name>first</name><operator>.</operator><name>getNode</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>direction</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <while>while <condition>(<expr><call><name><name>path</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><operator>(</operator><name><name>this</name><operator>.</operator><name>steps</name></name><operator>)</operator><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><call><name><name>path</name><operator>.</operator><name>getNextStep</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <comment type="line">// while loop</comment>
+  </block_content>}</block></while> <comment type="line">// method append</comment>
+</block_content>}</block></function> <comment type="line">// method append</comment>
+</unit>

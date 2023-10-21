@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38279996.java">  <function><type><specifier>public</specifier> <name>Templates</name></type> <name>getTemplateFromCache</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>xsl</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Templates</name></type> <name>xslTemplate</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+    <comment type="line">// Get template from cache (templates hashtable)</comment>
+    <if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>useCache</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Getting XSLT template ["</literal> <operator>+</operator> <name>xsl</name> <operator>+</operator> <literal type="string">"] from cache"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>xslTemplate</name> <operator>=</operator> <operator>(</operator><name>Templates</name><operator>)</operator> <call><name><name>templates</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>xsl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <comment type="line">// Will remove from cache</comment>
+      <expr_stmt><expr><call><name><name>templates</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>xsl</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+    <return>return <expr><name>xslTemplate</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

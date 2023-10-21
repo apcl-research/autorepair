@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16571596.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isOver</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>ax</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>ay</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>Point</name></type> <name>p</name> <init>= <expr><operator>new</operator> <call><name>Point</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>,<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>calcAbsPosition</name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>(<expr><name>ax</name> <operator>&gt;=</operator> <name><name>p</name><operator>.</operator><name>x</name></name> <operator>&amp;&amp;</operator> <name>ax</name> <operator>&lt;=</operator> <name><name>p</name><operator>.</operator><name>x</name></name> <operator>+</operator> <name>width</name> <operator>&amp;&amp;</operator> <name>ay</name> <operator>&gt;=</operator> <name><name>p</name><operator>.</operator><name>y</name></name> <operator>+</operator> <name>thumbPos</name> <operator>-</operator> <name>thumbSize</name><operator>/</operator><literal type="number">2</literal> <operator>&amp;&amp;</operator> <name>ay</name> <operator>&lt;=</operator> <name><name>p</name><operator>.</operator><name>y</name></name> <operator>+</operator> <name>thumbPos</name> <operator>+</operator> <name>thumbSize</name><operator>/</operator><literal type="number">2</literal></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>offset</name> <operator>=</operator> <name>ay</name> <operator>-</operator> <operator>(</operator><name><name>p</name><operator>.</operator><name>y</name></name> <operator>+</operator> <name>thumbPos</name><operator>)</operator></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">true</literal></expr> 
+		</block_content>}</block></if>
+		<else>else<block type="pseudo"><block_content> 
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

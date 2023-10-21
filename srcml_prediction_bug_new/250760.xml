@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30181315.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>deleteThumbnail</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>pid</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>dsID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering deleteThumbnail"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>fname</name> <init>= <expr><call><name><name>Config</name><operator>.</operator><name>getCurrentPath</name></name><argument_list>()</argument_list></call> <operator>+</operator> <name><name>File</name><operator>.</operator><name>separator</name></name>
+				<operator>+</operator> <call><name><name>Config</name><operator>.</operator><name>getProperty</name></name><argument_list>(<argument><expr><literal type="string">"DEFAULT_THUMBNAILS_DIRECTORY"</literal></expr></argument>)</argument_list></call>
+				<operator>+</operator> <name><name>File</name><operator>.</operator><name>separator</name></name> <operator>+</operator> <call><name>generateFileName</name><argument_list>(<argument><expr><name>pid</name></expr></argument>, <argument><expr><name>dsID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>File</name></type> <name>thumbFile</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>fname</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>thumbFile</name><operator>.</operator><name>canRead</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>thumbFile</name><operator>.</operator><name>delete</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"leaving deleteThumbnail"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	 
+</block_content>}</block></function>
+</unit>

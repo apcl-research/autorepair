@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44182783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>read</name><parameter_list>(<parameter><decl><type><name>Reader</name></type> <name>r</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>BufferedReader</name></type> <name>in</name></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>r</name> <operator>instanceof</operator> <name>BufferedReader</name></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>in</name> <operator>=</operator> <operator>(</operator><name>BufferedReader</name><operator>)</operator> <name>r</name></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content> <expr_stmt><expr><name>in</name> <operator>=</operator> <operator>new</operator> <call><name>BufferedReader</name><argument_list>(<argument><expr><name>r</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        
+        <decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Line</name></argument>&gt;</argument_list></name></type> <name>newLines</name> <init>= <expr><call><name>read0</name><argument_list>(<argument><expr><name>in</name></expr></argument>)</argument_list></call></expr></init></decl> 
+        synchronized<init>(<expr><name>this</name></expr>)</init> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>lines</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>lines</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><name>newLines</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></synchronized>
+    </block_content>}</block></function>
+</unit>

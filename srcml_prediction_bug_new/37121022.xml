@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44790583.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>processPeerEvent</name><parameter_list>(<parameter><decl><type><name>EventRole</name></type> <name>role</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>data</name></decl></parameter>)</parameter_list>  
+
+        <if_stmt><if>if <condition>(<expr><name>role</name> <operator>==</operator> <name><name>Widget</name><operator>.</operator><name>ENABLED_EVENT_ROLE</name></name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name>hasFocus</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><specifier>final</specifier> <name>boolean</name></type> <name>disabled</name> <init>= <expr><operator>!</operator><operator>(</operator><operator>(</operator><name>Boolean</name><operator>)</operator> <name>data</name><operator>)</operator><operator>.</operator><call><name>booleanValue</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <if_stmt><if>if <condition>(<expr><name>disabled</name> <operator>&amp;&amp;</operator> <operator>(</operator><name><name>this</name><operator>.</operator><name>focusGroup</name></name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>focusGroup</name><operator>.</operator><name>nextFocus</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>processPeerEvent</name></name><argument_list>(<argument><expr><name>role</name></expr></argument>, <argument><expr><name>data</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    }
+</unit>

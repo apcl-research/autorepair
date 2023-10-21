@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28869996.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>csm</name><init>=<expr><literal type="string">"CSM(MCL/"</literal> <operator>+</operator> <call><name>getMCL</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" "</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Enumeration</name></type> <name>tags</name> <init>= <expr><call><name><name>orderedTags</name><operator>.</operator><name>elements</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while <condition>(<expr><call><name><name>tags</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>tag</name> <init>=  <expr><call><name>String</name><argument_list>(<argument><expr><operator>(</operator><name>Tag</name><operator>)</operator> <call><name><name>tags</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><name>csm</name> <operator>=</operator> <name>csm</name> <operator>+</operator> <name>tag</name> <operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <call><name>getFieldContent</name><argument_list>(<argument><expr><name>tag</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">" "</literal></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <expr_stmt><expr><name>csm</name> <operator>=</operator> <name>csm</name> <operator>+</operator> <literal type="string">")"</literal></expr>;</expr_stmt>
+        <return>return <expr><name>csm</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

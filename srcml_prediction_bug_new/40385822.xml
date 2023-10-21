@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40990596.java">	<function><type><specifier>public</specifier> <name>Texture</name></type> <name>getTexture</name><parameter_list>(<parameter><decl><type><name>BufferedImage</name></type> <name>image</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Texture</name></type> <name>texture</name> <init>= <expr><operator>(</operator><name>Texture</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>table</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>image</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if  <condition>(<expr><name>texture</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>texture</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>getTexture</name></name><argument_list>(<argument><expr><name>image</name></expr></argument>, <argument><expr><name><name>GL</name><operator>.</operator><name>GL_TEXTURE_2D</name></name></expr></argument>, <comment type="line">// target</comment>
+			        <argument><expr><name><name>GL</name><operator>.</operator><name>GL_RGBA</name></name></expr></argument>, <comment type="line">// dst pixel format</comment>
+			        <argument><expr><name><name>GL</name><operator>.</operator><name>GL_LINEAR</name></name></expr></argument>, <comment type="line">// min filter (unused)</comment>
+			        <argument><expr><name><name>GL</name><operator>.</operator><name>GL_LINEAR</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>table</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>image</name></expr></argument>, <argument><expr><name>texture</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		
+		<return>return <expr><name>texture</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

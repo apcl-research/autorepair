@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setGraphPerspective</name><parameter_list>( <parameter><decl><type><name>GraphPerspective</name></type> <name>perspective</name></decl></parameter> )</parameter_list> <block>{<block_content>
+   
+    <comment type="line">// hide the current nodes </comment>
+    <expr_stmt><expr><call><name>hideNodes</name><argument_list>( <argument><expr><call><name>getNodeIndicesArray</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <comment type="line">// hide the current edges</comment>
+    <expr_stmt><expr><call><name>hideEdges</name><argument_list>( <argument><expr><call><name>getEdgeIndicesArray</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+    <comment type="line">// restore the new nodes and edges</comment>
+    <expr_stmt><expr><call><name>restoreNodes</name><argument_list>( <argument><expr><call><name><name>perspective</name><operator>.</operator><name>getNodeIndicesArray</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>restoreEdges</name><argument_list>( <argument><expr><call><name><name>perspective</name><operator>.</operator><name>getEdgeIndicesArray</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    
+    <expr_stmt><expr><call><name>fireEvent</name><argument_list>(<argument><expr><name><name>CyNetworkEvent</name><operator>.</operator><name>GRAPH_REPLACED</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

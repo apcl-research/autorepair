@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17911891.java">    <function><type><specifier>protected</specifier> <name>Document</name></type> <name>getSqlMap</name><parameter_list>(<parameter><decl><type><name>IntrospectedTable</name></type> <name>introspectedTable</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>IbatorPlugin</name></type> <name>plugins</name> <init>= <expr><call><name><name>ibatorContext</name><operator>.</operator><name>getPlugins</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <decl_stmt><decl><type><name>Document</name></type> <name>document</name> <init>= <expr><operator>new</operator> <call><name>Document</name><argument_list>(<argument><expr><name><name>XmlConstants</name><operator>.</operator><name>SQL_MAP_PUBLIC_ID</name></name></expr></argument>,
+                <argument><expr><name><name>XmlConstants</name><operator>.</operator><name>SQL_MAP_SYSTEM_ID</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>document</name><operator>.</operator><name>setRootElement</name></name><argument_list>(<argument><expr><call><name>getSqlMapElement</name><argument_list>(<argument><expr><name>introspectedTable</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>plugins</name><operator>.</operator><name>sqlMapDocumentGenerated</name></name><argument_list>(<argument><expr><name>document</name></expr></argument>, <argument><expr><name>introspectedTable</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name>document</name></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

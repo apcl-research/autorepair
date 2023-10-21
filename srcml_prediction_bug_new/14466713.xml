@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38302696.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setWindingRule</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>rule</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>rule</name> <operator>!=</operator> <name><name>PathIterator</name><operator>.</operator><name>WIND_EVEN_ODD</name></name> <operator>&amp;&amp;</operator> <name>rule</name> <operator>!=</operator> <name><name>PathIterator</name><operator>.</operator><name>WIND_NON_ZERO</name></name></expr>  )</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"winding rule must be "</literal><operator>+</operator>
+                                         <literal type="string">"WIND_EVEN_ODD or "</literal><operator>+</operator>
+                                         <literal type="string">"WIND_NON_ZERO"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><name>windingRule</name> <operator>=</operator> <name>rule</name></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

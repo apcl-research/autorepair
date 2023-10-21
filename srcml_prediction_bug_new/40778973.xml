@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18936963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>unallocateDeliveredWorker</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>IResponseTO</name></argument>&gt;</argument_list></name></type> <name>responses</name></decl></parameter>, <parameter><decl><type><name>LocalAllocableWorker</name></type> <name>allocableWorker</name></decl></parameter>, <parameter><decl><type><name>LocalWorker</name></type> <name>localWorker</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<decl_stmt><decl><type><name>Request</name></type> <name>suitableRequestForWorker</name> <init>= <expr><call><name><name>DefaultAllocator</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRequestForWorkerSpec</name><argument_list>(
+				<argument><expr><call><name><name>allocableWorker</name><operator>.</operator><name>getWorkerSpec</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if<condition>(<expr><name>suitableRequestForWorker</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+			<decl_stmt><decl><type><name>StopWorkingResponseTO</name></type> <name>to</name> <init>= <expr><operator>new</operator> <call><name>StopWorkingResponseTO</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>to</name><operator>.</operator><name>setWmAddress</name></name><argument_list>(<argument><expr><call><name><name>allocableWorker</name><operator>.</operator><name>getWorkerAddress</name></name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			
+			<expr_stmt><expr><call><name><name>responses</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>to</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<expr_stmt><expr><call><name>allocateRequestToIdleWorker</name><argument_list>(<argument><expr><name>responses</name></expr></argument>, <argument><expr><name>allocableWorker</name></expr></argument>, <argument><expr><name>suitableRequestForWorker</name></expr></argument>, <argument><expr><name>localWorker</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

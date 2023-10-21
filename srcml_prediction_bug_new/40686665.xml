@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40582996.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>initImplementation</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>id</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>appletName</name> <init>= <expr><literal type="string">"javaApp_"</literal> <operator>+</operator> <name>id</name></expr></init></decl>;</decl_stmt>
+
+    <expr_stmt><expr><name>javaTag</name> <operator>=</operator> <operator>new</operator> <call><name>HTML</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>javaTag</name><operator>.</operator><name>setHTML</name></name><argument_list>(<argument><expr><call><name><name>TAG</name><operator>.</operator><name>replaceAll</name></name> <argument_list>(<argument><expr><literal type="string">"[{][0][}]"</literal></expr></argument>, <argument><expr><name>appletName</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>replaceAll</name><argument_list>(<argument><expr><literal type="string">"[{][1][}]"</literal></expr></argument>, <argument><expr><call><name><name>String</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><call><name><name>RootPanel</name><operator>.</operator><name>get</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><name>javaTag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

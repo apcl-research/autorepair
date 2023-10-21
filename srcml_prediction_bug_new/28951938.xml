@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/49280045.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setUniversalIdType</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>universalIdType</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>universalIdType</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> 
+        	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>universalIdType</name></name> <operator>=</operator> <call><name><name>universalIdType</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+        	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>universalIdType</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>universalId</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>universalKey</name> <operator>=</operator> <name>universalId</name></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name>universalIdType</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>universalKey</name> <operator>=</operator> <name>universalKey</name> <operator>+</operator> <literal type="string">"&amp;"</literal> <operator>+</operator> <name>universalIdType</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
+         
+    </block_content>}</block></if></if_stmt>
+</unit>

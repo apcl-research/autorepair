@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426963.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>acceptHelper</name><parameter_list>(<parameter><decl><type><name>SWGKnownResource</name></type> <name>r</name></decl></parameter>, <parameter><decl><type><name>SWGValues</name></type> <name>g</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>acceptNoStats</name> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>g</name><operator>.</operator><name>hasAllValues</name></name><argument_list>(<argument><expr><name>r</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt>
+
+        <return>return <expr><ternary><condition><expr><operator>(</operator><call><name>isWeighted</name><argument_list>(<argument><expr><name>g</name></expr></argument>)</argument_list></call><operator>)</operator></expr>
+                ?</condition><then> <expr><call><name>acceptWeighted</name><argument_list>(<argument><expr><name>r</name></expr></argument>, <argument><expr><operator>(</operator><name>SWGWeights</name><operator>)</operator> <name>g</name></expr></argument> 
+                </argument_list></call></expr> </then><else>: <expr><call><name>acceptFilter</name><argument_list>(<argument><expr><name>r</name></expr></argument>, <argument><expr><operator>(</operator><name>SWGResourceFilter</name><operator>)</operator> <name>g</name></expr></argument>)</argument_list></call></expr></else></ternary></expr>;</return>
+    </block_content>}</block></function>
+</unit>

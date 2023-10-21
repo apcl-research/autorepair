@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44464096.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getUserData</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><name>index</name> <operator>&lt;</operator> <name>MIN_USER_DATA</name><operator>)</operator> <operator>||</operator> <operator>(</operator><name>index</name> <operator>&gt;</operator> <name>MAX_USER_DATA</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content> 
+			 <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Input parameter [index :: "</literal> <operator>+</operator> <name>index</name> <operator>+</operator> <literal type="string">"  was out of bounds :: "</literal> <operator>+</operator> <name>MIN_USER_DATA</name> <operator>+</operator> <literal type="string">" &gt;= index =&lt; "</literal> <operator>+</operator> <name>MAX_USER_DATA</name></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+		<comment type="line">// return User Data</comment>
+		<return>return <expr><name><name>userData</name><index>[<expr><name>index</name> <operator>-</operator> <literal type="number">1</literal></expr>]</index></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

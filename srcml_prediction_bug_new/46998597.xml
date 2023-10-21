@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50579983.java">    <function><type><specifier>public</specifier> <name>Date</name></type> <name>getEndDate</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Date</name></type> <name>endDate</name></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>hasChildren</name></expr> )</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>refreshDateRanges</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>endDate</name> <operator>=</operator> <name>latestChildEndDate</name></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>endDate</name> <operator>=</operator> <call><name><name>DateUtil</name><operator>.</operator><name>getEndDate</name></name><argument_list>(<argument><expr><name>startDate</name></expr></argument>, <argument><expr><operator>(</operator><name>int</name><operator>)</operator> <call><name><name>Math</name><operator>.</operator><name>ceil</name></name><argument_list>(<argument><expr><name>work</name></expr></argument>)</argument_list></call></expr></argument>,
+                                           <argument><expr><call><name><name>Configuration</name><operator>.</operator><name>getConfiguration</name></name><argument_list>(<argument><expr><name>project</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>isWorkWeekends</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>endDate</name><operator>.</operator><name>before</name></name><argument_list>(<argument><expr><name>startDate</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>endDate</name> <operator>=</operator> <name>startDate</name></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></else></if_stmt>
+
+        <return>return <expr><name>endDate</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

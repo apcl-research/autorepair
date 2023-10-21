@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3721407.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>paste</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>PNode</name></argument>&gt;</argument_list></name></type> <name>theNodes</name> <init>= <expr><call><name><name>itsClipboard</name><operator>.</operator><name>getContent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>PNode</name></type> <name>theNode</name> <range>: <expr><name>theNodes</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name>getActiveLayer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>addChild</name><argument_list>(<argument><expr><name>theNode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<comment type="line">// init the relations</comment>
+		<for>for <control>(<init><decl><type><name>PNode</name></type> <name>theNode</name> <range>: <expr><name>theNodes</name></expr></range></decl></init>  <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>theNode</name> <operator>instanceof</operator> <name>LOMRelationUI</name></expr>)</condition> <block>{<block_content>
+				<decl_stmt><decl><type><name>LOMRelationUI</name></type> <name>theUI</name> <init>= <expr><operator>(</operator><name>LOMRelationUI</name><operator>)</operator> <name>theNode</name></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name><name>theUI</name><operator>.</operator><name>init</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

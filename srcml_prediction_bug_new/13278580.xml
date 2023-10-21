@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13279996.java">    <function><type><specifier>public</specifier> <name>ConnectedNode</name></type> <name>getConnectedNodePointingFrom</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>n</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>interpretation1</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name><name>interpretation1</name><operator>.</operator><name>node</name></name> <operator>==</operator> <name>n</name></expr>)</condition><block type="pseudo"><block_content>  
+                <return>return <expr><name>interpretation2</name></expr>;</return></block_content></block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></function>
+
+        <if_stmt><if>if <condition>(<expr><name>interpretation2</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name><name>interpretation2</name><operator>.</operator><name>node</name></name> <operator>==</operator> <name>n</name></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>interpretation1</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><literal type="null">null</literal></expr>;</return> <comment type="line">//if there was only one proportion, and none sufficiently.</comment>
+    </block_content>}</block></function>
+</unit>

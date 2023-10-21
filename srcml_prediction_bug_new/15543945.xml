@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48140915.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>GlobalUpdatePheromone</name><parameter_list>( )</parameter_list> <block>{<block_content>
+	    <decl_stmt><decl><type><name>double</name></type>   <name>d_tau</name></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>int</name></type> <name>NumCities</name> <init>= <expr><name><name>Problem</name><operator>.</operator><name>NumCities</name></name></expr></init></decl>;</decl_stmt>
+<comment type="line">//	    TRACE (Too many ("global pheromone update\n") );</comment>
+
+	    <expr_stmt><expr><name>d_tau</name> <operator>=</operator> <literal type="number">1.0</literal> <operator>/</operator> <operator>(</operator><name>double</name><operator>)</operator> <name>PheromLen</name></expr>;</expr_stmt>
+	    <for>for <control>( <init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl> ;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>NumCities</name></expr> ;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr> )</control> <block>{<block_content>
+	    	<decl_stmt><decl><type><name>int</name></type> <name>j</name> <init>= <expr><name><name>Pheromone</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+	    	<decl_stmt><decl><type><name>int</name></type> <name>h</name> <init>= <expr><name><name>Pheromone</name><index>[<expr><name>i</name><operator>+</operator><literal type="number">1</literal></expr>]</index></name></expr></init></decl>;</decl_stmt>
+	    	<expr_stmt><expr><name><name>Problem</name><operator>.</operator><name>Pheromone</name><index>[<expr><name>j</name></expr>]</index><index>[<expr><name>h</name></expr>]</index></name> <operator>+=</operator> <name>d_tau</name></expr>;</expr_stmt>
+	    	<expr_stmt><expr><name><name>Problem</name><operator>.</operator><name>Pheromone</name><index>[<expr><name>h</name></expr>]</index><index>[<expr><name>j</name></expr>]</index></name> <operator>=</operator> <name><name>Problem</name><operator>.</operator><name>Pheromone</name><index>[<expr><name>j</name></expr>]</index><index>[<expr><name>h</name></expr>]</index></name> 
+	    </block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/102327.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>removeModelElementsAfterReplication</name><parameter_list>()</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>ModelElement</name></argument>&gt;</argument_list></name></type> <name>temp</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>ModelElement</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// iterate through all elements to find all that need removal</comment>
+		<for>for<control>(<init><decl><type><name>ModelElement</name></type> <name>m</name><range>: <expr><call><name><name>myModelElementMap</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>m</name><operator>.</operator><name>getRemoveFromModelAfterRepFlag</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name><name>temp</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>m</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></for>
+		<comment type="line">// now tell them to remove ourselves from the model as well as their children</comment>
+		<for>for<control>(<init><decl><type><name>ModelElement</name></type> <name>m</name><range>: <expr><name>temp</name></expr></range></decl></init>)</control><block>{<block_content>
+			<expr_stmt><expr><call><name><name>m</name><operator>.</operator><name>removeFromModel</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		
+		<expr_stmt><expr><name><name>temp</name><operator>.</operator><name>clear</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

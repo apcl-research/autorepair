@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44440062.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>init</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>popupCanceled</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>addPopupMenuListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>PopupMenuListener</name></super><argument_list>()</argument_list>  
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>popupMenuCanceled</name><parameter_list>(<parameter><decl><type><name>PopupMenuEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>canceled</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>popupMenuWillBecomeInvisible</name><parameter_list>(<parameter><decl><type><name>PopupMenuEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>invisible</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>popupMenuWillBecomeVisible</name><parameter_list>(<parameter><decl><type><name>PopupMenuEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <expr_stmt><expr><call><name>visible</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

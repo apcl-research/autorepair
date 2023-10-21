@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19272483.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>saveSuiteContent</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>File</name></type> <name>file</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>XMLStringBuffer</name></type> <name>content</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      
+      <try>try <block>{<block_content>
+        <decl_stmt><decl><type><name>FileWriter</name></type> <name>fw</name> <init>= <expr><operator>new</operator> <call><name>FileWriter</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+          <expr_stmt><expr><call><name><name>fw</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><call><name><name>content</name><operator>.</operator><name>getStringBuffer</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <finally>finally <block>{<block_content>
+          <expr_stmt><expr><call><name><name>fw</name><operator>.</operator><name>close</name></name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+      </block_content>}</block>
+      <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// TODO CQ is this normal toarding exception here </comment>
+        <expr_stmt><expr><call><name><name>LOGGER</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"IO Exception"</literal></expr></argument>, <argument><expr><name>ioe</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

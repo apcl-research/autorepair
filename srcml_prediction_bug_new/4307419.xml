@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16332996.java">	<function><type><specifier>public</specifier> <name>HitSet</name></type> <name>lookupScores</name><parameter_list>(<parameter><decl><type><name>HitSet</name></type> <name>queryId</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<comment type="line">// find the block number that the query is in</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>blockNumber</name> <init>= <expr><call><name>getBlockNumber</name><argument_list>(<argument><expr><name>queryId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// </comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>id</name> <init>= <expr><call><name>getRelativeQueryId</name><argument_list>(<argument><expr><name>queryId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>blockNumber</name><operator>!=</operator><name>cachedBlockNumber</name></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>HitSet</name><index>[]</index></name></type> <name>hitSet</name> <init>= <expr><operator>(</operator><name><name>HitSet</name><index>[]</index></name><operator>)</operator> <call><name><name>IOUtils</name><operator>.</operator><name>loadObject</name></name><argument_list>(<argument><expr><name>savedDataPath</name> <operator>+</operator> 
+					<name><name>SetupUtils</name><operator>.</operator><name>FS</name></name> <operator>+</operator> <name>blockNumber</name> <operator>+</operator> <literal type="string">".dat"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>cachedBlock</name></name> <operator>=</operator> <name>hitSet</name></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>cachedBlockNumber</name></name> <operator>=</operator> <name>blockNumber</name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name><name>cachedBlock</name><index>[<expr><name>id</name></expr>]</index></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

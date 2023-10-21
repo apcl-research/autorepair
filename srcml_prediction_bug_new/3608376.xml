@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44789996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>doAfterBody</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>JspException</name></expr></argument></throws> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>BodyContent</name></type> <name>body</name> <init>= <expr><call><name>getBodyContent</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>writeOut</name></name><argument_list>(<argument><expr><call><name>getPreviousOut</name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	        <expr_stmt><expr><call><name><name>parent</name><operator>.</operator><name>nextRow</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>parent</name><operator>.</operator><name>printMessage</name></name><argument_list>(<argument><expr><literal type="string">"Error in IO body repeat"</literal> <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr> ;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>clearBody</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>parent</name><operator>.</operator><name>getHasRowData</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name>EVAL_BODY_TAG</name></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><name>SKIP_BODY</name></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+
+    </block_content>}</block></function>
+</unit>

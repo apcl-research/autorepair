@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42782629.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>start</name><parameter_list>(<parameter><decl><type><name>BundleContext</name></type> <name>context</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>context</name></name> <operator>=</operator> <name>context</name></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>Bundle</name></type> <name>parserBundle</name> <init>= <expr><call><name><name>context</name><operator>.</operator><name>getBundle</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<comment type="line">// check for sax parsers</comment>
+			<expr_stmt><expr><call><name>registerSAXParsers</name><argument_list>(<argument><expr><call><name>getParserFactoryClassNames</name><argument_list>(<argument><expr><call><name><name>parserBundle</name>
+					<operator>.</operator><name>getResource</name></name><argument_list>(<argument><expr><name>SAXCLASSFILE</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">// check for dom parsers</comment>
+			<expr_stmt><expr><call><name>registerDOMParsers</name><argument_list>(<argument><expr><call><name>getParserFactoryClassNames</name><argument_list>(<argument><expr><call><name><name>parserBundle</name>
+					<operator>.</operator><name>getResource</name></name><argument_list>(<argument><expr><name>DOMCLASSFILE</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block>
+		<catch>catch  <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<comment type="line">// if there were any IO errors accessing the resource files</comment>
+			<comment type="line">// containing the class names</comment>
+			<expr_stmt><expr><call><name><name>ioe</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<throw>throw <expr><operator>new</operator> <call><name>FactoryConfigurationError</name><argument_list>(<argument><expr><name>ioe</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

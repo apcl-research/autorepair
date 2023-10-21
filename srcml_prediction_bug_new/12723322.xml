@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19564891.java"><function><type><specifier>public</specifier> <name>ObjectMatrix2D</name></type> <name>assign</name><parameter_list>(<parameter><decl><type><name>ObjectMatrix2D</name></type> <name>other</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<if_stmt><if>if <condition>(<expr><name>other</name><operator>==</operator><name>this</name></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><name>this</name></expr>;</return></block_content></block></if></if_stmt>
+	<expr_stmt><expr><call><name>checkShape</name><argument_list>(<argument><expr><name>other</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	<if_stmt><if>if <condition>(<expr><call><name>haveSharedCells</name><argument_list>(<argument><expr><name>other</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>other</name> <operator>=</operator> <call><name><name>other</name><operator>.</operator><name>copy</name></name><argument_list>()</argument_list></call></expr> 
+	
+	<for>for <control>(<init><decl><type><name>int</name></type> <name>row</name><init>=<expr><name>rows</name></expr></init></decl>;</init> <condition><expr><operator>--</operator><name>row</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>;</condition><incr/>)</control> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>column</name><init>=<expr><name>columns</name></expr></init></decl>;</init> <condition><expr><operator>--</operator><name>column</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name>setQuick</name><argument_list>(<argument><expr><name>row</name></expr></argument>,<argument><expr><name>column</name></expr></argument>,<argument><expr><call><name><name>other</name><operator>.</operator><name>getQuick</name></name><argument_list>(<argument><expr><name>row</name></expr></argument>,<argument><expr><name>column</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></if></if_stmt>
+	<return>return <expr><name>this</name></expr>;</return>
+</block_content>}</block></function>
+</unit>

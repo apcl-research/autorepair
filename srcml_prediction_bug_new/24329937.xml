@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18669996.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getDownloaderConfig</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>downloadStarter</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>initDownloader</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>downloadStarter</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>logger</name><operator>.</operator><name>warning</name></name><argument_list>(<argument><expr><literal type="string">"Download timer could not be initialised."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <return>return <expr><literal type="string">""</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name>DownloadTimer</name></type> <name>timer</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>downloadStarter</name><operator>.</operator><name>getTimer</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>parameters</name> <init>= <expr><call><name><name>timer</name><operator>.</operator><name>getConfiguration</name></name><argument_list>( ;</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><name>parameters</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

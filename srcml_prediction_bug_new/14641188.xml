@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16679996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>hashCode</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>result</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>keyValueTuples</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>KeyValueTuple</name></type> <name>keyValueTuple</name> <init>= <expr><operator>(</operator><name>KeyValueTuple</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<expr_stmt><expr><name>result</name> <operator>+=</operator> <call><name><name>keyValueTuple</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>hashCode</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>result</name>
+				<operator>+=</operator> <call><name>checkValueGet</name><argument_list>(<argument><expr><call><name><name>keyValueTuple</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>keyValueTuple</name><operator>.</operator><name>getValue</name></name><argument_list>( )</argument_list></call>
+					<operator>.</operator><call><name>hashCode</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		</block_content>}</block></for>
+
+		<return>return <expr><name>result</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

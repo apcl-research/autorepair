@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31974983.java">  <function><type><specifier>private</specifier> <name>boolean</name></type> <name>messageRegExpMatches</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>messageRegExp</name></decl></parameter>, <parameter><decl><type><name>Throwable</name></type> <name>ite</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><literal type="string">".*"</literal><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>messageRegExp</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <if_stmt><if>if  <condition>(<expr><call><name><name>ite</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if>
+      <else>else<block type="pseudo"><block_content> <return>return <expr><call><name><name>Pattern</name><operator>.</operator><name>matches</name></name><argument_list>(<argument><expr><name>messageRegExp</name></expr></argument>, <argument><expr><call><name><name>ite</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return></block_content></block></else></if_stmt>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

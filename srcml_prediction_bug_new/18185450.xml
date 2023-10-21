@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31082629.java">    <constructor><specifier>public</specifier> <name>WebConnection</name> <parameter_list>(<parameter><decl><type><name>InetAddress</name></type> <name>ia</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>port</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>ia</name></name> <operator>=</operator> <name>ia</name></expr>;</expr_stmt> 
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>port</name></name> <operator>=</operator> <name>port</name></expr>;</expr_stmt>
+	
+	<if_stmt><if>if<condition>(<expr><name>port</name><operator>&lt;=</operator><literal type="number">0</literal> <operator>||</operator> <name>port</name> <operator>&gt;</operator><literal type="number">65535</literal></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>net</name><operator>.</operator><name>UnknownHostException</name></name><argument_list>(<argument><expr><literal type="string">"Port number out of range"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+        <if_stmt><if>if  <condition>(<expr><name>ia</name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>net</name><operator>.</operator><name>UnknownHostException</name></name><argument_list>(<argument><expr><literal type="string">"Host not found in WebConnection"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+	<expr_stmt><expr><name>socket</name><operator>=</operator><literal type="null">null</literal></expr>;</expr_stmt>
+	<expr_stmt><expr><call><name>reconnect</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></constructor>
+</unit>

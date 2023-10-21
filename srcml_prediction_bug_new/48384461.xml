@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46482629.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addNewEventAfterCurrent</name><parameter_list>(<parameter><decl><type><name>Event</name></type> <name>newEvent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>setAsEventContainer</name><argument_list>(<argument><expr><name>newEvent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>events</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><call><name>addNewEvent</name><argument_list>(<argument><expr><name>newEvent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if><else>else<block>{<block_content>
+			<comment type="line">//INVARIANT: The current event is always the first one, unless the queue is empty</comment>
+			<expr_stmt><expr><call><name><name>events</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>,<argument><expr><name>newEvent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+<comment type="line">//		System.out.println("Adding event " + newEvent.ID + " after current event"  );</comment>
+	</block_content>}</block></else></if_stmt>
+</block_content>}</block></function>
+</unit>

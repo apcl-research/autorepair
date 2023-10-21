@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25442696.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>storeFile</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>dir</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>filename</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>layout</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><call><name>putLayout</name><argument_list>(<argument><expr><name>filename</name></expr></argument>, <argument><expr><name>layout</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>fileNames</name> <name>fileNum</name></expr></expr_stmt>) <block>{<block_content>
+            <expr_stmt><expr><name>fileNum</name> <operator>=</operator> <name>filename</name></expr>;</expr_stmt>
+        </block_content>}</block>
+        <expr_stmt><expr><name><name>directory</name><index>[<expr><name>fileNum</name></expr>]</index></name> <operator>=</operator> <name>dir</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>layouts</name><index>[<expr><name>fileNum</name></expr>]</index></name> <operator>=</operator> <name>layout</name></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name>lastIdx</name> <operator>=</operator> <name>fileNum</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>lastFile</name> <operator>=</operator> <call><name>correctCase</name><argument_list>(<argument><expr><name>filename</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>fileNum</name> <operator>+=</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>fileNum</name> <operator>&gt;=</operator> <name>FILE_HISTORY</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>fileNum</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

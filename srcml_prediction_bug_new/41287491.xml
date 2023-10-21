@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/20779996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setSimulatorSpeed</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><name>value</name> <operator>&gt;=</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <name>value</name> <operator>&lt;=</operator> <literal type="number">10</literal></expr>)</condition><block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><name>timerRunning</name></expr>)</condition><block>{<block_content>
+                <expr_stmt><expr><call><name>stopTimer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name>simulatorSpeed</name> <operator>=</operator> <name>value</name></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>startTimer</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if>
+            <else>else<block>{<block_content>
+                <expr_stmt><expr><name>simulatorSpeed</name> <operator>=</operator> <name>value</name></expr> 
+            </block_content>}</block></else></if_stmt>
+            <comment type="block" format="javadoc">/**
+             * Finally update the listeners to let them know that the speed has changed.
+             */</comment>
+            <for>for<control>(<init><decl><type><name>SimulatorStateListener</name></type> <name>stateListener</name> <range>: <expr><name>stateListeners</name></expr></range></decl></init>)</control> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>stateListener</name><operator>.</operator><name>SimulationRateChanged</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></for>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11669963.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getAttributeNS</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>namespaceURI</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>localName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><name>syncData</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>synchronizeData</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>Attr</name></type> <name>attr</name> <init>= <expr><operator>(</operator><name>Attr</name><operator>)</operator><operator>(</operator><call><name><name>attributes</name><operator>.</operator><name>getNamedItemNS</name></name><argument_list>(<argument><expr><name>namespaceURI</name></expr></argument>, <argument><expr><name>localName</name></expr></argument>)</argument_list></call> <operator>)</operator></expr></init></decl> ;</decl_stmt>
+        <return>return <expr><ternary><condition><expr><operator>(</operator><name>attr</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator></expr> ?</condition><then> <expr><literal type="null">null</literal></expr> </then><else>: <expr><call><name><name>attr</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></else></ternary></expr>;</return>
+
+    </block_content>}</block></function> <comment type="line">// getAttributeNS(String,String):String</comment>
+</unit>

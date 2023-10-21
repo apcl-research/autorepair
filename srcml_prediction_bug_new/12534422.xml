@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36682983.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>setupSearchList</name><parameter_list>(<parameter><decl><type><name>RepairTask</name></type> <name>rtask</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"t&gt; "</literal> <operator>+</operator> <call><name>getTime</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" Setting up the equipment location search list."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>AirBase</name></type> <name>base</name> <init>= <expr><call><name><name>rtask</name><operator>.</operator><name>getAirBase</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// simple search in order of the list, this can be sufficiently by sorting, etc</comment>
+		<expr_stmt><expr><name>mySearchList</name> <operator>=</operator> <call><name><name>base</name><operator>.</operator><name>getEquipmentLocationList</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">//System.out.println(mySearchList) </comment>
+		<expr_stmt><expr><name>mySearchListIterator</name> <operator>=</operator> <call><name><name>mySearchList</name><operator>.</operator><name>listIterator</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>	
+		
+	</block_content>}</block></function>
+</unit>

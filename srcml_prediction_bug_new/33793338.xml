@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41859983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testGetFornecedor</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="block">/*System.out.println("getFornecedor");
+        Integer id = 151;
+        FornecedorDAO instance = new FornecedorDAO() 
+        //Fornecedor expResult = null;
+        Fornecedor result = instance.getFornecedor(id);
+        assertNotNull(result);
+        // TODO review the generated test code and remove the default call to fail.
+        //fail("The test case is a prototype.");*/</comment>
+    </block_content>}</block></function>
+</unit>

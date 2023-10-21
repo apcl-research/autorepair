@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47563796.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>switchPokes</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>a</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>b</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>a</name> <operator>&gt;=</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <name>b</name> <operator>&lt;=</operator> <literal type="number">5</literal> <operator>&amp;&amp;</operator> <call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>a</name></expr>]</index> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>b</name></expr>]</index> <operator>!=</operator> <literal type="null">null</literal>
+				<operator>&amp;&amp;</operator> <operator>!</operator><call><name>isBlocked</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>Pokemon</name></type> <name>temp</name> <init>= <expr><call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>a</name></expr>]</index></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>a</name></expr>]</index> <operator>=</operator> <call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>b</name></expr> ;</expr_stmt>
+			<expr_stmt><expr><call><name>getParty</name><argument_list>()</argument_list></call><index>[<expr><name>b</name></expr>]</index> <operator>=</operator> <name>temp</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>arrangeParty</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>initialiseClientParty</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

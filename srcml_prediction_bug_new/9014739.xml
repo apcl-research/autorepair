@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16452783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addHistory</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>url</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>index</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>DefaultListModel</name></type> <name>model</name></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>mUrlText</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name>url</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// chop off the protocol</comment>
+		<expr_stmt><expr><name>index</name> <operator>=</operator> <call><name><name>url</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><literal type="string">"http://"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>-</operator><literal type="number">1</literal> <operator>!=</operator> <name>index</name></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>url</name> <operator>=</operator> <call><name><name>url</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><name>index</name> <operator>+</operator> <literal type="number">7</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"********* "</literal> <operator>+</operator> <name>url</name> <operator>+</operator> <literal type="string">" ************"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+		<expr_stmt><expr><name>model</name> <operator>=</operator> <operator>(</operator><name>DefaultListModel</name><operator>)</operator> <call><name><name>mHistory</name><operator>.</operator><name>getModel</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>model</name><operator>.</operator><name>addElement</name></name><argument_list>(<argument><expr><name>url</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// this doesn't sillgin work:</comment>
+		<comment type="line">// mHistory.ensureIndexIsVisible (model.getSize ( );</comment>
+	</block_content>}</block></function>
+</unit>

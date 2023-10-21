@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25976983.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>getApplicationName</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>name</name> <init>= <expr><literal type="string">"?"</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>PackageInfo</name></type> <name>pi</name> <init>= <expr><call><name>getPackageManager</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPackageInfo</name><argument_list>(<argument><expr><call><name>getPackageName</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>name</name> <operator>=</operator> <call><name>getString</name><argument_list>(<argument><expr><name><name>pi</name><operator>.</operator><name>applicationInfo</name><operator>.</operator><name>labelRes</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name><name>PackageManager</name><operator>.</operator><name>NameNotFoundException</name></name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>e</name></name><argument_list>(<argument><expr><name>TAG</name></expr></argument>, <argument><expr><literal type="string">"Package name not found"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try><empty_stmt>;</empty_stmt>
+		<return>return <expr><name>name</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

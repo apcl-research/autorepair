@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/1799074.java">	<function><type><specifier>private</specifier> <name>HistoryInfo</name></type> <name>loadHistoryForced</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>historyInfoKey</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>PersistenceManager</name></type> <name>pm</name> <init>= <expr><call><name><name>PMF</name><operator>.</operator><name>get</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPersistenceManager</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>HistoryInfo</name></type> <name>historyInfo</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>HistoryInfoJdo</name></type> <name>historyJdo</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+	    <try>try<block>{<block_content>
+	    	<expr_stmt><expr><name>historyJdo</name> <operator>=</operator> <call><name><name>pm</name><operator>.</operator><name>getObjectById</name></name><argument_list>(<argument><expr><name><name>HistoryInfoJdo</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><name>historyInfoKey</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	    	<expr_stmt><expr><name>historyInfo</name> <operator>=</operator> <operator>new</operator> <call><name>HistoryInfo</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    	<expr_stmt><expr><call><name><name>historyJdo</name><operator>.</operator><name>to</name></name><argument_list>( <argument><expr><name>historyInfo</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block>
+	    <catch>catch<parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>exception</name></decl></parameter> )</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>exception</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt> 
+	    </block_content>}</block></catch> 
+	    <finally>finally <block>{<block_content>
+	        <expr_stmt><expr><call><name><name>pm</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></finally></try>
+
+	    <return>return <expr><name>historyInfo</name></expr>;</return>
+	
+	</block_content>}</block></function>
+</unit>

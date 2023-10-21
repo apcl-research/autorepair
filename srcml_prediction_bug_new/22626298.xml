@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18702783.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getPropertyValues</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>path</name> <init>= <expr><literal type="string">"/ndr:NSDLDataRepository/ndr:NDRObject/ndr:properties/"</literal> <operator>+</operator> <call><name>qname</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>List</name></type> <name>nodes</name> <init>= <expr><call><name>getNodes</name><argument_list>(<argument><expr><name>path</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>List</name></type> <name>values</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>nodes</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>Element</name></type> <name>e</name> <init>= <expr><operator>(</operator><name>Element</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>values</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		 
+		<return>return <expr><name>values</name></expr>;</return>
+	</block_content>}</block></for>
+</unit>

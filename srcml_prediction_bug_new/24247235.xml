@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43679983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>resetDevice</name><parameter_list>(<parameter><decl><type><name>NXTInfo</name></type> <name>nxt</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>NXTCommException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>ui</name><operator>.</operator><name>message</name></name><argument_list>(<argument><expr><literal type="string">"Attempting to beacon the device."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>NXTComm</name></type> <name>nxtComm</name> <init>= <expr><call><name><name>NXTCommFactory</name><operator>.</operator><name>createNXTComm</name></name><argument_list>(<argument><expr><name><name>nxt</name><operator>.</operator><name>protocol</name></name></expr></argument>)</argument_list></call></expr></init></decl> 
+		<init>= <expr><call><name><name>NXTCommand</name><operator>.</operator><name>getSingleton</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>nxtComm</name><operator>.</operator><name>open</name></name><argument_list>(<argument><expr><name>nxt</name></expr></argument>, <argument><expr><name><name>NXTComm</name><operator>.</operator><name>LCP</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>NXTCommException</name><argument_list>(<argument><expr><literal type="string">"Failed to open device in command mode."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>cmd</name><operator>.</operator><name>setNXTComm</name></name><argument_list>(<argument><expr><name>nxtComm</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// Force into beacon update mode.</comment>
+		<expr_stmt><expr><call><name><name>cmd</name><operator>.</operator><name>boot</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>cmd</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

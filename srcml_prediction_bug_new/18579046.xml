@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14142783.java">    <function><type><specifier>public</specifier> <name>List</name></type> <name>getBrowserList</name><parameter_list>(  <parameter><decl><type><name>void</name></type> <name>soylatteBrowsers</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>List</name></type> <name>browsers</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">// add Default if not present</comment>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>soylatteBrowsers</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name><name>IBrowserLaunching</name><operator>.</operator><name>BROWSER_DEFAULT</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>browsers</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name><name>IBrowserLaunching</name><operator>.</operator><name>BROWSER_DEFAULT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>browsers</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><call><name><name>soylatteBrowsers</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>browsers</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

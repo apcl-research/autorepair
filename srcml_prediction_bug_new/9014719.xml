@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/8790511.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isValued</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		<return>return <expr><operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>!=</operator> <call><name><name>super</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call><operator>)</operator> <comment type="line">// an explicit value provided</comment>
+		<comment type="line">// or it is coming from a page and has a non-empty value</comment>
+		<operator>||</operator> <operator>(</operator><operator>(</operator><literal type="null">null</literal> <operator>!=</operator> <name>mPage</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><operator>(</operator><literal type="number">0</literal> <operator>&lt;=</operator> <name>mValueStart</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><literal type="number">0</literal> <operator>&lt;=</operator> <name>mValueEnd</name><operator>)</operator><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>mValueStart</name> <operator>!=</operator> <name>mValueEnd</name><operator>)</operator><operator>)</operator><operator>)</operator></expr>;</return>
+	</block_content>}</block></function>
+</unit>

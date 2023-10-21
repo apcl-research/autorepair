@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42779915.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>doStep</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			
+			<comment type="line">//if not waiting for the result of a previously</comment>
+			<comment type="line">//performed action</comment>
+			<if_stmt><if>if<condition>(<expr><operator>!</operator><call><name>isWaitingForActionResult</name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+				
+				<if_stmt><if>if<condition>(<expr><name>strategy</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+					<throw>throw <expr><operator>new</operator> <call><name>NoStrategyException</name><argument_list>(<argument><expr><literal type="string">"The action controller must have a strategy to follow"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+				<comment type="line">//get action to perform</comment>
+				<expr_stmt><expr><name>currentStrategyAction</name> <operator>=</operator> <call><name><name>strategy</name><operator>.</operator><name>getAction</name></name><argument_list>(<argument><expr><name>currentSituation</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+				<expr_stmt><expr><call><name>setWaitingForActionResult</name> <argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			
+
+			<comment type="line">//perform (or continue performing)</comment>
+			<expr_stmt><expr><call><name><name>currentStrategyAction</name><operator>.</operator><name>perform</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+			
+	</block_content>}</block></function>
+</unit>

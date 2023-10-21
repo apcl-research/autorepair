@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28991596.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>myLockedRecords</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>sessionId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>List</name></type> <name>recList</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>lockedRecords</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>String</name></type> <name>recId</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>mySessionId</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>lockedRecords</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>recId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>sessionId</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>mySessionId</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>recList</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>recId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>recList</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

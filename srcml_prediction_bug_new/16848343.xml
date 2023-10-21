@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17078221.java">	<function><type><specifier>private</specifier> <name>MyCalendar</name></type> <name>getJCalendar</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>jCalendar</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>jCalendar</name> <operator>=</operator> <operator>new</operator> <call><name>MyCalendar</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jCalendar</name><operator>.</operator><name>addChangeDateListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>ChangeDateListener</name></super><argument_list>()</argument_list><block>{
+				<function><type><specifier>public</specifier> <name>void</name></type> <name>dateChanged</name><parameter_list>(<parameter><decl><type><name>ChangeDateEvent</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+					<expr_stmt><expr><call><name>cargarHoras</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+					<decl_stmt><decl><type><name>SimpleDateFormat</name></type> <name>df</name> <init>= <expr><operator>new</operator> <call><name>SimpleDateFormat</name><argument_list>(<argument><expr><literal type="string">"EEEE d 'de' MMMM 'de' yyyy"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+					<expr_stmt><expr><call><name><name>jLTitulo</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"Horas invertidas el "</literal> <operator>+</operator> <call><name><name>df</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getDate</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></function>
+			}</block></class></expr></argument>)</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>jCalendar</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

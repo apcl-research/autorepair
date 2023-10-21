@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636891.java">	<function><type><specifier>public</specifier> <name>IPath</name></type> <name>getAbsoluteJarLocation</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// The workspace root is always local to the file system. </comment>
+		<comment type="line">// So getLocation is OK here.</comment>
+		<decl_stmt><decl><type><name>IPath</name></type> <name>workspaceLocation</name><init>= <expr><call><name><name>ResourcesPlugin</name><operator>.</operator><name>getWorkspace</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRoot</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getLocation</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>fJarLocation</name><operator>.</operator><name>isAbsolute</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <name>workspaceLocation</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<comment type="line">// prepend workspace path</comment>
+			<return>return <expr><call><name><name>workspaceLocation</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name>fJarLocation</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<return>return <expr><name>fJarLocation</name></expr>;</return></block_content></block></else></if_stmt></block_content></block></function>
+</unit>

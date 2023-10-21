@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37002483.java">    <function><type><specifier>public</specifier> <name>InputStream</name></type> <name>getResourceAsStream</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>aURI</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try  
+            <init>= <expr><call><name>getResource</name><argument_list>(<argument><expr><name>aURI</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>aURL</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><literal type="null">null</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+            <comment type="line">// return the cached version (rik)</comment>
+            <return>return <expr><call><name><name>service</name><operator>.</operator><name>getFileCache</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFileProxy</name><argument_list>(<argument><expr><name>aURL</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getInputStream</name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></catch>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <comment type="line">// ignore</comment>
+        </block_content>}</block></catch></try>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

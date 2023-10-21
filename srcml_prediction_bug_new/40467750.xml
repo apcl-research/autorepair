@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25779963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setText</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>text</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><name>text</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>text</name> <operator>!=</operator> <literal type="string">""</literal></expr>)</condition><block>{<block_content>
+			<if_stmt><if>if<condition>(<expr><name>useImages</name> <operator>&amp;&amp;</operator> <name>imageAlign</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>CENTER</name></name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name>setImageAlign</name><argument_list>(<argument><expr><name><name>GAlign</name><operator>.</operator><name>LEFT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>text</name></name> <operator>=</operator> <name>text</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>winApp</name><operator>.</operator><name>textFont</name></name><argument_list>(<argument><expr><name>localFont</name></expr></argument>, <argument><expr><call><name><name>localFont</name><operator>.</operator><name>getFont</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSize</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>textWidth</name> <operator>=</operator> <call><name><name>Math</name><operator>.</operator><name>round</name></name><argument_list>(<argument><expr><call><name><name>winApp</name><operator>.</operator><name>textWidth</name></name><argument_list>(<argument><expr><name>text</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>calcAlignX</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>calcAlignY</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	 
+</unit>

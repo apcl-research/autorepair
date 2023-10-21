@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22625963.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>canConvert</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>fromFormat</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>toFormat</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">//prtln("canConvert(): fromFormat '" + fromFormat + "' toFormat '" + toFormat + "'");</comment>
+		<if_stmt><if>if <condition>(<expr><call><name><name>fromFormat</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>toFormat</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><name>Hashtable</name></type> <name>formatConverters</name> <init>= <expr><operator>(</operator><name>Hashtable</name><operator>)</operator> <call><name><name>converters</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>fromFormat</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>formatConverters</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr> 
+		return>return <expr><operator>(</operator><call><name><name>formatConverters</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>toFormat</name></expr></argument>)</argument_list></call><operator>)</operator></expr>;</return></block_content></block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26269996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setBrowserCachingPolicy</name><parameter_list>(<parameter><decl><type><name>HttpServletResponse</name></type> <name>res</name></decl></parameter>)</parameter_list>  
+		<if_stmt><if>if <condition>(<expr><name>nocache</name></expr>)</condition> <block>{<block_content>
+			<comment type="line">// HTTP/1.1 + IE extensions</comment>
+			<expr_stmt><expr><call><name><name>res</name><operator>.</operator><name>setHeader</name></name><argument_list>(<argument><expr><literal type="string">"Cache-Control"</literal></expr></argument>,
+					<argument><expr><literal type="string">"no-store, no-cache, must-revalidate, "</literal>
+							<operator>+</operator> <literal type="string">"post-check=0, pre-check=0"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">// HTTP/1.0</comment>
+			<expr_stmt><expr><call><name><name>res</name><operator>.</operator><name>setHeader</name></name><argument_list>(<argument><expr><literal type="string">"Pragma"</literal></expr></argument>, <argument><expr><literal type="string">"no-cache"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">// Last proportion for those that ignore all of the above</comment>
+			<expr_stmt><expr><call><name><name>res</name><operator>.</operator><name>setHeader</name></name><argument_list>(<argument><expr><literal type="string">"Expires"</literal></expr></argument>, <argument><expr><name>EXPIRATION_DATE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	}
+</unit>

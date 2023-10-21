@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16489983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setHighestId</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>metadataFieldSystemId</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>newHighest</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><name>stmt</name> <operator>=</operator> <call><name><name>con</name><operator>.</operator><name>createStatement</name></name><argument_list>()</argument_list></call> 
+			<call><name><name>stmt</name><operator>.</operator><name>executeQuery</name></name><argument_list>( <argument><expr><literal type="string">"UPDATE vocab_fields SET highestValueId = '"</literal> <operator>+</operator> <name>newHighest</name>
+				 <operator>+</operator> <literal type="string">"' WHERE metadataFieldId = '"</literal> <operator>+</operator> <name>metadataFieldSystemId</name> <operator>+</operator> <literal type="string">"'"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block>
+		<catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>vocab</name><operator>.</operator><name>reportError</name></name><argument_list>( <argument><expr><literal type="string">"SQL error"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch>
+		<finally>finally <block>{<block_content>
+			<if_stmt><if>if <condition>( <expr><name>stmt</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+				<try>try <block>{<block_content>
+					<expr_stmt><expr><call><name><name>stmt</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block>
+				<catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content/>}</block></catch></try>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></finally></try>
+	</block_content>}</block></function>
+</unit>

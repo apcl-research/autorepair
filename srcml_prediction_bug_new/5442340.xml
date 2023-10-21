@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10370062.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>doGet</name><parameter_list>(<parameter><decl><type><name>HttpServletRequest</name></type> <name>req</name></decl></parameter>, <parameter><decl><type><name>HttpServletResponse</name></type> <name>res</name></decl></parameter>  <throws>throws <argument><expr><name>ServletException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+
+        <comment type="line">// set MIME type to "text/html"</comment>
+        <expr_stmt><expr><call><name><name>res</name><operator>.</operator><name>setContentType</name></name><argument_list>(<argument><expr><literal type="string">"text/html"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>PrintWriter</name></type> <name>out</name> <init>= <expr><call><name><name>res</name><operator>.</operator><name>getWriter</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name>printHeader</name><argument_list>(<argument><expr><name>out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>printForm</name><argument_list>(<argument><expr><name>out</name></expr></argument>, <argument><expr><name>req</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>printEntries</name><argument_list>(<argument><expr><name>out</name></expr></argument>, <argument><expr><name>req</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>printFooter</name><argument_list>(<argument><expr><name>out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

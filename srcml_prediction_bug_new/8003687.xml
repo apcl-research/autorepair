@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29349996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>drawQuotation</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Graphics2D</name></type> <name>p_g2</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>p_formation</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>p_formation</name> <operator>==</operator> <name><name>QuadPanel</name><operator>.</operator><name>FORMATION_V</name></name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>drawQuotationV</name></name><argument_list>(<argument><expr><name>p_g2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else  
+			if <condition>(<expr><name>p_formation</name> <operator>==</operator> <name><name>QuadPanel</name><operator>.</operator><name>FORMATION_CIRCLE</name></name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>drawQuotationCircle</name></name><argument_list>(<argument><expr><name>p_g2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><name>p_formation</name> <operator>==</operator> <name><name>QuadPanel</name><operator>.</operator><name>FORMATION_LINE</name></name></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>drawQuotationLine</name></name><argument_list>(<argument><expr><name>p_g2</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></function>
+</unit>

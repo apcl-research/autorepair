@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18639983.java">  <function><type><specifier>private</specifier> <name>JSplitPane</name></type> <name>getSpAnzeige</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>spAnzeige</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>spAnzeige</name> <operator>=</operator> <operator>new</operator> <call><name>JSplitPane</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>spAnzeige</name><operator>.</operator><name>setOneTouchExpandable</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>spAnzeige</name><operator>.</operator><name>setDividerSize</name></name><argument_list>(<argument><expr><name>TRENNBALKEN_GROESZE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>spAnzeige</name><operator>.</operator><name>setRightComponent</name></name><argument_list>(<argument><expr><call><name>getPThumbnailSteuerung</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>spAnzeige</name><operator>.</operator><name>setLeftComponent</name></name><argument_list>(<argument><expr><call><name>getSpVorschauBildinfo</name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><name>spAnzeige</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

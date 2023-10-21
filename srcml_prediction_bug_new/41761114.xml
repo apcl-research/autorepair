@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46482662.java">	<function><type><specifier>private</specifier> <name>TreeNode</name></type> <name>parseTerm</name><parameter_list>(  <parameter><decl><type><name>Token</name></type> <name>token</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>TreeNode</name></type> <name>t</name> <init>= <expr><call><name>parseFactor</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><operator>(</operator><call><name><name>token</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>Token</name><operator>.</operator><name>TokenType</name><operator>.</operator><name>MULT</name></name><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>TreeNode</name></type> <name>p</name> <init>= <expr><call><name><name>SyntaxTree</name><operator>.</operator><name>makeNewNode</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>p</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>setChild</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>t</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>setToken</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name>t</name> <operator>=</operator> <name>p</name></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>tryMatch</name><argument_list>(<argument><expr><call><name><name>token</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>setChild</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><call><name>parseFactor</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></while>
+		<return>return <expr><name>t</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43492696.java">	<function><type><specifier>private</specifier> <name>Date</name></type> <name>setDate</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>value</name></decl></parameter>, <parameter><decl><type><name>HttpServletRequest</name></type> <name>request</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ParseException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>Date</name></type> <name>member</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// look first for a parameter than for a attribute</comment>
+		<if_stmt><if>if <condition>(<expr><call><name><name>request</name><operator>.</operator><name>getParameter</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>member</name> <operator>=</operator> <call><name><name>TextUtil</name><operator>.</operator><name>stringToDate</name></name><argument_list>(<argument><expr><call><name><name>request</name><operator>.</operator><name>getParameter</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr> 
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>request</name><operator>.</operator><name>getAttribute</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"value "</literal> <operator>+</operator> <call><name><name>request</name><operator>.</operator><name>getAttribute</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name>member</name> <operator>=</operator> <operator>(</operator><name>Date</name><operator>)</operator> <call><name><name>request</name><operator>.</operator><name>getAttribute</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></else></if_stmt>
+		<return>return <expr><name>member</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

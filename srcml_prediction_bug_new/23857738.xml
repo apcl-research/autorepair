@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/260126.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>indexOfHeader</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>hname</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>str</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name>hname</name></expr></argument>, <argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>index</name></expr>;</return></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>target</name> <init>= <expr><block>{ <expr><literal type="char">'\n'</literal> <operator>+</operator> <name>hname</name></expr>, <expr><literal type="char">'\r'</literal> <operator>+</operator> <name>hname</name></expr> }</block></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>SipParser</name></type> <name>par</name> <init>= <expr><operator>new</operator> <call><name>SipParser</name><argument_list>(<argument><expr><name>str</name></expr></argument>, <argument><expr><name>index</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// par.goTo(target);</comment>
+		<expr_stmt><expr><call><name><name>par</name><operator>.</operator><name>goToIgnoreCase</name></name><argument_list>(<argument><expr><name>target</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>par</name><operator>.</operator><name>hasMore</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name><name>par</name><operator>.</operator><name>skipChar</name></name></expr> ;</expr_stmt></block_content></block></if></if_stmt>
+		<return>return <expr><call><name><name>par</name><operator>.</operator><name>getPos</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

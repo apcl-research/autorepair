@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19272483.java">  <function><type><specifier>private</specifier> <name>String</name></type> <name>generateUniqueName</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>object</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>className</name> <init>= <expr><call><name><name>Utility</name><operator>.</operator><name>getShortClassName</name></name><argument_list>(<argument><expr><call><name><name>object</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <decl_stmt><decl><type><name>int</name></type> <name>counter</name> <init>= <expr><literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>boolean</name></type> <name>done</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>String</name></type> <name>name</name> <init>= <expr><literal type="string">"???"</literal></expr></init></decl>;</decl_stmt>
+    <while>while <condition>(<expr><operator>!</operator><name>done</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>name</name> <operator>=</operator> <name>className</name> <operator>+</operator> <name>counter</name></expr>;</expr_stmt>
+      <decl_stmt><decl><type><name>Object</name></type> <name>otherBean</name> <init>= <expr><call><name>findBean</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl> 
+      if (otherBean</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><name>done</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+      </block_content>}</block></if> <else>else <block>{<block_content>
+        <expr_stmt><expr><operator>++</operator><name>counter</name></expr>;</expr_stmt>
+      </block_content>}</block></else></if_stmt>
+    </block_content>}</block></while>
+    <return>return <expr><name>name</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

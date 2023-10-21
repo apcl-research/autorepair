@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31081605.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setObject</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>o</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ClassCastException</name></expr></argument></throws> <block>{<block_content>
+	<expr_stmt><expr><name>inputObj</name> <operator>=</operator> <name>o</name></expr>;</expr_stmt>
+	<if_stmt><if>if <condition>(<expr><name>o</name> <operator>instanceof</operator> <name>Icon</name></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><call><name>setIcon</name><argument_list>(<argument><expr><operator>(</operator><name>Icon</name><operator>)</operator> <name>o</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></if>
+	<if type="elseif">else if <condition>(<expr><name>o</name> <operator>instanceof</operator> <name>Color</name></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><call><name>setBackground</name><argument_list>(<argument><expr><operator>(</operator><name>Color</name><operator>)</operator> <name>o</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></if>
+	<if type="elseif">else if <condition>(<expr><name>o</name> <operator>instanceof</operator> <name>Font</name></expr>)</condition> <block>{<block_content>
+	    <decl_stmt><decl><type><name>Font</name></type> <name>f</name> <init>= <expr><operator>(</operator><name>Font</name><operator>)</operator> <name>o</name></expr></init></decl>;</decl_stmt>
+	    <expr_stmt><expr><call><name>setFont</name><argument_list>(<argument><expr><name>f</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name>setText</name><argument_list>(<argument><expr><call><name><name>f</name><operator>.</operator><name>getFontName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></if>
+	<else>else <block>{<block_content> <comment type="line">// anything else must be a Double, Integer, or String</comment>
+	    <expr_stmt><expr><call><name>setText</name><argument_list>(<argument><expr><call><name><name>o</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></else></if_stmt>
+	<comment type="line">//fireItemSelected();</comment>
+    </block_content>}</block></function>
+</unit>

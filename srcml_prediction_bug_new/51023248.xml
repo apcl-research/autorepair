@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51011596.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>extractName</name><parameter_list>(<parameter><decl><type><name>ONDEXConcept</name></type> <name>c</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>str</name> <init>= <expr><literal type="string">""</literal></expr></init></decl> 
+		if <condition>(<expr><call><name><name>c</name><operator>.</operator><name>getConceptName</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>str</name> <operator>=</operator> <call><name><name>c</name><operator>.</operator><name>getConceptName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>str</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>length</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>str</name> <operator>=</operator> <call><name><name>c</name><operator>.</operator><name>getPID</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>str</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>length</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><name>str</name> <operator>=</operator> <call><name><name>c</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">""</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<return>return <expr><name>str</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

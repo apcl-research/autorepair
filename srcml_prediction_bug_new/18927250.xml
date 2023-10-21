@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38262796.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setAxisSelection</name><parameter_list>(<parameter><decl><type><name>Collection</name></type> <name>selection</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>selection</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>axisSelection</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+       <comment type="line">// Nothing has changed, just return</comment>
+       <return>return;</return>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><call><name>clear</name><argument_list>()</argument_list></call></expr> 
+    <call><name>updateHierarchy</name><argument_list>(<argument><expr><name>selection</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <if_stmt><if>if <condition>(<expr><name>axisSelection</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+      <expr_stmt><expr><name>axisSelection</name> <operator>=</operator> <operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+    <else>else<block type="pseudo"><block_content>
+      <expr_stmt><expr><call><name><name>axisSelection</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    <expr_stmt><expr><call><name><name>axisSelection</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><name>selection</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>axisSelectionDirty</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>category</name><operator>.</operator><name>setDirty</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>expression</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

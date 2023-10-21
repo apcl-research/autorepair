@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46694829.java">    <function><type><specifier>public</specifier> <name>Assumptions</name></type> <name>clone</name><parameter_list>(<parameter><decl><type><name>Taxa</name></type> <name>taxa</name></decl></parameter>)</parameter_list>  
+        <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Assumptions</name></type> <name>assumptions</name> <init>= <expr><operator>new</operator> <call><name>Assumptions</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>StringWriter</name></type> <name>w</name> <init>= <expr><operator>new</operator> <call><name>StringWriter</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name>write</name><argument_list>(<argument><expr><name>w</name></expr></argument>, <argument><expr><name>taxa</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>assumptions</name><operator>.</operator><name>read</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>TinyStreamParser</name><argument_list>(<argument><expr><operator>new</operator> <call><name>StringReader</name><argument_list>(<argument><expr><call><name><name>w</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>taxa</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>Basic</name><operator>.</operator><name>caught</name></name><argument_list>(<argument><expr><name>ex</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <return>return <expr><name>assumptions</name></expr>;</return>
+
+    </block_content>}</block></function>
+</unit>

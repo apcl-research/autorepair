@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40280906.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>zoomOut</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>sourceImage</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>Rectangle</name></type> <name>rect</name> <init>= <expr><call><name>getClientArea</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>int</name></type> <name>w</name> <init>= <expr><name><name>rect</name><operator>.</operator><name>width</name></name></expr></init></decl>, <decl><type ref="prev"/><name>h</name> <init>= <expr><name><name>rect</name><operator>.</operator><name>height</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>double</name></type> <name>dx</name> <init>= <expr><operator>(</operator><operator>(</operator><name>double</name><operator>)</operator> <name>w</name>  <operator>/</operator> <literal type="number">2</literal><operator>)</operator></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>double</name></type> <name>dy</name> <init>= <expr><operator>(</operator><operator>(</operator><name>double</name><operator>)</operator> <name>h</name><operator>)</operator> <operator>/</operator> <literal type="number">2</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>centerZoom</name><argument_list>(<argument><expr><name>dx</name></expr></argument>, <argument><expr><name>dy</name></expr></argument>, <argument><expr><name>ZOOMOUT_RATE</name></expr></argument>, <argument><expr><name>transform</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

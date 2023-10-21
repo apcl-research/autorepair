@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42890562.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testChangePosition</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>dest</name> <init>= <expr><literal type="number">7</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>pawn</name><operator>.</operator><name>changePosition</name></name><argument_list>(<argument><expr><name>dest</name></expr></argument>,<argument><expr><name>dest</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>									<comment type="line">//changes the position of the pawn</comment>
+		<expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><operator>(</operator><call><name><name>pawn</name><operator>.</operator><name>getX</name></name><argument_list>(  <argument><expr><operator>==</operator> <name>dest</name></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>pawn</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>dest</name><operator>)</operator><operator>)</operator></expr></argument>)</argument_list></call></expr>;</expr_stmt>					<comment type="line">//conflices that the position has been changed</comment>
+		
+		<expr_stmt><expr><call><name><name>pawn</name><operator>.</operator><name>changePosition</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>,<argument><expr><literal type="number">2</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>						<comment type="line">//puts the pawn back to its origin</comment>
+	</block_content>}</block></function>
+</unit>

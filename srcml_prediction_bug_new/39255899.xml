@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42662696.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>increment</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// changed semantics:  When you add something past the end of a list,</comment>
+		<comment type="line">// just add enough "0" elements for it to work.</comment>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>set</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>, <argument><expr><operator>(</operator><call><name><name>list</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="number">1</literal><operator>)</operator></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IndexOutOfBoundsException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<while>while<condition>(<expr><call><name><name>list</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name>index</name></expr>)</condition> <block>{<block_content>
+				<comment type="line">// the above condition is right because size = max index + 1.</comment>
+				<expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></while>
+			<expr_stmt><expr><call><name><name>list</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>,<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<assert>assert<expr><operator>(</operator><call><name>get</name> <argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call><operator>)</operator> <operator>==</operator> <literal type="number">1</literal></expr>;</assert>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

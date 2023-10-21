@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23559983.java">	<function><type><specifier>private</specifier> <name>PaletteContainer</name></type> <name>createComplexConnections19Group</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>PaletteStack</name></type> <name>paletteContainer</name> <init>= <expr><operator>new</operator> <call><name>PaletteStack</name><argument_list>(
+				<argument><expr><name><name>Messages</name><operator>.</operator><name>ComplexConnections19Group_title</name></name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>paletteContainer</name>
+				<operator>.</operator><name>setDescription</name></name><argument_list>(<argument><expr><name><name>Messages</name><operator>.</operator><name>ComplexConnections19Group_desc</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>paletteContainer</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name>createComplexConnection1CreationTool</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>paletteContainer</name><operator>.</operator><name>setActiveEntry</name></name><argument_list>(<argument><expr><operator>(</operator><name>ToolEntry</name><operator>)</operator> <call><name><name>paletteContainer</name>
+				<operator>.</operator><name>getChildren</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><call><name><name>paletteContainer</name><operator>.</operator><name>getChildren</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>size</name><argument_list>(  <argument><expr><operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>paletteContainer</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name>createComplexConnectionTo3CreationTool</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>paletteContainer</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

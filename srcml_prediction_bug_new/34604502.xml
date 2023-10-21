@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47992783.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>delete</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">//identify faxovaPonuka</comment>
+		<decl_stmt><decl><type><name>Ponuka</name></type> <name>faxovaPonuka</name><init>=<expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>SelectItem</name></type> <name>ponuka</name><range>: <expr><call><name>getFaxovePonuka</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>ponuka</name><operator>.</operator><name>getLabel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><call><name>getReplace</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>faxovaPonuka</name><operator>=</operator><operator>(</operator><name>Ponuka</name><operator>)</operator> <call><name><name>ponuka</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<break>break;</break>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		
+		<expr_stmt><expr><call><name><name>AuthBean</name><operator>.</operator><name>infoLog</name></name><argument_list>(<argument><expr><literal type="string">"Deleting fax offer "</literal><operator>+</operator><call><name>getOffer</name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">" replacing with "</literal><operator>+</operator><name>faxovaPonuka</name></expr></argument>,<argument><expr><name>LOG</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<comment type="line">//call service</comment>
+		<expr_stmt><expr><call><name><name>ServiceLocator</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPonukaService</name><argument_list>()</argument_list></call><operator>.</operator><call><name>delete</name><argument_list>(<argument><expr><call><name>getOffer</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>faxovaPonuka</name></expr></argument>)</argument_list></call> 
+		
+		<return>return <expr><literal type="string">"ok"</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43482662.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>convertTagListIntoTagCloudData</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Tag</name></argument>&gt;</argument_list></name></type> <name>tags</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>Document</name></type> <name>doc</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+			<for>for <control>(<init><decl><type><name>Tag</name></type> <name>t</name> <range>: <expr><name>tags</name></expr></range></decl></init>)</control> <block>{<block_content>
+				<expr_stmt><expr><name>doc</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>getResource</name></name><argument_list>(<argument><expr><name><name>Resource</name><operator>.</operator><name>TAG</name></name></expr></argument>, <argument><expr><call><name><name>t</name><operator>.</operator><name>getURI</name></name><argument_list>()</argument_list></call></expr></argument>,
+						<argument><expr><name><name>Resource</name><operator>.</operator><name>REQUEST_DEFAULT_FROM_API</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<decl_stmt><decl><type><name>Element</name></type> <name>rootElement</name> <init>= <expr><call><name><name>doc</name><operator>.</operator><name>getRootElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name><name>t</name><operator>.</operator><name>setCount</name></name><argument_list>(<argument><expr><call><name><name>Integer</name><operator>.</operator><name>parseInt</name></name><argument_list>(<argument><expr><call><name><name>rootElement</name><operator>.</operator><name>getChild</name></name><argument_list>(<argument><expr><literal type="string">"count"</literal></expr></argument>)</argument_list></call>
+						<operator>.</operator><call><name>getText</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></for>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>  <block>{<block_content>
+			<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"Failed while getting tag application counts when compiling tag list into tag cloud data"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

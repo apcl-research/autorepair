@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46689996.java">	<function><type><specifier>private</specifier> <name><name>Set</name><argument_list type="generic">&lt;<argument><name>LOM</name></argument>&gt;</argument_list></name></type> <name>updateRestrictionFor</name><parameter_list>(<parameter><decl><type><name>LOM</name></type> <name>aLOM</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>LOM</name></argument>&gt;</argument_list></name></type> <name>theListOfUpdates</name> <init>= <expr><operator>new</operator> <call><name><name>LinkedHashSet</name><argument_list type="generic">&lt;<argument><name>LOM</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>LOMAttribute</name></type> <name>aAttribute</name> <range>: <expr><call><name><name>LOMAttribute</name><operator>.</operator><name>getRegisteredAttribute</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>LOM</name></argument>&gt;</argument_list></name></type> <name>theUpdates</name> <init>= <expr><call><name>updateRestrictionFor</name><argument_list>(<argument><expr><name>aLOM</name></expr></argument>, <argument><expr><name>aAttribute</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>theUpdates</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name><name>theListOfUpdates</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><name>theUpdates</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>theListOfUpdates</name></expr>;</return>
+	</block_content>}</block></function>
+
+	<comment type="block" format="javadoc">/**
+	 * 
+</comment></unit>

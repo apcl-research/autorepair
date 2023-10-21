@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22369983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setSorterCheckBoxes</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>boolean</name><index>[]</index></name></type> <name>chBoxSorterBooleans</name> <init>= <expr><call><name><name>MainFrame</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSorter</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getVisibleColumns</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name><name>chBoxSorterBooleans</name><operator>.</operator><name>length</name></name> <operator>!=</operator> <call><name><name>checkBoxSortList</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr> 
+			<comment type="block">/*&amp;&amp; chBoxSorterBooleans.length != checkBoxSortList.size()*/</comment>)</condition><block>{<block_content>
+			<expr_stmt><expr><call><name><name>checkBoxSortList</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>setSelected</name><argument_list>(<argument><expr><name><name>chBoxSorterBooleans</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

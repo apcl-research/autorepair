@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26484583.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>createKeyMap</name><parameter_list>()</parameter_list><block>{<block_content>
+	<for>for<control>( <init><decl><type><name>CalculatorButton</name></type> <name>o</name> <range>: <expr><name>buttons</name></expr></range></decl></init> )</control><block>{<block_content>
+	    <if_stmt><if>if<condition>( <expr><call><name><name>o</name><operator>.</operator><name>shortcut</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr> )</condition><block type="pseudo"><block_content> <continue>continue;</continue></block_content></block></if></if_stmt>
+	    <if_stmt><if>if<condition>( <expr><call><name><name>keyMap</name><operator>.</operator><name>containsKey</name></name><argument_list>( <argument><expr><call><name><name>o</name><operator>.</operator><name>shortcut</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr> )</condition><block>{<block_content>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>( <argument><expr><literal type="string">"Repeat of "</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>( <argument><expr><call><name><name>o</name><operator>.</operator><name>shortcut</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>print</name></name><argument_list>( <argument><expr><literal type="string">" in "</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>( <argument><expr><call><name><name>o</name><operator>.</operator><name>tooltip</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></if></if_stmt>
+	    <expr_stmt><expr><call><name><name>keyMap</name><operator>.</operator><name>put</name></name><argument_list>( <argument><expr><call><name><name>o</name><operator>.</operator><name>shortcut</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>o</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+	 
+	
+    </block_content>}</block></for>
+</unit>

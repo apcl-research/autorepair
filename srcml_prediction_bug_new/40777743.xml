@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18936963.java">	<function><type><specifier>public</specifier> <name>Priority</name></type> <name>getPriority</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>IResponseTO</name></argument>&gt;</argument_list></name></type> <name>responses</name></decl></parameter>,<parameter><decl><type><name>String</name></type> <name>peerPublicKey</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>TrustyCommunity</name></argument>&gt;</argument_list></name></type> <name>filteredCommunities</name> <init>= 
+						<expr><call><name>filterByPresence</name><argument_list>(<argument><expr><name>peerPublicKey</name></expr></argument>, <argument><expr><call><name>getTrustyCommunities</name><argument_list>(<argument><expr><name>responses</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if<condition>(<expr><call><name><name>filteredCommunities</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<return>return <expr><name><name>Priority</name><operator>.</operator><name>UNKNOWN_PEER</name></name></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<expr_stmt><expr><call><name><name>Collections</name><operator>.</operator><name>sort</name></name><argument_list>(<argument><expr><name>filteredCommunities</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>maximalPriority</name> <init>= <expr><call><name><name>filteredCommunities</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>filteredCommunities</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+
+		<return>return <expr><operator>new</operator> <call><name>Priority</name><argument_list>(<argument><expr><name><name>Priority</name><operator>.</operator><name>Range</name><operator>.</operator><name>ALLOC_FOR_TRUST_COMMUNITY</name></name></expr></argument>, <argument><expr><name>maximalPriority</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

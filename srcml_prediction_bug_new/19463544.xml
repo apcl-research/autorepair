@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19490545.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>getNewCategory</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>InputDialog</name></type> <name>entryDialog</name> <init>= <expr><operator>new</operator> <call><name>InputDialog</name><argument_list>(<argument><expr><call><name><name>PlatformUI</name><operator>.</operator><name>getWorkbench</name></name><argument_list>()</argument_list></call>
+				<operator>.</operator><call><name>getActiveWorkbenchWindow</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getShell</name><argument_list>( , <argument><expr><literal type="string">"Add category"</literal></expr></argument>,
+				<argument><expr><literal type="string">"Add category:"</literal></expr></argument>, <argument><expr><call><name>getNewInputObject</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>entryDialog</name><operator>.</operator><name>open</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>InputDialog</name><operator>.</operator><name>OK</name></name></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if<condition>(<expr><call><name><name>TheoryPrefsUtils</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><call><name><name>list</name><operator>.</operator><name>getItems</name></name><argument_list>()</argument_list></call></expr></argument>,
+					<argument><expr><call><name><name>entryDialog</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+				<return>return <expr><literal type="null">null</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+			<return>return <expr><call><name><name>entryDialog</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

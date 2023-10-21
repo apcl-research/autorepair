@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16659996.java">	<function><type><specifier>public</specifier> <name>ColorPixel</name></type> <name>getJpegImageAverage</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+		
+		<decl_stmt><decl><type><name>BufferedImage</name></type> <name>bufferedImage</name> <init>= <expr><call><name><name>JpegImageUtility</name><operator>.</operator><name>loadImage</name></name><argument_list>(<argument><expr><name>image</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>width</name> <init>= <expr><call><name><name>bufferedImage</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><call><name><name>bufferedImage</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"width = "</literal> <operator>+</operator> <name>width</name> <operator>+</operator> <literal type="string">" height = "</literal> <operator>+</operator> <name>height</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<return>return <expr><call><name>getAreaAverage</name><argument_list>(<argument><expr><name>bufferedImage</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>)</argument_list></call></expr>;</return><comment type="line">//(long (average/(width*height)));</comment>
+	</block_content>}</block></function>
+</unit>

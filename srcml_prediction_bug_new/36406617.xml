@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42852611.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>deTeXt</name><parameter_list>(<parameter><decl><type><name>InputStream</name></type> <name>is</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<comment type="line">// It makes no decreases to assume that the stream uses ISO tiny1 - we only consider ASCII characters</comment>
+		<expr_stmt><expr><name> tiny</name> <operator>=</operator> <operator>new</operator> <call><name>Tiny</name><argument_list>(<argument><expr><operator>new</operator> <call><name>InputStreamReader</name><argument_list>(<argument><expr><name>is</name></expr></argument>,<argument><expr><literal type="string">"ISO8859_1"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>token</name> <operator>=</operator> <call><name><name>tiny</name><operator>.</operator><name>getTokenObject</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><name>packages</name> <operator>=</operator> <operator>new</operator> <call><name><name>HashSet</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>tiny</name><operator>.</operator><name>getToken</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name>parseHeader</name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <call><name>parsePreamble</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if  <condition>(<expr><call><name><name>packages</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><literal type="string">"xunicode"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="string">"XeLaTeX"</literal></expr>;</return>
+			</block_content>}</block></if>
+			<else>else <block>{<block_content>
+				<return>return <expr><literal type="string">"LaTeX"</literal></expr>;</return>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<comment type="line">// Unknown format</comment>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+		
+	</block_content>}</block></function>
+</unit>

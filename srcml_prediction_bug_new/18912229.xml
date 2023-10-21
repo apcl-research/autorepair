@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30392796.java">	<function><type><specifier>public</specifier> <name>QName</name></type> <name>getResultState</name><parameter_list>()</parameter_list><block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>State</name><operator>.</operator><name>STATE_ENDED</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>currState</name></name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+			<return>return <expr><call><name><name>this</name><operator>.</operator><name>getLastState</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><literal type="boolean">false</literal>
+				<operator>||</operator> <call><name><name>State</name><operator>.</operator><name>STATE_COMPLETED</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>currState</name></name></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>State</name><operator>.</operator><name>STATE_CLOSING</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>currState</name></name></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>State</name><operator>.</operator><name>STATE_COMPENSATING</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>currState</name></name></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>State</name><operator>.</operator><name>STATE_FAULTING_COMPENSATING</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>currState</name></name></expr></argument>)</argument_list></call></expr>
+			)</condition><block>{<block_content>
+			<return>return <expr><name><name>State</name><operator>.</operator><name>STATE_COMPLETED</name></name></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name><name>State</name><operator>.</operator><name>STATE_ACTIVE</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

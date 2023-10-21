@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35592696.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>abort</name><parameter_list>(<parameter><decl><type><name>L2PcInstance</name></type> <name>activeChar</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Announcements</name></type> <name>_an</name> <init>= <expr><call><name><name>Announcements</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>_log</name><operator>.</operator><name>warning</name></name><argument_list>(<argument><expr><literal type="string">"GM: "</literal><operator>+</operator><call><name><name>activeChar</name><operator>.</operator><name>getObjectId</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">" forwarded shutdown ABORT. "</literal> <operator>+</operator> <name><name>_modeText</name><index>[<expr><name>shutdownMode</name></expr>]</index></name> <operator>+</operator> <literal type="string">" has been stopped!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>_an</name><operator>.</operator><name>announceToAll</name></name><argument_list>(<argument><expr><literal type="string">"Server aborts "</literal> <operator>+</operator> <name><name>_modeText</name><index>[<expr><name>shutdownMode</name></expr>]</index></name> <operator>+</operator> <literal type="string">" and forwarded normal operation!"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>_counterInstance</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>_counterInstance</name><operator>.</operator><name>_abort</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		 
+	</block_content>}</block></if></if_stmt></block_content></block></function>
+</unit>

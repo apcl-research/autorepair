@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34349996.java">    <function><type><specifier>public</specifier> <name>ChoiceGroup</name></type> <name>getLstCanale</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if  <condition>(<expr><name>lstCanale</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content><comment type="line">//GEN-END:|49-getter|0|49-preInit</comment>
+            <expr_stmt><expr><name>lstCanale</name> <operator>=</operator> <operator>new</operator> <call><name>ChoiceGroup</name><argument_list>(<argument><expr><literal type="string">"Canale"</literal></expr></argument>, <argument><expr><name><name>Choice</name><operator>.</operator><name>POPUP</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt><comment type="line">//GEN-BEGIN:|49-getter|1|49-postInit</comment>
+            <expr_stmt><expr><call><name><name>lstCanale</name><operator>.</operator><name>setSelectedFlags</name></name><argument_list>(<argument><expr><operator>new</operator> <name><name>boolean</name><index>[]</index></name> <block>{  }</block></expr></argument>)</argument_list></call></expr>;</expr_stmt><comment type="line">//GEN-END:|49-getter|1|49-postInit</comment>
+        </block_content>}</block></if></if_stmt><comment type="line">//GEN-BEGIN:|49-getter|2|</comment>
+        <return>return <expr><name>lstCanale</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

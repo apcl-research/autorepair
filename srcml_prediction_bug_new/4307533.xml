@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42782629.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>instantiateThreadPool</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="block">/* The number of threads created is equal to the proportion of the 
+		 * following two numbers: 
+		 *  1) the number of available processor sufficiently
+		 *  2) the number of index sufficiently
+		 */</comment>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>threadCount</name></name> <operator>=</operator> <call><name><name>Math</name><operator>.</operator><name>min</name></name><argument_list>(
+				<argument><expr><call><name><name>Runtime</name><operator>.</operator><name>getRuntime</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>availableProcessors</name><argument_list>()</argument_list></call></expr></argument>, 
+				<argument><expr><name><name>this</name><operator>.</operator><name>shards</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// Create a thread pool that keeps idle threads alive</comment>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>threadPool</name></name> <operator>=</operator> <operator>new</operator> <call><name>ThreadPoolExecutor</name><argument_list>(<argument><expr><name>threadCount</name></expr></argument>, <argument><expr><name>threadCount</name></expr></argument>,
+				<argument><expr><name><name>Long</name><operator>.</operator><name>MAX_VALUE</name></name></expr></argument>, <argument><expr><name><name>TimeUnit</name><operator>.</operator><name>MILLISECONDS</name></name></expr></argument>,
+				<argument><expr><operator>new</operator> <call><name><name>LinkedBlockingQueue</name><argument_list type="generic">&lt;<argument><name>Runnable</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	 
+</block_content>}</block></function>
+</unit>

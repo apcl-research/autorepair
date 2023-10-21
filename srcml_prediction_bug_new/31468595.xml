@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11662996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getLength</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><name>nodeListChanges</name> <operator>!=</operator> <name>changes</name> <operator>||</operator> <name>nodeListLength</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>nodeListChanges</name> <operator>=</operator> <name>changes</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name>nodeListLength</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>nodeListIndex</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+            <expr_stmt><expr><name>nodeListNode</name> <operator>=</operator> <name>firstChild</name></expr>;</expr_stmt>
+            <for>for <control>(<init><decl><type><name>NodeImpl</name></type> <name>node</name> <init>= <expr><name>firstChild</name></expr></init></decl>;</init> <condition><expr><name>node</name> <operator>!=</operator> <literal type="null">null</literal></expr>;</condition> <incr><expr><name>node</name> <operator>=</operator> <name><name>node</name><operator>.</operator><name>nextSibling</name></name></expr></incr>)</control> <block>{<block_content>
+                <expr_stmt><expr><name>nodeListLength</name><operator>++</operator></expr>;</expr_stmt>
+             
+        </block_content>}</block></for>
+        
+        <return>return <expr><name>nodeListLength</name></expr>;</return>
+
+    </block_content>}</block></function> <comment type="line">// getLength():int</comment>
+</unit>

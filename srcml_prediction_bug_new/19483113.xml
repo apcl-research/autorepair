@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16679996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>log</name><parameter_list>(<parameter><decl><type><name>IProblem</name></type> <name>problem</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>problem</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><name><name>ExceptionMessages</name><operator>.</operator><name>NULL_ARGUMENT</name></name></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>message</name> <init>= <expr><call><name><name>problem</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>category</name> <init>= <expr><call><name><name>problem</name><operator>.</operator><name>getCategory</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<switch>switch <condition>(<expr><call><name><name>problem</name><operator>.</operator><name>getSeverity</name></name><argument_list>( )</argument_list></call></expr>)</condition> <block>{<block_content>
+		<case>case <expr><name>ERROR</name></expr>:</case>
+			<expr_stmt><expr><call><name><name>MessageDialog</name><operator>.</operator><name>openError</name></name><argument_list>(<argument><expr><name>shell</name></expr></argument>, <argument><expr><name>category</name></expr></argument>, <argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name>WARNING</name></expr>:</case>
+			<expr_stmt><expr><call><name><name>MessageDialog</name><operator>.</operator><name>openWarning</name></name><argument_list>(<argument><expr><name>shell</name></expr></argument>, <argument><expr><name>category</name></expr></argument>, <argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<break>break;</break>
+		<case>case <expr><name>INFORMATION</name></expr>:</case>
+			<expr_stmt><expr><call><name><name>MessageDialog</name><operator>.</operator><name>openInformation</name></name><argument_list>(<argument><expr><name>shell</name></expr></argument>, <argument><expr><name>category</name></expr></argument>, <argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<break>break;</break>
+		</block_content>}</block></switch>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26665829.java">    <function><type><specifier>private</specifier> <name>InputStream</name></type> <name>getImageAsStream</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>suffix</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>StringBuffer</name></type> <name>buffer</name> <init>= <expr><call><name>getBaseImageUrl</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>buffer</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name>suffix</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>URL</name></type> <name>url</name> <init>= <expr><operator>new</operator> <call><name>URL</name><argument_list>(<argument><expr><call><name><name>buffer</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>HttpURLConnection</name></type> <name>conn</name> <init>= <expr><operator>(</operator><name>HttpURLConnection</name><operator>)</operator> <call><name><name>url</name><operator>.</operator><name>openConnection</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>conn</name><operator>.</operator><name>connect</name></name><argument_list>()</argument_list></call></expr> 
+        <return>return <expr><call><name><name>conn</name><operator>.</operator><name>getInputStream</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

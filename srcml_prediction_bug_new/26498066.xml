@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45122983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>testOnCreate</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+    <decl_stmt><decl><type><name>ListType</name></type> <name>type</name> <init>= <expr><operator>new</operator> <call><name>ListType</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <literal type="number">5</literal></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block>{<block_content>
+      <expr_stmt><expr><call><name><name>type</name><operator>.</operator><name>handleObject</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>, <argument><expr><literal type="string">""</literal><operator>+</operator><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <decl_stmt><decl><type><name>List</name></type> <name>list</name> <init>= <expr><operator>(</operator><name>List</name><operator>)</operator><name><name>type</name><operator>.</operator><name>onCreate</name></name></expr></init></decl>;</decl_stmt>
+    <for>for<control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <literal type="number">5</literal></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block>{<block_content>
+      <expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><literal type="string">""</literal><operator>+</operator><name>i</name></expr></argument>, <argument><expr><call><name><name>list</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></for>    
+  </block_content>}</block></function>
+</unit>

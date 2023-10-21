@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25139996.java">   <function><type><specifier>public</specifier> <name>int</name></type> <name>getCorners</name><parameter_list>()</parameter_list> <block>{<block_content>
+      <decl_stmt><decl><type><name>int</name></type> <name>corners</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+      <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">1</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>directions</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>  )</control> <block>{<block_content>
+         <if_stmt><if>if <condition>(<expr><operator>(</operator><call><name>isStraight</name><argument_list>(<argument><expr><call><name><name>directions</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <call><name>isDiagonal</name><argument_list>(<argument><expr><call><name><name>directions</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><operator>)</operator>
+               <operator>||</operator> <call><name>isDiagonal</name><argument_list>(<argument><expr><call><name><name>directions</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call>
+               <operator>&amp;&amp;</operator> <call><name>isStraight</name><argument_list>(<argument><expr><call><name><name>directions</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>corners</name><operator>++</operator></expr>;</expr_stmt>
+         </block_content>}</block></if></if_stmt>
+      </block_content>}</block></for>
+      <return>return <expr><name>corners</name></expr>;</return>
+   </block_content>}</block></function>
+</unit>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39369996.java">  <function><type><specifier>private</specifier> <name>float</name></type> <name>getFloat</name><parameter_list>( <parameter><decl><type><name>RadFileParser</name></type> <name>st</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>float</name></type> <name>number</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+    <expr_stmt><expr><call><name><name>st</name><operator>.</operator><name>getToken</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><call><name>verifyWord</name><argument_list>(<argument><expr><name>st</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><name>number</name> <operator>=</operator> <call><name><name>Float</name><operator>.</operator><name>parseFloat</name></name><argument_list>(<argument><expr><name><name>st</name><operator>.</operator><name>sval</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block> <catch>catch<parameter_list>( <parameter><decl><type><name>NumberFormatException</name></type> <name>exp</name></decl></parameter> )</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>deb</name></name><argument_list>(<argument><expr><literal type="string">"This : "</literal><operator>+</operator><name><name>st</name><operator>.</operator><name>sval</name></name><operator>+</operator><literal type="string">" is not a float !"</literal></expr></argument> ;</argument_list></call></expr>
+      <expr><call><name>parsingError</name><argument_list>(<argument><expr><name>st</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+
+    <return>return <expr><name>number</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

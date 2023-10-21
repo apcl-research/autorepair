@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/301813.java">	  <function><type><specifier>public</specifier> <name>Component</name></type> <name>createComponent</name><parameter_list>(<parameter><decl><type><name>RequestContext</name></type> <name>context</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws>  
+		  
+		  <block>{<block_content>		  
+		  <decl_stmt><decl><type><name>FavoriteComponent</name></type> <name>fc</name> <init>= <expr><operator>new</operator> <call><name>FavoriteComponent</name><argument_list>(<argument><expr><name>id</name></expr></argument>, <argument><expr><name>context</name></expr></argument>, <argument><expr><call><name>getChartmodel</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getModel</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		  
+		  <comment type="block">/*String defaultFavorite = null;
+		  if(getFavoriteHttpParam()!=null &amp;&amp; getFavoriteHttpParam().length() &gt; 0){
+			  defaultFavorite = context.getParameter(getFavoriteHttpParam());
+			  fc.setChangeName(defaultFavorite);
+		  }		  */</comment>
+		<return>return <expr><name>fc</name></expr>;</return>
+	  </block_content>}</block></function>
+</unit>

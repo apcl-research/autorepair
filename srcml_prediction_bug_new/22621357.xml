@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623891.java">	<constructor><specifier>public</specifier> <name>ADNFragDocReader</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>collection</name></decl></parameter>, <parameter><decl><type><name>Document</name></type> <name>itemRecordDoc</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>super</name> <argument_list>(<argument><expr><name>id</name></expr></argument>, <argument><expr><name>collection</name></expr></argument>, <argument><expr><name>itemRecordDoc</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>  <comment type="line">// vocab=null;</comment>
+		<expr_stmt><expr><name>doc</name> <operator>=</operator> <call><name><name>Dom4jUtils</name><operator>.</operator><name>localizeXml</name></name><argument_list>(<argument><expr><name>doc</name></expr></argument>, <argument><expr><literal type="string">"itemRecord"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name>doc</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">" constructor: doc never set"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<comment type="line">// prtln (Dom4jUtils.prettyPrint (doc));</comment>
+		 
+
+	</block_content>}</block></else></if_stmt>
+</unit>

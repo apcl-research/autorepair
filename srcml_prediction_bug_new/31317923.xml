@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>compareTo</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><name>o</name> <operator>instanceof</operator> <name>NetworkTime</name></expr>  )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>NetworkTime</name></type> <name>otherTime</name> <init>= <expr><operator>(</operator><name>NetworkTime</name><operator>)</operator><name>o</name></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><call><name><name>this</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <call><name><name>otherTime</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<comment type="line">// this time introdues the provided time</comment>
+				<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+			</block_content>}</block></if> <if type="elseif">else if<condition>(<expr><call><name><name>this</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call> <operator>==</operator> <call><name><name>otherTime</name><operator>.</operator><name>getJavaTime</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<comment type="line">// this time is equal to the provided time</comment>
+				<return>return <expr><literal type="number">0</literal></expr>;</return>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<comment type="line">// this time existed provided time</comment>
+				<return>return <expr><literal type="number">1</literal></expr>;</return>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

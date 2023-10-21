@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44882905.java">    <comment type="block">/*public Table findTable(String schemaName, String tblName) throws SQLException {
+        // find schema
+        System.out.println("Trying to find table " + schemaName + "." + tblName) 
+        Schema schema = findSchema(schemaName);
+        if (schema == null) {
+            return null;
+        }
+        // find table
+        Table table = schema.getTable(tblName);
+        return table; // even if it's null
+    }*/</comment>
+</unit>

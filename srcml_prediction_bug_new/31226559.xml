@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/15702983.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>insert</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>obj</name></decl></parameter>)</parameter_list> <block>{<block_content>
+  	<decl_stmt><decl><type><specifier>final</specifier> <name>boolean</name></type> <name>b</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>kb</name><operator>.</operator><name>insert</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+  	
+    <if_stmt><if>if <condition>(<expr><name>b</name></expr>)</condition> <block>{<block_content>
+      <decl_stmt><decl><type><name>ClassFilterReteNode</name></type> <name>entryNode</name></decl>;</decl_stmt>
+      <expr_stmt><expr><name>entryNode</name> <operator>=</operator> <call><name>getEntryPoint</name><argument_list>(<argument><expr><call><name><name>obj</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <if_stmt><if>if <condition>(<expr><name>entryNode</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>entryNode</name><operator>.</operator><name>newObject</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></if></if_stmt>
+    <if_stmt><if>if<condition>(<expr><operator>!</operator><name><name>this</name><operator>.</operator><name>running</name></name></expr>)</condition> <block>{<block_content>
+      <synchronized>synchronized<init>(<expr><name>this</name></expr>)</init><block>{<block_content>
+        <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>notify</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></synchronized>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><name>b</name></expr>;</return>
+   
+</block_content>}</block></function>
+</unit>

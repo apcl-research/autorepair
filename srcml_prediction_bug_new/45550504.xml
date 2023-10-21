@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34392796.java">    <function><type><specifier>protected</specifier> <name>String</name></type> <name>getString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>, <parameter><decl><type><name>Object</name><modifier>...</modifier></type> <name>args</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>answer</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>answer</name> <operator>=</operator> <call><name><name>bundle</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><call><name>makeUnique</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>MissingResourceException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <return>return <expr><literal type="string">"!"</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getKey</name></name> <argument_list>()</argument_list></call></expr> )</return> <operator>+</operator> <literal type="string">"!"</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+
+        <if_stmt><if>if <condition>(<expr><literal type="number">0</literal> <operator>!=</operator> <name><name>args</name><operator>.</operator><name>length</name></name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>MessageFormat</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>answer</name></expr></argument>, <argument><expr><name>args</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>answer</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

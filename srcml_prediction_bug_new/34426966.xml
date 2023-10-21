@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50502983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>actionAssigneeMouse</name><parameter_list>(<parameter><decl><type><name>MouseEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>e</name><operator>.</operator><name>getButton</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>MouseEvent</name><operator>.</operator><name>BUTTON3</name></name></expr>  )</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>JPopupMenu</name></type> <name>popup</name> <init>= <expr><operator>new</operator> <call><name>JPopupMenu</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><call><name><name>popup</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>schemTab</name><operator>.</operator><name>assigneeMenu</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>popup</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name>makeMenuFilterAll</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>popup</name><operator>.</operator><name>show</name></name><argument_list>(<argument><expr><name>assigneeCombo</name></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

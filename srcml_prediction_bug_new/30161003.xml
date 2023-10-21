@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12440062.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>testParent</name><parameter_list>(<parameter><decl><type><name>Branch</name></type> <name>parent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>, <decl><type ref="prev"/><name>size</name> <init>= <expr><call><name><name>parent</name><operator>.</operator><name>nodeCount</name></name><argument_list>( ;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>size</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>Node</name></type> <name>node</name> <init>= <expr><call><name><name>parent</name><operator>.</operator><name>node</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><literal type="string">"Child node of root has parent of root"</literal></expr></argument>, <argument><expr><call><name><name>node</name>
+                    <operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name>parent</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

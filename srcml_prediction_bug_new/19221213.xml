@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>closeConfigDialog</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>value</name> <init>= <expr><name><name>JOptionPane</name><operator>.</operator><name>YES_OPTION</name></name></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><call><name>getChangesPending</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name><name>JCSwingUtilities</name><operator>.</operator><name>showCenteredConfirmDlg</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>,
+                <argument><expr><name><name>SDVConstants</name><operator>.</operator><name>UM_APPLY_CHANGES</name></name></expr></argument>,
+                <argument><expr><name><name>SDVConstants</name><operator>.</operator><name>DGT_CHANGES_PENDING</name></name></expr></argument>,
+                <argument><expr><name><name>JOptionPane</name><operator>.</operator><name>YES_NO_OPTION</name></name></expr></argument>,
+                <argument><expr><name><name>JOptionPane</name><operator>.</operator><name>QUESTION_MESSAGE</name></name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>value</name> <operator>==</operator> <name><name>JOptionPane</name><operator>.</operator><name>YES_OPTION</name></name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

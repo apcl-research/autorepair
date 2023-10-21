@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24087292.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>initialize</name><parameter_list>()</parameter_list><block>{<block_content>
+        <for>for<control>(<init><decl><type><name>OutputPin</name></type> <name>pin</name><range>: <expr><call><name><name>outputPins</name><operator>.</operator><name>values</name></name><argument_list>( )</argument_list></call></expr></range></decl></init>)</control><block>{<block_content>
+            <expr_stmt><expr><call><name><name>pin</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><name><name>LogicState</name><operator>.</operator><name>FLOATING</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <for>for<control>(<init><decl><type><name>InputPin</name></type> <name>pin</name><range>: <expr><call><name><name>inputPins</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><call><name><name>pin</name><operator>.</operator><name>getConnectedTo</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name><name>pin</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><name><name>LogicState</name><operator>.</operator><name>FLOATING</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

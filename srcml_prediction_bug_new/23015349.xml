@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34382796.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setKeyValue</name><parameter_list>(<parameter><decl><type><name>XMLContextData</name></type> <name>data</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>toSet</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>property</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>key</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>FieldSetter</name></type> <name>setter</name> <init>= <expr><call><name>getFieldSetter</name><argument_list>(<argument><expr><name>property</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>setter</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>setter</name><operator>.</operator><name>setKeyValue</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>, <argument><expr><name>toSet</name></expr></argument>, <argument><expr><name>key</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt></block_content></block></function>
+     
+</unit>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46802715.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>sleepForConnection</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <try>try <block>{<block_content>
+            
+            <expr_stmt><expr><call><name><name>b2</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <if_stmt><if>if <condition>( <expr><call><name><name>log</name><operator>.</operator><name>isDebugEnabled</name></name><argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>( <argument><expr><literal type="string">"Sleeping to re-establish connection to slave. Last host: "</literal> <operator>+</operator> <name>status</name></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            
+            <expr_stmt><expr><call><name><name>Thread</name><operator>.</operator><name>sleep</name></name><argument_list>( <argument><expr><name><name>LBDriver</name><operator>.</operator><name>HOST_POLL_INTERVAL</name></name></expr></argument> )</argument_list></call></expr> 
+            
+        </block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content> 
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>( <argument><expr><name>e</name></expr></argument> )</argument_list></call></expr>;</expr_stmt> <comment type="line">//won't happen in production I think.</comment>
+        </block_content>}</block></catch> <finally>finally <block>{<block_content>
+            <expr_stmt><expr><call><name><name>b2</name><operator>.</operator><name>complete</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+        
+    </block_content>}</block></function>
+</unit>

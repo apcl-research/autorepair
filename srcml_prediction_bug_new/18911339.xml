@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13992983.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>cleanupObject</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>obj</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>obj</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"PreparedStatementCache:cleanupObject class='"</literal>
+					<operator>+</operator> <call><name><name>obj</name><operator>.</operator><name>getClass</name></name><argument_list>(  <argument><expr><operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>log</name>
+					<operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"PreparedStatementCache:cleanupObject close a PreparedStatement o="</literal>
+							<operator>+</operator> <literal type="string">"'"</literal> <operator>+</operator> <call><name><name>obj</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<try>try <block>{<block_content>
+				<expr_stmt><expr><operator>(</operator><operator>(</operator><name>PreparedStatement</name><operator>)</operator> <name>obj</name><operator>)</operator><operator>.</operator><call><name>close</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<comment type="line">// obj = null;</comment>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>SQLException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>log</name>
+						<operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"PreparedStatementCache:cleanupObject problem to close"</literal>
+								<operator>+</operator> <literal type="string">"a PreparedStatement: "</literal> <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

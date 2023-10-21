@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26309983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>close</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// Notify listeners</comment>
+        <for>for <control>(<init><decl><type><name>IChatStatusListener</name></type> <name>l</name> <range>: <expr><name>chatListeners</name></expr></range></decl></init>)</control><block type="pseudo"><block_content> 
+            <expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>chatClosed</name></name><argument_list>( <argument><expr><name>this</name></expr></argument> )</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+        <comment type="line">// clean-up now</comment>
+        <if_stmt><if>if <condition>(<expr><name>service</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>service</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// The chat service will clean-up all us as listeners too</comment>
+            <expr_stmt><expr><name>service</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+         
+        <comment type="line">// Goodbye, friends</comment>
+        <expr_stmt><expr><call><name><name>chatListeners</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>chatListeners</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10412094.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>classLoaderChanged</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// clear the static caches in BshClassManager</comment>
+        <expr_stmt><expr><call><name>clearCaches</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <for>for <control>(<init><decl><type><name>Enumeration</name></type> <name>e</name> <init>= <expr><call><name><name>listeners</name><operator>.</operator><name>elements</name></name><argument_list>( ;</init> <condition><expr><call><name><name>e</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>WeakReference</name></type> <name>wr</name> <init>= <expr><operator>(</operator><name>WeakReference</name><operator>)</operator> <call><name><name>e</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>Listener</name></type> <name>l</name> <init>= <expr><operator>(</operator><name>Listener</name><operator>)</operator> <call><name><name>wr</name><operator>.</operator><name>get</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>l</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <comment type="line">// garbage collected</comment>
+                <expr_stmt><expr><call><name><name>listeners</name><operator>.</operator><name>removeElement</name></name><argument_list>(<argument><expr><name>wr</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+            <else>else<block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>classLoaderChanged</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></for>
+
+    </block_content>}</block></function>
+</unit>

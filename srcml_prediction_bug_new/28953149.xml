@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41469094.java">	<function><type><specifier>private</specifier> <name>QP_Q21</name></type> <name>createContinuationQuery</name><parameter_list>(<parameter><decl><type><name>QBP_Q21</name></type> <name>message</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>continuationPointer</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>DataTypeException</name></expr></argument></throws> <block>{<block_content>
+		<comment type="line">// First, update the message header</comment>
+		<expr_stmt><expr><call><name><name>HL7v25</name><operator>.</operator><name>updateMSH</name></name><argument_list>(<argument><expr><call><name><name>message</name><operator>.</operator><name>getMSH</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name>getMessageId</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// Next, update the DSC</comment>
+		<expr_stmt><expr><call><name><name>message</name><operator>.</operator><name>getDSC</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getContinuationPointer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValue</name><argument_list>(<argument><expr><name>continuationPointer</name></expr></argument>)</argument_list></call> 
+		<call><name><name>message</name><operator>.</operator><name>getDSC</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getContinuationStyle</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValue</name><argument_list>(<argument><expr><literal type="string">"I"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// Done</comment>
+		<return>return <expr><name>message</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

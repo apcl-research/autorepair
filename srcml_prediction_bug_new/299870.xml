@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13889996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>addNode</name><parameter_list>(<parameter><decl><type><name>GraphVertex</name></type> <name>vertex</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>index</name> <init>= <expr><call><name><name>graph</name><operator>.</operator><name>vertices</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>vertex</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>nodes</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr> ;</expr_stmt>
+        <expr_stmt><expr><name><name>vertex</name><operator>.</operator><name>color</name></name> <operator>=</operator> <name>color</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>changed</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        
+        <decl_stmt><decl><type><name>Cluster</name></type> <name>clt</name> <init>= <expr><call><name><name>writer</name><operator>.</operator><name>getCluster</name></name><argument_list>(<argument><expr><name>indexToCltName</name><index>[<expr><name>index</name></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>clt</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>clt</name><operator>.</operator><name>removeNodeByIndex</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><name><name>indexToCltName</name><index>[<expr><name>index</name></expr>]</index></name> <operator>=</operator> <name>name</name></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

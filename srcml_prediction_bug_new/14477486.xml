@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26442483.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>init</name><parameter_list>()</parameter_list>  
+    <try>try <block>{<block_content>
+      <comment type="line">//{socket</comment>
+      <expr_stmt><expr><name>socket</name> <operator>=</operator> <operator>new</operator> <call><name>DatagramSocket</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <comment type="line">//}socket</comment>
+      <expr_stmt><expr><name>hostAddress</name> <operator>=</operator> <call><name><name>InetAddress</name><operator>.</operator><name>getByName</name></name><argument_list>(<argument><expr><name>hostName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><name>userData</name> <operator>=</operator> <operator>new</operator> <call><name>BufferedReader</name><argument_list>(<argument><expr><operator>new</operator> <call><name>InputStreamReader</name><argument_list>(<argument><expr><name><name>System</name><operator>.</operator><name>in</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>excptn</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>excptn</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>exit</name></name><argument_list>(<argument><expr><operator>-</operator><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setNetwork</name><parameter_list>(<parameter><decl><type><name>Network</name></type> <name>newnet</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<if_stmt><if>if <condition>(<expr><name>newnet</name><operator>==</operator><name>network</name></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><name>network</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>removeIterationEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>network</name><operator>.</operator><name>removeProjectEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>clear</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if  <condition>(<expr><name>newnet</name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+		
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Attached network ["</literal><operator>+</operator><call><name><name>newnet</name><operator>.</operator><name>getPartName</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">"] to error graph"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>network</name><operator>=</operator><name>newnet</name></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>newnet</name><operator>.</operator><name>addIterationEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>newnet</name><operator>.</operator><name>addProjectEventListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

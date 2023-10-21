@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13570029.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>updateHistory</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>arg</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	
+		<if_stmt><if>if<condition>( <expr><name>arg</name> <operator>instanceof</operator> <name>HistoryMoveAddMove</name></expr> )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>HistoryMoveAddMove</name></type> <name>moveAddMove</name> <init>= <expr><operator>(</operator><name>HistoryMoveAddMove</name><operator>)</operator><name>arg</name></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>( <expr><operator>!</operator><call><name><name>moveAddMove</name><operator>.</operator><name>anyMoveDeleted</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>moveAddMove</name><operator>.</operator><name>getTime</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <name><name>MoveImpl</name><operator>.</operator><name>NO_TIME</name></name></expr> )</condition><block type="pseudo"><block_content> 
+				<expr_stmt><expr><call><name>addNode</name><argument_list>( <argument><expr><call><name><name>moveAddMove</name><operator>.</operator><name>getPuzzleMove</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call> 
+			<else>else<block type="pseudo"><block_content> 
+				<expr_stmt><expr><call><name>recreateAllNodes</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+			<expr_stmt><expr><call><name>updateNodesPos</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<if type="elseif">else if<condition>( <expr><operator>!</operator><operator>(</operator><name>arg</name> <operator>instanceof</operator> <name>HistoryMoveChangeTime</name><operator>)</operator></expr> )</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>recreateAllNodes</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>updateNodesPos</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>updateHistory</name></name><argument_list>(<argument><expr><name>arg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>	
+</unit>

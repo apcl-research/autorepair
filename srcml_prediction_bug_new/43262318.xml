@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44162796.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>setKey</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><name>key</name> <operator>=</operator> <call><name>getRole</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"+"</literal> <operator>+</operator> <call><name>getContextDepot</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"+"</literal> <operator>+</operator> <call><name>getContextType</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"+"</literal> <operator>+</operator> <call><name>getContextName</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"+"</literal> <operator>+</operator>
+                <call><name>getModule</name><argument_list>(  <argument><expr><operator>+</operator><literal type="string">"+"</literal> <operator>+</operator> <call><name>getCommand</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"+"</literal> <operator>+</operator> <call><name>getTimeanddayExp</name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <return>return <expr><name>key</name></expr>;</return>
+
+    </block_content>}</block></function>
+</unit>

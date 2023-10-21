@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42579915.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>checkVeriTResult</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>sv</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>V1_2</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>veriTResult</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><literal type="string">"(benchmark"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>veriTResult</name> <operator>=</operator> <call><name><name>veriTResult</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><call><name><name>veriTResult</name>
+						<operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><literal type="string">"(benchmark"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr> 
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>veriTResult</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><literal type="string">"(set-logic"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

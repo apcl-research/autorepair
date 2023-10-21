@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/473899.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>extract</name><parameter_list>(<parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>buffer</name></decl></parameter>, <parameter><decl><type><name>File</name></type> <name>dir</name></decl></parameter>, <parameter><decl><type><name>JarInputStream</name></type> <name>in</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>JarEntry</name></type> <name>entry</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><operator>(</operator><name>entry</name> <operator>=</operator> <call><name><name>in</name><operator>.</operator><name>getNextJarEntry</name></name><argument_list>()</argument_list></call><operator>)</operator> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>File</name></type> <name>file</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>dir</name></expr></argument>, <argument><expr><call><name><name>entry</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>entry</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>mkdirs</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+			<else>else<block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name>writeFile</name><argument_list>(<argument><expr><name>buffer</name></expr></argument>, <argument><expr><name>in</name></expr></argument>, <argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

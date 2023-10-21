@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25984227.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>read</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>c</name></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>bufLength</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>  
+            <expr_stmt><expr><name>c</name> <operator>=</operator> <name><name>buf</name><index>[<expr><name>bufLength</name><operator>--</operator></expr>]</index></name></expr>;</expr_stmt></block_content></block></if>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><name>c</name> <operator>=</operator> <call><name>wrappedRead</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            
+            <if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><name><name>RubyYaccLexer</name><operator>.</operator><name>EOF</name></name></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></else></if_stmt>
+        
+        <expr_stmt><expr><call><name>advance</name><argument_list>(<argument><expr><name>c</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>c</name> <operator>==</operator> <literal type="char">'\n'</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><name>line</name><operator>++</operator></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            
+        <return>return <expr><name>c</name></expr>;</return> 
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31492496.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setCollectors</name><parameter_list>(<parameter><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>collectors</name></decl></parameter>)</parameter_list><block>{<block_content>
+    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>collectors</name></name> <operator>=</operator> <name>collectors</name></expr>;</expr_stmt> 
+    <comment type="line">//setup a new destination from our list of collector if one hasn't been set up</comment>
+    <if_stmt><if>if  <condition>(<expr><name>currCollector</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><call><name><name>collectors</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><name>currCollector</name> <operator>=</operator> <call><name><name>collectors</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if>
+      <else>else<block type="pseudo"><block_content>
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"No collector to try in send(), not even trying to doPost()"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

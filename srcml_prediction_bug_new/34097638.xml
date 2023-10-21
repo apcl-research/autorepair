@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34090622.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createAnalysisCache</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><name>analysisCache</name> <operator>=</operator> <call><name><name>ClassFactory</name><operator>.</operator><name>instance</name></name> <argument_list>()</argument_list></call><operator>.</operator><call><name>createAnalysisCache</name><argument_list>(<argument><expr><name>classPath</name></expr></argument>, <argument><expr><name>bugReporter</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// Register the "built-in" analysis managers</comment>
+		<expr_stmt><expr><call><name>registerBuiltInAnalysisEngines</name><argument_list>(<argument><expr><name>analysisCache</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// Register analysis managers in plugins</comment>
+		<expr_stmt><expr><call><name>registerPluginAnalysisEngines</name><argument_list>(<argument><expr><name>detectorFactoryCollection</name></expr></argument>, <argument><expr><name>analysisCache</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// Install the DetectorFactoryCollection as a database</comment>
+		<expr_stmt><expr><call><name><name>analysisCache</name><operator>.</operator><name>eagerlyPutDatabase</name></name><argument_list>(<argument><expr><name><name>DetectorFactoryCollection</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><name>detectorFactoryCollection</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>Global</name><operator>.</operator><name>setAnalysisCacheForCurrentThread</name></name><argument_list>(<argument><expr><name>analysisCache</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

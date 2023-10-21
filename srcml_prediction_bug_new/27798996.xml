@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27800844.java">  <function><type><specifier>public</specifier> <name>Binding</name></type> <name>getNewBinding</name> <parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if<condition>( <expr><name>type</name> <operator>&gt;=</operator> <literal type="number">10</literal></expr> )</condition> <block>{<block_content>
+      <if_stmt><if>if<condition>( <expr><name>newBindings</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+      </block_content>}</block></if> <if type="elseif">else if<condition>( <expr><name><name>newBindings</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">1</literal></expr> )</condition> <block>{<block_content>
+        <return>return <expr><name><name>newBindings</name><index>[ <expr><literal type="number">0</literal></expr> ]</index></name></expr>;</return>
+      </block_content>}</block></if> <else>else<block type="pseudo"><block_content>  
+        <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>( <argument><expr><literal type="string">"This BetterNamingEvent has multiple new bindings.  Use getNewBindings() instead."</literal></expr></argument> )</argument_list></call></expr>;</throw></block_content></block></else></if_stmt>
+      </block_content>}</block></if></if_stmt>
+    <return>return <expr><call><name><name>super</name><operator>.</operator><name>getNewBinding</name></name><argument_list>()</argument_list></call></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// getNewBinding()</comment>
+</unit>

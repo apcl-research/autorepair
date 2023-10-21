@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19494815.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>handleClosedProjects</name><parameter_list>(<parameter><decl><type><name><name>IRodinElementDelta</name><index>[]</index></name></type> <name>changedDeltas</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><specifier>final</specifier> <name>IRodinElementDelta</name></type> <name>child</name> <range>: <expr><name>changedDeltas</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>IRodinElement</name></type> <name>elt</name> <init>= <expr><call><name><name>child</name><operator>.</operator><name>getElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>elt</name> <operator>instanceof</operator> <name>IRodinProject</name>
+					<operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>child</name><operator>.</operator><name>getFlags</name></name><argument_list>()</argument_list></call> <operator>&amp;</operator> <name><name>IRodinElementDelta</name><operator>.</operator><name>F_CLOSED</name></name><operator>)</operator> <operator>!=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<decl_stmt><decl><type><specifier>final</specifier> <name>IRodinProject</name></type> <name>project</name> <init>= <expr><call><name><name>elt</name><operator>.</operator><name>getRodinProject</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<decl_stmt><decl><type><specifier>final</specifier> <name>IProject</name></type> <name>prj</name> <init>= <expr><call><name><name>project</name><operator>.</operator><name>getProject</name></name><argument_list>( ;</argument_list></call></expr></init></decl>;</decl_stmt>
+				<decl_stmt><decl><type><specifier>final</specifier> <name>EditorInputFilter</name></type> <name>filter</name> <init>= <expr><operator>new</operator> <call><name>ProjectInputFilter</name><argument_list>(<argument><expr><name>prj</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name>closeRelatedEditors</name><argument_list>(<argument><expr><name>filter</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

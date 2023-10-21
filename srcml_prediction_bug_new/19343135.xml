@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18752915.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>checkRedef</name><parameter_list>(<parameter><decl><type><name>Element</name></type> <name>element</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+       <if_stmt><if>if <condition>(<expr><call><name><name>element</name><operator>.</operator><name>hasAttribute</name></name><argument_list>(<argument><expr><name>ATTR_NAME</name></expr></argument>)</argument_list></call></expr>)</condition>  <block>{<block_content>
+    	   <try>try <block>{<block_content>
+    		   <decl_stmt><decl><type><name>int</name></type> <name>level</name> <init>= <expr><call><name>getIntAttribute</name><argument_list>(<argument><expr><name>element</name></expr></argument>, <argument><expr><name>ATTR_LEVEL</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	    	   <if_stmt><if>if <condition>(<expr><name>level</name> <operator>&gt;</operator> <literal type="number">0</literal>
+	    	   <operator>&amp;&amp;</operator>  <name>level</name> <operator>&lt;</operator> <name>redefLevel</name>
+	    	   <operator>&amp;&amp;</operator>  <call><name>getStringAttribute</name><argument_list>(<argument><expr><name>element</name></expr></argument>, <argument><expr><name>ATTR_REDEFINED</name> <operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"true"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+		           <expr_stmt><expr><name>redefLevel</name> <operator>=</operator> <name>level</name></expr>;</expr_stmt>
+		       </block_content>}</block></if></if_stmt>
+    	   </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	   </block_content>}</block></catch></try>
+       </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

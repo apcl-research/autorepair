@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19370029.java">  <function><type><specifier>public</specifier> <name>Object</name></type> <name>getValueAt</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>column</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Object</name></type> <name>x</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><name>x</name> <operator>=</operator> <name><name>visibleRows</name><index>[<expr><name>row</name></expr>]</index></name><operator>.</operator><call><name>getValueAt</name><argument_list>(<argument><expr><name>column</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+    <return>return <expr><name><name>visibleRows</name><index>[<expr><ternary><condition><expr><name><name>row</name><operator>.</operator><name>level</name></name> <operator>&lt;</operator> <name><name>displayLevels</name><index>[<expr><name><name>reverseOrder</name><index>[<expr><name>column</name></expr> ]</index></name></expr> ?</condition><then>
+      <expr><literal type="null">null</literal></expr> </then><else>: 
+      <expr><name>x</name></expr></else></ternary></expr>]</index></name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

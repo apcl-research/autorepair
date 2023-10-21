@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/47472983.java">	<function><type><specifier>private</specifier> <name>ICustomizationInfo</name></type> <name>getCustomizationInfo</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>ICustomizationInfo</name></type> <name>customizationInfo</name> <init>= <expr><call><name>getProduct</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getCustomizationInfo</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>customizationInfo</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>IProductModel</name></type> <name>productModel</name> <init>= <expr><operator>(</operator><name>IProductModel</name><operator>)</operator> <call><name>getPage</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getPDEEditor</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getAggregateModel</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>customizationInfo</name> <operator>=</operator> <call><name><name>productModel</name><operator>.</operator><name>getFactory</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>createCustomizationInfo</name><argument_list>()</argument_list></call> 
+			<call><name><name>productModel</name><operator>.</operator><name>getProduct</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setCustomizationInfo</name><argument_list>(<argument><expr><name>customizationInfo</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>customizationInfo</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

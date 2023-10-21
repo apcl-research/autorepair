@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/5025991.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setFilters</name><parameter_list>(<parameter><decl><type><name><name>IFilter</name><index>[]</index></name></type> <name>existing</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>filters</name><operator>.</operator><name>removeAll</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name><name>String</name><index>[]</index></name></type> <name>items</name> <init>= <expr><operator>new</operator> <name><name>String</name><index>[<expr><name><name>existing</name><operator>.</operator><name>length</name></name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>x</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>x</name> <operator>&lt;</operator> <name><name>existing</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>x</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><name><name>items</name> <index>[<expr><name>x</name></expr>]</index></name> <operator>=</operator> <name><name>existing</name><index>[<expr><name>x</name></expr>]</index></name><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+        <expr_stmt><expr><call><name><name>Arrays</name><operator>.</operator><name>sort</name></name><argument_list>(<argument><expr><name>items</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <for>for <control>(<init><decl><type><name>String</name></type> <name>item</name> <range>: <expr><name>items</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>filters</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>item</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

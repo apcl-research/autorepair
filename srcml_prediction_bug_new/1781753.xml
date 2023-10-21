@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31096729.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>handleEvent</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>eventName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	<comment type="line">// check whether onclick is activated</comment>
+    	<if_stmt><if>if <condition>(<expr><call><name><name>eventName</name><operator>.</operator><name>toLowerCase</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">"onclick"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+    		<expr_stmt><expr><call><name>handleEvent</name><argument_list>(<argument><expr><literal type="string">"onmousedown"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    	</block_content>}</block></if></if_stmt>
+      <decl_stmt><decl><type><name>String</name></type> <name>eventScript</name> <init>= <expr><call><name>getAttribute</name><argument_list>( <argument><expr><name>eventName</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>boolean</name></type> <name>result</name><init>=<expr><call><name>doEventScript</name><argument_list>(<argument><expr><name>eventScript</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <if_stmt><if>if <condition>(<expr><call><name><name>eventName</name><operator>.</operator><name>toLowerCase</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">"onclick"</literal></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+    		<expr_stmt><expr><call><name>handleEvent</name><argument_list>(<argument><expr><literal type="string">"onmouseup"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    	</block_content>}</block></function>
+</unit>

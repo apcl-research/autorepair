@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16299996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>addNewLayer</name><parameter_list>()</parameter_list><block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><name>dataItems</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>dataItems</name> <operator>=</operator> <call><name>addBranch</name><argument_list>(<argument><expr><name>dataItems</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <if type="elseif">else if<condition>(<expr><name><name>dataItems</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>dataItems</name> <operator>=</operator> <call><name>addBranch</name><argument_list>(<argument><expr><name>dataItems</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <if type="elseif">else if<condition>(<expr><name><name>dataItems</name><index>[<expr><name><name>dataItems</name><operator>.</operator><name>length</name></name> <operator>-</operator> <literal type="number">1</literal></expr>]</index></name><operator>.</operator><name>length</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>dataItems</name> <operator>=</operator> <call><name>addBranch</name><argument_list>(<argument><expr><name>dataItems</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        <return>return <expr><name><name>dataItems</name><operator>.</operator><name>length</name></name><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

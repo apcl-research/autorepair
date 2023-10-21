@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/165829.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>mouseClicked</name><parameter_list>(<parameter><decl><type><name>MouseEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// first, check to see if the layout is ready</comment>
+		<if_stmt><if>if <condition>(<expr><name>engine</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>engine</name><operator>.</operator><name>getErrorSlices</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>currentLayout</name> <operator>=</operator> <call><name><name>engine</name><operator>.</operator><name>getLayoutWindow</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<comment type="line">// get the slice index</comment>
+			<decl_stmt><decl><type><name>int</name></type> <name>index</name> <init>= <expr><call><name>getSliceIndexFromTime</name><argument_list>(<argument><expr><call><name>coordToTime</name><argument_list>(<argument><expr><call><name><name>event</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<comment type="line">// check if it is valid</comment>
+			<if_stmt><if>if <condition>(<expr><name>index</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<comment type="line">// ask layout to change the slice</comment>
+				<expr_stmt><expr><call><name><name>currentLayout</name><operator>.</operator><name>goToSlice</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>drawArea</name><operator>.</operator><name>repaint</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		 
+	</block_content>}</block></if></if_stmt>
+</unit>

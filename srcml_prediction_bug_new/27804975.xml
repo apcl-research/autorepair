@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>initializeLocations</name><parameter_list>(  <parameter><decl><type><name>void</name></type> <name>iter</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>graphView</name><operator>.</operator><name>getNodeViewsIterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+      <decl_stmt><decl><type><name>NodeView</name></type> <name>v</name> <init>= <expr><operator>(</operator> <name>NodeView</name> <operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      
+      <if_stmt><if>if <condition>( <expr><operator>!</operator><call><name><name>staticNodes</name><operator>.</operator><name>contains</name></name><argument_list>( <argument><expr><name>v</name></expr></argument> )</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+        <expr_stmt><expr><call><name>initializeLocation</name><argument_list>( <argument><expr><name>v</name></expr></argument>, <argument><expr><name>currentSize</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+      <expr_stmt><expr><call><name>initialize_local_node_view</name><argument_list>(<argument><expr><name>v</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></for>
+  </block_content>}</block></function>
+</unit>

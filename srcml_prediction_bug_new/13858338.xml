@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13779996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setEnabled</name><parameter_list>(<parameter><decl><type><name>IForm</name></type> <name>form</name></decl></parameter>, <parameter><decl><type><name>FormContext</name></type> <name>ctx</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>script</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>enabled</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Command</name></type> <name>com</name> <init>= <expr><call><name>getCommand</name><argument_list>(<argument><expr><name>form</name></expr></argument>, <argument><expr><name>ctx</name></expr></argument>, <argument><expr><name>script</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>com</name> <operator>==</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(
+                <argument><expr><literal type="string">"Command not found for script '"</literal> <operator>+</operator> <name>script</name> <operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>com</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><name>enabled</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

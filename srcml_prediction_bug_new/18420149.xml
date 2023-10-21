@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19095170.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>add</name><parameter_list>(<parameter><decl><type><name>Sensor</name></type> <name>s</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>start</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>m_Sensors</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><call><name><name>s</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>m_Sensors</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>s</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>m_Logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Sensor "</literal> <operator>+</operator> <name>s</name> <operator>+</operator> <literal type="string">" added."</literal></expr></argument>)</argument_list></call></expr> 
+            <if_stmt><if>if <condition>(<expr><name>start</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>s</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>m_Logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Sensor "</literal> <operator>+</operator> <name>s</name> <operator>+</operator> <literal type="string">" already exists."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

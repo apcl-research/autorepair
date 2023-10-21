@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>updateEdgeView</name> <parameter_list>()</parameter_list> <block>{<block_content>
+   
+    <expr_stmt><expr><name>targetPoint</name> <operator>=</operator> <call><name><name>targetLocator</name><operator>.</operator><name>locatePoint</name></name><argument_list>( <argument><expr><name>targetPoint</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>targetPoint</name> <operator>=</operator> <call><name><name>target</name><operator>.</operator><name>localToGlobal</name></name><argument_list>( <argument><expr><name>targetPoint</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>sourcePoint</name> <operator>=</operator> <call><name><name>sourceLocator</name><operator>.</operator><name>locatePoint</name></name><argument_list>( <argument><expr><name>sourcePoint</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name>sourcePoint</name> <operator>=</operator> <call><name><name>source</name><operator>.</operator><name>localToGlobal</name></name><argument_list>( <argument><expr><name>sourcePoint</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><call><name>updateTargetPointView</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>updateSourcePointView</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+    <if_stmt><if>if <condition>( <expr><operator>!</operator><name>inLargeGraph</name></expr> )</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name>updateTargetArrow</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>updateSourceArrow</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+     
+
+    <expr_stmt><expr><call><name>updateLine</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></if></if_stmt>
+</block_content>}</block></function>
+</unit>

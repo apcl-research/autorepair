@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37592483.java">  <function><type><specifier>public</specifier> <name>TestResult</name></type> <name>start</name><parameter_list>(<parameter><decl><type><name>Class</name></type> <name>testCase</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <try>try <block>{<block_content>
+      <decl_stmt><decl><type><name>Test</name></type> <name>suite</name> <init>= <expr><call><name>getTest</name><argument_list>(<argument><expr><name>testCase</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+      <if_stmt><if>if<condition>(<expr><literal type="null">null</literal> <operator>!=</operator> <name>suite</name></expr>)</condition> <block>{<block_content>
+        <return>return <expr><call><name>doRun</name><argument_list>(<argument><expr><name>suite</name></expr></argument>)</argument_list></call></expr>;</return>
+       
+      <else>else <block>{<block_content>
+        <expr_stmt><expr><call><name>runFailed</name><argument_list>(<argument><expr><name>testCase</name></expr></argument>, <argument><expr><literal type="string">"could not create/run JUnit test suite"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></else></if_stmt>
+    </block_content>}</block>
+    <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name>runFailed</name><argument_list>(<argument><expr><name>testCase</name></expr></argument>, <argument><expr><literal type="string">"could not create/run JUnit test suite: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></catch></try>
+    
+    <return>return <expr><literal type="null">null</literal></expr>;</return>
+  </block_content>}</block></function>
+</unit>

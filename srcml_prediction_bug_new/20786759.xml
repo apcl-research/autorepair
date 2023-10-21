@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3018981.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>initController</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name>adminView</name> <operator>=</operator> <operator>new</operator> <call><name>AdminView</name><argument_list>(<argument><expr><name>mainModel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <decl_stmt><decl><type><name>ExplorerTreeModel</name></type> <name>explorerModel</name> <init>= <expr><operator>new</operator> <call><name>ExplorerTreeModel</name><argument_list>(<argument><expr><call><name><name>mainModel</name><operator>.</operator><name>getGestureSetList</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>NodeInfoFactory</name>
+        <operator>.</operator><name>createAdminNodeInfo</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><name>explorerTreeController</name> <operator>=</operator> <operator>new</operator> <call><name>ExplorerTreeController</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>adminView</name></expr></argument>, <argument><expr><name>explorerModel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><call><name>addController</name><argument_list>(<argument><expr><name>explorerTreeController</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

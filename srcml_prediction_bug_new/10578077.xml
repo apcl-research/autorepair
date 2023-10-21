@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18752783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>initSqlQueries</name><parameter_list>(<parameter><decl><type><name>Connection</name></type> <name>conn</name></decl></parameter>, <parameter><decl><type><name>File</name></type> <name>sqlFile</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>conn</name><operator>.</operator><name>getAutoCommit</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>conn</name><operator>.</operator><name>setAutoCommit</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+
+            <expr_stmt><expr><call><name><name>sqlQueries</name><operator>.</operator><name>init</name></name><argument_list>(<argument><expr><name>sqlFile</name></expr></argument>, <argument><expr><call><name><name>JDBCBayesianAnalyzer</name><operator>.</operator><name><name>class</name><operator>.</operator><name>getName</name></name></name><argument_list>( , <argument><expr><name>conn</name></expr></argument>, <argument><expr><call><name>getSqlParameters</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name>checkTables</name><argument_list>(<argument><expr><name>conn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <finally>finally <block>{<block_content>
+            <expr_stmt><expr><call><name><name>theJDBCUtil</name><operator>.</operator><name>closeJDBCConnection</name></name><argument_list>(<argument><expr><name>conn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

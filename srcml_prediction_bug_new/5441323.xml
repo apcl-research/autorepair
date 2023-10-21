@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31482596.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>parse</name><parameter_list>(<parameter><decl><type><name>PushbackReader</name></type> <name>aReader</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>c</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>sb</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <literal type="number">30000</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>c</name> <operator>=</operator> <call><name><name>aReader</name><operator>.</operator><name>read</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>c</name> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal> <operator>&amp;&amp;</operator> <name>c</name> <operator>!=</operator> <literal type="char">'&lt;'</literal></expr>)</condition><block type="pseudo"><block_content>  
+                <expr_stmt><expr><call><name>append</name><argument_list>(<argument><expr><operator>(</operator><name>char</name><operator>)</operator><name>c</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            </block_content>}</block></while> <else>else <block>{<block_content>
+                <break>break;</break>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></function>
+</unit>

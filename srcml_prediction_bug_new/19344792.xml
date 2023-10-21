@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37692983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setParameters</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><call><name><name>pgmParams</name><operator>.</operator><name>setProperty</name></name><argument_list>(<argument><expr><name><name>Parameters</name><operator>.</operator><name>PROPERTY_LOOKS_CLASS_INDEX</name></name></expr></argument>,
+                			  <argument><expr><call><name><name>Integer</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><call><name><name>looks</name><operator>.</operator><name>getSelectedIndex</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>pgmParams</name><operator>.</operator><name>setProperty</name></name><argument_list>(<argument><expr><name><name>Parameters</name><operator>.</operator><name>PROPERTY_LOOKS_CLASS_NAME</name></name></expr></argument>,
+                <argument><expr><call><name><name>className</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>pgmParams</name><operator>.</operator><name>looksJar</name></name> <operator>=</operator> <call><name><name>jarName</name><operator>.</operator><name>getText</name></name><argument_list>( ;</argument_list></call></expr>
+    </block_content>}</block></function>
+</unit>

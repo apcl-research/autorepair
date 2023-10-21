@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44162796.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>nextPosition</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name>isCleared</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>hasFocus</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+            <expr_stmt><expr><call><name>setFocus</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            <return>return;</return>
+        </block_content>}</block></function>
+
+        <expr_stmt><expr><name>currentPosition</name> <operator>+=</operator> <name>granularity</name></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>currentPosition</name> <operator>&gt;=</operator> <call><name><name>polysomnigraph</name><operator>.</operator><name>getEpochDuration</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator>
+                <call><name>canBeDisplayed</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>resetPosition</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>setFocus</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>polysomnigraph</name><operator>.</operator><name>incrementStartRecord</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name>positionChanged</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    }
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51042529.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>onCallTransferFailure</name><parameter_list>( <parameter><decl><type><name>ExtendedCall</name></type> <name>call</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>reason</name></decl></parameter>, <parameter><decl><type><name>Message</name></type> <name>notify</name></decl></parameter> )</parameter_list> <block>{<block_content>
+
+    	<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name>  <argument_list>( <argument><expr><literal type="string">"onCallTransferFailure"</literal></expr></argument>, <argument><expr><literal type="string">"Init..."</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        
+        <if_stmt><if>if <condition>( <expr><name>call</name> <operator>!=</operator> <name><name>this</name><operator>.</operator><name>call</name></name></expr> )</condition> <block>{<block_content>
+        	<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>( <argument><expr><literal type="string">"onCallTransferFailure"</literal></expr></argument>, <argument><expr><literal type="string">"NOT the current call."</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+        
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>( <argument><expr><literal type="string">"onCallTransferFailure"</literal></expr></argument>, <argument><expr><literal type="string">"Transfer failed."</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

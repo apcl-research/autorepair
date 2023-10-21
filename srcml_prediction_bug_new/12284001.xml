@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18450029.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>signalUpdatedFile</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>iFile</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<synchronized>synchronized <init>(<expr><name>this</name></expr>)</init> <block>{<block_content>
+			<for>for <control>(<init><decl><type><name>ScreenConfiguration</name></type> <name>d</name> <range>: <expr><call><name><name>configuration</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><call><name><name>d</name><operator>.</operator><name>getFile</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>iFile</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"[DesktopConfigurationLoader.signalUpdatedFile] Reloading file: "</literal> <operator>+</operator> <name>iFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+					<try>try <block>{<block_content>
+						<expr_stmt><expr><call><name><name>d</name><operator>.</operator><name>load</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+					</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>  <block>{<block_content>
+						<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"[DesktopConfigurationLoader.signalUpdatedFile] Error on loading updated descriptor: "</literal>
+								<operator>+</operator> <call><name><name>iFile</name><operator>.</operator><name>getAbsolutePath</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+					</block_content>}</block></catch></try>
+					<break>break;</break>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></for>
+		</block_content>}</block></synchronized>
+	</block_content>}</block></function>
+</unit>

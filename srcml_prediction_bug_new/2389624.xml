@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44682996.java">        <function><type><specifier>public</specifier> <name>Point</name></type> <name>translatePoint</name><parameter_list>(<parameter><decl><type><name>Point</name></type> <name>p</name></decl></parameter>, <parameter><decl><type><name>CoordinateOrigin</name></type> <name>mode</name></decl></parameter>)</parameter_list><block>{<block_content>
+            <decl_stmt><decl><type><name>Point</name></type> <name>newPoint</name> <init>= <expr><operator>new</operator> <call><name>Point</name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <comment type="line">// get the direction's translation, then run it through the translation mode translator</comment>
+            <decl_stmt><decl><type><name>Point</name></type> <name>translation</name> <init>= <expr><call><name><name>mode</name><operator>.</operator><name>getTranslation</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>newPoint</name><operator>.</operator><name>translate</name></name><argument_list>(<argument><expr><operator>(</operator><name>int</name><operator>)</operator><call><name><name>translation</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>(</operator><name>int</name><operator>)</operator><call><name><name>translation</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><name>newPoint</name></expr>;</return>
+        </block_content>}</block></function>
+</unit>

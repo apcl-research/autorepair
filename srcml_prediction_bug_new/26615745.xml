@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26299983.java">    <function><type><specifier>public</specifier> <name>Vector</name></type> <name>getCandidates</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>toComplete</name></decl></parameter>,<parameter><decl><type><name>Vector</name></type> <name>commandList</name></decl></parameter>)</parameter_list><block>{<block_content>
+        
+        <decl_stmt><decl><type><name>Vector</name></type> <name>matchingCommands</name> <init>= <expr><operator>new</operator> <call><name>Vector</name><argument_list>( ;</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>currentCommand</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Enumeration</name> <name><name>enum</name></name> = <name><name>commandList</name><operator>.</operator><name>elements</name></name></type>()</decl>;</decl_stmt>
+        <while>while <condition>(enum<expr><operator>.</operator><call><name>hasMoreElements</name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>currentCommand</name> <operator>=</operator> <operator>(</operator><name>String</name><operator>)</operator>enum<operator>.</operator><call><name>nextElement</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><call><name><name>currentCommand</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name>toComplete</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>matchingCommands</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>currentCommand</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><name>matchingCommands</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

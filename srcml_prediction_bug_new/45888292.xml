@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41583329.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>quickPost</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>eventKey</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>eventMessage</name></decl></parameter>, <parameter><decl><type><name>Originator</name></type> <name>originator</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<if_stmt><if>if<condition>(<expr><name>pickedContactKey</name><operator>==</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Toast</name><operator>.</operator><name>makeText</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="string">"Pick a contact first!"</literal></expr></argument>, <argument><expr><name><name>Toast</name><operator>.</operator><name>LENGTH_SHORT</name></name></expr></argument>)</argument_list></call><operator>.</operator><call><name>show</name><argument_list>()</argument_list></call> 
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		
+		<decl_stmt><decl><type><name>EventData</name></type> <name>eventData</name> <init>= <expr><operator>new</operator> <call><name>EventData</name><argument_list>(<argument><expr><name>eventKey</name></expr></argument>, <argument><expr><name>pickedContactKey</name></expr></argument>, <argument><expr><call><name><name>System</name><operator>.</operator><name>currentTimeMillis</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>eventMessage</name></expr></argument>, <argument><expr><name>originator</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>mBridge</name><operator>.</operator><name>quickPost</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>eventData</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>Toast</name><operator>.</operator><name>makeText</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><literal type="string">"Posted event: "</literal><operator>+</operator><name>eventMessage</name></expr></argument>, <argument><expr><name><name>Toast</name><operator>.</operator><name>LENGTH_SHORT</name></name></expr></argument>)</argument_list></call><operator>.</operator><call><name>show</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

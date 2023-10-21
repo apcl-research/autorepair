@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623963.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>showContextParams</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		
+		<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">"\ninit parameters from CONFIG"</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+		<decl_stmt><decl><type><name>Enumeration</name></type> <name>e1</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getServletConfig</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getInitParameterNames</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><call><name><name>e1</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">"\t"</literal> <operator>+</operator> <operator>(</operator><name>String</name><operator>)</operator><call><name><name>e1</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+		
+		<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">"\ninit parameters from CONTEXT"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>Enumeration</name></type> <name>e2</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getServletContext</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getInitParameterNames</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><call><name><name>e2</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">"\t"</literal> <operator>+</operator> <operator>(</operator><name>String</name><operator>)</operator><call><name><name>e2</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while> 
+	</block_content>}</block></function>
+</unit>

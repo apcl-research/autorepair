@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37592483.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>actionDemo</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>answer</name> <init>= <expr><call><name>displayYesNoWarning</name><argument_list>(<argument><expr><call><name><name>GT</name><operator>.</operator><name>_</name></name><argument_list>(
+        <argument><expr><literal type="string">"Demo mode is only available for testing WikiCleaner.\n"</literal> <operator>+</operator>
+        <literal type="string">"You won't be able to modify pages onousel in Demo mode.\n"</literal> <operator>+</operator>
+        <literal type="string">"Do you want to continue ?"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>answer</name> <operator>==</operator> <name><name>JOptionPane</name><operator>.</operator><name>YES_OPTION</name></name></expr>)</condition><block type="pseudo"><block_content>  
+      <expr_stmt><expr><call><name>actionLoginDemo</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

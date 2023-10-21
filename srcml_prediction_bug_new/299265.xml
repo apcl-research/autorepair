@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/297026.java">	<function><type><specifier>public</specifier> <name>Image</name></type> <name>getImage</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>element</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// if an image was already created, free it up (so as to notepad mem)</comment>
+		<decl_stmt><decl><type><name>MemberPart</name></type> <name>part</name> <init>= <expr><operator>(</operator><name>MemberPart</name><operator>)</operator> <name>element</name></expr></init></decl> 
+		<init>= <expr><operator>(</operator><name>MemberModel</name><operator>)</operator> <call><name><name>part</name><operator>.</operator><name>getModel</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Image</name></type> <name>image</name> <init>= <expr><call><name><name>_mapping</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>model</name><operator>.</operator><name>getMember</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getHandleIdentifier</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><name>image</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>image</name><operator>.</operator><name>dispose</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		
+		
+		<expr_stmt><expr><name>image</name> <operator>=</operator> <call><name><name>model</name><operator>.</operator><name>getIcon</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>_mapping</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>model</name><operator>.</operator><name>getMember</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getHandleIdentifier</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>image</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>image</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

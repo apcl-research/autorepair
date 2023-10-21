@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38984648.java">    <function><type><specifier>public</specifier> <name>double</name></type> <name>getThreeHourlyKP</name><parameter_list>(<parameter><decl><type><name>AbsoluteDate</name></type> <name>date</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>double</name></type> <name>ap</name> <init>= <expr><call><name>getAp</name><argument_list>(<argument><expr><name>date</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <for>for <control>( <init><expr><name>i</name><operator>=</operator> <literal type="number">0</literal></expr>;</init> <condition><expr><name>ap</name><operator>&gt;=</operator><name><name>apTab</name><index>[<expr><name>i</name></expr> ;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><name>i</name><operator>==</operator><name><name>apTab</name><operator>.</operator><name>length</name></name><operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>i</name><operator>++</operator></expr>;</expr_stmt>
+                <break>break;</break>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name><name>kpTab</name><index>[<expr><name>i</name><operator>-</operator><literal type="number">1</literal></expr>]</index></name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

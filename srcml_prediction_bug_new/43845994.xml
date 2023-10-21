@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43242783.java"><comment type="line">//    public void testLastInsertId() {</comment>
+<comment type="line">//        System.out.println("lastInsertId");</comment>
+<comment type="line">//        ZDOMySQL instance = null;</comment>
+<comment type="line">//        String expResult = "";</comment>
+<comment type="line">//        String result = instance.lastInsertId();</comment>
+<comment type="line">//        assertEquals(expResult, result) </comment>
+<comment type="line">//        // TODO review the generated test code and remove the default call to fail.</comment>
+<comment type="line">//        fail("The test case is a prototype.");</comment>
+<comment type="line">//    }</comment>
+</unit>

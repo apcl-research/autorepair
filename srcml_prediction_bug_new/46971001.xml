@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48140963.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>expand</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>min</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>newV</name></decl>
+        <if_stmt><if>if<condition>(<expr><name><name>values</name><operator>.</operator><name>length</name></name> <operator>&gt;</operator> <name>min</name></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>newV</name> <operator>=</operator> <operator>new</operator> <name><name>double</name><index>[<expr><name><name>values</name><operator>.</operator><name>length</name></name> <operator>*</operator> <literal type="number">2</literal> <operator>+</operator> <literal type="number">1</literal></expr>]</index></name></expr>;</expr_stmt>
+        </block_content>}</block></if><else>else<block type="pseudo"><block_content> 
+            <expr_stmt><expr><name>newV</name> <operator>=</operator> <operator>new</operator> <name><name>double</name><index>[<expr><name><name>values</name><operator>.</operator><name>length</name></name> <operator>+</operator> <name>min</name></expr>]</index></name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></function>
+</unit>

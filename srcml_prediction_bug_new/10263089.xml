@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23252783.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>vectorsToNearestCentroid</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>boolean</name></type> <name>converged</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+
+        <for>for  <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>data</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+            <comment type="line">// Find centroid closest to current vector.</comment>
+            <decl_stmt><decl><type><name>int</name></type> <name>nearest</name> <init>= <expr><call><name><name>data</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>nearest</name><argument_list>(<argument><expr><name>centroids</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <comment type="line">// If there was a change then there is no convergence.</comment>
+            <if_stmt><if>if <condition>(<expr><name>nearest</name> <operator>!=</operator> <name><name>nearestCentroid</name><index>[<expr><name>i</name></expr>]</index></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>converged</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt><expr><name><name>nearestCentroid</name><index>[<expr><name>i</name></expr>]</index></name> <operator>=</operator> <name>nearest</name></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><name>converged</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

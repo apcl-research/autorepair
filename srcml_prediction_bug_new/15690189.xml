@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37718054.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>remove</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>key</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Retriever</name></type> <name>r</name> <init>= <expr><call><name>getRetriever</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <synchronized>synchronized <init>(<expr><name>r</name></expr>)</init> <block>{<block_content>
+            <decl_stmt><decl><type><name>Object</name></type> <name>old</name> 
+            <init>= <expr><call><name><name>mValidCache</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>mInvalidCache</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></synchronized>
+        <expr_stmt><expr><call><name><name>r</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><name>NOTHING</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>old</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

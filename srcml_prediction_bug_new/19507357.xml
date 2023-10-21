@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509094.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testDeleteRodinFile</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>CoreException</name></expr></argument></throws> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>IRodinFile</name></type> <name>file</name> <init>= <expr><call><name>createRodinFile</name><argument_list>(<argument><expr><literal type="string">"P/X.test"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			
+			<expr_stmt><expr><call><name>startDeltas</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>delete</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>assertNotExists</name><argument_list>(<argument><expr><literal type="string">"Should be able to delete aRodin file"</literal></expr></argument>, <argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>assertDeltas</name><argument_list>(
+					<argument><expr><literal type="string">"Unexpected delta"</literal></expr></argument>,
+					<argument><expr><literal type="string">"P[*]: {CHILDREN}\n"</literal> <operator>+</operator> 
+					<literal type="string">"	X.test[-]: {}"</literal></expr></argument>
+			)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <finally>finally <block>{<block_content>
+			<expr_stmt><expr><call><name>stopDeltas</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>deleteFile</name> <argument_list>(<argument><expr><literal type="string">"P/X.test"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></finally></try>
+	</block_content>}</block></function>
+</unit>

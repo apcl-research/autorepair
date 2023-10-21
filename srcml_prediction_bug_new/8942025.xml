@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25984227.java">    <function><type><specifier>public</specifier> <name>IRubyObject</name></type> <name>createCallerBacktrace</name><parameter_list>(<parameter><decl><type><name>Ruby</name></type> <name>runtime</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>level</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>traceSize</name> <init>= <expr><name>frameIndex</name> <operator>-</operator> <name>level</name> <operator>+</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>RubyArray</name></type> <name>backtrace</name> <init>= <expr><call><name><name>runtime</name><operator>.</operator><name>newArray</name></name><argument_list>(<argument><expr><name>traceSize</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name>traceSize</name> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>;</condition> <incr><expr><name>i</name><operator>--</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name>addBackTraceElement</name><argument_list>(<argument><expr><name>runtime</name></expr></argument>, <argument><expr><name>backtrace</name></expr></argument>, <argument><expr><name><name>frameStack</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>, <argument><expr><name><name>frameStack</name><index>[<expr><name>i</name> <operator>-</operator> <literal type="number">1</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+        
+        <return>return <expr><name>backtrace</name></expr>;</return>
+    </block_content>}</block></for>
+</unit>

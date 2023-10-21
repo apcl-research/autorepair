@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28779983.java">  <function><type><specifier>protected</specifier> <name>TreeHandler</name></type> <name>findTreeHandler</name><parameter_list>(<parameter><decl><type><name>FormComponent</name></type> <name>fc</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>JaxenException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>DOMXPath</name></type> <name>dx</name> <init>= <expr><operator>new</operator> <call><name>DOMXPath</name><argument_list>(<argument><expr><literal type="string">"//xtree"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Element</name></type> <name>elem</name> <init>= <expr><operator>(</operator><name>Element</name>  <operator>)</operator> <call><name><name>dx</name><operator>.</operator><name>selectSingleNode</name></name><argument_list>(<argument><expr><call><name><name>fc</name><operator>.</operator><name>getDocument</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>elem</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+      <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+    <return>return <expr><operator>(</operator><name>TreeHandler</name><operator>)</operator> <call><name><name>fc</name><operator>.</operator><name>getHandler</name></name><argument_list>(<argument><expr><name>elem</name></expr></argument>)</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

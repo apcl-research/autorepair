@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44842796.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>_populateSingleTagPositions</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>line</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>tagName</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>startIndex</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>startIndex</name> <operator>&lt;</operator> <name><name>line</name><operator>.</operator><name>length</name></name></expr> )</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>int</name></type> <name>tagIndex</name> <init>= <expr><call><name><name>line</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><literal type="string">"&lt;"</literal> <operator>+</operator> <name>tagName</name></expr></argument>, <argument><expr><name>startIndex</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>tagIndex</name> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>_SINGLE_TAG_POSITIONS</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><name>tagIndex</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>_populateSingleTagPositions</name><argument_list>(<argument><expr><name>line</name></expr></argument>, <argument><expr><name>tagName</name></expr></argument>, <argument><expr><name>tagIndex</name> <operator>+</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

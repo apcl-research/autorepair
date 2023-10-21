@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44932996.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>commonQueries</name><parameter_list>(<parameter><decl><type><name>StringBuffer</name></type> <name>rslt</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RitaException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>rslt</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;status&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>queryStatus</name><argument_list>(<argument><expr><name>rslt</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>rslt</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;/status&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>rslt</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;navigation&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>queryNavigation</name><argument_list>(<argument><expr><name>rslt</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>rslt</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;/navigation&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>rslt</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;current&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>querySelections</name><argument_list>(<argument><expr><name>rslt</name></expr></argument>)</argument_list></call> 
+        <operator>.</operator><call><name>append</name><argument_list>(<argument><expr><literal type="string">"&lt;/current&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

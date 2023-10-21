@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23744096.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testDispatchSynchronous</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+
+        <comment type="line">// create process context</comment>
+        <decl_stmt><decl><type><name>ProcessContext</name></type> <name>ctx</name> <init>= <expr><operator>new</operator> <call><name>ProcessContext</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// create synchronous BPEL process</comment>
+        <decl_stmt><decl><type><name>BPELProcess</name></type> <name>process</name> <init>= <expr><operator>new</operator> <call><name>BPELProcessImpl</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>process</name><operator>.</operator><name>setSynchronous</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// create mock dispatcher with process context BPEL process</comment>
+        <decl_stmt><decl><type><name>MockDispatcher</name></type> <name>dispatcher</name> <init>= <expr><operator>new</operator> <call><name>MockDispatcher</name><argument_list>(<argument><expr><name>ctx</name></expr></argument>, <argument><expr><name>process</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// get result</comment>
+        <decl_stmt><decl><type><name>Object</name></type> <name>result</name> <init>= <expr><call><name><name>dispatcher</name><operator>.</operator><name>dispatch</name></name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// check</comment>
+        <expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><name>SYNC_RESULT</name></expr></argument>, <argument><expr><name>result</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

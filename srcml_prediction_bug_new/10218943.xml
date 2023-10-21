@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37579074.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>saveColumnSettings</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>columnCount</name> <init>= <expr><call><name>getTable</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getColumnCount</name><argument_list>( ;</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>columnCount</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name>getDialogSettings</name><argument_list>()</argument_list></call>
+					<operator>.</operator><call><name>put</name><argument_list>(
+							<argument><expr><call><name>getQualifier</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">".columnWidth"</literal> <operator>+</operator> <name>i</name></expr></argument>, <argument><expr><call><name>getTable</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getColumn</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getWidth</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+		</block_content>}</block></for>
+		<expr_stmt><expr><call><name>getDialogSettings</name><argument_list>()</argument_list></call><operator>.</operator><call><name>put</name><argument_list>(<argument><expr><call><name>getQualifier</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">".sortColumn"</literal></expr></argument>, <argument><expr><name>fSortColumn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+	</block_content>}</block></function>
+</unit>

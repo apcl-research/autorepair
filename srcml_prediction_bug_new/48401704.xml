@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13790562.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getMinimumTerminationDepth</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// LOG.trace("minTermDeath " + this + "=" + _min_termination_depth);</comment>
+
+		<if_stmt><if>if <condition>(<expr><name>_min_termination_depth</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>_min_termination_depth</name> <operator>=</operator> <name><name>Integer</name><operator>.</operator><name>MAX_VALUE</name></name></expr>;</expr_stmt>
+
+			<decl_stmt><decl><type><name>int</name></type> <name>tmp</name> <init>= <expr><name>_min_termination_depth</name></expr></init></decl> 
+			<for>for <control>(<init><decl><type><name>Expression</name></type> <name>exp</name> <range>: <expr><name>_expressions</name></expr></range></decl></init>)</control> <block>{<block_content>
+				<expr_stmt><expr><name>tmp</name> <operator>=</operator> <call><name><name>Math</name><operator>.</operator><name>min</name></name><argument_list>(<argument><expr><name>tmp</name></expr></argument>, <argument><expr><call><name><name>exp</name><operator>.</operator><name>maxTerminationDepth</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></for>
+
+			<comment type="line">// The actual termination depth is 1 greater since we have to count</comment>
+			<comment type="line">// ourselves</comment>
+			<expr_stmt><expr><name>_min_termination_depth</name> <operator>=</operator> <name>tmp</name> <operator>+</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>_min_termination_depth</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25990096.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>showBigView StateModel</name><parameter_list>(<parameter><decl><type><name>StateViewSmall</name></type> <name>smallView</name></decl></parameter>, <parameter><decl><type><name>StateViewSmall</name></type> <name>smallView</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>mCurrentBigView</name> <operator>=</operator> <operator>new</operator> <call><name>StateViewBig</name><argument_list>(<argument><expr><name>model</name></expr></argument>, <argument><expr><name>smallView</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>mCurrentSmallView</name> <operator>=</operator> <name>smallView</name></expr>;</expr_stmt>
+		<comment type="line">// TODO: move controller (like StateControllerSmall is instantiate)</comment>
+		<expr_stmt><expr><operator>new</operator> <call><name>StateControllerBig</name><argument_list>(<argument><expr><name>mModel</name></expr></argument>, <argument><expr><name>this</name></expr></argument>, <argument><expr><name>model</name></expr></argument>, <argument><expr><name>mCurrentBigView</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>mRightPanel</name><operator>.</operator><name>removeAll</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>mRightPanel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>mCurrentBigView</name></expr></argument>, <argument><expr><name><name>BorderLayout</name><operator>.</operator><name>CENTER</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>mModel</name><operator>.</operator><name>setCurrentPosition</name></name><argument_list>(<argument><expr><call><name>indexOfView</name><argument_list>(<argument><expr><name>smallView</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>refresh</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

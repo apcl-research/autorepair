@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22624091.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>addDocToRemove</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>field</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>newDocData</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<comment type="line">//prtln("addDocToRemove() removing  field: " + field + " value: " + value);</comment>
+			<expr_stmt><expr><call><name><name>newDocData</name><operator>.</operator><name>addDocToRemove</name></name><argument_list>(<argument><expr><name>field</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<comment type="line">// prtln("addDocToRemove() NOT removing  field: " + field + " value: " + value);</comment>
+		 
+
+	</block_content>}</block></else></if_stmt>
+</unit>

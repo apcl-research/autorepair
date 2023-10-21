@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testVariant_07</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>IMachineRoot</name></type> <name>mac</name> <init>= <expr><call><name>createMachine</name><argument_list>(<argument><expr><literal type="string">"mac"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name>addInitialisation</name><argument_list>(<argument><expr><name>mac</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setOrdinary</name><argument_list>(<argument><expr><call><name>addEvent</name><argument_list>(<argument><expr><name>mac</name></expr></argument>, <argument><expr><literal type="string">"evt"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>addVariant</name><argument_list>(<argument><expr><name>mac</name></expr></argument>, <argument><expr><literal type="string">"1"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>mac</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name>ISCMachineRoot</name></type> <name>file</name> <init>= <expr><call><name><name>mac</name><operator>.</operator><name>getSCMachineRoot</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name>containsEvents</name><argument_list>(<argument><expr><name>file</name></expr></argument>, <argument><expr><name><name>IEvent</name><operator>.</operator><name>INITIALISATION</name></name></expr></argument>, <argument><expr><literal type="string">"evt"</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+
+		<expr_stmt><expr><call><name>hasMarker</name><argument_list>(<argument><expr><call><name><name>mac</name><operator>.</operator><name>getVariants</name></name><argument_list>()</argument_list></call><index>[<expr><literal type="number">0</literal></expr>]</index></expr></argument>, <argument><expr><name><name>EventBAttributes</name><operator>.</operator><name>EXPRESSION_ATTRIBUTE</name></name></expr></argument>,
+				<argument><expr><name><name>GraphProblem</name><operator>.</operator><name>NoConvergentEventButVariantWarning</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

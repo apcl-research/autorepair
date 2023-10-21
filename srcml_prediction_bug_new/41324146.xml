@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13422596.java">		<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isCameraLayer</name><parameter_list>(<parameter><decl><type><name>PNode</name></type> <name>node</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>node</name> <operator>instanceof</operator> <name>PLayer</name></expr>)</condition> <block>{<block_content>
+				<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>selectableParents</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+					<decl_stmt><decl><type><name>PNode</name></type> <name>parent</name> <init>= <expr><operator>(</operator><name>PNode</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+					<if_stmt><if>if <condition>(<expr><name>parent</name> <operator>instanceof</operator> <name>PCamera</name></expr>)</condition> <block>{<block_content>
+						<if_stmt><if>if <condition>(<expr><operator>(</operator><operator>(</operator><name>PCamera</name><operator>)</operator> <name>parent</name><operator>)</operator><operator>.</operator><call><name>indexOfLayer</name><argument_list>(<argument><expr><operator>(</operator><name>PLayer</name><operator>)</operator> <name>node</name></expr></argument>)</argument_list></call> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+							<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+						</block_content>}</block></if></if_stmt>
+					 
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></for>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></function>
+</unit>

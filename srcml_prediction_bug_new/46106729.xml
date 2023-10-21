@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12562783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>keyPressed</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>mKey</name></decl></parameter>, <parameter><decl><type><name>char</name></type> <name>mChar</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// TODO: In the future only send key events to currently focused widget</comment>
+
+        <comment type="line">// Send the key pressed event to the window on top</comment>
+        <if_stmt><if>if <condition>(<expr><call><name><name>windowList</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>Window</name></type> <name>window</name> <init>=  <expr><operator>(</operator><name>Window</name><operator>)</operator> <call><name><name>windowList</name><operator>.</operator><name>lastElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>window</name><operator>.</operator><name>keyPressed</name></name><argument_list>(<argument><expr><name>mKey</name></expr></argument>, <argument><expr><name>mChar</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18362783.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>makeABIbut_actionPerformed</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>button_makeABI</name><argument_list>(<argument><expr><operator>new</operator> <call><name>JFrame</name><argument_list>( , <argument><expr><name>database1</name></expr></argument>, <argument><expr><name>selected_plate</name></expr></argument>, <argument><expr><name>editPlateTextArea</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>button_refresh</name><argument_list>(<argument><expr><name>database1</name></expr></argument>,<argument><expr><name>plateQDS</name></expr></argument>,<argument><expr><name>projPlateQDS</name></expr></argument>,<argument><expr><name>selected_plate</name></expr></argument>,<argument><expr><name>seqPlateQDS</name></expr></argument>,<argument><expr><name>selected_project</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+<comment type="line">//        refresh_plate(plateQDS);</comment>
+  </block_content>}</block></function>
+</unit>

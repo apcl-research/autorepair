@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509054.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testMessages</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Set</name><argument_list type="generic">&lt;<argument><name>IRodinProblem</name></argument>&gt;</argument_list></name></type> <name>problems</name> <init>= <expr><operator>new</operator> <call><name><name>HashSet</name><argument_list type="generic">&lt;<argument><name>IRodinProblem</name></argument>&gt;</argument_list></name><argument_list>(<argument><expr><name><name>specs</name><operator>.</operator><name>length</name></name> <operator>*</operator> <literal type="number">4</literal> <operator>/</operator> <literal type="number">3</literal> <operator>+</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>Spec</name></type> <name>spec</name> <range>: <expr><name>specs</name></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>problems</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name><name>spec</name><operator>.</operator><name>problem</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<for>for <control>(<init><decl><type><name>IRodinProblem</name></type> <name>problem</name> <range>: <expr><call><name><name>GraphProblem</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>boolean</name></type> <name>found</name> <init>= <expr><call><name><name>problems</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>problem</name></expr></argument>)</argument_list></call> 
+			<operator>assert>assertTrue</condition><expr><literal type="string">"No spec for problem "</literal> <operator>+</operator> <name>problem</name></expr>;</assert>
+		</block_content>}</block></for>
+		<comment type="line">//assertEquals("wrong number of problems", specs.length, GraphProblem.values().length);</comment>
+	</block_content>}</block></function>
+</unit>

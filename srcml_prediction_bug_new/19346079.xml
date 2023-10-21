@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28352783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>doUnFixColumn</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>col</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>TableColumn</name></type> <name>fixedColumn</name> <init>= <expr><call><name><name>fixedTable</name><operator>.</operator><name>getColumnModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getColumn</name><argument_list>(<argument><expr><name>col</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>int</name></type> <name>actualCol</name> <init>= <expr><call><name><name>fixedColumn</name><operator>.</operator><name>getModelIndex</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>fixedTable</name><operator>.</operator><name>getColumnModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeColumn</name><argument_list>(<argument><expr><name>fixedColumn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>main</name><operator>.</operator><name>getColumnModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>addColumn</name><argument_list>(<argument><expr><name><name>mainColumnModels</name><index>[<expr><name>actualCol</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>showFields</name><operator>.</operator><name>addjustHiddenColumns</name></name><argument_list>(<argument><expr><name>col</name></expr></argument>, <argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><name><name>Integer</name><operator>.</operator><name>MAX_VALUE</name></name></expr></argument> ;</argument_list></call></expr>
+        <expr><call><name>correctFixedSize</name><argument_list>()</argument_list></call></expr>;
+    </block_content>}</block></function>
+</unit>

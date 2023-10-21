@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10582983.java">    <function><type><specifier>protected</specifier> <name>MailAddress</name></type> <name>getReplyTo</name><parameter_list>(<parameter><decl><type><name>Mail</name></type> <name>originalMail</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>MessagingException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>MailAddress</name></type> <name>replyTo</name> <init>= <expr><ternary><condition><expr><operator>(</operator><call><name>isStatic</name><argument_list>()</argument_list></call><operator>)</operator></expr> ?</condition><then> <expr><name><name>this</name><operator>.</operator><name>replyTo</name></name></expr> </then><else>: <expr><call><name>getReplyTo</name><argument_list>( ;</argument_list></call></expr></else></ternary></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>replyTo</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>replyTo</name> <operator>==</operator> <name><name>SpecialAddress</name><operator>.</operator><name>UNALTERED</name></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>replyTo</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>replyTo</name> <operator>==</operator> <name><name>SpecialAddress</name><operator>.</operator><name>SENDER</name></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>replyTo</name> <operator>=</operator> <call><name><name>originalMail</name><operator>.</operator><name>getSender</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>replyTo</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

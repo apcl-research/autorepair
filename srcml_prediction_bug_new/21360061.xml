@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36189996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>finishedSending</name><parameter_list>(<parameter><decl><type><name>SMS</name></type> <name>sms</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>success</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>log</name></name><argument_list>(<argument><expr><name><name>Level</name><operator>.</operator><name>FINE</name></name></expr></argument>, <argument><expr><literal type="string">"Finished sending SMS: {0}"</literal></expr></argument>, <argument><expr><call><name><name>sms</name><operator>.</operator><name>toDebugString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>workers</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><call><name><name>sms</name><operator>.</operator><name>getGateway</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>success</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>setSMSSent</name></name><argument_list>(<argument><expr><name>sms</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>queue</name><operator>.</operator><name>setSMSFailed</name></name><argument_list>(<argument><expr><name>sms</name></expr></argument>)</argument_list></call> 
+        </block_content>}</block></else></if_stmt>
+        <comment type="line">//look for another sms to send</comment>
+        <expr_stmt><expr><call><name>sendNew</name><argument_list>(<argument><expr><call><name><name>sms</name><operator>.</operator><name>getGateway</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

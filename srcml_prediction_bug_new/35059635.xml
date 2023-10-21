@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41992483.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isRoomAreaValid</name><parameter_list>(<parameter><decl><type><name>Recti</name></type> <name>roomArea</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if<condition>( <expr><operator>!</operator><call><name>isValidRect</name><argument_list>(<argument><expr><name>roomArea</name></expr></argument>)</argument_list></call></expr> )</condition><block type="pseudo"><block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>Exception</name><argument_list>( <argument><expr><literal type="string">"Invalid room area"</literal></expr></argument> )</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+		
+		<for>for <control>(<init><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>Room</name></argument>&gt;</argument_list></name></type> <name>iterator</name> <init>= <expr><call><name><name>rooms</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iterator</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>Room</name></type> <name>room</name> <init>= <expr><call><name><name>iterator</name><operator>.</operator><name>next</name></name><argument_list>( ;</init>
+			<condition><expr><call><name><name>room</name><operator>.</operator><name>getRoomArea</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>overlap</name><argument_list>(<argument><expr><name>roomArea</name></expr></argument>)</argument_list></call></expr> )</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+			</block_content>}</block></for>
+		</block_content>}</block></for>
+		
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

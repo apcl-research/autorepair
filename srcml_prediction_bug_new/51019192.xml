@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/135799.java">	<function><type><specifier>public</specifier> <name>double</name></type> <name>getInformationContent</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>goID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>goId2Count</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>goID</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>double</name></type> <name>k_n</name> <init>= <expr><operator>(</operator><name>double</name><operator>)</operator> <call><name><name>goId2Count</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>goID</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>double</name></type> <name>k_all</name> <init>= <expr><operator>(</operator><name>double</name><operator>)</operator> <call><name><name>annotatedProteins</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>double</name></type> <name>p</name> <init>= <expr><name>k_n</name> <operator>/</operator> <name>k_all</name></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>double</name></type> <name>ic</name> <init>= <expr><operator>-</operator> <call><name><name>Math</name><operator>.</operator><name>log10</name></name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call> <operator>/</operator> <call><name><name>Math</name><operator>.</operator><name>log10</name></name><argument_list>(<argument><expr><literal type="number">2</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<return>return <expr><name>ic</name></expr>;</return>
+		</block_content>}</block></if>
+		<else>else<block type="pseudo"><block_content> <return>return <expr><name><name>Double</name><operator>.</operator><name>NaN</name></name></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14151596.java">	<function><type><specifier>public</specifier> <name>Operation</name></type> <name>getOperation</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>operationName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	   <decl_stmt><decl><type><name>Iterator</name></type> <name>children</name> <init>= <expr><call><name>getChildren</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+       <while>while <condition>(<expr><call><name><name>children</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+     	<decl_stmt><decl><type><name>Block</name></type> <name>child</name> <init>= <expr><operator>(</operator><name>Block</name><operator>)</operator><call><name><name>children</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      	<if_stmt><if>if <condition>(<expr><name>child</name> <operator>instanceof</operator> <name>Operation</name></expr>)</condition> <block>{<block_content>
+        	<decl_stmt><decl><type><name>Operation</name></type> <name>op</name> <init>= <expr><operator>(</operator><name>Operation</name><operator>)</operator><name>child</name></expr></init></decl>;</decl_stmt>
+        	<if_stmt><if>if <condition>(<expr><call><name><name>operationName</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><call><name><name>op</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+        		<return>return <expr><name>op</name></expr>;</return></block_content></block></if></if_stmt>
+      	</block_content>}</block></if></if_stmt>
+       </block_content>}</block></while>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

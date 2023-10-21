@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32927091.java">	<function><type><specifier>public</specifier> <name>WOComponentDefinition</name></type> <name>_componentDefinition</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>, <parameter><decl><type><name>NSArray</name></type> <name>nsarray</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><call><name><name>ERXProperties</name><operator>.</operator><name>booleanForKeyWithDefault</name></name><argument_list>(<argument><expr><literal type="string">"er.extensions.ERXApplication.fixCachingEnabled"</literal></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<comment type="line">// _expectedLanguages already contains all the languages in all projects, so</comment>
+			<comment type="line">// there is no need to check for the ones that come in...</comment>
+			<return>return <expr><call><name><name>super</name><operator>.</operator><name>_componentDefinition</name></name><argument_list>(<argument><expr><name>s</name></expr></argument>, <argument><expr><call><name>_expectedLanguages</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><call><name><name>super</name><operator>.</operator><name>_componentDefinition</name></name><argument_list>(<argument><expr><name>s</name></expr></argument>, <argument><expr><name>nsarray</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

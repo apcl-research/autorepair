@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40570096.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isCellPresent</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>column</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><operator>(</operator><name>row</name> <operator>&gt;=</operator> <call><name>getRowCount</name><argument_list>()</argument_list></call><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>row</name> <operator>&lt;</operator> <literal type="number">0</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <if_stmt><if>if <condition>( <expr><name>column</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content> <expr_stmt><expr><operator>||</operator> <operator>(</operator><name>column</name> <operator>&gt;=</operator> <call><name>getCellCount</name><argument_list>(<argument><expr><name>row</name></expr></argument>)</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

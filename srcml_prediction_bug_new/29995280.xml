@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>execute</name><parameter_list>(<parameter><decl><type><name>Event</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>event</name> <operator>instanceof</operator> <name>SimpleEvent</name></expr>)</condition><block type="pseudo"><block_content>  
+			<decl_stmt><decl><type><name>SimpleEvent</name></type> <name>e</name> <init>= <expr><operator>(</operator><name>SimpleEvent</name><operator>)</operator> <name>event</name></expr></init></decl>;</decl_stmt></block_content></block></if></if_stmt>
+			<decl_stmt><decl><type><name>SimpleObject</name></type> <name>so</name> <init>= <expr><call><name><name>AbstractSimKernel</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>elements</name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(
+					<argument><expr><name><name>SimpleObject</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getObject</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>content</name> <init>= <expr><call><name><name>so</name><operator>.</operator><name>readContent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>Math</name><operator>.</operator><name>random</name></name><argument_list>()</argument_list></call> <operator>&lt;</operator> <literal type="number">0.5</literal></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>so</name><operator>.</operator><name>emptyContent</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<expr_stmt><expr><call><name><name>so</name><operator>.</operator><name>fillContent</name></name><argument_list>(<argument><expr><name>content</name> <operator>+</operator> <name>contentToBeAdded</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+			<expr_stmt><expr><name>contentToBeAdded</name> <operator>=</operator> <name>content</name></expr>;</expr_stmt>
+		</block_content>}</block></function>
+</unit>

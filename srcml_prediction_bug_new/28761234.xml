@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/20631849.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>resetAttributes</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+    <comment type="line">// Check formatter</comment>
+    <if_stmt><if>if <condition>(<expr><name>formatter</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <return>return;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <decl_stmt><decl><type><name>boolean</name></type> <name>oldState</name> <init>= <expr><name>isInInternalModification</name></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><name>isInInternalModification</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+
+    <comment type="line">// First remove MediaWiki styles</comment>
+    <decl_stmt><decl><type><name>String</name></type> <name>contents</name> <init>= <expr><call><name>getText</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>PageAnalysis</name></type> <name>pageAnalysis</name> <init>= <expr><operator>new</operator> <call><name>PageAnalysis</name><argument_list>(<argument><expr><name>page</name></expr></argument>, <argument><expr><name>contents</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>formatter</name><operator>.</operator><name>format</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>pageAnalysis</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    <expr_stmt><expr><name>isInInternalModification</name> <operator>=</operator> <name>oldState</name></expr>;</expr_stmt>
+
+    <if_stmt><if>if <condition>(<expr><operator>!</operator><name>isInInternalModification</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>undoManager</name><operator>.</operator><name>validateCurrentText</name></name><argument_list>( ;</argument_list></call></expr>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

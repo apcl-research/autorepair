@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37849963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>enableTestConnectionComponents</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>b</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>state</name> <init>= <expr><ternary><condition><expr><name>b</name></expr> ?</condition><then> <expr><literal type="string">"Enabling"</literal></expr> </then><else>: <expr><literal type="string">"Disabling"</literal></expr></else></ternary></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><name>state</name> <operator>+</operator> <literal type="string">" the connection components"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <for>for <control>(<init><decl><type><name>Component</name></type> <name>comp</name> <range>: <expr><call><name><name>window</name><operator>.</operator><name>getObexFTPPanel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getComponents</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>comp</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><name>b</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+        <expr_stmt><expr><call><name><name>window</name><operator>.</operator><name>getConnectionProgressLabel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setEnabled</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument> ;</argument_list></call></expr>
+        <expr><call><name><name>window</name><operator>.</operator><name>getConnectionProgressLabel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setVisible</name><argument_list>(<argument><expr><operator>!</operator><name>b</name></expr></argument>)</argument_list></call></expr>;
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490549.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>write</name><parameter_list>(<parameter><decl><type><name><name>byte</name> <index>[ ]</index></name></type> <name>b</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>off</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>len</name></decl></parameter>)</parameter_list><block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>put</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+    <while>while<condition>(<expr><name>put</name> <operator>&lt;</operator> <name>len</name></expr>)</condition><block>{<block_content>
+      <if_stmt><if>if<condition>(<expr><name>_arrayPos</name> <operator>&gt;=</operator> <name>_arrayCount</name></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><call><name>increase</name><argument_list>()</argument_list></call></expr>;</expr_stmt> 
+      </block_content>}</block></if></if_stmt>      
+      <expr_stmt><expr><name>put</name> <operator>=</operator> <name><name>_arrays</name><index>[<expr><name>_arrayPos</name></expr>]</index></name><operator>.</operator><call><name>put</name><argument_list>(<argument><expr><name>b</name></expr></argument>, <argument><expr><name>off</name></expr></argument>, <argument><expr><name>len</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <if_stmt><if>if<condition>(<expr><name>put</name> <operator>&lt;</operator> <name>len</name></expr>)</condition><block>{<block_content>
+        <expr_stmt><expr><name>_arrayPos</name><operator>++</operator></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+      <expr_stmt><expr><name>off</name> <operator>+=</operator> <name>put</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name>len</name> <operator>-=</operator> <name>put</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name>put</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>      
+    </block_content>}</block></while>
+  </block_content>}</block></function>
+</unit>

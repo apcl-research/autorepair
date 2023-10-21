@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24940062.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>initRegisters</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Processor</name></type> <name>processor</name> <init>= <expr><call><name><name>Machine</name><operator>.</operator><name>processor</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// by default, everything's 0</comment>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>Processor</name><operator>.</operator><name>numUserRegisters</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name><name>processor</name><operator>.</operator><name>writeRegister</name></name><argument_list>(<argument><expr><name><name>Processor</name><operator>.</operator><name>regPC</name></name></expr></argument>, <argument><expr><name>savedPC</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+
+		<comment type="line">// initialize PC and SP according</comment>
+		<expr_stmt><expr><call><name><name>processor</name><operator>.</operator><name>writeRegister</name></name><argument_list>(<argument><expr><name><name>Processor</name><operator>.</operator><name>regA0</name></name></expr></argument>, <argument><expr><name>argc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>processor</name><operator>.</operator><name>writeRegister</name></name><argument_list>(<argument><expr><name><name>Processor</name><operator>.</operator><name>regA1</name></name></expr></argument>, <argument><expr><name>argv</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

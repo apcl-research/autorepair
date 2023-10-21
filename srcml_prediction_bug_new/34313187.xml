@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34239996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>append</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>str</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>reason</name></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>str</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return 
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><name>reason</name> <operator>=</operator> <call><name><name>Verifier</name><operator>.</operator><name>checkCharacterData</name></name><argument_list>(<argument><expr><name>str</name></expr></argument>)</argument_list></call><operator>)</operator> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalDataException</name><argument_list>(<argument><expr><name>str</name></expr></argument>, <argument><expr><literal type="string">"character content"</literal></expr></argument>, <argument><expr><name>reason</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>str</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>EMPTY_STRING</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+             <expr_stmt><expr><name>value</name> <operator>=</operator> <name>str</name></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content> <expr_stmt><expr><name>value</name> <operator>+=</operator> <name>str</name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

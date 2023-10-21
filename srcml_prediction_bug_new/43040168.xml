@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10642983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>addNext</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>++</operator><name>stackPointer</name> <operator>&lt;</operator> <name><name>menus</name><operator>.</operator><name>length</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>menus</name><index>[<expr><name>stackPointer</name></expr>]</index></name><operator>.</operator><call><name>reset</name><argument_list>()</argument_list></call></expr> 
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><specifier>final</specifier> <name><name>Segment</name><index>[]</index></name></type> <name>old</name> <init>= <expr><name>menus</name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>menus</name> <operator>=</operator> <operator>new</operator> <name><name>Segment</name><index>[<expr><name><name>menus</name><operator>.</operator><name>length</name></name> <operator>+</operator> <literal type="number">1</literal></expr>]</index></name></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>arraycopy</name></name><argument_list>(<argument><expr><name>old</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>menus</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name><name>old</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>menus</name><index>[<expr><name>stackPointer</name></expr>]</index></name> <operator>=</operator> <operator>new</operator> <call><name>Segment</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

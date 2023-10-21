@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>fillRowWithValues</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>values</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>col</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>col</name> <operator>&lt;</operator> <name><name>values</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>col</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>jTable1</name><operator>.</operator><name>getModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValueAt</name><argument_list>(<argument><expr><name><name>values</name><index>[<expr><name>col</name></expr>]</index></name></expr></argument>, <argument><expr><name>row</name></expr></argument>, <argument><expr><name>col</name> <operator>+</operator> <literal type="number">1</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt><comment type="line">//We ignore column 0 because it contains labels</comment>
+        </block_content>}</block></for>
+
+    </block_content>}</block></function>
+</unit>

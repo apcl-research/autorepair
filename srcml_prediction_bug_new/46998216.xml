@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/33609996.java">    <function><type><specifier>public</specifier> <name>double</name></type> <name>preferredScale</name><parameter_list>(<parameter><decl><type><name>Container</name></type> <name>container</name></decl></parameter>)</parameter_list>  
+        <throws>throws <argument><expr><name>ContainerException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Dimension</name></type> <name>dimension</name> <init>= <expr><call><name><name>container</name><operator>.</operator><name>getSize</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>parent</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="number">0.0D</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name>Dimension</name></type> <name>dimension</name> <init>= <expr><call><name><name>parent</name><operator>.</operator><name>getSize</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>dimension</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal> <operator>||</operator> <call><name><name>dimension</name><operator>.</operator><name>getHeight</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal> <operator>||</operator> <call><name><name>container</name><operator>.</operator><name>getComponentCount</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name>DEFAULT_SCALE</name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><operator>-</operator><literal type="number">1.0D</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

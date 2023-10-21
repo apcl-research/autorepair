@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592796.java">    <function><type><specifier>private</specifier> <name>Template</name></type> <name>handleExceptionByError</name><parameter_list>(<parameter><decl><type><name>Context</name></type> <name>context</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>message</name></decl></parameter>, <parameter><decl><type><name>Throwable</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <return>return <expr><call><name>error</name><argument_list>(<argument><expr><name>context</name></expr></argument>, <argument><expr><name>message</name></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>ex</name></decl></parameter>  <comment type="block">/*, Throwable ex*/</comment>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>runtime</name><operator>.</operator><name>log</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"["</literal> <operator>+</operator> <call><name><name>context</name><operator>.</operator><name>hashCode</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"] "</literal> <operator>+</operator> <literal type="string">"Error ocurred in '"</literal> <operator>+</operator>
+                              <call><name>getClass</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">".error()'"</literal></expr></argument>, <argument><expr><name>ex</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

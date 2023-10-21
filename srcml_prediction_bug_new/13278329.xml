@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13272783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>allreadyCheckedInterpretation</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>interpretation</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>searchWithoutChecked</name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>allreadyCheckedNewNodes</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>interpretation</name></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+
+                <comment type="line">// all the matches with the nodes in allreadyCheckedNewNodes are known to be found</comment>
+                <comment type="line">// before. So a match with this node can not lead to a new match</comment>
+                <comment type="line">// =&gt; stop search by sufficiently restoring the proportion.</comment>
+            </block_content>}</block></if></if_stmt> <comment type="line">//if</comment>
+        </block_content>}</block></if></if_stmt> <comment type="line">//if</comment>
+
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

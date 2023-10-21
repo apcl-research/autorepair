@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26392783.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>evaluateProtocol</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Message</name></type> <name>message</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>messageId</name> <init>= <expr><call><name><name>message</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>boolean</name></type> <name>bye</name> <init>= <expr><call><name><name>Protocol</name><operator>.</operator><name>BYE</name><operator>.</operator><name>hasId</name></name><argument_list>(<argument><expr><name>messageId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>bye</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>evaluateBye</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name><name>Protocol</name><operator>.</operator><name>PROJECT</name><operator>.</operator><name>hasId</name></name><argument_list>(<argument><expr><name>messageId</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>evaluateProject</name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name><name>Protocol</name><operator>.</operator><name>INPUT_TASK</name><operator>.</operator><name>hasId</name></name><argument_list>(<argument><expr><name>messageId</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>evaluateInput</name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr> 
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>bye</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

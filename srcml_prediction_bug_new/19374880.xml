@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18914071.java"> <function><type><specifier>private</specifier> <name>void</name></type> <name>buildAnyExtension</name><parameter_list>(<parameter><decl><type><name>Element</name></type> <name>procedureElement</name></decl></parameter>, <parameter><decl><type><name>AnyExtension</name></type> <name>anyExtension</name></decl></parameter>)</parameter_list> <block>{<block_content>
+ 	<decl_stmt><decl><type><name>Element</name></type> <name>anyExtElement</name> <init>= <expr><operator>new</operator> <call><name>Element</name><argument_list>(<argument><expr><name><name>ElementConst</name><operator>.</operator><name>ANYEXTENSION</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+ 	<expr_stmt><expr><call><name><name>anyExtElement</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>anyExtension</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></expr_stmt>
+ 	
+ 	<expr_stmt><expr><call><name><name>procedureElement</name><operator>.</operator><name>addContent</name></name><argument_list>(<argument><expr><name>anyExtElement</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+ 	
+<comment type="line">//	buildExtensionActions(anyExtElement, anyExtension);</comment>
+	<expr_stmt><expr><call><name>buildExtension</name><argument_list>(<argument><expr><name>anyExtElement</name></expr></argument>, <argument><expr><name>anyExtension</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+ </block_content>}</block></function>
+</unit>

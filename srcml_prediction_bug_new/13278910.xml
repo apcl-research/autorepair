@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37104483.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>resetEdgeRemoved</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>edge</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>edge</name> <operator>instanceof</operator> <name>ConnectedNode</name></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>ConnectedNode</name></type> <name>cn</name> <init>= <expr><operator>(</operator><name>ConnectedNode</name><operator>)</operator> <name>edge</name></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name><name>cn</name><operator>.</operator><name>direction</name></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>removedEdges</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>cn</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><call><name><name>removedEdges</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name><name>cn</name><operator>.</operator><name>other</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if> <else>else<block type="pseudo"><block_content>  
+            <expr_stmt><expr><call><name><name>addedEdges</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>EdgeData</name><operator>)</operator> <name>edge</name><operator>)</operator><operator>.</operator><name>from</name></expr></argument>, <argument><expr><name>edge</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+            <expr_stmt><expr><call><name><name>addedEdges</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>EdgeData</name><operator>)</operator> <name>edge</name><operator>)</operator><operator>.</operator><name>to</name></expr></argument>, <argument><expr><name>edge</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></function>
+</unit>

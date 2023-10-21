@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18963286.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>printCount</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name>isNull</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="string">""</literal></expr>;</return></block_content></block></if></if_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>countBase</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <for>for  <control>(<init><decl><type><name>int</name></type> <name>aCount</name> <range>: <expr><name>baseCount</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <expr_stmt><expr><name>countBase</name> <operator>+=</operator> <name>aCount</name> <operator>+</operator> <literal type="string">"\t"</literal></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name>chromosome</name> <operator>+</operator> <literal type="string">"\t"</literal> <operator>+</operator> <name>index</name> <operator>+</operator> <literal type="string">"\t"</literal> <operator>+</operator> <name>ref</name> <operator>+</operator> <literal type="string">"\t"</literal> <operator>+</operator> <name>countBase</name> <operator>+</operator> <name>indel</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

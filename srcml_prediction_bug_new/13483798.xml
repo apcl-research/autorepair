@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43776958.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>negate</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <switch>switch <condition>(<expr><name>comparison</name></expr>)</condition> <block>{<block_content>
+        <case>case <expr><name>EQ</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>NE</name></expr> 
+            <break>break;</break>
+        <case>case <expr><name>NE</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>EQ</name></expr>;</expr_stmt>
+            <break>break;</break>
+        <case>case <expr><name>LT</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>GE</name></expr>;</expr_stmt>
+            <break>break;</break>
+        <case>case <expr><name>GE</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>LT</name></expr>;</expr_stmt>
+            <break>break;</break>
+        <case>case <expr><name>GT</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>LE</name></expr>;</expr_stmt>
+            <break>break;</break>
+        <case>case <expr><name>LE</name></expr>:</case>
+            <expr_stmt><expr><name>comparison</name> <operator>=</operator> <name>GT</name></expr>;</expr_stmt>
+            <break>break;</break>
+        </block_content>}</block></switch>
+
+        <decl_stmt><decl><type><name>Block</name></type> <name>t</name> <init>= <expr><name>trueTarget</name></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>trueTarget</name> <operator>=</operator> <name>falseTarget</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>falseTarget</name> <operator>=</operator> <name>t</name></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

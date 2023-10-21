@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19489963.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testWDStrictExtensions</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>assertWDStrict</name><argument_list>(<argument><expr><call><name><name>EFF</name><operator>.</operator><name>makeExtendedPredicate</name></name><argument_list>(<argument><expr><name>fooS</name></expr></argument>, <argument><expr><name>TWO_EXPRS</name></expr></argument>, <argument><expr><name>TWO_PREDS</name></expr></argument>,
+				<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>assertWDStrict</name><argument_list>(<argument><expr><call><name><name>EFF</name><operator>.</operator><name>makeExtendedExpression</name></name><argument_list>(<argument><expr><name>barS</name></expr></argument>, <argument><expr><name>TWO_EXPRS</name></expr></argument>, <argument><expr><name>TWO_PREDS</name></expr></argument>,
+				<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr> ;</expr_stmt>
+		<expr_stmt><expr><call><name>assertNotWDStrict</name><argument_list>(<argument><expr><call><name><name>EFF</name><operator>.</operator><name>makeExtendedPredicate</name></name><argument_list>(<argument><expr><name>fooL</name></expr></argument>, <argument><expr><name>TWO_EXPRS</name></expr></argument>,
+				<argument><expr><name>TWO_PREDS</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>assertNotWDStrict</name><argument_list>(<argument><expr><call><name><name>EFF</name><operator>.</operator><name>makeExtendedExpression</name></name><argument_list>(<argument><expr><name>barL</name></expr></argument>, <argument><expr><name>TWO_EXPRS</name></expr></argument>,
+				<argument><expr><name>TWO_PREDS</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

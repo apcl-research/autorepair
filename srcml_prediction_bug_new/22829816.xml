@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26132696.java">    <function><type><specifier>public</specifier>  <name>void</name></type> <name>beginListening</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <comment type="line">// notify communication observers about the start of the port listening</comment>
+            <expr_stmt><expr><call><name><name>connectionRegistry</name><operator>.</operator><name>notifyCommunicationEventObservers</name></name><argument_list>(
+            <argument><expr><operator>new</operator> <call><name>CommunicationEvent</name><argument_list>(<argument><expr><name><name>CommunicationEvent</name><operator>.</operator><name>CONNECTION_START_LISTENING</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>serverSocket</name> <operator>=</operator> <operator>new</operator> <call><name>ServerSocket</name><argument_list>(<argument><expr><name>port</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <comment type="line">// starts the listening thread</comment>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>CsccException</name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+
+    </block_content>}</block></function>
+</unit>

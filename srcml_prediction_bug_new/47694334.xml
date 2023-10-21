@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37702783.java">    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>openFileInternal</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>file</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws>  
+        <if_stmt><if>if <condition>(<expr><name>file</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>newFile</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>SVF</name></type> <name>svf</name> <init>= <expr><call><name>getInfo</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getProjectManager</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSVF</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>svf</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>setSVF</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>SVF</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>setSVF</name></name><argument_list>(<argument><expr><name>svf</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setContentChanged</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    }
+</unit>

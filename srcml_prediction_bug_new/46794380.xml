@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28579963.java">	<function><type><specifier>protected</specifier> <name>IDotNetElement</name></type> <name>searchForNamespaceName</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>classname</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>IDotNetElement</name><index>[]</index></name></type> <name>allRoots</name> <init>= <expr><call><name>getAllRelevantRoots</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>IDotNetElement</name></type> <name>result</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><operator>(</operator><name>i</name> <operator>&lt;</operator> <name><name>allRoots</name><operator>.</operator><name>length</name></name> <operator>&amp;&amp;</operator> <name>result</name> <operator>==</operator> <literal type="null">null</literal><operator>)</operator></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><name>result</name> <operator>=</operator> <call><name>recSearchForTypeByName</name><argument_list>(<argument><expr><name><name>allRoots</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>, <argument><expr><name>classname</name></expr></argument>,
+					<argument><expr><name><name>IDotNetElement</name><operator>.</operator><name>NAMESPACE</name></name></expr></argument> ;</expr_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>result</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

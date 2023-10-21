@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10682983.java">    <function><type><specifier>private</specifier> <name>int</name></type> <name>headerLen</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>len</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        
+        <expr_stmt><expr><name>len</name> <operator>+=</operator> <literal type="number">4</literal></expr>;</expr_stmt> <comment type="line">// int value of the id-length</comment>
+        <expr_stmt><expr><name>len</name> <operator>+=</operator> <call><name><name>this</name><operator>.</operator><name>id</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt> <comment type="line">// id itself</comment>
+        <expr_stmt><expr><name>len</name> <operator>+=</operator> <literal type="number">4</literal></expr>;</expr_stmt> <comment type="line">// int value of the package Number length  int = 4 byte)</comment>
+        <expr_stmt><expr><name>len</name> <operator>+=</operator> <literal type="number">1</literal></expr>;</expr_stmt> <comment type="line">// boolean = one byte</comment>
+        
+        <return>return <expr><name>len</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

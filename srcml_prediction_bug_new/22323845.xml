@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22324094.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getString</name> <parameter_list>(<parameter><decl><type><name>int</name></type> <name>fldno</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name>hasField</name> <argument_list>(<argument><expr><name>fldno</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <try>try <block>{<block_content>
+                <decl_stmt><decl><type><name>Object</name></type> <name>obj</name> <init>= <expr><call><name>getValue</name><argument_list>(<argument><expr><name>fldno</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                <if_stmt><if>if <condition>(<expr><name>obj</name> <operator>instanceof</operator> <name>String</name></expr>)</condition><block type="pseudo"><block_content>
+                    <expr_stmt><expr><name>s</name> <operator>=</operator> <operator>(</operator><name>String</name><operator>)</operator> <name>obj</name></expr>;</expr_stmt></block_content></block></if>
+                <if type="elseif">else if <condition>(<expr><name>obj</name> <operator>instanceof</operator> <name><name>byte</name><index>[]</index></name></expr>)</condition><block type="pseudo"><block_content>
+                    <expr_stmt><expr><name>s</name> <operator>=</operator> <call><name><name>ISOUtil</name><operator>.</operator><name>hexString</name></name> <argument_list>(<argument><expr><operator>(</operator><name><name>byte</name><index>[]</index></name><operator>)</operator> <name>obj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ISOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <comment type="line">// ignore ISOException - return null</comment>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>s</name></expr>;</return>
+     
+</block_content>}</block></function>
+</unit>

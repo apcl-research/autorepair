@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14154010.java">  <function><type><specifier>protected</specifier> <name>Command</name></type> <name>getDragCommand</name><parameter_list>(<parameter><decl><type><name>ChangeBoundsRequest</name></type> <name>request</name></decl></parameter>)</parameter_list>  
+    <throws>throws <argument><expr><name>IllegalArgumentException</name></expr></argument></throws> <block>{<block_content>  
+<comment type="line">//    ChangeBoundsRequest req = new ChangeBoundsRequest(REQ_ORPHAN);</comment>
+<comment type="line">//    req.setEditParts(request.getEditParts());</comment>
+<comment type="line">//    req.setMoveDelta(request.getMoveDelta());</comment>
+<comment type="line">//    req.setSizeDelta(request.getSizeDelta());</comment>
+<comment type="line">//    req.setLocation(request.getLocation());</comment>
+<comment type="line">//    req.setResizeDirection(request.getResizeDirection());</comment>
+<comment type="line">//    return getHost().getCommand(req);</comment>
+  </block_content>}</block></function>
+</unit>

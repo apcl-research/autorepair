@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40582983.java">  <function><type><specifier>public</specifier> <name>CDATASection</name></type> <name>createCDATASection</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>data</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <try>try <block>{<block_content>
+      <return>return <expr><operator>(</operator><name>CDATASection</name><operator>)</operator> <call><name><name>NodeImpl</name><operator>.</operator><name>build</name></name><argument_list>(<argument><expr><call><name><name>XMLParserImpl</name><operator>.</operator><name>createCDATASection</name></name><argument_list>(
+        <argument><expr><call><name><name>this</name><operator>.</operator><name>getJsObject</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>data</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>JavaScriptException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>DOMNodeException</name><argument_list>(<argument><expr><name><name>DOMNodeException</name><operator>.</operator><name>INVALID_CHARACTER_ERR</name></name></expr></argument>, <argument><expr><name>e</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

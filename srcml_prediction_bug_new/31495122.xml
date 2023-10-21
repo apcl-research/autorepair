@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31492496.java">    <constructor><specifier>protected</specifier>  <name>BasicAlbum</name><parameter_list>(<parameter><decl><type><name>Album</name></type> <name>parent</name></decl></parameter>, <parameter><decl><type><name>File</name></type> <name>dir</name></decl></parameter>, <parameter><decl><type><name>MediaSource</name></type> <name>picSource</name></decl></parameter>, <parameter><decl><type><name>PictureFilter</name></type> <name>picFilter</name></decl></parameter>, <parameter><decl><type><name>AlbumFilter</name></type> <name>albFilter</name></decl></parameter>)</parameter_list><block>{<block_content>
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>picFilter</name></name> <operator>=</operator> <name>picFilter</name> 
+	<name><name>this</name><operator>.</operator><name>albumFilter</name></name> <operator>=</operator> <name>albFilter</name></expr>;</expr_stmt>	
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>dir</name></name> <operator>=</operator> <name>dir</name></expr>;</expr_stmt>
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>picSource</name></name> <operator>=</operator> <name>picSource</name></expr>;</expr_stmt>
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>parentAlbum</name></name> <operator>=</operator> <name>parent</name></expr>;</expr_stmt>
+
+	<if_stmt><if>if<condition>(<expr><operator>!</operator><call><name><name>dir</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+	    <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Error, can't construct BasicAlbum on non-directory: "</literal> <operator>+</operator> <name>dir</name> <operator>+</operator> <literal type="string">" Check that the filename is valid."</literal></expr></argument>)</argument_list></call></expr>;</throw>	    
+	</block_content>}</block></if></if_stmt>
+
+    </block_content>}</block></constructor>
+</unit>

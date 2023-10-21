@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31990915.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>createTooltipText</name><parameter_list>(<parameter><decl><type><name>ResultTreeNode</name></type> <name>info</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>StringBuffer</name></type> <name>buf</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">//buf.append("&lt;html&gt;&lt;body&gt;&amp;nbsp;Total: " + info.getExists());</comment>
+		<comment type="line">//buf.append("&lt;br&gt;&amp;nbsp;Unseen: " + info.getUnseen());</comment>
+		<comment type="line">//buf.append("&lt;br&gt;&amp;nbsp;Recent: " + info.getRecent());</comment>
+		<comment type="line">//buf.append("&lt;/body&gt;&lt;/html&gt;");</comment>
+		<return>return <expr><call><name><name>buf</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

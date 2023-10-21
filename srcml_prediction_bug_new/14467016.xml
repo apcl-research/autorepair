@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44229996.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>syncDeleteButton</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>selRow</name> <init>= <expr><call><name><name>table</name><operator>.</operator><name>getSelectedRow</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>int</name></type> <name>selCol</name> <init>= <expr><call><name><name>table</name><operator>.</operator><name>getSelectedColumn</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>selRow</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal> <operator>||</operator> <name>selCol</name> <operator>==</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>buttonDelete</name><operator>.</operator><name>setEnabled</name></name> <argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <expr_stmt><expr><call><name><name>buttonDelete</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>table</name><operator>.</operator><name>getValueAt</name></name><argument_list>(<argument><expr><name>selRow</name></expr></argument>, <argument><expr><name>selCol</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

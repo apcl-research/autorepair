@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31492496.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>recalculateBounds</name><parameter_list>()</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><name>lowerBound</name> <operator>=</operator> <name><name>Double</name><operator>.</operator><name>NEGATIVE_INFINITY</name></name></expr>;</expr_stmt>
+	<expr_stmt><expr><name>upperBound</name> <operator>=</operator> <name><name>Double</name><operator>.</operator><name>POSITIVE_INFINITY</name></name></expr>;</expr_stmt>
+
+	<decl_stmt><decl><type><name>RangeConstraint</name></type> <name>r</name></decl>;</decl_stmt>
+	<synchronized>synchronized<init>(<expr><name>rangeConstraints</name></expr>)</init> <block>{<block_content>
+	    <decl_stmt><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>rangeConstraints</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <while>while <condition>(<expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+		<expr_stmt><expr><name>r</name> <operator>=</operator> <operator>(</operator><name>RangeConstraint</name><operator>)</operator><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>restrictRange</name><argument_list>(<argument><expr><name><name>r</name><operator>.</operator><name>lowerBound</name></name></expr></argument>, <argument><expr><name><name>r</name><operator>.</operator><name>upperBound</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></while>
+	</block_content>}</block></synchronized>
+	<expr_stmt><expr><name>integerLowerBound</name> <operator>=</operator> <operator>(</operator><name>long</name><operator>)</operator> <call><name><name>Math</name><operator>.</operator><name>ceil</name></name><argument_list>(<argument><expr><name>lowerBound</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+ 	<expr_stmt><expr><name>integerUpperBound</name> <operator>=</operator> <operator>(</operator><name>long</name><operator>)</operator> <call><name><name>Math</name><operator>.</operator><name>floor</name></name><argument_list>(<argument><expr><name>upperBound</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+   </block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28991515.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>getSessionUserName</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>User</name></type> <name>sessionUser</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<comment type="block">/* 		try {
+			SessionRegistry sessionRegistry =
+				(SessionRegistry) getRequiredContextAttribute("sessionRegistry");
+			SessionBean sessionBean = sessionRegistry.getSessionBean(request);
+			if (sessionBean == null) {
+				throw new Exception("SessionBean not found in SessionRegistry");
+			}
+			else  
+				sessionUser = sessionBean.getUser();
+			} catch (Throwable t) {}
+		return (sessionUser == null ? Constants.UNKNOWN_USER : sessionUser.getUsername()); */</comment>
+		<return>return <expr><name><name>Constants</name><operator>.</operator><name>UNKNOWN_USER</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

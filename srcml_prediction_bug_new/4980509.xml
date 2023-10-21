@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25870062.java">    <function><type><specifier>protected</specifier> <name>JasperReport</name></type> <name>compileReport</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>JRException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>byteArray</name> <init>= <expr><call><name><name>reportTemplate</name><operator>.</operator><name>getContents</name></name><argument_list>( <argument><expr><operator>.</operator><call><name>getBytes</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>ByteArrayInputStream</name></type> <name>designStream</name> <init>= <expr><operator>new</operator> <call><name>ByteArrayInputStream</name><argument_list>(<argument><expr><name>byteArray</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"Compiling report..."</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>JasperReport</name></type> <name>jasperReport</name> <init>= <expr><call><name><name>JasperCompileManager</name><operator>.</operator><name>compileReport</name></name><argument_list>(<argument><expr><name>designStream</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><name>jasperReport</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

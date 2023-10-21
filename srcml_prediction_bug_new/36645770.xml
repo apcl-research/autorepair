@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44152983.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>nextval</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Sequence</name></type> <name>seq</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">// If the sequence exists, get it; otherwise, create it with a value 0</comment>
+		<if_stmt><if>if <condition>(<expr><call><name><name>m_sequences</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>key</name></expr></argument> )</argument_list></call></expr>
+			<comment type="block">/*&amp;&amp; !seq.registered())
+			System.err.println("Warning: sequence key '" + key + "' being used without registration");
+
+		// increment the number, then return it; the sequence begins at '1'
+		return seq.nextval();
+	}
+</comment></unit>

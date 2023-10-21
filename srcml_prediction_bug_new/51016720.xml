@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51012796.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>calculateConceptDir</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>dir</name></decl></parameter>, <parameter><decl><type><name>ONDEXConcept</name></type> <name>concept</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Integer</name></type> <name>id</name> <init>= <expr><call><name><name>concept</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>folder</name> <init>= <expr><literal type="string">"0_to_1,000"</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>id</name> <operator>&gt;</operator> <literal type="number">1000</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>thresh</name> <init>= <expr><operator>(</operator><name>int</name><operator>)</operator> <call><name><name>Math</name><operator>.</operator><name>floor</name></name><argument_list>(<argument><expr><name>id</name> <operator>/</operator> <literal type="number">1000d</literal></expr></argument>)</argument_list></call> 
+            <name>folder</name> <operator>=</operator> <name>thresh</name> <operator>+</operator> <literal type="string">",000_to_"</literal> <operator>+</operator> <operator>(</operator><name>thresh</name> <operator>+</operator> <literal type="number">1</literal><operator>)</operator> <operator>+</operator> <literal type="string">",000"</literal></expr></init></decl>;</decl_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>dir</name> <operator>+</operator> <name><name>File</name><operator>.</operator><name>separator</name></name> <operator>+</operator> <name>folder</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25418054.java"><function><type><specifier>public</specifier> <name>void</name></type> <name>updateSendStatusInUI</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>progress</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>total</name></decl></parameter>)</parameter_list> <block>{<block_content>
+  <expr_stmt><expr><call><name><name>_boundProperties</name><operator>.</operator><name>firePropertyChange</name></name><argument_list>(
+      <argument><expr><call><name><name>PropertyList</name><operator>.</operator><name>Send</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>,
+      <argument><expr><call><name><name>Integer</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><call><name><name>ProgressMonitorUtils</name><operator>.</operator><name>getProgressPercent</name></name><argument_list>(<argument><expr><name>progress</name></expr></argument>, <argument><expr><name>total</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>,
+      <argument><expr><call><name><name>ProgressMonitorUtils</name><operator>.</operator><name>generateProgressMessage</name></name><argument_list>(<argument><expr><name><name>ProgressMonitorUtils</name><operator>.</operator><name>Type</name><operator>.</operator><name>Send</name></name></expr></argument>,
+                                                    <argument><expr><call><name>getProgressMessage</name><argument_list>()</argument_list></call></expr></argument>,
+                                                    <argument><expr><name>progress</name></expr></argument>, <argument><expr><name>total</name></expr></argument>)</argument_list></call></expr></argument>
+   ;</expr_stmt>
+</block_content>}</block></function>
+</unit>

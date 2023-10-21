@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27889996.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>addListener</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>listenerIP</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+    <decl_stmt><decl><type><name>Enumeration</name></type> <name>myEnum</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>elements</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>String</name></type> <name>foo</name> <init>= <expr><literal type="null">null</literal></expr></init></decl> 
+    <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+    <while>while<condition>(<expr><call><name><name>myEnum</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>foo</name> <operator>=</operator> <operator>(</operator><name>String</name><operator>)</operator><call><name><name>myEnum</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <if_stmt><if>if<condition>(<expr><call><name><name>foo</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>listenerIP</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><name>found</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+
+    </block_content>}</block></while>
+
+    <if_stmt><if>if<condition>(<expr><name>found</name></expr>)</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>listenerIP</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></else></if_stmt>
+
+  </block_content>}</block></function>
+</unit>

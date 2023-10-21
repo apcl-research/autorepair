@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44440062.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>decrMarker</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>length</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>length</name> <operator>&gt;</operator> <name>size</name></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>ArrayIndexOutOfBoundsException</name><argument_list>(
+        <argument><expr><literal type="string">"[Buffer] ERROR : decrMarker too large"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+
+    <if_stmt><if>if <condition>(<expr><name>length</name> <operator>&gt;</operator> <call><name>length</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+      <throw>throw <expr><operator>new</operator> <call><name>ArrayIndexOutOfBoundsException</name><argument_list>(
+        <argument><expr><literal type="string">"[Buffer] ERROR : decrMarker -&gt; marker overflow"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+    </block_content>}</block></function>
+
+    <expr_stmt><expr><name>marker</name> <operator>=</operator> <operator>(</operator><name>marker</name> <operator>-</operator> <name>length</name><operator>)</operator> <operator>%</operator> <name>size</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name>marker</name> <operator>+=</operator> <operator>(</operator><ternary><condition><expr><operator>(</operator><name>marker</name> <operator>&lt;</operator> <literal type="number">0</literal><operator>)</operator></expr> ?</condition><then> <expr><name>size</name></expr> </then><else>: <expr><literal type="number">0</literal></expr></else></ternary><operator>)</operator></expr>;</expr_stmt>
+  }
+</unit>

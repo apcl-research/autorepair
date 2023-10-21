@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22352983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>paintComponent</name><parameter_list>(<parameter><decl><type><name>Graphics</name></type> <name>g</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>paintComponent</name></name><argument_list>(<argument><expr><name>g</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <switch>switch <condition>(<expr><name>showing</name></expr>)</condition> <block>{<block_content>
+      <case>case <expr><name><name>Tiny</name><operator>.</operator><name>SIDE_HEADS</name></name></expr>:</case>
+        <expr_stmt><expr><call><name><name>g</name><operator>.</operator><name>drawImage</name></name><argument_list>(<argument><expr><name>heads</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <break>break;</break>
+      <case>case <expr><name><name>Tiny</name><operator>.</operator><name>SIDE_TAILS</name></name></expr>:</case>
+        <expr_stmt><expr><call><name><name>g</name><operator>.</operator><name>drawImageTails</name></name><argument_list>(<argument><expr><name>heads</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></switch>
+  </block_content>}</block></function>
+</unit>

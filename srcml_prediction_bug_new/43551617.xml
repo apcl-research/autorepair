@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46974983.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isLessThan</name><parameter_list>(<parameter><decl><type><name>MyDate</name></type> <name>md</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>boolean</name></type> <name>tf</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>year</name> <operator>&gt;</operator> <name><name>md</name><operator>.</operator><name>year</name></name></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>tf</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        </block_content>}</block></if><if type="elseif">else if<condition>(<expr><name>year</name> <operator>==</operator> <name><name>md</name><operator>.</operator><name>year</name></name></expr>)</condition><block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><name>month</name> <operator>&gt;</operator> <name><name>md</name><operator>.</operator><name>month</name></name></expr>)</condition><block>{<block_content>
+                <expr_stmt><expr><name>tf</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+            </block_content>}</block></if><if type="elseif">else if<condition>(<expr><name>month</name> <operator>==</operator> <name><name>md</name><operator>.</operator><name>month</name></name></expr>)</condition><block type="pseudo"><block_content> 
+                <if_stmt><if>if<condition>(<expr><name>day</name> <operator>&gt;=</operator> <name><name>md</name><operator>.</operator><name>day</name></name></expr>)</condition><block>{<block_content>
+                    <expr_stmt><expr><name>tf</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>tf</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

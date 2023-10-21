@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38362629.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>datePickerSelectedSlot</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">//Set the bookmark before restoring</comment>
+        <expr_stmt><expr><call><name><name>model</name><operator>.</operator><name>setBookmark</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>popup</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">//return focus to the button</comment>
+        <expr_stmt><expr><call><name><name>dateButton</name><operator>.</operator><name>requestFocus</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>editable</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>dateField</name><operator>.</operator><name>requestFocus</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>dateButton</name><operator>.</operator><name>requestFocus</name></name><argument_list>()</argument_list></call></expr> 
+        <call><name>firePropertyChange</name><argument_list>(<argument><expr><name>PROPERTY_DATECHANGE</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><call><name><name>model</name><operator>.</operator><name>getCalendar</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

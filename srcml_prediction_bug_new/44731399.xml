@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22362983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>loadFolderList</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Folder</name></argument>&gt;</argument_list></name></type> <name>folders</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>Folder</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>file</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>File</name><index>[]</index></name></type> <name>files</name> <init>= <expr><call><name><name>file</name><operator>.</operator><name>listFiles</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>FileFilter</name></super><argument_list>()</argument_list> <block>{ 
+				<comment type="block">/* (non-Javadoc)
+				 * @see java.io.FileFilter#accept(java.io.File)
+				 */</comment>
+				<function><type><specifier>public</specifier> <name>boolean</name></type> <name>accept</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>f</name></decl></parameter>)</parameter_list> <block>{<block_content>
+					<return>return <expr><call><name><name>f</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>;</return>
+				</block_content>}</block></function>
+			}</block></class></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<for>for <control>(<init><decl><type><name>File</name></type> <name>f</name> <range>: <expr><name>files</name></expr></range></decl></init>)</control> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>folders</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Folder</name><argument_list>(<argument><expr><name>f</name></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></for>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>subFolders</name></name> <operator>=</operator> <name>folders</name></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

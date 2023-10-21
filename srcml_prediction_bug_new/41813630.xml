@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44240915.java">	<function><type><specifier>protected</specifier> <name>ImageIcon</name></type> <name>createImageIcon</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>path</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// java.net.URL imgURL = TabbedPaneDemo.class.getResource(path);</comment>
+		<comment type="line">// if (imgURL != null) {</comment>
+		<comment type="line">// return new ImageIcon(imgURL);</comment>
+		<comment type="line">//   else {</comment>
+		<comment type="line">// System.err.println("Couldn't find file: " + path);</comment>
+		<comment type="line">// return null;</comment>
+		<comment type="line">// }</comment>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

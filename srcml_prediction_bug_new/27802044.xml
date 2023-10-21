@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14111596.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addHandle</name><parameter_list>( <parameter><decl><type><name>Point2D</name></type> <name>pt</name></decl></parameter> )</parameter_list> <block>{<block_content>
+	
+		<decl_stmt><decl><type><name>int</name></type> <name>ind</name> <init>= <expr><call><name><name>CubicGenerator</name><operator>.</operator><name>getListIndex</name></name><argument_list>( <argument><expr><name>pt</name></expr></argument>, <argument><expr><name>drawPoints</name></expr></argument>, <argument><expr><name>lineStyle</name></expr></argument>)</argument_list></call></expr></init></decl>, <decl><type ref="prev"/><name>drawPoints</name></decl>, <decl><type ref="prev"/><name>lineStyle</name></decl>;</decl_stmt>
+    	<decl_stmt><decl><type><name>PNamedHandle</name></type> <name>h</name> <init>= <expr><call><name>createHandle</name><argument_list>(<argument><expr><name>pt</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<expr_stmt><expr><call><name>addChild</name><argument_list>(<argument><expr><name>h</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>handleList</name><operator>.</operator><name>insertElementAt</name></name><argument_list>( <argument><expr><name>h</name></expr></argument>, <argument><expr><name>ind</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>handlePointList</name><operator>.</operator><name>insertElementAt</name></name><argument_list>( <argument><expr><name>pt</name></expr></argument>, <argument><expr><name>ind</name></expr></argument> )</argument_list></call></expr>;</expr_stmt> 
+
+		<expr_stmt><expr><call><name>updateEdgeView</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

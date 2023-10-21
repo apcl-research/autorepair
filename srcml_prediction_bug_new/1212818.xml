@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41992783.java">	<function><type><specifier>private</specifier> <name>int</name></type> <name>getOverlapArea</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>x1</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y1</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>x2</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>y2</name></decl></parameter>, <parameter><decl><type><name>DraggableCard</name></type> <name>exampleCard</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>cardWidth</name> <init>= <expr><call><name><name>exampleCard</name><operator>.</operator><name>getOffsetWidth</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>cardHeight</name> <init>= <expr><call><name><name>exampleCard</name><operator>.</operator><name>getOffsetHeight</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>xOverlap</name> <init>= <expr><call><name>getOverlapLength</name><argument_list>(<argument><expr><name>x1</name></expr></argument>, <argument><expr><name>x2</name></expr></argument>, <argument><expr><name>cardWidth</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>yOverlap</name> <init>= <expr><call><name>getOverlapLength</name><argument_list>(<argument><expr><name>y1</name></expr></argument>, <argument><expr><name>y2</name></expr></argument>, <argument><expr><name>cardHeight</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<return>return <expr><name>xOverlap</name> <operator>*</operator> <name>yOverlap</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

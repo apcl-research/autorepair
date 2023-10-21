@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31054096.java">    <function><type><specifier>public</specifier> <name>ArrayList</name></type> <name>retrieveTasksToBeExecuted</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+	<decl_stmt><decl><type><name>DRCInterval</name></type> <name>interval</name> <init>= <expr><operator>(</operator><name>DRCInterval</name>  <call><name><name>currentTimeILE</name><operator>.</operator><name>getElement</name></name><argument_list>()</argument_list></call><operator>)</operator></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>DRCTask</name></type> <name>task</name></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name>ArrayList</name></type> <name>taskList</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>(<argument><expr><call><name><name>interval</name><operator>.</operator><name>tasks</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+	<decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>interval</name><operator>.</operator><name>tasks</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<while>while <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><name>task</name> <operator>=</operator> <operator>(</operator><name>DRCTask</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    <if_stmt><if>if <condition>(<expr><name><name>task</name><operator>.</operator><name>executionState</name></name> 
+		<operator>==</operator> <name><name>DiscreteResourceConstraint</name><operator>.</operator><name>IN_EXECUTION</name></name></expr>)</condition> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>taskList</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name><name>task</name><operator>.</operator><name>operationVar</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></if></if_stmt>
+	</block_content>}</block></while>
+
+	<return>return <expr><name>taskList</name></expr>;</return>
+
+    </block_content>}</block></function>
+</unit>

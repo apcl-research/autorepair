@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11702783.java">  <function><type><specifier>protected</specifier> <name>URL</name></type> <name>getRelativePath</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>path</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>URL</name></type> <name>url</name> <init>= <expr><operator>(</operator><name>URL</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>relativePaths</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>path</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if  <condition>(<expr><name>url</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>url</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>factory</name><operator>.</operator><name>resolveURL</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>src</name><operator>.</operator><name>toURL</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>path</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>relativePaths</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>path</name></expr></argument>, <argument><expr><name>url</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><name>url</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31826891.java"><function><type><specifier>public</specifier> <name>void</name></type> <name>insert</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>string</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><call><name>checkWidget</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+	<if_stmt><if>if <condition>(<expr><name>string</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> <expr_stmt><expr><call><name>error</name> <argument_list>(<argument><expr><name><name>SWT</name><operator>.</operator><name>ERROR_NULL_ARGUMENT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+  <decl_stmt><decl><type><name>CText</name></type> <name>cText</name> <init>= <expr><operator>(</operator><name>CText</name><operator>)</operator><name>handle</name></expr></init></decl>;</decl_stmt>
+<comment type="line">//	if (hooks (SWT.Verify) || filters (SWT.Verify)) {</comment>
+<comment type="line">//		string = verifyText (string, cText.getSelectionStart(), cText.getSelectionEnd(), null);</comment>
+<comment type="line">//		if (string == null) return </comment>
+<comment type="line">//	}</comment>
+  <expr_stmt><expr><call><name><name>cText</name><operator>.</operator><name>replaceSelection</name></name><argument_list>(<argument><expr><name>string</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+</block_content>}</block></function>
+</unit>

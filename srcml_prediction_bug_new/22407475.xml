@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10178829.java">    <function><type><specifier>private</specifier> <name>Collection</name></type> <name>filter</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>NodeList</name></type> <name>children</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>children</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><specifier>final</specifier> <name>Collection</name></type> <name>filtered</name> <init>= <expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>util</name><operator>.</operator><name>ArrayList</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>children</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>Node</name></type> <name>child</name> <init>= <expr><call><name><name>children</name><operator>.</operator><name>item</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if  <condition>(<expr><operator>!</operator><operator>(</operator><name>child</name> <operator>instanceof</operator> <name>TextDOMNode</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>filtered</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>child</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><name>filtered</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

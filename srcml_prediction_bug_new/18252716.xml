@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2437891.java">    <function><type><specifier>public</specifier> <name>Composite</name></type> <name>getComposite</name><parameter_list>(<parameter><decl><type><name>Table</name></type> <name>table</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>componentCache</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>componentCache</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <for>for <control>(<init><decl><type><name>Composite</name></type> <name>composite</name><range>: <expr><call><name><name>composites</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>composite</name><operator>.</operator><name>mainTable</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>composite</name><operator>.</operator><name>componentTables</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>componentCache</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>table</name></expr></argument>, <argument><expr><name>composite</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <return>return <expr><name>composite</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

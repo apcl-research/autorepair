@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41982483.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testMatternIntInt</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Mattern</name></type> <name>m</name></decl>;</decl_stmt>
+        
+        <expr_stmt><expr><name>m</name> <operator>=</operator> <operator>new</operator> <call><name>Mattern</name><argument_list>(<argument><expr><literal type="number">8</literal></expr></argument>,<argument><expr><literal type="number">3</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><call><name><name>m</name><operator>.</operator><name>getIdpost</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">3</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>assertTrue</name><argument_list>(<argument><expr><call><name><name>m</name><operator>.</operator><name>getHour</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>size</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">8</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <for>for <control>(<init><decl><type><name>Object</name></type> <name>val</name> <range>: <expr><call><name><name>m</name><operator>.</operator><name>getHour</name></name> <argument_list>()</argument_list></call></expr></range></decl></init> )</control> <block>{<block_content>
+            <expr_stmt><expr><call><name>assertTrue</name><argument_list>( <argument><expr><operator>(</operator><name>Integer</name><operator>)</operator><name>val</name> <operator>==</operator> <literal type="number">0</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

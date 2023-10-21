@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44192715.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>sendLine</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>line</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>socket</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IOException</name><argument_list>(<argument><expr><literal type="string">"SimpleFTP is not connected."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+         
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>line</name> <operator>+</operator> <literal type="string">"\r\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>writer</name><operator>.</operator><name>flush</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name>DEBUG</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"&gt; "</literal> <operator>+</operator> <name>line</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><name>socket</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+            <throw>throw <expr><name>e</name></expr>;</throw>
+        </block_content>}</block></catch></try>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

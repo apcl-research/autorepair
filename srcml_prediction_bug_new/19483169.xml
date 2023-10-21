@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19508981.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>checkCanParse</name><parameter_list>(<parameter><decl><type><name>IDocument</name></type> <name>document</name></decl></parameter>, <parameter><decl><type><name>IDocumentParser</name></type> <name>parser</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<assert>assert <expr><name>document</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>parser</name> <operator>!=</operator> <literal type="null">null</literal></expr>;</assert>
+
+		<decl_stmt><decl><type><name>String</name></type> <name>filename</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>docname</name></decl>;</decl_stmt>
+		<try>try  
+			<expr_stmt><expr><name>docname</name> <operator>=</operator> <call><name><name>document</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>filename</name> <operator>=</operator> <call><name><name>document</name><operator>.</operator><name>getFilename</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>RodinDBException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>parser</name><operator>.</operator><name>canParse</name></name><argument_list>(<argument><expr><name>filename</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>result</name><operator>.</operator><name>addProblem</name></name><argument_list>(<argument><expr><name>docname</name></expr></argument>, <argument><expr><call><name>PARSER_NOT_APPLICABLE</name><argument_list>(<argument><expr><call><name><name>parser</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

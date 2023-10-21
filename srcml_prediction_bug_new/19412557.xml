@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>verify</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>AuthenticationException</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>process</name> <operator>=</operator> <call><name><name>Runtime</name><operator>.</operator><name>getRuntime</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>exec</name><argument_list>(<argument><expr><literal type="string">"cvs server"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//NOI18N</comment>
+            <expr_stmt><expr><name><name>process</name><operator>.</operator><name>destroy</name></name></expr> ;</expr_stmt>
+        </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>locMessage</name> <init>= <expr><call><name><name>AuthenticationException</name><operator>.</operator><name>getBundleString</name></name><argument_list>(
+                    <argument><expr><literal type="string">"AuthenticationException.ServerVerification"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line">//NOI18N</comment>
+            <throw>throw <expr><operator>new</operator> <call><name>AuthenticationException</name><argument_list>(<argument><expr><literal type="string">"Verification error"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>, <argument><expr><name>locMessage</name></expr></argument>)</argument_list></call></expr>;</throw> <comment type="line">//NOI18N</comment>
+        </block_content>}</block></catch>
+        <finally>finally <block>{<block_content>
+            <expr_stmt><expr><call><name>reset</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

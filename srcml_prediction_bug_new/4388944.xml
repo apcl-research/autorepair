@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/36182483.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getVersion</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>clientId</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PsiscoreException</name></expr></argument>, <argument><expr><name>InvalidArgumentException</name></expr></argument></throws><block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>psiscoreServerClients</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>clientId</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>InvalidArgumentException</name><argument_list>(<argument><expr><literal type="string">"There is no client with this ID"</literal></expr></argument>, <argument><expr><operator>new</operator> <call><name>PsiscoreFault</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+		 
+        <decl_stmt><decl><type><name>String</name></type> <name>version</name> <init>= <expr><call><name><name>psiscoreServerClients</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>clientId</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getVersion</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <comment type="line">//System.out.println("Version: " +  version);</comment>
+        <return>return <expr><name>version</name></expr>;</return>
+	</block_content>}</block></if></if_stmt>
+</unit>

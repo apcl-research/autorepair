@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11490549.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// run only if we have at least one configuration item</comment>
+        <if_stmt><if>if <condition>(<expr><call><name><name>configuration</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>ExecutorService</name></type> <name>pool</name> <init>= <expr><call><name><name>Executors</name><operator>.</operator><name>newFixedThreadPool</name></name><argument_list>(<argument><expr><call><name><name>configuration</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <for>for <control>(<init><decl><type><name>Configuration</name></type> <name>configItem</name> <range>: <expr><name>configuration</name></expr></range></decl></init>)</control> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"Launching server thread with configuration: "</literal> <operator>+</operator> <call><name><name>configItem</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
+                <name>ServerThread</name> <name>serverThread</name> <operator>=</operator> <operator>new</operator> <call><name>ServerThread</name><argument_list>(<argument><expr><name>configItem</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>pool</name><operator>.</operator><name>execute</name></name><argument_list>(<argument><expr><name>serverThread</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></for>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

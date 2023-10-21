@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18752783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>ensureConnection</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>AuthenticationException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>BugLog</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>assertNotNull</name><argument_list>(<argument><expr><name>getConnection</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name>getConnection</name><argument_list>()</argument_list></call><operator>.</operator><call><name>isOpen</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+<comment type="line">//        getConnection().verify(); //VERIFY SHOULD THE SAME AS OPEN!!</comment>
+        <comment type="line">// opening a conection and then closing it and reopening again is wierd.</comment>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name>getConnection</name><argument_list>()</argument_list></call><operator>.</operator><call><name>open</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>CommandAbortedException</name></type> <name>cae</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name>abort</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

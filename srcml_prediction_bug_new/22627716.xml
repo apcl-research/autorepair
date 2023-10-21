@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623963.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getInstanceDocNodes</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>xpath</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// xpath may be decoded, and it must be normalized before accessing instanceDoc!</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>normalizedPath</name> <init>= <expr><call><name><name>XPathUtils</name><operator>.</operator><name>normalizeXPath</name></name><argument_list>(<argument><expr><call><name><name>XPathUtils</name><operator>.</operator><name>decodeXPath</name></name><argument_list>(<argument><expr><name>xpath</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<return>return <expr><call><name><name>instanceDocument</name><operator>.</operator><name>selectNodes</name></name><argument_list>(<argument><expr><name>normalizedPath</name></expr></argument>)</argument_list></call></expr>;</return>
+		  <catch>catch <parameter_list>(<parameter><decl><type><name><name>org</name><operator>.</operator><name>dom4j</name><operator>.</operator><name>InvalidXPathException</name></name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"getInstanceDocNode error: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

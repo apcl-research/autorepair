@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18927082.java">  <function><type><specifier>private</specifier> <name>Map</name></type> <name>addInvalidParams</name><parameter_list>(<parameter><decl><type><name>Map</name></type> <name>invalidParams</name></decl></parameter>, <parameter><decl><type><name>MultiParameterException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>ex</name><operator>.</operator><name>getParameterNames</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <while>while <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>( )</argument_list></call></expr>)</condition> <block>{<block_content>
+      <decl_stmt><decl><type><name>String</name></type> <name>name</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>String</name></type> <name>error</name> <init>= <expr><call><name><name>ex</name><operator>.</operator><name>getMessage</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <expr_stmt><expr><name>invalidParams</name> <operator>=</operator> <call><name>addInvalidParams</name><argument_list>(<argument><expr><name>invalidParams</name></expr></argument>, <argument><expr><name>name</name></expr></argument>, <argument><expr><name>error</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></while>
+    <return>return <expr><name>invalidParams</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

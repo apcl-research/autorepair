@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31969074.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>loadTab</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>file</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>wpException</name></expr></argument></throws> <block>{<block_content>
+    <expr_stmt><expr><name>tabFile</name> <operator>=</operator> <operator>new</operator> <name>wpFile</name> <name>file</name></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>wpFileEngine</name></type> <name>fileEngine</name> <init>= <expr><operator>new</operator> <call><name>wpFileEngine</name><argument_list>(<argument><expr><name>gui</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>tabFile</name><operator>.</operator><name>setType</name></name><argument_list>(<argument><expr><call><name><name>fileEngine</name><operator>.</operator><name>getExtensionType</name></name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>setKitForType</name><argument_list>(<argument><expr><call><name><name>tabFile</name><operator>.</operator><name>getType</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>load</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name>addListeners</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

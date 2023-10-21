@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30105839.java">    <function><type><specifier>public</specifier> <name>User</name></type> <name>createUser</name><parameter_list>(<parameter><decl><type><name>User</name></type> <name>user</name></decl></parameter>,<parameter><decl><type><name>String</name></type> <name>authToken</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RemoteException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><operator>!</operator><call><name><name>this</name><operator>.</operator><name>authToken</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>authToken</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>RemoteException</name><argument_list>(<argument><expr><literal type="string">"Invalid Login Token"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><name>user</name><operator>=</operator><call><name><name>userBD</name><operator>.</operator><name>createUser</name></name><argument_list>(<argument><expr><name>user</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if<condition>(<expr><name>user</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><call><name><name>passwords</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>user</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>serverSettingBean</name><operator>.</operator><name>getDefualtPassword</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><name>user</name></expr>;</return>
+        </block_content>}</block></if><else>else<block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37089849.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>reset</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>firstLine</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name>hasText</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>height</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>lineHeight</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name>lineDescend</name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>firstLine</name></name> <operator>=</operator> <name>firstLine</name></expr>;</expr_stmt>
+    <expr_stmt><expr><name>currentPhrase</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>commands</name><operator>.</operator><name>setSize</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument> ;</argument_list></call></expr>
+    <expr><call><name><name>commands</name><operator>.</operator><name>addElement</name></name><argument_list>(<argument><expr><name>blockStyle</name> <operator>=</operator> <operator>new</operator> <call><name>BlockPainter</name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;
+    <expr><call><name><name>commands</name><operator>.</operator><name>addElement</name></name><argument_list>(<argument><expr><name>translate</name> <operator>=</operator> <operator>new</operator> <call><name>TranslateCommand</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;
+  </block_content>}</block></function>
+</unit>

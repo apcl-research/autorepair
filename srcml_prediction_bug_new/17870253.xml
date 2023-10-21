@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44392783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>registerSystray</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>FeatureNotSupportedException</name></expr></argument></throws> <block>{<block_content>
+		
+		<try>try <block>{<block_content>
+
+			<decl_stmt><decl><type><name>SystemTray</name></type> <name>tray</name> <init>= <expr><call><name><name>SystemTray</name><operator>.</operator><name>getSystemTray</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>trayIcon</name></name> <operator>=</operator> <operator>new</operator> <call><name>TrayIcon</name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>trayImage</name></name></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>tooltip</name></name></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>popupMenu</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>trayIcon</name><operator>.</operator><name>setImageAutoSize</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>trayIcon</name><operator>.</operator><name>addActionListener</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>onDoubleClick</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+			<expr_stmt><expr><call><name><name>tray</name><operator>.</operator><name>add trayIcon</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			
+	        
+	    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>AWTException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	        
+	    	<throw>throw <expr><operator>new</operator> <call><name>FeatureNotSupportedException</name><argument_list>(<argument><expr><name>ERROR_NOT_ADDED</name></expr></argument>)</argument_list></call></expr>;</throw>
+	    </block_content>}</block></catch></try>
+		
+	</block_content>}</block></function>
+</unit>

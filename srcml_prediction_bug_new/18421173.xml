@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34642629.java">	<function><type><specifier>public</specifier> <name>Contact</name></type> <name>add</name><parameter_list>(<parameter><decl><type><name>Date</name></type> <name>thisAppointment</name></decl></parameter>, <parameter><decl><type><name>Date</name></type> <name>nextAppointment</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>note</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ContactDateException</name></expr></argument></throws>  <block>{<block_content>
+		<decl_stmt><decl><type><name>Contact</name></type> <name>contact</name> <init>= <expr><operator>new</operator> <call><name>Contact</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>contact</name><operator>.</operator><name>setDate</name></name><argument_list>(<argument><expr><name>thisAppointment</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>		
+	    <expr_stmt><expr><call><name><name>contact</name><operator>.</operator><name>setNextAppointment</name></name><argument_list>(<argument><expr><name>nextAppointment</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>		
+		<expr_stmt><expr><call><name><name>contact</name><operator>.</operator><name>setNotice</name></name><argument_list>(<argument><expr><name>note</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>contact</name><operator>.</operator><name>setCreatedBy</name></name><argument_list>(<argument><expr><operator>(</operator><name>Dietician</name><operator>)</operator><call><name><name>m_UserHandler</name><operator>.</operator><name>getUser</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr>
+				
+		<name>DatabaseHandler</name> <name>dbH</name> <operator>=</operator> <call><name><name>DatabaseHandler</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>m_UserHandler</name><operator>.</operator><name>getCurrentPatient</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>addContact</name><argument_list>(<argument><expr><name>contact</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>dbH</name><operator>.</operator><name>savePatient</name></name><argument_list>(<argument><expr><call><name><name>m_UserHandler</name><operator>.</operator><name>getCurrentPatient</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<return>return <expr><name>contact</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

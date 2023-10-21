@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26292783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>appendMenu</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>parentid</name></decl></parameter>,<parameter><decl><type><name>Vector</name></type> <name>menuitemlist</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>JMenu</name></type> <name>menu</name> <init>= <expr><operator>(</operator><name>JMenu</name><operator>)</operator> <call><name><name>menus</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>parentid</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>menu</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>warn</name></name><argument_list>(<argument><expr><literal type="string">"Tried to append entries to menu ["</literal> <operator>+</operator> <name>parentid</name> <operator>+</operator> <literal type="string">"  but menu not found"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name>appendMenu</name><argument_list>(<argument><expr><name>parentid</name></expr></argument>,<argument><expr><call><name><name>menu</name><operator>.</operator><name>getComponentCount</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>,<argument><expr><name>menuitemlist</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

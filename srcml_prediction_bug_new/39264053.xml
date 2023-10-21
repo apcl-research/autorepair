@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51444891.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getDynamicTableName</name><parameter_list>(<parameter><decl><type><name>DynamicTable</name></type> <name>table</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>datatype</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<assert>assert <expr><operator>(</operator><operator>!</operator><call><name><name>datatype</name><operator>.</operator><name>equals</name></name><argument_list>( <argument><expr><literal type="string">"root"</literal></expr></argument>)</argument_list></call><operator>)</operator> <operator>:</operator> <literal type="string">"root isn't a datatype."</literal></expr>;</assert>
+		
+		<if_stmt><if>if <condition>(<expr><name>table</name> <operator>==</operator> <name><name>DynamicTable</name><operator>.</operator><name>DataSetInfo</name></name></expr>)</condition><block type="pseudo"><block_content> 
+			<return>return <expr><name>datatype</name> <operator>+</operator> <literal type="string">"DataSetInfo"</literal></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>table</name> <operator>==</operator> <name><name>DynamicTable</name><operator>.</operator><name>AtomInfoDense</name></name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>datatype</name> <operator>+</operator> <literal type="string">"AtomInfoDense"</literal></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>table</name> <operator>==</operator> <name><name>DynamicTable</name><operator>.</operator><name>AtomInfoSparse</name></name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>datatype</name> <operator>+</operator> <literal type="string">"AtomInfoSparse"</literal></expr>;</return></block_content></block></if>
+		<else>else<block type="pseudo"><block_content> <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

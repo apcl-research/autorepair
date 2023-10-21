@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44863286.java">    <function><type><specifier>public</specifier> <name>GUINeuron</name></type> <name>checkNeuronPosition</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>posX</name></decl></parameter>,<parameter><decl><type><name>int</name></type> <name>posY</name></decl></parameter>)</parameter_list>  
+        <decl_stmt><decl><type><name>GUILayer</name></type> <name>gLayer</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>GUINeuron</name></type> <name>gNeuron</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iLayers</name></decl>;</decl_stmt>
+
+        <expr_stmt><expr><name>iLayers</name> <operator>=</operator> <call><name>iterator</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <while>while <condition>(<expr><call><name><name>iLayers</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>gLayer</name> <operator>=</operator> <operator>(</operator><name>GUILayer</name><operator>)</operator> <operator>(</operator><call><name><name>iLayers</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+            <expr_stmt><expr><name>gNeuron</name> <operator>=</operator> <call><name><name>gLayer</name><operator>.</operator><name>checkNeuronPosition</name></name><argument_list>(<argument><expr><name>posX</name></expr></argument>,<argument><expr><name>posY</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>gNeuron</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <return>return <expr><name>gNeuron</name></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></while>
+
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

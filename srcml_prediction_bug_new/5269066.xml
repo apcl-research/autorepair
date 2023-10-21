@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/49094227.java">    <function><type><specifier>public</specifier> <name>ModelAndView</name></type> <name>stopBotletGateway</name>  <parameter_list>(<parameter><decl><type><name>long</name></type> <name>id</name></decl></parameter>, <parameter><decl><type><name>HttpServletResponse</name></type> <name>response</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    	
+    	<decl_stmt><decl><type><name>long</name></type> <name>id</name> <init>= <expr><call><name><name>Long</name><operator>.</operator><name>parseLong</name></name><argument_list>(<argument><expr><call><name><name>request</name><operator>.</operator><name>getParameter</name></name><argument_list>(<argument><expr><literal type="string">"gatewayId"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<decl_stmt><decl><type><name>BotletGatewayConfiguration</name></type> <name>gatewayConfig</name> <init>= <expr><call><name><name>botletGatewayConfigDao</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>BotletGatewayServer</name><operator>.</operator><name>stop</name></name><argument_list>(<argument><expr><call><name><name>gatewayConfig</name><operator>.</operator><name>getPort</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>IOException</name></type> <name>ex</name></decl></parameter> )</parameter_list> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><name>ex</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+    	<return>return <expr><operator>new</operator> <call><name>ModelAndView</name><argument_list>(<argument><expr><literal type="string">"redirect:/botlet_gateway/list.state"</literal></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

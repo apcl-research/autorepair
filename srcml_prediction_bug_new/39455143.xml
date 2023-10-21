@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/394500.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addFragmentInfo</name><parameter_list>(<parameter><decl><type><name>PeakListRow</name></type> <name>mainRow</name></decl></parameter>, <parameter><decl><type><name>PeakListRow</name></type> <name>fragmentRow</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>FragmentIdentity</name></type> <name>newIdentity</name> <init>= <expr><operator>new</operator> <call><name>FragmentIdentity</name><argument_list>(<argument><expr><name>mainRow</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>fragmentRow</name><operator>.</operator><name>addPeakIdentity</name></name><argument_list>(<argument><expr><name>newIdentity</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<comment type="line">// Notify the GUI about the change in the project</comment>
+		<expr_stmt><expr><call><name><name>MZmineCore</name><operator>.</operator><name>getCurrentProject</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>notifyObjectChanged</name><argument_list>(<argument><expr><name>fragmentRow</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2406907.java">    <function><type><specifier>public</specifier> <name>ModeController</name></type> <name>load</name> <parameter_list>(<parameter><decl><type><name>URL</name></type> <name>file</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>FileNotFoundException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument>, <argument><expr><name>XMLParseException</name></expr></argument>, <argument><expr><name>URISyntaxException</name></expr></argument></throws> <block>{<block_content>
+	    <decl_stmt><decl><type><specifier>final</specifier> <name>ModeController</name></type> <name>newModeController</name> <init>= <expr><call><name>getMode</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createModeController</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><specifier>final</specifier> <name>MapAdapter</name></type> <name>model</name> <init>= <expr><call><name>newModel</name><argument_list>(<argument><expr><name>newModeController</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>model</name><operator>.</operator><name>load</name></name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>newMap</name><argument_list>(<argument><expr><name>model</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+<comment type="line">//        EventQueue.invokeLater(new Runnable( {</comment>
+<comment type="line">//      	   public void run() {</comment>
+      		 <expr_stmt><expr><call><name><name>model</name><operator>.</operator><name>setSaved</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+<comment type="line">//      	   }});</comment>
+        <return>return <expr><name>newModeController</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31974096.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>checkRowBounds</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>row</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>int</name></type> <name>rowSize</name> <init>= <expr><call><name>getRowCount</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><operator>(</operator><name>row</name> <operator>&gt;=</operator> <name>rowSize</name><operator>)</operator> <operator>||</operator> <operator>(</operator><name>row</name> <operator>&lt;</operator> <literal type="number">0</literal><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>  
+      <throw>throw <expr><operator>new</operator> <call><name>IndexOutOfBoundsException</name><argument_list>(<argument><expr><literal type="string">"Row "</literal> <operator>+</operator> <name>row</name>
+        <operator>+</operator> <literal type="string">" does not exist, row size is "</literal> <operator>+</operator> <call><name>getRowCount</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

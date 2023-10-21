@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636891.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>setMatcherString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>pattern</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>update</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if  <condition>(<expr><call><name><name>pattern</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>fStringMatcher</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>fStringMatcher</name> <operator>=</operator> <operator>new</operator> <call><name>StringMatcher</name><argument_list>(<argument><expr><name>pattern</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<comment type="line">// Update the name pattern filter on the tree viewer</comment>
+		<expr_stmt><expr><call><name><name>fNamePatternFilter</name><operator>.</operator><name>setStringMatcher</name></name><argument_list>(<argument><expr><name>fStringMatcher</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// Update the tree viewer according to the pattern</comment>
+		<if_stmt><if>if <condition>(<expr><name>update</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>stringMatcherUpdated</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

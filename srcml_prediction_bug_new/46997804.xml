@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18662796.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>readNextAndNotify</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Thread</name></type> <name>t</name> <init>= <expr><operator>new</operator> <call><name>Thread</name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+                <try>try <block>{<block_content>
+                    <if_stmt><if>if <condition>(<expr><call><name>readNext</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                        <expr_stmt><expr><name>lastModificationStamp</name> <operator>=</operator> <operator>new</operator> <call><name>Date</name><argument_list>( ;</operator><comment type="block">/*new Date(*/</comment><call><name>getLastModificationStamp</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                        <expr_stmt><expr><call><name>fireChangeEvent</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                    </block_content>}</block></if></if_stmt>
+                </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                    <comment type="line">// Ignore</comment>
+                </block_content>}</block></catch></try>
+            </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>t</name><operator>.</operator><name>start</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42919094.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>cascadingCut</name><parameter_list>( <parameter><decl><type><name>Node</name></type> <name>y</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Node</name></type> <name>z</name> <init>= <expr><name><name>y</name><operator>.</operator><name>m_parent</name></name></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// if there's a parent...</comment>
+        <if_stmt><if>if<condition>( <expr><name>z</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <comment type="line">// if y is sufficiently, set it marked</comment>
+            <if_stmt><if>if<condition>( <expr><operator>!</operator><name><name>y</name><operator>.</operator><name>m_mark</name></name></expr> )</condition><block type="pseudo"><block_content>  
+                <expr_stmt><expr><name><name>y</name><operator>.</operator><name>m_mark</name></name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            </block_content>}</block></if>
+            <else>else <block>{<block_content>
+                <comment type="line">// it's marked, cut it from parent</comment>
+                <expr_stmt><expr><call><name>cut</name><argument_list>( <argument><expr><name>y</name></expr></argument>, <argument><expr><name>z</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+                <comment type="line">// cut its parent as well</comment>
+                <expr_stmt><expr><call><name>cascadingCut</name><argument_list>( <argument><expr><name>z</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

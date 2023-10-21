@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/485927.java">	<function><type><specifier>public</specifier> <name>ColumnCell</name></type> <name>getColumn</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>columnName</name></decl></parameter>, <parameter><decl><type><name><name>Class</name><argument_list type="generic">&lt;<argument><name>?</name></argument>&gt;</argument_list></name></type> <name>columnType</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>index</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>index</name> <operator>&lt;</operator> <call><name><name>columns</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>index</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<if_stmt><if>if  <condition>(<expr><call><name><name>columnName</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><call><name><name>columns</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getHeader</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><call><name>getColumn</name><argument_list>(<argument><expr><name>index</name></expr></argument>, <argument><expr><name>columnType</name></expr></argument>)</argument_list></call></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

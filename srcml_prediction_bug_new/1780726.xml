@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31091796.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getQueryString</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>URLEncodedString</name></type> <name>encoder</name> <init>= <expr><operator>new</operator> <call><name>URLEncodedString</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>getParameterHolder</name><argument_list>()</argument_list></call><operator>.</operator><call><name>recordPredefinedParameters</name><argument_list>( <argument><expr><name>encoder</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><call><name><name>encoder</name><operator>.</operator><name>getString</name></name><argument_list>()</argument_list></call></expr>;</return>
+          </block_content>}</block>
+        <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>( <argument><expr><literal type="string">"Programming error: "</literal> <operator>+</operator> <name>e</name></expr></argument> )</argument_list></call></expr>;</throw>   <comment type="line">// should never happen</comment>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

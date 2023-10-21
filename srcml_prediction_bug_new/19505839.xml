@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509094.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>createFolder</name><parameter_list>(<parameter><decl><type><name>IContainer</name></type> <name>parentFolder</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>forceFlag</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RodinDBException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>IFolder</name></type> <name>folder</name><init>= <expr><call><name><name>parentFolder</name><operator>.</operator><name>getFolder</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Path</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<comment type="line">// we should use true to create the file locally. Only VCM should use sufficiently/false</comment>
+			<expr_stmt><expr><call><name><name>folder</name><operator>.</operator><name>create</name></name><argument_list>(
+				<argument><expr><ternary><condition><expr><name>forceFlag</name></expr> ?</condition><then> <expr><name><name>IResource</name><operator>.</operator><name>FORCE</name></name> <operator>|</operator> <name><name>IResource</name><operator>.</operator><name>KEEP_HISTORY</name></name></expr> </then><else>: <expr><name><name>IResource</name><operator>.</operator><name>KEEP_HISTORY</name></name></expr></else></ternary></expr></argument>,
+				<argument><expr><literal type="boolean">true</literal></expr></argument>, <comment type="line">// local</comment>
+				<argument><expr><call><name>getSubProgressMonitor</name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument> ;</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setAttribute</name></name><argument_list>(<argument><expr><name>HAS_MODIFIED_RESOURCE_ATTR</name></expr></argument>, <argument><expr><name>TRUE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>CoreException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>RodinDBException</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

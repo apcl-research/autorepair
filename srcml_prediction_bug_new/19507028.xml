@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testThrowCoreException</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>CoreExceptionThrower</name></type> <name>action</name> <init>= <expr><operator>new</operator> <call><name>CoreExceptionThrower</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>RodinCore</name><operator>.</operator><name>run</name></name><argument_list>(<argument><expr><name>action</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr> 
+			<empty_stmt>;</empty_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>RodinDBException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name>assertSame</name><argument_list>(<argument><expr><call><name><name>action</name><operator>.</operator><name>exc</name><operator>.</operator><name>getStatus</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getStatus</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>assertSame</name><argument_list>(<argument><expr><name><name>action</name><operator>.</operator><name>exc</name></name></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getException</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

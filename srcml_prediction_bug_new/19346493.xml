@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31894983.java">    <function><type><specifier>private</specifier> <name>JMenuItem</name></type> <name>newWinAction</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>label</name></decl></parameter>, <parameter><decl><type><name>ReFrame</name></type> <name>newFrame</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>windowActionMap</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>newFrame</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>windowActionMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>newFrame</name></expr></argument>)</argument_list></call></expr>;</return>
+         
+
+        <decl_stmt><decl><type><name>JMenuItem</name></type> <name>mi</name> <init>= <expr><operator>new</operator> <call><name>JMenuItem</name><argument_list>(<argument><expr><operator>new</operator> <call><name>WindowAction</name><argument_list>(<argument><expr><name>label</name></expr></argument>, <argument><expr><name>newFrame</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <expr_stmt><expr><call><name><name>windowActionMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>newFrame</name></expr></argument>, <argument><expr><name>mi</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>mi</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+</unit>

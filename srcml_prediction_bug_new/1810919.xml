@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40582696.java">  <function><type><specifier>public</specifier> <name>Node</name></type> <name>importNode</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>importedNode</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>deep</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <try>try <block>{<block_content>
+      <return>return <expr><call><name><name>NodeImpl</name><operator>.</operator><name>build</name></name><argument_list>(<argument><expr><call><name><name>XMLParserImpl</name><operator>.</operator><name>importNode</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getJsObject</name></name><argument_list>()</argument_list></call></expr></argument>,
+        <argument><expr><operator>(</operator><operator>(</operator><name>DOMItem</name><operator>)</operator> <name>importedNode</name><operator>)</operator><operator>.</operator><call><name>getJsObject</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>deep</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>JavaScriptException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>DOMNodeException</name><argument_list>(<argument><expr><name><name>DOMNodeException</name><operator>.</operator><name>INVALID_STATE_ERR</name></name></expr></argument>, <argument><expr><name>e</name></expr></argument>, <argument><expr><name>this</name></expr></argument> ;</argument_list></call></expr>
+    </block_content>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

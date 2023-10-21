@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3326991.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setAlignment</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>align</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<expr_stmt><expr><name><name>this</name><operator>.</operator><name>newAlign</name></name> <operator>=</operator> <name>align</name></expr>;</expr_stmt>
+
+        <comment type="line">// this.align is used only for serialization compatibility,</comment>
+        <comment type="line">// so set it to a value compatible with the 1.1 version</comment>
+        <comment type="line">// of the class</comment>
+
+        <switch>switch <condition>(<expr><name>align</name></expr>  )</condition> <block>{<block_content>
+	<case>case <expr><name>LEADING</name></expr>:</case>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>align</name></name> <operator>=</operator> <name>TOP</name></expr>;</expr_stmt>
+	    <break>break;</break>
+	<case>case <expr><name>TRAILING</name></expr>:</case>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>align</name></name> <operator>=</operator> <name>BOTTOM</name></expr>;</expr_stmt>
+	    <break>break;</break>
+        <default>default:</default>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>align</name></name> <operator>=</operator> <name>align</name></expr>;</expr_stmt>
+	    <break>break;</break>
+        </block_content>}</block></switch>
+    </block_content>}</block></function>
+</unit>

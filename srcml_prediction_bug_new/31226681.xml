@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50642983.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>retract</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>obj</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>boolean</name></type> <name>result</name> <init>= <expr><call><name><name>kb</name><operator>.</operator><name>retract</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>conflictSet</name><operator>.</operator><name>removeElementsWith</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <for>for  <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>allJoinNodes</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+      <decl_stmt><decl><type><name>JoinReteNode</name></type> <name>joinNode</name> <init>= <expr><operator>(</operator><name>JoinReteNode</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <expr_stmt><expr><call><name><name>joinNode</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>obj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></for>
+    <return>return <expr><name>result</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31069996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setValueToTickNumber</name> <parameter_list>(<parameter><decl><type><name>float</name></type> <name>tickNo</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><name>_stickToTicks</name></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>tickNo</name> <operator>=</operator> <call><name><name>PApplet</name><operator>.</operator><name>constrain</name></name><argument_list>(<argument><expr><name>tickNo</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>_numTicks</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<decl_stmt><decl><type><name>float</name></type> <name>newValue</name> <init>= <expr><call><name><name>PApplet</name><operator>.</operator><name>map</name></name><argument_list>(<argument><expr><operator>(</operator><name>float</name><operator>)</operator><name>tickNo</name></expr></argument>, <argument><expr><literal type="number">0.0f</literal></expr></argument>, <argument><expr><operator>(</operator><name>float</name><operator>)</operator><name>_numTicks</name></expr></argument>, <argument><expr><name>minValue</name></expr></argument>, <argument><expr><name>maxValue</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name>_stickToTickByValue</name><argument_list>(<argument><expr><name>newValue</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>		
+	</block_content>}</block></function>
+</unit>

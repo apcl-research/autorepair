@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26012483.java"> 	<function><type><specifier>public</specifier> <name>void</name></type> <name>handleRegisterRequest</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>u</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>p</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>)</parameter_list><block>{<block_content>
+ 		
+ 		<expr_stmt><expr><name>userName</name> <operator>=</operator> <name>u</name> 
+ 		<name>password</name> <operator>=</operator> <name>p</name></expr>;</expr_stmt>
+ 		<expr_stmt><expr><name>server</name> <operator>=</operator> <name>s</name></expr>;</expr_stmt>
+ 			
+ 	 		<try>try <block>{<block_content>
+ 	            <expr_stmt><expr><call><name><name>sipManager</name><operator>.</operator><name>startRegisterProcess</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+ 	        </block_content>}</block><catch>catch <parameter_list>(<parameter><decl><type><name>CommunicationsException</name></type> <name>exc</name></decl></parameter>)</parameter_list> <block>{<block_content>
+ 	        	<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"ERRO SIP: "</literal><operator>+</operator><call><name><name>exc</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+ 	        </block_content>}</block></catch></try>
+ 	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26282696.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isDeletable</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>byUser</name></decl></parameter>)</parameter_list>  
+		<if_stmt><if>if <condition>(<expr><call><name><name>byUser</name><operator>.</operator><name>equals</name></name> <argument_list>(<argument><expr><name>daid</name></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>signedby</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block></if> <comment type="line">// end of if (byUser.equals (daid) &amp;&amp; signedby.toString().equals(""))</comment>
+		<else>else <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt> <comment type="line">// end of if (byUser.equals (daid) &amp;&amp; signedby.toString().equals(""))</comment>
+	}
+</unit>

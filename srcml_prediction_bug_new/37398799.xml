@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490524.java">  <function><type><specifier>public</specifier> <name>Map</name></type> <name>getFactoryClasses</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>resourceClass</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>namedFactoryKey</name> <init>= <expr><literal type="string">"factories."</literal> <operator>+</operator> <name>resourceClass</name> <operator>+</operator> <literal type="string">".*.class"</literal></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>Map</name></type> <name>map</name> <init>= <expr><operator>new</operator> <call><name>SequencedHashMap</name><argument_list>(<argument><expr><call><name><name>config</name><operator>.</operator><name>getMap</name></name><argument_list>(<argument><expr><name>namedFactoryKey</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>String</name></type> <name>defaultFactory</name> <init>=
+      <expr><call><name><name>config</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="string">"factories."</literal> <operator>+</operator> <name>resourceClass</name> <operator>+</operator> <literal type="string">".default-factory"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>map</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>DEFAULT_FACTORY</name></expr></argument>, <argument><expr><name>defaultFactory</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name>map</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

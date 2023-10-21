@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392796.java">    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>shouldAbandon</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>poolProperties</name><operator>.</operator><name>getAbandonWhenPercentageFull</name></name><argument_list>()</argument_list></call><operator>==</operator><literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">true</literal></expr> 
+        <name>float</name> <name>used</name> <operator>=</operator> <call><name><name>busy</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+        <decl_stmt><decl><type><name>float</name></type> <name>max</name>  <init>= <expr><call><name><name>poolProperties</name><operator>.</operator><name>getMaxActive</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>float</name></type> <name>perc</name> <init>= <expr><call><name><name>poolProperties</name><operator>.</operator><name>getAbandonWhenPercentageFull</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <return>return <expr><operator>(</operator><name>used</name><operator>/</operator><name>max</name><operator>*</operator><literal type="number">100f</literal><operator>)</operator><operator>&gt;=</operator><name>perc</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

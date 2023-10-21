@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41669074.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>displayDownRight</name><parameter_list>(<parameter><decl><type><name>JFrame</name></type> <name>parent</name></decl></parameter>, <parameter><decl><type><name>JFrame</name></type> <name>child</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Point</name></type> <name>parentLocation</name> <init>= <expr><call><name><name>parent</name><operator>.</operator><name>getLocation</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>double</name></type> <name>parentX</name> <init>= <expr><call><name><name>parentLocation</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>double</name></type> <name>parentY</name> <init>= <expr><call><name><name>parentLocation</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>parentWidth</name> <init>= <expr><call><name><name>parent</name><operator>.</operator><name>getWidth</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>double</name></type> <name>childX</name> <init>= <expr><name>parentX</name> <operator>+</operator> <name>parentWidth</name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>double</name></type> <name>childY</name> <init>= <expr><name>parentY</name> <operator>+</operator> <name><name>ModelibraPanel</name><operator>.</operator><name>FRAME_DISPLAY_INCREMENT</name></name></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>Point</name></type> <name>childLocation</name> <init>= <expr><operator>new</operator> <call><name>Point</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>childLocation</name><operator>.</operator><name>setLocation</name></name><argument_list>(<argument><expr><name>childX</name></expr></argument>, <argument><expr><name>childY</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>child</name><operator>.</operator><name>setLocation</name></name><argument_list>(<argument><expr><name>childLocation</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>child</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

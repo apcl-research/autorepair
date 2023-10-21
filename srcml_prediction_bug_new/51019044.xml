@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11053983.java">    <function><type><specifier>protected</specifier> <name>double</name></type> <name>getRelativeRank</name><parameter_list>(<parameter><decl><type><name><name>double</name><index>[]</index></name></type> <name>values</name></decl></parameter>, <parameter><decl><type><name>ComparisonMethod</name></type> <name>method</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>result</name></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>modulusValues</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>modulusArray</name><argument_list>(<argument><expr><name>values</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <switch>switch <condition>(<expr><name>method</name></expr>)</condition> <block>{<block_content>
+            <case>case <expr><name>INTEPENENTPROBABLITIES</name></expr>:</case>
+                <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name>product</name><argument_list>(<argument><expr><name>values</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <break>break;</break>
+            <case>case <expr><name>MEAN</name></expr>:</case>
+                <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name>mean</name><argument_list>(<argument><expr><name>values</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <break>break;</break>
+            <case>case <expr><name>SUM</name></expr>:</case>
+                <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name>sum</name><argument_list>(<argument><expr><name>values</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <break>break;</break>
+            <default>default:</default>
+                <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><literal type="string">"Unknown Comparison Method"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></switch>
+
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

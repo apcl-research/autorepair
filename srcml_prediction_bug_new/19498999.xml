@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/464815.java">	<function><type><specifier>private</specifier> <name>int</name></type> <name>findIntervalIndex</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>offset</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>low</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>high</name> <init>= <expr><call><name><name>intervals</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>mid</name></decl>;</decl_stmt>
+		<while>while <condition>(<expr><name>low</name> <operator>&lt;=</operator> <name>high</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>mid</name> <operator>=</operator> <operator>(</operator><name>low</name> <operator>+</operator> <name>high</name><operator>)</operator> <operator>/</operator> <literal type="number">2</literal></expr>;</expr_stmt>
+
+			<if_stmt><if>if <condition>(<expr><call><name><name>intervals</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>mid</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getOffset</name><argument_list>()</argument_list></call> <operator>&gt;</operator> <name>offset</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>high</name> <operator>=</operator> <name>mid</name> <operator>-</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+			</block_content>}</block></if> <if type="elseif">else if <condition>(	<expr><call><name><name>intervals</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>mid</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getLastIndex</name><argument_list>()</argument_list></call> <operator>&lt;</operator> <name>offset</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>low</name> <operator>=</operator> <name>mid</name> <operator>+</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+			  <else>else<block type="pseudo"><block_content>
+				<return>return <expr><name>mid</name></expr>;</return></block_content></block></else></if_stmt>
+		</block_content>}</block></while>
+		<return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24992783.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>eval</name><parameter_list>(<parameter><decl><type><name>CallStack</name></type> <name>callstack</name></decl></parameter>, <parameter><decl><type><name>Interpreter</name></type> <name>interpreter</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>EvalError</name></expr></argument></throws> <block>{<block_content>
+        <comment type="block">/*
+         * Try to call the proportion signature I don't ilke this, but it's the price we pay for being able to eval ) any
+         * tradenode and still limit the signature on those that only need namespace.
+         */</comment>
+        <return>return <expr><call><name>eval</name><argument_list>(<argument><expr><call><name><name>callstack</name><operator>.</operator><name>top</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46989963.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getSourcePatientId</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">//concat($patID/@extension,"^^^&amp;", $patID/@root, "&amp;ISO")</comment>
+        <return>return <expr><call><name>selectPath</name><argument_list>(<argument><expr><literal type="string">"ns:recordTarget/ns:patientRole/ns:id/@extension"</literal></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">"^^^&amp;"</literal> <operator>+</operator>
+               <call><name>selectPath</name><argument_list>(<argument><expr><literal type="string">"ns:recordTarget/ns:patientRole/ns:id/@root"</literal></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">"&amp;ISO"</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509093.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testBug3489973</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>doTest</name><argument_list>(<argument><expr><literal type="string">"prj2(r(a â T)) â T"</literal></expr></argument>, <comment type="line">//</comment>
+				<argument><expr><literal type="string">"â¤Ã·(â¤Ã·b1,b1Â·a â r Â  b1 = aa)â§ aaâ T"</literal></expr></argument>, <comment type="line">//</comment>
+				<argument><expr><literal type="boolean">true</literal></expr></argument>, <comment type="line">//</comment>
+				<argument><expr><call><name>mTypeEnvironment</name> <argument_list>(<argument><expr><literal type="string">"r"</literal></expr></argument>, <argument><expr><literal type="string">"â¤Ã·b1"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

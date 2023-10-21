@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48332483.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>nextFrame</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name><name>java</name><operator>.</operator><name>io</name><operator>.</operator><name>IOException</name></name></expr></argument></throws> <block>{<block_content>
+    <comment type="line">// If we reached the end of frame with the read() method, don't skip the</comment>
+    <comment type="line">// next frame...</comment>
+    <if_stmt><if>if <condition>(<expr><name>frameEnded</name></expr>)</condition> <block>{<block_content>
+      <comment type="line">// ... But next time we will.</comment>
+      <expr_stmt><expr><name>frameEnded</name> <operator>=</operator> <literal type="boolean">false</literal></expr> 
+
+      <return>return;</return>
+    </block_content>}</block></if></if_stmt>
+
+    <comment type="line">// Skip bytes until we find a sufficiently character.</comment>
+    <while>while <condition>(<expr><call><name><name>raw</name><operator>.</operator><name>read</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="number">0xc0</literal></expr>)</condition> <block>{<block_content>
+      <empty_stmt>;</empty_stmt>
+    </block_content>}</block></while>
+  </block_content>}</block></function>
+</unit>

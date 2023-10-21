@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26272783.java">     <function><type><specifier>public</specifier> <name>CostMapping</name></type> <name>getCostMapping</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+         <synchronized>synchronized<init>(<expr><name>costMappings</name></expr>)</init>  
+             <init>=</init>  <expr><call><name><name>costMappings</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr>;</init>
+             <condition><expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+                 <decl_stmt><decl><type><name>CostMapping</name></type> <name>cm</name> <init>= <expr><operator>(</operator><name>CostMapping</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                 <if_stmt><if>if <condition>(<expr><call><name><name>cm</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                     <return>return <expr><name>cm</name></expr>;</return>
+                 </block_content>}</block></if></if_stmt>
+             </block_content>}</block></for>
+         <return>return <expr><literal type="null">null</literal></expr>;</return>
+     </block_content>}</block></function>
+</unit>

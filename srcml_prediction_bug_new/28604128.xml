@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/266099.java">   <function><type><specifier>private</specifier> <name>void</name></type> <name>compose</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+      <comment type="line">// UI components creation</comment>
+      <expr_stmt><expr><name>_tree</name> <operator>=</operator> <operator>new</operator> <call><name>TaxonProxyTree</name><argument_list>( ;</argument_list></call></expr>
+
+      <expr><call><name><name>_tree</name><operator>.</operator><name>addTreeSelectionListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;
+
+      <expr><call><name><name>_tree</name><operator>.</operator><name>addTreeWillExpandListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;
+
+      <comment type="line">// addition of elements</comment>
+      <expr><call><name>setLayout</name><argument_list>(<argument><expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>BorderLayout</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;
+
+      <expr><call><name>add</name><argument_list>(<argument><expr><operator>new</operator> <call><name>JLabel</name><argument_list>(<argument><expr><literal type="string">"Taxonomy Tree"</literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>BorderLayout</name><operator>.</operator><name>NORTH</name></name></expr></argument>)</argument_list></call></expr>;
+
+      <expr><call><name>add</name><argument_list>(<argument><expr><call><name><name>_tree</name><operator>.</operator><name>getContainer</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;
+   }</block></expr></expr_stmt>
+</unit>

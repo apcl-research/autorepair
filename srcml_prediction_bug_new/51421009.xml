@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/1937991.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>ensureState</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+		<comment type="line">//system.out.println("ensure state "+ getName() + "::" +name);</comment>
+		<if_stmt><if>if<condition>(<expr><name>parentState</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><call><name><name>parentRegionManager</name><operator>.</operator><name>ensureState</name></name><argument_list>(<argument><expr><name>parentState</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><name>State</name></type> <name>target</name><init>=<expr><call><name><name>machine</name><operator>.</operator><name>getState</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if<condition>(<expr><name>target</name><operator>==</operator><call><name><name>this</name><operator>.</operator><name>machine</name><operator>.</operator><name>getCurrentState</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+		<comment type="line">// place for convergence here: just iterate looking for 'target' throughout on</comment>
+		<decl_stmt><decl><type><name>State</name></type> <name>ancestor</name> <init>= <expr><call><name>computeCommonAncestor</name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>machine</name><operator>.</operator><name>getCurrentState</name></name><argument_list>()</argument_list></call></expr></argument>,<argument><expr><name>target</name></expr></argument>)</argument_list></call></expr></init></decl> 
+		if_stmt><if>if<condition>(<expr><name>ancestor</name><operator>==</operator><name>target</name></expr>)</condition><block type="pseudo"><block_content> <return>return;</return></block_content></block></if></if_stmt>
+		<expr_stmt><expr><call><name>setState</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

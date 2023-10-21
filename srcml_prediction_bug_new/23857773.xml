@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17095308.java">	<function><type><specifier>public</specifier> <name>Date</name></type> <name>getDate</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// DateFormat df=new</comment>
+		<comment type="line">// SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss 'GMT'",Locale.US);</comment>
+		<try>try <block>{<block_content> <comment type="line">// Date d=df.parse(str,new ParsePosition(index));</comment>
+			<decl_stmt><decl><type><name>Date</name></type> <name>d</name> <init>= <expr><call><name><name>DateFormat</name><operator>.</operator><name>parseEEEddMMM</name></name><argument_list>(<argument><expr><name>str</name></expr></argument>, <argument><expr><name>index</name></expr></argument>)</argument_list></call> 
+			<name>index</name> <operator>=</operator> <call><name><name>str</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><literal type="string">"GMT"</literal></expr></argument>, <argument><expr><name>index</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="number">3</literal></expr></init></decl>;</decl_stmt>
+			<return>return <expr><name>d</name></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>index</name> <operator>=</operator> <call><name><name>str</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

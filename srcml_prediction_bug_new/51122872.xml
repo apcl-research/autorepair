@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24316073.java">   <function><type><specifier>protected</specifier> <name>EventInfo</name></type> <name>getEventInfo</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <decl_stmt><decl><type><name>EventInfo</name></type> <name>einfo</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+      <if_stmt><if>if <condition>(<expr><operator>(</operator><name>eventInfoMap</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>eventInfoMap</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call><operator>)</operator></expr>)</condition> <block>{<block_content>
+         <expr_stmt><expr><name>einfo</name> <operator>=</operator> <operator>(</operator><name>EventInfo</name><operator>)</operator> <call><name><name>eventInfoMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></if> <else>else <block>{<block_content>
+         <expr_stmt><expr><call><name><name>logCat</name><operator>.</operator><name>error</name></name><argument_list>(<argument><expr><literal type="string">"::getEventInfo - event having id ["</literal> <operator>+</operator> <name>id</name>
+                      <operator>+</operator> <literal type="string">"] is not registered into the factory, returning a NULL event"</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+      </block_content>}</block></else></if_stmt>
+
+      <return>return <expr><name>einfo</name></expr>;</return>
+   </block_content>}</block></function>
+</unit>

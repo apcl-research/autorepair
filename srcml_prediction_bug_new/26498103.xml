@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490549.java">  <function><type><specifier>public</specifier> <name>Object</name></type> <name>lookup</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>NotFoundException</name></expr></argument></throws> <block>{<block_content>
+    <comment type="line">//checkStarted();</comment>
+    <decl_stmt><decl><type><name>ServiceMetaData</name></type> <name>service</name> <init>= <expr><operator>(</operator><name>ServiceMetaData</name><operator>)</operator> <call><name><name>_services</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <if_stmt><if>if<condition>(<expr><name>service</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>NotFoundException</name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+    
+    <decl_stmt><decl><type><name>LifeCycleManager</name></type> <name>lcm</name> <init>= <expr><call><name><name>service</name><operator>.</operator><name>getLifeCycleManager</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <return>return <expr><call><name><name>lcm</name><operator>.</operator><name>lookupService</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>, <argument><expr><call><name><name>service</name><operator>.</operator><name>getService</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

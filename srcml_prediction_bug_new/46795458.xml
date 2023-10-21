@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44370062.java">    <function><type><specifier>private</specifier> <name>TrieEntry</name></type> <name>getNearestEntryForKey</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>keyLength</name></decl></parameter>  <comment type="block">/*-&gt; */</comment>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>TrieEntry</name></type> <name>current</name> <init>= <expr><name><name>root</name><operator>.</operator><name>left</name></name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>TrieEntry</name></type> <name>path</name> <init>= <expr><name>root</name></expr></init></decl>;</decl_stmt>
+        <while>while<condition>(<expr><literal type="boolean">true</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><name><name>current</name><operator>.</operator><name>bitIndex</name></name> <operator>&lt;=</operator> <name><name>path</name><operator>.</operator><name>bitIndex</name></name></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><name>current</name></expr>;</return></block_content></block></if></if_stmt>
+            
+            <expr_stmt><expr><name>path</name> <operator>=</operator> <name>current</name></expr>;</expr_stmt>
+            <if_stmt><if>if<condition>(<expr><operator>!</operator><call><name>isBitSet</name><argument_list>(<argument><expr><name>key</name></expr></argument>, <argument><expr><name>keyLength</name></expr></argument>, <argument><expr><name><name>current</name><operator>.</operator><name>bitIndex</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>current</name> <operator>=</operator> <name><name>current</name><operator>.</operator><name>left</name></name></expr>;</expr_stmt></block_content></block></if>
+            <else>else<block type="pseudo"><block_content>
+                <expr_stmt><expr><name>current</name> <operator>=</operator> <name><name>current</name><operator>.</operator><name>right</name></name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></while>
+    </block_content>}</block></function>
+</unit>

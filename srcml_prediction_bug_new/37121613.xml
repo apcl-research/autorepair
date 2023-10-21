@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11102983.java">    <function><type><specifier>protected</specifier> <name>Object</name></type> <name>createServiceInstance</name><parameter_list>(<parameter><decl><type><name>ServiceFactory</name></type> <name>factory</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>Object</name></type> <name>service</name> <init>= <expr><call><name><name>factory</name><operator>.</operator><name>createServiceInstance</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// if the factory created a singleton service, the factory</comment>
+        <comment type="line">// is removed to ensure no more instances can be created</comment>
+
+        <if_stmt><if>if  <condition>(<expr><name>factory</name> <operator>instanceof</operator> <name>DefaultServiceFactory</name></expr>)</condition> <block>{<block_content>
+
+            <decl_stmt><decl><type><name>DefaultServiceFactory</name></type> <name>factory0</name>
+                <init>= <expr><operator>(</operator><name>DefaultServiceFactory</name><operator>)</operator> <name>factory</name></expr></init></decl>;</decl_stmt>
+
+            <decl_stmt><decl><type><name>ServiceMultiplicity</name></type> <name>multiplicity</name>
+                <init>= <expr><call><name>getServiceMultiplicity</name><argument_list>(<argument><expr><name>factory0</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>multiplicity</name> <operator>==</operator> <name><name>ServiceMultiplicity</name><operator>.</operator><name>SINGLETON</name></name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name>deinstallServiceFactory</name><argument_list>(<argument><expr><name>factory</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>service</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

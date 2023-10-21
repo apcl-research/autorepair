@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50588963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testFindLink1</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>IE</name></type> <name>theIE</name> <init>= <expr><call><name>getIe</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Document</name></type> <name>theDocument</name> <init>= <expr><call><name><name>theIE</name><operator>.</operator><name>getDocument</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>A</name></type> <name>theA</name> <init>= <expr><call><name><name>theDocument</name><operator>.</operator><name>findLink</name></name><argument_list>(<argument><expr><literal type="string">"INPUT Test 1"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>assertNotNull</name><argument_list>(<argument><expr><name>theA</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>assertEquals</name><argument_list>(<argument><expr><literal type="string">"INPUT Test 1"</literal></expr></argument>, <argument><expr><call><name><name>theA</name><operator>.</operator><name>getInnerText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>trim</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

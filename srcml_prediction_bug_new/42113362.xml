@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4769094.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>render</name><parameter_list>(<parameter><decl><type><name>float</name></type> <name>tpf</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>render</name></name><argument_list>(<argument><expr><name>tpf</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<decl_stmt><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>MenuItem</name></argument>&gt;</argument_list></name></type> <name>it</name> <init>= <expr><call><name><name>menuItems</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<while>while<condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>			
+			<expr_stmt><expr><call><name><name>DisplaySystem</name><operator>.</operator><name>getDisplaySystem</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRenderer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>draw</name><argument_list>(<argument><expr><call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+
+		<expr_stmt><expr><name>it</name> <operator>=</operator> <call><name><name>otherItems</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<while>while<condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>			
+			<expr_stmt><expr><call><name><name>DisplaySystem</name><operator>.</operator><name>getDisplaySystem</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRenderer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>draw</name><argument_list>(<argument><expr><call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

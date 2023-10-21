@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10370062.java">    <function><type><specifier>public</specifier> <name>HttpSessionContext</name></type> <name>getSessionContext</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>checkValidity</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><operator>new</operator> <class><super><name>HttpSessionContext</name></super><argument_list>()</argument_list> <block>{
+            <comment type="block" format="javadoc">/**
+             * Returns null.
+             */</comment>
+            <function><type><specifier>public</specifier> <name>HttpSession</name></type> <name>getSession</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>sessionId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <return>return <expr><literal type="null">null</literal></expr>;</return>
+            </block_content>}</block></function>
+
+            <comment type="block" format="javadoc">/**
+             * Returns an empty enumeration.
+             */</comment>
+            <function><type><specifier>public</specifier> <name>Enumeration</name></type> <name>getIds</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
+                <return>return <expr><operator>new</operator> <call><name>Vector</name><argument_list>()</argument_list></call><operator>.</operator><call><name>elements</name><argument_list>()</argument_list></call></expr>;</return>
+            </block_content>}</block></function>
+        }</block></class></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3901054.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>handleDirBrowseButtonPressed</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>DirectoryDialog</name></type> <name>dialog</name> <init>= <expr><operator>new</operator> <call><name>DirectoryDialog</name><argument_list>(<argument><expr><call><name>getContainer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getShell</name><argument_list>( , <argument><expr><name><name>SWT</name><operator>.</operator><name>SAVE</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>dialog</name><operator>.</operator><name>setMessage</name></name><argument_list>(<argument><expr><name><name>Messages</name><operator>.</operator><name>DirSelect</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>dialog</name><operator>.</operator><name>setFilterPath</name></name><argument_list>(<argument><expr><call><name>getDirValue</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>dir</name> <init>= <expr><call><name><name>dialog</name><operator>.</operator><name>open</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>dir</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>_dirCombo</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name>dir</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>            
+        </block_content>}</block></if></if_stmt>            
+    </block_content>}</block></function>
+</unit>

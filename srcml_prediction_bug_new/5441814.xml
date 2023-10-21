@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11662983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>writeElementAttributes</name><parameter_list>(<parameter><decl><type><name>NamedNodeMap</name></type> <name>attributes</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>attributes</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>  
+            <decl_stmt><decl><type><name>Attr</name></type> <name>attr</name> <init>= <expr><operator>(</operator><name>Attr</name><operator>)</operator><call><name><name>attributes</name><operator>.</operator><name>item</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></for>
+
+            <expr_stmt><expr><call><name>write</name><argument_list>(<argument><expr><call><name><name>attr</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"= \""</literal> <operator>+</operator> <call><name><name>attr</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"\""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+            <if_stmt><if>if <condition>(<expr><name>i</name> <operator>&lt;</operator> <call><name><name>attributes</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name>write</name><argument_list>(<argument><expr><literal type="char">' '</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></function>
+</unit>

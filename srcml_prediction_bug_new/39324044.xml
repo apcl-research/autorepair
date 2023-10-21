@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25242696.java">    <function><type><specifier>public</specifier> <name>Argument</name></type> <name>getVarArg</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>offset</name></decl></parameter>)</parameter_list>  
+        <throws>throws <argument><expr><name>MemoryException</name></expr></argument></throws> <block>{<block_content>  
+        <comment type="line">// Fetch from memory</comment>
+        <return>return <expr><operator>new</operator> <call><name>Argument</name><argument_list>(<argument><expr><name><name>memoryMap</name><operator>.</operator><name>getWord</name></name><argument_list>(<argument><expr><name>memoryBase</name> <operator>+</operator> <operator>(</operator><name>Rn</name> <operator>-</operator> <name>NUM_REGISTER_ARGUMENTS</name><operator>)</operator> <operator>*</operator> <literal type="number">4</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

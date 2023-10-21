@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25889983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>onSurfaceCreated</name><parameter_list>(<parameter><decl><type><name>GL10</name></type> <name>gl</name></decl></parameter>, <parameter><decl><type><name>EGLConfig</name></type> <name>config</name></decl></parameter>)</parameter_list> 
+    <block>{<block_content>   
+		<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>i</name></name><argument_list>(<argument><expr><literal type="string">"DagRenderer"</literal></expr></argument>,<argument><expr><literal type="string">"Surface Created"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		
+		<comment type="line">//Enable saturation</comment>
+		<expr_stmt><expr><call><name><name>gl</name><operator>.</operator><name>glEnable</name></name> <argument_list>(<argument><expr><name><name>GL10</name><operator>.</operator><name>GL_BLEND</name></name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>gl</name><operator>.</operator><name>glBlendFunc</name></name> <argument_list>(<argument><expr><name><name>GL10</name><operator>.</operator><name>GL_SRC_ALPHA</name></name></expr></argument>, <argument><expr><name><name>GL10</name><operator>.</operator><name>GL_ONE_MINUS_SRC_ALPHA</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>gl</name><operator>.</operator><name>glEnableClientState</name></name><argument_list>(<argument><expr><name><name>GL10</name><operator>.</operator><name>GL_VERTEX_ARRAY</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>gl</name><operator>.</operator><name>glEnableClientState</name></name><argument_list>(<argument><expr><name><name>GL10</name><operator>.</operator><name>GL_TEXTURE_COORD_ARRAY</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>gl</name><operator>.</operator><name>glClearColor</name></name><argument_list>(<argument><expr><literal type="number">0.0f</literal></expr></argument>, <argument><expr><literal type="number">1.0f</literal></expr></argument>, <argument><expr><literal type="number">0.0f</literal></expr></argument>, <argument><expr><literal type="number">0.0f</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		
+    </block_content>}</block></function>
+</unit>

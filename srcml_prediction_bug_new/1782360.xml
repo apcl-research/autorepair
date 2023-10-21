@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22084596.java">    <function><type><specifier>public</specifier> <name>WebImage</name></type> <name>getImageWithSource</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>source</name></decl></parameter>   )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>WebImage</name><index>[]</index></name></type> <name>images</name> <init>= <expr><call><name>getImages</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>images</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>HttpUnitUtils</name><operator>.</operator><name>matches</name></name><argument_list>( <argument><expr><name>source</name></expr></argument>, <argument><expr><name><name>images</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>getSource</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><name><name>images</name><index>[<expr><name>i</name></expr>]</index></name></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11702783.java">  <function><type><specifier>private</specifier> <name>Category</name></type> <name>getChildCategory</name><parameter_list>(<parameter><decl><type><name>Configuration</name></type> <name>aConfig</name></decl></parameter>, <parameter><decl><type><name>Category</name></type> <name>aParent</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>aName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Category</name></type> <name>child</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>aParent</name> <operator>==</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>aConfig</name><operator>.</operator><name>containsCategory</name></name><argument_list>(<argument><expr><name>aName</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>child</name> <operator>=</operator> <call><name><name>aConfig</name><operator>.</operator><name>getCategory</name></name><argument_list>(<argument><expr><name>aName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>aParent</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name>aParent</name> <operator>instanceof</operator> <name>NestedCategory</name></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><name>child</name> <operator>=</operator> <operator>(</operator><operator>(</operator><name>NestedCategory</name><operator>)</operator> <name>aParent</name><operator>)</operator><operator>.</operator><call><name>getCategory</name><argument_list>(<argument><expr><name>aName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    
+    <return>return <expr><name>child</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18087881.java">   <comment type="block">/*
+    * private void loadData() { gestureClasses = new ArrayList&lt;GestureClass&gt;();
+    * 
+    * for (GestureClass dataObject : storageManager.load(GestureClass.class)) {
+    * gestureClasses.add(dataObject); }
+    * 
+    * for (GestureSet dataObject : storageManager.load GestureSet.class)) {
+    * gestureSets.add(dataObject); } } // loadData
+</comment></unit>

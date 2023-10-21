@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50582983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>service</name><parameter_list>(<parameter><decl><type><name>HttpServletRequest</name></type> <name>req</name></decl></parameter>, <parameter><decl><type><name>HttpServletResponse</name></type> <name>res</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ServletException</name></expr></argument>, <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Enumeration</name></type> <name>e</name> <init>= <expr><call><name><name>myTag</name><operator>.</operator><name>getAttributeNames</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>e</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>attributeName</name> <init>= <expr><operator>(</operator><operator>(</operator><name>String</name><operator>)</operator><call><name><name>e</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>toLowerCase</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>String</name></type> <name>theName</name> <init>= <expr><literal type="string">"com.tagtraum.jo.ssi."</literal> <operator>+</operator> <name>attributeName</name></expr></init></decl>;</decl_stmt>
+
+            <expr_stmt><expr><call><name><name>req</name><operator>.</operator><name>setAttribute</name></name><argument_list>(<argument><expr><name>theName</name></expr></argument>, <argument><expr><call><name><name>myTag</name><operator>.</operator><name>getAttribute</name></name><argument_list>(<argument><expr><name>attributeName</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+     
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26012596.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>goOffline</name><parameter_list>()</parameter_list> <block>{<block_content>
+        
+        <expr_stmt><expr><call><name>log</name><argument_list>(<argument><expr><literal type="string">"announcement: leaving the network"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>stopping</name></name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>PeerAnnouncement</name></type> <name>announcement</name>
+            <init>= <expr><operator>new</operator> <call><name>PeerAnnouncement</name><argument_list>()</argument_list></call></expr></init></decl>, <decl><type ref="prev"/><name>getPeerName</name></decl>,
+                                    <decl><type ref="prev"/><name>null</name></decl>, <decl><type ref="prev"/><name>true</name></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>pipe</name><operator>.</operator><name>sendObject</name></name><argument_list>(<argument><expr><name>announcement</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>ioe</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <comment type="line">// do nothing - we did our best</comment>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

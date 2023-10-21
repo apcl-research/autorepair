@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40163983.java">	<function><type><specifier>protected</specifier> <name>Element</name></type> <name>getInputElement</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="block">/* have to first test to see if we are rendering an optional, simpleContent element. if so,
+			then we must test to see if the parent exists before creating the inputElement
+
+			*/</comment>
+		<decl_stmt><decl><type><name>Element</name></type> <name>inputElement</name> <init>= <expr><call><name><name>super</name><operator>.</operator><name>getInputElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>schemaNode</name><operator>.</operator><name>isSimpleOrComplexContent</name></name><argument_list>(  &amp;&amp;</operator> <operator>!</operator><call><name><name>sh</name><operator>.</operator><name>isRequiredBranch</name></name><argument_list>(<argument><expr><name>schemaNode</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>Element</name></type> <name>nodeExists</name> <init>= <expr><call><name>nodeExistsTest</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>nodeExists</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>inputElement</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><name>nodeExists</name></expr>;</return>
+		</block_content>}</block></if>
+		<else>else <block>{<block_content>
+			<return>return <expr><name>inputElement</name></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

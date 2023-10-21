@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11492783.java">    <function><type><specifier>public</specifier> <name>DatatypeElementFactory</name></type> <name>getElementFactory</name><parameter_list>(<parameter><decl><type><name>QName</name></type> <name>elementQName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>DatatypeElementFactory</name></type> <name>result</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>DO_INTERN_QNAME</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>elementQName</name> <operator>=</operator> <call><name>intern</name><argument_list>(<argument><expr><name>elementQName</name></expr></argument>)</argument_list></call></expr> 
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>DocumentFactory</name></type> <name>factory</name> <init>= <expr><call><name><name>elementQName</name><operator>.</operator><name>getDocumentFactory</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>factory</name> <operator>instanceof</operator> <name>DatatypeElementFactory</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>result</name> <operator>=</operator> <operator>(</operator><name>DatatypeElementFactory</name><operator>)</operator> <name>factory</name></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

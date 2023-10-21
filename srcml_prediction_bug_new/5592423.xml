@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29087696.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isLeaf</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>node</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <comment type="line">// Return true for any node with no children</comment>
+    <decl_stmt><decl><type><name>Node</name></type> <name>leafNode</name> <init>= <expr><operator>(</operator> <operator>(</operator><name>wpTreeNode</name><operator>)</operator> <name>node</name><operator>)</operator><operator>.</operator><call><name>getNode</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><call><name><name>super</name><operator>.</operator><name>getChildCount</name></name><argument_list>(<argument><expr><name>leafNode</name></expr></argument>)</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>  )</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></if>
+    <else>else <block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><call><name><name>leafNode</name><operator>.</operator><name>hasAttributes</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+      </block_content>}</block></if></if_stmt>
+      <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

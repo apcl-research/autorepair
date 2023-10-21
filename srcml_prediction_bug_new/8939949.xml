@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12269996.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>internalWrite</name><parameter_list>(<parameter><decl><type><name>ByteBuffer</name></type> <name>buffer</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument>, <argument><expr><name>BadDescriptorException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name>checkOpen</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        
+        <decl_stmt><decl><type><name>WritableByteChannel</name></type> <name>writeChannel</name> <init>= <expr><operator>(</operator><name>WritableByteChannel</name><operator>)</operator><name>channel</name></expr></init></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><call><name>isSeekable</name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>originalModes</name><operator>.</operator><name>isAppendable</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>FileChannel</name></type> <name>fileChannel</name> <init>= <expr><operator>(</operator><name>FileChannel</name><operator>)</operator><name>channel</name></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>fileChannel</name><operator>.</operator><name>position</name></name><argument_list>(<argument><expr><name><name>fileChannel</name><operator>.</operator><name>size</name></name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        
+        <return>return <expr><call><name><name>writeChannel</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>buffer</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

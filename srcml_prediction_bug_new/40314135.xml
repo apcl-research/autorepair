@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18452996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>listElement</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>Element</name></type> <name>e</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>indent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    <expr_stmt><expr><call><name><name>_log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><name>indent</name> <operator>+</operator> <literal type="string">"*Element, name:"</literal> <operator>+</operator> 
+		                     <call><name><name>e</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">", text:"</literal> <operator>+</operator> 
+		                     <call><name><name>e</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>trim</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">//List all attributes</comment>
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Attribute</name></argument>&gt;</argument_list></name></type> <name>as</name> <init>= <expr><call><name><name>e</name><operator>.</operator><name>getAttributes</name></name><argument_list>()</argument_list></call></expr></init></decl> 
+		<init>= <expr><call><name>listAttributes</name><argument_list>(<argument><expr><name>as</name></expr></argument>, <argument><expr><name>indent</name> <operator>+</operator> <literal type="string">" "</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<comment type="line">//List all children</comment>
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>Element</name></argument>&gt;</argument_list></name></type> <name>c</name> <init>= <expr><call><name><name>e</name><operator>.</operator><name>getChildren</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>listElements</name><argument_list>(<argument><expr><name>c</name></expr></argument>, <argument><expr><name>indent</name> <operator>+</operator> <literal type="string">" "</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

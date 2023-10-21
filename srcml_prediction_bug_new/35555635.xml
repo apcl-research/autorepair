@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46659915.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>buttonPrevious</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>removeLinkedList</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>HistoryData</name></type> <name>historyData</name> <init>= <expr><call><name>getLinkedList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>currentLogId</name> <operator>=</operator> <name><name>historyData</name><operator>.</operator><name>prevLogId</name></name> 
+		<name>currentPage</name><operator>--</operator></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>buttonApplyExecute</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// currentPage = historyQueue.size() - 1;</comment>
+
+		<expr_stmt><expr><call><name>processPage</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>currentPage</name> <operator>&lt;=</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>btnPrev</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>btnPrev</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>currentPage</name> <operator>&gt;=</operator> <name>totalPage</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>btnNext</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>btnNext</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

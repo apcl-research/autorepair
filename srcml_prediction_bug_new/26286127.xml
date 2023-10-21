@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23048891.java">    <function><type><specifier>public</specifier> <name>AbstractButton</name></type> <name>addProgressBar</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>maxValue</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>allowCancelButton</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name>removeProgressBar</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>progressBar</name> <operator>=</operator> <operator>new</operator> <call><name>JProgressBar</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>maxValue</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>add</name><argument_list>(<argument><expr><name>progressBar</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>allowCancelButton</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>cancelButton</name> <operator>=</operator> <operator>new</operator> <call><name><name>ExtraWindow</name><operator>.</operator><name>CloseButton</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>add</name><argument_list>(<argument><expr><name>cancelButton</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <else>else<block type="pseudo"><block_content>
+            <expr_stmt><expr><name>cancelButton</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        <return>return <expr><name>cancelButton</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

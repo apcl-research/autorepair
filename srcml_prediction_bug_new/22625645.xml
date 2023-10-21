@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46065529.java">	<function><type><specifier>protected</specifier> <name>String</name></type> <name>getTermStringFromStringArray</name><parameter_list>(<parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>vals</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>vals</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="string">""</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>tmp</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<for>for  <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>vals</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+				<expr_stmt><expr><name>tmp</name> <operator>+=</operator> <literal type="string">" "</literal> <operator>+</operator> <name><name>vals</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>substring</name><argument_list>(<argument><expr><name><name>vals</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>lastIndexOf</name><argument_list>(<argument><expr><literal type="string">":"</literal></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><name><name>vals</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>length</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></for>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content/>}</block></catch></try>
+		<return>return <expr><call><name><name>tmp</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/342407.java">    <function><type><specifier>public</specifier> <name>Node</name></type> <name>cloneNode</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>deep</name></decl></parameter>)</parameter_list>  
+
+    	<throws>throws <argument><expr><name>CloneNotSupportedException</name></expr></argument></throws> <block>{<block_content>
+
+    	<decl_stmt><decl><type><name>DocumentTypeImpl</name></type> <name>newnode</name> <init>= <expr><operator>(</operator><name>DocumentTypeImpl</name><operator>)</operator><call><name><name>super</name><operator>.</operator><name>cloneNode</name></name><argument_list>(<argument><expr><name>deep</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    	<comment type="line">// NamedNodeMaps must be cloned explicitly, to avoid locking them.</comment>
+    	<expr_stmt><expr><name><name>newnode</name><operator>.</operator><name>entities</name></name>  <operator>=</operator> <call><name><name>entities</name><operator>.</operator><name>cloneMap</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    	<expr_stmt><expr><name><name>newnode</name><operator>.</operator><name>notations</name></name> <operator>=</operator> <call><name><name>notations</name><operator>.</operator><name>cloneMap</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    	<expr_stmt><expr><name><name>newnode</name><operator>.</operator><name>elements</name></name>  <operator>=</operator> <call><name><name>elements</name><operator>.</operator><name>cloneMap</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+    	<return>return <expr><name>newnode</name></expr>;</return>
+
+    </block_content>}</block></function> <comment type="line">// cloneNode(boolean):Node</comment>
+</unit>

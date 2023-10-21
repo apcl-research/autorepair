@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">        <function><type><specifier>public</specifier> <name>void</name></type> <name>createWorker</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>i</name></decl></parameter>, <parameter><decl><type><name>Runnable</name></type> <name>r</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <try>try <block>{<block_content>
+                <expr_stmt><expr><call><name><name>lock</name><operator>.</operator><name>lock</name></name><argument_list>( ;</argument_list></call></expr>
+
+                <assert>assert <expr><name><name>threads</name><index>[<expr><name>i</name></expr>]</index></name> <operator>==</operator> <literal type="null">null</literal></expr>;</assert>
+                <expr_stmt><expr><name><name>threads</name><index>[<expr><name>i</name></expr>]</index></name> <operator>=</operator> <operator>new</operator> <call><name>Thread</name><argument_list>(<argument><expr><name>r</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>threadMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name><name>threads</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>, <argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name><name>stateOf</name><index>[<expr><name>i</name></expr>]</index></name> <operator>=</operator> <name>CREATED</name></expr>;</expr_stmt>
+                <expr_stmt><expr><name><name>inState</name><index>[<expr><name>CREATED</name></expr>]</index></name><operator>++</operator></expr>;</expr_stmt>
+            </block_content>}</block> <finally>finally <block>{<block_content>
+                <expr_stmt><expr><call><name><name>lock</name><operator>.</operator><name>unlock</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></finally></try>
+        </block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26232683.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isEquivalentTo</name><parameter_list>(<parameter><decl><type><name>DatabaseColumn</name></type> <name>other</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>check</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><operator>!</operator> <operator>(</operator><operator>(</operator><name>other</name> <operator>instanceof</operator> <name>DatabaseByteColumn</name><operator>)</operator>
+           <operator>||</operator><operator>(</operator><operator>(</operator><operator>(</operator><name>check</name> <operator>&amp;</operator> <name>TYPE_CHECK_NARROWING</name><operator>)</operator> <operator>&gt;</operator> <literal type="number">0</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><name>other</name> <operator>instanceof</operator> <name>DatabaseCardinalColumn</name><operator>)</operator><operator>)</operator><operator>)</operator></expr>)</condition> <block>{<block_content>
+      <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <return>return <expr><call><name><name>super</name><operator>.</operator><name>isEquivalentTo</name></name><argument_list>(<argument><expr><name>other</name></expr></argument>, <argument><expr><name>check</name></expr></argument> ;</argument_list></call></expr>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

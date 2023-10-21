@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24104483.java">    <function><type><specifier>protected</specifier> <name>double</name></type> <name>getSizeData</name><parameter_list>(<parameter><decl><type><name>VisualItem</name></type> <name>item</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>( <expr><call><name><name>item</name><operator>.</operator><name>canGetString</name></name><argument_list>(<argument><expr><name>m_sizeLabelName</name></expr></argument>)</argument_list></call></expr> )</condition> <block>{<block_content>
+            <try>try <block>{<block_content>
+                <return>return <expr><operator>(</operator><call><name><name>Double</name><operator>.</operator><name>parseDouble</name></name><argument_list>(<argument><expr><call><name><name>item</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><name>m_sizeLabelName</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call> <operator>)</operator></expr>;</return>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>NumberFormatException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <return>return <expr><literal type="number">0</literal></expr>;</return> <comment type="line">// size data can't be parse (wrong number format)</comment>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><literal type="number">0</literal></expr>;</return> <comment type="line">// no size data available</comment>
+    </block_content>}</block></function>
+</unit>

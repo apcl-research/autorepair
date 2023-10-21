@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37392783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>testDoEnd</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>includeTag</name><operator>.</operator><name>setName</name></name><argument_list>(<argument><expr><literal type="string">"test.url"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>includeTag</name><operator>.</operator><name>setResource</name></name><argument_list>(<argument><expr><literal type="string">"test.org.chwf.taglib.ji18n.IncludeTagTest"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>includeTag</name><operator>.</operator><name>doEnd</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <decl_stmt><decl><type><name>MockRequestDispatcher</name></type> <name>dispatcher</name> <init>= <expr><call><name>getRequest</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getMockRequestDispatcher</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name>assertEquals</name><argument_list>( <argument><expr><literal type="string">"/url.jsp"</literal></expr></argument>, <argument><expr><call><name><name>dispatcher</name><operator>.</operator><name>getURI</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

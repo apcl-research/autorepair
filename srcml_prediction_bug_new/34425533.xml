@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42659983.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>item</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// color string can be sufficiently</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>i</name> <init>= <expr><call><name><name>item</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"\\\\#\\."</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> <comment type="line">// color default</comment>
+        <expr_stmt><expr><name>i</name> <operator>=</operator> <call><name><name>i</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"\\\\#[0-9a-fA-F]{6}"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument> ;</argument_list></call> <comment type="line">// color hex</comment>
+        <return>return <expr><name>i</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

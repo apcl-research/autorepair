@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46370062.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>setSelectedContact</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>name</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>name</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>  )</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <for>for <control>(<init><decl><type><name>Contact</name></type> <name>c</name> <range>: <expr><call><name><name>contacts</name><operator>.</operator><name>getAll</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>c</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>contactList</name><operator>.</operator><name>setSelectedValue</name></name><argument_list>(<argument><expr><name>c</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

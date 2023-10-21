@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18442983.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>isEqual</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name><name>byte</name><index>[]</index></name></type> <name>rec</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>fin</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>i</name></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>st</name> <init>= <expr><name>fin</name> <operator>-</operator> <name><name>recSep</name><operator>.</operator><name>length</name></name> <operator>-</operator> <literal type="number">1</literal></expr></init></decl> 
+		<init>= <expr><name>boolean</name> <operator>&gt;=</operator> <literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+		<for>for <control>(<init><expr><name>i</name> <operator>=</operator> <literal type="number">0</literal></expr>;</init> <condition><expr><name>ret</name> <operator>&amp;&amp;</operator> <operator>(</operator><name>i</name> <operator>&lt;</operator> <name><name>recSep</name><operator>.</operator><name>length</name></name><operator>)</operator></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<expr_stmt><expr><name>ret</name> <operator>=</operator> <operator>(</operator><name><name>recSep</name><index>[<expr><name>i</name></expr>]</index></name> <operator>==</operator> <name><name>rec</name><index>[<expr><name>st</name> <operator>+</operator> <name>i</name></expr>]</index></name><operator>)</operator></expr>;</expr_stmt>
+		</block_content>}</block></for>
+
+		<return>return <expr><name>ret</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

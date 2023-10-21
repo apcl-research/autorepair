@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19482983.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>prooveImp</name><parameter_list>(<parameter><decl><type><name>IPred2</name></type> <name>r</name></decl></parameter>, <parameter><decl><type><name>IFactory</name></type> <name>fact</name></decl></parameter>, <parameter><decl><type><name>IHypothesis</name></type> <name>H</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<decl_stmt><decl><type><specifier>final</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>INorPPU</name></argument>&gt;</argument_list></name></type> <name>disj</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayList</name><argument_list type="generic">&lt;<argument><name>INorPPU</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>disj</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>NormalizedPPList</name><argument_list>(<argument><expr><name>vars</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>normalizePPNeg</name></name><argument_list>(<argument><expr><name>fact</name></expr></argument>, <argument><expr><name>disj</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// not p &lt;=&gt; pred(disj)</comment>
+
+		<return>return <expr><call><name>proove</name><argument_list>(<argument><expr><name>r</name></expr></argument>, <argument><expr><name>fact</name></expr></argument>, <argument><expr><name>H</name></expr></argument>, <argument><expr><name>disj</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name><name>fact</name><operator>.</operator></name>&lt;<name>INorPPU</name><operator>&gt;</operator> <call><name>newNormalizationOrigin</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+
+	</block_content>}</block></function>
+</unit>

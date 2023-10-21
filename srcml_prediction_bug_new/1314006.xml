@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14141596.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>copyAttributesToNode</name><parameter_list>(<parameter><decl><type><name>NodeAdapter</name></type> <name>node</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// reactivate all settings from nodeAttributes:</comment>
+        <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>nodeAttributes</name><operator>.</operator><name>keySet</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>key</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <comment type="line">//to avoid self reference:</comment>
+            <expr_stmt><expr><call><name>setNodeAttribute</name><argument_list>(<argument><expr><name>key</name></expr></argument>, <argument><expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>nodeAttributes</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></argument>,
+                    <argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+	</block_content>}</block></function>
+</unit>

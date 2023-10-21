@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44679996.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getColumnName</name><parameter_list>(<parameter><decl><type><name>ResultSetMetaData</name></type> <name>md</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>i</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>colName</name> <init>= <expr><call><name><name>md</name><operator>.</operator><name>getColumnName</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>colLabel</name> <init>= <expr><call><name><name>md</name><operator>.</operator><name>getColumnLabel</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>colLabel</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>colLabel</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name>colLabel</name></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>colName</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

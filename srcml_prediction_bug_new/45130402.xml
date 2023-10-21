@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25012983.java">	<function><type><specifier>public</specifier> <name>Value</name></type> <name>evaluate</name><parameter_list>(<parameter><decl><type><name><name>Value</name><index>[]</index></name></type> <name>values</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ExternalFunctionException</name></expr></argument></throws> <block>{<block_content>
+
+		<decl_stmt><decl><type><name>StringBuffer</name></type> <name>output</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for  <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>values</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><operator>(</operator><name><name>values</name><index>[<expr><name>i</name></expr>]</index></name> <operator>instanceof</operator> <name>Literal</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+				<throw>throw <expr><operator>new</operator> <call><name>ExternalFunctionException</name><argument_list>(<argument><expr><literal type="string">"Values need to be literals to be concatenated"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+			</block_content>}</block></if></if_stmt>
+			<decl_stmt><decl><type><name>String</name></type> <name>string</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>converter</name><operator>.</operator><name>convertString</name></name><argument_list>(<argument><expr><operator>(</operator><name>Literal</name><operator>)</operator> <name><name>values</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>output</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name>string</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><call><name><name>this</name><operator>.</operator><name>converter</name><operator>.</operator><name>convertString</name></name><argument_list>(<argument><expr><call><name><name>output</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+		
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38544096.java">    <function><type><specifier>protected</specifier> <name>Page</name></type> <name>getPageOn</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IndexOutOfBoundsException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if<condition>(<expr><name>index</name> <operator>&lt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name>IndexOutOfBoundsException</name><argument_list>()</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+        <decl_stmt><decl><type><name>Page</name></type> <name>findPage</name> <init>= <expr><name>firstPage</name></expr></init></decl>;</decl_stmt>
+        <while>while<condition>(<expr><name>index</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <try>try  
+                <expr_stmt><expr><name>findPage</name><operator>=</operator><call><name><name>findPage</name><operator>.</operator><name>getNext</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch<parameter_list>(<parameter><decl><type><name>NullPointerException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <throw>throw <expr><operator>new</operator> <call><name>IndexOutOfBoundsException</name><argument_list>()</argument_list></call></expr>;</throw>
+            </block_content>}</block></catch></try>
+            <expr_stmt><expr><name>index</name><operator>--</operator></expr>;</expr_stmt>
+        </block_content>}</block></while>
+        <return>return <expr><name>findPage</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

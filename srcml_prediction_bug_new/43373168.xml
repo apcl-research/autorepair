@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26352783.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getReverseBaseNum</name><parameter_list>(<parameter><decl><type><name>char</name></type> <name>base</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <switch>switch  <condition>(<expr><name>base</name></expr>)</condition> <block>{<block_content>
+            <case>case <expr><literal type="char">'A'</literal></expr>:</case>
+            <case>case <expr><literal type="char">'a'</literal></expr>:</case>
+                <return>return <expr><name><name>baseCount</name><index>[<expr><literal type="number">4</literal></expr>]</index></name></expr>;</return>
+            <case>case <expr><literal type="char">'C'</literal></expr>:</case>
+            <case>case <expr><literal type="char">'c'</literal></expr>:</case>
+                <return>return <expr><name><name>baseCount</name><index>[<expr><literal type="number">5</literal></expr>]</index></name></expr>;</return>
+            <case>case <expr><literal type="char">'G'</literal></expr>:</case>
+            <case>case <expr><literal type="char">'g'</literal></expr>:</case>
+                <return>return <expr><name><name>baseCount</name><index>[<expr><literal type="number">6</literal></expr>]</index></name></expr>;</return>
+            <case>case <expr><literal type="char">'T'</literal></expr>:</case>
+            <case>case <expr><literal type="char">'t'</literal></expr>:</case>
+                <return>return <expr><name><name>baseCount</name><index>[<expr><literal type="number">7</literal></expr>]</index></name></expr>;</return>
+            <default>default:</default>
+                <return>return <expr><literal type="number">0</literal></expr>;</return>
+        </block_content>}</block></switch>
+    </block_content>}</block></function>
+</unit>

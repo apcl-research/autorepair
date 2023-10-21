@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31286192.java">    <function><type><specifier>protected</specifier> <name>Word</name></type> <name>createWord</name><parameter_list>(<parameter><decl><type><name>Synset</name></type> <name>synset</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>lemma</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>senseKey</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>usageCnt</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Word</name></type> <name>w</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>synset</name><operator>.</operator><name>getPOS</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name><name>POS</name><operator>.</operator><name>VERB</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>w</name> <operator>=</operator> <operator>new</operator> <call><name>MutableVerb</name><argument_list>(<argument><expr><name>synset</name></expr></argument>, <argument><expr><name>index</name></expr></argument>, <argument><expr><name>lemma</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+          <else>else <block>{<block_content>
+            <expr_stmt><expr><name>w</name> <operator>=</operator> <operator>new</operator> <call><name>Word</name><argument_list>(<argument><expr><name>synset</name></expr></argument>, <argument><expr><name>index</name></expr></argument>, <argument><expr><name>lemma</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            
+        </block_content>}</block></else></if_stmt>
+        <return>return <expr><name>w</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

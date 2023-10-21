@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2973329.java">    <function><type><specifier>public</specifier> <name>Complex</name></type> <name>calculate</name><parameter_list>( <parameter><decl><type><name>CalculationContext</name></type> <name>context</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <if_stmt><if>if   <condition>( <expr><name>context</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>( <argument><expr><literal type="string">"context is null"</literal></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <decl_stmt><decl><type><name><name>Deque</name><argument_list type="generic">&lt;<argument><name>Complex</name></argument>&gt;</argument_list></name></type> <name>stack</name> <init>= <expr><operator>new</operator> <call><name><name>ArrayDeque</name><argument_list type="generic">&lt;<argument><name>Complex</name></argument>&gt;</argument_list></name><argument_list>( <argument><expr><name>maxDataStackSize</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for <control>( <init><decl><type><name>ExpressionComponent</name></type> <name>component</name> <range>: <expr><name>components</name></expr></range></decl></init> )</control> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>component</name><operator>.</operator><name>calculate</name></name><argument_list>( <argument><expr><name>stack</name></expr></argument>, <argument><expr><name>context</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <if_stmt><if>if <condition>( <expr><call><name><name>stack</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="number">1</literal></expr> )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>AssertionError</name><argument_list>( <argument><expr><name>stack</name></expr></argument> )</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><call><name><name>stack</name><operator>.</operator><name>pop</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

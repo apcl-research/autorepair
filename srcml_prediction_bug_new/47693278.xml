@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38109996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>calculateEffectiveParameters</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>SVFParameters</name></type> <name>p</name> <init>= <expr><operator>new</operator> <call><name>SVFParameters</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name>getCommandsCount</name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <comment type="line">// For each command</comment>
+            <decl_stmt><decl><type><name>SVFCommand</name></type> <name>command</name> <init>= <expr><call><name>get</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>command</name> <operator>instanceof</operator> <name>SVFAction</name></expr>)</condition><block type="pseudo"><block_content>
+                <comment type="line">// Set effective parameters</comment>
+                <expr_stmt><expr><operator>(</operator><operator>(</operator><name>SVFAction</name><operator>)</operator> <name>command</name><operator>)</operator><operator>.</operator><name>parameters</name> <operator>=</operator> <operator>new</operator> <call><name>SVFParameters</name><argument_list>(<argument><expr><name>p</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+            <comment type="line">// Merge parameters</comment>
+            <expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>mergeParameters</name></name><argument_list>(<argument><expr><name>command</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

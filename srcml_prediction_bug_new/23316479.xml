@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25299983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeTuple</name><parameter_list>(<parameter><decl><type><name>TreeTuple</name></type> <name>tuple</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>relation</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>tuple</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>in</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree2</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>remove</name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree1</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>(<expr><call><name><name>in</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree2</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>isEmpty</name><argument_list>( )</argument_list></call></expr>
+			<comment type="block">/*in.remove(tuple.getTree2());
+			in.remove(tuple.getTree2());
+			*/</comment>
+			<expr><operator>.</operator><call><name>remove</name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree1</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if<condition>(<expr><call><name><name>out</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree1</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>isEmpty</name><argument_list>( )</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><call><name><name>tuple</name><operator>.</operator><name>getTree1</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>		
+	</block_content>}</block></function>
+</unit>

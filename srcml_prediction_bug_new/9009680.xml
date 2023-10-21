@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44370062.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>ensureCapacity</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>minCapacity</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>modCount</name><operator>++</operator></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>oldCapacity</name> <init>= <expr><name><name>elementData</name><operator>.</operator><name>length</name></name></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>minCapacity</name> <operator>&gt;</operator> <name>oldCapacity</name></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>int</name></type> <name>newCapacity</name> <init>= <expr><operator>(</operator><name>oldCapacity</name> <operator>*</operator> <literal type="number">3</literal><operator>)</operator> <operator>/</operator> <literal type="number">2</literal> <operator>+</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if  <condition>(<expr><name>newCapacity</name> <operator>&lt;</operator> <name>minCapacity</name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><name>newCapacity</name> <operator>=</operator> <name>minCapacity</name></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<comment type="line">// minCapacity is usually close to size, so this is a win:</comment>
+			<expr_stmt><expr><name>elementData</name> <operator>=</operator> <call><name><name>Arrays</name><operator>.</operator><name>copyOf</name></name><argument_list>(<argument><expr><name>elementData</name></expr></argument>, <argument><expr><name>newCapacity</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

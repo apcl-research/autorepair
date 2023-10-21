@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490524.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>remove</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name><name>Ref</name><index>[]</index></name></type>   <name>refs</name>    <init>= <expr><operator>(</operator><name><name>Ref</name><index>[]</index></name><operator>)</operator> <call><name><name>_refs</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toArray</name><argument_list>(<argument><expr><operator>new</operator> <name><name>Ref</name><index>[<expr><call><name><name>_refs</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>boolean</name></type> <name>removed</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+
+    <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>refs</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>  )</control> <block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><name><name>refs</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name><name>_obj</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>o</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>_refs</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name><name>refs</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><name>_oid</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>removed</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></for>
+
+    <return>return <expr><name>removed</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

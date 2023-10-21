@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19392783.java">    <function><type><specifier>protected</specifier> <name>int</name></type> <name>getComponentPixelSize</name><parameter_list>()</parameter_list> <block>{<block_content>
+        
+        <comment type="line">// fetch the component insets</comment>
+        <decl_stmt><decl><type><name>Insets</name></type> <name>insets</name> <init>= <expr><call><name>getInsets</name><argument_list>( ;</operator>
+        
+        <comment type="line">// return the appropriate size</comment>
+        <if_stmt><if>if <condition>(<expr><name>m_orientation</name> <operator>==</operator> <name>ORIENTATION_HORIZONTAL</name></expr>)</condition> <block>{<block_content>
+         
+            <comment type="line">// horizontal scale</comment>
+            <return>return <expr><operator>(</operator><call><name>getWidth</name><argument_list>()</argument_list></call> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>left</name></name> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>right</name></name><operator>)</operator></expr>;</return>
+            
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            
+            <comment type="line">// vertical scale</comment>
+            <return>return <expr><operator>(</operator><call><name>getHeight</name><argument_list>()</argument_list></call> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>top</name></name> <operator>-</operator> <name><name>insets</name><operator>.</operator><name>bottom</name></name><operator>)</operator></expr>;</return>
+            
+        </block_content>}</block></else></if_stmt>
+        
+    </block_content>}</block></function>
+</unit>

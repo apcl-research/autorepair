@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28349996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initErrorRates</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <comment type="line">//init map</comment>
+        <expr_stmt><expr><name>errorRates</name> <operator>=</operator> <operator>new</operator> <call><name><name>HashMap</name><argument_list type="generic">&lt;<argument><name>Network</name></argument>,<argument><name>ErrorRates</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">//assign random beta(1,1)</comment>
+        <for>for <control>(<init><decl><type><name>Network</name></type> <name>eviGraph</name> <range>: <expr><name>peptides</name></expr></range></decl></init>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>double</name></type> <name>fpr</name> <init>= <expr><call><name><name>beta</name><operator>.</operator><name>nextDouble</name></name><argument_list>(<argument><expr><name>fpOffset</name></expr></argument>,<argument><expr><name>tnOffset</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>double</name></type> <name>fnr</name> <init>= <expr><call><name><name>beta</name><operator>.</operator><name>nextDouble</name></name><argument_list>(<argument><expr><name>fnOffset</name></expr></argument>,<argument><expr><name>tpOffset</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>errorRates</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>eviGraph</name></expr></argument>, <argument><expr><operator>new</operator> <call><name>ErrorRates</name><argument_list>(<argument><expr><name>fpr</name></expr></argument>, <argument><expr><name>fnr</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+
+     
+</block_content>}</block></function>
+</unit>

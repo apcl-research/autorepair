@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/33252983.java">    <function><type><specifier>protected</specifier> <name>boolean</name></type> <name>scrollTextWindowTo</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>newX</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>newY</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><specifier>final</specifier> <name>ConstantPoint</name></type> <name>windowOrigin</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>textWindow</name><operator>.</operator><name>getWindowOrigin</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <return>return <expr><call><name>scrollTextWindow</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><name>newX</name> <operator>-</operator> <call><name><name>windowOrigin</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call>
+            <operator>|</operator> <call><name>scrollTextWindow</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>, <argument><expr><name>newY</name> <operator>-</operator> <call><name><name>windowOrigin</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

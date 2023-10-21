@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48452911.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>connect</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>url</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><name>url</name> <operator>=</operator> <literal type="string">"jdbc:mysql://"</literal> <operator>+</operator> <name>hAddr</name> <operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <name>dbName</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>Class</name><operator>.</operator><name>forName</name></name><argument_list>(<argument><expr><literal type="string">"com.mysql.jdbc.Driver"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>newInstance</name><argument_list>()</argument_list></call></expr>  <comment type="line">//not supplied with JDK will have to download http://www.mysql.com/products/connector/j/</comment>
+			<expr_stmt><expr><name>conn</name> <operator>=</operator> <call><name><name>DriverManager</name><operator>.</operator><name>getConnection</name></name><argument_list>(<argument><expr><name>url</name></expr></argument>, <argument><expr><name>uName</name></expr></argument>, <argument><expr><name>pWord</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>err</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Connect Failed: "</literal> <operator>+</operator> <name>url</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

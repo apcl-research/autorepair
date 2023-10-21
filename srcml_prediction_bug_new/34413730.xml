@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/5958891.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>initialiseContextMenu</name><parameter_list>()</parameter_list> 
+		<comment type="line">//initialise the menu the listener</comment>
+		<comment type="line">//NOTE: the rest of the initialisation of this class is done in the tabbox context listener class</comment>
+		<expr_stmt><expr><name>contextMenu</name> <operator>=</operator> <operator>new</operator> <call><name>Menupopup</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>contextMenu</name><operator>.</operator><name>setId</name></name><argument_list>(<argument><expr><name>_contextId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>contextMenu</name><operator>.</operator><name>setParent</name></name><argument_list>(<argument><expr><name>scratchPanel</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>contextListener</name> <operator>=</operator> <operator>new</operator> <call><name>TabboxContextListener</name><argument_list>(<argument><expr><name>this</name></expr></argument>,<argument><expr><name>contextMenu</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>contextMenu</name><operator>.</operator><name>addEventListener</name></name><argument_list>(<argument><expr><literal type="string">"onOpen"</literal></expr></argument>,<argument><expr><name>contextListener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>		
+	</block_content>}</block></function>
+</unit>

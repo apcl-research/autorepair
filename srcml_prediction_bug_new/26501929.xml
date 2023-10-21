@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51089983.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>dereference</name><parameter_list>(<parameter><decl><type><name>VmId</name></type> <name>id</name></decl></parameter>, <parameter><decl><type><name>OID</name></type> <name>oid</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>Log</name><operator>.</operator><name>isDebug</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><name><name>ServerGC</name><operator>.</operator><name>class</name></name></expr></argument>,
+        <argument><expr><literal type="string">"dereferencing from: "</literal> <operator>+</operator> <name>id</name> <operator>+</operator> <literal type="string">" on object: "</literal> <operator>+</operator> <name>oid</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+    </block_content>}</block></if></if_stmt>
+
+    <decl_stmt><decl><type><name>ClientInfo</name></type> <name>info</name> <init>= <expr><operator>(</operator><name>ClientInfo</name><operator>)</operator> <call><name>getClientInfo</name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <synchronized>synchronized <init>(<expr><name>info</name></expr>)</init> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>info</name><operator>.</operator><name>dereference</name></name><argument_list>(<argument><expr><name>oid</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>_gcDerefPerMin</name><operator>.</operator><name>hit</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></synchronized>
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13582996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>freeze</name><parameter_list>(<parameter><decl><type><name>double</name></type> <name>newRate</name></decl></parameter>, <parameter><decl><type><name>BWNode</name></type> <name>lbNode</name></decl></parameter>  <comment type="block">/*, boolean*/</comment> <name>rbCons</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>frozen</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>BWNode</name></type> <name>rbNode</name> <init>= <expr><call><name>getOtherNode</name><argument_list>(<argument><expr><name>lbNode</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><call><name><name>rbNode</name><operator>.</operator><name>removeCon</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// do not adjust the rate while the relation is in rbCons</comment>
+		
+		<expr_stmt><expr><name>rate</name> <operator>=</operator> <name>newRate</name></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>OriginalImpl</name><operator>.</operator><name>newRates</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><name>connection</name></expr></argument>, <argument><expr><call><name><name>bandwidth</name><operator>.</operator><name>inBitPerMillisecond</name></name><argument_list>(<argument><expr><name>newRate</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name><name>rbNode</name><operator>.</operator><name>addRBCon</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24104483.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>paintComponent</name><parameter_list>(<parameter><decl><type><name>Graphics</name></type> <name>g</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>paintComponent</name></name><argument_list>(<argument><expr><name>g</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <decl_stmt><decl><type><name>Insets</name></type> <name>insets</name> <init>= <expr><call><name>getInsets</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>m_drawXGraduations</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>paintXGraduations</name><argument_list>(<argument><expr><name>g</name></expr></argument>, <argument><expr><name>insets</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>m_drawYGraduations</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>paintYGraduations</name><argument_list>(<argument><expr><name>g</name></expr></argument>, <argument><expr><name>insets</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>m_drawHorizontalZeroLine</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>paintHorizontalZeroLine</name><argument_list>(<argument><expr><name>g</name></expr></argument>, <argument><expr><name>insets</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>m_drawVerticalZeroLine</name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>paintVerticalZeroLine</name><argument_list>(<argument><expr><name>g</name></expr></argument>, <argument><expr><name>insets</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        
+    </block_content>}</block></function>
+</unit>

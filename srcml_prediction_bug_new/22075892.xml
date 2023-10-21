@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46111596.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>initialize</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><name>namespaceMap</name> <operator>=</operator> <operator>new</operator> <call><name><name>HashMap</name><argument_list type="generic">&lt;<argument><name>String</name></argument>, <argument><name>String</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>namespaceMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"jhove"</literal></expr></argument>, <argument><expr><literal type="string">"http://hul.harvard.edu/ois/xml/ns/jhove"</literal></expr></argument>)</argument_list></call> 
+		
+		<comment type="line">//If this were to get more accurate, this</comment>
+		<comment type="line">//can be constructed directly from the namespaceMap</comment>
+		<operator>=</operator> <operator>new</operator> <call><name><name>HashMap</name><argument_list type="generic">&lt;<argument><name>String</name></argument>,<argument><name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr>;</expr_stmt>		
+		<decl_stmt><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name></type> <name>l</name> <init>= <expr><operator>new</operator> <call><name><name>LinkedList</name><argument_list type="generic">&lt;<argument><name>String</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><literal type="string">"jhove"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>URIMap</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><literal type="string">"http://hul.harvard.edu/ois/xml/ns/jhove"</literal></expr></argument>, <argument><expr><name>l</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

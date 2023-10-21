@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30181215.java">	<function><type><specifier>public</specifier> <name>QueryResponse</name></type> <name>getJob</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>serverId</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>jobId</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PsiscoreException</name></expr></argument>, <argument><expr><name>InvalidArgumentException</name></expr></argument>, <argument><expr><name>JobStillRunningException</name></expr></argument></throws><block>{<block_content>
+		
+		<decl_stmt><decl><type><name>QueryResponse</name></type> <name>queryResponse</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>psiscoreServerClients</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>serverId</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>InvalidArgumentException</name><argument_list>(<argument><expr><literal type="string">"There is no job with this id"</literal></expr></argument>, <argument><expr><operator>new</operator> <call><name>PsiscoreFault</name><argument_list>( )</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><name>SimplePsiscoreClient</name></type> <name>client</name> <init>= <expr><call><name><name>psiscoreServerClients</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>serverId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>queryResponse</name> <operator>=</operator> <call><name><name>client</name><operator>.</operator><name>getJob</name></name><argument_list>(<argument><expr><name>jobId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+ 
+		<return>return <expr><name>queryResponse</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

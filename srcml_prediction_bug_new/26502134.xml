@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26502783.java">  <function><type><specifier>public</specifier> <name>Server</name></type> <name>newServer</name><parameter_list>(<parameter><decl><type><name>Properties</name></type> <name>props</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RemoteException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>servletUrl</name> <init>= <expr><call><name><name>props</name><operator>.</operator><name>getProperty</name></name><argument_list>(<argument><expr><name>SERVLET_URL_KEY</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <if_stmt><if>if <condition>(<expr><name>servletUrl</name> <operator>==</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>RemoteException</name><argument_list>(<argument><expr><literal type="string">"'"</literal> <operator>+</operator> <name>SERVLET_URL_KEY</name> <operator>+</operator> <literal type="string">"' not specified"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt>
+
+    <try>try <block>{<block_content>
+      <return>return <expr><operator>new</operator> <call><name>ServletServer</name><argument_list>(<argument><expr><name>_addr</name> <operator>=</operator> <operator>new</operator> <call><name>ServletAddress</name><argument_list>(<argument><expr><name>servletUrl</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>UriSyntaxException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>RemoteException</name><argument_list>(<argument><expr><literal type="string">"Could not parse servlet URL property"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

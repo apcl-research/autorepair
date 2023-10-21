@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13482783.java">		<function><type><specifier>public</specifier> <name>void</name></type> <name>visitStaticFieldExpr</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>StaticFieldExpr</name></type> <name>expr</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name><name>SSAPRE</name><operator>.</operator><name>NO_ACCESS_PATHS</name></name></expr>)</condition> <block>{<block_content>
+				<return>return;</return>
+			</block_content>}</block></if></if_stmt>
+
+			<try>try <block>{<block_content>
+				<decl_stmt><decl><type><specifier>final</specifier> <name>FieldEditor</name></type> <name>e</name> <init>= <expr><call><name><name>context</name><operator>.</operator><name>editField</name></name><argument_list>(<argument><expr><call><name><name>expr</name><operator>.</operator><name>field</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+				<if_stmt><if>if <condition>(<expr><operator>!</operator><name><name>e</name><operator>.</operator><name>isVolatile</name></name></expr> )</condition> <block>{<block_content>
+					<expr_stmt><expr><name>firstOrder</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+
+				<expr_stmt><expr><call><name><name>context</name><operator>.</operator><name>release</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>fieldInfo</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>NoSuchFieldException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<comment type="line">// A field wasn't found. happently assume it's synthetic.</comment>
+				<expr_stmt><expr><name>firstOrder</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></function>
+</unit>

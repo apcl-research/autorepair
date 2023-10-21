@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/310899.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addConsoleLog</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>str</name></decl></parameter>, <parameter><decl><type><name>Color</name></type> <name>fgcolor</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>SimpleAttributeSet</name></type> <name>sas</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name>fgcolor</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>sas</name> <operator>=</operator> <operator>new</operator> <call><name>SimpleAttributeSet</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>StyleConstants</name><operator>.</operator><name>setForeground</name></name><argument_list>(<argument><expr><name>sas</name></expr></argument>, <argument><expr><name>fgcolor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<try>try  
+			<decl_stmt><decl><type><name>Document</name></type> <name>doc</name> <init>= <expr><call><name><name>txtpaneConsoleLog</name><operator>.</operator><name>getDocument</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>doc</name><operator>.</operator><name>insertString</name></name><argument_list>(<argument><expr><call><name><name>doc</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>str</name> <operator>+</operator> <literal type="string">"\n"</literal></expr></argument>, <argument><expr><name>sas</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>txtpaneConsoleLog</name><operator>.</operator><name>setCaretPosition</name></name><argument_list>(<argument><expr><call><name><name>doc</name><operator>.</operator><name>getLength</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></function> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content/>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

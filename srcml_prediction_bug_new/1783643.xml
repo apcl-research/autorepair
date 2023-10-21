@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31092696.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>doTestKeepCase</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>preserveTagCase</name></decl></parameter>, <parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>expected1</name></decl></parameter>, <parameter><decl><type><name><name>String</name><index>[]</index></name></type> <name>expected2</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+    	<expr_stmt><expr><call><name>prepareTestCase</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>verifyMatchingBoldNodes</name><argument_list>( <argument><expr><name>wc</name></expr></argument>, <argument><expr><name>request</name></expr></argument>, <argument><expr><name>expected1</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>HTMLParserFactory</name><operator>.</operator><name>setPreserveTagCase</name></name><argument_list>( <argument><expr><name>preserveTagCase</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name>verifyMatchingBoldNodes</name><argument_list>( <argument><expr><name>wc</name></expr></argument>, <argument><expr><name>request</name></expr></argument>, <argument><expr><name>expected2</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

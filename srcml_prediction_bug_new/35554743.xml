@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35549071.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>showPort</name><parameter_list>(<parameter><decl><type><name>boolean</name></type> <name>flag</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>width</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getX</name></name><argument_list>()</argument_list></call> <operator>+</operator> <name><name>this</name><operator>.</operator><name>getWidth</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>height</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>getY</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>portView</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>portView</name> <operator>=</operator> <operator>new</operator> <call><name>Ont33PortView</name><argument_list>(<argument><expr><name>width</name></expr></argument>, <argument><expr><name>height</name></expr></argument>, <argument><expr><name>tfPortId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>portView</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><name>flag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>portView</name><operator>.</operator><name>setVisible</name></name><argument_list>(<argument><expr><name>flag</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<expr_stmt><expr><call><name><name>portView</name><operator>.</operator><name>setCid</name></name><argument_list>(<argument><expr><call><name><name>cbSlot</name><operator>.</operator><name>getSelectedItem</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>portView</name><operator>.</operator><name>checkPid</name></name><argument_list>(<argument><expr><call><name><name>tfPortId</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

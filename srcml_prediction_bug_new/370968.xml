@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636891.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>init</name><parameter_list>(<parameter><decl><type><name>IWorkbench</name></type> <name>workbench</name></decl></parameter>, <parameter><decl><type><name>JarPackageData</name></type> <name>jarPackage</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>isNotNull</name></name><argument_list>(<argument><expr><name>workbench</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>Assert</name><operator>.</operator><name>isNotNull</name></name><argument_list>(<argument><expr><name>jarPackage</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>fJarPackage</name><operator>=</operator> <name>jarPackage</name></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setInitializeFromJarPackage</name> <argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>fSelection</name><operator>=</operator> <operator>new</operator> <call><name>StructuredSelection</name><argument_list>(<argument><expr><call><name><name>fJarPackage</name><operator>.</operator><name>getElements</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setWindowTitle</name><argument_list>(<argument><expr><name><name>JarPackagerMessages</name><operator>.</operator><name>FatJarPackageWizard_windowTitle</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setDefaultPageImageDescriptor</name><argument_list>(<argument><expr><name><name>JavaPluginImages</name><operator>.</operator><name>DESC_WIZBAN_JAR_PACKAGER</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>setNeedsProgressMonitor</name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10176983.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>upgradeValue</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>name</name><operator>.</operator><name>equalsIgnoreCase</name></name><argument_list>(<argument><expr><literal type="string">"NODE_FACTORY"</literal></expr></argument>)</argument_list></call> <operator>&amp;&amp;</operator> <call><name><name>value</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>Boolean</name><operator>.</operator><name>class</name></name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if  <condition>(<expr><operator>(</operator><name>Boolean</name><operator>)</operator> <name>value</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>value</name> <operator>=</operator> <literal type="string">"*"</literal></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><name>value</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><name>value</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

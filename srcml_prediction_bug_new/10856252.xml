@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10682983.java">    <function><type><specifier>private</specifier> <name>File</name></type> <name>createTempTestFile</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>File</name></type> <name>file</name> <init>= <expr><call><name><name>File</name><operator>.</operator><name>createTempFile</name></name><argument_list>(<argument><expr><literal type="string">"FilePartTest"</literal></expr></argument>, <argument><expr><literal type="string">".txt"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>PrintWriter</name></type> <name>out</name> <init>= <expr><operator>new</operator> <call><name>PrintWriter</name><argument_list>(<argument><expr><operator>new</operator> <call><name>FileWriter</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><name>PART_DATA</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>flush</name></name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>file</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18759963.java">    <function><type><specifier>public</specifier> <name>Collection</name></type> <name>getUnconnectedParts</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Vector</name></type>   <name>result</name> <init>= <expr><operator>new</operator> <call><name>Vector</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>it</name> <init>= <expr><call><name><name>allParts</name><operator>.</operator><name>iterator</name></name><argument_list>( ;</argument_list></call></expr></init></decl>
+
+        <while>while <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>MovableSubgraphPart</name></type> <name>g</name> <init>= <expr><operator>(</operator><name>MovableSubgraphPart</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><operator>!</operator> <call><name><name>g</name><operator>.</operator><name>hasInnerGraphLinks</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <operator>!</operator> <call><name><name>g</name><operator>.</operator><name>hasInterGraphLinks</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>result</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>g</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></while>
+
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

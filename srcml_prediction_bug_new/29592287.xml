@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22029091.java">  <function><type><specifier>public</specifier> <name>DStructure</name></type> <name>getStructure</name><parameter_list>(<parameter><decl><type><name>Index</name></type> <name>index</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>DStructure</name></type> <name>ds</name> <init>= <expr><operator>(</operator><name>DStructure</name><operator>)</operator> <call><name><name>pv</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><call><name><name>index</name><operator>.</operator><name>currentElement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>DStructure</name></type> <name>dataStructure</name> <init>= <expr><operator>new</operator> <call><name>DStructure</name><argument_list>(<argument><expr><call><name>getName</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name>extractData</name><argument_list>( <argument><expr><name>dataStructure</name></expr></argument>, <argument><expr><operator>new</operator> <call><name>LinkedList</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>ds</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name>dataStructure</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

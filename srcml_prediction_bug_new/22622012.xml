@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22626891.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getMinimalRecordPaths</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>minimalRecordPaths</name></name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>ArrayList</name></type> <name>paths</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>nameMap</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+				<decl_stmt><decl><type><name>SchemaPath</name></type> <name>schemaPath</name> <init>= <expr><operator>(</operator><name>SchemaPath</name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>( ;</operator>
+				<if_stmt><if>if <condition>(<expr><name><name>schemaPath</name><operator>.</operator><name>requiredByMinimalRecord</name></name></expr>)</condition><block type="pseudo"><block_content>
+					<expr_stmt><expr><call><name><name>paths</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>schemaPath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			</block_content>}</block></for>
+			<expr_stmt><expr><call><name><name>Collections</name><operator>.</operator><name>sort</name></name> <argument_list>(<argument><expr><name>paths</name></expr></argument>, <argument><expr><operator>new</operator> <call><name>SchemaPathComparator</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>minimalRecordPaths</name></name> <operator>=</operator>  <name>paths</name></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name><name>this</name><operator>.</operator><name>minimalRecordPaths</name></name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

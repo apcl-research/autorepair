@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31096983.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getMainClassName</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>className</name> <init>= <expr><call><name><name>_element</name><operator>.</operator><name>getCode</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>className</name><operator>.</operator><name>endsWith</name></name><argument_list>( <argument><expr><name>CLASS_EXTENSION</name></expr></argument>  )</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>className</name> <operator>=</operator> <call><name><name>className</name><operator>.</operator><name>substring</name></name><argument_list>( <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><call><name><name>className</name><operator>.</operator><name>lastIndexOf</name></name><argument_list>( <argument><expr><name>CLASS_EXTENSION</name></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <expr_stmt><expr><name>className</name> <operator>=</operator> <call><name><name>className</name><operator>.</operator><name>replace</name></name><argument_list>( <argument><expr><literal type="char">'/'</literal></expr></argument>, <argument><expr><literal type="char">'.'</literal></expr></argument> )</argument_list></call><operator>.</operator><call><name>replace</name><argument_list>( <argument><expr><literal type="char">'\\'</literal></expr></argument>, <argument><expr><literal type="char">'.'</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>className</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

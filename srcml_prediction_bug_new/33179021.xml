@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>substituteReferences</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name>substituteMultiple</name><argument_list>(
+            <argument><expr><name>escapedHomeDirectoryRe</name></expr></argument>, <argument><expr><name>value</name></expr></argument>, <argument><expr><name>homeDirectory</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name>substituteMultiple</name><argument_list>(
+            <argument><expr><name>escapedFileSeparatorRe</name></expr></argument>, <argument><expr><name>value</name></expr></argument>, <argument><expr><name>fileSeparator</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>value</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>VARIABLE_PREFIX</name></expr></argument>)</argument_list></call> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr> 
+            <comment type="block">/*&amp;&amp; value.indexOf(SHELL_PREFIX) != -1*/</comment>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name>substituteShell</name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>value</name><operator>.</operator><name>indexOf</name></name><argument_list>(<argument><expr><name>SHELL_PREFIX</name></expr></argument>)</argument_list></call> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name>substituteShell</name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+
+        <return>return <expr><name>value</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

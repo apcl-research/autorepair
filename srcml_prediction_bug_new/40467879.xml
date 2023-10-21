@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18094648.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setTextAlign</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>align</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>ha</name> <init>= <expr><name>align</name> <operator>&amp;</operator> <name><name>GAlign</name><operator>.</operator><name>H_ALIGN</name></name></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>va</name> <init>= <expr><name>align</name> <operator>&amp;</operator> <name><name>GAlign</name><operator>.</operator><name>V_ALIGN</name></name></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if<condition>(<expr><name>ha</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>LEFT</name></name> <operator>||</operator> <name>ha</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>CENTER</name></name> <operator>||</operator> <name>ha</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>RIGHT</name></name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>textAlignHorz</name> <operator>=</operator> <name>ha</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>calcAlignX</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if<condition>(<expr><name>va</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>TOP</name></name> <operator>||</operator> <name>va</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>MIDDLE</name></name> <operator>||</operator> <name>va</name> <operator>==</operator> <name><name>GAlign</name><operator>.</operator><name>BOTTOM</name></name></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><name>textAlignVert</name> <operator>=</operator> <name>va</name></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>calcAlignY</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

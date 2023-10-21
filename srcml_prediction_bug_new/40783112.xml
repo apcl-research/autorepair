@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18939094.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>changeStatusAllocatedForPeer</name><parameter_list>(<parameter><decl><type><name>DeploymentID</name></type> <name>remoteWorkerID</name></decl></parameter>, <parameter><decl><type><name>PeerComponent</name></type> <name>peerComponent</name></decl></parameter>)</parameter_list> <block>{<block_content>
+<comment type="line">//		AcceptanceTestUtil.notifyRecovery(application, workerID);</comment>
+		
+	    <comment type="line">//Get bound object</comment>
+	    <decl_stmt><decl><type><name>WorkerManagementClient</name></type> <name>workerManagementClient</name> <init>= <expr><call><name>getWorkerManagementClient</name><argument_list>()</argument_list></call></expr></init></decl> 
+	
+	    <comment type="line">//Change status of worker</comment>
+	    <init><decl><type><name>AcceptanceTestUtil</name></type> <name>workerManagementClient</name> <init>= <expr><call><name>getWorkerManagementClient</name><argument_list>()</argument_list></call></expr></init></decl> 
+	
+	    <comment type="line">//Change status of worker</comment>
+	    <init><decl><type><name>AcceptanceTestUtil</name></type> <name>workerManagementClient</name> <init>= <expr><call><name>getWorkerManagementClient</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <expr_stmt><expr><call><name><name>workerManagementClient</name><operator>.</operator><name>statusChangedAllocatedForPeer</name></name><argument_list>(<argument><expr><ternary><condition><expr><name>remoteWorkerID</name> <operator>==</operator> <literal type="null">null</literal></expr> ?</condition><then> <expr><literal type="null">null</literal></expr> </then><else>: <expr><call><name><name>remoteWorkerID</name><operator>.</operator><name>getServiceID</name></name><argument_list>()</argument_list></call></expr></else></ternary></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

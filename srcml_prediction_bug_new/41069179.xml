@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34262796.java">    <function><type><specifier>public</specifier> <name>XComponentContext</name></type> <name>connectString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>host</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>port</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>BootstrapException</name></expr></argument></throws> <block>{<block_content>
+
+        <comment type="line">// host and port</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>hostAndPort</name> <init>= <expr><literal type="string">"host="</literal><operator>+</operator><name>host</name><operator>+</operator><literal type="string">",port="</literal><operator>+</operator><name>port</name></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// accept option</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>unoAcceptOption</name> <init>= <expr><literal type="string">"-accept=socket,"</literal><operator>+</operator><name>hostAndPort</name><operator>+</operator><literal type="string">";urp;"</literal></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// connection string</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>unoConnectString</name> <init>= <expr><literal type="string">"uno:socket,"</literal><operator>+</operator><name>hostAndPort</name><operator>+</operator><literal type="string">";urp;"</literal></expr></init></decl>;</decl_stmt>
+
+        <return>return <expr><call><name>connect</name><argument_list>(<argument><expr><name>unoAcceptOption</name></expr></argument>, <argument><expr><name>unoConnectString</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

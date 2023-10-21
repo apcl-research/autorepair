@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/32352629.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>leave</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <comment type="line">// this is the correct thread to calculate the display of the</comment>
+    <comment type="line">// field NOT later in the event thread</comment>
+    <decl_stmt><decl><type><specifier>final</specifier> <name>DField</name></type>      <name>leaveMe</name> <init>= <expr><call><name>getDisplay</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <if_stmt><if>if <condition>(<expr><name>leaveMe</name> <operator>!=</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>SwingThreadHandler</name><operator>.</operator><name>start</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+          <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name>resetCommands</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>leaveMe</name><operator>.</operator><name>leave</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

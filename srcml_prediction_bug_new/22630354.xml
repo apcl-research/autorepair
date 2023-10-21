@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22624091.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>disableSet</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>setUid</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>ArrayList</name></type> <name>setInfos</name> <init>= <expr><call><name>getSetInfos</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>int</name></type> <name>index</name> <init>= <expr><call><name>getIndexOfSetInfo</name><argument_list>(<argument><expr><name>setUid</name></expr></argument>, <argument><expr><name>setInfos</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<comment type="line">//prtln("disabling set: " + index);</comment>
+			<expr_stmt><expr><operator>(</operator><operator>(</operator><name>SetInfo</name><operator>)</operator> <call><name><name>setInfos</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call><operator>)</operator><operator>.</operator><call><name>setEnabled</name><argument_list>(<argument><expr><literal type="string">"false"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<synchronized>synchronized <init>(<expr><name>setInfosLock</name></expr>)</init> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>adminData</name><operator>.</operator><name>update</name></name><argument_list>(<argument><expr><name><name>Keys</name><operator>.</operator><name>SET_INFOS</name></name></expr></argument>, <argument><expr><name>setInfos</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>resetSetsData</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			 
+
+		</block_content>}</block></synchronized> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return;</return>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

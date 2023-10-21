@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/20637891.java">  <function><type><specifier>public</specifier> <name>ArrayList</name></type> <name>getRelationButtonDescriptors</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>ArrayList</name></type> <name>al</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>ButtonDescriptor</name></type> <name>bd</name> <init>=
+      <expr><operator>new</operator> <call><name>ButtonDescriptor</name><argument_list>(<argument><expr><literal type="string">"belvedere.model.concept.ConceptualRelation"</literal></expr></argument>,
+                           <argument><expr><call><name><name>properties</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><literal type="string">"CONCEPT_RELATION_IMAGE"</literal></expr></argument>)</argument_list></call></expr></argument>,
+                           <argument><expr><call><name><name>properties</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><literal type="string">"ADD_RELATIONS"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><call><name><name>al</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>bd</name></expr></argument> ;</argument_list></call></expr>
+    <return>return <expr><name>al</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

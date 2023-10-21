@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35063629.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setBootstrapPeers</name><parameter_list>(<parameter><decl><type><name><name>Collection</name><argument_list type="generic">&lt;<argument><name>Finger</name></argument>&gt;</argument_list></name></type> <name>bootstrapPeers</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <synchronized>synchronized<init>(<expr><name><name>this</name><operator>.</operator><name>view</name></name></expr>)</init><block>{<block_content>
+            <for>for<control>(<init><decl><type><name>Finger</name></type> <name>peer</name><range>:<expr><name>bootstrapPeers</name></expr></range></decl></init>)</control><block>{<block_content>
+                <decl_stmt><decl><type><name>FingerDescriptor</name></type> <name>descriptor</name><init>=<expr><operator>new</operator> <call><name>FingerDescriptor</name><argument_list>(<argument><expr><name><name>peer</name><operator>.</operator><name>clone</name></name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>ageManager</name><operator>.</operator><name>initAge</name></name><argument_list>(<argument><expr><name>descriptor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>getView</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><name>descriptor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></for>
+            <comment type="line">//gurantees there are no more than c nodes in the view at the beginning</comment>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>select</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></synchronized>
+    </block_content>}</block></function>
+</unit>

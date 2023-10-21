@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12492783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>adjustMinimumAndMaximum</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// make sure every minimum size is bigger or equal to 0</comment>
+        <expr_stmt><expr><call><name>setToMinimumArrayValue</name><argument_list>(<argument><expr><name>minimumSizes</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// make sure preferred is bigger or equal to minimum</comment>
+        <expr_stmt><expr><call><name>setToMaximumSizes</name><argument_list>(<argument><expr><name>preferredSizes</name></expr></argument>, <argument><expr><name>minimumSizes</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// make sure maximum is bigger or equal to preferred</comment>
+        <expr_stmt><expr><call><name>setToMaximumSizes</name><argument_list>(<argument><expr><name>maximumSizes</name></expr></argument>, <argument><expr><name>preferredSizes</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

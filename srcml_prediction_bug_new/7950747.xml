@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/7630963.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>assertWrapperArray</name><parameter_list>(<parameter><decl><type><name><name>Byte</name><index>[]</index></name></type> <name>wrapperArray</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>data</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <expr_stmt><expr><call><name>assertAreEqual</name><argument_list>(<argument><expr><operator>new</operator> <call><name>Byte</name><argument_list>(<argument><expr><name><name>data</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name><name>wrapperArray</name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></for>
+        <comment type="line">// FIXME: Arrays should also get a null Bitmap to fix.</comment>
+        <comment type="line">// Assert.isNull(wrapperArray[wrapperArray.length - 1]);</comment>
+    </block_content>}</block></function>
+</unit>

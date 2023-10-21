@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12130945.java">	<function><type><specifier>public</specifier> <name>PBounds</name></type> <name>getUnionOfChildrenBounds</name><parameter_list>(<parameter><decl><type><name>PBounds</name></type> <name>dstBounds</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>dstBounds</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>dstBounds</name> <operator>=</operator> <operator>new</operator> <call><name>PBounds</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>dstBounds</name><operator>.</operator><name>resetToZero</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>count</name> <init>= <expr><call><name>getChildrenCount</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>  <;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>count</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>PNode</name></type> <name>each</name> <init>= <expr><operator>(</operator><name>PNode</name><operator>)</operator> <call><name>getChildrenReference</name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>each</name> <operator>!=</operator> <name>itsTitleNode</name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name><name>dstBounds</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><call><name><name>each</name><operator>.</operator><name>getFullBoundsReference</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></for>
+
+		<return>return <expr><name>dstBounds</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

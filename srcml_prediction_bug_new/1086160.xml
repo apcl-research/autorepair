@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42890562.java">	<function><type><specifier>private</specifier> <name>int</name></type> <name>RandomSimulation</name><parameter_list>(<parameter><decl><type><name>MyNode</name></type> <name>node</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>EnhancedBTBoard</name></type> <name>board</name> <init>= <expr><operator>new</operator> <call><name>EnhancedBTBoard</name><argument_list>(<argument><expr><call><name><name>node</name><operator>.</operator><name>getBoard</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>int</name></type> <name>winner</name> <init>= <expr><call><name><name>board</name><operator>.</operator><name>getWinner</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<while>while <condition>(<expr><call><name><name>board</name><operator>.</operator><name>getWinner</name></name><argument_list>(  <argument><expr><operator>==</operator> <name><name>EnhancedBTBoard</name><operator>.</operator><name>NOBODY</name></name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<comment type="line">// generate moves</comment>
+						
+			<expr_stmt><expr><call><name><name>board</name><operator>.</operator><name>move</name></name><argument_list>(<argument><expr><call><name><name>netPlayer</name><operator>.</operator><name>chooseMove</name></name><argument_list>(<argument><expr><name>board</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			<expr_stmt><expr><name>winner</name> <operator>=</operator> <call><name><name>board</name><operator>.</operator><name>getWinner</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+			<if_stmt><if>if <condition>(<expr><name>winner</name> <operator>!=</operator> <name><name>EnhancedBTBoard</name><operator>.</operator><name>NOBODY</name></name></expr>)</condition> <block>{<block_content>
+				<break>break;</break>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></while>
+
+		<if_stmt><if>if <condition>(<expr><name>winner</name> <operator>==</operator> <name>myColor</name></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="number">1</literal></expr>;</return></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<return>return <expr><literal type="number">0</literal></expr>;</return></block_content></block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

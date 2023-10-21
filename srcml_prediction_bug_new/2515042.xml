@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12812073.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>mapTagToId</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>src_id</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>tar_id</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>lang</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>update_clause</name> <init>= <expr><literal type="string">"UPDATE "</literal><operator>+</operator><call><name><name>DataDefinitions</name><operator>.</operator><name>getRelTagsTableName</name></name><argument_list>( <argument><expr><operator>+</operator><literal type="string">" SET spchk_mapped_to = "</literal><operator>+</operator><name>tar_id</name><operator>+</operator>
+		                       <literal type="string">", tra_orig_lang = \""</literal><operator>+</operator><name>lang</name><operator>+</operator><literal type="string">"\" WHERE id = "</literal><operator>+</operator><name>src_id</name><operator>+</operator>
+		                       <literal type="string">" OR spchk_mapped_to = "</literal><operator>+</operator><name>src_id</name></expr></argument>;</decl_stmt>
+		<try>try<block>{<block_content>
+			<expr_stmt><expr><call><name>execute</name><argument_list>(<argument><expr><name>update_clause</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block><catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+			<expr_stmt><expr><call><name><name>DataDefinitions</name><operator>.</operator><name>logger</name><operator>.</operator><name>addLogLine</name></name><argument_list>(<argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">"\n"</literal><operator>+</operator><name>update_clause</name></expr></argument>,<argument><expr><literal type="number">2</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>		
+	</block_content>}</block></function>
+</unit>

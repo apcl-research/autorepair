@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22352983.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>invoke</name><parameter_list>(<parameter><decl><type><name>Runnable</name></type> <name>runnable</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>SwingUtilities</name><operator>.</operator><name>isEventDispatchThread</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <try>try <block>{<block_content>
+        <expr_stmt><expr><call><name><name>runnable</name><operator>.</operator><name>run</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>failure</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// also a VException or VRuntimeException is not allowed here</comment>
+        <expr_stmt><expr><call><name>sendDebugMail</name><argument_list>(<argument><expr><literal type="string">"invoke in awt-thread "</literal></expr></argument>, <argument><expr><call><name><name>runnable</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>failure</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></catch></try>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <expr_stmt><expr><call><name>addDebugableEventToQueue</name><argument_list>(<argument><expr><name>runnable</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

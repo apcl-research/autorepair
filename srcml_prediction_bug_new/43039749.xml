@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44662696.java">        <function><type><specifier>private</specifier> <name>void</name></type> <name>setUpListeners</name><parameter_list>()</parameter_list> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>Object</name></type> <name>base</name> <init>= <expr><call><name>getBase</name><argument_list>(<argument><expr><name>source</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <comment type="line">// don't care aboutnexistent beans</comment>
+            <if_stmt><if>if <condition>(<expr><name>base</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+                <return>return;</return></block_content></block></if></if_stmt>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><operator>(</operator><name>base</name> <operator>instanceof</operator> <name>StatusInformationInternal</name><operator>)</operator></expr>)</condition><block type="pseudo"><block_content>
+                <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><literal type="string">"Only classes containing statusinformations are accepted!"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+            <expr_stmt><expr><name>beanState</name> <operator>=</operator> <operator>(</operator><operator>(</operator><name>StatusInformationInternal</name><operator>)</operator> <name>base</name><operator>)</operator><operator>.</operator><call><name>_getBeanStatus</name><argument_list>()</argument_list></call> 
+            <call><name><name>beanState</name><operator>.</operator><name>addStatusChangeListener</name></name><argument_list>(<argument><expr><name>property</name></expr></argument>, <argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></function>
+</unit>

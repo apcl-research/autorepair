@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42779983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>updateVariableStates</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>IComponentDeltaState</name></argument>&gt;</argument_list></name></type> <name>deltas</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<for>for <control>(<init><decl><type><name>UIModel</name></type> <name>m</name> <range>: <expr><call><name><name>models</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>m</name><operator>.</operator><name>updateVariableValue</name></name><argument_list>(<argument><expr><call><name>getDelta</name><argument_list>(<argument><expr><name>deltas</name></expr></argument>, <argument><expr><call><name><name>m</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<for>for <control>(<init><decl><type><name>ComponentModel</name></type> <name>c</name> <range>: <expr><call><name><name>contexts</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>c</name><operator>.</operator><name>updateVariableValue</name></name><argument_list>(<argument><expr><call><name>getDelta</name><argument_list>(<argument><expr><name>deltas</name></expr></argument>, <argument><expr><call><name><name>c</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+
+	</block_content>}</block></function>
+</unit>

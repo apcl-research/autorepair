@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44802783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>visualStyleChanged</name><parameter_list>()</parameter_list> <block>{<block_content>
+	<comment type="line">// get current defaults</comment>
+        <decl_stmt><decl><type><name>Object</name></type> <name>defaultObj</name> <init>= <expr><call><name><name>VMM</name><operator>.</operator><name>getDefault</name></name><argument_list>(<argument><expr><call><name><name>VMM</name><operator>.</operator><name>getVisualStyle</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>type</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name>setCurrentCalculator</name><argument_list>(
+                <argument><expr><call><name><name>VMM</name><operator>.</operator><name>getCurrentCalculator</name></name><argument_list>(<argument><expr><call><name><name>VMM</name><operator>.</operator><name>getVisualStyle</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>this</name><operator>.</operator><name>type</name></name></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+	<if_stmt><if>if <condition>(<expr><name>defaultValueDisplayer</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content> <comment type="line">// haven't initialized yet</comment>
+	    <expr_stmt><expr><call><name>drawDefault</name><argument_list>(<argument><expr><name>defaultObj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name>drawCalc</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>refreshUI</name><argument_list>()</argument_list></call></expr> 
+	</block_content>}</block></if>
+	<else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>defaultValueDisplayer</name><operator>.</operator><name>setObject</name></name><argument_list>(<argument><expr><name>defaultObj</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name>refreshUI</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

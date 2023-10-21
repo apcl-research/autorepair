@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25792783.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>row</name><parameter_list>(<parameter><decl><type><name>Cursor</name></type> <name>cursor</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>ret</name></decl>;</decl_stmt>
+
+		<expr_stmt><expr><name>ret</name> <operator>=</operator> <call><name><name>Sort</name><operator>.</operator><name>bsearch</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>cursor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// handle line transition, the search returns the index if it matches</comment>
+		<comment type="line">// exactly one of the line end positions, so we advance one line if</comment>
+		<comment type="line">// it's equal to the offset at the row index, since that position is</comment>
+		<comment type="line">// actually the beginning of the next line</comment>
+		<if_stmt><if>if <condition>(<expr><operator>(</operator><name>ret</name> <operator>&lt;</operator> <name>mCount</name><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>cursor</name><operator>.</operator><name>getPosition</name></name><argument_list>(  <argument><expr><ternary><condition><expr><operator>(</operator><name>ret</name> <operator>&lt;</operator> <name><name>mIndices</name><index>[<expr><name>ret</name></expr>]</index></name><operator>)</operator></expr> ?</condition><then> <expr><name>ret</name></expr> </then><else>: <expr><name><name>mIndices</name><index>[<expr><name>ret</name></expr>]</index></name></expr></else></ternary></expr></argument>)</argument_list></call><operator>)</operator>
+			<operator>&lt;</operator> <name>mCount</name></expr>)</condition><block type="pseudo"><block_content><empty_stmt>;</empty_stmt></block_content></block></if></if_stmt>
+
+		<return>return <expr><operator>(</operator><name>ret</name><operator>)</operator></expr>;</return>
+	</block_content>}</block></function>
+</unit>

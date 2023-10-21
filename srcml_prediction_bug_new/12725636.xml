@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28019996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>save</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>good</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>inputBoxes</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+			<try>try <block>{<block_content>
+				<expr_stmt><expr><call><name><name>fe_</name><operator>.</operator><name>setElement</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>, <argument><expr><name><name>inputBoxes</name><index>[<expr><name>i</name></expr>]</index></name><operator>.</operator><call><name>getText</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><name>good</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>JOptionPane</name><operator>.</operator><name>showMessageDialog</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="string">"ERROR"</literal></expr></argument>,
+						<argument><expr><name><name>JOptionPane</name><operator>.</operator><name>ERROR_MESSAGE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></for>
+		<if_stmt><if>if <condition>(<expr><name>good</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>setVisible</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

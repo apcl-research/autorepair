@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14991596.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>check</name><parameter_list>(<parameter><decl><type><name>ClonePortlet</name></type> <name>request</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>MissingParametersFault</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name>isCheckEnabled</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<comment type="line">// check ClonePortlet request object pointer</comment>
+			<if_stmt><if>if <condition>(<expr><name>request</name> <operator>instanceof</operator> <name>ClonePortlet</name></expr>)</condition> <block>{<block_content>
+
+				<comment type="line">// check for registration context</comment>
+				<expr_stmt><expr><call><name>check</name><argument_list>(<argument><expr><call><name><name>request</name><operator>.</operator><name>getRegistrationContext</name></name><argument_list>( , <argument><expr><name><name>Constants</name><operator>.</operator><name>NILLABLE_TRUE</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>check</name><argument_list>(<argument><expr><call><name><name>request</name><operator>.</operator><name>getPortletContext</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>Constants</name><operator>.</operator><name>NILLABLE_FALSE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>check</name><argument_list>(<argument><expr><call><name><name>request</name><operator>.</operator><name>getUserContext</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>Constants</name><operator>.</operator><name>NILLABLE_TRUE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+			</block_content>}</block></if>
+			<else>else <block>{<block_content>
+
+				<expr_stmt><expr><call><name>throwMissingParametersFault</name><argument_list>(<argument><expr><literal type="string">"Input object is not a ClonePortlet or is null"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

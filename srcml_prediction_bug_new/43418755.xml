@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/448700.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>destroyVisualizationGUI</name><parameter_list>()</parameter_list> <block>{<block_content>
+		
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>netModel</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>myGraphEnvironmentController</name></name><operator>!=</operator><literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>myGraphEnvironmentController</name><operator>.</operator><name>getEnvironmentPanel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>setVisible</name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>useFrame</name></name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>useFrame</name><operator>.</operator><name>dispose</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>useFrame</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name><name>this</name><operator>.</operator><name>usePanel</name></name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>usePanel</name><operator>.</operator><name>removeAll</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>usePanel</name><operator>.</operator><name>repaint</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name><name>this</name><operator>.</operator><name>usePanel</name></name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27801074.java">  <function><type><specifier>protected</specifier> <name>JScrollPane</name></type> <name>createTitleScrollPane</name> <parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if<condition>( <expr><name>titleField</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+      <expr_stmt><expr><name>titleField</name> <operator>=</operator> <call><name>createTitleField</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+    <return>return <expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>(
+      <argument><expr><name>titleField</name></expr></argument>,
+      <argument><expr><name><name>ScrollPaneConstants</name><operator>.</operator><name>VERTICAL_SCROLLBAR_NEVER</name></name></expr></argument>,
+      <argument><expr><name><name>ScrollPaneConstants</name><operator>.</operator><name>HORIZONTAL_SCROLLBAR_AS_NEEDED</name></name></expr></argument>
+    )</argument_list></call></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// createTitleScrollPane()</comment>
+</unit>

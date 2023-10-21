@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50158891.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getToolHelp</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>FieldInfoReader</name></type> <name>fieldInfoReader</name> <init>= <expr><call><name><name>rhelper</name><operator>.</operator><name>getFieldInfo</name></name><argument_list>(<argument><expr><name>s</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>fieldInfoReader</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<try>try <block>{<block_content>
+				<return>return <expr><call><name><name>fieldInfoReader</name><operator>.</operator><name>getDefinition</name></name> <argument_list>()</argument_list></call></expr>;</return>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"getToolHelp: unable to obtain definition for "</literal> <operator>+</operator> <name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="string">"${sf:decodePath("</literal> <operator>+</operator> <call><name><name>RendererHelper</name><operator>.</operator><name>jspQuotedString</name></name><argument_list>(<argument><expr><name>s</name></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="string">")}"</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3367891.java">        <function><type><specifier>private</specifier> <name>byte</name></type> <name>getAlpha</name><parameter_list>(<parameter><decl><type><name>Window</name></type> <name>w</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>w</name> <operator>instanceof</operator> <name>RootPaneContainer</name></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name>JRootPane</name></type> <name>root</name> <init>= <expr><operator>(</operator><operator>(</operator><name>RootPaneContainer</name><operator>)</operator><name>w</name><operator>)</operator><operator>.</operator><call><name>getRootPane</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <decl_stmt><decl><type><name>Byte</name></type> <name>b</name> <init>= <expr><operator>(</operator><name>Byte</name><operator>)</operator><call><name><name>root</name><operator>.</operator><name>getClientProperty</name></name><argument_list>(<argument><expr><name>TRANSPARENT_ALPHA</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+                <if_stmt><if>if  <condition>(<expr><name>b</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                    <return>return <expr><call><name><name>b</name><operator>.</operator><name>byteValue</name></name><argument_list>()</argument_list></call></expr>;</return>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+            <return>return <expr><operator>(</operator><name>byte</name><operator>)</operator><literal type="number">0xFF</literal></expr>;</return>
+        </block_content>}</block></function>
+</unit>

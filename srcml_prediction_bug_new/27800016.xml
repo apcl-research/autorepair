@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>setValueIsAdjusting</name> <parameter_list>( <parameter><decl><type><name>boolean</name></type> <name>new_adjusting</name></decl></parameter> )</parameter_list>  
+      <block>{<block_content> <expr_stmt><expr><call><name><name>table</name><operator>.</operator><name>getRowModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSelectionModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValueIsAdjusting</name><argument_list>(
+        <argument><expr><name>new_adjusting</name></expr></argument>
+      )</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>table</name><operator>.</operator><name>getColumnModel</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSelectionModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>setValueIsAdjusting</name><argument_list>(
+        <argument><expr><name>new_adjusting</name></expr></argument>
+      )</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function> <comment type="line">// setValueIsAdjusting(..)</comment>
+</unit>

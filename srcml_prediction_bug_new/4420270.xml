@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18948891.java">  <function><type><specifier>private</specifier> <name>String</name></type> <name>printAllTagFromIteratorToTable</name><parameter_list>(<parameter><decl><type><name>Iterator</name></type> <name>it</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>StringBuilder</name></type> <name>sb</name> <init>= <expr><operator>new</operator> <call><name>StringBuilder</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    
+    <while>while<condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+      <decl_stmt><decl><type><name>HierarchicalSemanticTag</name></type> <name>tag</name> <init>= <expr><operator>(</operator><name>HierarchicalSemanticTag</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>( ;</init>
+      <condition><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;td&gt;"</literal></expr></argument>)</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><call><name><name>tag</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"&lt;/td&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block></while>
+    </block_content>}</block></function>
+    <return>return <expr><call><name><name>sb</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+  </block_content>}</block></function>
+</unit>

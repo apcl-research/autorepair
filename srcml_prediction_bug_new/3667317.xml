@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17959073.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>containsModel</name><parameter_list>(<parameter><decl><type><name>StripChartModel</name></type> <name>model</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        
+        <comment type="line">// check through all the models and return true if we find the right</comment>
+        <comment type="line">//  one</comment>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name><init>=<expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>m_models</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>  )</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>StripChartModel</name></type> <name>m</name> <init>= <expr><operator>(</operator><name>StripChartModel</name><operator>)</operator><call><name><name>m_models</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>m</name> <operator>==</operator> <name>model</name></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></for>
+        
+        <comment type="line">// return false if we haven't found the model</comment>
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        
+    </block_content>}</block></function>
+</unit>

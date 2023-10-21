@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18452783.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>firePostSelectionChanged</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>SelectionChangedEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name><name>Object</name><index>[]</index></name></type> <name>listeners</name> <init>= <expr><call><name><name>postSelectionChangedListeners</name><operator>.</operator><name>getListeners</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>listeners</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><operator>++</operator><name>i</name></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><specifier>final</specifier> <name>ISelectionChangedListener</name></type> <name>l</name> <init>= <expr><operator>(</operator><name>ISelectionChangedListener</name><operator>)</operator> <name><name>listeners</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>SafeRunnable</name><operator>.</operator><name>run</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>SafeRunnable</name></super><argument_list>()</argument_list> <block>{
+				<function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>l</name><operator>.</operator><name>selectionChanged</name></name><argument_list>(<argument><expr><name>event</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></function>
+			}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+	 
+</unit>

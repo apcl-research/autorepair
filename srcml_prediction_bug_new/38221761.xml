@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50649983.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>gotoNextToken</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>scanner</name><operator>.</operator><name>gotoNextToken</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><name><name>scanner</name><operator>.</operator><name>getToken</name></name></expr>;</return>
+<comment type="block">/*
+    tk = "";
+    do {
+      scanner.gotoNextToken();
+      tk += scanner.getToken();
+    } while (scanner.getTokenType() != scanner.EOF
+      &amp;&amp; scanner.getTokenType() != scanner.COMMENT
+      &amp;&amp; scanner.getNextTokenType() != scanner.COMMENT);
+    return tk;
+*/</comment>
+  </block_content>}</block></function>
+</unit>

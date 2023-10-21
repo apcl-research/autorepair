@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41436891.java">	<function><type><specifier>public</specifier> <name>List</name></type> <name>getInactiveMemberHandles</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>inactiveMemberHandles</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>FindRequest</name></type> <name>request</name> <init>= <expr><operator>new</operator> <call><name>FindRequest</name><argument_list>( ;</operator>
+			<expr><call><name><name>request</name><operator>.</operator><name>setObjectType</name></name><argument_list>(<argument><expr><name><name>NDRConstants</name><operator>.</operator><name>NDRObjectType</name><operator>.</operator><name>METADATA</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>request</name><operator>.</operator><name>addCommand</name></name><argument_list>(<argument><expr><literal type="string">"relationship"</literal></expr></argument>, <argument><expr><call><name>getChildToParentRelationship</name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><call><name><name>this</name><operator>.</operator><name>getHandle</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>request</name><operator>.</operator><name>addStateCmd</name></name><argument_list>(<argument><expr><name><name>NDRConstants</name><operator>.</operator><name>ObjectState</name><operator>.</operator><name>INACTIVE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>inactiveMemberHandles</name> <operator>=</operator> <call><name><name>request</name><operator>.</operator><name>getResultHandles</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>inactiveMemberHandles</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

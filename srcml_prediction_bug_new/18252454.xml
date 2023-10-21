@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34379996.java">	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>isLastRowVisible</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>getRowCount</name></expr> )</condition> <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<decl_stmt><decl><type><name>Rectangle</name></type> <name>r</name> <init>= <expr><call><name>getCellRect</name><argument_list>(<argument><expr><call><name>getRowCount</name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><literal type="number">1</literal></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Rectangle</name></type> <name>visible</name> <init>= <expr><call><name>getVisibleRect</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<decl_stmt><decl><type><name>boolean</name></type> <name>isVisible</name> <init>= <expr><name><name>r</name><operator>.</operator><name>y</name></name> <operator>&lt;=</operator> <name><name>visible</name><operator>.</operator><name>y</name></name> <operator>+</operator> <name><name>visible</name><operator>.</operator><name>height</name></name></expr></init></decl>;</decl_stmt>
+		<return>return <expr><name>isVisible</name></expr>;</return>
+<comment type="line">//		return visible.y &lt;= r.y &amp;&amp; visible.y + visible.height &gt;= r.y + r.height;</comment>
+	</block_content>}</block></function>
+</unit>

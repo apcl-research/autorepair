@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17332629.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>loadTree</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <try>try <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>isUserMenuCreated</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>menuList</name> <operator>=</operator> <call><name><name>serviceAppMenu</name>
+                        <operator>.</operator><name>getApplicationMenuByProgram</name></name><argument_list>(<argument><expr><call><name>getProgram</name> <argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>createUserMenu</name><argument_list>(<argument><expr><name>menuList</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><name>menuList</name> <operator>=</operator> <call><name>getUserMenu</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ServiceException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name>addError</name><argument_list>(<argument><expr><literal type="string">"Error on getApplicationMenuByProgram "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+
+    </block_content>}</block></function>
+</unit>

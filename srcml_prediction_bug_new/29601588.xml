@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/9790515.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getMostUsualSuffix</name><parameter_list>()</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name><name>Map</name><argument_list type="generic">&lt;<argument><name>String</name></argument>,<argument><name>Double</name></argument>&gt;</argument_list></name></type> <name>profile</name><init>=<expr><call><name>getAveragedProfile</name><argument_list>()</argument_list></call></expr></init></decl> 
+        <init>=<expr><name>doubleMax</name><operator>=</operator><operator>-</operator><literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>exit</name><init>=<expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <for>for<control>(<init><decl><type><name>Entry</name></type> <name>pair</name><range>: <expr><call><name><name>profile</name><operator>.</operator><name>entrySet</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block>{<block_content>
+            <if_stmt><if>if<condition>(<expr><operator>(</operator><operator>(</operator><name>Double</name><operator>)</operator><call><name><name>pair</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>&gt;</operator><name>max</name></expr>)</condition><block>{<block_content>
+                <expr_stmt><expr><name>max</name><operator>=</operator><operator>(</operator><name>Double</name><operator>)</operator><call><name><name>pair</name><operator>.</operator><name>getValue</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><name>exit</name><operator>=</operator><operator>(</operator><name>String</name><operator>)</operator><call><name><name>pair</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><name>exit</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43892629.java">    <function><type><specifier>private</specifier> <name>int</name></type> <name>estimatePointArrayPoint</name><parameter_list>(<parameter><decl><type><name><name>int</name><index>[]</index></name></type> <name>geom</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">// number of points</comment>
+        <decl_stmt><decl><type><name>int</name></type> <name>result</name> <init>= <expr><literal type="number">4</literal></expr></init></decl>;</decl_stmt>
+
+        <comment type="line">// And the amount of the points itsself, in consistent geometries</comment>
+        <comment type="line">// all points have equal size.</comment>
+        <if_stmt><if>if <condition>(<expr><name><name>geom</name><operator>.</operator><name>length</name></name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>result</name> <operator>+=</operator> <name><name>geom</name><operator>.</operator><name>length</name></name> <operator>*</operator> <call><name>estimatePoint</name><argument_list>(<argument><expr><name><name>geom</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

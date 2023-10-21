@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38582796.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>printTree</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+    <if_stmt><if>if <condition>(<expr><name>rootNode</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"tree is empty"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+      <return>return;</return>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Here's the entire tree structure:"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">//$NON-NLS-1$</comment>
+    <expr_stmt><expr><call><name>printNodeRecursion</name><argument_list>(<argument><expr><name>rootNode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

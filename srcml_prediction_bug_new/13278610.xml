@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13272783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>checkPartPACs</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>GraphPartFrame</name></type> <name>frame</name> <init>= <expr><call><name>createInnerGraphFrame</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>boolean</name></type>        <name>valid</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type>       <name>it</name>    <init>= <expr><call><name><name>partPACs</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <name>valid</name></expr>)</condition><block type="pseudo"><block_content>  
+            <decl_stmt><decl><type><name>ApplicationCondition</name></type> <name>ac</name> <init>= <expr><operator>(</operator><name>ApplicationCondition</name><operator>)</operator> <call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt></block_content></block></while>
+            <expr_stmt><expr><name>valid</name> <operator>&amp;=</operator> <call><name><name>ac</name><operator>.</operator><name>testPartAC</name></name><argument_list>(<argument><expr><name>frame</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></function> <comment type="line">//checkPartPACs</comment>
+</unit>

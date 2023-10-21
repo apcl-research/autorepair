@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482529.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>reconnect</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// reconnect the stations</comment>
+        <decl_stmt><decl><type><name>GUINeuron</name></type> <name>gNeuron</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iNeurons</name> <init>= <expr><call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>i</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>GUIConnection</name></type> <name>gConn</name></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>iNeurons</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>gNeuron</name> <operator>=</operator> <operator>(</operator><name>GUINeuron</name><operator>)</operator> <call><name><name>iNeurons</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>i</name> <operator>=</operator> <call><name><name>gNeuron</name><operator>.</operator><name>getConnections</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>iterator</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <while>while  <condition>(<expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>gConn</name> <operator>=</operator> <operator>(</operator><name>GUIConnection</name><operator>)</operator> <operator>(</operator><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name><name>gConn</name><operator>.</operator><name>reconnect</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></while>
+        </block_content>}</block></while>
+    </block_content>}</block></function>
+</unit>

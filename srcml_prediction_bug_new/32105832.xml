@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11662983.java">    <function><type><specifier>public</specifier> <name>NodeImpl</name></type> <name>removeChild</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>oldChild</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>DOMException</name></expr></argument></throws> <block>{<block_content>
+
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>removeChild</name></name><argument_list>(<argument><expr><name>oldChild</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// If remove succeeded, un-cache the kid elsewhere</comment>
+        <decl_stmt><decl><type><name>int</name></type> <name>type</name> <init>= <expr><call><name><name>oldChild</name><operator>.</operator><name>getNodeType</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if<condition>(<expr><name>type</name> <operator>==</operator> <name><name>Node</name><operator>.</operator><name>ELEMENT_NODE</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>docElement</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+         
+        <if_stmt><if>if <condition>(<expr><name>type</name> <operator>==</operator> <name><name>Node</name><operator>.</operator><name>DOCUMENT_TYPE_NODE</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>docType</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><operator>(</operator><name>NodeImpl</name><operator>)</operator><name>oldChild</name></expr>;</return>
+
+    </block_content>}</block></if></if_stmt>   <comment type="line">// removeChild(Node):Node</comment>
+</unit>

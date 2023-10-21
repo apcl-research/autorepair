@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/8182783.java">  <function><type><specifier>public</specifier> <name>boolean</name></type> <name>setWidth</name> <parameter_list>( <parameter><decl><type><name>double</name></type> <name>width</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>view</name><operator>.</operator><name>setNodeDoubleProperty</name></name><argument_list>( <argument><expr><name>rootGraphIndex</name></expr></argument>,
+                               <argument><expr><name><name>PGraphView</name><operator>.</operator><name>NODE_WIDTH</name></name></expr></argument>,
+                               <argument><expr><name>width</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <comment type="line">//setBounds( getX(), getY(), width, getHeight() );</comment>
+    <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>setWidth</name></name>  <argument_list>( <argument><expr><name>width</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+  </block_content>}</block></function>
+</unit>

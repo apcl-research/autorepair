@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19482983.java">	<function><type><specifier>private</specifier> <name>SMTSortSymbol</name></type> <name>getBoolSort</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
+		<decl_stmt><decl><type><name>boolean</name></type> <name>veriTBools</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><specifier>final</specifier> <name>Theory</name></type> <name>theory</name> <range>: <expr><call><name>getLogic</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTheories</name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><name>theory</name> <operator>instanceof</operator> <name>VeriTBooleansV2_0</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>veriTBools</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<if_stmt><if>if <condition>(<expr><name>veriTBools</name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><call><name><name>VeriTBooleansV2_0</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getBooleanSort</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<return>return <expr><call><name><name>TheoryV2_0</name><operator>.</operator><name>Core</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getBooleanSort</name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34370062.java">	<function><type><specifier>private</specifier> <name>int</name></type> <name>determineStretch</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>attributeValue</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// If parent row is null, then comp is floating, it is forced to stretch</comment>
+		<if_stmt><if>if <condition>(<expr><call><name>getParentRow</name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>STRETCH_BOTH</name></expr>;</return></block_content></block></if></if_stmt>
+
+		<if_stmt><if>if <condition>(<expr><literal type="string">"horizontal"</literal><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>attributeValue</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>STRETCH_HORIZONTAL</name></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><literal type="string">"vertical"</literal><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>attributeValue</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>STRETCH_VERTICAL</name></expr> 
+		<if_stmt><if>if <condition>(<expr><literal type="string">"both"</literal><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>attributeValue</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><name>STRETCH_BOTH</name></expr>;</return></block_content></block></if></if_stmt>
+		<return>return <expr><name>STRETCH_NONE</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

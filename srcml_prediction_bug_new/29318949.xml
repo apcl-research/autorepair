@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11692796.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>checkAddress</name><parameter_list>(<parameter><decl><type><name>EndpointReferenceType</name></type> <name>request</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RemoteException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>AttributedURI</name></type> <name>address</name> <init>= <expr><call><name><name>request</name><operator>.</operator><name>getAddress</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>address</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>RemoteException</name><argument_list>(<argument><expr><literal type="string">"Expected address: "</literal> <operator>+</operator> <name>ADDRESS</name></expr></argument>)</argument_list></call></expr>;</throw>
+      <else>else<block type="pseudo"><block_content> <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>address</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>ADDRESS</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>RemoteException</name><argument_list>(<argument><expr><literal type="string">"Expected: "</literal> <operator>+</operator> <name>ADDRESS</name> <operator>+</operator> <literal type="string">" but was: "</literal> <operator>+</operator> <name>address</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></if></if_stmt></block_content></block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

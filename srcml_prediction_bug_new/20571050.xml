@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17897292.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>rollbackTransaction</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if<condition>(<expr><name><name>this</name><operator>.</operator><name>openTrasactionCalls</name></name> <operator>&lt;</operator> <literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+      <return>return;</return>
+    </block_content>}</block></if></if_stmt>
+    <expr_stmt><expr><name><name>this</name><operator>.</operator><name>openTrasactionCalls</name></name> <operator>=</operator> <literal type="number">0</literal></expr>;</expr_stmt>
+    <if_stmt><if>if<condition>(<expr><call><name><name>currentTransaction</name><operator>.</operator><name>isActive</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <name>transactionStatus</name> <operator>!=</operator> <name><name>TXN_STATUS</name><operator>.</operator><name>ROLLBACK</name></name>  <block>{
+      <expr><name>transactionStatus</name> <operator>=</operator> <name><name>TXN_STATUS</name><operator>.</operator><name>ROLLBACK</name></name></expr>;
+       <comment type="line">// could already be rolled back</comment>
+      <expr><call><name><name>currentTransaction</name><operator>.</operator><name>rollback</name></name><argument_list>()</argument_list></call></expr>;
+    }</block></expr></expr_stmt>
+  </block_content>}</block></function>
+</unit>

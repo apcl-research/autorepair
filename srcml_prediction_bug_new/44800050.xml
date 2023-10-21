@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37740961.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isActiveNow</name><parameter_list>(  <parameter><decl><type><name>AuthorizationException</name></type> <name>ae</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>AuthorizationException</name></expr></argument></throws> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>long</name></type> <name>now</name> <init>= <expr><call><name><name>System</name><operator>.</operator><name>currentTimeMillis</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>long</name></type> <name>start</name> <init>= <expr><call><name><name>mAuth</name><operator>.</operator><name>getEffectiveDate</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTime</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>long</name></type> <name>end</name> <init>= <expr><call><name><name>mAuth</name><operator>.</operator><name>getExpirationDate</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getTime</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                
+        <if_stmt><if>if <condition>(<expr><name>start</name><operator>&lt;=</operator><name>now</name> <operator>&amp;&amp;</operator> <name>end</name> <operator>&gt;=</operator> <name>now</name></expr>)</condition> <block>{<block_content> 
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+        </block_content>}</block></if>
+        <else>else <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function> 
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26299983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>createNewGuardInit</name><parameter_list>()</parameter_list>  
+        <expr_stmt><expr><call><name>cleanFields</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>alarm</name><operator>.</operator><name>setSelected</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>allowZero</name><operator>.</operator><name>setSelected</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>guardName</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>notesField</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>resourceClass</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name><name>resourceClassNameList</name><operator>.</operator><name>setSelectedItem</name></name><argument_list>(<argument><expr><call><name><name>resourceClass</name><operator>.</operator><name>rcName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

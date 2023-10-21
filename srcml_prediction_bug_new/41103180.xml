@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42782629.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>isRegistryRunning</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>Remote</name></type> <name>lookup</name> <init>= <expr><call><name><name>Naming</name><operator>.</operator><name>lookup</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getRmiRegistryLine</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"/"</literal> <operator>+</operator> <name><name>this</name><operator>.</operator><name>serviceName</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>lookup</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ConnectException</name></type> <name>_ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>NotBoundException</name></type> <name>_ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>RemoteException</name></type> <name>_ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>_ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>MalformedURLException</name></type> <name>_ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>_ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

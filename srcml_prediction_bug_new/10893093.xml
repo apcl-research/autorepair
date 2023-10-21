@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setExpectHeaders</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><name><name>this</name><operator>.</operator><name>expectHeaders</name></name> <operator>=</operator> <operator>new</operator> <call><name>HashMap</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>StringTokenizer</name></type> <name>tok</name> <init>= <expr><operator>new</operator> <call><name>StringTokenizer</name><argument_list>(<argument><expr><name>s</name></expr></argument>, <argument><expr><literal type="string">"|"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <while>while  <condition>(<expr><call><name><name>tok</name><operator>.</operator><name>hasMoreElements</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>header</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>tok</name><operator>.</operator><name>nextElement</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name>setHeaderDetails</name><argument_list>(<argument><expr><name>header</name></expr></argument>, <argument><expr><name>expectHeaders</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+    </block_content>}</block></function>
+</unit>

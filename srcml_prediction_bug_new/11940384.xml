@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30108749.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>processFileName</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>absFilePath</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>File</name></type> <name>file</name> <init>= <expr><operator>new</operator> <call><name>File</name><argument_list>(<argument><expr><name>absFilePath</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// set project path and project name = name of xsd file</comment>
+		<expr_stmt><expr><name><name>Constants</name><operator>.</operator><name>PROJECTNAME</name></name> <operator>=</operator> <call><name><name>Utility</name><operator>.</operator><name>getFileName</name></name><argument_list>(<argument><expr><call><name><name>file</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>Constants</name><operator>.</operator><name>PROJECTPATH</name></name> <operator>=</operator> <call><name><name>file</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"/"</literal></expr>;</expr_stmt>
+
+		<expr_stmt><expr><name><name>Constants</name><operator>.</operator><name>XSDFILE</name></name> <operator>=</operator> <name>absFilePath</name></expr>;</expr_stmt>
+		<comment type="line">// Constants.XSDFILE = Constants.XSDFILETEST </comment>
+
+		<expr_stmt><expr><name><name>Constants</name><operator>.</operator><name>WSMLFILE</name></name> <operator>=</operator> <name><name>Constants</name><operator>.</operator><name>PROJECTPATH</name></name> <operator>+</operator> <name><name>Constants</name><operator>.</operator><name>PROJECTNAME</name></name>
+				<operator>+</operator> <literal type="string">".wsml"</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>Constants</name><operator>.</operator><name>MPJFILE</name></name> <operator>=</operator> <name><name>Constants</name><operator>.</operator><name>PROJECTPATH</name></name> <operator>+</operator> <name><name>Constants</name><operator>.</operator><name>PROJECTNAME</name></name>
+				<operator>+</operator> <literal type="string">".mpj"</literal></expr>;</expr_stmt>
+
+	</block_content>}</block></function>
+</unit>

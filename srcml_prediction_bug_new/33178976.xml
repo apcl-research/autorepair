@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37102696.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>getNextInt</name><parameter_list>(  <parameter><decl><type><throws>throws <argument><expr><name>ParseException</name></expr></argument></throws> <block>{<block_content>
+	<expr_stmt><expr><name>lastPosition</name> <operator>=</operator> <name>position</name></expr>;</expr_stmt>
+	<decl_stmt><decl><type><name>String</name></type> <name>token</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+	<try>try <block>{<block_content> <expr_stmt><expr><name>token</name> <operator>=</operator> <call><name>getMatch</name><argument_list>(<argument><expr><operator>new</operator> <call><name>RE</name><argument_list>(<argument><expr><literal type="string">"\\d+"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt> </block_content>}</block>
+	<catch>catch <parameter_list>(<parameter><decl><type><name>REException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content/>}</block></catch></try>
+	
+	<if_stmt><if>if <condition>(<expr><name>token</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+	    <throw>throw <expr><operator>new</operator> <call><name><name>java</name><operator>.</operator><name>text</name><operator>.</operator><name>ParseException</name></name><argument_list>(
+		<argument><expr><literal type="string">"can't find an int"</literal></expr></argument>, <argument><expr><name>position</name></expr></argument>)</argument_list></call></expr>;</throw>
+	</block_content>}</block></if>
+	<else>else<block type="pseudo"><block_content> <return>return <expr><call><name><name>Integer</name><operator>.</operator><name>parseInt</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

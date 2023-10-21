@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25292783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>renderEntity</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>TiffDrawing</name></type> <name>dwg</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>DrawingArea</name></type> <name>a</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>TiffEntity</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+    	<decl_stmt><decl><type><name>DrawingLayer</name></type> <name>out</name> <init>= <expr><call><name><name>dwg</name><operator>.</operator><name>getOptionsRoot</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getOutputLayer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    	<if_stmt><if>if<condition>(<expr><name>out</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+    		<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>setLy</name></name><argument_list>(<argument><expr><call><name><name>out</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></expr_stmt>
+    	</block_content>}</block></if></if_stmt>
+    	<expr_stmt><expr><call><name><name>a</name><operator>.</operator><name>getRendering</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>add</name><argument_list>(<argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

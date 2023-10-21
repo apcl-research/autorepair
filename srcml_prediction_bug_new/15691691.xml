@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isImplicitDeliveryDateImport</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>classOrPackageName</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+        <if_stmt><if>if <condition>(<expr><name>classOrPackageName</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <if_stmt><if>if <condition>(<expr><call><name><name>cPrimativeClasses</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>classOrPackageName</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>IMPLICIT_TEA_IMPORTS</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>String</name></type> <name>prefix</name> <init>= <expr><name><name>IMPLICIT_TEA_IMPORTS</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+
+            <if_stmt><if>if <condition>(<expr><call><name><name>classOrPackageName</name><operator>.</operator><name>startsWith</name></name><argument_list>(<argument><expr><name>prefix</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt>
+         
+
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

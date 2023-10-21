@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14014883.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>dispatchEventToListeners</name><parameter_list>(<parameter><decl><type><name>EventNotifier</name></type> <name>notifier</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<synchronized>synchronized <init>(<expr><name>modelListeners</name></expr>)</init> <block>{<block_content>
+			<expr_stmt><expr><name>dispatchingEvents</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+			
+			<decl_stmt><decl><type><name>Iterator</name></type> <name>listenerIterator</name> <init>= <expr><call><name><name>modelListeners</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<while>while <condition>(<expr><call><name><name>listenerIterator</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+				<decl_stmt><decl><type><name>ModelListener</name></type> <name>listener</name> <init>=
+					<expr><operator>(</operator><name>ModelListener</name><operator>)</operator> <call><name><name>listenerIterator</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"notifying listener "</literal> <operator>+</operator> <name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name><name>notifier</name><operator>.</operator><name>executeEvent</name></name><argument_list>(<argument><expr><name>listener</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></while>
+			
+			<expr_stmt><expr><name>dispatchingEvents</name> <operator>=</operator> <literal type="boolean">false</literal> 
+			
+			<call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"finished dispatching, applying pending listener changes"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name>applyListenerChanges</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><literal type="string">"finished applying changes"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></synchronized>
+	</block_content>}</block></function>
+</unit>

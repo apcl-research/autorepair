@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46848891.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>convert</name><parameter_list>(<parameter><decl><type><name>Node</name></type> <name>image</name></decl></parameter>, <parameter><decl><type><name>Element</name></type> <name>onode</name></decl></parameter>, <parameter><decl><type><name>Node</name></type> <name>hnode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>bSupportMathML</name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>converter</name><operator>.</operator><name>getTextCv</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>isDisplayEquation</name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            	<expr_stmt><expr><call><name><name>onode</name><operator>.</operator><name>setAttribute</name></name><argument_list>(<argument><expr><literal type="string">"display"</literal></expr></argument>, <argument><expr><literal type="string">"block"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+            <expr_stmt><expr><call><name>convertAsMathML</name><argument_list>(<argument><expr><name>onode</name></expr></argument>,<argument><expr><name>hnode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if>
+        <else>else<block type="pseudo"><block_content>  
+        	<expr_stmt><expr><call><name>convertAsImageOrText</name><argument_list>(<argument><expr><name>image</name></expr></argument>,<argument><expr><name>onode</name></expr></argument>,<argument><expr><name>hnode</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></function>
+</unit>

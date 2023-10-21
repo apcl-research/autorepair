@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18490547.java">    <function><type><specifier>public</specifier> <name>EmployeeBO</name></type> <name>getManager</name><parameter_list>()</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>EmployeeBO</name></type> <name>emp</name> <init>= <expr><literal type="null">null</literal></expr></init></decl> 
+        <comment type="block">/*new EmployeeDAO().read(this.getManagerID());
+        return emp;*/</comment>
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>emp</name> <operator>=</operator> <call><name><name>EmployeeDAO</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>read</name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getManagerID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>DataException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>ConnectionPoolException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ex</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></catch></try>
+        <return>return <expr><name>emp</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

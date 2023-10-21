@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10402783.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isOpen</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>ch</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><call><name><name>ch</name><operator>.</operator><name>isOpen</name></name><argument_list>(  <argument><expr><operator>&amp;&amp;</operator> <name><name>ch</name><operator>.</operator><name>channel</name></name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> 
+            <call><name><name>ch</name><operator>.</operator><name>channel</name><operator>.</operator><name>isOpen</name></name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator> <operator>!</operator><call><name>getIn</name><argument_list>()</argument_list></call><operator>.</operator><call><name>isAppendClosed</name><argument_list>()</argument_list></call> <operator>&amp;&amp;</operator>
+            <operator>!</operator><call><name>getOut</name><argument_list>()</argument_list></call><operator>.</operator><call><name>isAppendClosed</name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

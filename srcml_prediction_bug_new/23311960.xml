@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16789996.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>isSpecial</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<return>return <expr><call><name><name>configOption</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><literal type="string">"positiveExamples"</literal></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>configOption</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><literal type="string">"negativeExamples"</literal></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>configOption</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><literal type="string">"ignoredConcepts"</literal></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>configOption</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><literal type="string">"allowedRoles"</literal></expr></argument>)</argument_list></call>
+				<operator>||</operator> <call><name><name>configOption</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><literal type="string">"ignoredRoles"</literal></expr></argument>)</argument_list></call></expr>;</return>
+
+	</block_content>}</block></function>
+</unit>

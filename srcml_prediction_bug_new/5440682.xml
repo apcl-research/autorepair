@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10370062.java">    <function><type><specifier>private</specifier> <name>RealmMapping</name></type> <name>getRealmMapping</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>NamingException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>realmMapping</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>Context</name></type> <name>context</name> <init>= <expr><operator>new</operator> <call><name>InitialContext</name><argument_list>( ;</operator>
+            <comment type="line">// Get the JBoss security manager from the ENC context</comment>
+            <name>realmMapping</name> <operator>=</operator> <operator>(</operator><name>RealmMapping</name><operator>)</operator><call><name><name>context</name><operator>.</operator><name>lookup</name></name><argument_list>(<argument><expr><literal type="string">"java:comp/env/security/realmMapping"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>realmMapping</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

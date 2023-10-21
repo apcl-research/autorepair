@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48672983.java">	<function><type><specifier>private</specifier> <name>boolean</name></type> <name>deleteRoom</name><parameter_list>(<parameter><decl><type><name>NetRoomInfo</name></type> <name>roomInfo</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if<condition>(<expr><operator>(</operator><name>roomInfo</name> <operator>!=</operator> <literal type="null">null</literal><operator>)</operator> <operator>&amp;&amp;</operator> <operator>(</operator><call><name><name>roomInfo</name><operator>.</operator><name>playerList</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>info</name></name><argument_list>(<argument><expr><literal type="string">"RoomDelete ID:"</literal> <operator>+</operator> <name><name>roomInfo</name><operator>.</operator><name>roomID</name></name> <operator>+</operator> <literal type="string">" Title:"</literal> <operator>+</operator> <name><name>roomInfo</name><operator>.</operator><name>strName</name></name></expr></argument>)</argument_list></call> 
+			<call><name>broadcastRoomInfoUpdate</name><argument_list>(<argument><expr><name>roomInfo</name></expr></argument>, <argument><expr><literal type="string">"roomdelete"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>roomInfoList</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>roomInfo</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>roomInfo</name><operator>.</operator><name>delete</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

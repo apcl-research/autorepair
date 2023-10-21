@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22759983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>addColumn</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><call><name><name>columns</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>, <argument><expr><name>column</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>column</name><operator>.</operator><name>setIndex</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	
+<comment type="line">//RPF: This IF causes trouble, when adding columns to the model after others with indexes before the end</comment>
+<comment type="line">//Then the tableviewer column resize does not work properly. a reindexcolumns is always necessary!</comment>
+<comment type="line">//		if (index == columns.size() - 1) {</comment>
+			<expr_stmt><expr><call><name>reindexColumns</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+<comment type="line">//		}</comment>
+		
+	</block_content>}</block></function>
+</unit>

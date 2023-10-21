@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19282996.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>loadScriptFromFile</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>f</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>f</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return;</return></block_content></block></if></if_stmt>
+
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name>loadScriptFromFileUnsafe</name><argument_list>(<argument><expr><name>f</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>mCurrentScriptModified</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>FileNotFoundException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>severe</name></name><argument_list>(<argument><expr><literal type="string">"File not found, or file is a folder"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>severe</name></name><argument_list>(<argument><expr><literal type="string">"I/O error"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>SecurityException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Log</name><operator>.</operator><name>severe</name></name><argument_list>(<argument><expr><literal type="string">"Security manager prevents to read the file"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		 
+
+	</block_content>}</block></catch></try>
+</unit>

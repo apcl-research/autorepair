@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30269996.java">	<function><type><specifier>public</specifier> <name>Element</name></type> <name>getInputHelperElement</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>xpath</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Element</name></type> <name>inputHelper</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>this</name><operator>.</operator><name>isEditMode</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>inputHelperPath</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>rhelper</name><operator>.</operator><name>getInputHelperFile</name></name><argument_list>(<argument><expr><name>xpath</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>inputHelperPath</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>String</name></type> <name>path</name> <init>= <expr><literal type="string">"/editor/input_helpers/"</literal> <operator>+</operator> <name>inputHelperPath</name></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><name>inputHelper</name> <operator>=</operator> <call><name><name>DocumentHelper</name><operator>.</operator><name>createElement</name></name><argument_list>(<argument><expr><literal type="string">"div"</literal></expr></argument>)</argument_list></call>
+				<operator>.</operator><call><name>addAttribute</name><argument_list>(<argument><expr><literal type="string">"class"</literal></expr></argument>, <argument><expr><literal type="string">"input-helper"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>inputHelper</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">"&lt;%@ include file=\""</literal> <operator>+</operator> <name>path</name> <operator>+</operator> <literal type="string">"\" %&gt;"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>inputHelper</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

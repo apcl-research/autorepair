@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16299983.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isValidComponent</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>)</parameter_list><block>{<block_content>
+        <comment type="line">//Remove "Components." from begining</comment>
+        <if_stmt><if>if<condition>(<expr><call><name><name>key</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">11</literal> <operator>&amp;&amp;</operator> <call><name><name>key</name><operator>.</operator><name>subSequence</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><literal type="number">11</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><literal type="string">"Components."</literal></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+            <expr_stmt><expr><name>key</name> <operator>=</operator> <call><name><name>key</name><operator>.</operator><name>substring</name></name><argument_list>(<argument><expr><literal type="number">11</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> 
+        </block_content>}</block></if></if_stmt>    
+        
+        <comment type="line">// Check Logical Component mappings</comment>
+        <for>for<control>(<init><decl><type><name>Netlist</name></type> <name>nl</name><range>: <expr><name>netlists</name></expr></range></decl></init>)</control><block type="pseudo"><block_content> 
+            <if_stmt><if>if<condition>(<expr><call><name><name>nl</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+            </block_content>}</block></if></if_stmt></block_content></block></for>
+        </block_content>}</block></function>    
+</unit>

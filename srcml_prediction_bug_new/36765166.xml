@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18849983.java">	<function><type><specifier>public</specifier> <name>Timestamp</name></type> <name>getDateTimestamp</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>year</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>month</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>day</name></decl></parameter>)</parameter_list><block>{<block_content>
+<comment type="line">//		try{</comment>
+<comment type="line">//			this.ISO_DATE.p</comment>
+<comment type="line">//			return (Timestamp)(this.ISO_DATE.parseObject year+"-"+month+"-"+day);</comment>
+<comment type="line">//		}</comment>
+<comment type="line">//		catch (Exception e){</comment>
+<comment type="line">//			System.out.println("ERROR: error parsing date: communityBaseForm");</comment>
+<comment type="line">//			return null;</comment>
+<comment type="line">//		}</comment>
+		<try>try
+		<block>{<block_content>
+			<return>return <expr><call><name><name>Timestamp</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><name>year</name> <operator>+</operator> <literal type="string">"-"</literal> <operator>+</operator> <name>month</name> <operator>+</operator> <literal type="string">"-"</literal> <operator>+</operator> <name>day</name> <operator>+</operator> <literal type="string">" 00:00:00"</literal></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block>
+		<catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"ERROR: error parsing date: communityBaseForm"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></catch></try>		
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38484596.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>parseTWO</name><parameter_list>(<parameter><decl><type><name><name>int</name><index>[]</index></name></type> <name>buf</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <switch>switch <condition>(<expr><name><name>buf</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr>)</condition> <block>{<block_content>
+        <case>case <expr><name>IAC</name></expr>:</case>
+          <comment type="line">//doubled IAC to escape 255 is handled within the</comment>
+          <comment type="line">//read method.</comment>
+          <break>break;</break>
+        <case>case <expr><name>AYT</name></expr>:</case>
+          <expr_stmt><expr><call><name>IamHere</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          <break>break;</break>
+        <case>case <expr><name>AO</name></expr>:</case>
+        <case>case <expr><name>IP</name></expr>:</case>
+        <case>case <expr><name>EL</name></expr>:</case>
+        <case>case <expr><name>EC</name></expr>:</case>
+        <case>case <expr><name>NOP</name></expr>:</case>
+          <break>break 
+        <case>case <expr><name>BRK</name></expr>:</case>
+          <expr_stmt><expr><call><name>nvtBreak</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+          <break>break;</break>
+        <default>default:</default>
+          <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+      </block_content>}</block></switch>
+      <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+    </block_content>}</block></function><comment type="line">//parseTWO</comment>
+</unit>

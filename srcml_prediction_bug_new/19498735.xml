@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51636963.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>registerUndoRedoAction</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>actionId</name></decl></parameter>, <parameter><decl><type><name>HistoryAction</name></type> <name>action</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IAction</name></type> <name>oldAction</name> <init>= <expr><call><name>getAction</name><argument_list>(<argument><expr><name>actionId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>oldAction</name> <operator>instanceof</operator> <name>OperationHistoryActionHandler</name></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><operator>(</operator><operator>(</operator><name>OperationHistoryActionHandler</name><operator>)</operator> <name>oldAction</name><operator>)</operator><operator>.</operator><call><name>dispose</name><argument_list>()</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name>action</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return 
+		<expr><call><name>setAction</name><argument_list>(<argument><expr><name>actionId</name></expr></argument>, <argument><expr><name>action</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IActionBars</name></type> <name>actionBars</name> <init>= <expr><call><name>getEditorSite</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getActionBars</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>actionBars</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name><name>actionBars</name><operator>.</operator><name>setGlobalActionHandler</name></name><argument_list>(<argument><expr><name>actionId</name></expr></argument>, <argument><expr><name>action</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>action</name><operator>.</operator><name>setEnabled</name></name><argument_list>(<argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

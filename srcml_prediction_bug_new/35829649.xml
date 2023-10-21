@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37759963.java">    <function><type><specifier>protected</specifier> <name>int</name></type> <name>_lookingNT</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>node</name></decl></parameter>, <parameter><decl><type><name>char</name></type> <name>chr</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>fence</name> <init>= <expr><call><name><name>factory</name><operator>.</operator><name>getDeliveryDate</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>char</name></type> <name>fenceLabel</name> <init>= <expr><call><name><name>factory</name><operator>.</operator><name>getFenceLabel</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        
+        <if_stmt><if>if <condition>(<expr><name>fence</name> <operator>&gt;=</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <name>fenceLabel</name> <operator>&lt;=</operator> <name>chr</name></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>fenceLabel</name> <operator>==</operator> <name>chr</name></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><call><name>_lookingNT</name><argument_list>(<argument><expr><name>fence</name></expr></argument>, <argument><expr><name>chr</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><operator>-</operator><literal type="number">1</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

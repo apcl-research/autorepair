@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/33029082.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>close</name><parameter_list>(<parameter><decl><type><name>ZipItemNode</name></type> <name>node</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><operator>(</operator><name>DefaultMutableTreeNode</name>  <call><name><name>node</name><operator>.</operator><name>getParent</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>isRoot</name><argument_list>()</argument_list></call><operator>)</operator></expr>)</condition> <block>{<block_content>
+            <comment type="line">// Cancel all running tasks.</comment>
+            <for>for <control>(<init><decl><type><name><name>SwingWorker</name><argument_list type="generic">&lt;<argument><name>?</name></argument>, <argument><name>?</name></argument>&gt;</argument_list></name></type> <name>task</name> <range>: <expr><call><name><name>taskMap</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>task</name><operator>.</operator><name>cancel</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></for>
+            <expr_stmt><expr><call><name><name>taskMap</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name>getModel</name><argument_list>()</argument_list></call><operator>.</operator><call><name>removeNodeFromParent</name><argument_list>(<argument><expr><name>node</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

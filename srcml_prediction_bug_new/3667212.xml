@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24104483.java">    <function><type><specifier>public</specifier> <name>Rectangle2D</name></type> <name>getRanges</name><parameter_list>()</parameter_list> <block>{<block_content>
+        
+        <decl_stmt><decl><type><name>double</name></type> <name>minX</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>double</name></type> <name>maxX</name> <init>= <expr><name>m_N</name> <operator>*</operator> <name>m_period</name></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>double</name></type> <name>minY</name> <init>= <expr><operator>-</operator><call><name><name>Math</name><operator>.</operator><name>abs</name></name> <argument_list>(<argument><expr><name>m_amplitude</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>double</name></type> <name>maxY</name> <init>= <expr><operator>-</operator><name>minY</name></expr></init></decl>;</decl_stmt>
+        
+        <return>return <expr><operator>new</operator> <call><name><name>Rectangle2D</name><operator>.</operator><name>Double</name></name><argument_list>(
+            <argument><expr><name>minX</name></expr></argument>, <argument><expr><name>minY</name></expr></argument>,
+            <argument><expr><operator>(</operator><name>maxX</name><operator>-</operator><name>minX</name><operator>)</operator></expr></argument>, <argument><expr><operator>(</operator><name>maxY</name><operator>-</operator><name>minY</name><operator>)</operator></expr></argument>
+        )</argument_list></call></expr>;</return>
+        
+    </block_content>}</block></function>
+</unit>

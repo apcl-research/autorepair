@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19491483.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testNonRodinResourceRemoveAndAdd</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>CoreException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name>createRodinProject</name><argument_list>(<argument><expr><literal type="string">"P"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>IFile</name></type> <name>file</name> <init>= <expr><call><name>createFile</name><argument_list>(<argument><expr><literal type="string">"/P/read.txt"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><call><name>startDeltas</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>deleteResource</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>assertDeltas</name><argument_list>(
+				<argument><expr><literal type="string">"Unexpected delta after deleting /P/src/read.txt"</literal></expr></argument>,
+				<argument><expr><literal type="string">"P[*]: {CONTENT}\n"</literal> <operator>+</operator> 
+				<literal type="string">"	ResourceDelta(/P/read.txt)[-]"</literal></expr></argument>
+		)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>clearDeltas</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>createFile</name><argument_list>(<argument><expr><literal type="string">"/P/read.txt"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name>assertDeltas</name><argument_list>(
+				<argument><expr><literal type="string">"Unexpected delta after creating /P/src/read.txt"</literal></expr></argument>,
+				<argument><expr><literal type="string">"P[*]: {CONTENT}\n"</literal> <operator>+</operator> 
+				<literal type="string">"	ResourceDelta(/P/read.txt)[+]"</literal></expr></argument>
+		)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

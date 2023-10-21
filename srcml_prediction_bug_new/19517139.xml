@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19465529.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>addParametersPropertyDescriptor</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>object</name></decl></parameter>  <comment type="block">/*-{
+		itemPropertyDescriptors.add
+			(createItemPropertyDescriptor
+				(((ComposeableAdapterFactory)adapterFactory).getRootAdapterFactory(),
+				 getResourceLocator(),
+				 getString("_UI_EventState_parameters_feature"),
+				 getString("_UI_PropertyDescriptor_description", "_UI_EventState_parameters_feature", "_UI_EventState_type"),
+				 ExtcorePackage.Literals.EVENT_STATE__PARAMETERS,
+				 true,
+				 false,
+				 false,
+				 ItemPropertyDescriptor.GENERIC_VALUE_IMAGE,
+				 null,
+				 null));
+	}-*/</comment>
+</unit>

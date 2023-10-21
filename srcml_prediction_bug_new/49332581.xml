@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26505829.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>macEepromRead</name> <parameter_list>( <parameter><decl><type><name>int</name></type> <name>addr</name></decl></parameter>, <parameter><decl><type><name><name>byte</name><index>[]</index></name></type> <name>buf</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>length</name></decl></parameter> )</parameter_list> <throws>throws <argument><expr><name>UsbException</name></expr></argument>, <argument><expr><name>InvalidFirmwareException</name></expr></argument>, <argument><expr><name>CapabilityException</name></expr></argument></throws> <block>{<block_content>
+	<expr_stmt><expr><call><name>checkCapability</name><argument_list>(<argument><expr><name>CAPABILITY_MAC_EEPROM</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+	<expr_stmt><expr><call><name>vendorRequest2</name><argument_list>( <argument><expr><literal type="number">0x3B</literal></expr></argument>, <argument><expr><literal type="string">"MAC EPSOM Read"</literal></expr></argument>, <argument><expr><name>addr</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>buf</name></expr></argument>, <argument><expr><name>length</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    	<try>try <block>{<block_content>
+    	    <expr_stmt><expr><call><name><name>Thread</name><operator>.</operator><name>sleep</name></name><argument_list>( <argument><expr><literal type="number">10</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+    	</block_content>}</block>
+	<catch>catch <parameter_list>( <parameter><decl><type><name>InterruptedException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        </block_content>}</block></catch></try> 
+    </block_content>}</block></function>
+</unit>

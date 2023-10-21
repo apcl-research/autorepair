@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19479983.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addEnterActions</name><parameter_list>(<parameter><decl><type><name>UMLBTransition</name></type> <name>transition</name></decl></parameter>, <parameter><decl><type><name>UMLBClass</name></type> <name>ownerClass</name></decl></parameter>)</parameter_list>  
+		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>		
+		<decl_stmt><decl><type><name>UMLBabstractStatemachine</name></type> <name>nestedSm</name> <init>= <expr><operator>(</operator><name>UMLBabstractStatemachine</name><operator>)</operator> <call><name><name>transition</name><operator>.</operator><name>eContainer</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>nestedSm</name><operator>.</operator><name>getTranslation</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>translationKind</name><operator>.</operator><name>STATE_SETS</name></name></expr>)</condition><block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name>enterSets</name><argument_list>(<argument><expr><name>transition</name></expr></argument>, <argument><expr><name>ownerClass</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+		<else>else<block type="pseudo"><block_content>
+			<expr_stmt><expr><call><name>enterFunction</name><argument_list>(<argument><expr><name>transition</name></expr></argument>, <argument><expr><name>ownerClass</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+		
+		<comment type="line">// enter state in nested SM if target state is not final there</comment>
+		<for>for <control>(<init><decl><type><name>UMLBTransition</name></type> <name>elabTransition</name> <range>: <expr><call><name><name>transition</name><operator>.</operator><name>getIsElaboratedBy</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block type="pseudo"><block_content>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>elabTransition</name><operator>.</operator><name>getTarget</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>isFinal</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name>addEnterActions</name><argument_list>(<argument><expr><name>elabTransition</name></expr></argument>, <argument><expr><name>ownerClass</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt></block_content></block></for>
+	</block_content>}</block></function>
+</unit>

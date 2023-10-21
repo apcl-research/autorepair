@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18482983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setFlowControl</name><parameter_list>(<parameter><decl><type><name>FlowControl</name></type> <name>flowControl</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>FTD2xxException</name></expr></argument></throws> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><name>flowControl</name> <operator>==</operator> <name><name>FlowControl</name><operator>.</operator><name>XON_XOFF</name></name></expr>)</condition><block type="pseudo"><block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><call><name><name>Localizer</name><operator>.</operator><name>getLocalizedMessage</name></name><argument_list>(
+					<argument><expr><name><name>Port</name><operator>.</operator><name>class</name></name></expr></argument>, <argument><expr><literal type="string">"error.setFlowControl1.invalidUsage"</literal></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr> ;</throw></block_content></block></if></if_stmt>
+
+		<expr_stmt><expr><call><name>setFlowControl</name><argument_list>(<argument><expr><call><name><name>device</name><operator>.</operator><name>getHandle</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>flowControl</name><operator>.</operator><name>value</name></name></expr></argument>, <argument><expr><operator>(</operator><name>char</name><operator>)</operator> <literal type="number">0</literal></expr></argument>,
+				<argument><expr><operator>(</operator><name>char</name><operator>)</operator> <literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

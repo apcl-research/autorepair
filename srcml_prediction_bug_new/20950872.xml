@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17882996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createHeader</name><parameter_list>(<parameter><decl><type><name>LockedFile</name></type> <name>file</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLIOException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>file</name><operator>.</operator><name>getSize</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><literal type="string">"file not empty!"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+		<decl_stmt><decl><type><specifier>final</specifier> <name><name>byte</name><index>[]</index></name></type> <name>FIRST_FREE_BLOCK</name> <init>= <expr><block>{ <expr><literal type="number">0x01</literal></expr>, <expr><literal type="number">0x00</literal></expr>, <expr><literal type="number">0x00</literal></expr>, <expr><literal type="number">0x00</literal></expr> }</block></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>setPosition</name></name><argument_list>(<argument><expr><name>FREE_BLOCK_PTR_POS</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>FIRST_FREE_BLOCK</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>setPosition</name></name><argument_list>(<argument><expr><name>VERSION_POS</name></expr></argument>)</argument_list></call> 
+		<operator>.</operator><call><name>write</name><argument_list>(<argument><expr><name>VERSION</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<comment type="line">// the header is the first block.</comment>
+		<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>setPosition</name></name><argument_list>(<argument><expr><name>BLOCK_SIZE</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>file</name><operator>.</operator><name>truncate</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

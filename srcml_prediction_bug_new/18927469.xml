@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18949074.java">  <function><type><specifier>private</specifier> <name>Object</name></type> <name>quadsAround</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>oExp</name></decl></parameter>)</parameter_list>  
+    <throws>throws <argument><expr><name>ScriptException</name></expr></argument></throws> <block>{<block_content>  
+    <decl_stmt><decl><type><name>Object</name></type> <name>oSet</name></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><call><name><name>uti</name><operator>.</operator><name>isMember</name></name><argument_list>(<argument><expr><name>oExp</name></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>uti</name><operator>.</operator><name>isFunCallTo</name></name><argument_list>(<argument><expr><name>oExp</name></expr></argument>, <argument><expr><literal type="string">"()"</literal></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+      <expr_stmt><expr><name>oSet</name> <operator>=</operator> <call><name><name>uti</name><operator>.</operator><name>createFunCall</name></name><argument_list>(<argument><expr><literal type="string">"{}"</literal></expr></argument>, <argument><expr><operator>new</operator> <name><name>Object</name><index>[]</index></name> <block>{ <expr><name>oExp</name></expr> }</block></expr></argument>, <argument><expr><name><name>QuaxUti</name><operator>.</operator><name>FUNTYPE_BRACES</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if>
+    <else>else<block type="pseudo"><block_content>
+      <expr_stmt><expr><name>oSet</name> <operator>=</operator> <name>oExp</name></expr>;</expr_stmt></block_content></block></else></if_stmt>
+    <return>return <expr><name>oSet</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

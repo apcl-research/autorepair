@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37726891.java">    <function><type><specifier>public</specifier> <name>IWorker</name></type> <name>getPendingWorker</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>this</name><operator>.</operator><name>fPendingWorker</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>IWorker</name></type> <name>worker</name> <init>= <expr><operator>(</operator><name>IWorker</name><operator>)</operator> <call><name><name>this</name><operator>.</operator><name>fPendingWorker</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><operator>(</operator><call><name><name>worker</name><operator>.</operator><name>getWorkerData</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getNeededTasks</name><argument_list>()</argument_list></call> <operator>-</operator> <literal type="number">1</literal><operator>)</operator> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>fPendingWorker</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>worker</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+        <return>return <expr><name>worker</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+</unit>

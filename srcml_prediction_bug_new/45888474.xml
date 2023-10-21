@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25889996.java">	<function><type><specifier>public</specifier> <name>InteractionType</name></type> <name>loadFromCursor</name><parameter_list>(<parameter><decl><type><name>Cursor</name></type> <name>cursor</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>pos</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<expr_stmt><expr><call><name><name>cursor</name><operator>.</operator><name>moveToPosition</name></name><argument_list>(<argument><expr><name>pos</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<decl_stmt><decl><type><name>Uri</name></type> <name>iconUri</name> <init>= <expr><call><name><name>Uri</name><operator>.</operator><name>parse</name></name><argument_list>(<argument><expr><call><name><name>cursor</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><name>COLUMN_ICON_URI</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt> 
+		<decl_stmt><decl><type><name>String</name></type> <name>actionTitle</name> <init>= <expr><ternary><condition><expr><call><name><name>cursor</name><operator>.</operator><name>isNull</name></name><argument_list>(<argument><expr><name>COLUMN_INTERACT_ACTION_TITLE</name></expr></argument>)</argument_list></call></expr> ?</condition><then> 
+				<expr><call><name><name>cursor</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><name>COLUMN_NAME</name></expr></argument>)</argument_list></call></expr> </then><else>: 
+				<expr><call><name><name>cursor</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><name>COLUMN_INTERACT_ACTION_TITLE</name></expr></argument>)</argument_list></call></expr></else></ternary></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>String</name></type> <name>intentAction</name> <init>= <expr><call><name><name>cursor</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><name>COLUMN_INTERACT_INTENT</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<return>return <expr><operator>new</operator> <call><name>InteractionType</name><argument_list>(<argument><expr><name>iconUri</name></expr></argument>, <argument><expr><name>actionTitle</name></expr></argument>, <argument><expr><name>intentAction</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

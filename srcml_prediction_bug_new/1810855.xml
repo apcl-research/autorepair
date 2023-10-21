@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/40579963.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <comment type="line">// Backslashes and quotes must be escaped</comment>
+    <decl_stmt><decl><type><name>String</name></type> <name>s</name> <init>= <expr><name>value</name></expr></init></decl>;</decl_stmt>
+    <comment type="line">// replaces \ with \\</comment>
+    <expr_stmt><expr><name>s</name> <operator>=</operator> <call><name><name>s</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"\\\\"</literal></expr></argument>, <argument><expr><literal type="string">"\\\\"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <comment type="line">// replaces " with \"</comment>
+    <expr_stmt><expr><name>s</name> <operator>=</operator> <call><name><name>s</name><operator>.</operator><name>replaceAll</name></name><argument_list>(<argument><expr><literal type="string">"\\\""</literal></expr></argument>, <argument><expr><literal type="string">"\\\\\""</literal></expr></argument>)</argument_list></call> 
+    <comment type="line">// wrap the result in quotes</comment>
+    <operator>=</operator> <literal type="string">"\""</literal> <operator>+</operator> <name>s</name> <operator>+</operator> <literal type="string">"\""</literal></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

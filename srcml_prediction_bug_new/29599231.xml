@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11490562.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>attrib</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>s</name></decl></parameter>)</parameter_list>  
+        <throws>throws <argument><expr><name>XMLStreamException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>value</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><call><name><name>reader</name><operator>.</operator><name>isStartElement</name></name><argument_list>()</argument_list></call> <operator>||</operator> <call><name><name>reader</name><operator>.</operator><name>getEventType</name></name><argument_list>()</argument_list></call> <operator>==</operator> <name><name>XMLStreamConstants</name><operator>.</operator><name>ATTRIBUTE</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>value</name> <operator>=</operator> <call><name><name>reader</name><operator>.</operator><name>getAttributeValue</name></name><argument_list>(<argument><expr><call><name><name>reader</name><operator>.</operator><name>getNamespaceURI</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>s</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <if_stmt><if>if <condition>(<expr><name>value</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><name>value</name> <operator>=</operator> <literal type="string">""</literal></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>value</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

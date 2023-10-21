@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38481596.java">	<function><type><specifier>private</specifier> <name>JTextField</name></type> <name>getJTextFieldSearch</name><parameter_list>()</parameter_list>  
+		<if_stmt><if>if <condition>(<expr><name>jTextFieldSearch</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>jTextFieldSearch</name> <operator>=</operator> <operator>new</operator> <call><name>JTextField</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jTextFieldSearch</name><operator>.</operator><name>setPreferredSize</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Dimension</name><argument_list>(<argument><expr><literal type="number">100</literal></expr></argument>, <argument><expr><literal type="number">20</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jTextFieldSearch</name><operator>.</operator><name>addKeyListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>event</name><operator>.</operator><name>KeyAdapter</name></name></super><argument_list>()</argument_list> <block>{
+				<function><type><specifier>public</specifier> <name>void</name></type> <name>keyReleased</name><parameter_list>(<parameter><decl><type><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>event</name><operator>.</operator><name>KeyEvent</name></name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+					<comment type="line">//Calling the table row filter for searching the components</comment>
+					<expr_stmt><expr><call><name>tblFilter</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></function>
+			}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>			
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>jTextFieldSearch</name></expr>;</return>
+	}
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24582696.java">	<function><type><specifier>public</specifier> <name>FenceNode</name></type> <name>getMatchingFence</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>this</name> <operator>==</operator> <name><name>PredefinedFence</name><operator>.</operator><name>OPEN_PARENTHESIS</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_PARENTHESIS</name></name></expr>;</return>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>this</name> <operator>==</operator> <name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_PARENTHESIS</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><name><name>PredefinedFence</name><operator>.</operator><name>OPEN_PARENTHESIS</name></name></expr>;</return>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>this</name> <operator>==</operator> <name><name>PredefinedFence</name><operator>.</operator><name>OPEN_FUNCTION_ARGUMENTS_FENCE</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_FUNCTION_ARGUMENTS_FENCE</name></name></expr>;</return>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>this</name> <operator>==</operator> <name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_FUNCTION_ARGUMENTS_FENCE</name></name></expr>  <comment type="block">/*&amp;&amp;*/</comment><condition><expr><name>this</name> <operator>==</operator> <name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_FUNCTION_ARGUMENTS_FENCE</name></name></expr>)</condition> <block>{<block_content>
+			<return>return <expr><name><name>PredefinedFence</name><operator>.</operator><name>CLOSE_FUNCTION_ARGUMENTS_FENCE</name></name></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<comment type="line">// all occurrences should be covered by the if-else-ifs above</comment>
+			<assert>assert <expr><literal type="boolean">false</literal></expr>;</assert>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

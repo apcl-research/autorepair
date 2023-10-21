@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26272696.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>add</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>type</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>jar</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>description</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>count</name> <operator>&lt;</operator> <name><name>jars</name><operator>.</operator><name>length</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name><name>jars</name><index>[<expr><name>count</name>  <operator>=</operator> <operator>new</operator> <name><name>String</name><index>[<expr><literal type="number">3</literal></expr>]</index></name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>jars</name><index>[<expr><name>count</name></expr>]</index><index>[<expr><name>TYPE_COLUMN</name></expr>]</index></name> <operator>=</operator> <name>type</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>jars</name><index>[<expr><name>count</name></expr>]</index><index>[<expr><name>JAR_COLUMN</name></expr>]</index></name> <operator>=</operator> <name>jar</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>jars</name><index>[<expr><name>count</name><operator>++</operator></expr>]</index><index>[<expr><name>DESCRIPTION_COLUMN</name></expr>]</index></name> <operator>=</operator> <name>description</name></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

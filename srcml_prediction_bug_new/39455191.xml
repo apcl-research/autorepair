@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50089849.java">        <function><type><specifier>private</specifier> <name>double</name></type> <name>newError</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>AlignStructMol</name></argument>&gt;</argument_list></name></type> <name>data</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+
+                <decl_stmt><decl><type><name>double</name></type> <name>numT</name> <init>= <expr><literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+                <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>  <;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>data</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+                        <if_stmt><if>if <condition>(<expr><call><name><name>data</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call><operator>.</operator><name>ransacAlsoInLiers</name> <operator>||</operator> <call><name><name>data</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call><operator>.</operator><name>ransacMaybeInLiers</name></expr>)</condition> <block>{<block_content>
+                                <expr_stmt><expr><name>numT</name><operator>++</operator></expr>;</expr_stmt>
+                        </block_content>}</block></if></if_stmt>
+                </block_content>}</block></for>
+                <return>return <expr><literal type="number">1</literal> <operator>/</operator> <name>numT</name></expr>;</return>
+
+        </block_content>}</block></function>
+</unit>

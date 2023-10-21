@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26359983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>write</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>DataOutputStream</name></type> <name>out</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>TagsetStreamPacker</name><operator>.</operator><name>writeString</name></name><argument_list>(<argument><expr><name>symbol</name></expr></argument>, <argument><expr><name>out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>TagsetStreamPacker</name><operator>.</operator><name>writeStringsMap</name></name><argument_list>(<argument><expr><name>names</name></expr></argument>, <argument><expr><name>out</name></expr></argument>)</argument_list></call> 
+        <call><name><name>TagsetStreamPacker</name><operator>.</operator><name>writeStringsMap</name></name><argument_list>(<argument><expr><name>descriptions</name></expr></argument>, <argument><expr><name>out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>TagsetStreamPacker</name><operator>.</operator><name>writeStringArrayMap</name></name><argument_list>(<argument><expr><name>examples</name></expr></argument>, <argument><expr><name>out</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

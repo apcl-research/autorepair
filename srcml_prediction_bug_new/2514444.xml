@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23682983.java">	<function><type><specifier>public</specifier> <name>TagLists</name></type> <name>getCoocNames</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>id</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws><block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>query_clause</name> <init>= <expr><literal type="string">"SELECT a.id2, b.name FROM "</literal><operator>+</operator><call><name><name>DataDefinitions</name><operator>.</operator><name>getCoOccurrenceTableName</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">" AS a "</literal>
+		                    <operator>+</operator> <literal type="string">" INNER JOIN "</literal><operator>+</operator><call><name><name>DataDefinitions</name><operator>.</operator><name>getRelTagsTableName</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">" AS b ON b.id = a.id2 "</literal>
+							<operator>+</operator> <literal type="string">" WHERE a.id1="</literal><operator>+</operator><name>id</name><operator>+</operator><literal type="string">" ORDER BY id1"</literal></expr></init></decl>;</decl_stmt>
+		<return>return <expr><call><name>getCoocNames</name><argument_list>(<argument><expr><name>query_clause</name></expr></argument> ;</argument_list></call></expr></return>
+	</block_content>}</block></function>
+</unit>

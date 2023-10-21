@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/355599.java">	<function><type><specifier>private</specifier> <name>int</name></type> <name>findTableRowWithVid</name><parameter_list>(<parameter><decl><type><name><name>Vector</name><argument_list type="generic">&lt;<argument><name><name>Vector</name><argument_list type="generic">&lt;<argument><name>Object</name></argument>&gt;</argument_list></name></argument>&gt;</argument_list></name></type> <name>tblInfo</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>vid</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<decl_stmt><decl><type><name>int</name></type> <name>rowInx</name> <init>= <expr><literal type="number">0</literal></expr></init></decl> 
+
+		for <control>(<init>;</init> <condition><expr><name>rowInx</name> <operator>&lt;</operator> <call><name><name>tblInfo</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>rowInx</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name><name>Vector</name><argument_list type="generic">&lt;<argument><name>Object</name></argument>&gt;</argument_list></name></type> <name>row</name> <init>= <expr><call><name><name>tblInfo</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>rowInx</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>row</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>vid</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<break>break;</break>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<if_stmt><if>if <condition>(<expr><name>rowInx</name> <operator>&gt;=</operator> <call><name><name>tblInfo</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>rowInx</name> <operator>=</operator> <operator>-</operator><literal type="number">1</literal></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>rowInx</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

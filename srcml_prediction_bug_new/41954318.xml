@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16182796.java">	<function><type><specifier>private</specifier> <name>Session</name></type> <name>getSessionFromTransactionContext</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>ITransactionResource</name></type> <name>resource</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>HibernateTransactionResource</name></type> <name>hibernateResource</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<decl_stmt><decl><type><name>Session</name></type> <name>result</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+		<if_stmt><if>if <condition>(<expr><name>transactionContext</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>PersistenceHibernateException</name><argument_list>(
+					<argument><expr><literal type="string">"Without Transaction Context."</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>transactionContext</name><operator>.</operator><name>hasResource</name></name><argument_list>()</argument_list></call></expr>  )</condition> <block>{<block_content>
+			<expr_stmt><expr><name>resource</name> <operator>=</operator> <call><name><name>transactionContext</name><operator>.</operator><name>getResource</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+			<if_stmt><if>if <condition>(<expr><name>resource</name> <operator>instanceof</operator> <name>HibernateTransactionResource</name></expr>)</condition> <block>{<block_content>
+				<expr_stmt><expr><name>hibernateResource</name> <operator>=</operator> <operator>(</operator><name>HibernateTransactionResource</name><operator>)</operator> <name>resource</name></expr>;</expr_stmt>
+
+				<expr_stmt><expr><name>result</name> <operator>=</operator> <call><name><name>hibernateResource</name><operator>.</operator><name>getSession</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<throw>throw <expr><operator>new</operator> <call><name>PersistenceHibernateException</name><argument_list>(
+						<argument><expr><literal type="string">"Transaction context NOT contain a HibernateTransactionResource resource."</literal></expr></argument>)</argument_list></call></expr>;</throw>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><name>result</name></expr>;</return>
+
+	</block_content>}</block></function>
+</unit>

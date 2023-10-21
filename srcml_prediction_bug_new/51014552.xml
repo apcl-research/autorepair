@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13342996.java">	<function><type><specifier>private</specifier> <name>RelationType</name></type> <name>getRelationType</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>RelationType</name></type> <name>rt</name> <init>= <expr><call><name><name>aog</name><operator>.</operator><name>getMetaData</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getRelationType</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name>rt</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<return>return <expr><call><name><name>aog</name><operator>.</operator><name>getMetaData</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createRelationType</name><argument_list>(<argument><expr><call><name><name>rt</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>,<argument><expr><name>rt</name></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name><name>Parser</name><operator>.</operator><name>propagateEventOccurred</name></name><argument_list>(
+					<argument><expr><operator>new</operator> <call><name>RelationTypeMissingEvent</name><argument_list>(<argument><expr><literal type="string">"Missing RelationType: "</literal><operator>+</operator><name>name</name></expr></argument>, <argument><expr><literal type="string">"getRelationType(String name)"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

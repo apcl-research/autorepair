@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46065583.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testPaging</name><parameter_list>()</parameter_list><block>{<block_content>
+		
+		<expr_stmt><expr><call><name><name>Store</name><operator>.</operator><name>pageOverAll</name></name><argument_list>(<argument><expr><call><name><name>Versions</name><operator>.</operator><name>RAW</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <class><super><name>OccurrenceConsumer</name></super><argument_list>()</argument_list><block>{
+            <decl_stmt><decl><type><name>int</name></type> <name>counter</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+
+			<function><type><specifier>public</specifier> <name>boolean</name></type> <name>consume</name><parameter_list>(<parameter><decl><type><name>FullRecord</name></type> <name>fullrecord</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<comment type="line">//System.out.println("GUID: "+ fullrecord.getO().getUuid());</comment>
+                <expr_stmt><expr><name>counter</name><operator>++</operator></expr>;</expr_stmt>
+                <if_stmt><if>if<condition>(<expr><name>counter</name><operator>&gt;</operator><literal type="number">10</literal></expr>)</condition><block>{<block_content>
+                    <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+                 
+                <return>return <expr><literal type="boolean">true</literal></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></function>,<expr_stmt><expr><literal type="null">null</literal></expr><operator>,</operator> <expr><literal type="number">10</literal></expr></expr_stmt>)<empty_stmt>;</empty_stmt>
+	}
+</unit>

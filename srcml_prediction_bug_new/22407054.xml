@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26292783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>keymapChanged</name><parameter_list>(  <parameter><decl><type><name>boolean</name></type> <name>startaction</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><specifier>final</specifier> <name>Keymap</name></type> <name>keymap</name> <init>= <expr><call><name><name>EditorManager</name><operator>.</operator><name>getKeymap</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>keymap</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <expr_stmt><expr><call><name>bindAction</name><argument_list>(<argument><expr><name>keymap</name></expr></argument>, <argument><expr><name>startaction</name></expr></argument>,
+                   <argument><expr><call><name><name>KeyStroke</name><operator>.</operator><name>getKeyStroke</name></name><argument_list>(<argument><expr><name><name>KeyEvent</name><operator>.</operator><name>VK_F10</name></name></expr></argument>, <argument><expr><name><name>Event</name><operator>.</operator><name>CTRL_MASK</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>bindAction</name><argument_list>(<argument><expr><name>keymap</name></expr></argument>, <argument><expr><name>stopaction</name></expr></argument>,
+                   <argument><expr><call><name><name>KeyStroke</name><operator>.</operator><name>getKeyStroke</name></name><argument_list>(<argument><expr><name><name>KeyEvent</name><operator>.</operator><name>VK_F11</name></name></expr></argument>, <argument><expr><name><name>Event</name><operator>.</operator><name>CTRL_MASK</name></name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

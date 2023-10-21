@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/545057.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setXMLActionDefaultStat</name> <parameter_list>()</parameter_list> <block>{<block_content>
+    <try>try <block>{<block_content>
+      <decl_stmt><decl><type><name>wpMask</name></type> <name>mask</name> <init>= <expr><operator>new</operator> <call><name>wpMask</name><argument_list>(<argument><expr><name>XML_ACTIONS</name></expr></argument>, <argument><expr><name>xmlActionIndices</name></expr></argument>,
+                               <argument><expr><name>xmlActionDefaultStat</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <decl_stmt><decl><type><name>wpMaskEvent</name></type> <name>event</name> <init>= <expr><operator>new</operator> <call><name>wpMaskEvent</name><argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>mask</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+      <expr_stmt><expr><call><name><name>maskHandler</name><operator>.</operator><name>fireMaskChanged</name></name><argument_list>(<argument><expr><name>event</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block>
+    <catch>catch <parameter_list>(<parameter><decl><type><name>wpMaskException</name></type> <name>me</name></decl></parameter>)</parameter_list> <block>{<block_content/>}</block></catch></try>
+  </block_content>}</block></function>
+</unit>

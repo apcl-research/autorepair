@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50618091.java">   <function><type><specifier>public</specifier> <name>void</name></type> <name>restoreFromSnapshot</name><parameter_list>(<parameter><decl><type><name>SnapshottableMemory</name></type> <name>memory</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>Validate</name><operator>.</operator><name>notNull</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>snapshotFile</name></name></expr></argument>, <argument><expr><literal type="string">"snapshotFile not set"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+      <if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>this</name><operator>.</operator><name>snapshotFile</name><operator>.</operator><name>exists</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+         <return>return;</return>
+      </block_content>}</block></if></if_stmt>
+
+      <try>try <block>{<block_content>
+         <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>basicRestoreFromSnapshot</name></name><argument_list>(<argument><expr><name>memory</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+       
+      <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>exc</name></decl></parameter>)</parameter_list> <block>{<block_content>
+         <throw>throw <expr><operator>new</operator> <call><name>SnapshotException</name><argument_list>(<argument><expr><literal type="string">"failed to restore contents of snapshot file "</literal> <operator>+</operator> <name><name>this</name><operator>.</operator><name>snapshotFile</name></name></expr></argument>, <argument><expr><name>exc</name></expr></argument>)</argument_list></call></expr>;</throw>
+      </block_content>}</block></catch></try>
+   </block_content>}</block></function>
+</unit>

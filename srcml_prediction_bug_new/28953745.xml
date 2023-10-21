@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31794958.java">    <enum><specifier>public</specifier> enum <name>DocumentRelationship</name> <block>{
+       <decl><name>APND</name> <block>{ <function><type><specifier>public</specifier> <name>String</name></type> <name>getValue</name><parameter_list>()</parameter_list> <block>{<block_content> <return>return <expr><literal type="string">"APND"</literal></expr>;</return> </block_content>}</block></function>}</block></decl>,
+       <decl><name>RPLC</name> <block>{ <function><type><specifier>public</specifier> <name>String</name></type> <name>getValue</name><parameter_list>()</parameter_list> <block>{<block_content> <return>return <expr><literal type="string">"RPLC"</literal></expr>;</return> </block_content>}</block></function>}</block></decl>,
+       <decl><name>XFRM</name>    <name>public</name> <name>String</name> <call><name>getValue</name><argument_list>()</argument_list></call> <block>{ <return>return <expr><literal type="string">"XFRM"</literal></expr>;</return>}</block></decl>,
+       <decl><name>XFRM_RPLC</name> <block>{<function><type><specifier>public</specifier> <name>String</name></type> <name>getValue</name><parameter_list>()</parameter_list> <block>{<block_content> <return>return <expr><literal type="string">"XFRM_RPLC"</literal></expr>;</return> </block_content>}</block></function>}</block></decl>;</decl_stmt>
+
+       <function_decl><type><specifier>public</specifier> <specifier>abstract</specifier> <name>String</name></type> <name>getValue</name><parameter_list>()</parameter_list>;</function_decl>
+    }</block></enum>
+</unit>

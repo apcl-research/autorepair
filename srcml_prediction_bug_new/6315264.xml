@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30472983.java">    <function><type><specifier>private</specifier> <name>TreeItem</name></type> <name>findNodeWithIdRecursive</name><parameter_list>(<parameter><decl><type><name><name>TreeItem</name><index>[]</index></name></type> <name>arrItem</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>)</parameter_list>
+    <block>{<block_content>    	
+        <for>for<control>(<init><decl><type><name>TreeItem</name></type> <name>current</name><range>: <expr><name>arrItem</name></expr></range></decl></init> 
+        <block>{<block_content>
+        	<decl_stmt><decl><type><name>String</name></type> <name>idInNode</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>current</name><operator>.</operator><name>getData</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt> 
+            <if_stmt><if>if<condition>(<expr><call><name><name>idInNode</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+                <return>return <expr><name>current</name></expr>;</return></block_content></block></if></if_stmt>
+            <decl_stmt><decl><type><name>TreeItem</name></type> <name>itemInside</name> <init>= <expr><call><name>findNodeWithIdRecursive</name><argument_list>(<argument><expr><call><name><name>current</name><operator>.</operator><name>getItems</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>id</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if<condition>(<expr><name>itemInside</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            	<return>return <expr><name>itemInside</name></expr>;</return></block_content></block></if></if_stmt>            	
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

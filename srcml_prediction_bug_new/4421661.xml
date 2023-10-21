@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4421215.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>serialize</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>type</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SharkNotSupportedException</name></expr></argument></throws> <block>{<block_content>
+        <switch>switch <condition>(<expr><name>type</name></expr>)</condition> <block>{<block_content>
+            <case>case <expr><name><name>ARTPMessage</name><operator>.</operator><name>RDF</name></name></expr>:</case>
+            <case>case <expr><name><name>ARTPMessage</name><operator>.</operator><name>XML</name></name></expr>:</case>
+                <try>try <block>{<block_content>
+                    <return>return <expr><operator>new</operator> <call><name>XMLSerializer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>serializeContextSpace</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr>;</return>
+                </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>SharkKBException</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                        <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>(<argument><expr><call><name><name>ex</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+                </block_content>}</block></catch></try>
+            <default>default:</default> <throw>throw <expr><operator>new</operator> <call><name>SharkNotSupportedException</name><argument_list>(<argument><expr><literal type="string">"ContextMap.serialize: format not supported "</literal> <operator>+</operator> <name>type</name></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></switch>
+    </block_content>}</block></function>
+</unit>

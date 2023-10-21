@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38362529.java">    <function><type><specifier>public</specifier> <name>int</name></type> <name>compareTo</name><parameter_list>(<parameter><decl><type><name>TimeUnit</name></type> <name>t</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ClassCastException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>TimeValue</name><argument_list type="generic">&lt;<argument><name>DimensionlessTimeUnit</name></argument>&gt;</argument_list></name></type> <name>factor</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+        <try>try <block>{<block_content>
+            <return>return <expr><call><name>getConversionFactor</name><argument_list>(<argument><expr><call><name><name>t</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>compareTo</name><argument_list>(<argument><expr><operator>new</operator> <call><name><name>IntegerTimeValue</name><argument_list type="generic">&lt;<argument><name>DimensionlessTimeUnit</name></argument>&gt;</argument_list></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block> <catch>catch<parameter_list>(<parameter><decl><type><name>TimeConversionException</name></type> <name>tce</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>ClassCastException</name><argument_list>(<argument><expr><call><name><name>tce</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

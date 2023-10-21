@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18662783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>reset</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>editCardPanel</name><operator>.</operator><name>reset</name></name> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>editCardPanel</name><operator>.</operator><name>setNextFocusComponent</name></name><argument_list>(<argument><expr><name>okButton</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>similarCardsListModel</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>similarCardsList</name><operator>.</operator><name>setLineWrapping</name></name><argument_list>(<argument><expr><call><name><name>paukerFrame</name><operator>.</operator><name>isLineWrapping</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>batchListCellRenderer</name><operator>.</operator><name>setLineWrap</name></name><argument_list>(<argument><expr><call><name><name>paukerFrame</name><operator>.</operator><name>isLineWrapping</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>setLocationRelativeTo</name><argument_list>(<argument><expr><name>paukerFrame</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

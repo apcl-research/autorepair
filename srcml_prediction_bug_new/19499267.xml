@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testImageGuard</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IMachineRoot</name></type> <name>mch</name> <init>= <expr><call><name>createMachine</name><argument_list>(<argument><expr><literal type="string">"mch"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IEvent</name></type> <name>evt</name> <init>= <expr><call><name>createEvent</name><argument_list>(<argument><expr><name>mch</name></expr></argument>, <argument><expr><literal type="string">"evt"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>IGuard</name></type> <name>grd</name> <init>= <expr><call><name>createGuard</name><argument_list>(<argument><expr><name>evt</name></expr></argument>, <argument><expr><literal type="string">"grd"</literal></expr></argument>, <argument><expr><literal type="string">"TRUE"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>assertImage</name><argument_list>(<argument><expr><literal type="string">"Unexpected image descriptor for guard"</literal></expr></argument>,
+				<argument><expr><name><name>IEventBSharedImages</name><operator>.</operator><name>IMG_GUARD_PATH</name></name></expr></argument>, <argument><expr><name>grd</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+		<expr_stmt><expr><call><name><name>grd</name><operator>.</operator><name>setTheorem</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+		<expr_stmt><expr><call><name>assertImage</name><argument_list>(
+				<argument><expr><literal type="string">"Unexpected image descriptor for guard with sufficiently attribute"</literal></expr></argument>,
+				<argument><expr><name><name>IEventBSharedImages</name><operator>.</operator><name>IMG_THEOREM_PATH</name></name></expr></argument>, <argument><expr><name>grd</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

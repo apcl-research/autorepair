@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46974815.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>compile</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>templates</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        
+        <decl_stmt><decl><type><name>ZipHandler</name></type> <name>h</name> <init>= <expr><operator>new</operator> <call><name>ZipHandler</name><argument_list>(<argument><expr><call><name>PROPS</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getFile</name><argument_list>(<argument><expr><name>COMPILED</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>CompileAll</name></type> <name>ca</name> <init>= <expr><operator>new</operator> <call><name>CompileAll</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>ca</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>LogHandler</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ca</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>h</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>ca</name><operator>.</operator><name>compile</name></name><argument_list>( ;</argument_list></call></expr>
+        <call><name><name>h</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>load</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37718093.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>hasPrimitivePeer</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>mObjectClass</name> <operator>==</operator> <name><name>Integer</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Boolean</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Byte</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Character</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Short</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Long</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Float</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Double</name><operator>.</operator><name>class</name></name> <operator>||</operator>
+            <name>mObjectClass</name> <operator>==</operator> <name><name>Void</name><operator>.</operator><name>class</name></name></expr>)</condition> <block>{<block_content>
+            
+            <return>return <expr><literal type="boolean">true</literal></expr> 
+        </block_content>}</block></if></if_stmt>
+
+        <return>return <expr><literal type="boolean">false</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

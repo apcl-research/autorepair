@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18936891.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>writeWorkerInTextArea</name><parameter_list>( <parameter><decl><type><name>WorkerSpec</name></type> <name>workerSpec</name></decl></parameter> )</parameter_list> <block>{<block_content>
+			<decl_stmt><decl><type><name>String</name></type> <name>expression</name> <init>= <expr><call><name><name>workerSpec</name><operator>.</operator><name>getExpression</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if<condition>(<expr><name>expression</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block>{<block_content>
+				<try>try <block>{<block_content>
+					<expr_stmt><expr><call><name><name>propertiesArea</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><operator>new</operator> <call><name>JobAd</name><argument_list>( <argument><expr><name>expression</name></expr></argument> )</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>( <argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block> <catch>catch <parameter_list>( <parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter> )</parameter_list> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>propertiesArea</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><literal type="string">"Error parsing JobAd: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>(  )</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></catch></try>
+			</block_content>}</block></if><else>else<block>{<block_content>
+				<expr_stmt><expr><call><name><name>propertiesArea</name><operator>.</operator><name>setText</name></name><argument_list>( <argument><expr><call><name>formatMap</name><argument_list>( <argument><expr><call><name><name>workerSpec</name><operator>.</operator><name>getAttributes</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></else></if_stmt>
+	</block_content>}</block></function>
+</unit>

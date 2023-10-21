@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19509094.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testQuantifiers</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>ITypeEnvironment</name></type> <name>env</name> <init>= <expr><call><name>mTypeEnvironment</name><argument_list>(<argument><expr><literal type="string">"f"</literal></expr></argument>, <argument><expr><call><name>REL</name><argument_list>(<argument><expr><name>S</name></expr></argument>, <argument><expr><name>S</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name>assertWDLemma</name><argument_list>(<argument><expr><name>env</name></expr></argument>,<comment type="line">//</comment>
+				<argument><expr><literal type="string">"âxÂ·xâ dom(f) â dom(f) ây âdom(f) â§ fâS â§ yâdom(f) â§ fâS"</literal></expr></argument>,<comment type="line">//</comment>
+				<argument><expr><literal type="string">"âxÂ·xâdom(f) âdom(f) â§ fâS â§ yâdom(f) â§ fâS"</literal></expr></argument>,<comment type="line">//</comment>
+				<argument><expr><literal type="string">"âxÂ·xâdom(f) âdom(f) â§ fâS â§ yâdom(f) â§ fâS"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></function>
+</unit>

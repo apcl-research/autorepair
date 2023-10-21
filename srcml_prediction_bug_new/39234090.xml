@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11682996.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>createObject</name><parameter_list>(<parameter><decl><type><name>Attributes</name></type> <name>attributes</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>String</name></type> <name>variable</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>VARIABLE</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>part</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>PART</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>partnerLink</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>PARTNER_LINK</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>property</name> <init>= <expr><call><name><name>attributes</name><operator>.</operator><name>getValue</name></name><argument_list>(<argument><expr><name>PROPERTY</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <return>return <expr><call><name>getElementFactory</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createTo</name><argument_list>(<argument><expr><name>variable</name></expr></argument>, <argument><expr><name>part</name></expr></argument>, <argument><expr><name>property</name></expr></argument>,
+                <argument><expr><name>partnerLink</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

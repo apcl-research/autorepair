@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29342715.java">	<function><type><specifier>protected</specifier> <name>int</name></type> <name>getFieldEnd</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>FieldDetail</name></type> <name>currField</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name><name>byte</name><index>[]</index></name></type> <name>record</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	        <decl_stmt><decl><type><name>int</name></type> <name>ret</name> <init>= <expr><call><name><name>java</name><operator>.</operator><name>lang</name><operator>.</operator><name>Math</name><operator>.</operator><name>min</name></name><argument_list>(<argument><expr><call><name><name>currField</name><operator>.</operator><name>getEnd</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name><name>record</name><operator>.</operator><name>length</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	        <decl_stmt><decl><type><name>byte</name></type> <name>padByte</name> <init>= <expr><call><name>getPadByte</name><argument_list>(<argument><expr><call><name><name>currField</name><operator>.</operator><name>getFontName</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+	        <while>while <condition>(<expr><name>ret</name> <operator>&gt;</operator> <literal type="number">0</literal> <operator>&amp;&amp;</operator> <operator>(</operator><name><name>record</name><index>[<expr><name>ret</name> <operator>-</operator> <literal type="number">1</literal></expr>]</index></name> <operator>==</operator> <name>padByte</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+	            <expr_stmt><expr><name>ret</name> <operator>-=</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+	        </block_content>}</block></while>
+
+	        <return>return <expr><name>ret</name></expr> 
+	</block_content>}</block></function>
+</unit>

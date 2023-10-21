@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30279996.java">	<function><type><specifier>protected</specifier> <name>void</name></type> <name>returnFile</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>file</name></decl></parameter>, <parameter><decl><type><name>OutputStream</name></type> <name>out</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>FileInputStream</name></type> <name>fin</name> <init>= <expr><operator>new</operator> <call><name>FileInputStream</name><argument_list>(<argument><expr><name>file</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>buf</name> <init>= <expr><operator>new</operator> <name><name>byte</name><index>[<expr><literal type="number">4</literal> <operator>*</operator> <literal type="number">1024</literal></expr>]</index></name></expr></init></decl>;</decl_stmt> <comment type="line">// 4K buffer</comment>
+		<decl_stmt><decl><type><name>int</name></type> <name>bytesRead</name></decl>;</decl_stmt>
+		<while>while <condition>(<expr><operator>(</operator><name>bytesRead</name> <operator>=</operator> <call><name><name>fin</name><operator>.</operator><name>read</name></name><argument_list>(<argument><expr><name>buf</name></expr></argument>)</argument_list></call><operator>)</operator> <operator>!=</operator> <operator>-</operator><literal type="number">1</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>write</name></name><argument_list>(<argument><expr><name>buf</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>, <argument><expr><name>bytesRead</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>out</name><operator>.</operator><name>flush</name></name><argument_list>()</argument_list></call></expr> 
+		</block_content>}</block></while>
+		<expr_stmt><expr><call><name><name>fin</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

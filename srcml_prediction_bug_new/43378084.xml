@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44889996.java">	<function><type><specifier>protected</specifier> <name>DynaBean</name></type> <name>clone</name><parameter_list>(<parameter><decl><type><name><name>Class</name><index>[]</index></name></type> <name>face</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name><name>Class</name><index>[]</index></name></type> <name>iFace</name> <init>= <expr><call><name>injectDynamicInterface</name><argument_list>(<argument><expr><name>face</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// return a new dynamic proxy</comment>
+		<decl_stmt><decl><type><name>Map</name></type> <name>state</name> <init>= <expr><call><name>_getState</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>DynaBeanImpl</name></type> <name>copy</name> <init>= <expr><call><name>newInstance</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>copy</name><operator>.</operator><name>_setState</name></name><argument_list>(<argument><expr><name>state</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>copy</name><operator>.</operator><name>_setInterface</name></name><argument_list>(<argument><expr><name>iFace</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<decl_stmt><decl><type><name>Object</name></type> <name>proxy</name> <init>= <expr><call><name><name>Proxy</name><operator>.</operator><name>newProxyInstance</name></name><argument_list>(<argument><expr><call><name>getClass</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getClassLoader</name><argument_list>()</argument_list></call></expr></argument>,
+				<argument><expr><name>iFace</name></expr></argument>, <argument><expr><name>copy</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>copy</name><operator>.</operator><name>_setProxy</name></name><argument_list>(<argument><expr><name>proxy</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><operator>(</operator><name>DynaBean</name><operator>)</operator> <name>proxy</name></expr>;</return></block_content></block></function>
+	 
+</unit>

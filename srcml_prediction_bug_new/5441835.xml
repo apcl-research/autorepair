@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10602796.java">    <function><type><specifier>public</specifier> <name>UnSyncStringBuffer</name></type> <name>insertint</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>offset</name></decl></parameter>, <parameter><decl><type><name>char</name></type> <name>c</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>newcount</name> <init>= <expr><name>count</name> <operator>+</operator> <literal type="number">1</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>newcount</name> <operator>&gt;</operator> <name><name>value</name><operator>.</operator><name>length</name></name></expr>)</condition><block type="pseudo"><block_content>
+            <expr_stmt><expr><call><name>expandCapacity</name><argument_list>(<argument><expr><name>newcount</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        <expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>arraycopy</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>, <argument><expr><name>offset</name></expr></argument>, <argument><expr><name>value</name></expr></argument>, <argument><expr><name>offset</name> <operator>+</operator> <literal type="number">1</literal></expr></argument>, <argument><expr><name>count</name> <operator>-</operator> <name>offset</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name><name>value</name><index>[<expr><name>offset</name></expr>]</index></name> <operator>=</operator> <name>c</name></expr>;</expr_stmt>
+        <expr_stmt><expr><name>count</name> <operator>=</operator> <name>newcount</name></expr>;</expr_stmt>
+        <return>return <expr><name>this</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

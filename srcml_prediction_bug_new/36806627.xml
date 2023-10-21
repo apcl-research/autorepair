@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16681596.java">	<function><type><specifier>public</specifier> <name>ContactItem</name></type> <name>findNextCoord</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>brokenID</name></decl></parameter>)</parameter_list>
+	<block>{<block_content>		
+		<decl_stmt><decl><type><name>ContactItem</name></type> <name>minContact</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		
+		<for>for<control>(<init><decl><type><name>ContactItem</name></type> <name>ci</name> <range>: <expr><call><name><name>ParserDriver</name><operator>.</operator><name>ReadContacts</name></name><argument_list>(<argument><expr><name><name>Constants</name><operator>.</operator><name>contactXML</name></name></expr></argument>)</argument_list></call></expr></range></decl></init>)</control>
+		<block>{<block_content>	
+			<if_stmt><if>if<condition>(<expr><call><name><name>ci</name><operator>.</operator><name>getID</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>brokenID</name></expr></argument>)</argument_list></call></expr>)</condition>
+			<block>{<block_content>
+				<continue>continue;</continue>
+			</block_content>}</block></if></if_stmt>
+			<if_stmt><if>if<condition>(<expr><name>minContact</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition>
+			<block>{<block_content>
+				<expr_stmt><expr><name>minContact</name> <operator>=</operator> <name>ci</name></expr>;</expr_stmt>
+			</block_content>}</block></if>
+		 
+		<if type="elseif">else if <condition>( <expr><operator>(</operator><call><name><name>Integer</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><call><name><name>minContact</name><operator>.</operator><name>getID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> <operator>&gt;</operator> <call><name><name>Integer</name><operator>.</operator><name>valueOf</name></name><argument_list>(<argument><expr><call><name><name>ci</name><operator>.</operator><name>getID</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call><operator>)</operator></expr> )</condition> 
+		<block>{<block_content>
+				<expr_stmt><expr><name>minContact</name> <operator>=</operator> <name>ci</name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		 
+		<return>return <expr><name>minContact</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

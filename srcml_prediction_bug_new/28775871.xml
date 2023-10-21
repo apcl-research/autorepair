@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/16572983.java">	<function><type><specifier>private</specifier> <name>JButton</name></type> <name>getEditMatrix</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>editMatrix</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>editMatrix</name> <operator>=</operator> <operator>new</operator> <call><name>JButton</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>editMatrix</name><operator>.</operator><name>setBounds</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Rectangle</name><argument_list>(<argument><expr><literal type="number">15</literal></expr></argument>, <argument><expr><literal type="number">75</literal></expr></argument>, <argument><expr><literal type="number">136</literal></expr></argument>, <argument><expr><literal type="number">16</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>editMatrix</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name><name>lang</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="string">"MSG_14"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>editMatrix</name><operator>.</operator><name>addActionListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>event</name><operator>.</operator><name>ActionListener</name></name></super><argument_list>()</argument_list> <block>{
+				<function><type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name><parameter_list>(<parameter><decl><type><name><name>java</name><operator>.</operator><name>awt</name><operator>.</operator><name>event</name><operator>.</operator><name>ActionEvent</name></name></type> <name>e</name></decl></parameter>)</parameter_list>  
+					<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"actionPerformed()"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// TODO Auto-generated Event stub actionPerformed()</comment>
+				</block_content>}</block></function>
+			}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>editMatrix</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

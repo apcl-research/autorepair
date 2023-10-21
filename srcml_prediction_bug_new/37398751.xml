@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3695991.java">  <function><type><specifier>private</specifier> <name>Object</name></type> <name>getTagResult</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>JspException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>String</name></type> <name>el</name> <init>= <expr><call><name>getEl</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <decl_stmt><decl><type><name>String</name></type> <name>collection</name> <init>= <expr><call><name>getCollection</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if <condition>(<expr><name>el</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <return>return <expr><call><name><name>ExpressionEvaluatorManager</name><operator>.</operator><name>evaluate</name></name><argument_list>(
+        <argument><expr><literal type="string">"el"</literal></expr></argument>,
+        <argument><expr><name>el</name></expr></argument>,
+        <argument><expr><name><name>Object</name><operator>.</operator><name>class</name></name></expr></argument>,
+        <argument><expr><name>this</name></expr></argument>,
+        <argument><expr><name>pageContext</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>collection</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <return>return <expr><call><name><name>pageContext</name><operator>.</operator><name>findAttribute</name></name><argument_list>(<argument><expr><name>collection</name></expr></argument> ;</argument_list></call></expr></return>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></else></if_stmt>
+  </block_content>}</block></function>
+</unit>

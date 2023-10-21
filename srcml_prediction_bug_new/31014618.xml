@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17202696.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>addElementAsLast</name><parameter_list>(<parameter><decl><type><name>RingElement</name></type> <name>element</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name>isEmpty</name><argument_list>()</argument_list></call></expr>  )</condition> <block>{<block_content>
+      <expr_stmt><expr><name>head</name> <operator>=</operator> <name>current</name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name><name>element</name><operator>.</operator><name>next</name></name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name><name>element</name><operator>.</operator><name>prev</name></name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+    </block_content>}</block></if> <else>else <block>{<block_content>
+      <expr_stmt><expr><name><name>element</name><operator>.</operator><name>prev</name></name> <operator>=</operator> <name><name>head</name><operator>.</operator><name>prev</name></name></expr>;</expr_stmt>
+      <expr_stmt><expr><name><name>element</name><operator>.</operator><name>next</name></name> <operator>=</operator> <name>head</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name><name>element</name><operator>.</operator><name>prev</name><operator>.</operator><name>next</name></name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+      <expr_stmt><expr><name><name>head</name><operator>.</operator><name>prev</name></name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+    <expr_stmt><expr><name>elements</name><operator>++</operator></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

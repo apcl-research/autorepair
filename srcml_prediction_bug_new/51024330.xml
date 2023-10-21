@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18449983.java">	<function><type><specifier>private</specifier> <name>Component</name></type> <name>makeQueryIDField</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>String</name></type> <name>startMessage</name> <init>= <expr><literal type="string">"Enter IDs to query"</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><name>queryIDs</name> <operator>=</operator> <operator>new</operator> <call><name>JTextArea</name><argument_list>(<argument><expr><name>startMessage</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>queryIDs</name><operator>.</operator><name>addMouseListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>MouseAdapter</name></super><argument_list>()</argument_list> <block>{
+			<function><annotation>@<name>Override</name></annotation>
+			<type><specifier>public</specifier> <name>void</name></type> <name>mouseClicked</name><parameter_list>(<parameter><decl><type><name>MouseEvent</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><call><name><name>queryIDs</name><operator>.</operator><name>getText</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>startMessage</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>queryIDs</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></function>
+		}</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><operator>new</operator> <call><name>JScrollPane</name><argument_list>(<argument><expr><name>queryIDs</name></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

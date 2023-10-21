@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/33044029.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>createDropTableStatement</name><parameter_list>(<parameter><decl><type><name><name>TransactionMessage</name><operator>.</operator><name>DropTableStatement</name></name></type> <name>dropTableStatement</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>schemaName</name> <init>= <expr><call><name><name>dropTableStatement</name><operator>.</operator><name>getTableMetadata</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getSchemaName</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>String</name></type> <name>tableName</name> <init>= <expr><call><name><name>dropTableStatement</name><operator>.</operator><name>getTableMetadata</name></name> <argument_list>()</argument_list></call></expr></init></decl> ;</decl_stmt>
+        <return>return <expr><literal type="string">"DROP TABLE `"</literal><operator>+</operator><name>schemaName</name><operator>+</operator><literal type="string">"`.`"</literal><operator>+</operator><name>tableName</name><operator>+</operator><literal type="string">"`"</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

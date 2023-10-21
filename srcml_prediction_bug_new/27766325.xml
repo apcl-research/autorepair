@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19095159.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>configure</name> <parameter_list>(<parameter><decl><type><name>Configuration</name></type> <name>configuration</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ConfigurationException</name></expr></argument></throws> <block>{<block_content>
+        
+        <try>try <block>{<block_content>
+            
+            <comment type="block" format="javadoc">/** Extracting filename for log4j */</comment>
+            <expr_stmt><expr><name>log4jConfigFile</name> <operator>=</operator> <call><name><name>configuration</name><operator>.</operator><name>getChild</name></name> <argument_list>(<argument><expr><literal type="string">"log4j"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getChild</name> <argument_list>(<argument><expr><literal type="string">"filename"</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>getValue</name> <argument_list>()</argument_list></call></expr>;</expr_stmt>
+            
+            <comment type="block" format="javadoc">/** Get configuration for log4j out of specified filename */</comment>
+            <expr_stmt><expr><call><name><name>PropertyConfigurator</name><operator>.</operator><name>configure</name></name> <argument_list>(<argument><expr><name>log4jConfigFile</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            
+            
+          <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>re</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>ConfigurationException</name> <argument_list>(<argument><expr><literal type="string">"Could not get log4j filename value!"</literal></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></catch></try>
+        
+    </block_content>}</block></function>
+</unit>

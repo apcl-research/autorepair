@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19492983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testCarrierSets_01_twoCarrierSets</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>IContextRoot</name></type> <name>con</name> <init>= <expr><call><name>createContext</name><argument_list>(<argument><expr><literal type="string">"ctx"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+		<expr_stmt><expr><call><name>addCarrierSets</name><argument_list>(<argument><expr><name>con</name></expr></argument>, <argument><expr><call><name>makeSList</name><argument_list>(<argument><expr><literal type="string">"S1"</literal></expr></argument>, <argument><expr><literal type="string">"S2"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>saveRodinFileOf</name><argument_list>(<argument><expr><name>con</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>runBuilder</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<decl_stmt><decl><type><name>ISCContextRoot</name></type> <name>file</name> <init>= <expr><call><name><name>con</name><operator>.</operator><name>getSCContextRoot</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		
+		<expr_stmt><expr><call><name>containsCarrierSets</name><argument_list>(<argument><expr><name>file</name></expr></argument>, <argument><expr><literal type="string">"S1"</literal></expr></argument>, <argument><expr><literal type="string">"S2"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<expr_stmt><expr><call><name>containsMarkers</name><argument_list>(<argument><expr><name>con</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument> ;</argument_list></call></expr></expr_stmt>
+	</block_content>}</block></function>
+</unit>

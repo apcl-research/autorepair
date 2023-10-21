@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41759996.java">	<function><type><specifier>private</specifier> <name>IPrevExchangeItem</name></type> <name>findItem</name><parameter_list>(<parameter><decl><type><name><name>IPrevExchangeItem</name><index>[]</index></name></type> <name>exchangeItems</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>id</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>IPrevExchangeItem</name></type> <name>result</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<for>for<control>(<init><decl><type><name>IPrevExchangeItem</name></type> <name>item</name> <range>: <expr><name>exchangeItems</name></expr></range></decl></init>)</control><block>{<block_content>
+			<if_stmt><if>if<condition>(<expr><call><name><name>item</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>id</name></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+				<expr_stmt><expr><name>result</name> <operator>=</operator> <name>item</name></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<if_stmt><if>if<condition>(<expr><name>result</name><operator>==</operator><literal type="null">null</literal></expr>)</condition><block>{<block_content>
+			<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"Id was not found: "</literal><operator>+</operator><name>id</name></expr></argument>)</argument_list></call> 
+			<operator>.</operator><call><name>println</name><argument_list>(<argument><expr><literal type="string">"Available id's are:"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<for>for<control>(<init><decl><type><name>IPrevExchangeItem</name></type> <name>item</name> <range>: <expr><name>exchangeItems</name></expr></range></decl></init>)</control><block>{<block_content>
+				<expr_stmt><expr><call><name><name>System</name><operator>.</operator><name>out</name><operator>.</operator><name>println</name></name><argument_list>(<argument><expr><literal type="string">"   id="</literal><operator>+</operator><call><name><name>item</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></for>			
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>result</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

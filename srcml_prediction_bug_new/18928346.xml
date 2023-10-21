@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38582996.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>setVisiblePropertiesExtension</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><name>extension</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+      <return>return 
+    <if_stmt><if>if <condition>(<expr><operator>!</operator><name>showProperties</name> <operator>||</operator> <name>visiblePropertyMetas</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+      <expr_stmt><expr><call><name><name>extension</name><operator>.</operator><name>setVisibleProperties</name></name><argument_list>(<argument><expr><operator>new</operator> <name><name>MemberPropertyMeta</name><index>[<expr><literal type="number">0</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <return>return;</return>
+    </block_content>}</block></if></if_stmt></block_content></block></if></if_stmt>
+    <decl_stmt><decl><type><name><name>MemberPropertyMeta</name><index>[]</index></name></type> <name>mps</name> <init>= <expr><operator>new</operator> <name><name>MemberPropertyMeta</name><index>[<expr><call><name><name>visiblePropertyMetas</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>]</index></name></expr></init></decl>;</decl_stmt>
+    <expr_stmt><expr><name>mps</name> <operator>=</operator> <operator>(</operator><name><name>MemberPropertyMeta</name><index>[]</index></name><operator>)</operator> <call><name><name>visiblePropertyMetas</name><operator>.</operator><name>toArray</name></name><argument_list>(<argument><expr><name>mps</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>extension</name><operator>.</operator><name>setVisibleProperties</name></name><argument_list>(<argument><expr><name>mps</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

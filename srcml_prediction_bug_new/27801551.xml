@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>public</specifier> <name>BetterTableCellEditor</name></type> <name>getEditor</name>   <parameter_list>( )</parameter_list> <block>{<block_content>
+    <if_stmt><if>if<condition>( <expr><name>type</name> <operator>==</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+      <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <decl_stmt><decl><type><name>Object</name></type> <name>editor</name> <init>= <expr><call><name><name>typeEditorMap</name><operator>.</operator><name>get</name></name><argument_list>( <argument><expr><name>type</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+    <if_stmt><if>if<condition>( <expr><name>editor</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+      <return>return <expr><operator>(</operator> <name>BetterTableCellEditor</name> <operator>)</operator><name>editor</name></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+    <comment type="line">// Tail recurse to help the optimizer.</comment>
+    <return>return <expr><call><name>getEditor</name><argument_list>( <argument><expr><call><name><name>type</name><operator>.</operator><name>getSuperclass</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// getEditor( Class )</comment>
+</unit>

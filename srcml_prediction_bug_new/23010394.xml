@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/45232783.java">	<function><type><specifier>private</specifier> <name>JScrollPane</name></type> <name>getJScrollPaneOutputPort</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>jScrollPaneOutputPort</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>jScrollPaneOutputPort</name> <operator>=</operator> <operator>new</operator> <call><name>JScrollPane</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jScrollPaneOutputPort</name><operator>.</operator><name>setBounds</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>Rectangle</name><argument_list>(<argument><expr><literal type="number">15</literal></expr></argument>, <argument><expr><literal type="number">310</literal></expr></argument>, <argument><expr><literal type="number">310</literal></expr></argument>, <argument><expr><literal type="number">133</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>jScrollPaneOutputPort</name><operator>.</operator><name>setViewportView</name></name> <argument_list>(<argument><expr><call><name>getTxtOutputPort</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+		<return>return <expr><name>jScrollPaneOutputPort</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

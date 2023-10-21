@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/13579963.java">	<function><type><specifier>public</specifier> <name>TransportLocationIfc</name></type> <name>getLocationWithMostIdleTrailers</name><parameter_list>(<parameter><decl><type><name><name>Collection</name><argument_list type="generic">&lt;<argument><name>LaneIfc</name></argument>&gt;</argument_list></name></type> <name>trailers</name></decl></parameter>, <parameter><decl><type><name>double</name></type> <name>distance</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<decl_stmt><decl><type><name>TransportLocationIfc</name></type> <name>mLoc</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>max</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<for>for<control>(<init><decl><type><name>LaneIfc</name></type> <name>lane</name><range>: <expr><name>trailers</name></expr></range></decl></init>)</control><block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><call><name><name>lane</name><operator>.</operator><name>getDistance</name></name><argument_list>()</argument_list></call> <operator>&lt;=</operator> <name>distance</name></expr>)</condition><block>{<block_content>
+				<decl_stmt><decl><type><name>TransportLocationIfc</name></type> <name>dest</name> <init>= <expr><call><name><name>lane</name><operator>.</operator><name>getDestination</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+				<decl_stmt><decl><type><name>int</name></type> <name>nt</name> <init>= <expr><call><name>getNumIdleTrailers</name><argument_list>(<argument><expr><name>dest</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><name>nt</name> <operator>&gt;</operator> <name>max</name></expr>)</condition><block>{<block_content>
+					<expr_stmt><expr><name>max</name> <operator>=</operator> <name>nt</name></expr>;</expr_stmt>
+					<expr_stmt><expr><name>mLoc</name> <operator>=</operator> <name>dest</name></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>				
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return<expr><operator>(</operator><name>mLoc</name><operator>)</operator></expr>;</return>
+	</block_content>}</block></function>
+</unit>

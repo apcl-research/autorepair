@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/11102983.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setProperty</name><parameter_list>(<parameter><decl><type><name>XMLContextData</name></type> <name>data</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>toSet</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>propertyName</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>value</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>collection</name></expr>)</condition> <block>{<block_content>
+            <decl_stmt><decl><type><name>FieldSetter</name></type> <name>setter</name> <init>= <expr><call><name>getFieldSetter</name><argument_list>(<argument><expr><name>propertyName</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>setter</name> <operator>!=</operator> <literal type="null">null</literal></expr>  )</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>setter</name><operator>.</operator><name>setValue</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>, <argument><expr><name>toSet</name></expr></argument>, <argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <decl_stmt><decl><type><name>Collection</name></type> <name>c</name> <init>= <expr><operator>(</operator><name>Collection</name><operator>)</operator> <name>toSet</name></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><call><name><name>c</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>value</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

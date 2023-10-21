@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22626963.java">	<function><type><specifier>private</specifier> <name>List</name></type> <name>getRoleOptions</name><parameter_list>(<parameter><decl><type><name>Collection</name></type> <name>roles</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// prtln ("getRoleOptions");</comment>
+		<decl_stmt><decl><type><name>List</name></type> <name>options</name> <init>= <expr><operator>new</operator> <call><name>ArrayList</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>options</name><operator>.</operator><name>add</name></name> <argument_list>(<argument><expr><operator>new</operator> <call><name>LabelValueBean</name><argument_list>(<argument><expr><literal type="string">"- none -"</literal></expr></argument>, <argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<for>for <control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>roles</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>String</name></type> <name>role</name> <init>= <expr><call><name><name>Roles</name><operator>.</operator><name>toString</name></name><argument_list>(<argument><expr><operator>(</operator><name><name>Roles</name><operator>.</operator><name>Role</name></name><operator>)</operator> <call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<comment type="line">// prtln ("adding options for " + role);</comment>
+			<expr_stmt><expr><call><name><name>options</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>LabelValueBean</name><argument_list>(<argument><expr><name>role</name></expr></argument>, <argument><expr><name>role</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><name>options</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14078981.java">    <function><type><specifier>public</specifier> <name>UserSecurity</name></type> <name>getUserSecurity</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>PersistenceException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type> <name>obj</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>request</name><operator>.</operator><name>getSession</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getAttribute</name><argument_list>(<argument><expr><name><name>ContextAdapter</name><operator>.</operator><name>SECURITY_SESSION_KEY</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>obj</name> <operator>instanceof</operator> <name>UserSecurity</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>(</operator><name>UserSecurity</name><operator>)</operator> <name>obj</name></expr>;</return>
+          </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setUserSecurity</name></name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getDefaultUserSecurity</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <return>return <expr><call><name><name>this</name><operator>.</operator><name>getDefaultUserSecurity</name></name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

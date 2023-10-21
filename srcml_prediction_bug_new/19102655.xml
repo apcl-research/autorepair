@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/43074529.java">  <function><type><specifier>static</specifier> <specifier>public</specifier> <name>boolean</name></type> <name>deleteDirectory</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>file</name></decl></parameter>)</parameter_list> <block>{<block_content>
+  	<if_stmt><if>if <condition>(<expr><call><name><name>file</name><operator>.</operator><name>isFile</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content> <return>return <expr><call><name><name>file</name><operator>.</operator><name>delete</name></name><argument_list>()</argument_list></call></expr>;</return></block_content></block></if></if_stmt>
+    <if_stmt><if>if <condition>(<expr><call><name><name>file</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+    	<for>for <control>(<init><decl><type><name>File</name></type> <name>child</name> <range>: <expr><call><name><name>file</name><operator>.</operator><name>listFiles</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control><block type="pseudo"><block_content> 
+    		<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name>deleteDirectory</name><argument_list>(<argument><expr><name>child</name></expr></argument>)</argument_list></call></expr>  )</condition><block type="pseudo"><block_content> <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></if></if_stmt></block_content></block></for>
+    	<return>return <expr><call><name><name>file</name><operator>.</operator><name>delete</name></name><argument_list>()</argument_list></call></expr>;</return>
+    </block_content>}</block></if></if_stmt>
+  	<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+  </block_content>}</block></function>
+</unit>

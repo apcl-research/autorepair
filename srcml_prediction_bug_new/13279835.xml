@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31492496.java">    <function><type><specifier>private</specifier> <name>boolean</name></type> <name>criterionMatches</name><parameter_list>(<parameter><decl><type><name>ConnectedNode</name></type> <name>connectedNode</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	 <decl_stmt><decl><type><name>boolean</name></type> <name>ok</name> <init>= <expr><literal type="boolean">true</literal></expr></init></decl>;</decl_stmt>
+	 <if_stmt><if>if <condition>(<expr><name>isCriterionNode</name> <operator>&amp;&amp;</operator> 
+	     <operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>node</name></name> <operator>!=</operator> <name>criterionNode</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+	     <expr_stmt><expr><name>ok</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+	 </block_content>}</block></if></if_stmt>
+	 <if_stmt><if>if <condition>(<expr><name>isCriterionEdgeID</name> <operator>&amp;&amp;</operator> 
+	     <operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>edgeID</name></name> <operator>!=</operator> <name>criterionEdgeID</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+	     <expr_stmt><expr><name>ok</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+	  
+	 <if_stmt><if>if <condition>(<expr><name>isCriterionDirection</name> <operator>&amp;&amp;</operator> 
+	     <operator>(</operator><name><name>connectedNode</name><operator>.</operator><name>direction</name></name> <operator>!=</operator> <name>criterionDirection</name><operator>)</operator></expr>)</condition> <block>{<block_content>
+	     <expr_stmt><expr><name>ok</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+	 </block_content>}</block></if></if_stmt>
+	 <return>return <expr><name>ok</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50158891.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getRecId</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>recIndex</name></decl></parameter>)</parameter_list>  
+		<if_stmt><if>if <condition>(<expr><name>recIndex</name> <operator>&gt;</operator> <operator>-</operator><literal type="number">1</literal> <operator>&amp;&amp;</operator> <call><name><name>this</name><operator>.</operator><name>getNumHits</name></name><argument_list>()</argument_list></call> <operator>&gt;=</operator> <operator>(</operator><name>recIndex</name> <operator>+</operator> <literal type="number">1</literal><operator>)</operator></expr>)</condition> <block>{<block_content>
+			<return>return <expr><call><name>getIdFromResultDoc</name><argument_list>(<argument><expr><call><name><name>this</name><operator>.</operator><name>getResults</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>get</name><argument_list>(<argument><expr><name>recIndex</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><call><name>prtlnErr</name><argument_list>(<argument><expr><literal type="string">"getRecId error: requested index: "</literal> <operator>+</operator> <name>recIndex</name> <operator>+</operator> <literal type="string">" size: "</literal> <operator>+</operator> <call><name><name>this</name><operator>.</operator><name>getNumHits</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></else></if_stmt>
+	}
+</unit>

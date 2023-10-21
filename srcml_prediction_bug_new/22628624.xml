@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/582615.java">	<function><type><specifier>public</specifier> <name>JLabel</name></type> <name>getLabel</name><parameter_list>( <parameter><decl><type><name>String</name></type> <name>label</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>tooltipText</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>enabled</name></decl></parameter> )</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>JLabel</name></type> <name>ret</name> <init>= <expr><operator>new</operator> <call><name>JLabelAntiAliased</name><argument_list>( <argument><expr><name>label</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>setFont</name></name><argument_list>( <argument><expr><name>LABEL_FONT</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>( <expr><name>tooltipText</name> <operator>!=</operator> <literal type="null">null</literal></expr> )</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>setToolTipText</name></name><argument_list>( <argument><expr><call><name><name>Styles</name><operator>.</operator><name>markup</name></name><argument_list>( <argument><expr><name>tooltipText</name></expr></argument> )</argument_list></call></expr></argument> )</argument_list></call></expr> 
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>setForeground</name></name><argument_list>( <argument><expr><name>LABEL_COLOR</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>ret</name><operator>.</operator><name>setEnabled</name></name><argument_list>( <argument><expr><name>enabled</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>ret</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

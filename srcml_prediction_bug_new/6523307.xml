@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14789996.java">	<function><type><specifier>public</specifier> <name>Portlet</name></type> <name>getPortlet</name><parameter_list>(<parameter><decl><type><name>Layout</name></type> <name>layout</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>portletId</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<try>try <block>{<block_content>
+			<return>return <expr><call><name><name>PortletLocalServiceUtil</name><operator>.</operator><name>getPortletById</name></name><argument_list>(<argument><expr><call><name><name>layout</name><operator>.</operator><name>getCompanyId</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>portletId</name></expr></argument>)</argument_list></call></expr>;</return>
+		 
+		<catch>catch <parameter_list>(<parameter><decl><type><name>SystemException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>PortletRuntimeException</name><argument_list>(
+				<argument><expr><literal type="string">"Error getting portlet for group "</literal> <operator>+</operator> <call><name><name>layout</name><operator>.</operator><name>getGroupId</name></name><argument_list>()</argument_list></call> <operator>+</operator>
+				<operator>(</operator><ternary><condition><expr><call><name><name>layout</name><operator>.</operator><name>isPrivateLayout</name></name><argument_list>()</argument_list></call></expr> ?</condition><then> <expr><literal type="string">" private layout"</literal></expr> </then><else>: <expr><literal type="string">" public layout"</literal></expr></else></ternary><operator>)</operator></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

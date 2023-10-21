@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38104596.java">    <function><type><specifier>public</specifier> <name>SVFParameters</name></type> <name>getRealParameters</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>  )</parameter_list> <block>{<block_content>
+        <comment type="line">// Go down till the first Action</comment>
+        <expr_stmt><expr><name>index</name> <operator>=</operator> <call><name>getPreviousActionIndex</name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">// Go up to first parameter</comment>
+        <expr_stmt><expr><name>index</name><operator>++</operator></expr>;</expr_stmt>
+
+        <decl_stmt><decl><type><name>SVFParameters</name></type> <name>p</name> <init>= <expr><operator>new</operator> <call><name>SVFParameters</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name>index</name></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>commands</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>SVFCommand</name></type> <name>command</name> <init>= <expr><call><name>getCommand</name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>command</name> <operator>instanceof</operator> <name>SVFAction</name></expr>)</condition><block type="pseudo"><block_content>
+                <break>break;</break></block_content></block></if>
+            <else>else<block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>p</name><operator>.</operator><name>mergeParameters</name></name><argument_list>(<argument><expr><name>command</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></else></if_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><name>p</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

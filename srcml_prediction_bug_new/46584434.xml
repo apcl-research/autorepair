@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18662629.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>initializeComponents</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>stacktrace</name> <init>=  <expr><call><name>getStackTrace</name><argument_list>( <argument><expr><name>throwable</name></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>textArea</name> <operator>=</operator> <operator>new</operator> <call><name>TextArea</name><argument_list>(<argument><expr><name>stacktrace</name></expr></argument>, <argument><expr><literal type="number">10</literal></expr></argument>, <argument><expr><literal type="number">28</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <decl_stmt><decl><type><name>Font</name></type> <name>f</name> <init>= <expr><operator>new</operator> <call><name>Font</name><argument_list>(<argument><expr><literal type="string">"Courier New"</literal></expr></argument>, <argument><expr><name><name>Font</name><operator>.</operator><name>BOLD</name></name></expr></argument>, <argument><expr><literal type="number">12</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>textArea</name><operator>.</operator><name>setFont</name></name><argument_list>(<argument><expr><name>f</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>okButton</name> <operator>=</operator> <operator>new</operator> <call><name>Button</name><argument_list>( <argument><expr><literal type="string">"OK"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>okAction</name> <operator>=</operator> <operator>new</operator> <call><name>ExceptionOkAction</name><argument_list>( ;</operator>
+    </block_content>}</block></function>
+</unit>

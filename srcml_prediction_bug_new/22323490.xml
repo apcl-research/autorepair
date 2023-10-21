@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19229996.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>makeExceptionMessage</name><parameter_list>(<parameter><decl><type><name>ISOComponent</name></type> <name>c</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>operation</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Object</name></type> <name>fieldKey</name> <init>= <expr><literal type="string">"unknown"</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>c</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition>
+        <block>{<block_content>
+            <try>try
+             
+                <expr_stmt><expr><name>fieldKey</name> <operator>=</operator> <call><name><name>c</name><operator>.</operator><name>getKey</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ignore</name></decl></parameter>)</parameter_list>
+            <block>{<block_content>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><call><name>getClass</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getName</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">": Problem "</literal> <operator>+</operator> <name>operation</name> <operator>+</operator> <literal type="string">" field "</literal> <operator>+</operator> <name>fieldKey</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/9640029.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>updatePopupSelectErrors</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <for>for <control>(<init><decl><type><name>CheckErrorAlgorithm</name></type> <name>algorithm</name> <range>: <expr><name>allAlgorithms</name></expr></range></decl></init>)</control> <block>{<block_content>
+      <if_stmt><if>if <condition>(<expr><name>algorithm</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>errorNumber</name> <init>= <expr><call><name><name>algorithm</name><operator>.</operator><name>getErrorNumber</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>JMenuItem</name></type> <name>menuItem</name> <init>= <expr><call><name><name>menuItemAlgorithms</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>errorNumber</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if  <condition>(<expr><name>menuItem</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+          <expr_stmt><expr><call><name><name>menuItem</name><operator>.</operator><name>setSelected</name></name><argument_list>(<argument><expr><call><name><name>selectedAlgorithms</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>algorithm</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+      </block_content>}</block></if></if_stmt>
+    </block_content>}</block></for>
+  </block_content>}</block></function>
+</unit>

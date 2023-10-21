@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25889996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>recycleItems</name><parameter_list>(<parameter><decl><type><name>LinearLayout</name></type> <name>layout</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>firstItem</name></decl></parameter>, <parameter><decl><type><name>ItemsRange</name></type> <name>range</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>int</name></type> <name>index</name> <init>= <expr><name>firstItem</name></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>layout</name><operator>.</operator><name>getChildCount</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>range</name><operator>.</operator><name>contains</name></name><argument_list>(<argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+				<expr_stmt><expr><call><name>recycleView</name><argument_list>(<argument><expr><call><name><name>layout</name><operator>.</operator><name>getChildAt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><name>index</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+				<expr_stmt><expr><call><name><name>layout</name><operator>.</operator><name>removeViewAt</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<if_stmt><if>if <condition>(<expr><name>i</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content> <comment type="line">// first item</comment>
+					<expr_stmt><expr><name>firstItem</name><operator>++</operator></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></for> <else>else <block>{<block_content>
+				<expr_stmt><expr><name>i</name><operator>++</operator></expr>;</expr_stmt> <comment type="line">// go to next item</comment>
+			</block_content>}</block></else></if_stmt>
+			<expr_stmt><expr><name>index</name><operator>++</operator></expr>;</expr_stmt>
+		</block_content>}</block></function>
+</unit>

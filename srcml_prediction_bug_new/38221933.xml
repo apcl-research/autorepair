@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/38302796.java">  <function><type><specifier>public</specifier> <name>Object</name></type> <name>getElement</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ArrayIndexOutOfBoundsException</name></expr></argument></throws> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><operator>(</operator><name>type</name> <operator>==</operator> <name>ARRAY</name> <operator>||</operator> <name>type</name> <operator>==</operator> <name>OBJECT_ARRAY</name><operator>)</operator> <operator>&amp;&amp;</operator> <name>value</name> <operator>!=</operator> <literal type="null">null</literal>
+      <operator>&amp;&amp;</operator> <operator>(</operator><operator>(</operator><name><name>Object</name><index>[]</index></name><operator>)</operator><name>value</name><operator>)</operator><operator>.</operator><name>length</name> <operator>&gt;</operator> <name>index</name></expr>)</condition><block type="pseudo"><block_content>
+      <return>return <expr><operator>(</operator><operator>(</operator><name>Object</name><operator>)</operator><name>value</name><operator>)</operator><index>[<expr><name>index</name></expr>]</index></expr>;</return></block_content></block></if></if_stmt>
+    <if_stmt><if>if <condition>(<expr><name>index</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+      <return>return <expr><name>value</name></expr>;</return></block_content></block></if></if_stmt>
+    <throw>throw <expr><operator>new</operator> <call><name>ArrayIndexOutOfBoundsException</name><argument_list>()</argument_list></call></expr>;</throw>
+  </block_content>}</block></function>
+</unit>

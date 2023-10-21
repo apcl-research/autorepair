@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12749983.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>valueChanged</name><parameter_list>(<parameter><decl><type><name>TreeSelectionEvent</name></type> <name>aE</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>itsSelectedAttributes</name><operator>.</operator><name>clear</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <call><name><name>itsTree</name><operator>.</operator><name>getSelectionPaths</name></name><argument_list>()</argument_list></call><operator>.</operator><name>length</name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>TreePath</name></type> <name>thePath</name> <init>= <expr><call><name><name>itsTree</name><operator>.</operator><name>getSelectionPaths</name></name><argument_list>( <argument><expr><name><name></name><index>[<expr><name>i</name></expr>]</index></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>Object</name></type> <name>theComponent</name> <init>= <expr><call><name><name>thePath</name><operator>.</operator><name>getLastPathComponent</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>theComponent</name> <operator>instanceof</operator> <name>AttributeTreeNode</name></expr>)</condition><block type="pseudo"><block_content>
+				<expr_stmt><expr><call><name><name>itsSelectedAttributes</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><operator>(</operator><operator>(</operator><name>AttributeTreeNode</name><operator>)</operator> <name>theComponent</name><operator>)</operator>
+						<operator>.</operator><call><name>getAttribute</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+		</block_content>}</block></for>
+		<expr_stmt><expr><call><name>updateAttributePanel</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

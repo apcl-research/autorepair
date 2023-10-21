@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/19402783.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>testKDOM</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><call><name>testPredicates</name><argument_list>(<argument><expr><operator>new</operator> <name><name>String</name><index>[]</index></name> <block>{ <expr><literal type="string">"dom({1|-&gt;2, 2|-&gt;3}) = {1,2}"</literal></expr>,
+				<expr><literal type="string">"3/: dom({1|-&gt;2, 2|-&gt;3})"</literal></expr>, <expr><literal type="string">"1: dom({1|-&gt;2, 2|-&gt;3}"</literal></expr> }</block></expr></argument>,
+				<argument><expr><operator>new</operator> <name><name>boolean</name><index>[]</index></name>   <block>{ <expr><literal type="boolean">true</literal></expr>, <expr><literal type="boolean">true</literal></expr>, <expr><literal type="boolean">true</literal></expr> }</block></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+	</block_content>}</block></function>
+</unit>

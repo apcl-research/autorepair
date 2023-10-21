@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26272783.java">    <function><type><specifier>public</specifier> <name>XAConnection</name></type> <name>getXAConnection</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>user</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>password</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>IdbXAConnection</name></type> <name>xac</name> <init>= <expr><operator>new</operator> <call><name>IdbXAConnection</name> <argument_list>(<argument><expr><name>this</name></expr></argument>, <argument><expr><name>user</name></expr></argument>, <argument><expr><name>password</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>xac</name><operator>.</operator><name>setTransactionManager</name></name> <argument_list>(<argument><expr><name>transactionManager</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <if_stmt><if>if <condition>(<expr><name>databaseId</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>							<comment type="line">// if this is the first connection</comment>
+            <expr_stmt><expr><name>databaseId</name> <operator>=</operator> <operator>(</operator><operator>(</operator><name>ConnectionExtensions</name><operator>)</operator><name><name>xac</name><operator>.</operator><name>con</name></name><operator>)</operator><operator>.</operator><call><name>getDatabaseId</name><argument_list>()</argument_list></call></expr>;</expr_stmt><comment type="line">// save the database id</comment>
+        </block_content>}</block></if></if_stmt> <comment type="line">// if</comment>
+        <expr_stmt><expr><name>connectionCount</name><operator>++</operator></expr>;</expr_stmt>
+        <return>return <expr><name>xac</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

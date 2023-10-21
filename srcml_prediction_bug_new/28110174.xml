@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44889996.java">    <constructor><specifier>protected</specifier> <name>Configuration</name> <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>propertyFileNameParam</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PropertiesException</name></expr></argument></throws> <block>{<block_content>
+
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>Locale</name></type> <name>locale</name> <init>= <expr><call><name><name>Locale</name><operator>.</operator><name>getDefault</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>propertyFileName</name></name> <operator>=</operator> <name>propertyFileNameParam</name></expr>;</expr_stmt>
+            <expr_stmt><expr><name><name>this</name><operator>.</operator><name>resourceBundle</name></name> <operator>=</operator> <call><name><name>ResourceBundle</name><operator>.</operator><name>getBundle</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>propertyFileName</name></name></expr></argument>, <argument><expr><name>locale</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>MissingResourceException</name></type> <name>mre</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>PropertiesException</name><argument_list>(<argument><expr><literal type="string">"Unable to locate properties file at "</literal> <operator>+</operator> <name><name>this</name><operator>.</operator><name>propertyFileName</name></name></expr></argument>, <argument><expr><name>mre</name></expr></argument> ;</argument_list></call></expr>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></constructor>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42012796.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getDBIDString</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>username</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>DBConnection</name></type> <name>conn</name> <init>= <expr><call><name><name>DBConnectionService</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDBConnection</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name><name>java</name><operator>.</operator><name>sql</name><operator>.</operator><name>ResultSet</name></name></type> <name>results</name> <init>= <expr><call><name><name>conn</name>
+					<operator>.</operator><name>executeQueryWithRS</name></name><argument_list>(<argument><expr><literal type="string">"SELECT `id` FROM `users` WHERE `username` LIKE '"</literal>
+							<operator>+</operator> <name>username</name> <operator>+</operator> <literal type="string">"'"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+				<if_stmt><if>if <condition>(<expr><call><name><name>results</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+					<return>return <expr><call><name><name>results</name><operator>.</operator><name>getInt</name></name><argument_list>(<argument><expr><literal type="number">1</literal></expr></argument>)</argument_list></call></expr>;</return>
+				</block_content>}</block></if></if_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>(<argument><expr><name><name>System</name><operator>.</operator><name>err</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+		<return>return <expr><literal type="number">0</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

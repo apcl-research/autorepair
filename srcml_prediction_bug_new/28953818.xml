@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30105851.java">    <function><type><specifier>public</specifier> <name>XmlAdhocQueryResponse</name></type> <name>getAdhocQueryResponse</name><parameter_list>(<parameter><decl><type><name>SOAPBody</name></type> <name>message</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="line">//pull out the query response</comment>
+        <decl_stmt><decl><type><name>NodeList</name></type> <name>responses</name> <init>= <expr><call><name><name>message</name><operator>.</operator><name>getElementsByTagNameNS</name></name><argument_list>(<argument><expr><name><name>XmlRegistry</name><operator>.</operator><name>XDS_QUERY_V3_NAMESPACE</name></name></expr></argument>, <argument><expr><literal type="string">"AdhocQueryResponse"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Node</name></type> <name>response</name> <init>= <expr><call><name><name>responses</name><operator>.</operator><name>item</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>response</name> <operator>instanceof</operator> <name>Element</name></expr>)</condition> <block>{<block_content>
+            <return>return <expr><operator>new</operator> <call><name>XmlAdhocQueryResponse</name><argument_list>(<argument><expr><operator>(</operator><name>Element</name><operator>)</operator> <name>response</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if> <else>else<block type="pseudo"><block_content>  
+            <return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></else></if_stmt>
+        </block_content>}</block></function>
+</unit>

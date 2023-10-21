@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>ServletOutputStream</name></type> <name>getOutputStream</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>gotWriter</name></expr>)</condition><block type="pseudo"><block_content> <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><call><name><name>localStrings</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><literal type="string">"illegal_getoutputstream_call"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+        <decl_stmt><decl><type><name>ServletOutputStream</name></type> <name>internalOutputStream</name> <init>= <expr><call><name>getInternalOutputStream</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>gotOutputStream</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>ServletOutputStream</name><operator>.</operator><name>setBufferSize</name></name><argument_list>(<argument><expr><name>bufferSize</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><name>gotOutputStream</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>internalOutputStream</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

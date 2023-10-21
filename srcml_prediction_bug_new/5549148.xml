@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392796.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>getSessionId</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>IllegalStateException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>id</name> <init>= <expr><operator>(</operator><name>String</name><operator>)</operator> <call><name><name>runtime</name><operator>.</operator><name>threadSessions</name><operator>.</operator><name>get</name></name><argument_list>(
+            <argument><expr><operator>new</operator> <call><name>Integer</name><argument_list>(<argument><expr><call><name><name>System</name><operator>.</operator><name>identityHashCode</name></name><argument_list>(<argument><expr><call><name><name>Thread</name><operator>.</operator><name>currentThread</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if <condition>(<expr><name>id</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalStateException</name><argument_list>(<argument><expr><literal type="string">"Cannot call 'ActionServlet.getSessionId( '"</literal> <operator>+</operator>
+                                             <literal type="string">" from a non-session thread"</literal></expr></argument>)</argument_list></call></expr>;</throw></block_content></block></if></if_stmt>
+
+        <return>return <expr><name>id</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

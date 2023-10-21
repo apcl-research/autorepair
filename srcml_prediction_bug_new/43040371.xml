@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44292783.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>inspectAnnotations</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>, <parameter><decl><type><name>AnnotatedElement</name></type> <name>el</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>InstantiationException</name></expr></argument>, <argument><expr><name>IllegalAccessException</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name>inspectMappingValidation</name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>el</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>addDeepValidation</name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>el</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <for>for <control>(<init><decl><type><name>Annotation</name></type> <name>a</name> <range>: <expr><call><name><name>el</name><operator>.</operator><name>getAnnotations</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><specifier>final</specifier> <name>IPropertyValidator</name></type> <name>val</name> <init>= <expr><call><name>createValidator</name><argument_list>(<argument><expr><name>a</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if  <condition>(<expr><name>val</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>validator</name><operator>.</operator><name>addPropertyValidation</name></name><argument_list>(<argument><expr><name>name</name></expr></argument>, <argument><expr><name>val</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

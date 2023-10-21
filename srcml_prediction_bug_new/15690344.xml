@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/1569054.java">    <function><type><specifier>public</specifier> <name>Object</name></type> <name>firstKey</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>NoSuchElementException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>Entry</name></type> <name>first</name> <init>= <expr><ternary><condition><expr><operator>(</operator><name>mReverse</name><operator>)</operator></expr> ?</condition><then> <expr><name>mLeastRecent</name></expr> </then><else>: <expr><name>mMostRecent</name></expr></else></ternary></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>first</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><name><name>first</name><operator>.</operator><name>mKey</name></name></expr>;</return>
+        </block_content>}</block></if>
+        <if type="elseif">else if <condition>(<expr><name><name>mRecentMap</name><operator>.</operator><name>size</name></name></expr> )</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>NoSuchElementException</name><argument_list>()</argument_list></call></expr>;</throw>
+        </block_content>}</block></if>
+        <else>else <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34640029.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>nutrientValueInitialization</name> <parameter_list>()</parameter_list> <block>{<block_content>
+		
+		<expr_stmt><expr><call><name><name>Nutrition</name><operator>.</operator><name>descriptionMapReloadCheck</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><call><name><name>m_NutrientValues</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<for>for <control>(<init><decl><type><name>NutrientNameI</name></type> <name>nuname</name> <range>: <expr><call><name><name>m_sNutrientDescriptions</name><operator>.</operator><name>values</name></name><argument_list>()</argument_list></call></expr></range></decl></init>)</control> <block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><operator>!</operator><call><name><name>m_NutrientValues</name><operator>.</operator><name>containsKey</name></name><argument_list>(<argument><expr><call><name><name>nuname</name><operator>.</operator><name>getShortcode</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+					<expr_stmt><expr><call><name><name>m_NutrientValues</name><operator>.</operator><name>put</name></name><argument_list>(<argument><expr><call><name><name>nuname</name><operator>.</operator><name>getShortcode</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><operator>new</operator> <call><name>NutrientValue</name><argument_list>(<argument><expr><operator>(</operator><name>NutrientName</name><operator>)</operator> <name>nuname</name></expr></argument>, <argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if></if_stmt>
+			</block_content>}</block></for>
+		 
+		
+	</block_content>}</block></function>
+</unit>

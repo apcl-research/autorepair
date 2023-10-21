@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25122783.java">	<function><type><specifier>public</specifier> <name>EnvironmentType</name></type> <name>getEnvironmentTypeByKey</name> <parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		
+		<for>for <control>(<init><decl><type><name><name>Iterator</name><argument_list type="generic">&lt;<argument><name>EnvironmentType</name></argument>&gt;</argument_list></name></type> <name>it</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>it</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+			<decl_stmt><decl><type><name>EnvironmentType</name></type> <name>envTyp</name> <init>= <expr><call><name><name>it</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><call><name><name>envTyp</name><operator>.</operator><name>getInternalKey</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equals</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+				<return>return <expr><name>envTyp</name></expr>;</return>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><call><name><name>this</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</return> <comment type="line">// --- the default value ---</comment>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22084583.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>testIFrameAccessById</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <expr_stmt><expr><call><name>defineWebPage</name><argument_list>( <argument><expr><literal type="string">"Frames"</literal></expr></argument>,
+                       <argument><expr><literal type="string">"&lt;iframe id='frame1'&gt;&lt;/iframe&gt;"</literal> <operator>+</operator>
+                       <literal type="string">"&lt;script&gt;"</literal> <operator>+</operator>
+                       <literal type="string">"var frame = document.getElementById 'frame1');"</literal> <operator>+</operator>
+                       <literal type="string">"&lt;/script&gt;"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>_wc</name><operator>.</operator><name>getResponse</name></name><argument_list>(<argument><expr><call><name>getHostPath</name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">"/Frames.html"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

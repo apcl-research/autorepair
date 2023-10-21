@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22624094.java">		<function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>(  )</parameter_list> <block>{<block_content>
+			<try>try <block>{<block_content>
+				<expr_stmt><expr><call><name>doValidateRecords</name><argument_list>(<argument><expr><name>idList</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+				<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+				<comment type="line">// addStatusMessage(e.toString());</comment>
+				<decl_stmt><decl><type><name>String</name></type> <name>errorMsg</name> <init>= <expr><literal type="string">"Error validating records: "</literal> <operator>+</operator> <name>e</name></expr></init></decl>;</decl_stmt>
+				<expr_stmt><expr><call><name>addStatusMessage</name><argument_list>(<argument><expr><name>errorMsg</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"ERROR validating records: "</literal> <operator>+</operator> <name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch> <finally>finally <block>{<block_content>
+				<expr_stmt><expr><call><name>prtln</name> <argument_list>(<argument><expr><literal type="string">"INFINALLY LOOKUSE"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				<expr_stmt><expr><name>isProcessing</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+				<expr_stmt><expr><name>sessionBean</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+				<expr_stmt><expr><name>dcsSetInfo</name> <operator>=</operator> <literal type="null">null</literal></expr>;</expr_stmt>
+			</block_content>}</block></finally></try>
+		</block_content>}</block></function>
+</unit>

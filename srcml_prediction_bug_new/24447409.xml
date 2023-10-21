@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18058984.java">	    <function><type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name><parameter_list>(<parameter><decl><type><name>ActionEvent</name></type> <name>ae</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	    	<comment type="line">//JOptionPane.showMessageDialog(null, "CytoscapeSQL test", "CytoscapeSQL test", JOptionPane.WARNING_MESSAGE ;</comment>
+	    	
+	    	<comment type="line">// Connect to the given database</comment>
+			<expr_stmt><expr><call><name><name>ConnectSQLite</name><operator>.</operator><name>testConnection</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>ConnectSQLite</name><operator>.</operator><name>getDataFromTable</name></name><argument_list>(<argument><expr><literal type="string">"xref"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			
+			<comment type="line">// Test the postgres connection</comment>
+			<decl_stmt><decl><type><name>HepatoCoreInfo</name></type> <name>hcInfo</name> <init>= <expr><operator>new</operator> <call><name>HepatoCoreInfo</name><argument_list>(<argument><expr><literal type="string">"15926"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<expr_stmt><expr><call><name><name>hcInfo</name><operator>.</operator><name>printInfo</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			
+	    </block_content>}</block></function>
+</unit>

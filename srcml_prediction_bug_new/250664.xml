@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/30105849.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>removeCollection</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>collectionID</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"entering removeCollection"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<decl_stmt><decl><type><name>String</name></type> <name>query</name> <init>= <expr><literal type="string">"DELETE FROM collection WHEREBreakup='"</literal> <operator>+</operator> <name>collectionID</name>
+				<operator>+</operator> <literal type="string">"'"</literal></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>executeUpdate</name></name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><name>query</name> <operator>=</operator> <literal type="string">"DELETE FROM collectionrole WHERE COLLECTIONPID='"</literal>
+				<operator>+</operator> <name>collectionID</name> <operator>+</operator> <literal type="string">"'"</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>executeUpdate</name></name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<comment type="line">// @deprecated removed elated metadata feature </comment>
+		<expr_stmt><expr><name>query</name> <operator>=</operator> <literal type="string">"DELETE FROM metadata WHERE COLLECTIONPID='"</literal>
+				<operator>+</operator> <name>collectionID</name> <operator>+</operator> <literal type="string">"'"</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>db</name><operator>.</operator><name>executeUpdate</name></name><argument_list>(<argument><expr><name>query</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

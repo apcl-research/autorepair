@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26492783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>sendTextMessage</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>msg</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument>, <argument><expr><name>JMSException</name></expr></argument></throws><block>{<block_content>
+    <decl_stmt><decl><type><name>TopicPublisherRef</name></type> <name>ref</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+    <try>try<block>{<block_content>
+      <expr_stmt><expr><name>ref</name> <operator>=</operator> <operator>(</operator><name>TopicPublisherRef</name><operator>)</operator><call><name><name>super</name><operator>.</operator><name>borrowObject</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>ref</name><operator>.</operator><name>getPublisher</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>send</name><argument_list>(<argument><expr><call><name><name>ref</name><operator>.</operator><name>getSession</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>createTextMessage</name><argument_list>(<argument><expr><name>msg</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block><finally>finally<block>{<block_content>
+      <if_stmt><if>if<condition>(<expr><name>ref</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content> 
+        <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>returnObject</name></name><argument_list>(<argument><expr><name>ref</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+      </block_content>}</block></finally></try>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18232783.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>handleAdd</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>AddTargetPluginsWizard</name></type> <name>wizard</name> <init>= <expr><operator>new</operator> <call><name>AddTargetPluginsWizard</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>WizardDialog</name></type> <name>dialog</name> <init>= <expr><operator>new</operator> <call><name>WizardDialog</name><argument_list>(<argument><expr><call><name><name>fPage</name><operator>.</operator><name>getShell</name></name><argument_list>()</argument_list></call></expr></argument>, <argument><expr><name>wizard</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>dialog</name><operator>.</operator><name>create</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>SWTUtil</name><operator>.</operator><name>setDialogSize</name></name><argument_list>(<argument><expr><name>dialog</name></expr></argument>, <argument><expr><literal type="number">400</literal></expr></argument>, <argument><expr><literal type="number">450</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>dialog</name><operator>.</operator><name>open</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+		<decl_stmt><decl><type><name><name>File</name><index>[]</index></name></type> <name>dirs</name> <init>= <expr><call><name><name>wizard</name><operator>.</operator><name>getDirectories</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><name><name>dirs</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+			<comment type="line">// no new URLs found/to add</comment>
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name>addDirectoriesToState</name><argument_list>(<argument><expr><name>dirs</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

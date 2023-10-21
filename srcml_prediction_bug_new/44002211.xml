@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592783.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>finerifyNewLine</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><operator>!</operator><name>finerals</name></expr>)</condition> <block>{<block_content>
+            <return>return;</return>
+        </block_content>}</block></if></if_stmt>
+        <if_stmt><if>if <condition>(<expr><name>ident</name> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name>finerals</name></expr>)</condition> <block>{<block_content>
+                <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name>TAB</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if> <else>else <block>{<block_content>
+                <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="char">'\n'</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name>ident</name> <operator>-</operator> <literal type="number">1</literal></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>body</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name>TAB</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></for>
+            </block_content>}</block></else></if_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

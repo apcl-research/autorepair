@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/44182783.java">    <function><type><specifier>private</specifier> <name>SortedMap</name></type> <name>getPrefixedByBits</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>key</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>offset</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>length</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>offsetLength</name> <init>= <expr><name>offset</name> <operator>+</operator> <name>length</name></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>offsetLength</name> <operator>&gt;</operator> <call><name>length</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>IllegalArgumentException</name><argument_list>(<argument><expr><name>offset</name> <operator>+</operator> <literal type="string">" + "</literal> <operator>+</operator> <name>length</name> <operator>+</operator> <literal type="string">" &gt; "</literal> <operator>+</operator> <call><name>length</name><argument_list>(<argument><expr><name>key</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+        </block_content>}</block></if></if_stmt>
+        
+        <if_stmt><if>if<condition>(<expr><name>offsetLength</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+            <return>return <expr><name>this</name></expr>;</return></block_content></block></if></if_stmt>
+        
+        <return>return <expr><operator>new</operator> <call><name>PrefixSubMap</name><argument_list>(<argument><expr><name>key</name></expr></argument>, <argument><expr><name>offset</name></expr></argument>, <argument><expr><name>length</name></expr></argument>)</argument_list></call></expr>;</return>
+    </block_content>}</block></function>
+</unit>

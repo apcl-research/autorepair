@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50349996.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>bootstrap</name><parameter_list>()</parameter_list><block>{<block_content>
+        <decl_stmt><decl><type><name>Timer</name></type> <name>bootstrapTimer</name><init>= <expr><call><name>getPeer</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getClock</name><argument_list>()</argument_list></call><operator>.</operator><call><name>createNewTimer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>bootstrapTimer</name><operator>.</operator><name>addTimerListener</name></name><argument_list>(<argument><expr><operator>new</operator> <class><super><name>TimerListener</name></super> <argument_list>()</argument_list><block>{
+            <function><type><specifier>public</specifier> <name>void</name></type> <name>timerExpired</name><parameter_list>(<parameter><decl><type><name>Timer</name></type> <name>timer</name></decl></parameter>)</parameter_list><block>{<block_content>
+                <expr_stmt><expr><call><name><name>viewManager</name><operator>.</operator><name>setBootstrapPeers</name></name><argument_list>(<argument><expr><call><name>getNeighborManager</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getNeighbors</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>scheduleMeasurements</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+                <expr_stmt><expr><call><name>runActiveState</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></function>
+        }</block></class></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>bootstrapTimer</name><operator>.</operator><name>schedule</name></name><argument_list>(<argument><expr><name>B</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

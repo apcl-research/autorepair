@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/15240963.java">	<function><type><specifier>public</specifier> <name>SocialActivityInterpreter</name></type> <name>getSocialActivityInterpreterInstance</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>Validator</name><operator>.</operator><name>isNull</name></name><argument_list>(<argument><expr><call><name>getSocialActivityInterpreterClass</name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>)</condition> <block>{<block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<if_stmt><if>if <condition>(<expr><call><name><name>_portletApp</name><operator>.</operator><name>isWARFile</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<decl_stmt><decl><type><name>PortletBagImpl</name></type> <name>portletBagImpl</name> <init>= <expr><operator>(</operator><name>PortletBagImpl</name><operator>)</operator><call><name><name>PortletBagPool</name><operator>.</operator><name>get</name></name><argument_list>(
+				<argument><expr><call><name>getRootPortletId</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<return>return <expr><call><name><name>portletBagImpl</name><operator>.</operator><name>getSocialActivityInterpreterInstance</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if></if_stmt>
+
+		<return>return <expr><operator>(</operator><name>SocialActivityInterpreter</name><operator>)</operator><call><name><name>InstancePool</name><operator>.</operator><name>get</name></name><argument_list>(
+			<argument><expr><call><name>getSocialActivityInterpreterClass</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

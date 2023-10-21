@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42049996.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>addFiles</name><parameter_list>(<parameter><decl><type><name>File</name></type> <name>file</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>basepath</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>SQLException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>file</name><operator>.</operator><name>isDirectory</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+			<comment type="line">// directories:</comment>
+			<decl_stmt><decl><type><name><name>File</name><index>[]</index></name></type> <name>files</name> <init>= <expr><call><name><name>file</name><operator>.</operator><name>listFiles</name></name><argument_list>(<argument><expr><name>fileFilter</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name><name>files</name><operator>.</operator><name>length</name></name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+				<comment type="line">// either add empty directory</comment>
+				<expr_stmt><expr><call><name>addFile</name><argument_list>(<argument><expr><name>file</name></expr></argument>, <argument><expr><name>basepath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if> <else>else <block>{<block_content>
+				<comment type="line">// or recurse</comment>
+				<for>for <control>(<init><decl><type><name>File</name></type> <name>subfile</name> <range>: <expr><name>files</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>
+					<expr_stmt><expr><call><name>addFiles</name><argument_list>(<argument><expr><name>subfile</name></expr></argument>, <argument><expr><name>basepath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></for>
+			</block_content>}</block></else></if_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<comment type="line">// files: add file</comment>
+			<expr_stmt><expr><call><name>addFile</name><argument_list>(<argument><expr><name>file</name></expr></argument>, <argument><expr><name>basepath</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+	 
+</block_content>}</block></function>
+</unit>

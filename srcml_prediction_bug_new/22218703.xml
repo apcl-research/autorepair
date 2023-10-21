@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10382783.java">    <function><type><specifier>public</specifier> <name>BindResp</name></type> <name>bind</name><parameter_list>(<parameter><decl><type><name>Bind</name></type> <name>bindRequest</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>long</name></type> <name>timeout</name> <init>= <expr><call><name>getBindTimeout</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>BindResp</name></type> <name>bindResp</name> <init>= <expr><operator>(</operator><name>BindResp</name><operator>)</operator> <call><name>sendAndWait</name><argument_list>(
+                <argument><expr><name>bindRequest</name></expr></argument>, <argument><expr><name>bindCaller</name></expr></argument>, <argument><expr><name>timeout</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>bindResp</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <throw>throw <expr><operator>new</operator> <call><name>ReadTimeoutException</name> <argument_list>()</argument_list></call></expr>;</throw>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><name>bindResp</name></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

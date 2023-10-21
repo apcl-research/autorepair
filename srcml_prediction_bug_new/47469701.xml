@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22538891.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>determineNextSelection</name><parameter_list>(<parameter><decl><type><name>TocObject</name></type> <name>parent</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>index</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<comment type="line">// Select the next sibling</comment>
+		<expr_stmt><expr><name>fObjectToSelect</name> <operator>=</operator> <call><name><name>parent</name><operator>.</operator><name>getNextSibling</name></name><argument_list>(<argument><expr><name><name>fTocObjects</name><index>[<expr><name>index</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<if_stmt><if>if <condition>(<expr><name>fObjectToSelect</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+			<comment type="line">// No next sibling</comment>
+			<comment type="line">// Select the previous sibling</comment>
+			<expr_stmt><expr><name>fObjectToSelect</name> <operator>=</operator> <call><name><name>parent</name><operator>.</operator><name>getPreviousSibling</name></name><argument_list>(<argument><expr><name><name>fTocObjects</name><index>[<expr><name>index</name></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<if_stmt><if>if <condition>(<expr><name>fObjectToSelect</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+				<comment type="line">// No previous sibling</comment>
+				<comment type="line">// Select the parent</comment>
+				<expr_stmt><expr><name>fObjectToSelect</name> <operator>=</operator> <name>parent</name></expr>;</expr_stmt>
+			 
+		</block_content>}</block></if></if_stmt>
+	</block_content>}</block></if></if_stmt>
+</unit>

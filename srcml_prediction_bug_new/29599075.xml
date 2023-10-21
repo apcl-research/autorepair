@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42046896.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>copy</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>InterchunkWord</name></type> <name>o</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <comment type="block">/* Yes, we're only copying chunk, not queue as well.
+         * This is what the C++ code does as well.
+         * However, the C++ code makes this private, as it losess the '=' operator,
+         * then calls this method. Java doesn't have operator overloading, so making
+         * this method public instead.
+         */</comment>
+        <expr_stmt><expr><name>_chunk</name> <operator>=</operator> <name><name>o</name><operator>.</operator><name>_chunk</name></name></expr>;</expr_stmt></block_content></block></function>
+</unit>

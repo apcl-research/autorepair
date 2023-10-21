@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29582905.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>addCosts_internal</name><parameter_list>(<parameter><decl><type><name>ConformanceConstraint</name></type> <name>constraint</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>costID</name></decl></parameter>, <parameter><decl><type><name>Object</name></type> <name>costMappingOptions</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name><name>Registry</name><operator>.</operator><name>SAFE_MODE</name></name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name>addCosts</name><argument_list>(<argument><expr><name>constraint</name></expr></argument>, <argument><expr><name>costID</name></expr></argument>, <argument><expr><name>costMappingOptions</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name>addCosts_unsafe</name><argument_list>(<argument><expr><name>constraint</name></expr></argument>, <argument><expr><name>costID</name></expr></argument>, <argument><expr><name>costMappingOptions</name></expr></argument> ;</argument_list></call></expr>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

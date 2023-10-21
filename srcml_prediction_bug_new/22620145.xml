@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17009996.java">		<function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+			<decl_stmt><decl><type><name>boolean</name></type> <name>harvestAll</name> <init>= <expr><literal type="boolean">false</literal></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>boolean</name></type> <name>harvestAllIfNoDeletedRecord</name> <init>= <expr><literal type="boolean">true</literal> 
+
+			<comment type="line">// For scheduled harvests, only harvests all if deletions are not supported:</comment>
+			<expr><operator>new</operator> <call><name>HarvestThread</name><argument_list>(<argument><expr><name>shUid</name></expr></argument>, <argument><expr><name>harvestAll</name></expr></argument>, <argument><expr><name>harvestAllIfNoDeletedRecord</name></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call><operator>.</operator><call><name>start</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+			<comment type="line">//new auto harv setting which would harvests all records every time.</comment>
+			<comment type="line">//new HarvThread(shUid, true, false, false).start();</comment>
+		</block_content>}</block></function>
+</unit>

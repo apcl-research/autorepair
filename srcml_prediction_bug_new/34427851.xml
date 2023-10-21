@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/3442696.java">    <function><type><specifier>protected</specifier> <name>SOAPMessage</name></type> <name>sendMessage</name><parameter_list>(<parameter><decl><type><name>SOAPMessage</name></type> <name>msg</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+        <try>try <block>{<block_content>
+            <decl_stmt><decl><type><name>SOAPConnection</name></type> <name>conn</name> <init>= <expr><call><name><name>soapConnectionFactory</name><operator>.</operator><name>createConnection</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <return>return <expr><call><name><name>conn</name><operator>.</operator><name>call</name></name><argument_list>(<argument><expr><name>msg</name></expr></argument>, <argument><expr><name>url</name></expr></argument>)</argument_list></call></expr>;</return>
+          <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><name><name>SWGConstants</name><operator>.</operator><name>DEV_DEBUG</name></name></expr>)</condition><block type="pseudo"><block_content>
+                <expr_stmt><expr><call><name><name>SWGAide</name><operator>.</operator><name>printError</name></name><argument_list>(<argument><expr><literal type="string">"SOAPManager:sendMessage"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+            <throw>throw <expr><name>e</name></expr>;</throw>
+        </block_content>}</block></catch></try>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/12400906.java">    <function><type><specifier>private</specifier> <name>SubjectKeyIdentifier</name></type> <name>getSubjectKeyIdentifier</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name><name>byte</name><index>[]</index></name></type> <name>derValue</name> <init>= <expr><call><name><name>certificate</name><operator>.</operator><name>getExtensionValue</name></name><argument_list>(<argument><expr><call><name><name>X509Extensions</name><operator>.</operator><name>SubjectKeyIdentifier</name><operator>.</operator><name>getId</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if  <condition>(<expr><name>derValue</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+
+        <decl_stmt><decl><type><name>SubjectKeyIdentifier</name></type> <name>issuer</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+        <try>try <block>{<block_content>
+            <expr_stmt><expr><name>issuer</name> <operator>=</operator> <operator>new</operator> <call><name>SubjectKeyIdentifierStructure</name><argument_list>(<argument><expr><name>derValue</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <return>return <expr><literal type="null">null</literal></expr>;</return>
+        </block_content>}</block></catch></try>
+
+        <return>return <expr><name>issuer</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

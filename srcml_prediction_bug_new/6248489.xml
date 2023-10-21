@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50574883.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>isMultiFileEnabled</name> <parameter_list>()</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>MozillaCoreTrace</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>,<argument><expr><literal type="string">"isMultiFileEnabled()"</literal></expr></argument>,<argument><expr><literal type="string">"(called)"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <comment type="line">// read from plugin xml config</comment>
+        <decl_stmt><decl><type><name>boolean</name></type> <name>result</name> <init>= <expr><call><name><name>Boolean</name><operator>.</operator><name>valueOf</name></name><argument_list>(
+                <argument><expr><call><name><name>this</name><operator>.</operator><name>configElement</name><operator>.</operator><name>getAttribute</name></name><argument_list>(<argument><expr><name>ATTRIB_MULTIFILE</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call><operator>.</operator><call><name>booleanValue</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>MozillaCoreTrace</name><operator>.</operator><name>trace</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>,<argument><expr><literal type="string">"isMultiFileEnabled()"</literal></expr></argument>,<argument><expr><literal type="string">"(returned) "</literal><operator>+</operator><name>result</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <return>return <expr><name>result</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

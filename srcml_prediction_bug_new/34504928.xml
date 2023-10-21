@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/51658891.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>handleEvent</name><parameter_list>(<parameter><decl><type><name>char</name></type> <name>character</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>keyCode</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>stateMask</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<if_stmt><if>if <condition>(<expr><name>fMode</name> <operator>==</operator> <name><name>Mode</name><operator>.</operator><name>CMD</name></name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>handleCmdKeyEvent</name><argument_list>(<argument><expr><name>character</name></expr></argument>, <argument><expr><name>keyCode</name></expr></argument>, <argument><expr><name>stateMask</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><name>fMode</name> <operator>==</operator> <name><name>Mode</name><operator>.</operator><name>EX</name></name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name>handleExKeyEvent</name><argument_list>(<argument><expr><name>character</name></expr></argument>, <argument><expr><name>keyCode</name></expr></argument>, <argument><expr><name>stateMask</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></if></if_stmt>
+
+	</block_content>}</block></function>
+</unit>

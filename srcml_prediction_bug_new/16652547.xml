@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26490549.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>setSource</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>sourceStr</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>RegainException</name></expr></argument></throws> <block>{<block_content>
+
+    <try>try <block>{<block_content>
+      <expr_stmt><expr><call><name><name>_parser</name><operator>.</operator><name>setKind</name></name><argument_list>(<argument><expr><name><name>ASTParser</name><operator>.</operator><name>K_COMPILATION_UNIT</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      <expr_stmt><expr><call><name><name>_parser</name><operator>.</operator><name>setSource</name></name><argument_list>(<argument><expr><call><name><name>sourceStr</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toCharArray</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
+      <name>_unit</name> <operator>=</operator> <operator>(</operator><name>CompilationUnit</name><operator>)</operator> <call><name><name>_parser</name><operator>.</operator><name>createAST</name></name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+    </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>ex</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>RegainException</name><argument_list>(<argument><expr><literal type="string">"Error parsing Java file"</literal></expr></argument>, <argument><expr><name>ex</name></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+
+  </block_content>}</block></function>
+</unit>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25882996.java">	<function><type><specifier>public</specifier> <name>int</name></type> <name>getContainingLayerCount</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>layerID</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Cursor</name></type> <name>c</name> <init>= <expr><call><name><name>db</name><operator>.</operator><name>query</name></name><argument_list>(<argument><expr><name>LAYER_TABLE</name></expr></argument>, <argument><expr><operator>new</operator> <name><name>String</name><index>[]</index></name> <block>{ <expr><name>ID</name></expr> }</block></expr></argument>, <argument><expr><name>LAYER_rootLayer</name>
+				<operator>+</operator> <literal type="string">"="</literal> <operator>+</operator> <name>layerID</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>int</name></type> <name>ret</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if <condition>(<expr><call><name><name>c</name><operator>.</operator><name>moveToFirst</name></name><argument_list>()</argument_list></call></expr>  )</condition> <block>{<block_content>
+			<do>do <block>{<block_content>
+				<expr_stmt><expr><name>ret</name> <operator>+=</operator> <call><name>getContainingLayerCount</name><argument_list>(<argument><expr><call><name><name>c</name><operator>.</operator><name>getInt</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call> <operator>+</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+			</block_content>}</block> while <condition>(<expr><call><name><name>c</name><operator>.</operator><name>moveToNext</name></name><argument_list>()</argument_list></call></expr>)</condition>;</do>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>c</name><operator>.</operator><name>close</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<return>return <expr><name>ret</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

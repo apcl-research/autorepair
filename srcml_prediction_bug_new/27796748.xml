@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/29272483.java">  <function><type><specifier>public</specifier> <name>Vector</name></type> <name>checkCalculatorUsage</name><parameter_list>(<parameter><decl><type><name>Calculator</name></type> <name>c</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <decl_stmt><decl><type><name>Vector</name></type> <name>conflicts</name> <init>= <expr><operator>new</operator> <call><name>Vector</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>styles</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+	    <decl_stmt><decl><type><name>VisualStyle</name></type> <name>vs</name> <init>= <expr><operator>(</operator><name>VisualStyle</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <decl_stmt><decl><type><name>Vector</name></type> <name>styleName</name> <init>= <expr><call><name><name>vs</name><operator>.</operator><name>checkConflictingCalculator</name></name><argument_list>(<argument><expr><name>c</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+	    <if_stmt><if>if <condition>(<expr><call><name><name>styleName</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <literal type="number">1</literal></expr>)</condition><block type="pseudo"><block_content>
+        <expr_stmt><expr><call><name><name>conflicts</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>styleName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt>
+    </block_content>}</block></for>
+    <return>return <expr><name>conflicts</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

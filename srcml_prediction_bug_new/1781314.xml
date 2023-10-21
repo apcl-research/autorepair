@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23889996.java">    <function><type><specifier>private</specifier> <name>String</name></type> <name>getScript</name><parameter_list>( <parameter><decl><type><name>Node</name></type> <name>scriptNode</name></decl></parameter> )</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>String</name></type> <name>scriptLocation</name> <init>= <expr><call><name><name>NodeUtils</name><operator>.</operator><name>getNodeAttribute</name></name><argument_list>( <argument><expr><name>scriptNode</name></expr></argument>, <argument><expr><literal type="string">"src"</literal></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument> )</argument_list></call></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if <condition>(<expr><name>scriptLocation</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+            <return>return <expr><call><name><name>NodeUtils</name><operator>.</operator><name>asText</name></name>  <argument_list>(<argument><expr><call><name><name>scriptNode</name><operator>.</operator><name>getChildNodes</name></name><argument_list>()</argument_list></call></expr></argument> )</argument_list></call></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <try>try <block>{<block_content>
+                <return>return <expr><call><name>getIncludedScript</name><argument_list>( <argument><expr><name>scriptLocation</name></expr></argument> )</argument_list></call></expr>;</return>
+            </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+                <throw>throw <expr><operator>new</operator> <call><name>RuntimeException</name><argument_list>( <argument><expr><literal type="string">"Error loading included script: "</literal> <operator>+</operator> <name>e</name></expr></argument> )</argument_list></call></expr>;</throw>
+            </block_content>}</block></catch></try>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46654815.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>publishCurrentResultsToWeb</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// Todo: make this URL configurable in ini file</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>url</name> <init>= <expr><literal type="string">"http://avtobutton.info/results/update.php"</literal></expr></init></decl>;</decl_stmt>
+
+		<try>try <block>{<block_content>
+			<comment type="line">// Todo: make param name configurable in ini file</comment>
+			<expr_stmt><expr><call><name><name>HttpPostRequest</name><operator>.</operator><name>sendPostRequest</name></name><argument_list>(<argument><expr><call><name>getResultsAsHtml</name><argument_list>( , <argument><expr><name>url</name></expr></argument>, <argument><expr><literal type="string">"text"</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<return>return <expr><literal type="string">"Error occured: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></catch></try>
+
+		<comment type="line">// Todo: make this URL configurable in ini file</comment>
+		<decl_stmt><decl><type><name>String</name></type> <name>viewResultsURL</name> <init>= <expr><literal type="string">"http://avtobutton.info/results"</literal></expr></init></decl>;</decl_stmt>
+		<return>return <expr><literal type="string">"Results successfully published and available at "</literal> <operator>+</operator> <name>viewResultsURL</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

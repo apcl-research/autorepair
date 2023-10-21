@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37726891.java">    <function><type><specifier>public</specifier> <name>ChunkMetaData</name></type> <name>getChunk</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>position</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>ChunkMetaData</name></type> <name>chunkMD</name> <init>= <expr><literal type="null">null</literal></expr></init></decl>;</decl_stmt>
+
+        <for>for <control>(<init><decl><type><name>Iterator</name></type> <name>iter</name> <init>= <expr><call><name><name>this</name><operator>.</operator><name>fChunks</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>iter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>ChunkMetaData</name></type> <name>element</name> <init>= <expr><operator>(</operator><name>ChunkMetaData</name><operator>)</operator> <call><name><name>iter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <if_stmt><if>if <condition>(<expr><name>position</name> <operator>==</operator> <call><name><name>element</name><operator>.</operator><name>getPosition</name></name><argument_list>()</argument_list></call></expr>  )</condition> <block>{<block_content>
+                <expr_stmt><expr><name>chunkMD</name> <operator>=</operator> <name>element</name></expr>;</expr_stmt>
+                <break>break;</break>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+
+        <return>return <expr><name>chunkMD</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

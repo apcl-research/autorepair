@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18849996.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>getErrorMsg</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>val</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>String</name></type> <name>retVal</name> <init>= <expr><literal type="string">""</literal></expr></init></decl>;</decl_stmt>
+		<comment type="line">//System.out.println("correct Int next");</comment>
+
+
+		<decl_stmt><decl><type><name>String</name></type> <name>ss</name> <init>= <expr><call><name><name>val</name><operator>.</operator><name>trim</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toUpperCase</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<if_stmt><if>if  <condition>(<expr><call><name><name>ss</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"TRUE"</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>ss</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"YES"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>ret</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+		</block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name><name>ss</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"TRUE"</literal></expr></argument>)</argument_list></call> <operator>||</operator> <call><name><name>ss</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">"YES"</literal></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>ret</name> <operator>=</operator> <literal type="boolean">false</literal></expr>;</expr_stmt>
+		</block_content>}</block></if> <else>else <block>{<block_content>
+			<expr_stmt><expr><name>retVal</name> <operator>=</operator> <literal type="string">"Invalid Boolean"</literal></expr>;</expr_stmt>
+		</block_content>}</block></else></if_stmt>
+
+		<return>return <expr><name>retVal</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

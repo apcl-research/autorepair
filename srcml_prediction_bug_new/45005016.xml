@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37809963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>part</name><parameter_list>(<parameter><decl><type><name>MWChatClient</name></type> <name>client</name></decl></parameter>, <parameter><decl><type><name>boolean</name></type> <name>isSignoff</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    	<decl_stmt><decl><type><name>String</name></type> <name>userId</name> <init>= <expr><call><name><name>client</name><operator>.</operator><name>getUserId</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <synchronized>synchronized <init>(<expr><name>_users</name></expr>)</init> <block>{<block_content>
+            <if_stmt><if>if <condition>(<expr><call><name><name>_users</name><operator>.</operator><name>remove</name></name><argument_list>(<argument><expr><name>client</name></expr></argument>)</argument_list></call>  <block>{<block_content>
+            	<comment type="line">// we only send ack if notSIGN off.</comment>
+            	<if_stmt><if>if <condition>(<expr><call><name><name>_server</name><operator>.</operator><name>getClient</name></name><argument_list>(<argument><expr><name>userId</name></expr></argument>)</argument_list></call> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition> <block>{<block_content>
+                    <expr_stmt><expr><call><name><name>client</name><operator>.</operator><name>ackPartRoom</name></name><argument_list>(<argument><expr><name>_roomName</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt>
+
+                <expr_stmt><expr><call><name>notifyPart</name><argument_list>(<argument><expr><name>userId</name></expr></argument>, <argument><expr><name>isSignoff</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></synchronized>
+        <expr_stmt><expr><call><name>deop</name><argument_list>(<argument><expr><name>client</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

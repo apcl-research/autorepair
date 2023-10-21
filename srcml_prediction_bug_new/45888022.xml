@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48182783.java">
+	<function><type><specifier>public</specifier> <name>boolean</name></type> <name>greater</name><parameter_list>(<parameter><decl><type><name>VeecheckVersion</name></type> <name>currentVersion</name></decl></parameter>)</parameter_list> <block>{<block_content>		
+		<if_stmt><if>if <condition>(<expr><name><name>currentVersion</name><operator>.</operator><name>versionCode</name></name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name><name>this</name><operator>.</operator><name>versionCode</name></name> <operator>!=</operator> <literal type="null">null</literal>
+				<operator>&amp;&amp;</operator> <call><name><name>Long</name><operator>.</operator><name>parseLong</name></name><argument_list>(<argument><expr><name><name>currentVersion</name><operator>.</operator><name>versionCode</name></name></expr></argument>)</argument_list></call> <operator>&lt;</operator> <call><name><name>Long</name><operator>.</operator><name>parseLong</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>versionCode</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+		<if_stmt><if>if <condition>(<expr><name><name>currentVersion</name><operator>.</operator><name>versionName</name></name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <name><name>this</name><operator>.</operator><name>versionName</name></name> <operator>!=</operator> <literal type="null">null</literal> 
+				<operator>&amp;&amp;</operator> <operator>!</operator><call><name><name>currentVersion</name><operator>.</operator><name>versionName</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name><name>this</name><operator>.</operator><name>versionName</name></name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="boolean">true</literal></expr>;</return></block_content></block></if></if_stmt>
+		<return>return <expr><literal type="boolean">false</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

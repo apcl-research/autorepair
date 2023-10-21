@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/46974983.java">    <function><type><specifier>public</specifier> <name>CuCharacterBase</name></type> <name>getChar</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>_name</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>_chars</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>CuCharacterBase</name></type> <name>muCharacterBase</name> <init>= <expr><name><name>_chars</name><index>[<expr><name>i</name></expr> ;</init>
+            <if_stmt><if>if<condition>(<expr><name>muCharacterBase</name><operator>!=</operator><literal type="null">null</literal></expr>)</condition>
+            <block>{<block_content>
+                <if_stmt><if>if<condition>(<expr><call><name><name>muCharacterBase</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>compareTo</name><argument_list>(<argument><expr><name>_name</name></expr></argument>)</argument_list></call><operator>==</operator><literal type="number">0</literal></expr>)</condition><block type="pseudo"><block_content>
+                    <return>return <expr><name>muCharacterBase</name></expr>;</return></block_content></block></if></if_stmt>
+            </block_content>}</block></if></if_stmt>
+        </block_content>}</block></for>
+        <return>return <expr><literal type="null">null</literal></expr>;</return>
+    </block_content>}</block></function>
+</unit>

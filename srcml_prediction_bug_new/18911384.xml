@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18912091.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>connectionErrorOccurred</name><parameter_list>(<parameter><decl><type><name>ConnectionEvent</name></type> <name>event</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<decl_stmt><decl><type><name>Object</name></type> <name>obj</name> <init>= <expr><call><name><name>event</name><operator>.</operator><name>getSource</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>PooledConnection</name></type> <name>pc</name> <init>= <expr><operator>(</operator><name>PooledConnection</name><operator>)</operator> <name>obj</name></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>pool</name><operator>.</operator><name>nextGeneration</name></name><argument_list>(<argument><expr><name>pc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>pool</name><operator>.</operator><name>removeLockedObject</name></name><argument_list>(<argument><expr><name>pc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// remove the object from the locked pool</comment>
+		<expr_stmt><expr><call><name>expire</name><argument_list>(<argument><expr><name>pc</name></expr></argument>)</argument_list></call></expr>;</expr_stmt> <comment type="line">// kill the connection (from super)</comment>
+		<expr_stmt><expr><call><name><name>log</name><operator>.</operator><name>debug</name></name><argument_list>(
+			<argument><expr><literal type="string">"StandardXAPoolDataSource:connectionErrorOccurred remove the object from the pool"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

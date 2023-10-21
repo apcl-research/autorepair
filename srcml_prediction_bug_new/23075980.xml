@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/24078981.java">    <function><type><specifier>public</specifier> <name>boolean</name></type> <name>equals</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>OrderedReversePath</name></type> <name>o</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>baseDirThis</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>baseDirOth</name></decl></parameter>)</parameter_list> <block>{<block_content>
+	<decl_stmt><decl><type><specifier>final</specifier> <name><name>String</name> <index>[]</index></name></type> <name>othParts</name> <init>= <expr><call><name><name>o</name><operator>.</operator><name>getParts</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>int</name></type> <name>minCommonPartsThis</name> <init>= <expr><name><name>parts</name><operator>.</operator><name>length</name></name> <operator>-</operator> <name>baseDirThis</name></expr></init></decl>;</decl_stmt>
+	<decl_stmt><decl><type><name>int</name></type> <name>minCommonPartsOth</name> <init>= <expr><name><name>othParts</name><operator>.</operator><name>length</name></name> <operator>-</operator> <name>baseDirOth</name></expr></init></decl>;</decl_stmt>
+	<if_stmt><if>if <condition>(<expr><name>minCommonPartsOth</name> <operator>==</operator> <name>minCommonPartsThis</name></expr>)</condition><block type="pseudo"><block_content>
+	    <return>return <expr><call><name>noCommonParts</name><argument_list>(<argument><expr><name>o</name>  <operator>&gt;=</operator> <name>minCommonPartsThis</name></expr></argument>)</argument_list></call></expr>;</return></block_content></block></if>
+	<else>else<block type="pseudo"><block_content>
+	    <return>return <expr><literal type="boolean">false</literal></expr>;</return></block_content></block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

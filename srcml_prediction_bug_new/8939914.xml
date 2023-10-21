@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10392783.java">    <function><type><specifier>public</specifier> <name>String</name></type> <name>toJavaModeString</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <comment type="line">// Do not open as 'rw' by default since a file with read-only permissions will fail on 'rw'</comment>
+        <if_stmt><if>if <condition>(<expr><call><name>isWritable</name><argument_list>()</argument_list></call> <operator>||</operator> <call><name>isCreate</name><argument_list>()</argument_list></call> <operator>||</operator> <call><name>isTruncate</name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>  
+            <comment type="line">// Java requires "w" for creating a file that does not exist</comment>
+            <return>return <expr><literal type="string">"rw"</literal></expr>;</return></block_content></block></if></if_stmt>
+        </block_content>}</block></function> <expr><operator>*</operator><operator>/</operator></expr>
+</unit>

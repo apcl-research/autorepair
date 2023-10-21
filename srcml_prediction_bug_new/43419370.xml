@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28991596.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>save</name><parameter_list>()</parameter_list> <block>{<block_content>
+		<comment type="line">// --- getting the current values of the minimantory variables ---</comment>
+		<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setGlobal2Config</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<comment type="line">// --- Save the config-file -------------------------------------</comment>
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>store</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>FileOutputStream</name>  <argument_list>(<argument><expr><name>configFile</name></expr></argument> )</argument_list></call></expr></argument>, <argument><expr><name>configFileDefaultComment</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>FileNotFoundException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch> <catch>catch <parameter_list>(<parameter><decl><type><name>IOException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>e</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

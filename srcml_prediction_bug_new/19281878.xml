@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/41978906.java">	<function><type><specifier>private</specifier> <name>String</name></type> <name>toHexString</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name><name>byte</name><index>[]</index></name></type> <name>b</name></decl></parameter>)</parameter_list>  
+		<throws>throws <argument><expr><name>IOException</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><specifier>final</specifier> <name>StringBuffer</name></type> <name>sb</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>(<argument><expr><name><name>b</name><operator>.</operator><name>length</name></name> <operator>&lt;&lt;</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>b</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+			<comment type="line">// look up high nibble char</comment>
+			<expr_stmt><expr><call><name><name>sb</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><name><name>hexChar</name><index>[<expr><operator>(</operator><name><name>b</name><index>[<expr><name>i</name></expr>]</index></name> <operator>&amp;</operator> <literal type="number">0xf0</literal><operator>)</operator> <operator>&gt;&gt;&gt;</operator> <literal type="number">4</literal></expr>]</index></name></expr></argument>)</argument_list></call>
+					<comment type="line">// look up low nibble char</comment>
+					<operator>.</operator><call><name>append</name><argument_list>(<argument><expr><name><name>hexChar</name><index>[<expr><name><name>b</name><index>[<expr><name>i</name></expr>]</index></name> <operator>&amp;</operator> <literal type="number">0x0f</literal></expr>]</index></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></for>
+		<return>return <expr><call><name><name>sb</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

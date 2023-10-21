@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14054248.java">  <function><type><specifier>public</specifier> <name>String</name></type> <name>createStringField</name><parameter_list>(<parameter><decl><type><name>Object</name></type> <name>object</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>TextFlowException</name></expr></argument></throws> <block>{<block_content>
+	  <decl_stmt><decl><type><name>String</name></type> <name>result</name></decl> ;</decl_stmt>
+	  <assert>assert <expr><operator>(</operator><name>object</name> <operator>instanceof</operator> <name>String</name><operator>)</operator></expr>;</assert>
+	  
+	  <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name><name>this</name><operator>.</operator><name>createString</name></name><argument_list>(<argument><expr><name>object</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	  <if_stmt><if>if <condition>(<expr><name>length</name><operator>!=</operator><literal type="null">null</literal> <operator>||</operator> <call><name><name>result</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call><operator>&lt;</operator> <name>length</name></expr>)</condition> <block>{<block_content>
+		  <comment type="line">// DEVO FORMATTARE LA STRINGA</comment>
+		  <if_stmt><if>if <condition>(<expr><call><name><name>Alignment</name><operator>.</operator><name>LEFT</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>align</name></expr></argument>)</argument_list></call></expr>  )</condition> <block>{<block_content>
+			  <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name><name>StringUtils</name><operator>.</operator><name>leftPad</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>, <argument><expr><name>length</name></expr></argument>, <argument><expr><name>paddingChar</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		  </block_content>}</block></if> <if type="elseif">else if <condition>(<expr><call><name><name>Alignment</name><operator>.</operator><name>RIGHT</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><name>align</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			  <expr_stmt><expr><name>result</name> <operator>=</operator> <call><name><name>StringUtils</name><operator>.</operator><name>rightPad</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>, <argument><expr><name>length</name></expr></argument>, <argument><expr><name>paddingChar</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		  </block_content>}</block></if></if_stmt>
+	  </block_content>}</block></if></if_stmt>
+	  
+	  <return>return <expr><name>result</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

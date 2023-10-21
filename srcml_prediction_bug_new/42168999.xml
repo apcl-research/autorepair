@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/14292783.java">  <function><type><specifier>public</specifier> <name>void</name></type> <name>clearResults</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <if_stmt><if>if <condition>(<expr><call><name><name>tabFolder</name><operator>.</operator><name>isDisposed</name></name><argument_list>()</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+      <return>return 
+    <synchronized>synchronized <init>(<expr><name>this</name></expr>)</init> <block>{<block_content>
+      <decl_stmt><decl><type><name><name>CTabItem</name><index>[]</index></name></type> <name>tabItems</name> <init>= <expr><call><name><name>tabFolder</name><operator>.</operator><name>getItems</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+      <for>for <control>(<init><decl><type><name>CTabItem</name></type> <name>tabItem</name> <range>: <expr><name>tabItems</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>
+        <if_stmt><if>if <condition>(<expr><name>tabItem</name> <operator>!=</operator> <name>messagesTab</name></expr>)</condition><block type="pseudo"><block_content>
+          <expr_stmt><expr><call><name>closeTab</name><argument_list>(<argument><expr><name>tabItem</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></if></if_stmt></block_content></block></for>
+      <expr_stmt><expr><call><name><name>messagesTable</name><operator>.</operator><name>removeAll</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></if></if_stmt>
+  </block_content>}</block></function>
+</unit>

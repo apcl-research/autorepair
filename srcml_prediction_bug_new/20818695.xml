@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10592783.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>init</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>ServletException</name></expr></argument></throws> <block>{<block_content>
+        <decl_stmt><decl><type><name>ActiveRequestReporterFactory</name></type> <name>factory</name> <init>= <expr><operator>new</operator> <call><name>ActiveRequestReporterFactory</name> <argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><name>threadview</name> <operator>=</operator> <call><name><name>factory</name>
+                <operator>.</operator><name>makeReporter</name></name><argument_list>(<argument><expr><call><name>getInitParameter</name><argument_list>(<argument><expr><literal type="string">"threadinfo"</literal></expr></argument>)</argument_list></call></expr></argument>,
+                        <argument><expr><literal type="string">"thread,start,duration,ip,sessionid,method,url,querystring,stacktrace"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><name>reporter</name> <operator>=</operator> <call><name><name>factory</name><operator>.</operator><name>makeReporter</name></name><argument_list>(<argument><expr><call><name>getInitParameter</name><argument_list>(<argument><expr><literal type="string">"loginfo"</literal></expr></argument>)</argument_list></call></expr></argument>,
+                <argument><expr><literal type="string">"id,start,duration,ip,thread,uri"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

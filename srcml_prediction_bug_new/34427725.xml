@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/34426962.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>displayDraft</name><parameter_list>(<parameter><decl><type><name>SWGSchematic</name></type> <name>schem</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>draftTitle</name><operator>.</operator><name>setTitle</name></name><argument_list>(<argument><expr><call><name><name>schem</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr></expr_stmt>
+        <expr_stmt><expr><call><name><name>draftCategory</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name>draftDataCategory</name><argument_list>(<argument><expr><name>schem</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>draftData</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name>draftData</name><argument_list>(<argument><expr><name>schem</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>draftResAndComps</name><argument_list>(<argument><expr><name>schem</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name>draftExpGroups</name><argument_list>(<argument><expr><name>schem</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>draftMisc</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><call><name>draftMisc</name><argument_list>(<argument><expr><name>schem</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>draftPanel</name><operator>.</operator><name>repaint</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

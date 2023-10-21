@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/25392783.java">        <function><type><specifier>private</specifier> <name>void</name></type> <name>calculateResidualMemory</name><parameter_list>(<parameter><decl><type><name><name>List</name><argument_list type="generic">&lt;<argument><name>AppInformation</name></argument>&gt;</argument_list></name></type> <name>apps</name></decl></parameter>,<parameter><decl><type><name><name>int</name><index>[]</index><index>[]</index></name></type> <name>I</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <decl_stmt><decl><type><name>int</name></type> <name>residualMemoryTmp</name> <init>=<expr><name>memoryCapacity</name></expr></init></decl>;</decl_stmt>
+            <for>for<control>(<init><decl><type><name>int</name></type> <name>i</name><init>=<expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name><operator>&lt;</operator> <name><name>I</name><operator>.</operator><name>length</name></name></expr>;</condition><incr><expr><name>i</name><operator>++</operator></expr></incr>)</control><block type="pseudo"><block_content>
+                <expr_stmt><expr><name>residualMemoryTmp</name><operator>-=</operator><call><name><name>apps</name><operator>.</operator><name>get</name></name><argument_list>(<argument><expr><name>i</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>getMemoryDemand</name><argument_list>()</argument_list></call><operator>*</operator><name><name>I</name><index>[<expr><name>i</name></expr>]</index><index>[<expr><call><name>getPosition</name><argument_list>()</argument_list></call></expr> ;</expr_stmt></block_content></block></for>
+            
+            <comment type="line">//TODO: What happens if proportion memory &lt; 0?</comment>
+            <expr_stmt><expr><name>residualMemory</name><operator>=</operator><name>residualMemoryTmp</name></expr>;</expr_stmt>
+        </block_content>}</block></function>
+</unit>

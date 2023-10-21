@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28292783.java">  <function><type><specifier>public</specifier> <name>Person</name></type> <name>getPersonByDn</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>dn</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>KivException</name></expr></argument></throws> <block>{<block_content>
+    <decl_stmt><decl><type><name>DistinguishedName</name></type> <name>distinguishedName</name> <init>= <expr><operator>new</operator> <call><name>DistinguishedName</name><argument_list>(<argument><expr><name>dn</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <decl_stmt><decl><type><name>PersonMapper</name></type> <name>personMapper</name> <init>= <expr><operator>new</operator> <call><name>PersonMapper</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+    <try>try  
+      <block>{<block_content>
+      <expr_stmt><expr><call><name><name>ldapTemplate</name><operator>.</operator><name>lookup</name></name><argument_list>(<argument><expr><name>distinguishedName</name></expr></argument>, <argument><expr><name>personMapper</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+      </block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>NamingException</name></type> <name>e</name></decl></parameter>)</parameter_list> <block>{<block_content>
+      <throw>throw <expr><operator>new</operator> <call><name>KivException</name><argument_list>(<argument><expr><literal type="string">"Error getting person from server: "</literal> <operator>+</operator> <call><name><name>e</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</throw>
+    </block_content>}</block></catch></try>
+
+    <decl_stmt><decl><type><name>Person</name></type> <name>person</name> <init>= <expr><call><name><name>personMapper</name><operator>.</operator><name>getFirstPerson</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+    <return>return <expr><name>person</name></expr>;</return>
+  </block_content>}</block></function>
+</unit>

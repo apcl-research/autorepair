@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37232483.java">	<function><type><specifier>public</specifier> <name>EntrySet</name></type> <name>getEntrySet</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>PsiscoreException</name></expr></argument></throws> <block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><call><name><name>inputData</name><operator>.</operator><name>xmlUsed</name></name><argument_list>()</argument_list></call></expr>)</condition><block>{<block_content>
+			<return>return <expr><call><name><name>inputData</name><operator>.</operator><name>getXmlEntySet</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></if><if type="elseif">else if <condition>(<expr><call><name><name>inputData</name><operator>.</operator><name>mitabUsed</name></name><argument_list>()</argument_list></call></expr> )</condition><block type="pseudo"><block_content> 
+			<expr_stmt><expr><name>convertedMitab</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt></block_content></block></if></if_stmt>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>inputData</name><operator>.</operator><name>setXmlEntySet</name></name><argument_list>(<argument><expr><call><name><name>PsiTools</name><operator>.</operator><name>getInstance</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getEntrySetFromBinaryInteractions</name><argument_list>(<argument><expr><call><name><name>inputData</name><operator>.</operator><name>getMitabInteractions</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<return>return <expr><call><name><name>inputData</name><operator>.</operator><name>getXmlEntySet</name></name><argument_list>()</argument_list></call></expr>;</return>
+		</block_content>}</block></function><expr><operator>*</operator><operator>/</operator></expr>
+</unit>

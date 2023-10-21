@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/4849054.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>resetPassword</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>token</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>oldPassword</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>newPassword</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>AccountManager</name></type> <name>am</name> <init>= <expr><operator>new</operator> <call><name>AccountManager</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<decl_stmt><decl><type><name>Account</name></type> <name>acct</name> <init>= <expr><call><name><name>am</name><operator>.</operator><name>checkToken</name></name><argument_list>(<argument><expr><name>token</name></expr></argument>)</argument_list></call></expr></init></decl> 
+		if (!<expr><call><name><name>oldPassword</name><operator>.</operator><name>equalsIgnoreCase</name></name><argument_list>(<argument><expr><call><name><name>acct</name><operator>.</operator><name>getPassword</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><call><name><name>am</name><operator>.</operator><name>closeSession</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			<throw>throw <expr><operator>new</operator> <call><name>ILException</name><argument_list>(<argument><expr><name><name>ILException</name><operator>.</operator><name>BAD_PASSWORD</name></name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><call><name><name>acct</name><operator>.</operator><name>setPassword</name></name><argument_list>(<argument><expr><name>newPassword</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>acct</name><operator>.</operator><name>setEmailToken</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>am</name><operator>.</operator><name>saveOrUpdateAccount</name></name><argument_list>(<argument><expr><name>acct</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<expr_stmt><expr><call><name><name>am</name><operator>.</operator><name>closeSession</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23282796.java">	<function><type><specifier>public</specifier> <name>Object</name></type> <name>invoke</name><parameter_list>()</parameter_list> <throws>throws <argument><expr><name>SOAPException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name>prepareInvocation</name><argument_list>( ;</argument_list></call></expr></expr_stmt> <comment type="line">// sets newMessageIdNeeded to false</comment>
+		<decl_stmt><decl><type><name>Object</name></type> <name>result</name> <init>= <expr><call><name><name>super</name><operator>.</operator><name>invoke</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<comment type="line">// if the call resulted without exception, generate a new message id for the next call</comment>
+		<comment type="line">// if an exception is thrown, the flags remains false so that the message id can be reused for a retry</comment>
+		<expr_stmt><expr><name>newMessageIdNeeded</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt> 
+		<return>return <expr><name>result</name></expr>;</return>
+	</block_content>}</block></function>
+</unit>

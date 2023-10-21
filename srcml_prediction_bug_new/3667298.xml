@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22889862.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>updateXIncrement</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>Component</name></type> <name><name>components</name><index>[]</index></name> <init>= <expr><call><name><name>m_channelPanel</name><operator>.</operator><name>getComponents</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <for>for <control>(<init><decl><type><name>int</name></type> <name>i</name><init>=<expr><literal type="number">0</literal></expr></init></decl>;</init> <condition><expr><name>i</name> <operator>&lt;</operator> <name><name>components</name><operator>.</operator><name>length</name></name></expr>;</condition> <incr><expr><name>i</name><operator>++</operator></expr></incr>)</control> <block>{<block_content>
+            <decl_stmt><decl><type><name>JStripChartChannel</name></type> <name>channel</name> <init>= <expr><operator>(</operator><name>JStripChartChannel</name><operator>)</operator><name><name>components</name><index>[<expr><name>i</name></expr>]</index></name></expr></init></decl>;</decl_stmt>
+            <decl_stmt><decl><type><name>JChartPlane</name></type> <name>chartPlane</name> <init>= <expr><call><name><name>channel</name><operator>.</operator><name>getChartPlane</name></name><argument_list>()</argument_list></call> 
+            <call><name><name>chartPlane</name><operator>.</operator><name>setXIncrement</name></name><argument_list>(<argument><expr><call><name><name>m_hScaleBar</name><operator>.</operator><name>getTickIncrement</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        </block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

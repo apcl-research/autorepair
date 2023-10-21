@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50502983.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>addChkAutomaticComment</name><parameter_list>(<parameter><decl><type><name>JPanel</name></type> <name>panel</name></decl></parameter>, <parameter><decl><type><name>GridBagConstraints</name></type> <name>constraints</name></decl></parameter>)</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><name>chkAutomaticComment</name> <operator>=</operator> <name>createChkAutomaticComment</name> <literal type="boolean">true</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>chkAutomaticComment</name></expr></argument>, <argument><expr><name>constraints</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>constraints</name><operator>.</operator><name>gridx</name></name><operator>++</operator></expr>;</expr_stmt>
+    <expr_stmt><expr><name>textComment</name> <operator>=</operator> <operator>new</operator> <call><name>JTextField</name><argument_list>(<argument><expr><call><name>getAutomaticComment</name><argument_list>(<argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><name><name>constraints</name><operator>.</operator><name>weightx</name></name> <operator>=</operator> <literal type="number">1</literal></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>panel</name><operator>.</operator><name>add</name></name><argument_list>(<argument><expr><name>textComment</name></expr></argument>, <argument><expr><name>constraints</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+  </block_content>}</block></function>
+</unit>

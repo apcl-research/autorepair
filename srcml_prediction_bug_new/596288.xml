@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/31992796.java">    <function><type><specifier>protected</specifier> <name>void</name></type> <name>fireEditingStopped</name><parameter_list>()</parameter_list> <block>{<block_content>
+	<comment type="line">// Guaranteed to return a non-null array</comment>
+	<decl_stmt><decl><type><name><name>Object</name><index>[]</index></name></type> <name>listeners</name> <init>= <expr><call><name><name>listenerList</name><operator>.</operator><name>getListenerList</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+	<comment type="line">// Process the listeners last to first, notifying</comment>
+	<comment type="line">// those that are interested in this event</comment>
+	<for>for <control>(<init><decl><type><name>int</name></type> <name>i</name> <init>= <expr><name><name>listeners</name><operator>.</operator><name>length</name></name><operator>-</operator><literal type="number">2</literal></expr></init></decl>;</init> <condition><expr><name>i</name><operator>&gt;=</operator><literal type="number">0</literal></expr>;</condition> <incr><expr><name>i</name><operator>-=</operator><literal type="number">2</literal></expr></incr>)</control> <block>{<block_content>
+	    <if_stmt><if>if <condition>(<expr><name><name>listeners</name><index>[<expr><name>i</name></expr>]</index></name><operator>==</operator><name><name>CellEditorListener</name><operator>.</operator><name>class</name></name></expr>)</condition> <block>{<block_content>
+		<expr_stmt><expr><operator>(</operator><operator>(</operator><name>CellEditorListener</name><operator>)</operator><name><name>listeners</name><index>[<expr><name>i</name><operator>+</operator><literal type="number">1</literal></expr>]</index></name><operator>)</operator><operator>.</operator><call><name>editingStopped</name><argument_list>(<argument><expr><operator>new</operator> <call><name>ChangeEvent</name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	    </block_content>}</block></if></if_stmt>	       
+	 
+    </block_content>}</block></for>
+</block_content>}</block></function>
+</unit>

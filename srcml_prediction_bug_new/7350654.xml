@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18748891.java">    <function><type><specifier>protected</specifier> <name>Diagram2D</name></type> <name>getNestedDiagram</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>int</name></type> <name>pos</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>pos</name> <operator>==</operator> <literal type="number">0</literal></expr>)</condition> <block>{<block_content>
+            <comment type="line">// we have only a flat diagram left</comment>
+            <return>return <expr><call><name>getSimpleDiagram</name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></if></if_stmt>
+        <comment type="line">// else created nested diagram recursively</comment>
+        <return>return <expr><operator>new</operator> <call><name>NestedLineDiagram</name><argument_list>(<argument><expr><call><name>getNestedDiagram</name><argument_list>(<argument><expr><name>pos</name> <operator>-</operator> <literal type="number">1</literal></expr></argument>)</argument_list></call></expr></argument>, <argument><expr><call><name><name>this</name><operator>.</operator><name>history</name>
+                <operator>.</operator><name>getCurrentDiagram</name></name><argument_list>(<argument><expr><name>pos</name></expr></argument>)</argument_list></call></expr></argument> )</argument_list></call></expr> ;</return>
+    </block_content>}</block></function>
+</unit>

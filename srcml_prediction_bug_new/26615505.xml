@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18963172.java">    <function><type><specifier>public</specifier> <name>Vector</name></type> <name>getSelectedNeurons</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>GUILayer</name></type> <name>gLayer</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Iterator</name></type> <name>iLayers</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Vector</name></type> <name>layerneurons</name></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Vector</name></type> <name>neurons</name> <init>= <expr><operator>new</operator> <call><name>Vector</name><argument_list>()</argument_list></call></expr></init></decl> 
+
+        <name>iLayers</name> <operator>=</operator> <call><name>iterator</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <while>while <condition>(<expr><call><name><name>iLayers</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>gLayer</name> <operator>=</operator> <operator>(</operator><name>GUILayer</name><operator>)</operator> <operator>(</operator><call><name><name>iLayers</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator></expr>;</expr_stmt>
+            <expr_stmt><expr><name>layerneurons</name> <operator>=</operator> <call><name><name>gLayer</name><operator>.</operator><name>getSelectedNeurons</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+            <expr_stmt><expr><call><name><name>neurons</name><operator>.</operator><name>addAll</name></name><argument_list>(<argument><expr><name>layerneurons</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></while>
+
+        <return>return <expr><name>neurons</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

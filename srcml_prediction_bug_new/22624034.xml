@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/22623891.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>fetchStandardsDocs</name><parameter_list>(<parameter><decl><type><name>List</name></type> <name>docIds</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>ValidatingServiceException</name></expr></argument></throws> <block>{<block_content>
+		<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"fetchStandardsDocs to fetch "</literal> <operator>+</operator> <call><name><name>docIds</name><operator>.</operator><name>size</name></name><argument_list>()</argument_list></call> <operator>+</operator> <literal type="string">" docs"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		
+		<if_stmt><if>if <condition>(<expr><name>isProcessing</name></expr>)</condition> <block>{<block_content>
+			<expr_stmt><expr><name>prtln</name> <operator>=</operator> <literal type="string">"ALERT: isProcessing!"</literal></expr>;</expr_stmt>
+			<return>return;</return>
+		</block_content>}</block></if></if_stmt>
+		<expr_stmt><expr><name>isProcessing</name> <operator>=</operator> <literal type="boolean">true</literal></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>ignoreCachedValidation</name></name> <operator>=</operator> <name>ignoreCachedValidation</name></expr>;</expr_stmt>
+
+		<comment type="line">// Here is where we would obtain lock on records to validate!</comment>
+
+		<try>try <block>{<block_content>
+			<expr_stmt><expr><operator>new</operator> <call><name>AsnFetchThread</name><argument_list>(<argument><expr><name>docIds</name></expr></argument>)</argument_list></call><operator>.</operator><call><name>start</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Throwable</name></type> <name>t</name></decl></parameter>)</parameter_list> <block>{<block_content>
+			<expr_stmt><expr><call><name>prtln</name><argument_list>(<argument><expr><literal type="string">"WARNING: validate Records: "</literal> <operator>+</operator> <call><name><name>t</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></catch></try>
+	</block_content>}</block></function>
+</unit>

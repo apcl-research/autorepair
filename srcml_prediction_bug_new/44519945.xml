@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37019983.java">	<function><type><specifier>public</specifier> <name>String</name></type> <name>toString</name><parameter_list>()</parameter_list> 
+		<throws>throws <argument><expr><name>Exception</name></expr></argument></throws> <block>{<block_content>
+		<decl_stmt><decl><type><name>StringBuffer</name></type> <name>str</name> <init>= <expr><operator>new</operator> <call><name>StringBuffer</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+		<expr_stmt><expr><call><name><name>str</name><operator>.</operator><name>append</name></name><argument_list>(<argument><expr><literal type="string">"PDB ID: "</literal><operator>+</operator><name>pdbID</name><operator>+</operator><literal type="string">"\tDomain Origin: "</literal><operator>+</operator><name>domainOrigin</name><operator>+</operator><literal type="string">"\tDomain ID: "</literal><operator>+</operator><name>domainID</name><operator>+</operator><literal type="string">"\n"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+		<for>for<control>(<init><decl><type><name>Iterator</name></type> <name>i</name> <init>= <expr><call><name><name>subDomainDefinitions</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</init> <condition><expr><call><name><name>i</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>;</condition><incr/>)</control><block>{<block_content>
+			<expr_stmt><expr><call><name><name>str</name><operator>.</operator><name>append</name></name><argument_list>( <argument><expr><operator>(</operator><operator>(</operator><name>SubChain</name><operator>)</operator><call><name><name>i</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call><operator>)</operator><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">"\n"</literal></expr></argument> )</argument_list></call></expr>;</expr_stmt> 
+		</block_content>}</block></for>
+		
+		<return>return <expr><call><name><name>str</name><operator>.</operator><name>toString</name></name><argument_list>()</argument_list></call></expr>;</return>
+	</block_content>}</block></function>
+</unit>

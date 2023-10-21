@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/10402715.java">    <function><type><specifier>public</specifier> <name>ByteBuffer</name></type> <name>getByteBuffer</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><name>byteBuffer</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <call><name><name>byteBuffer</name><operator>.</operator><name>array</name></name><argument_list>()</argument_list></call> <operator>!=</operator> <name>buff</name></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><name>byteBuffer</name> <operator>=</operator> <call><name><name>ByteBuffer</name><operator>.</operator><name>wrap</name></name><argument_list>(<argument><expr><name>buff</name></expr></argument>, <argument><expr><name>start</name></expr></argument>, <argument><expr><name>end</name> <operator>-</operator> <name>start</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <expr_stmt><expr><call><name><name>byteBuffer</name><operator>.</operator><name>position</name></name><argument_list>(<argument><expr><name>start</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>byteBuffer</name><operator>.</operator><name>limit</name></name><argument_list>(<argument><expr><name>end</name></expr></argument> ;</argument_list></call></expr></expr_stmt>
+        </block_content>}</block></else></if_stmt>
+        <return>return <expr><name>byteBuffer</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

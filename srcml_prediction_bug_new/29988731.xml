@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/2666891.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>setDefaultMessage</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+        <expr_stmt><expr><call><name>clearParent</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+
+        <comment type="line">// add message</comment>
+        <decl_stmt><decl><type><name>String</name></type> <name>message</name> <init>= <expr><call><name><name>Messages</name><operator>.</operator><name>getString</name></name><argument_list>(<argument><expr><literal type="string">"SQLResultsView.NoResults"</literal></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <decl_stmt><decl><type><name>Label</name></type> <name>label</name> <init>= <expr><operator>new</operator> <call><name>Label</name><argument_list>(<argument><expr><name>_parent</name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>FILL</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>label</name><operator>.</operator><name>setText</name></name><argument_list>(<argument><expr><name>message</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>label</name><operator>.</operator><name>setLayoutData</name></name><argument_list>(<argument><expr><operator>new</operator> <call><name>GridData</name><argument_list>(<argument><expr><name><name>SWT</name><operator>.</operator><name>FILL</name></name></expr></argument>, <argument><expr><name><name>SWT</name><operator>.</operator><name>TOP</name></name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><literal type="boolean">false</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>_parent</name><operator>.</operator><name>layout</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>_parent</name><operator>.</operator><name>redraw</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

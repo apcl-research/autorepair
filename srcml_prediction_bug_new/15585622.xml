@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26010815.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>createGui</name><parameter_list>()</parameter_list><block>{<block_content>
+ 			
+ 		<expr_stmt><expr><name>guiManager</name> <operator>=</operator> <operator>new</operator> <call><name>GuiManager</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+ 		<expr_stmt><expr><call><name><name>guiManager</name><operator>.</operator><name>setUserActionListener</name></name><argument_list>(<argument><expr><name>this</name></expr></argument>)</argument_list></call></expr> 
+ 		
+ 		<if_stmt><if>if<condition>(<expr><call><name><name>SIPConfig</name><operator>.</operator><name>preferredNetworkAddress</name><operator>.</operator><name>equals</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>)</condition><block>{<block_content>
+ 	 		<decl_stmt><decl><type><name>AddressSelection</name></type> <name>addSel</name> <init>= <expr><operator>new</operator> <call><name>AddressSelection</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt> 		
+ 		</block_content>}</block></if></if_stmt>
+		
+	    <expr_stmt><expr><name><name>SIPConfig</name><operator>.</operator><name>IPAddress</name></name> <operator>=</operator> <name><name>SIPConfig</name><operator>.</operator><name>publicAddress</name></name> <operator>=</operator> <call><name><name>NetworkAddressManager</name><operator>.</operator><name>getLocalHost</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call><operator>.</operator><call><name>split</name><argument_list>(<argument><expr><literal type="string">"/"</literal></expr></argument>)</argument_list></call><index>[<expr><literal type="number">1</literal></expr>]</index></expr>;</expr_stmt>
+	    <expr_stmt><expr><call><name><name>SIPConfig</name><operator>.</operator><name>setSystemProperties</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>	    
+ 		
+	    <expr_stmt><expr><call><name><name>guiManager</name><operator>.</operator><name>loadConfig</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+	    
+	</block_content>}</block></function>
+</unit>

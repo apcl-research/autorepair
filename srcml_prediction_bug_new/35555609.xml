@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/35547984.java">	<function><type><specifier>public</specifier> <name>void</name></type> <name>setParams</name><parameter_list>(<parameter><decl><type><name>int</name></type> <name>cmdTag</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>viewId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>userId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>nodeId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>shelfId</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>cmdCode</name></decl></parameter>, <parameter><decl><type><name><name>Object</name><index>[]</index></name></type> <name>data</name></decl></parameter>)</parameter_list> <block>{<block_content>
+
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>cmdTag</name></name> <operator>=</operator> <name>cmdTag</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>viewId</name></name> <operator>=</operator> <name>viewId</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>userId</name></name> <operator>=</operator> <name>userId</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>nodeId</name></name> <operator>=</operator> <name>nodeId</name></expr> 
+		<expr><name><name>this</name><operator>.</operator><name>shelfId</name></name> <operator>=</operator> <name>shelfId</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>cmdCode</name></name> <operator>=</operator> <name>cmdCode</name></expr>;</expr_stmt>
+		<expr_stmt><expr><name><name>this</name><operator>.</operator><name>data</name></name> <operator>=</operator> <name>data</name></expr>;</expr_stmt>
+
+	</block_content>}</block></function>
+</unit>

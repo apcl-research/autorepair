@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26299983.java">    <function><type><specifier>private</specifier> <name>void</name></type> <name>save</name><parameter_list>()</parameter_list> <block>{<block_content>
+        <if_stmt><if>if <condition>(<expr><call><name><name>theCase</name><operator>.</operator><name>isDirty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>theCase</name><operator>.</operator><name>setTitle</name></name><argument_list>(<argument><expr><call><name><name>caseTitleTextField</name><operator>.</operator><name>getString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>theCase</name><operator>.</operator><name>setEven</name></name><argument_list>(<argument><expr><call><name><name>isEvenChoiceGroup</name><operator>.</operator><name>isSelected</name></name><argument_list>(<argument><expr><literal type="number">0</literal></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>theCase</name><operator>.</operator><name>setMagicword</name></name><argument_list>(<argument><expr><call><name><name>magicwordTextField</name><operator>.</operator><name>getString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call> 
+            <call><name><name>parent</name><operator>.</operator><name>updateAfterEdit</name></name><argument_list>(<argument><expr><call><name><name>caseTitleTextField</name><operator>.</operator><name>getString</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        </block_content>}</block></if></if_stmt>
+    </block_content>}</block></function>
+</unit>

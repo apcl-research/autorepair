@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>protected</specifier> <name>void</name></type> <name>updateTargetPointView</name><parameter_list>()</parameter_list> <block>{<block_content>
+
+     <if_stmt><if>if <condition>( <expr><name>target</name> <operator>instanceof</operator> <name>ArrowNode</name></expr> )</condition> <block>{<block_content>
+
+
+       <expr_stmt><expr><call><name><name>targetPoint</name><operator>.</operator><name>setLocation</name></name><argument_list>( <argument><expr><operator>(</operator> <operator>(</operator> <name>ArrowNode</name> <operator>)</operator><name>target</name><operator>)</operator><operator>.</operator><call><name>getInPort</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getX</name><argument_list>()</argument_list></call></expr></argument>,
+                                <argument><expr><operator>(</operator> <operator>(</operator> <name>ArrowNode</name> <operator>)</operator><name>target</name><operator>)</operator><operator>.</operator><call><name>getInPort</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getY</name><argument_list>()</argument_list></call></expr></argument>
+                                )</argument_list></call></expr>;</expr_stmt>
+      
+      <expr_stmt><expr><name>targetPoint</name> <operator>=</operator>   <operator>(</operator> <name>PNodeView</name> <operator>)</operator><name>target</name></expr>;</expr_stmt>
+    
+    </block_content>}</block></if> <else>else <block>{<block_content>
+
+      <expr_stmt><expr><call><name><name>super</name><operator>.</operator><name>updateTargetPointView</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></else></if_stmt>
+
+  </block_content>}</block></function>
+</unit>

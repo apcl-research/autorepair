@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/17039996.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>setSMSSending</name><parameter_list>(<parameter><decl><type><name>SMS</name></type> <name>sms</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <expr_stmt><expr><call><name><name>Validate</name><operator>.</operator><name>notNull</name></name><argument_list>(<argument><expr><name>sms</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+
+        <expr_stmt><expr><call><name><name>logger</name><operator>.</operator><name>log</name></name><argument_list>(<argument><expr><name><name>Level</name><operator>.</operator><name>FINE</name></name></expr></argument>, <argument><expr><literal type="string">"Marking SMS as currently being sent: {0}"</literal></expr></argument>, <argument><expr><name>sms</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>sms</name><operator>.</operator><name>setStatus</name></name><argument_list>(<argument><expr><name><name>SMS</name><operator>.</operator><name>Status</name><operator>.</operator><name>SENDING</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>unregisteredSupport</name><operator>.</operator><name>fireEventOccured</name></name><argument_list>(<argument><expr><name><name>Events</name><operator>.</operator><name>SENDING_SMS</name></name></expr></argument>, <argument><expr><name>sms</name></expr></argument>)</argument_list></call></expr>;</expr_stmt></block_content></block></function>
+     
+</unit>

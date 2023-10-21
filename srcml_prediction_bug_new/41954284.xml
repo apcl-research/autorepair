@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/48182983.java">	<function><type><specifier>private</specifier> <name>Field</name></type> <name>getFieldByName</name><parameter_list>(<parameter><decl><type><name>A</name></type> <name>object</name></decl></parameter>, <parameter><decl><type><name>String</name></type> <name>name</name></decl></parameter>)</parameter_list> <throws>throws <argument><expr><name>PersistenceJDBCException</name></expr></argument></throws> <block>{<block_content>
+		
+		<if_stmt><if>if <condition>(<expr><name>object</name> <operator>==</operator> <literal type="null">null</literal> <operator>||</operator> <name>name</name> <operator>==</operator> <literal type="null">null</literal></expr>)</condition><block type="pseudo"><block_content>
+			<return>return <expr><literal type="null">null</literal></expr>;</return></block_content></block></if></if_stmt>
+		
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name><name>Field</name><index>[]</index></name></type> <name>fields</name> <init>= <expr><call><name><name>object</name><operator>.</operator><name>getClass</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>getDeclaredFields</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			<for>for <control>(<init><decl><type><name>Field</name></type> <name>field</name> <range>: <expr><name>fields</name></expr></range></decl></init>)</control><block type="pseudo"><block_content>
+				<if_stmt><if>if <condition>(<expr><call><name><name>field</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>equalsIgnoreCase</name><argument_list>(<argument><expr><name>name</name></expr></argument>)</argument_list></call></expr>)</condition><block type="pseudo"><block_content>
+					<return>return <expr><name>field</name></expr>;</return></block_content></block></if></if_stmt></block_content></block></for>
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>SecurityException</name></type> <name>e</name></decl></parameter>  <block>{<block_content>
+			<throw>throw <expr><operator>new</operator> <call><name>PersistenceJDBCException</name><argument_list>(
+					<argument><expr><literal type="string">"Security exception occurred when retrieving a field by its name"</literal></expr></argument>, <argument><expr><name>e</name></expr></argument>)</argument_list></call></expr>;</throw>
+		</block_content>}</block></catch></try>
+		
+		<return>return <expr><literal type="null">null</literal></expr>;</return>
+	</block_content>}</block></function>
+</unit>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/26352696.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>addAudioPayloadTypes</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name><name>List</name><argument_list type="generic">&lt;<argument><name>PayloadType</name></argument>&gt;</argument_list></name></type> <name>pts</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <synchronized>synchronized <init>(<expr><name>payloads</name></expr>)</init> <block>{<block_content>
+            <decl_stmt><decl><type><name>Iterator</name></type> <name>ptIter</name> <init>= <expr><call><name><name>pts</name><operator>.</operator><name>iterator</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+            <while>while <condition>(<expr><call><name><name>ptIter</name><operator>.</operator><name>hasNext</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+                <decl_stmt><decl><type><name><name>PayloadType</name><operator>.</operator><name>Audio</name></name></type> <name>pt</name> <init>= <expr><operator>(</operator><name><name>PayloadType</name><operator>.</operator><name>Audio</name></name>  <operator>)</operator><call><name><name>ptIter</name><operator>.</operator><name>next</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+                <expr_stmt><expr><call><name>addPayloadType</name><argument_list>(<argument><expr><operator>new</operator> <call><name><name>PayloadType</name><operator>.</operator><name>Audio</name></name><argument_list>(<argument><expr><name>pt</name></expr></argument>)</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            </block_content>}</block></while>
+        </block_content>}</block></synchronized>
+    </block_content>}</block></function>
+</unit>

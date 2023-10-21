@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/37142783.java">    <function><type><specifier>protected</specifier> <name>double</name></type> <name>totalFromChildren</name><parameter_list>(<parameter><decl><type><name>Doer</name></type> <name>thingToDo</name></decl></parameter>, <parameter><decl><type><name>ResultName</name></type> <name>result</name></decl></parameter>, <parameter><decl><type><name>int</name></type> <name>tnum</name></decl></parameter>)</parameter_list> <block>{<block_content>
+        <decl_stmt><decl><type><name>double</name></type> <name>total</name> <init>= <expr><literal type="number">0</literal></expr></init></decl>;</decl_stmt>
+        <if_stmt><if>if  <condition>(<expr><name>myChildren</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <operator>!</operator> <call><name><name>myChildren</name><operator>.</operator><name>isEmpty</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <for>for <control>(<init><decl><type><name>ModelBit</name></type> <name>kid</name> <range>: <expr><name>myChildren</name></expr></range></decl></init>)</control> <block>{<block_content>
+                <if_stmt><if>if <condition>(<expr><call><name><name>thingToDo</name><operator>.</operator><name>isAccepted</name></name><argument_list>(<argument><expr><name>kid</name></expr></argument>)</argument_list></call></expr>)</condition> <block>{<block_content>
+                    <expr_stmt><expr><name>total</name> <operator>+=</operator> <call><name><name>kid</name><operator>.</operator><name>getDoubleResult</name></name><argument_list>(<argument><expr><name>result</name></expr></argument>, <argument><expr><name>tnum</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></if></if_stmt>
+            </block_content>}</block></for>
+        </block_content>}</block></if></if_stmt>
+        <return>return <expr><name>total</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>

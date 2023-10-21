@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/1949054.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>umlbTools</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>UMLBProject</name></type> <name>umlb</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>boolean</name></type> <name>clean</name></decl></parameter>, <parameter><decl><type><specifier>final</specifier> <name>IProgressMonitor</name></type> <name>monitor</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<expr_stmt><expr><call><name>getUmlbTools</name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		<for>for <control>(<init><decl><type><name>IUMLBtool</name></type> <name>element</name> <range>: <expr><name>umlbbtools</name></expr></range></decl></init>  <block>{<block_content>
+			<try>try<block>{<block_content>
+				<if_stmt><if>if <condition>(<expr><name>clean</name></expr>)</condition><block>{<block_content>
+					<expr_stmt><expr><call><name><name>element</name><operator>.</operator><name>clean</name></name><argument_list>(<argument><expr><name>umlb</name></expr></argument>,<argument><expr><name>monitor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></if><else>else<block>{<block_content>
+					<expr_stmt><expr><call><name><name>element</name><operator>.</operator><name>run</name></name><argument_list>(<argument><expr><name>umlb</name></expr></argument>,<argument><expr><name>monitor</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+				</block_content>}</block></else></if_stmt>
+			</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>Exception</name></type> <name>e</name></decl></parameter>)</parameter_list><block>{<block_content>
+				<expr_stmt><expr><call><name><name>Activator</name><operator>.</operator><name>getDefault</name></name><argument_list>()</argument_list></call><operator>.</operator><call><name>logError</name><argument_list>(<argument><expr><name>e</name></expr></argument>, <argument><expr><literal type="string">"failed running umlbTool extender for project "</literal><operator>+</operator><call><name><name>umlb</name><operator>.</operator><name>getName</name></name><argument_list>()</argument_list></call><operator>+</operator><literal type="string">" \""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></catch></try>
+		</block_content>}</block></for>
+    </block_content>}</block></function>
+</unit>

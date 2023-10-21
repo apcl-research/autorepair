@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/50332629.java">         <function><type><specifier>private</specifier> <name>void</name></type> <name>copyTo</name><parameter_list>(<parameter><decl><type><name>ServerInformation</name></type> <name>backupMachine</name></decl></parameter>)</parameter_list> <block>{<block_content>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setServer</name></name><argument_list>(<argument><expr><call><name>getServer</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setPosition</name></name><argument_list>(<argument><expr><call><name>getPosition</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setCpuCapacity</name></name><argument_list>(<argument><expr><call><name>getCpuCapacity</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setMemoryCapacity</name></name><argument_list>(<argument><expr><call><name>getMemoryCapacity</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setResidualCPU</name></name><argument_list>(<argument><expr><call><name>getResidualCPU</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+            <expr_stmt><expr><call><name><name>backupMachine</name><operator>.</operator><name>setResidualMemory</name></name><argument_list>(<argument><expr><call><name>getResidualMemory</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+         
+</block_content>}</block></function>
+</unit>

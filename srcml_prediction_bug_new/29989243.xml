@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/28466963.java">    <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>(  )</parameter_list> <block>{<block_content>
+
+        <decl_stmt><decl><type><name>SQLAlias</name></type> <name>alias</name> <init>= <expr><operator>(</operator><name>SQLAlias</name><operator>)</operator> <name><name>_selectedNodes</name><index>[<expr><literal type="number">0</literal></expr>]</index></name><operator>.</operator><call><name>getSession</name><argument_list>()</argument_list></call><operator>.</operator><call><name>getAlias</name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+        <expr_stmt><expr><call><name><name>alias</name><operator>.</operator><name>setNameFilterExpression</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>alias</name><operator>.</operator><name>setFolderFilterExpression</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        <expr_stmt><expr><call><name><name>alias</name><operator>.</operator><name>setSchemaFilterExpression</name></name><argument_list>(<argument><expr><literal type="string">""</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+        
+        <expr_stmt><expr><call><name><name>_view</name><operator>.</operator><name>refreshSessionTrees</name></name><argument_list>(<argument><expr><name><name>_selectedNodes</name><index>[<expr><literal type="number">0</literal></expr>]</index></name><operator>.</operator><call><name>getSession</name><argument_list>()</argument_list></call><operator>.</operator><call><name>toString</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    </block_content>}</block></function>
+</unit>

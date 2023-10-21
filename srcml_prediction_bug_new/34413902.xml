@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/39190915.java">	<function><type><specifier>private</specifier> <name>void</name></type> <name>openTo</name><parameter_list>(<parameter><decl><type><name>String</name></type> <name>objectId</name></decl></parameter>)</parameter_list><block>{<block_content>
+		<if_stmt><if>if <condition>(<expr><name>getObjectById</name></expr>)</condition> <block>{<block_content>
+			<comment type="line">// Recurse on the parent.</comment>
+			<decl_stmt><decl><type><name>String</name></type> <name>parentId</name> <init>= <expr><call><name>getParentObject</name><argument_list>(<argument><expr><name>objectId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<if_stmt><if>if <condition>(<expr><name>parentId</name> <operator>!=</operator> <literal type="null">null</literal> <operator>&amp;&amp;</operator> <call><name><name>parentId</name><operator>.</operator><name>length</name></name><argument_list>()</argument_list></call> <operator>&gt;</operator> <literal type="number">0</literal></expr>)</condition>
+			<block>{<block_content>
+				<expr_stmt><expr><call><name>openTo</name><argument_list>(<argument><expr><name>parentId</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			</block_content>}</block></if></if_stmt>
+		</block_content>}</block></if></if_stmt>
+		<comment type="line">// Open down to this level.</comment>
+		<decl_stmt><decl><type><name>Treeitem</name></type> <name>t</name> <init>= <expr><operator>(</operator><name>Treeitem</name><operator>)</operator> <call><name>getObjectById</name><argument_list>(<argument><expr><name>objectId</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+		<while>while <condition>(<expr><name>t</name> <operator>!=</operator> <literal type="null">null</literal></expr>)</condition>
+		<block>{<block_content>
+			<expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>getChildren</name></name><argument_list>(<argument><expr><name>t</name></expr></argument>, <argument><expr><literal type="null">null</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><call><name><name>t</name><operator>.</operator><name>setOpen</name></name><argument_list>(<argument><expr><literal type="boolean">true</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+			<expr_stmt><expr><name>t</name> <operator>=</operator> <call><name><name>t</name><operator>.</operator><name>getParentItem</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+		</block_content>}</block></while>
+	</block_content>}</block></function>
+</unit>

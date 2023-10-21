@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/42382529.java">    <function><type><specifier>public</specifier> <name>Token</name></type> <name>scanNextToken</name><parameter_list>(  <parameter><decl><type><block>{<block_content>
+        <decl_stmt><decl><type><name>int</name></type> <name>currentChar</name> <init>= <expr><call><name><name>tokenizer</name><operator>.</operator><name>readNextChar</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+
+        <if_stmt><if>if<condition>(<expr><name>currentChar</name> <operator>&lt;=</operator><literal type="number">0</literal> <operator>||</operator> <call><name><name>tokenizer</name><operator>.</operator><name>isAtEOF</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+            <comment type="line">// Either the EOF was reached or some error so don't bother</comment>
+            <comment type="line">// dispatching... just return the token.</comment>
+            <return>return <expr><call><name><name>tokenizer</name><operator>.</operator><name>captureToken</name></name><argument_list>()</argument_list></call></expr>;</return>
+        </block_content>}</block></if> <else>else <block>{<block_content>
+            <return>return <expr><call><name>dispatch</name><argument_list>(<argument><expr><operator>(</operator><name>char</name><operator>)</operator><name>currentChar</name></expr></argument>)</argument_list></call></expr>;</return>
+        </block_content>}</block></else></if_stmt>
+    </block_content>}</block></function>
+</unit>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18362783.java">  <function><type><specifier>private</specifier> <name>void</name></type> <name>initialize</name><parameter_list>()</parameter_list> <block>{<block_content>
+    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setDefaultCloseOperation</name></name><argument_list>(<argument><expr><name><name>JFrame</name><operator>.</operator><name>EXIT_ON_CLOSE</name></name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setContentPane</name></name><argument_list>(<argument><expr><call><name>getJPanel</name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+    <expr_stmt><expr><call><name><name>this</name><operator>.</operator><name>setJMenuBar</name></name><argument_list>(<argument><expr><call><name>getJJMenuBar</name><argument_list>()</argument_list></call></expr></argument> ;</argument_list></call></expr>
+    <expr><call><name><name>this</name><operator>.</operator><name>setSize</name></name><argument_list>(<argument><expr><literal type="number">300</literal></expr></argument>, <argument><expr><literal type="number">200</literal></expr></argument>)</argument_list></call></expr>;
+    <expr><call><name><name>this</name><operator>.</operator><name>setTitle</name></name><argument_list>(<argument><expr><literal type="string">"Application"</literal></expr></argument>)</argument_list></call></expr>;
+  </block_content>}</block></function>
+</unit>

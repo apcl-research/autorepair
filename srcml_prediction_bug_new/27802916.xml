@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/27802783.java">  <function><type><specifier>public</specifier> <name>JButton</name></type> <name>createRemoveCorrelationSetButton</name> <parameter_list>( <parameter><decl><type><specifier>final</specifier> <name>CorrelationSetPanel</name></type> <name>panel</name></decl></parameter> )</parameter_list> <block>{<block_content>
+    <return>return <expr><operator>new</operator> <call><name>JButton</name> <argument_list>(
+      <argument><expr><operator>new</operator> <class><super><name>AbstractAction</name></super><argument_list>( <argument><expr><literal type="string">"Remove"</literal></expr></argument> )</argument_list> <block>{
+          <function><type><specifier>public</specifier> <name>void</name></type> <name>actionPerformed</name> <parameter_list>( <parameter><decl><type><name>ActionEvent</name></type> <name>evt</name></decl></parameter> )</parameter_list> <block>{<block_content>
+            <comment type="line">// Do this in the GUI Event Dispatch thread...</comment>
+            <expr_stmt><expr><call><name><name>SwingUtilities</name><operator>.</operator><name>invokeLater</name></name><argument_list>(
+              <argument><expr><operator>new</operator> <class><super><name>Runnable</name></super><argument_list>()</argument_list> <block>{
+                <function><type><specifier>public</specifier> <name>void</name></type> <name>run</name><parameter_list>()</parameter_list> <block>{<block_content>
+                  <expr_stmt><expr><call><name>removeCorrelationSet</name><argument_list>( <argument><expr><name>panel</name></expr></argument> )</argument_list></call></expr>;</expr_stmt>
+                </block_content>}</block></function>
+               
+            )</block></class></expr></argument>
+          )</argument_list></call></expr>;</expr_stmt>
+          </block_content>}</block></function>
+      }</block></class></expr></argument>
+   )</argument_list></call></expr>;</return>
+  </block_content>}</block></function> <comment type="line">// createRemoveCorrelationSetButton</comment>
+</unit>

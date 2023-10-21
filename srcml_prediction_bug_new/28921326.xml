@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/23863286.java">	<function><type><specifier>private</specifier> <name>Node</name></type> <name>blockPresentationMathML</name><parameter_list>(<parameter><decl><type><specifier>final</specifier> <name>String</name></type> <name>data</name></decl></parameter>)</parameter_list> <block>{<block_content>
+		<try>try <block>{<block_content>
+			<decl_stmt><decl><type><name>ComputereseTree</name></type> <name>computereseTree</name> <init>= <expr><call><name><name>computereseParser</name><operator>.</operator><name>parse</name></name><argument_list>(<argument><expr><name>data</name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>DocumentFragment</name></type> <name>docFrag</name> <init>= <expr><call><name><name>presentationMathMLTranslator</name><operator>.</operator><name>translate</name></name><argument_list>(<argument><expr><name>computereseTree</name></expr></argument>, <argument><expr><literal type="boolean">true</literal></expr></argument>, <argument><expr><name><name>MathDisplayMode</name><operator>.</operator><name>BLOCK</name></name></expr></argument>)</argument_list></call></expr></init></decl>;</decl_stmt>
+			<decl_stmt><decl><type><name>Node</name></type> <name>mathNode</name> <init>= <expr><call><name><name>docFrag</name><operator>.</operator><name>getFirstChild</name></name><argument_list>()</argument_list></call></expr></init></decl>;</decl_stmt>
+			
+			<return>return <expr><name>mathNode</name></expr>;</return>		
+		</block_content>}</block> <catch>catch <parameter_list>(<parameter><decl><type><name>ComputereseParserException</name></type> <name>cpe</name></decl></parameter>)</parameter_list> <block>{<block_content>			
+			<expr_stmt><expr><call><name><name>cpe</name><operator>.</operator><name>printStackTrace</name></name><argument_list>()</argument_list></call></expr>;</expr_stmt>
+			
+			<return>return <expr><call><name><name>document</name><operator>.</operator><name>createCDATASection</name></name><argument_list>(<argument><expr><call><name><name>cpe</name><operator>.</operator><name>getMessage</name></name><argument_list>()</argument_list></call></expr></argument>)</argument_list></call></expr>;</return> 
+		</block_content>}</block></catch></try>		
+	</block_content>}</block></function>
+</unit>

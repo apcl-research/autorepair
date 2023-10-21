@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<unit xmlns="http://www.srcML.org/srcML/src" revision="1.0.0" language="Java" filename="/home/cmc/dev/projects/datasets/18352983.java">    <function><type><specifier>protected</specifier> <name>String</name></type> <name>getEmptyString</name><parameter_list>()</parameter_list> <block>{<block_content>
+	<if_stmt><if>if <condition>(<expr><call><name><name>m_logger</name><operator>.</operator><name>isDebugEnabled</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><call><name><name>m_logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"getEmptyString() - start"</literal></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></if></if_stmt>
+
+	<comment type="block">/* Retrieve this DefaultBlock's definition of an empty string. */</comment>
+	<decl_stmt><decl><type><name>String</name></type> <name>returnString</name> <init>= <expr><operator>(</operator><name>strEmpty</name><operator>)</operator></expr></init></decl>;</decl_stmt>
+	<if_stmt><if>if  <condition>(<expr><call><name><name>m_logger</name><operator>.</operator><name>isDebugEnabled</name></name><argument_list>()</argument_list></call></expr>)</condition> <block>{<block_content>
+	    <expr_stmt><expr><call><name><name>m_logger</name><operator>.</operator><name>debug</name></name><argument_list>(<argument><expr><literal type="string">"getEmptyString() - end - return value="</literal> <operator>+</operator> <name>returnString</name></expr></argument>)</argument_list></call></expr>;</expr_stmt>
+	</block_content>}</block></if></if_stmt>
+	<return>return <expr><name>returnString</name></expr>;</return>
+    </block_content>}</block></function>
+</unit>
