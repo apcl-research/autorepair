@@ -129,3 +129,10 @@ python3 data/autorepair/prepare_fc_raw.py
 --val-fundats-file: filename for the function with the syntax error for val
 ```
 
+## Pretraining
+### Step 1: Download the dataset
+Please download ``train.bin.gz`` and ``val.bin.gz`` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and extract and put those files to the same dir as ```--dataset``` in ```config/pretraining.py```, which is ```data/pretrain``` for now.
+### Step 2: Pretrain model
+```
+CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/pretraining.py 
+```
