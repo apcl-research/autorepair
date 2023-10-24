@@ -114,7 +114,7 @@ q90codefile: filename of reference code
 
 ## Dataset 
 
-We also release all of our raw datasets for the experiments in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and the scripts for compiling the raw data to ``bin`` files in this Github repo. Before running the command, please create three dir: ``pkls``, ``bins``, and ``tmp``. Then, you can simply run the following command to generate ``train.bin`` and ``val.bin``.
+We also release all of our raw datasets for finetuning in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and the scripts for compiling the raw data to ``bin`` files in this Github repo. Before running the command, please create three dir: ``pkls``, ``bins``, and ``tmp``. Then, you can simply run the following command to generate ``train.bin`` and ``val.bin``.
 
 ```
 python3 data/autorepair/prepare_fc_raw.py
