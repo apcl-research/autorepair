@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 
 ## Zero-shot syntax tree generation
-After you download the dataset in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the ``ckpt_base.pt`` file in the model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in ``fundats.tar.gz`` in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
+After you download the ``fundats.tar.gz`` in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the ``ckpt_base.pt`` file in the model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in ``fundats.tar.gz`` in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
 
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt_base.pt
