@@ -52,6 +52,8 @@ if __name__=='__main__':
     q90valfids = pickle.load(open(q90valfids_file, 'rb'))
     fundats_fids = list(fundats.keys())
     pt = int(len(fundats_fids) * .02)
+    count_val = 0 
+    count = 0
     for partnum in range(0, 50):
 
         print(f'starting part {partnum}')
