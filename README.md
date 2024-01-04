@@ -25,8 +25,8 @@ To set up your local environment, run the following command. We recommend the us
 pip install -r requirements.txt
 ``` 
 
-- If you want to generate the syntax trees from source code with our models, please see [Zero-shor syntax trees generation](#zero-shot-syntax-tree-generation).
-- If you want to finetune a model to fix the syntatic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
+- If you want to generate the syntax trees from source code with our models, please see [Zero-shot syntax trees generation](#zero-shot-syntax-tree-generation).
+- If you want to finetune a model to fix the syntactic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
 - If you want to recompile our datasets, please see [Dataset](#dataset)
 
 
