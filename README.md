@@ -16,7 +16,7 @@ This repository contains all the code and detailed instructions for a tool to ge
 - [Finetuning](#finetuning)
 - [Metrics](#metrics)
 - [Dataset](#dataset)
-- [Pretraining](#pretraining)
+- [Retrain from scratch](#retrain-from-scratch)
 
 ## To-do list
 To set up your local environment, run the following command. We recommend the use of a virtual environment for running the experiments.
@@ -26,7 +26,7 @@ pip install -r requirements.txt
 
 - If you want to generate the syntax trees from source code or correct syntactic eorrs in zero-shot setting with our models, please see [Error Correction in Zero-Shot Setting](#error-correction-in-zero-shot-setting).
 - If you want to finetune a model to fix the syntactic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
-- If you want to recompile our datasets, please see [Dataset](#dataset)
+- If you want to retrain the model from scratch, please see [Retrain from scratch](#retrain-from-scratch)
 
 
 ## Error Correction in Zero-Shot Setting
@@ -134,7 +134,7 @@ python3 data/autorepair/prepare_fc_raw.py
 ## Retrain from scratch
 ### Step 1: Download the dataset
 Please download ``train.bin.gz`` and ``val.bin.gz`` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and extract and put those files to the same dir as ```--dataset``` in ```config/pretraining.py```, which is ```data/pretrain``` for now.
-### Step 2: Pretrain model
+### Step 2: Retrain model
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1  train.py config/pretraining.py 
 ```
