@@ -1,4 +1,4 @@
-### Code for ICSE 2024 demonstration paper, A Lossless Syntax Tree Generator with Zero-shot Error Correction
+### Code for FSE 2024 demonstration paper, A Lossless Syntax Tree Generator with Zero-shot Error Correction
 
 Presented by:
 - [Chia-Yi Su](https://chiayisu.github.io/)
@@ -12,8 +12,7 @@ This repository contains all the code and detailed instructions for a tool to ge
 
 ## Quick link
 - [To-do list](#to-do-list)
-- [Zero-shot syntax trees generation](#zero-shot-syntax-tree-generation)
-- [Generate code from syntax tree](#Generate-code-from-syntax-tree)
+- [Error Correction in Zero-Shot Setting](#error-correction-in-zero-shot-setting)
 - [Finetuning](#finetuning)
 - [Metrics](#metrics)
 - [Dataset](#dataset)
@@ -25,13 +24,17 @@ To set up your local environment, run the following command. We recommend the us
 pip install -r requirements.txt
 ``` 
 
-- If you want to generate the syntax trees from source code with our models, please see [Zero-shot syntax trees generation](#zero-shot-syntax-tree-generation).
+- If you want to generate the syntax trees from source code or correct syntactic eorrs in zero-shot setting with our models, please see [Error Correction in Zero-Shot Setting](#error-correction-in-zero-shot-setting).
 - If you want to finetune a model to fix the syntactic bug using our processed and tokenized dataset, please see [Finetuning](#finetuning)
 - If you want to recompile our datasets, please see [Dataset](#dataset)
 
 
-## Zero-shot syntax tree generation
-After you download the ``fundats.tar.gz`` file in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the ``ckpt_base.pt`` file in the model [repo](https://huggingface.co/apcl/autorepair/tree/main) and put the all of the files in ``fundats.tar.gz`` in ```/nublar/datasets/jm52m/``` and put the model file in ```jmsrcml```, you can simply run the command below to generate the syntax tree.
+## Error Correction in Zero-Shot Setting
+
+### Step 1: Download dataset and models
+Please downlaod the ``fundats.tar.gz`` file in our Hugginface dataset [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and download the ``ckpt_base.pt`` file in the model [repo](https://huggingface.co/apcl/autorepair/tree/main) and place all of the files in ``fundats.tar.gz`` in ```/nublar/datasets/jm52m/``` and palce the model file in ```jmsrcml```
+
+### Step 2: Syntax tree generation
 
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4111 --nnodes=1 --nproc_per_node=1  sample_srcml.py --out_dir=jmsrcml --temperature=0.001 --prediction_outdir=srcml_prediction_new --checkpoint_filename=ckpt_base.pt
@@ -44,6 +47,18 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='1' OMP_NUM_THREADS=2 time t
 --q90codefile: filename of the function
 --q90codetestfidfile: filename of the funtion id
 ```
+### Step 3: Code generation from syntax tree
+```
+python3 decoded_srcml.py 
+```
+
+```
+--srcml_dir: directory of syntax tree files
+--q90codefile: function files
+--q90testfidfile: filename of the function id
+--decoded_code_file: filename of decoded code
+```
+
 ## Finetuning
 These steps will show you how to fine-tune the model to fix the syntax errors and make the inference by using the model that you finetune
 
@@ -61,19 +76,6 @@ CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time t
 ### Step 4: Inference
 ```
 CUDA_DEVICE_ORDER='PCI_BUS_ID' CUDA_VISIBLE_DEVICES='0' OMP_NUM_THREADS=2 time torchrun --rdzv-backend=c10d --rdzv-endpoint=localhost:4000 --nnodes=1 --nproc_per_node=1 sample_autorepair.py config/finetune_autorepair.py --prediction_filename=predict_autorepair_srcml.pkl --outfilename=ckpt.pt
-```
-
-## Generate code from syntax tree
-
-```
-python3 decoded_srcml.py 
-```
-
-```
---srcml_dir: directory of syntax tree files
---q90codefile: function files
---q90testfidfile: filename of the function id
---decoded_code_file: filename of decoded code
 ```
 
 ## Metrics
@@ -129,7 +131,7 @@ python3 data/autorepair/prepare_fc_raw.py
 --val-fundats-file: filename for the function with the syntax error for val
 ```
 
-## Pretraining
+## Retrain from scratch
 ### Step 1: Download the dataset
 Please download ``train.bin.gz`` and ``val.bin.gz`` in our Hugginface [repo](https://huggingface.co/datasets/apcl/autorepair/tree/main) and extract and put those files to the same dir as ```--dataset``` in ```config/pretraining.py```, which is ```data/pretrain``` for now.
 ### Step 2: Pretrain model
