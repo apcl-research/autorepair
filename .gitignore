@@ -1,0 +1,14 @@
+openai.key
+__pycache__/
+data/*/pkls/
+data/*/bins/
+data/*/tmp/
+wandb/
+data/*/train.bin
+data/*/val.bin
+jmsrcml/
+out-autorepair/
+autorepair_predictions/
+*.pkl
+srcml_predictions/
+data/autorepair/bug_code_test/
